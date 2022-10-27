@@ -1,0 +1,28 @@
+.Navbar{
+    height: 150px;
+    width: 100%;
+}
+
+.Navbar img{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.Item{
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+.Item a{
+    color: #3B4779;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+@media(max-width: 600px){
+    .Items{
+        visibility: hidden;
+    }
+}
