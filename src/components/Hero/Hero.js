@@ -14,7 +14,7 @@ function Hero() {
     <div className="Hero">
       <Box sx={{
         width: '100%',
-        marginTop: matchesMD ? '35%' : '13%',
+        marginTop: matchesSM ? '35%' : '13%',
         transition: '1s'
       }}>
         <Box sx={{
@@ -28,25 +28,28 @@ function Hero() {
               <img class='BannerLogo'src={BannerLogo}></img>
               <h3>Canada's Capital Hackathon</h3>
             </Box>
-            <Box>
+            <Box sx={{
+              display:"flex"
+            }}>
               <Button sx={{
-                backgroundColor:'#3B4779', 
+                backgroundColor:'#5C71AD', 
                 borderRadius:'100px', 
                 color:'white', 
-                mt:'2vw',
+                mt: matchesSM ? '7vw' : '2vw',
+                p:'10px',
                 textTransform:'none',
-                width:'25%',
-                fontSize:'1.10vw',
-                justifyContent:'space-between',
+                minWidth:'22%',
+                width: matchesMD ? '40%' : '0%',
+                transition: '1s',
                 '&:hover': {
-                  backgroundColor: darken('#3B4779', 0.3)}
+                  backgroundColor: darken('#5C71AD', 0.3)}
               }}>
                   <p class='ButtonText'>Learn More</p>
               </Button>
             </Box>
         </Box>
         <Box sx={{
-          mt: matchesSM ? '40%' : '0%',
+          mt: matchesSM ? '10%' : '0%',
           transition: '1s'
         }}>
           <img class="HeroImg" src={HeroImg}></img>
