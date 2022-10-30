@@ -1,51 +1,60 @@
-import { Grid } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 import React from "react";
 import './Schedule.css';
+
+const Item = styled('div')(({ theme }) => ({
+
+}));
 
 function Schedule() {
   return (
     <div id="Schedule" className="Schedule">
-      {/* <div id="scheduleTitle" className="scheduleTitle">Schedule</div> */}
       <h2 className="scheduleTitle">Schedule</h2>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <Box sx={{ width: "30%", margin: "auto" }}>
+          <Stack spacing={4} id="eventStack" class="eventStack">
 
-      <Grid container id="Events" className="Events">
+            <Stack direction = "row" spacing={2}>
+              <div className ="event">
+                <div className ="eventMonth">November</div>
+                <div className ="eventDay">16</div>
+              </div>
+              <hr></hr><hr></hr><hr></hr><hr></hr>
+              <div>
+                <br></br>
+                <div className ="eventTitle">Wicked Web Dev</div>
+              </div>
+            </Stack>
 
-        <Grid container id="Event1" className="Event1">
-          <Grid item className ="eventItem">
-              <div className ="eventMonth">November</div>
-              <div className ="eventDay">16</div>
-          </Grid>
+            <Stack direction = "row" spacing={2}>
+              <div className ="event">
+                <div className ="eventMonth">November</div>
+                <div className ="eventDay">29</div>
+              </div>
+              <hr></hr><hr></hr><hr></hr><hr></hr>
+              <div>
+                <br></br>
+                <div className ="eventTitle">Resume Roast</div>
+              </div>
+            </Stack>
 
-          <Grid item className ="eventTitle">
-            <div className ="eventTitle">Wicked Web Dev</div>
-          </Grid>
-        </Grid>
+            <Stack direction = "row" spacing={2}>
+              <div className ="event">
+                <div className ="eventMonth">January</div>
+                <div className ="eventDay">11</div>
+              </div>
+              <hr></hr><hr></hr><hr></hr><hr></hr>
+              <div>
+                <br></br>
+                <div className ="eventTitle">Coffee, Code and Cram</div>
+              </div>
+            </Stack>
 
-        <Grid container id="Event2" className="Event2">
-          <Grid item className ="eventItem">
-              <div className ="eventMonth">November</div>
-              <div className ="eventDay">29</div>
-          </Grid>
-
-          <Grid item className ="eventTitle">
-            <div className ="eventTitle">Resume Roast</div>
-          </Grid>
-        </Grid>
-
-        <Grid container id="Event3" className="Event3">
-          <Grid item className ="eventItem">
-              <div className ="eventMonth">January</div>
-              <div className ="eventDay">11</div>
-          </Grid>
-
-          <Grid item className ="eventTitle">
-            <div className ="eventTitle">Coffee, Code and Cram</div>
-          </Grid>
-        </Grid>
-
-      </Grid>
-
+          </Stack>
+        </Box>
     </div>
   );
 }
