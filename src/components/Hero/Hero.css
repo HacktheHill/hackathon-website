@@ -3,23 +3,34 @@
     src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
+@font-face {
+    font-family: Coolvetica;
+    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
 .HeroImg{
     width: 100%;
 }
 
 .BannerLogo{
     width: 75%;
+    transition: 1s;
 }
 
 h3{
     color: #3B4779;
-    font-family: Rubik;
+    font-family: Coolvetica;
     margin: 0px;
-    font-size: 1.25vw;
-    font-weight: 600;
+    font-size: 1.5vw;
+    font-weight: 500;
 }
 
-.Button{
-    margin-top: 0px;
-    color: #3B4779;
+@media only screen and (max-width: 600px) {
+    .BannerLogo{
+        width: 90%;
+        transition: 1s;
+    }
+    h3 {
+        font-size: 2vw;
+    }
 }
