@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Coolvetica;
+    src: url(./assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf);
+  }
+
+  /* ./assets/fonts/coolvetica/coolvetica\ rg.otf */
+
+.Schedule{
+    background-color:#3b477a;
+    color:#FFFFFF;
+    font-family: 'Coolvetica';
+    
+}
+
+.Events{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.scheduleTitle{
+    font-size:30px;
+    font-weight: bold;
+    /* left:0; */
+    margin-right: 1205px;
+}
+
+
+.eventItem{
+    /* line-height: 50px; */
+    height:90px;
+    width:80px;
+    border-radius: 10px;
+    border: thin solid #FFFFFF;
+    color:#FFFFFF;
+}
+
+.eventMonth{
+    padding-top:6px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+    font-size:14px;
+    font-weight: bold;
+}
+
+.eventDay{
+    padding-top:0;
+    margin-top:0;
+    font-size:50px;
+    font-weight: bold;
+}
+
+
+.eventTitle{
+    font-size:25px;
+    font-weight:bold;
+}
+
+
