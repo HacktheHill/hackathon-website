@@ -12,8 +12,10 @@ import Footer from '../Footer/Footer.js';
 function App() {
   return (
     <div className="App">
+    <div class='Gradient'>
       <NavBar />
       <Hero />
+    </div>
       <About />
       <Schedule />
       <SponsorEvent />

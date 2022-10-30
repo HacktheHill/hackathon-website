@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+.HeroImg{
+    width: 100%;
+}
+
+.BannerLogo{
+    width: 75%;
+}
+
+h3{
+    color: #3B4779;
+    font-family: Rubik;
+    margin: 0px;
+    font-size: 1.25vw;
+    font-weight: 600;
+}
+
+.Button{
+    margin-top: 0px;
+    color: #3B4779;
+}
