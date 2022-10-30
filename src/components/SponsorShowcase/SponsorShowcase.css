@@ -1,0 +1,15 @@
+.Sponsors {
+    color: black;
+    left: 10px;
+    text-align: left;
+    margin-left: 50px;
+    
+  }
+  .vl {
+    border-left: 6px solid rgb(128, 0, 128);
+    margin-left: 50px;
+  }
+  .sponsors-body{
+    margin-left: 20px;
+  }
+    
