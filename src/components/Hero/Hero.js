@@ -14,7 +14,7 @@ function Hero() {
     <div className="Hero">
       <Box sx={{
         width: '100%',
-        marginTop: matchesSM ? '2%' : '2%',
+        marginTop: matchesSM ? '2%' : '3%',
         transition: '1s'
       }}>
         <Box sx={{
@@ -24,7 +24,7 @@ function Hero() {
           transition: '1s'
         }}>
             <Box>
-              <h3>February 3 - 5 @ The University of Ottawa</h3>
+              <h3>February 3-5, 2023 @ University of Ottawa</h3>
               <img class='BannerLogo'src={BannerLogo}></img>
               <h3>Canada's Capital Hackathon</h3>
             </Box>
