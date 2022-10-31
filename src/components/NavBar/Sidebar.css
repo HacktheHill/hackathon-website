@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Coolvetica;
+  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
 .outer{
     visibility: hidden;
 }
@@ -70,6 +80,14 @@
         text-decoration: none;
         transition: color 0.2s;
         font-size: 15px;
+        font-family: Rubik;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+      }
+
+      box-icon{
+        margin-left: 20px;
+        margin-right: 15px;
       }
     
       .bm-item:hover{
