@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import './Schedule.css';
 import { Card, Stack, Box, useTheme, useMediaQuery, Button, darken } from "@mui/material";
@@ -195,16 +194,4 @@ function Schedule() {
   );
 }
 
-=======
-import './Schedule.css';
-
-function Schedule() {
-  return (
-    <div className="Schedule">
-        Schedule
-    </div>
-  );
-}
-
->>>>>>> 664ef7f (Added collaborators)
 export default Schedule;
