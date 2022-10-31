@@ -12,19 +12,19 @@ function Collaborators() {
        <h2>Collaborators </h2>
         <Grid container id="Associations" className="Associations">
           <Grid item direction="column" className ="CSSABox">
-          <img className="CSSA" alt="CSSA" src={CSSA}></img>
+          <a href="https://www.cssa-aei.ca/"><img className="CSSA" alt="CSSA" src={CSSA}></img></a>
           </Grid>
-          <Grid item direction="column" className ="IEEBox">
-          <img className="IEEE" alt="IEEE" src={IEEE}></img>
+          <Grid item direction="column" className ="IEEEBox">
+          <a href="https://ieeeuottawa.ca/"><img className="IEEE" alt="IEEE" src={IEEE}></img></a>
           </Grid>
           <Grid item direction="column" className ="SESABox">
-            <img className="SESA" alt="SESA" src={SESA}></img>
+          <a href="https://swesa.netlify.app/"><img className="SESA" alt="SESA" src={SESA}></img></a>
           </Grid>
           <Grid item direction="column" className ="ESSBox">
-          <img className="ESS" alt="ESS" src={ESS}></img>
+          <a href="https://www.essaeg.ca/"><img className="ESS" alt="ESS" src={ESS}></img></a>
           </Grid>
           <Grid item direction="column" className ="WIEBox">
-          <img className="WIE" alt="WIE" src={WIE}></img>
+          <a href="https://wie.ieeeottawa.ca/"><img className="WIE" alt="WIE" src={WIE}></img></a>
           </Grid>
           </Grid>
     </div>

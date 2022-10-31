@@ -22,12 +22,13 @@ img{
 } 
 .ESS{
     position: relative;
-    top: -35px;
+    top: -28px;
+    max-height:110px;
 }
 .WIE{
     position: relative;
-    top: -20px;
-    max-height:150px;
+    top: -18px;
+    max-height:110px;
 }
 .IEEE{
     height:70px;
@@ -60,4 +61,22 @@ img{
     }
   }
   
-  
+.ESSBox a:hover img{
+    opacity: .2     
+} 
+
+.IEEEBox a:hover img{
+    opacity: .2     
+}
+
+.CSSABox a:hover img{
+    opacity: .2     
+}
+
+.SESABox a:hover img{
+    opacity: .2     
+}
+
+.WIEBox a:hover img{
+    opacity: .2     
+}
