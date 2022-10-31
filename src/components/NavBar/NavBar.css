@@ -18,11 +18,39 @@
 .Item a{
     color: #3B4779;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    position: relative;
 }
+
+.Item a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.Item a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
 
 @media(max-width: 600px){
     .Items{
         visibility: hidden;
+    }
+
+    .Navbar img{
+        width: 105px;
+        height: 105px;
+        top: 0;
     }
 }

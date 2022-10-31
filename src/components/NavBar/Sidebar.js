@@ -7,13 +7,16 @@ export default props => {
     <div className='outer'>
     <Menu right width={'50%'}>
       
-      <a className="menu-item" href="">
+      <a className="menu-item" href='https://www.google.ca/'>
         About
       </a>
-      <a className="menu-item" href="">
-        Team
+      <a className="menu-item" href='https://www.google.ca/'>
+        Sponsors
       </a>
-      <a className="menu-item" href="">
+      <a className="menu-item" href='https://www.google.ca/'>
+        Collaborators
+      </a>
+      <a className="menu-item" href='https://www.google.ca/'>
         FAQ
       </a>
     </Menu>
