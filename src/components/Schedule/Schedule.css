@@ -18,40 +18,39 @@
     color:#FFFFFF;
 }
 
-.event{
-    height:90px;
-    width:80px;
-    border-radius: 10px;
-    border: thin solid #FFFFFF;
-    color:#FFFFFF;
-}
-
 .eventMonth{
-    padding-top:6px;
-    padding-bottom:0px;
-    margin-bottom:0px;
-    font-size:14px;
+    margin: 15px 0px 0px 0px;
+    font-size:20px;
     font-weight: bold;
+    color: #FFFFFF;
 }
 
 .eventDay{
-    padding-top:0;
-    margin-top:0;
-    font-size:50px;
+    margin: 0px 0px 10px 0px;
+    font-size:75px;
     font-weight: bold;
+    color: #FFFFFF;
 }
 
 .eventTitle{
     font-size:25px;
     font-weight:bold;
     color:#FFFFFF;
+    text-align: left;
 }
 
-hr{
-    border-color:#3b477a;
-    background-color:#3b477a;
-    border-radius: 0;
-    height: 1px; 
-    border: 0;
+.event{
+    width:'20%';
+    border-radius:'10px';
+    border-width:'3px';
+    border-color: #FFFFFF;
 }
 
+.eventStack{
+    flex-wrap: wrap;
+}
+
+.Center{
+    display: flex;
+    justify-content: center;
+}
