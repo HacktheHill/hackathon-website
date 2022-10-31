@@ -1,0 +1,56 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+    font-family: Coolvetica;
+    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
+.HeroImg{
+    width: 100%;
+}
+
+.BannerLogo{
+    width: 75%;
+    transition: 1s;
+}
+
+h3{
+    color: #3B4779;
+    font-family: Coolvetica;
+    margin: 0px;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+.ButtonText{
+    font-family: Rubik;
+    margin: auto;
+    font-weight: 60;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 900px) {
+    .BannerLogo{
+        width: 85%;
+        transition: 1s;
+    }
+    h3 {
+        font-size: 2.5vw;
+    }
+    .HeroImg{
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .BannerLogo{
+        width: 100%;
+        transition: 1s;
+    }
+    h3 {
+        font-size: 4.5vw;
+    }
+}
