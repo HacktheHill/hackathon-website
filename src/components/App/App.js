@@ -1,5 +1,6 @@
 import './App.css';
 import NavBar from '../NavBar/NavBar.js';
+import Sidebar from '../NavBar/Sidebar.js'
 import Hero from '../Hero/Hero.js';
 import About from '../About/About.js';
 import Schedule from '../Schedule/Schedule.js';
@@ -11,7 +12,9 @@ import Footer from '../Footer/Footer.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id='outer-container'>
+      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+      <div className='page-wrap'>
       <NavBar />
       <Hero />
       <About />
@@ -21,6 +24,8 @@ function App() {
       <Collaborators />
       <FAQ />
       <Footer />
+      </div>
+
     </div>
   );
 }
