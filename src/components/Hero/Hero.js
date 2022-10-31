@@ -14,7 +14,7 @@ function Hero() {
     <div className="Hero">
       <Box sx={{
         width: '100%',
-        marginTop: matchesSM ? '35%' : '13%',
+        marginTop: matchesSM ? '2%' : '2%',
         transition: '1s'
       }}>
         <Box sx={{
