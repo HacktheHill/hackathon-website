@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
 .Navbar{
     height: 150px;
     width: 100%;
@@ -12,16 +17,17 @@
 
 .Item{
     float: right;
-    margin-right: 50px;
+    margin-right: 40px;
     margin-top: 40px;
 }
 
 .Item a{
     color: #3B4779;
-    font-weight: 700;
-    font-size: 17px;
+    font-weight: bolder;
+    font-size: 16px;
     text-decoration: none;
     position: relative;
+    font-family: Rubik;
 }
 
 .Item a::after{

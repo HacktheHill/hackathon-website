@@ -29,6 +29,7 @@ h3{
     font-family: Rubik;
     margin: auto;
     font-weight: 60;
+    font-size: 15px;
 }
 
 @media only screen and (max-width: 900px) {
