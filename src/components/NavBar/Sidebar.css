@@ -10,11 +10,11 @@
 
     /* Position and sizing of burger button */
     .bm-burger-button {
-        position: fixed;
-        width: 30px;
-        height: 25px;
+        position: absolute;
+        width: 28px;
+        height: 23px;
         right: 36px;
-        top: 36px;
+        top: 40px;
       }
       
       /* Color/shape of burger icon bars */
@@ -64,8 +64,8 @@
       .bm-item {
         display: inline-block;
         color: #d1d1d1;
-        margin-left: 20px;
-        margin-bottom: 40px;
+        margin-left: 30px;
+        margin-bottom: 30px;
         text-align: left;
         text-decoration: none;
         transition: color 0.2s;
