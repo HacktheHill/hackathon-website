@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   column-gap: 5000px;
-  width: 1655px;
+  margin: 100px;
 }
 
 .faqHeader {
   color: #5c71ad;
-  font-size: 72px;
+  font-size: 32;
   display: flex;
   align-items: flex-start;
+
 }
 
 .questionContainer {
