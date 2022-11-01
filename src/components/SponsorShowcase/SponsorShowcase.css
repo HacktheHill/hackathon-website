@@ -36,10 +36,11 @@
   width: auto;
 }
 
-h1{
+.Sponsors h1{
   font-family: Coolvetica;
   margin-bottom: 3%;
   font-size: 3em;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 600px){

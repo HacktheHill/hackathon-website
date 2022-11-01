@@ -24,8 +24,8 @@ function SponsorShowcase() {
               mt: matchesSM ? '7vw' : '2vw',
               p:'10px',
               textTransform:'none',
-              minWidth:'25%',
-              width: matchesSM ? '50%' : '0%',
+              minWidth:'20%',
+              width: matchesMD ? '50%' : '0%',
               transition: '1s',
               ml: '20px',
               '&:hover': {
