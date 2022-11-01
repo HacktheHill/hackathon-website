@@ -92,3 +92,12 @@
     font-weight: normal;
     margin-top: 10px;
 }
+
+@media only screen and (max-width: 900px) {
+    .Schedule{
+        background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
+        background-repeat: no-repeat;
+        background-position: left 75px, right 750px, top 100px right 50px;
+        background-size: 20%, 18%, 7%;
+    }
+}
