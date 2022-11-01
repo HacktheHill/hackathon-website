@@ -10,12 +10,19 @@
   font-size: 32;
   display: flex;
   align-items: flex-start;
-
 }
 
 .questionContainer {
   display: flex;
   flex-direction: column;
+}
+
+.questionContainer:hover {
+  background-color: "#eaeaea";
+}
+
+.questionContainer:before {
+  display: "none";
 }
 
 .question {
