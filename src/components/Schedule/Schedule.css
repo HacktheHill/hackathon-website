@@ -34,6 +34,13 @@
     font-weight: normal;
 }
 
+.ButtonText{
+    font-family: Rubik;
+    margin: auto;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 .eventMonth{
     margin-left: auto;
     margin-right: auto;
@@ -59,7 +66,9 @@
     color:#FFFFFF;
     text-align: left;
     font-family: Coolvetica;
-    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .event{
@@ -81,7 +90,7 @@
 .eventDesc{
     color: #FFFFFF;
     font-family: Rubik;
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 30px;
 }
 
@@ -90,14 +99,17 @@
     font-family: Rubik;
     font-size: 18px;
     font-weight: normal;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 900px) {
     .Schedule{
         background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
         background-repeat: no-repeat;
-        background-position: left 75px, right 750px, top 100px right 50px;
-        background-size: 20%, 18%, 7%;
+        background-position: left 50px, right 750px, top 100px right 50px;
+        background-size: 18%, 18%, 7%;
+    }
+    .eventTitle{
+        flex-direction: column;
     }
 }
