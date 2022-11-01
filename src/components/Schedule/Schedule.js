@@ -65,7 +65,7 @@ function Schedule() {
                   color:'#3B4779', 
                   mt: matchesMD ? '3vw' : '0vw',
                   mb: matchesMD ? '3vw' : '0vw',
-                  p:'5px',
+                  p:'7px',
                   textTransform:'none',
                   minWidth:'16%',
                   width: matchesSM ? '50%' : matchesLG ? '25%' : '0%',
