@@ -1,15 +1,15 @@
 import './Collaborators.css';
 import { Grid } from "@mui/material";
-import SESA from '../../assets/logos/sesa.svg'
-import CSSA from '../../assets/logos/cssa.svg'
-import IEEE from '../../assets/logos/ieee.svg'
-import ESS from '../../assets/logos/ess.svg'
-import WIE from '../../assets/logos/wie.svg'
+import SESA from '../../assets/Logos/sesa.svg'
+import CSSA from '../../assets/Logos/cssa.svg'
+import IEEE from '../../assets/Logos/ieee.svg'
+import ESS from '../../assets/Logos/ess.svg'
+import WIE from '../../assets/Logos/wie.svg'
 
 function Collaborators() {
   return (
     <div className="Collaborators">
-       <h2>Collaborators </h2>
+       <h1>Collaborators </h1>
         <Grid container id="Associations" className="Associations">
           <Grid item direction="column" className ="CSSABox">
           <a href="https://www.cssa-aei.ca/"><img className="CSSA" alt="CSSA" src={CSSA}></img></a>
@@ -18,7 +18,7 @@ function Collaborators() {
           <a href="https://ieeeuottawa.ca/"><img className="IEEE" alt="IEEE" src={IEEE}></img></a>
           </Grid>
           <Grid item direction="column" className ="SESABox">
-          <a href="https://swesa.netlify.app/"><img className="SESA" alt="SESA" src={SESA}></img></a>
+          <a href="https://www.uottawasesa.ca/"><img className="SESA" alt="SESA" src={SESA}></img></a>
           </Grid>
           <Grid item direction="column" className ="ESSBox">
           <a href="https://www.essaeg.ca/"><img className="ESS" alt="ESS" src={ESS}></img></a>

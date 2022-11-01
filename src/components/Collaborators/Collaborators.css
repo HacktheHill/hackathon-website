@@ -1,14 +1,27 @@
-h2 {
-    color:#5C71AD;
-    float: none;
+@font-face {
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
+@font-face {
+    font-family: Coolvetica;
+    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
+.Collaborators h1{
+    font-family: Coolvetica;
+    margin-bottom: 3%;
+    font-size: 3.25em;
+    margin-left: 10%;
+}
+  
 .Associations {
     justify-content: center;
     align-items: center;
 }
+
 img{
-   width:200px;
+   width:250px;
    align-items: center;
 }
 
@@ -18,26 +31,28 @@ img{
     justify-content: center;
     display: flex;
     padding: 0.8rem;
-         
 } 
 .ESS{
     position: relative;
     top: -28px;
-    max-height:110px;
+    max-height:130px;
 }
 .WIE{
     position: relative;
     top: -18px;
-    max-height:110px;
+    max-height:100px;
 }
 .IEEE{
     height:70px;
 }
 
+.Collaborators{
+    color: black;
+    left: 10px;
+    text-align: left;
+}
+
 @media only screen and (max-width: 2560px) {
-    .Associations {
-      margin-top: 75px;
-    }
     h2{
         margin-right: 1375px;
     }
@@ -62,21 +77,26 @@ img{
   }
   
 .ESSBox a:hover img{
-    opacity: .2     
+    transform: scale(1.1);
+    transition: 0.5s;          
 } 
 
 .IEEEBox a:hover img{
-    opacity: .2     
+    transform: scale(1.1);
+    transition: 0.5s;     
 }
 
 .CSSABox a:hover img{
-    opacity: .2     
+    transform: scale(1.1);
+    transition: 0.5s;      
 }
 
 .SESABox a:hover img{
-    opacity: .2     
+    transform: scale(1.1);
+    transition: 0.5s;       
 }
 
 .WIEBox a:hover img{
-    opacity: .2     
+    transform: scale(1.1);
+    transition: 0.5s;     
 }
