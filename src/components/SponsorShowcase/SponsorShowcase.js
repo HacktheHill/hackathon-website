@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "./SponsorShowcase.css";
-import { Box, Button, useMediaQuery, useTheme, darken, Stack } from '@mui/material';
-import LaptopAsset from "../../assets/svgs/laptop_asset.svg";
+import { Button, useMediaQuery, useTheme, darken } from '@mui/material';
 
 
 function SponsorShowcase() {
@@ -16,10 +15,9 @@ function SponsorShowcase() {
             <div class="borderW">
               <div class="sponsors-body">
               Hack the Hill is made possible by our generous sponsors. 
-              Interested in supporting one of Ottawa’s largest hackathons?
+              Interested in supporting one of Ottawa's largest hackathons?
               </div>
-            </div>
-            <Button href={`mailto:sponsorship@hackthehill.com`} sx={{
+              <Button href={`mailto:sponsorship@hackthehill.com`} sx={{
               backgroundColor:'#5C71AD', 
               borderRadius:'100px', 
               color:'white', 
@@ -27,14 +25,16 @@ function SponsorShowcase() {
               p:'10px',
               textTransform:'none',
               minWidth:'15%',
-              width: matchesMD ? '40%' : '0%',
+              width: matchesMD ? '55%' : '0%',
               transition: '1s',
-              ml: '25%',
+              ml: '20px',
               '&:hover': {
                 backgroundColor: darken('#5C71AD', 0.3)}
               }}>
                 <p class='ButtonText'>Get in touch</p>
             </Button>
+            </div>
+            
       </div>
     );
   }

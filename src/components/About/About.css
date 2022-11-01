@@ -14,12 +14,20 @@
   text-align: left;
   width: 80%;
   margin-top: -10%;
+  transition: 0.5s;
+}
+
+.About:hover{
+  color: #3B4779;
+  transition: 0.5s;
 }
 
 .borderL {
   border-left: 5px solid black;
-  margin-left: 25%;
+  margin-left: 10%;
 }
+
+
 
 .about-body{
   margin-left: 20px;
@@ -28,15 +36,16 @@
   width: auto;
 }
 
+
 h1{
   font-family: Coolvetica;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   font-size: 3.25em;
   margin-left: 10%;
   margin-top: -2%;
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 600px){
   .borderL{
     margin-left: 40px;
   }

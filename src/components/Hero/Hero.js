@@ -1,6 +1,5 @@
 import './Hero.css';
 import { Box, Button, useMediaQuery, useTheme, darken } from '@mui/material';
-import 'boxicons';
 import HeroImg from '../../assets/svgs/parliament-hero-asset.svg';
 import BannerLogo from '../../assets/Logos/hthlogo_banner_ver.svg';
 

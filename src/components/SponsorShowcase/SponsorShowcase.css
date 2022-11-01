@@ -10,31 +10,39 @@
 
 .Sponsors {
   color: black;
-  left: 10px;
+  left: 10;
   text-align: left;
   margin-top: 5%;
   width: 80%;
+  transition: 0.5s;
+}
+
+.Sponsors:hover{
+  color: #3B4779;
+  transition: 0.5s; 
 }
 
 .borderW {
   border-left: 5px solid black;
-  margin-left: 25%;
+  margin-left: 10%;
 }
+
+
 
 .sponsors-body{
   margin-left: 20px;
   font-family: Rubik;
   font-size: 18px;
-  width: 80%;
+  width: auto;
 }
 
 h1{
   font-family: Coolvetica;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   font-size: 3em;
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 600px){
   .borderW{
     margin-left: 40px;
   }
@@ -44,6 +52,10 @@ h1{
   }
   h1{
     margin-bottom: 10%;
+  }
+
+  .Sponsors{
+    margin-top: 20%;
   }
 }
     
