@@ -1,0 +1,82 @@
+.Footer {
+    justify-content: center;
+  }
+  
+  .FooterBody {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center;
+  }
+  
+  .FooterLogo {
+    display: block;
+  }
+  
+  .FooterLogo img {
+    width: 200px;
+    height: auto;
+    margin: 0px auto;
+    padding-top: 50px;
+  }
+  
+  .LogoText {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+  
+  @media only screen and (max-width: 10000px) {
+    .MediaLinks {
+      display: block;
+      margin: auto;
+    }
+  
+    .MediaLinks a {
+      margin: 15px;
+    }
+  
+    .FooterContainer {
+      display: grid;
+      width: 75%;
+      grid-template-columns: 1fr;
+      margin-bottom: 25px;
+    }
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .FooterContainer {
+      display: grid;
+      width: 75%;
+      grid-template-columns: auto;
+      margin-bottom: 25px;
+      gap: 50px;
+    }
+
+
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .MediaLinks {
+      margin: auto;
+      flex-direction: row;
+      float: left;
+      margin: auto;
+    }
+  
+    .MediaLinks a {
+      margin: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 472px) {
+    .MediaLinks {
+      display: block;
+      flex-direction: row;
+      float: left;
+      margin: auto;
+    }
+  
+    .MediaLinks a {
+      margin: 10px;
+    }
+  }
