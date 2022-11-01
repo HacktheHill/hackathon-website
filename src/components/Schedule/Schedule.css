@@ -1,42 +1,61 @@
 @font-face {
-    font-family: Coolvetica;
-    src: url(./assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf);
-  }
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
 
+@font-face {
+    font-family: Coolvetica;
+    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
+.Schedule h1{
+    font-family: Coolvetica;
+    margin-bottom: 3%;
+    font-size: 3.25em;
+    margin-left: 10%;
+    font-weight: normal;
+}
 .Schedule{
     background-color:#3b477a;
-    font-family: 'Coolvetica';
     padding-bottom:60px;
 }
 
 .scheduleTitle{
-    font-size:30px;
-    font-weight: bold;
-    margin-right: 1505px;
-    padding-top:30px;
-    padding-left:30px;
     color:#FFFFFF;
+    font-family: Coolvetica;
+    margin-bottom: 3%;
+    padding-top: 3%;
+    font-size: 3.25em;
+    margin-left: 10%;
+    font-weight: normal;
 }
 
 .eventMonth{
-    margin: 15px 0px 0px 0px;
-    font-size:20px;
-    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size:25px;
+    font-weight: normal;
     color: #FFFFFF;
+    font-family: Coolvetica;
 }
 
 .eventDay{
-    margin: 0px 0px 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
     font-size:75px;
-    font-weight: bold;
+    font-weight: normal;
     color: #FFFFFF;
+    font-family: Coolvetica;
 }
 
 .eventTitle{
-    font-size:25px;
-    font-weight:bold;
+    font-size:30px;
+    font-weight:normal;
     color:#FFFFFF;
     text-align: left;
+    font-family: Coolvetica;
+    letter-spacing: 0.1em;
 }
 
 .event{
@@ -53,4 +72,10 @@
 .Center{
     display: flex;
     justify-content: center;
+}
+
+.eventDesc{
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 18px;
 }
