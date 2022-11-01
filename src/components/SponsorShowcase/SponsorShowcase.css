@@ -1,18 +1,49 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Coolvetica;
+  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
 .Sponsors {
-    color: black;
-    left: 10px;
-    text-align: left;
-    margin-left: 50px;
-    
-  }
-  .vl {
-    border-left: 6px solid rgb(128, 0, 128);
-    margin-left: 50px;
+  color: black;
+  left: 10px;
+  text-align: left;
+  margin-top: 5%;
+  width: 80%;
+}
+
+.borderW {
+  border-left: 5px solid black;
+  margin-left: 25%;
+}
+
+.sponsors-body{
+  margin-left: 20px;
+  font-family: Rubik;
+  font-size: 18px;
+  width: 80%;
+}
+
+h1{
+  font-family: Coolvetica;
+  margin-bottom: 5%;
+  font-size: 3em;
+}
+
+@media only screen and (max-width: 1024px){
+  .borderW{
+    margin-left: 40px;
   }
   .sponsors-body{
-    margin-left: 20px;
+    width: 100%;
+    font-size: 16px;
   }
-  .logo{
-    margin-left: 900px;
+  h1{
+    margin-bottom: 10%;
   }
+}
     
