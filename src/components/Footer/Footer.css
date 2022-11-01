@@ -22,7 +22,7 @@
   .LogoText {
     display: block;
     font-size: 12px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
   
   @media only screen and (max-width: 10000px) {
@@ -37,7 +37,7 @@
   
     .FooterContainer {
       display: grid;
-      width: 75%;
+      width: 80%;
       grid-template-columns: 1fr;
       margin-bottom: 25px;
     }
@@ -46,12 +46,11 @@
   @media only screen and (max-width: 1200px) {
     .FooterContainer {
       display: grid;
-      width: 75%;
+      width: 80%;
       grid-template-columns: auto;
-      margin-bottom: 25px;
-      gap: 50px;
+      margin-bottom: 15px;
+      gap: 25px;
     }
-
 
   }
   
@@ -61,10 +60,7 @@
       flex-direction: row;
       float: left;
       margin: auto;
-    }
-  
-    .MediaLinks a {
-      margin: 10px;
+      
     }
   }
 
@@ -74,9 +70,16 @@
       flex-direction: row;
       float: left;
       margin: auto;
+      margin-left: 8%;
     }
-  
-    .MediaLinks a {
-      margin: 10px;
+  }
+
+  @media only screen and (max-width: 389px) {
+    .MediaLinks {
+      display: block;
+      flex-direction: row;
+      float: left;
+      margin: auto;
+      margin-left: 4%;
     }
   }
