@@ -5,8 +5,8 @@
 	Developer: Alex Govier
 	GitHub: @alex-govier5
 
-    Developer: Jasmine Kokkat
-    GitHub: @jkokkat
+    	Developer: Jasmine Kokkat
+    	GitHub: @jkokkat
     	
 	Developer: Victor Sandru
 	GitHub: @victorsandru
