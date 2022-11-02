@@ -115,12 +115,13 @@ export default function FAQ() {
             sx={{
               color: "#5C71AD",
               backgroundColor: "#eaeaea",
+              pt: 0,
             }}
           >
             <Typography align={"left"}>{i.a}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
-      </div>
+    </div>
   );
 }
