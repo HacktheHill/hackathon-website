@@ -16,6 +16,8 @@
 }
   
 .Associations {
+    position: relative;
+    margin: auto;
     justify-content: center;
     align-items: center;
 }
@@ -29,6 +31,7 @@ img{
 .IEEEBox,.SESABox, .CSSABox, .WIEBox, .ESSBox{
     align-items: center;
     justify-content: center;
+    flex-direction: column; 
     display: flex;
     padding: 0.8rem;
 } 
@@ -36,14 +39,22 @@ img{
     position: relative;
     top: -28px;
     max-height:130px;
+    display: block;
 }
 .WIE{
     position: relative;
     top: -18px;
     max-height:100px;
+    display: block;
+    margin-left: -70px;
 }
 .IEEE{
     height:70px;
+    display: block;
+}
+.SESA{
+    display: block;
+    
 }
 
 .Collaborators{
@@ -100,3 +111,25 @@ img{
     transform: scale(1.1);
     transition: 0.5s;     
 }
+
+
+/* Small screens */
+@media only screen {
+.ESS{
+    margin-top: -2px;
+}
+.WIE{
+    margin-top: -18px;
+    margin-left: 2px;
+}
+} /* Define mobile styles */
+
+/* Medium screens */
+@media only screen and (max-width: 1024px) { 
+    .ESS{
+        margin-top: 0px;
+    }
+    .WIE{
+        margin-top: 65px;
+    }
+} /* min-width 641px */
