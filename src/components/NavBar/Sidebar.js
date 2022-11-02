@@ -7,11 +7,11 @@ export default props => {
   return (
     <div className='outer'>
     <Menu right width={'50%'}>
-      <Link to="FAQ" spy={true} smooth={true} offset={-30} duration={500}>FAQ</Link>
-      <Link to="Collaborators" spy={true} smooth={true} offset={-30} duration={500}>Collaborators</Link>
-      <Link to="Schedule" spy={true} smooth={true} offset={0} duration={500}>Schedule</Link>
-      <Link to="Sponsors" spy={true} smooth={true} offset={-30} duration={500}>Sponsors</Link>
       <Link to="About" spy={true} smooth={true} offset={-30} duration={500}>About</Link> 
+      <Link to="Sponsors" spy={true} smooth={true} offset={-30} duration={500}>Sponsors</Link>
+      <Link to="Schedule" spy={true} smooth={true} offset={0} duration={500}>Schedule</Link>
+      <Link to="Collaborators" spy={true} smooth={true} offset={-30} duration={500}>Collaborators</Link>
+      <Link to="FAQ" spy={true} smooth={true} offset={-30} duration={500}>FAQ</Link>
     </Menu>
     </div>
 
