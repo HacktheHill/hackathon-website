@@ -1,0 +1,135 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+    font-family: Coolvetica;
+    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
+.Collaborators h1{
+    font-family: Coolvetica;
+    margin-bottom: 3%;
+    font-size: 3.25em;
+    margin-left: 10%;
+    font-weight: normal;
+}
+  
+.Associations {
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+   width:250px;
+   align-items: center;
+}
+
+
+.IEEEBox,.SESABox, .CSSABox, .WIEBox, .ESSBox{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    display: flex;
+    padding: 0.8rem;
+} 
+.ESS{
+    position: relative;
+    top: -28px;
+    max-height:130px;
+    display: block;
+}
+.WIE{
+    position: relative;
+    max-height:100px;
+    display: block;
+    margin-left: -70px;
+}
+.IEEE{
+    height:70px;
+    display: block;
+}
+.SESA{
+    display: block;
+    
+}
+
+.Collaborators{
+    color: black;
+    left: 10px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 2560px) {
+    h2{
+        margin-right: 1375px;
+    }
+  }
+  
+  @media only screen and (max-width: 1440px) {
+    .Associations {
+      margin-top: 0px;
+    }
+    h2{
+        margin-right: 1275px;
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) {
+    .Associations {
+      width: 75%;
+    }
+    h2{
+        margin-right: 975px;
+    }
+  }
+  
+.ESSBox a:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;          
+} 
+
+.IEEEBox a:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;     
+}
+
+.CSSABox a:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;      
+}
+
+.SESABox a:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;       
+}
+
+.WIEBox a:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;     
+}
+
+
+/* Small screens */
+@media only screen {
+.ESS{
+    margin-top: -2px;
+}
+.WIE{
+    margin-top: -18px;
+    margin-left: 2px;
+}
+} /* Define mobile styles */
+
+/* Medium screens */
+@media only screen and (max-width: 1024px) { 
+    .ESS{
+        margin-top: 0px;
+    }
+    .WIE{
+        margin-top: 65px;
+    }
+} /* min-width 641px */
