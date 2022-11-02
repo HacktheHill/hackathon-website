@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+SiteMap: https://2023.hackthehill.com/sitemap.xml
 User-agent: *
 Disallow:
