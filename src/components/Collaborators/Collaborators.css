@@ -56,6 +56,7 @@ img{
 .IEEE{
     height:70px;
     display: block;
+    margin-right: 45px;
 }
 .SESA{
     display: block;
@@ -130,14 +131,40 @@ img{
 .Collaborators h1{
     font-size: 3em;
 }
+
 } /* Define mobile styles */
 
 /* Medium screens */
 @media only screen and (max-width: 1024px) { 
     .ESS{
-        margin-top: 0px;
+        margin-top: 8px;
     }
     .WIE{
-        margin-top: 65px;
+        margin-top: 10px;
     }
+    .IEEE{
+        margin-top: 45px;
+        margin-right: 24px;
+    }
+    .SESA{
+        margin-top: -75px;
+    }
+
 } /* min-width 641px */
+
+@media only screen and (max-width: 1178px) { 
+    .ESS{
+        margin-top: 68px;
+    }
+    .WIE{
+        margin-top: 10px;
+    }
+    .IEEE{
+        margin-top: 45px;
+        margin-right: 24px;
+    }
+    .SESA{
+        margin-top: -25px;
+    }
+
+} 
