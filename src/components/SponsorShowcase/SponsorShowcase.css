@@ -17,17 +17,31 @@
   transition: 0.5s;
 }
 
+.out{
+  display: flex;
+}
+
+.out img{
+  width: 130px;
+  height: 130px;
+  margin-left: 20px;
+}
+
 .Sponsors:hover{
   color: #3B4779;
   transition: 0.5s; 
 }
 
+.mascot{
+  width: 130px;
+  height: 130px;
+}
+
 .borderW {
   border-left: 5px solid black;
   margin-left: 10%;
+  width: auto;
 }
-
-
 
 .sponsors-body{
   margin-left: 20px;
