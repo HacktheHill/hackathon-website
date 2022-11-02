@@ -10,68 +10,50 @@
 
 .Sponsors {
   color: black;
-  left: 10;
-  text-align: left;
-  margin-top: 5%;
-  width: 80%;
   transition: 0.5s;
   margin-bottom: 20%;
-}
-
-.out{
-  display: flex;
-}
-
-.out img{
-  width: 50%;
-  height: 130px;
-  margin-right: 100px;
-}
-
-.Sponsors:hover{
-  color: #3B4779;
-  transition: 0.5s; 
-}
-
-.mascot{
-  width: 130px;
-  height: 130px;
-}
-
-.borderW {
-  border-left: 5px solid black;
-  margin-left: 10%;
-  width: auto;
-}
-
-.sponsors-body{
-  margin-left: 20px;
-  font-family: Rubik;
-  font-size: 18px;
-  width: auto;
 }
 
 .Sponsors h1{
   font-family: Coolvetica;
   margin-bottom: 3%;
-  font-size: 3em;
+  font-size: 3.25em;
+  margin-left: 10%;
   font-weight: normal;
 }
 
-@media only screen and (max-width: 600px){
-  .borderW{
-    margin-left: 40px;
-  }
-  .sponsors-body{
-    width: 100%;
-    font-size: 16px;
-  }
-  h1{
-    margin-bottom: 10%;
-  }
+.sponsors-body{
+  margin-left: 10%;
+}
 
-  .Sponsors{
-    margin-top: 20%;
+.text{
+  border-left: 5px solid black;
+  padding-left: 2.25%;
+  width: 100%;
+  font-family: Rubik;
+  font-size: 1.1vw;
+}
+
+.ButtonText{
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 900px){
+  .sponsors-body{
+    width: 80%;
+  }
+  .text{
+    font-size: 16px;
+    line-height: 5vw;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .text{
+    width: 95%;
+    font-size: 16px;
+    line-height: 8vw;
+
   }
 }
     

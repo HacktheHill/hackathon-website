@@ -12,7 +12,7 @@
   color: black;
   margin-top: -10%;
   transition: 0.5s;
-  margin-bottom: 20%;
+  margin-bottom: 15vw;
 }
 
 .About h1{
@@ -81,7 +81,7 @@
   .about-body p{
     width: 95%;
     font-size: 16px;
-    line-height: 10vw;
+    line-height: 8vw;
   }
   .wrapper{
     flex-direction: column;
