@@ -121,6 +121,6 @@ export default function FAQ() {
           </AccordionDetails>
         </Accordion>
       ))}
-    </div>
+      </div>
   );
 }
