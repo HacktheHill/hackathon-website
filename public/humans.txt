@@ -11,6 +11,9 @@
 	Developer: Victor Sandru
 	GitHub: @victorsandru
 
+	Developer: Isabelle Wang
+	Github: @iwang14
+
 
 /* SITE */
 	Last update:2022/11/02
