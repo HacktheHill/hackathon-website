@@ -13,6 +13,7 @@
     margin-bottom: 3%;
     font-size: 3.25em;
     margin-left: 10%;
+    font-weight: normal;
 }
   
 .Associations {
@@ -43,7 +44,6 @@ img{
 }
 .WIE{
     position: relative;
-    top: -18px;
     max-height:100px;
     display: block;
     margin-left: -70px;
