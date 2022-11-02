@@ -113,4 +113,7 @@
     .eventTitle{
         flex-direction: column;
     }
+    .scheduleTitle{
+        font-size: 3em;
+    }
 }

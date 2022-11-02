@@ -53,7 +53,9 @@
     width: 95%;
     font-size: 16px;
     line-height: 8vw;
-
+  }
+  .Sponsors h1{
+    font-size: 3em;
   }
 }
     

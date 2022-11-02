@@ -122,6 +122,9 @@ img{
     margin-top: -18px;
     margin-left: 2px;
 }
+.Collaborators h1{
+    font-size: 3em;
+}
 } /* Define mobile styles */
 
 /* Medium screens */
