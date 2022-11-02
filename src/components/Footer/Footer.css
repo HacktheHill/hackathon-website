@@ -3,6 +3,7 @@
   src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
+
 .Footer {
     justify-content: center;
   }
@@ -64,5 +65,62 @@
   
     .MediaLinks a box-icon {
       margin-right: 2px;
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+  
+  @media only screen and (max-width: 10000px) {
+    .MediaLinks {
+      display: block;
+      margin: auto;
+    }
+  
+    .MediaLinks a {
+      margin: 15px;
+    }
+  
+    .FooterContainer {
+      display: grid;
+      width: 75%;
+      grid-template-columns: 1fr;
+      margin-bottom: 25px;
+    }
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .FooterContainer {
+      display: grid;
+      width: 75%;
+      grid-template-columns: auto;
+      margin-bottom: 25px;
+      gap: 50px;
+    }
+
+
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .MediaLinks {
+      margin: auto;
+      flex-direction: row;
+      float: left;
+      margin: auto;
+    }
+  
+    .MediaLinks a {
+      margin: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 472px) {
+    .MediaLinks {
+      display: block;
+      flex-direction: row;
+      float: left;
+      margin: auto;
+    }
+  
+    .MediaLinks a {
+      margin: 10px;
     }
   }

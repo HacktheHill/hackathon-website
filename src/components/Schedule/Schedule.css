@@ -15,6 +15,7 @@
     margin-left: 10%;
     font-weight: normal;
 }
+
 .Schedule{
     background-color:#3b477a;
     padding-bottom:60px;
@@ -111,5 +112,8 @@
     }
     .eventTitle{
         flex-direction: column;
+    }
+    .scheduleTitle{
+        font-size: 3em;
     }
 }
