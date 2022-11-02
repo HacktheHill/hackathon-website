@@ -9,25 +9,26 @@
 }
 
 .faqContainer {
+  display: flex;
+  flex-direction: column;
   color: black;
   transition: 0.5s;
   margin-bottom: 15vw;
-  max-width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .faqHeader {
   font-family: Coolvetica;
   margin-bottom: 3%;
   font-size: 3.25em;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   font-weight: normal;
 }
 
 .questionContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .questionContainer:hover {
