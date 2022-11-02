@@ -10,53 +10,81 @@
 
 .About {
   color: black;
-  left: 10px;
-  text-align: left;
-  width: 80%;
   margin-top: -10%;
   transition: 0.5s;
+  margin-bottom: 20%;
 }
 
-.About:hover{
-  color: #3B4779;
-  transition: 0.5s;
-}
-
-.borderL {
-  border-left: 5px solid black;
+.About h1{
+  font-family: Coolvetica;
+  margin-bottom: 3%;
+  font-size: 3.25em;
   margin-left: 10%;
+  font-weight: normal;
 }
 
-
+.wrapper{
+  width: 100%;
+  display: flex;
+}
 
 .about-body{
-  margin-left: 20px;
-  font-family: Rubik;
-  font-size: 18px;
-  width: auto;
-}
-
- h1{
-  font-family: Coolvetica;
-  margin-bottom: 3%;
-  font-size: 3em;
-  font-weight: normal;
   margin-left: 10%;
-  margin-top: -2%;
+  width: 50%;
 }
 
-h1{
-  font-family: Coolvetica;
-  margin-bottom: 3%;
+.about-body p{
+  border-left: 5px solid black;
+  padding-left: 5%;
+  width: 100%;
+  font-family: Rubik;
+  font-size: 1.1vw;
+  line-height: 3vw;
+}
+
+.mascot1{
+  width: 50%;
+  margin-left: 15%;
+}
+.mascot1 img{
+  width: 60%;
+  display: block;
+    filter: drop-shadow(-2px -4px 22px #ABEFFB);
+    /* Similar syntax to box-shadow */
+}
+
+@media only screen and (max-width: 900px){
+  .about-body{
+    width: 80%;
+  }
+  .mascot1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0%;
+  }
+  .mascot1 img{
+    width: 50%;
+    display: block;
+  }
+  .about-body p{
+    font-size: 16px;
+    line-height: 5vw;
+  }
 }
 
 @media only screen and (max-width: 600px){
-  .borderL{
-    margin-left: 40px;
+  .mascot1 img{
+    width: 75%;
+    display: block;
   }
-  .about-body{
-    width: 100%;
+  .about-body p{
+    width: 95%;
     font-size: 16px;
+    line-height: 10vw;
+  }
+  .wrapper{
+    flex-direction: column;
   }
   .About {
     margin-top: 0%;
