@@ -1,6 +1,5 @@
 import './Hero.css';
 import { Box, Button, useMediaQuery, useTheme, darken } from '@mui/material';
-import 'boxicons';
 import HeroImg from '../../assets/svgs/parliament-hero-asset.svg';
 import BannerLogo from '../../assets/Logos/hthlogo_banner_ver.svg';
 
@@ -24,7 +23,7 @@ function Hero() {
           transition: '1s'
         }}>
             <Box>
-              <h3>February 3-5, 2023 @ University of Ottawa</h3>
+              <h3>University of Ottawa</h3>
               <img class='BannerLogo'src={BannerLogo}></img>
               <h3>Canada's Capital Hackathon</h3>
             </Box>
@@ -38,7 +37,7 @@ function Hero() {
                 mt: matchesSM ? '7vw' : '2vw',
                 p:'10px',
                 textTransform:'none',
-                minWidth:'20%',
+                minWidth:'23%',
                 width: matchesMD ? '40%' : '0%',
                 transition: '1s',
                 '&:hover': {
@@ -50,7 +49,7 @@ function Hero() {
         </Box>
         <Box sx={{
           mt: matchesSM ? '10%' : '0%',
-          transition: '1s'
+          transition: '1s',
         }}>
           <img class="HeroImg" src={HeroImg}></img>
         </Box>
