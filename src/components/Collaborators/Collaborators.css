@@ -8,10 +8,14 @@
     src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
+.Collaborators{
+    margin-bottom: 10vw;
+}
+
 .Collaborators h1{
     font-family: Coolvetica;
-    margin-bottom: 3%;
-    font-size: 3.25em;
+    margin-bottom: 0%;
+    font-size: 3em;
     margin-left: 10%;
     font-weight: normal;
 }
@@ -26,6 +30,7 @@
 img{
    width:250px;
    align-items: center;
+   transition: 0.5s;
 }
 
 

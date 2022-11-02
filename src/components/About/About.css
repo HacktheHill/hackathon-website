@@ -12,13 +12,13 @@
   color: black;
   margin-top: -10%;
   transition: 0.5s;
-  margin-bottom: 15vw;
+  margin-bottom: 10vw;
 }
 
 .About h1{
   font-family: Coolvetica;
   margin-bottom: 3%;
-  font-size: 3.25em;
+  font-size: 3em;
   margin-left: 10%;
   font-weight: normal;
 }

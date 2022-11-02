@@ -12,12 +12,13 @@
   color: black;
   transition: 0.5s;
   margin-bottom: 20%;
+  margin-bottom: 10vw;
 }
 
 .Sponsors h1{
   font-family: Coolvetica;
   margin-bottom: 3%;
-  font-size: 3.25em;
+  font-size: 3em;
   margin-left: 10%;
   font-weight: normal;
 }

@@ -7,3 +7,12 @@
   background-repeat: no-repeat;
   z-index: 1;
 }
+
+hr {
+  width: 75%;
+  margin: auto;
+  background: gainsboro;
+  color: gainsboro;
+  border: none;
+  height: 1px;
+}

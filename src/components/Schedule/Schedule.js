@@ -1,6 +1,6 @@
 import React from "react";
 import './Schedule.css';
-import { Card, Stack, Box, useTheme, useMediaQuery, Button, darken } from "@mui/material";
+import { Card, Stack, Box, useTheme, useMediaQuery, Button, Divider } from "@mui/material";
 
 function Schedule() {
   const theme = useTheme();
@@ -63,8 +63,8 @@ function Schedule() {
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
                   borderRadius:'100px', 
                   color:'#3B4779', 
-                  mt: matchesMD ? '3vw' : '0vw',
-                  mb: matchesMD ? '3vw' : '0vw',
+                  mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
+                  mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
                   textTransform:'none',
                   minWidth:'16%',
@@ -84,7 +84,7 @@ function Schedule() {
               <p className="eventDesc" align='left'>
                 Need resume advice on the spot? Hang out with some developers 
                 from Ciena and Microsoft as they review and evaluate resumes submitted by students, 
-                all while filling yourself up with some pizza fresh from fresh pizza. 
+                all while filling yourself up with some fresh pizza. 
               </p>
             </Stack>
           </Stack>
@@ -115,8 +115,8 @@ function Schedule() {
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
                   borderRadius:'100px', 
                   color:'#3B4779', 
-                  mt: matchesMD ? '3vw' : '0vw',
-                  mb: matchesMD ? '3vw' : '0vw',
+                  mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
+                  mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
                   textTransform:'none',
                   minWidth:'16%',
@@ -165,8 +165,8 @@ function Schedule() {
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
                   borderRadius:'100px', 
                   color:'#3B4779', 
-                  mt: matchesMD ? '3vw' : '0vw',
-                  mb: matchesMD ? '3vw' : '0vw',
+                  mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
+                  mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
                   textTransform:'none',
                   minWidth:'16%',
