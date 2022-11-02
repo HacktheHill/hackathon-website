@@ -4,7 +4,6 @@
   
   .FooterBody {
     display: grid;
-    grid-template: 1fr / 1fr;
     place-items: center;
   }
   
@@ -24,62 +23,28 @@
     font-size: 12px;
     margin-bottom: 25px;
   }
-  
+  .FooterContainer{
+    display: block;
+    margin-bottom: 50px;
+  }
+  .MediaLinks a {
+    margin: 0px;
+  }
   @media only screen and (max-width: 10000px) {
-    .MediaLinks {
-      display: block;
-      margin: auto;
-    }
   
     .MediaLinks a {
-      margin: 15px;
-    }
-  
-    .FooterContainer {
-      display: grid;
-      width: 80%;
-      grid-template-columns: 1fr;
-      margin-bottom: 25px;
+      padding: 15px;
     }
   }
-  
-  @media only screen and (max-width: 1200px) {
-    .FooterContainer {
-      display: grid;
-      width: 80%;
-      grid-template-columns: auto;
-      margin-bottom: 15px;
-      gap: 25px;
-    }
-
-  }
-  
   @media only screen and (max-width: 600px) {
-    .MediaLinks {
-      margin: auto;
-      flex-direction: row;
-      float: left;
-      margin: auto;
-      
+  
+    .MediaLinks a {
+      padding: 5px;
     }
   }
-
-  @media only screen and (max-width: 472px) {
-    .MediaLinks {
-      display: block;
-      flex-direction: row;
-      float: left;
-      margin: auto;
-      margin-left: 8%;
-    }
-  }
-
-  @media only screen and (max-width: 389px) {
-    .MediaLinks {
-      display: block;
-      flex-direction: row;
-      float: left;
-      margin: auto;
-      margin-left: 4%;
+  @media only screen and (max-width: 450px) {
+  
+    .MediaLinks a {
+      padding: 0px;
     }
   }

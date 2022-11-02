@@ -33,8 +33,6 @@ function Footer() {
               <box-icon color='#3B4779' animation='tada-hover' name='medium' type='logo' ></box-icon>
             </a>
           </div>
-          <div class="Signature">
-          </div>
         </div>
       </div>
     </div>
