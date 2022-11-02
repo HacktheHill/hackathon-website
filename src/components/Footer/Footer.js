@@ -1,6 +1,7 @@
 import './Footer.css';
 import React from "react";
 import FooterLogo from "../../assets/Logos/hthlogo_banner_ver.svg";
+import 'boxicons';
 
 function Footer() {
   return (
