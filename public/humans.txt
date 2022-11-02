@@ -7,6 +7,9 @@
 
     Developer: Jasmine Kokkat
     GitHub: @jkokkat
+    	
+	Developer: Victor Sandru
+	GitHub: @victorsandru
 
 
 /* SITE */
