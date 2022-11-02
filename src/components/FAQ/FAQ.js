@@ -34,7 +34,7 @@ export default function FAQ() {
     },
     {
       q: "Can I start on the project before the hackathon?",
-      a: "No, all projects must be started after open ceremonies on February 3rd. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
+      a: "No, all projects must be started after open ceremonies on the first day of the event. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
       key: "4",
     },
     {
@@ -54,7 +54,7 @@ export default function FAQ() {
     },
     {
       q: "Who can participate and how do I apply?",
-      a: "Any current university student or recent graduate can join! Applications will be open insert_date",
+      a: "Any current university student or recent graduate can join. Follow us on social media to keep updated of when applications open!",
       key: "8",
     },
     {

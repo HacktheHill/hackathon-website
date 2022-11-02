@@ -32,7 +32,7 @@
   padding-left: 2.25%;
   width: 80%;
   font-family: Rubik;
-  font-size: 1.1vw;
+  font-size: 16px;
 }
 
 .ButtonText{
@@ -40,8 +40,8 @@
 }
 
 @media only screen and (max-width: 900px){
-  .sponsors-body{
-    width: 80%;
+  .text{
+    width: 90%;
   }
   .text{
     font-size: 16px;
@@ -51,7 +51,7 @@
 
 @media only screen and (max-width: 600px){
   .text{
-    width: 95%;
+    width: 90%;
     font-size: 16px;
     line-height: 8vw;
   }

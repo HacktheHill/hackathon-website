@@ -59,7 +59,7 @@ function Schedule() {
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
                 Resume Roast    
-                <Button sx={{
+                <Button disabled sx={{
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
                   borderRadius:'100px', 
                   color:'#3B4779', 

@@ -17,8 +17,8 @@ function SponsorShowcase() {
         <div className="out">
             <div class="sponsors-body">
             <p class="text">
-                Hack the Hill is made possible by our generous sponsors.
-                Interested in supporting one of Ottawa's largest hackathons?
+            Hack the Hill is made possible by our generous sponsors. 
+            Interested in supporting the capital’s hackathon?
               </p>
               <Button href={`mailto:sponsorship@hackthehill.com`} sx={{
               backgroundColor: '#5C71AD',
