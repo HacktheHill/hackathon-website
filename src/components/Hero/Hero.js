@@ -37,7 +37,7 @@ function Hero() {
                 mt: matchesSM ? '7vw' : '2vw',
                 p:'10px',
                 textTransform:'none',
-                minWidth:'20%',
+                minWidth:'23%',
                 width: matchesMD ? '40%' : '0%',
                 transition: '1s',
                 '&:hover': {
