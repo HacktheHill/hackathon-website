@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Coolvetica;
+  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
 .Footer {
     justify-content: center;
   }
@@ -20,16 +25,22 @@
   
   .LogoText {
     display: block;
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 25px;
+    font-family: Coolvetica;
+    font-weight: normal;
+    letter-spacing: 0.05em;
   }
+
   .FooterContainer{
     display: block;
     margin-bottom: 50px;
   }
+
   .MediaLinks a {
     margin: 0px;
   }
+
   @media only screen and (max-width: 10000px) {
   
     .MediaLinks a {
@@ -46,5 +57,12 @@
   
     .MediaLinks a {
       padding: 0px;
+    }
+  }
+
+  @media only screen and (max-width: 353px) {
+  
+    .MediaLinks a box-icon {
+      margin-right: 2px;
     }
   }
