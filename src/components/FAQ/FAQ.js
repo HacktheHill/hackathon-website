@@ -64,7 +64,7 @@ export default function FAQ() {
     },
     {
       q: "What are the themes for Hack the Hill?",
-      a: "Full details about the hackathon themes will not be released until insert_date. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+      a: "Full details about the hackathon themes will not be released for a little while. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
       key: "10",
     },
   ];
@@ -79,7 +79,7 @@ export default function FAQ() {
 
   return (
     <div className={styles.faqContainer}>
-      <div className={styles.faqHeader}>Frequently Asked Questions</div>
+      <div id= "FAQ" className={styles.faqHeader}>Frequently Asked Questions</div>
       {quesAns.map((i) => (
         <Accordion
           className={styles.questionContainer}

@@ -6,7 +6,7 @@ import Mascot from '../../assets/Logos/mascot_nametag_waving.svg';
 class About extends Component {
   render() {
     return (
-      <div className="About">
+      <div className="About" id="About">
         <h1>About Us</h1>
         <Stack direction = {{xs: "column", md: "row"}} spacing={10}>
           <div class="about-body">

@@ -19,6 +19,7 @@
     float: right;
     margin-right: 40px;
     margin-top: 40px;
+    cursor: pointer;
 }
 
 .Item a{
@@ -50,7 +51,7 @@
 
 
 
-@media(max-width: 600px){
+@media(max-width: 900px){
     .Items{
         visibility: hidden;
     }

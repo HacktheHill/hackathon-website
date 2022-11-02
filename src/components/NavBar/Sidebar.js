@@ -1,24 +1,17 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import './Sidebar.css';
+import { Link } from 'react-scroll';
 
 export default props => {
   return (
     <div className='outer'>
     <Menu right width={'50%'}>
-      
-      <a className="menu-item" href='https://www.google.ca/'>
-        About
-      </a>
-      <a className="menu-item" href='https://www.google.ca/'>
-        Sponsors
-      </a>
-      <a className="menu-item" href='https://www.google.ca/'>
-        Collaborators
-      </a>
-      <a className="menu-item" href='https://www.google.ca/'>
-        FAQ
-      </a>
+      <Link to="FAQ" spy={true} smooth={true} offset={-30} duration={500}>FAQ</Link>
+      <Link to="Collaborators" spy={true} smooth={true} offset={-30} duration={500}>Collaborators</Link>
+      <Link to="Schedule" spy={true} smooth={true} offset={0} duration={500}>Schedule</Link>
+      <Link to="Sponsors" spy={true} smooth={true} offset={-30} duration={500}>Sponsors</Link>
+      <Link to="About" spy={true} smooth={true} offset={-30} duration={500}>About</Link> 
     </Menu>
     </div>
 

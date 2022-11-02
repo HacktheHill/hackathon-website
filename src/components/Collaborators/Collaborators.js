@@ -12,9 +12,9 @@ function Collaborators() {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
   return (
-    <div className="Collaborators">
+    <div id="Collaborators" className="Collaborators">
        <h1>Collaborators </h1>
-        <Grid container  id="Associations" className="Associations">
+        <Grid container id="Associations" className="Associations">
           <Grid item direction="column" className ="CSSABox">
           <a href="https://www.cssa-aei.ca/"><img className="CSSA" alt="CSSA" src={CSSA}></img></a>
           </Grid>
