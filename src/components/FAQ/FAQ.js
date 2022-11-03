@@ -34,7 +34,7 @@ export default function FAQ() {
     },
     {
       q: "Can I start on the project before the hackathon?",
-      a: "No, all projects must be started after open ceremonies on February 3rd. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
+      a: "No, all projects must be started after open ceremonies on the first day of the event. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
       key: "4",
     },
     {
@@ -54,7 +54,7 @@ export default function FAQ() {
     },
     {
       q: "Who can participate and how do I apply?",
-      a: "Any current university student or recent graduate can join! Applications will be open insert_date",
+      a: "Any current university student or recent graduate can join. Follow us on social media to keep updated of when applications open!",
       key: "8",
     },
     {
@@ -64,7 +64,7 @@ export default function FAQ() {
     },
     {
       q: "What are the themes for Hack the Hill?",
-      a: "Full details about the hackathon themes will not be released until insert_date. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+      a: "Full details about the hackathon themes will not be released for a little while. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
       key: "10",
     },
   ];
@@ -79,7 +79,7 @@ export default function FAQ() {
 
   return (
     <div className={styles.faqContainer}>
-      <div className={styles.faqHeader}>Frequently Asked Questions</div>
+      <div id= "FAQ" className={styles.faqHeader}>Frequently Asked Questions</div>
       {quesAns.map((i) => (
         <Accordion
           className={styles.questionContainer}

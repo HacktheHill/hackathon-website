@@ -24,6 +24,7 @@ function App() {
         <Schedule />
         <Collaborators />
         <FAQ />
+        <hr></hr>
         <Footer />
       </div>
     </div>

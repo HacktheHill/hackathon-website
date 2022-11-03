@@ -12,12 +12,13 @@
   color: black;
   transition: 0.5s;
   margin-bottom: 20%;
+  margin-bottom: 10vw;
 }
 
 .Sponsors h1{
   font-family: Coolvetica;
   margin-bottom: 3%;
-  font-size: 3.25em;
+  font-size: 3em;
   margin-left: 10%;
   font-weight: normal;
 }
@@ -31,7 +32,7 @@
   padding-left: 2.25%;
   width: 80%;
   font-family: Rubik;
-  font-size: 1.1vw;
+  font-size: 1.15vw;
 }
 
 .ButtonText{
@@ -39,8 +40,8 @@
 }
 
 @media only screen and (max-width: 900px){
-  .sponsors-body{
-    width: 80%;
+  .text{
+    width: 90%;
   }
   .text{
     font-size: 16px;
@@ -50,7 +51,7 @@
 
 @media only screen and (max-width: 600px){
   .text{
-    width: 95%;
+    width: 90%;
     font-size: 16px;
     line-height: 8vw;
   }

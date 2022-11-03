@@ -11,7 +11,7 @@
 .Schedule h1{
     font-family: Coolvetica;
     margin-bottom: 3%;
-    font-size: 3.25em;
+    font-size: 3em;
     margin-left: 10%;
     font-weight: normal;
 }
@@ -23,6 +23,7 @@
     background-repeat: no-repeat;
     background-position: left 30px, right 400px, top 100px right 100px;
     background-size: 10%, 8%, 2%;
+    margin-bottom: 10vw;
 }
 
 .scheduleTitle{

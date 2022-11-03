@@ -12,13 +12,13 @@
   color: black;
   margin-top: -10%;
   transition: 0.5s;
-  margin-bottom: 15vw;
+  margin-bottom: 10vw;
 }
 
 .About h1{
   font-family: Coolvetica;
   margin-bottom: 3%;
-  font-size: 3.25em;
+  font-size: 3em;
   margin-left: 10%;
   font-weight: normal;
 }
@@ -38,13 +38,14 @@
   padding-left: 5%;
   width: 100%;
   font-family: Rubik;
-  font-size: 1.1vw;
-  line-height: 3vw;
+  font-size: 1.15vw;
+  line-height: 2.5vw;
 }
 
 .mascot1{
   width: 50%;
   margin-left: 15%;
+  margin-top: 10%;
 }
 .mascot1 img{
   width: 60%;
@@ -66,6 +67,7 @@
   .mascot1 img{
     width: 50%;
     display: block;
+    margin-top: 0%;
   }
   .about-body p{
     font-size: 14px;
