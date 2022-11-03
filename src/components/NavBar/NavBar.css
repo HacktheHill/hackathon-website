@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+.Navbar{
+    height: 150px;
+    width: 100%;
+}
+
+.Navbar img{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    max-width: 125px;
+}
+
+.Item{
+    float: right;
+    margin-right: 40px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.Item a{
+    color: #3B4779;
+    font-weight: bolder;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    font-family: Rubik;
+}
+
+.Item a::after{
+    background: #3B4779;
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.Item a:hover::after{
+    opacity: 0.8;
+    transform: translateY(0);
+}
+
+
+
+@media(max-width: 900px){
+    .Items{
+        visibility: hidden;
+    }
+
+    .Navbar img{
+        width: 105px;
+        height: 105px;
+        top: 0;
+    }
+}

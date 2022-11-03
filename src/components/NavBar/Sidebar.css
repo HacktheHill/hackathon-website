@@ -1,0 +1,101 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Coolvetica;
+  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
+.outer{
+    visibility: hidden;
+}
+
+@media(max-width:900px){
+
+    .outer{
+        visibility: visible;
+    }
+
+    /* Position and sizing of burger button */
+    .bm-burger-button {
+        position: absolute;
+        width: 28px;
+        height: 23px;
+        right: 36px;
+        top: 40px;
+      }
+      
+      /* Color/shape of burger icon bars */
+      .bm-burger-bars {
+        background: #3b4779;
+      }
+      
+    
+      /* Position and sizing of clickable cross button */
+      .bm-cross-button {
+        height: 44px;
+        width: 44px;
+      }
+      
+      /* Color/shape of close button cross */
+      .bm-cross {
+        background: white;
+      }
+      
+      /*
+      Sidebar wrapper styles
+      Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+      */
+      .bm-menu-wrap {
+        position: fixed;
+        height: 100%;
+      }
+      
+      /* General sidebar styles */
+      .bm-menu {
+        background: #3b4779;
+        padding-top: 80px;
+        font-size: 1.15em;
+      }
+      
+      /* Morph shape necessary with bubble or elastic */
+      .bm-morph-shape {
+        fill: #3b4779;
+      }
+      
+      /* Wrapper for item list */
+      .bm-item-list {
+        color: white;
+      }
+      
+      /* Individual item */
+      .bm-item {
+        display: inline-block;
+        color: #d1d1d1;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        text-align: left;
+        text-decoration: none;
+        transition: color 0.2s;
+        font-size: 15px;
+        font-family: Rubik;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+      }
+
+      box-icon{
+        margin-left: 20px;
+        margin-right: 15px;
+      }
+    
+      .bm-item:hover{
+        color:#ffffff;;
+      }
+      
+      /* Styling of overlay */
+      .bm-overlay {
+        background: rgba(0, 0, 0, 0.3);
+      }
+}

@@ -1,0 +1,53 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Coolvetica;
+  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+}
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  transition: 0.5s;
+  margin-bottom: 10vw;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: bold;
+  font-family: Rubik;
+}
+
+.faqHeader {
+  font-family: Coolvetica;
+  margin-bottom: 2%;
+  font-size: 3em;
+  font-weight: normal;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.questionContainer:hover {
+  background-color: "#eaeaea";
+}
+
+.questionContainer:before {
+  display: "none";
+}
+
+.question {
+  color: #5c71ad;
+  font-size: 32;
+  font-family: Rubik;
+}
+
+.answer {
+  color: black;
+  font-size: 16px;
+  font-family: Rubik;
+}
