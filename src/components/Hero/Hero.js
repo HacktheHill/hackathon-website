@@ -2,6 +2,7 @@ import './Hero.css';
 import { Box, Button, useMediaQuery, useTheme, darken } from '@mui/material';
 import HeroImg from '../../assets/svgs/parliament-hero-asset.svg';
 import BannerLogo from '../../assets/Logos/hthlogo_banner_ver.svg';
+import { Link } from 'react-scroll';
 
 function Hero() {
 
@@ -37,13 +38,15 @@ function Hero() {
                 mt: matchesSM ? '7vw' : '2vw',
                 p:'10px',
                 textTransform:'none',
-                minWidth:'23%',
+                minWidth:'20%',
                 width: matchesMD ? '40%' : '0%',
                 transition: '1s',
                 '&:hover': {
                   backgroundColor: darken('#5C71AD', 0.3)}
               }}>
-                  <p class='ButtonText'>Learn More</p>
+                <div class='ButtonText'>
+                  <Link to='About' class='ButtonText' spy={true} smooth={true} offset={-30} duration={500}>Learn More</Link>
+                </div>
               </Button>
             </Box>
         </Box>
