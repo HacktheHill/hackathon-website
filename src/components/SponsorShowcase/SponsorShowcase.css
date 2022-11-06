@@ -8,6 +8,38 @@
   src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
+img{
+  width:250px;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.SponsorsDisplay {
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.SponsorIconBox {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  display: flex;
+  padding: 1rem;
+  padding-bottom: 0;
+} 
+
+.SponsorIcon { 
+  position: center;
+  max-height:130px;
+  display: block;
+  scale: 0.8;
+}
+
+.SponsorIconBox a:hover img{
+  transform: scale(1.1);
+  transition: 0.5s;     
+}
+
 .Sponsors {
   color: black;
   transition: 0.5s;
