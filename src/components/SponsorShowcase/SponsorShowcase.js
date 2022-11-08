@@ -1,10 +1,16 @@
 import React from "react";
 import "./SponsorShowcase.css";
 import { Button, useMediaQuery, useTheme, darken, Grid } from '@mui/material';
-import LoneHeaven from '../../assets/Logos/placeholder_small.svg';
-import StackOverFlow from '../../assets/Logos/Stack_Overflow.svg';
-import MLH from '../../assets/Logos/Mlh-logo-color.svg';
-import Github from '../../assets/Logos/github.svg';
+import LoneHeaven from '../../assets/Logos/Lonehaven.svg';
+import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
+import MLH from '../../assets/Logos/MLH.svg';
+import Github from '../../assets/Logos/Github.svg';
+import DotTech from '../../assets/Logos/DotTech.svg';
+import OSP from '../../assets/Logos/OSP.png';
+import uOttawaEngineering from '../../assets/Logos/uOttawaEngineering.png';
+import EEF from '../../assets/Logos/EEF.png';
+import NDL from '../../assets/Logos/NDL.webp';
+import uOttawa from '../../assets/Logos/uOttawa.png';
 
 function SponsorShowcase() {
   
@@ -53,6 +59,28 @@ function SponsorShowcase() {
               </Grid>
               <Grid item direction="column" className ="SponsorIconBox">
                 <a href="https://www.lonehaven.com/"><img className="SponsorIcon" alt="SponsorIcon" src={LoneHeaven}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                <a href="https://get.tech/"><img className="SponsorIcon" alt="SponsorIcon" src={DotTech}></img></a>
+              </Grid>
+            </Grid>
+        <h1>  </h1>
+        <h1>Community Partners</h1>
+        <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+              <Grid item direction="column" className ="SponsorIconBox">
+                <a href="https://www.ottawashirtprinting.com/"><img className="SponsorIcon" alt="SponsorIcon" src={OSP}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                <a href="https://www2.uottawa.ca/faculty-engineering/"><img className="SponsorIcon" alt="SponsorIcon" src={uOttawaEngineering}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                <a href="https://www.facebook.com/uottawaeeffdg/"><img className="SponsorIcon" alt="SponsorIcon" src={EEF}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                <a href="https://www.youtube.com/channel/UC9K44RtwiROAwCpALm1wdyQ/about"><img className="SponsorIcon" alt="SponsorIcon" src={NDL}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                <a href="https://www2.uottawa.ca/en"><img className="SponsorIcon" alt="SponsorIcon" src={uOttawa}></img></a>
               </Grid>
             </Grid> 
       </div>
