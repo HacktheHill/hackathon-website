@@ -19,7 +19,6 @@
     }
 
 
-
     /* Position and sizing of burger button */
     .bm-burger-button {
         position: absolute;
@@ -76,7 +75,7 @@
       .bm-item {
         display: inline-block;
         color: #d1d1d1;
-        margin-left: 20px;
+        margin-left: 10px;
         margin-bottom: 30px;
         text-align: left;
         text-decoration: none;
@@ -89,7 +88,7 @@
 
       box-icon{
         margin-left: 0px;
-        margin-right: 15px;
+        margin-right: 20px;
         margin-top: 10px;
         margin-bottom: 10px;
       }
