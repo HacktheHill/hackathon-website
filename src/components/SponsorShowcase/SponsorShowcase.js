@@ -6,7 +6,7 @@ import { Button, useMediaQuery, useTheme, darken, Grid } from '@mui/material';
 import LoneHeaven from '../../assets/Logos/Lonehaven.svg';
 import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
 import MLH from '../../assets/Logos/MLH.svg';
-import Github from '../../assets/Logos/Github.svg';
+import Github from '../../assets/Logos/github.svg';
 import DotTech from '../../assets/Logos/DotTech.svg';
 import OSP from '../../assets/Logos/OSP.png';
 import uOttawaEngineering from '../../assets/Logos/uOttawaEngineering.png';
