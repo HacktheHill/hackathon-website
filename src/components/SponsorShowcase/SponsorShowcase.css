@@ -26,7 +26,7 @@ img{
   display: flex;
   padding: 1rem;
   padding-bottom: 0;
-} 
+}
 
 .SponsorIcon { 
   position: center;
@@ -35,7 +35,7 @@ img{
   scale: 0.8;
 }
 
-.SponsorIconBox a:hover img{
+.SponsorIconBox a:hover{
   transform: scale(1.1);
   transition: 0.5s;     
 }
@@ -57,6 +57,11 @@ img{
 
 .sponsors-body{
   margin-left: 10%;
+}
+
+.PaperBox a:hover img{
+  transform: scale(1.1);
+  transition: 0.5s;     
 }
 
 .text{
@@ -81,12 +86,22 @@ img{
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 590px){
   .text{
     width: 90%;
     font-size: 16px;
     line-height: 8vw;
   }
+
+  .SponsorIconBox {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    display: flex;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
   .Sponsors h1{
     font-size: 3em;
   }
