@@ -58,61 +58,61 @@ function SponsorShowcase() {
           </div> 
         </div>
             <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-              <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
+            <Item className = "PaperBox">
+              <Grid item direction="column" className ="SponsorIconBox" marginTop={-1}>
                   <a href="https://stackoverflow.com/"><img className="SponsorIcon" alt="SponsorIcon" src={StackOverFlow}></img></a>
-                </Item>
               </Grid>
+            </Item>
+            <Item className = "PaperBox">
               <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
                   <a href="https://mlh.io/"><img className="SponsorIcon" alt="SponsorIcon" src={MLH}></img></a>
-                </Item>
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">  
+                </Grid>
+              </Item>
+              <Item className = "PaperBox">  
+              <Grid item direction="column" className ="SponsorIconBox" marginTop={1}>
                   <a href="https://github.com/about"><img className="SponsorIcon" alt="SponsorIcon" src={Github}></img></a>
-                </Item>
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
+                </Grid>
+              </Item>
+              <Item className = "PaperBox">
+                <Grid item direction="column" className ="SponsorIconBox" marginTop={3}>
                   <a href="https://www.lonehaven.com/"><img className="SponsorIcon" alt="SponsorIcon" src={LoneHeaven}></img></a>
-                </Item>
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
+                </Grid>
+              </Item>
+              <Item className = "PaperBox">
+                <Grid item direction="column" className ="SponsorIconBox" marginTop={1}>
                   <a href="https://get.tech/"><img className="SponsorIcon" alt="SponsorIcon" src={DotTech}></img></a>
-                </Item>
-              </Grid>
+                </Grid>
+              </Item>
             </Grid>
         <h1>  </h1>
         <h1>Community Partners</h1>
-        <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-              <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
+          <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+            <Item className = "PaperBox">
+              <Grid item direction="column" className ="SponsorIconBox" marginTop={1}>
                   <a href="https://www.ottawashirtprinting.com/"><img className="SponsorIcon" alt="SponsorIcon" src={OSP}></img></a>
-                </Item>
               </Grid>
+            </Item>
+            <Item className = "PaperBox">
               <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
                   <a href="https://www2.uottawa.ca/faculty-engineering/"><img className="SponsorIcon" alt="SponsorIcon" src={uOttawaEngineering}></img></a>
-                </Item>
               </Grid>
+            </Item>
+            <Item className = "PaperBox">
               <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
                   <a href="https://www.facebook.com/uottawaeeffdg/"><img className="SponsorIcon" alt="SponsorIcon" src={EEF}></img></a>
-                </Item>
               </Grid>
+            </Item>
+            <Item className = "PaperBox">
               <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
                   <a href="https://www.youtube.com/channel/UC9K44RtwiROAwCpALm1wdyQ/about"><img className="SponsorIcon" alt="SponsorIcon" src={NDL}></img></a>
-                </Item>
               </Grid>
+            </Item>
+            <Item className = "PaperBox">
               <Grid item direction="column" className ="SponsorIconBox">
-                <Item className = "PaperBox">
                   <a href="https://www2.uottawa.ca/en"><img className="SponsorIcon" alt="SponsorIcon" src={uOttawa}></img></a>
-                </Item>
               </Grid>
-            </Grid> 
+            </Item>
+          </Grid> 
       </div>
     );
   }

@@ -35,9 +35,16 @@ img{
   scale: 0.8;
 }
 
-.SponsorIconBox a:hover{
-  transform: scale(1.1);
-  transition: 0.5s;     
+.SponsorIconBox {  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  display: flex;  
+  padding-bottom: 0;
+}
+
+.PaperBox {
+  align-items: center;
 }
 
 .Sponsors {
