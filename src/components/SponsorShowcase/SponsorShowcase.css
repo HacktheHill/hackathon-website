@@ -8,6 +8,45 @@
   src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
+img{
+  width:250px;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.SponsorsDisplay {
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.SponsorIconBox {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  display: flex;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.SponsorIcon { 
+  position: center;
+  max-height:130px;
+  display: block;
+  scale: 0.8;
+}
+
+.SponsorIconBox {  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  display: flex;  
+  padding-bottom: 0;
+}
+
+.PaperBox {
+  align-items: center;
+}
+
 .Sponsors {
   color: black;
   transition: 0.5s;
@@ -25,6 +64,11 @@
 
 .sponsors-body{
   margin-left: 10%;
+}
+
+.PaperBox a:hover img{
+  transform: scale(1.1);
+  transition: 0.5s;     
 }
 
 .text{
@@ -49,12 +93,22 @@
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 590px){
   .text{
     width: 90%;
     font-size: 16px;
     line-height: 8vw;
   }
+
+  .SponsorIconBox {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    display: flex;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
   .Sponsors h1{
     font-size: 3em;
   }
