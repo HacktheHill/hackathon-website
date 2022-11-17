@@ -104,7 +104,7 @@ function SponsorShowcase() {
             </Item>
             <Item className = "PaperBox">
               <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www.youtube.com/channel/UC9K44RtwiROAwCpALm1wdyQ/about"><img className="SponsorIcon" alt="SponsorIcon" src={NDL}></img></a>
+                  <a href="https://www.youtube.com/channel/UC9K44RtwiROAwCpALm1wdyQ/videos"><img className="SponsorIcon" alt="SponsorIcon" src={NDL}></img></a>
               </Grid>
             </Item>
             <Item className = "PaperBox">
