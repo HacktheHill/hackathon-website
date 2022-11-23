@@ -178,7 +178,7 @@ function Schedule() {
                   }
                   }}
                 >
-                  <p class='ButtonText'>Sign up <b>→</b></p>
+                  <p class='ButtonText'>View Video</p>
                 </Button>
               </div>
               <div className ="subTitle">6 p.m. - 10 p.m. @ STM 117</div>
