@@ -110,7 +110,7 @@ function Schedule() {
             </div>
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
-                Coffee, Code & Cram
+                Coffee, Code, and Cram
                 <Button target='_blank' href='https://forms.gle/WUgn5g8XTjNf9Eq39' sx={{
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
                   borderRadius:'100px', 
