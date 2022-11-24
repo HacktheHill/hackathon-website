@@ -2,6 +2,7 @@ import './Footer.css';
 import React from "react";
 import FooterLogo from "../../assets/Logos/hthlogo_banner_ver.svg";
 import 'boxicons';
+import MLH_code_of_conduct from "../../assets/Documents/mlh-code-of-conduct.pdf";
 
 function Footer() {
   return (
@@ -14,6 +15,12 @@ function Footer() {
           <p>Canada's Capital Hackathon.</p>
         </div>
         <div class="FooterContainer">
+
+          <div className='FooterLinks'>
+            <a href={MLH_code_of_conduct}>Code Of Conduct</a>
+            <a href="https://mlh.io/privacy">Privacy Policy</a>
+            {/* <a href={MLH_code_of_conduct}>Hack the Hill Constitution</a> */}
+          </div>
           <div className="MediaLinks">
             <a href="https://www.facebook.com/canadascapitalhackathon" target="_blank">
               <box-icon color='#3B4779' animation='tada-hover' type="logo" name="facebook-square"/>
