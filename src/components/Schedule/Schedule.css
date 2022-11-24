@@ -21,7 +21,7 @@
     padding-bottom:60px;
     background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
     background-repeat: no-repeat;
-    background-position: left 30px, right 400px, top 100px right 100px;
+    background-position: left 50px, right 400px, top 100px right 100px;
     background-size: 10%, 8%, 2%;
     margin-bottom: 10vw;
 }
@@ -116,5 +116,14 @@
     }
     .scheduleTitle{
         font-size: 3em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Schedule{
+        background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
+        background-repeat: no-repeat;
+        background-position: left 150px, right 750px, top 100px right 50px;
+        background-size: 18%, 18%, 7%;
     }
 }
