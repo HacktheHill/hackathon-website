@@ -161,7 +161,7 @@ function Schedule() {
             </div>
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
-                Wicked Web Dev
+                Wicked Web Work
                 <Button disabled sx={{
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
                   borderRadius:'100px', 
