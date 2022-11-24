@@ -238,6 +238,54 @@ function Schedule() {
               </p>
             </Stack>
           </Stack>
+
+          <Stack direction = {{xs: "column", md: "row"}} spacing={matchesMD ? 5 : 10} sx={{ width:'100%' }}>
+            <div class='Center'>
+              <Card 
+                variant='outlined' 
+                elevation={4} 
+                style={styles.card} 
+                sx={{
+                  '&:hover': {
+                    transform:'scale(1.05)',
+                    transition: 'transform 330ms ease-in-out'
+                }
+                }}
+              >
+                <Stack direction={'column'}>
+                  <div className ="eventMonth">January</div>
+                  <div className ="eventDay">25</div>
+                </Stack>       
+              </Card>
+            </div>
+            <Stack sx={{ width:'100%' }}>
+              <div className ="eventTitle">
+                Got Games?
+                <Button disabled sx={{
+                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
+                  borderRadius:'100px', 
+                  color:'#3B4779', 
+                  mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
+                  mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
+                  p:'7px',
+                  textTransform:'none',
+                  minWidth:'16%',
+                  width: matchesSM ? '50%' : matchesLG ? '25%' : '0%',
+                  transition: '1s',
+                  '&:hover': {
+                    backgroundColor: '#f094bc',
+                  }
+                  }}
+                >
+                  <p class='ButtonText'>Sign up <b>→</b></p>
+                </Button> 
+              </div>
+              <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
+              <p className="eventDesc" align='left'>
+                Discover the best that Game Development has to offer at a Unity workshop offered by Propel VR.
+              </p>              
+            </Stack>
+          </Stack>
         </Stack>
       </Box>
     </div>
