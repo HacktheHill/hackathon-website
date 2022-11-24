@@ -41,6 +41,7 @@
     margin-bottom: 50px;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 5%;
   }
 
 
@@ -53,10 +54,9 @@
 
   .MediaLinks {
     text-align: center;
-    margin-left:auto;
   }
   .FooterLinks {
-    margin-bottom: 5%;
+    margin-left: auto;
     padding-left: 2%;
 
   }
@@ -83,6 +83,20 @@
     .FooterLinks a {
       display: block;
     }
+    .FooterContainer {
+      display: block;
+      margin-bottom: 2%;
+    }
+    .FooterLinks {
+      display: flex;
+      margin: 0 auto;
+      padding:0;
+    }
+
+    .FooterLinks a{
+      margin: 0 auto;
+    }
+    
 
   }
   @media only screen and (max-width: 600px) {

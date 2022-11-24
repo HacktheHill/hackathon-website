@@ -15,12 +15,6 @@ function Footer() {
           <p>Canada's Capital Hackathon.</p>
         </div>
         <div class="FooterContainer">
-
-          <div className='FooterLinks'>
-            <a href={MLH_code_of_conduct} target="_blank">Code Of Conduct</a>
-            <a href="https://mlh.io/privacy" target="_blank">Privacy Policy</a>
-            {/* <a href={MLH_code_of_conduct}>Hack the Hill Constitution</a> */}
-          </div>
           <div className="MediaLinks">
             <a href="https://www.facebook.com/canadascapitalhackathon" target="_blank">
               <box-icon color='#3B4779' animation='tada-hover' type="logo" name="facebook-square"/>
@@ -41,7 +35,13 @@ function Footer() {
               <box-icon color='#3B4779' animation='tada-hover' name='medium' type='logo' ></box-icon>
             </a>
           </div>
+          <div className='FooterLinks'>
+            <a href={MLH_code_of_conduct} target="_blank">Code Of Conduct</a>
+            <a href="https://mlh.io/privacy" target="_blank">Privacy Policy</a>
+            {/* <a href={MLH_code_of_conduct}>Hack the Hill Constitution</a> */}
+          </div>
         </div>
+        
       </div>
     </div>
   );
