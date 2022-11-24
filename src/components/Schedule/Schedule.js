@@ -282,7 +282,7 @@ function Schedule() {
               </div>
               <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
               <p className="eventDesc" align='left'>
-                Discover the best that Game Development has to offer!
+                Discover the best that game development has to offer!
                 Join us along side the uOttawa Game Development Club for an introduction to Unity workshop,
                 presented by Propel VR.
               </p>              
