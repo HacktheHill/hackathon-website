@@ -17,13 +17,16 @@ class About extends Component {
             with the goal of setting the standard for how hackathons are operated.
             <br></br>
             <br></br>
-            The uOttawa Engineering Student Society, IEEE uOttawa Student Branch, Computer Science Student Association 
-            and Software Engineering Student Association are proud to bring a flagship 
+            The uOttawa Engineering Student Society, IEEE uOttawa Student Branch, Computer Science Student Association, 
+            Software Engineering Student Association, Women in Engineering uOttawa Affinity Group, uOttawa Computer Science Club 
+            and uOttawa Game Development Club are proud to bring a flagship 
             hackathon to Ottawa where students can network and compete with the best! 
-            With a series of monthly events leading into our main hackathon, 
-            hackers will be provided numerous opportunities to brush up on their technical 
+            <br></br>
+            <br></br>
+            With a series of monthly events leading into our main hackathon, also known as "The Hacker Series", 
+            hackathon participants will be provided numerous opportunities to brush up on their technical 
             skills, network with peers and even learn from notable alumni and business leaders! 
-            Our main event is scheduled for February 2023 and will be free for all participants.
+            Our main event is scheduled for February 3rd-5th, 2023 and will be free for all participants.
             </p>
           </div>
           <div class="mascot1">

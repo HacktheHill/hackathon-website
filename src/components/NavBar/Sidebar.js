@@ -18,7 +18,7 @@ export default props => {
     <Menu right width={'100%'} isOpen={isMenuOpen} onStateChange={handleStateChange}>
       <Link to="About" spy={true} smooth={true} offset={-30} duration={500} onClick={() => handleCloseMenu()}>About</Link> 
       <Link to="Sponsors" spy={true} smooth={true} offset={-30} duration={500} onClick={() => handleCloseMenu()}>Sponsors</Link>
-      <Link to="Schedule" spy={true} smooth={true} offset={0} duration={500} onClick={() => handleCloseMenu()}>Schedule</Link>
+      <Link to="Schedule" spy={true} smooth={true} offset={0} duration={500} onClick={() => handleCloseMenu()}>The Hacker Series</Link>
       <Link to="Collaborators" spy={true} smooth={true} offset={-30} duration={500} onClick={() => handleCloseMenu()}>Collaborators</Link>
       <Link to="FAQ" spy={true} smooth={true} offset={-30} duration={500} onClick={() => handleCloseMenu()}>FAQ</Link>
       <div className='row'>
