@@ -24,7 +24,7 @@ class About extends Component {
             <br></br>
             <br></br>
             With a series of monthly events leading into our main hackathon, also known as "The Hacker Series", 
-            hackathon particiapnts will be provided numerous opportunities to brush up on their technical 
+            hackathon participants will be provided numerous opportunities to brush up on their technical 
             skills, network with peers and even learn from notable alumni and business leaders! 
             Our main event is scheduled for February 3rd-5th, 2023 and will be free for all participants.
             </p>
