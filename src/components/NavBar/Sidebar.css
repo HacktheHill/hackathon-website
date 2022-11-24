@@ -12,10 +12,18 @@
     visibility: hidden;
 }
 
+
 @media(max-width:900px){
 
     .outer{
         visibility: visible;
+
+    }
+
+    .row{
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Position and sizing of burger button */
@@ -56,7 +64,8 @@
       /* General sidebar styles */
       .bm-menu {
         background: #3b4779;
-        padding-top: 80px;
+        padding-top: 25%;
+        padding-bottom: 25%;
         font-size: 1.15em;
       }
       
@@ -68,15 +77,17 @@
       /* Wrapper for item list */
       .bm-item-list {
         color: white;
+        
+        
+
       }
       
       /* Individual item */
       .bm-item {
         display: inline-block;
         color: #d1d1d1;
-        margin-left: 30px;
         margin-bottom: 30px;
-        text-align: left;
+        text-align: center;
         text-decoration: none;
         transition: color 0.2s;
         font-size: 15px;
@@ -86,12 +97,12 @@
       }
 
       box-icon{
-        margin-left: 20px;
-        margin-right: 15px;
+        margin: 10px;
       }
     
       .bm-item:hover{
-        color:#ffffff;;
+        color:#ffffff;
+        cursor: pointer;
       }
       
       /* Styling of overlay */
