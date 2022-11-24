@@ -17,8 +17,8 @@ function Footer() {
         <div class="FooterContainer">
 
           <div className='FooterLinks'>
-            <a href={MLH_code_of_conduct}>Code Of Conduct</a>
-            <a href="https://mlh.io/privacy">Privacy Policy</a>
+            <a href={MLH_code_of_conduct} target="_blank">Code Of Conduct</a>
+            <a href="https://mlh.io/privacy" target="_blank">Privacy Policy</a>
             {/* <a href={MLH_code_of_conduct}>Hack the Hill Constitution</a> */}
           </div>
           <div className="MediaLinks">
