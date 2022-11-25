@@ -49,7 +49,7 @@ export default function FAQ() {
     },
     {
       q: "Who can participate and how do I apply?",
-      a: "Any current university student or recent graduate can join. Follow us on social media to keep updated of when applications open!",
+      a: "Any current high school, university, or recent graduate student can join. Follow us on social media to stay up-to-date with hackathon updates!",
       key: "7",
     },
     {
