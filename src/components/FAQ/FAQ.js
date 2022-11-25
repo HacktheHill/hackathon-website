@@ -48,23 +48,23 @@ export default function FAQ() {
       key: "6",
     },
     {
-      q: "How much RedBull should I drink in a day?",
-      a: "Yes.",
-      key: "7",
-    },
-    {
       q: "Who can participate and how do I apply?",
       a: "Any current university student or recent graduate can join. Follow us on social media to keep updated of when applications open!",
-      key: "8",
+      key: "7",
     },
     {
       q: "Can I work in a team?",
       a: "Yes, teams of up to 4 can work together at Hack the Hill.",
-      key: "9",
+      key: "8",
     },
     {
       q: "What are the themes for Hack the Hill?",
       a: "Full details about the hackathon themes will not be released for a little while. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+      key: "9",
+    },
+    {
+      q: "How much Red Bull should I drink in a day?",
+      a: "Yes.",
       key: "10",
     },
   ];
