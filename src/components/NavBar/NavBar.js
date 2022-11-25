@@ -8,7 +8,7 @@ function Navbar() {
         <div className='Items'>
           <div className='Item'><Link to="FAQ" spy={true} smooth={true} offset={-30} duration={500}>FAQ</Link></div>
           <div className='Item'><Link to="Collaborators" spy={true} smooth={true} offset={-30} duration={500}>Collaborators</Link></div>
-          <div className='Item'><Link to="Schedule" spy={true} smooth={true} offset={0} duration={500}>Schedule</Link></div>
+          <div className='Item'><Link to="Schedule" spy={true} smooth={true} offset={0} duration={500}>The Hacker Series</Link></div>
           <div className='Item'><Link to="Sponsors" spy={true} smooth={true} offset={-30} duration={500}>Sponsors</Link></div>
           <div className='Item'><Link to="About" spy={true} smooth={true} offset={-30} duration={500}>About</Link></div> 
         </div>
