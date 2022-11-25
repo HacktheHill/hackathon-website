@@ -60,23 +60,22 @@ function SponsorShowcase() {
           </div> 
         </div>
             <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-              <Grid item direction="column" className ="SponsorIconBox">
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://stackoverflow.com/"><img className="SponsorIcon" alt="SponsorIcon" src={StackOverFlow}></img></a>
               </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://mlh.io/"><img className="SponsorIcon" alt="SponsorIcon" src={MLH}></img></a>
                 </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://github.com/about"><img className="SponsorIcon" alt="SponsorIcon" src={Github}></img></a>
                 </Grid>
-                <Grid item direction="column" className ="SponsorIconBox">
+                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://www.lonehaven.com/"><img className="SponsorIcon" alt="SponsorIcon" src={LoneHeaven}></img></a>
                 </Grid>
-                <Grid item direction="column" className ="SponsorIconBox">
+                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '50px' : '0px'}}>
                   <a href="https://get.tech/"><img className="SponsorIcon" alt="SponsorIcon" src={DotTech}></img></a>
                 </Grid>
             </Grid>
-        <h1>  </h1>
         <h1>Community Partners</h1>
 
         

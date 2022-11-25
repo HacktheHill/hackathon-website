@@ -14,12 +14,12 @@ export default function FAQ() {
   const quesAns = [
     {
       q: "What is a hackathon?",
-      a: "A hackathon is a 36-hour event where people design and build a project from scratch.",
+      a: "A hackathon is a large-scale event where people design and build a project from scratch.",
       key: "0",
     },
     {
       q: "How much does it cost to participate?",
-      a: "It's free, there is no cost to participate! We cover the cost of food at the event and have free buses to transport participants from the GTA to Ottawa.",
+      a: "It's completely free to attend! There is no cost to participate! We cover the cost of food at the event and provide cheaper methods of transport to bring participants from Waterloo, the GTA, and Montreal to Ottawa.",
       key: "1",
     },
     {
