@@ -9,6 +9,7 @@ function Hero() {
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"))
+  const matchesLG = useMediaQuery(theme.breakpoints.down("lg"))
 
   return (
     <div className="Hero">
@@ -31,23 +32,24 @@ function Hero() {
             <Box sx={{
               display:"flex"
             }}>
-              <Button sx={{
-                backgroundColor:'#5C71AD', 
-                borderRadius:'100px', 
-                color:'white', 
-                mt: matchesSM ? '7vw' : '2vw',
-                p:'10px',
-                textTransform:'none',
-                minWidth:'20%',
-                width: matchesMD ? '40%' : '0%',
+              <Button target='_blank' href='https://hackthehill.com/register' sx={{
+                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
+                  borderRadius:'100px',
+                  color:'#3B4779',
+                  mt: matchesSM ? '7vw' : '2vw',
+                  p:'10px',
+                  textTransform:'none',
+                  minWidth:'20%',
+                  width: matchesMD ? '40%' : '0%',
                 transition: '1s',
-                '&:hover': {
-                  backgroundColor: darken('#5C71AD', 0.3)}
-              }}>
-                <div class='ButtonText'>
-                  <Link to='About' class='ButtonText' spy={true} smooth={true} offset={-30} duration={500}>Learn More</Link>
-                </div>
-              </Button>
+                  boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px',
+                  '&:hover': {
+                    backgroundColor: '#f094bc',
+                  }
+                  }}
+                >
+                  <p class='ButtonText'>Register Now!</p>
+                </Button>
             </Box>
         </Box>
         <Box sx={{
