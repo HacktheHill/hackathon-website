@@ -8,7 +8,13 @@
     width: 100%;
 }
 
-.Navbar img{
+.mlh{
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+
+.logo{
     position: absolute;
     left: 15px;
     top: 15px;
