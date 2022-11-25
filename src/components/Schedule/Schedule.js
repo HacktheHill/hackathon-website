@@ -25,13 +25,13 @@ function Schedule() {
       }
     },
   }
-  
+
   return (
     <div id="Schedule" className="Schedule">
       <h1 className="scheduleTitle">The Hacker Series</h1>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-      <Box sx={{ 
-        width: matchesMD ? '75%' : "70%", 
+      <Box sx={{
+        width: matchesMD ? '75%' : "70%",
         margin:'auto',
         mt: matchesSM ? '15%' : 'auto'
         }}
@@ -39,10 +39,10 @@ function Schedule() {
         <Stack spacing={10} id="eventStack" class="eventStack">
           <Stack direction = {{xs: "column", md: "row"}} spacing={matchesMD ? 5 : 10} sx={{ width:'100%'}}>
             <div class='Center'>
-              <Card 
-                variant='outlined' 
-                elevation={4} 
-                style={styles.card} 
+              <Card
+                variant='outlined'
+                elevation={4}
+                style={styles.card}
                 sx={{
                   '&:hover': {
                     transform:'scale(1.05)',
@@ -53,16 +53,16 @@ function Schedule() {
                 <Stack direction={'column'}>
                   <div className ="eventMonth">November</div>
                   <div className ="eventDay">16</div>
-                </Stack>       
+                </Stack>
               </Card>
             </div>
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
-                Resume Roast    
+                Resume Roast
                 <Button target='_blank' href='https://youtu.be/zpixm4xz_K4' sx={{
-                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
-                  borderRadius:'100px', 
-                  color:'#3B4779', 
+                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
+                  borderRadius:'100px',
+                  color:'#3B4779',
                   mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
@@ -78,23 +78,23 @@ function Schedule() {
                 >
                   <p class='ButtonText'>View Video</p>
                 </Button>
-                  
+
               </div>
               <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
               <p className="eventDesc" align='left'>
-                Need resume advice on the spot? Hang out with some developers 
-                from Ciena and Microsoft as they review and evaluate resumes submitted by students, 
-                all while filling yourself up with some fresh pizza. 
+                Need resume advice on the spot? Hang out with some developers
+                from Ciena and Microsoft as they review and evaluate resumes submitted by students,
+                all while filling yourself up with some fresh pizza.
               </p>
             </Stack>
           </Stack>
 
           <Stack direction = {{xs: "column", md: "row"}} spacing={matchesMD ? 5 : 10} sx={{ width:'100%' }}>
             <div class='Center'>
-              <Card 
-                variant='outlined' 
-                elevation={4} 
-                style={styles.card} 
+              <Card
+                variant='outlined'
+                elevation={4}
+                style={styles.card}
                 sx={{
                   '&:hover': {
                     transform:'scale(1.05)',
@@ -105,16 +105,16 @@ function Schedule() {
                 <Stack direction={'column'}>
                   <div className ="eventMonth">November</div>
                   <div className ="eventDay">30</div>
-                </Stack>       
+                </Stack>
               </Card>
             </div>
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
                 Coffee, Code, and Cram
                 <Button target='_blank' href='https://forms.gle/WUgn5g8XTjNf9Eq39' sx={{
-                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
-                  borderRadius:'100px', 
-                  color:'#3B4779', 
+                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
+                  borderRadius:'100px',
+                  color:'#3B4779',
                   mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
@@ -129,23 +129,23 @@ function Schedule() {
                   }}
                 >
                   <p class='ButtonText'>Sign up <b>→</b></p>
-                </Button>    
+                </Button>
               </div>
               <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
               <p className="eventDesc" align='left'>
-              Unwind and take a break from school. 
-              Join us alongside the uOttawa Computer Science Club for an evening of socializing and coding 
+              Unwind and take a break from school.
+              Join us alongside the uOttawa Computer Science Club for an evening of socializing and coding
               with coffee, tea, and snacks.
-              </p>              
+              </p>
             </Stack>
           </Stack>
-          
+
           <Stack direction = {{xs: "column", md: "row"}} spacing={matchesMD ? 5 : 10} sx={{ width:'100%' }}>
             <div class='Center'>
-              <Card 
-                variant='outlined' 
-                elevation={4} 
-                style={styles.card} 
+              <Card
+                variant='outlined'
+                elevation={4}
+                style={styles.card}
                 sx={{
                   '&:hover': {
                     transform:'scale(1.05)',
@@ -156,16 +156,16 @@ function Schedule() {
                 <Stack direction={'column'}>
                   <div className ="eventMonth">January</div>
                   <div className ="eventDay">11</div>
-                </Stack>       
+                </Stack>
               </Card>
             </div>
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
                 Wicked Web Work
                 <Button disabled sx={{
-                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
-                  borderRadius:'100px', 
-                  color:'#3B4779', 
+                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
+                  borderRadius:'100px',
+                  color:'#3B4779',
                   mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
@@ -179,23 +179,22 @@ function Schedule() {
                   }}
                 >
                   <p class='ButtonText'>Sign up <b>→</b></p>
-                </Button> 
+                </Button>
               </div>
               <div className ="subTitle">6 p.m. - 10 p.m. @ STM 117</div>
               <p className="eventDesc" align='left'>
-                Explore the wonders of front-end development! 
-                Learn the basics through workshops and participate in a one-hour challenge to build 
-                a website according to provided guidelines to win some sweet prizes.
-              </p>              
+              Explore the wonders of front-end development! Learn the basics through workshops and participate 
+              in a one-hour challenge to build a website according to provided guidelines.
+              </p>
             </Stack>
           </Stack>
 
           <Stack direction = {{xs: "column", md: "row"}} spacing={matchesMD ? 5 : 10} sx={{ width:'100%' }}>
             <div class='Center'>
-              <Card 
-                variant='outlined' 
-                elevation={4} 
-                style={styles.card} 
+              <Card
+                variant='outlined'
+                elevation={4}
+                style={styles.card}
                 sx={{
                   '&:hover': {
                     transform:'scale(1.05)',
@@ -206,16 +205,16 @@ function Schedule() {
                 <Stack direction={'column'}>
                   <div className ="eventMonth">January</div>
                   <div className ="eventDay">25</div>
-                </Stack>       
+                </Stack>
               </Card>
             </div>
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
                 Got Games?
                 <Button disabled sx={{
-                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2', 
-                  borderRadius:'100px', 
-                  color:'#3B4779', 
+                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
+                  borderRadius:'100px',
+                  color:'#3B4779',
                   mt: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   mb: matchesSM ? '7vw' : matchesMD ? '3vw' : '0vw',
                   p:'7px',
@@ -229,7 +228,7 @@ function Schedule() {
                   }}
                 >
                   <p class='ButtonText'>Sign up <b>→</b></p>
-                </Button> 
+                </Button>
               </div>
               <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
               <p className="eventDesc" align='left'>
