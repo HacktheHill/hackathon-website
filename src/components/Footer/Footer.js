@@ -2,6 +2,7 @@ import './Footer.css';
 import React from "react";
 import FooterLogo from "../../assets/Logos/hthlogo_banner_ver.svg";
 import 'boxicons';
+import MLH_code_of_conduct from "../../assets/Documents/mlh-code-of-conduct.pdf";
 
 function Footer() {
   return (
@@ -34,7 +35,13 @@ function Footer() {
               <box-icon color='#3B4779' animation='tada-hover' name='medium' type='logo' ></box-icon>
             </a>
           </div>
+          <div className='FooterLinks'>
+            <a href={MLH_code_of_conduct} target="_blank">Code Of Conduct</a>
+            <a href="https://mlh.io/privacy" target="_blank">Privacy Policy</a>
+            {/* <a href={MLH_code_of_conduct}>Hack the Hill Constitution</a> */}
+          </div>
         </div>
+        
       </div>
     </div>
   );
