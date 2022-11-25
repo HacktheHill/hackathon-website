@@ -12,7 +12,7 @@ import Footer from "../Footer/Footer.js";
 
 function App() {
   return (
-    <div className="App" id="outer-container">
+    <div>
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       <div className="page-wrap">
         <div class="Gradient">
