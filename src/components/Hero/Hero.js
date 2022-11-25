@@ -33,19 +33,19 @@ function Hero() {
               display:"flex"
             }}>
               <Button target='_blank' href='https://hackthehill.com/register' sx={{
-                  background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
+                  background:'#5C71AD',
                   borderRadius:'100px',
-                  color:'#3B4779',
+                  color:'white',
                   mt: matchesSM ? '7vw' : '2vw',
                   p:'10px',
                   textTransform:'none',
                   minWidth:'20%',
                   width: matchesMD ? '40%' : '0%',
-                transition: '1s',
+                  transition: '1s',
                   boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px',
+                  fontSize: '25px',
                   '&:hover': {
-                    backgroundColor: '#f094bc',
-                  }
+                    backgroundColor: darken('#5C71AD', 0.3)}
                   }}
                 >
                   <p class='ButtonText'>Register Now!</p>
