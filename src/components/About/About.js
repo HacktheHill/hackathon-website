@@ -13,7 +13,7 @@ class About extends Component {
             <p>
             Hack the Hill is an internationally-hosted hackathon taking place in the 
             heart of Canada's very own capital! In collaboration with the University of Ottawa's 
-            Engineering Faculty, four major student organizations stepped up to establish Hack the Hill 
+            Engineering Faculty, seven major student organizations stepped up to establish Hack the Hill 
             with the goal of setting the standard for how hackathons are operated.
             <br></br>
             <br></br>

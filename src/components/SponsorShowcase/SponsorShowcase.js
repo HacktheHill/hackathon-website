@@ -10,9 +10,11 @@ import Github from '../../assets/Logos/github.svg';
 import DotTech from '../../assets/Logos/DotTech.svg';
 import OSP from '../../assets/Logos/OSP.png';
 import uOttawaEngineering from '../../assets/Logos/uOttawaEngineering.png';
-import EEF from '../../assets/Logos/EEF.png';
+import EEF from '../../assets/Logos/eef_logo.svg';
 import NDL from '../../assets/Logos/NDL.webp';
-import uOttawa from '../../assets/Logos/uOttawa.png';
+import uOttawa from '../../assets/Logos/university-of-ottawa-seeklogo.com.svg';
+import uocs from '../../assets/Logos/uocsclub.svg';
+import uogdc from '../../assets/Logos/uOttawaGDC_FullLogo.png';
 
 function SponsorShowcase() {
   
@@ -58,60 +60,42 @@ function SponsorShowcase() {
           </div> 
         </div>
             <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox" marginTop={-1}>
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://stackoverflow.com/"><img className="SponsorIcon" alt="SponsorIcon" src={StackOverFlow}></img></a>
               </Grid>
-            </Item>
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox">
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://mlh.io/"><img className="SponsorIcon" alt="SponsorIcon" src={MLH}></img></a>
                 </Grid>
-              </Item>
-              <Item className = "PaperBox">  
-              <Grid item direction="column" className ="SponsorIconBox" marginTop={1}>
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://github.com/about"><img className="SponsorIcon" alt="SponsorIcon" src={Github}></img></a>
                 </Grid>
-              </Item>
-              <Item className = "PaperBox">
-                <Grid item direction="column" className ="SponsorIconBox" marginTop={3}>
+                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://www.lonehaven.com/"><img className="SponsorIcon" alt="SponsorIcon" src={LoneHeaven}></img></a>
                 </Grid>
-              </Item>
-              <Item className = "PaperBox">
-                <Grid item direction="column" className ="SponsorIconBox" marginTop={1}>
+                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '50px' : '0px'}}>
                   <a href="https://get.tech/"><img className="SponsorIcon" alt="SponsorIcon" src={DotTech}></img></a>
                 </Grid>
-              </Item>
             </Grid>
-        <h1>  </h1>
         <h1>Community Partners</h1>
+
+        
           <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox" marginTop={1}>
+              <Grid item direction="column" className ="SponsorIconBox">
+                  <a href="https://www2.uottawa.ca/en" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={uOttawa}></img></a>    
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                  <a href="https://www.facebook.com/uottawaeeffdg/" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={EEF}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                  <a href="https://uocsclub.ca/" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={uocs}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
+                  <a href="https://www.facebook.com/uottawagdc/" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={uogdc}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox">
                   <a href="https://www.ottawashirtprinting.com/"><img className="SponsorIcon" alt="SponsorIcon" src={OSP}></img></a>
               </Grid>
-            </Item>
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www2.uottawa.ca/faculty-engineering/"><img className="SponsorIcon" alt="SponsorIcon" src={uOttawaEngineering}></img></a>
-              </Grid>
-            </Item>
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www.facebook.com/uottawaeeffdg/"><img className="SponsorIcon" alt="SponsorIcon" src={EEF}></img></a>
-              </Grid>
-            </Item>
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www.youtube.com/channel/UC9K44RtwiROAwCpALm1wdyQ/videos"><img className="SponsorIcon" alt="SponsorIcon" src={NDL}></img></a>
-              </Grid>
-            </Item>
-            <Item className = "PaperBox">
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www2.uottawa.ca/en"><img className="SponsorIcon" alt="SponsorIcon" src={uOttawa}></img></a>
-              </Grid>
-            </Item>
+
           </Grid> 
       </div>
     );
