@@ -1,6 +1,6 @@
 import './Collaborators.css';
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
-import mountain from '../../assets/Logos/mountain_flags_filled.svg'
+import mountain from '../../assets/Logos/mountain_flags.svg'
 
 function Collaborators() {
   const theme = useTheme();
