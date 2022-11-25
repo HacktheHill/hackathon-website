@@ -39,7 +39,7 @@ function Hero() {
                   mt: matchesSM ? '7vw' : '2vw',
                   p:'10px',
                   textTransform:'none',
-                  minWidth:'20%',
+                  minWidth:'max(10rem, 20%)',
                   width: matchesMD ? '40%' : '0%',
                   transition: '1s',
                   boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px',
