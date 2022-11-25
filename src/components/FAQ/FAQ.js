@@ -14,12 +14,12 @@ export default function FAQ() {
   const quesAns = [
     {
       q: "What is a hackathon?",
-      a: "A hackathon is a 36-hour event where people design and build a project from scratch.",
+      a: "A hackathon is a large-scale event where people design and build a project from scratch.",
       key: "0",
     },
     {
       q: "How much does it cost to participate?",
-      a: "It's free, there is no cost to participate! We cover the cost of food at the event and have free buses to transport participants from the GTA to Ottawa.",
+      a: "It's completely free to attend! There is no cost to participate! We cover the cost of food at the event and provide cheaper methods of transport to bring participants from Waterloo, the GTA, and Montreal to Ottawa.",
       key: "1",
     },
     {
@@ -48,23 +48,23 @@ export default function FAQ() {
       key: "6",
     },
     {
-      q: "How much RedBull should I drink in a day?",
-      a: "Yes.",
-      key: "7",
-    },
-    {
       q: "Who can participate and how do I apply?",
-      a: "Any current university student or recent graduate can join. Follow us on social media to keep updated of when applications open!",
-      key: "8",
+      a: "Any current high school, university, or recent graduate student can join. Follow us on social media to stay up-to-date with hackathon updates!",
+      key: "7",
     },
     {
       q: "Can I work in a team?",
       a: "Yes, teams of up to 4 can work together at Hack the Hill.",
-      key: "9",
+      key: "8",
     },
     {
       q: "What are the themes for Hack the Hill?",
       a: "Full details about the hackathon themes will not be released for a little while. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+      key: "9",
+    },
+    {
+      q: "How much Red Bull should I drink in a day?",
+      a: "Yes.",
       key: "10",
     },
   ];
