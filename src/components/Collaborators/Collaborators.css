@@ -59,6 +59,7 @@
     left: 10px;
     text-align: left;
     margin-top: -6%;
+    margin-bottom: 6%;
 }
 
 @media only screen and (max-width: 2560px) {
@@ -88,44 +89,11 @@
     width: 100%;
     height: 10%;
 }
-/* .ESSBox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;          
-} 
-
-.IEEEBox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;     
-}
-
-.CSSABox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;      
-}
-
-.SESABox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;       
-}
- */
-/* .WIEBox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;     
-} */
 
 
 /* Small screens */
 @media only screen {
-/* .ESS{
-    margin-top: -2px;
-}
-.WIE{
-    margin-top: -18px;
-    margin-left: 2px;
-}
-.Collaborators h1{
-    font-size: 3em;
-} */
+
 
 } /* Define mobile styles */
 
@@ -148,18 +116,5 @@
 } /* min-width 641px */
 
 @media only screen and (max-width: 1178px) { 
-/*     .ESS{
-        margin-top: 68px;
-    }
-    .WIE{
-        margin-top: 10px;
-    }
-    .IEEE{
-        margin-top: 45px;
-        margin-right: 24px;
-    }
-    .SESA{
-        margin-top: -25px;
-    } */
 
 } 
