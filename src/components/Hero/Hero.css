@@ -10,9 +10,13 @@
 
 .HeroImg{
     width: 100%;
+    margin-top: -11%;
+    margin-bottom: -30%;
+    position: flex;
 }
 
 .BannerLogo{
+    align-self: center;
     width: 75%;
     transition: 1s;
 }
@@ -30,6 +34,16 @@ h3{
     margin: 100%;
     font-weight: 60;
     font-size: 15px;
+}
+
+.Title{
+    display: flex;;
+    align-items: center;
+    justify-content: row;
+    margin-left: 33%;
+    width: 50%;
+    position: relative;
+    transition: 1s;
 }
 
 @media only screen and (max-width: 900px) {
@@ -50,6 +64,11 @@ h3{
         width: 100%;
         transition: 1s;
     }
+
+    .HeroImg{
+
+    }
+
     h3 {
         font-size: 4.5vw;
     }

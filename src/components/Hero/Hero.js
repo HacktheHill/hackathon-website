@@ -1,6 +1,6 @@
 import './Hero.css';
 import { Box, Button, useMediaQuery, useTheme, darken } from '@mui/material';
-import HeroImg from '../../assets/svgs/parliament-hero-asset.svg';
+import HeroImg from '../../assets/svgs/hth_hero_withoutbg.svg';
 import BannerLogo from '../../assets/Logos/hthlogo_banner_ver.svg';
 import { Link } from 'react-scroll';
 
@@ -14,23 +14,33 @@ function Hero() {
   return (
     <div className="Hero">
       <Box sx={{
+        display: "flex",
+        justifyContent: "center",
         width: '100%',
         marginTop: matchesSM ? '2%' : '3%',
         transition: '1s'
       }}>
         <Box sx={{
-          marginLeft: '5%',
+          flexDirection: "column",
+          display: "flex",
+          justifyContent: "center",
           width: matchesSM ? '85%' : '50%',
           position: matchesSM ? 'relative' : 'absolute',
           transition: '1s'
         }}>
-            <Box>
+            <Box sx={{
+              flexDirection: "column",
+              display: "flex",
+              justifyContent: "center",
+              textAlign: "center"
+            }}>
               <h3>University of Ottawa</h3>
               <img class='BannerLogo'src={BannerLogo}></img>
               <h3>Canada's Capital Hackathon</h3>
             </Box>
             <Box sx={{
-              display:"flex"
+              display:"flex",
+              justifyContent: "center",
             }}>
               <Button target='_blank' href='https://hackthehill.com/register' sx={{
                   background:'#5C71AD',
