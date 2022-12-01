@@ -285,7 +285,7 @@ function Schedule() {
                 Discover the best that game development has to offer!
                 Join us along side the uOttawa Game Development Club for an introduction to Unity workshop,
                 presented by Propel VR.
-              </p>              
+              </p>
             </Stack>
           </Stack>
         </Stack>
