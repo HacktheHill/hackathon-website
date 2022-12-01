@@ -8,13 +8,9 @@
     src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
-.Collaborators{
-    margin-bottom: 10vw;
-}
-
 .Collaborators h1{
     font-family: Coolvetica;
-    margin-bottom: 0%;
+    margin-bottom:10%;
     font-size: 3em;
     margin-left: 10%;
     font-weight: normal;
@@ -27,14 +23,9 @@
     align-items: center;
 }
 
-img{
-   width:250px;
-   align-items: center;
-   transition: 0.5s;
-}
 
 
-.IEEEBox,.SESABox, .CSSABox, .WIEBox, .ESSBox{
+/* .IEEEBox,.SESABox, .CSSABox, .WIEBox, .ESSBox{
     align-items: center;
     justify-content: center;
     flex-direction: column; 
@@ -52,8 +43,8 @@ img{
     max-height:100px;
     display: block;
     margin-left: -70px;
-}
-.IEEE{
+} */
+/* .IEEE{
     height:70px;
     display: block;
     margin-right: 45px;
@@ -61,12 +52,14 @@ img{
 .SESA{
     display: block;
     
-}
+} */
 
 .Collaborators{
-    color: black;
+    color: #242a42;
     left: 10px;
     text-align: left;
+    margin-top: -6%;
+    margin-bottom: 6%;
 }
 
 @media only screen and (max-width: 2560px) {
@@ -92,51 +85,21 @@ img{
         margin-right: 975px;
     }
   }
-  
-.ESSBox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;          
-} 
-
-.IEEEBox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;     
-}
-
-.CSSABox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;      
-}
-
-.SESABox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;       
-}
-
-.WIEBox a:hover img{
-    transform: scale(1.1);
-    transition: 0.5s;     
+  .mountain {
+    width: 100%;
+    height: 10%;
 }
 
 
 /* Small screens */
 @media only screen {
-.ESS{
-    margin-top: -2px;
-}
-.WIE{
-    margin-top: -18px;
-    margin-left: 2px;
-}
-.Collaborators h1{
-    font-size: 3em;
-}
+
 
 } /* Define mobile styles */
 
 /* Medium screens */
 @media only screen and (max-width: 1024px) { 
-    .ESS{
+/*     .ESS{
         margin-top: 8px;
     }
     .WIE{
@@ -148,23 +111,10 @@ img{
     }
     .SESA{
         margin-top: -75px;
-    }
+    } */
 
 } /* min-width 641px */
 
 @media only screen and (max-width: 1178px) { 
-    .ESS{
-        margin-top: 68px;
-    }
-    .WIE{
-        margin-top: 10px;
-    }
-    .IEEE{
-        margin-top: 45px;
-        margin-right: 24px;
-    }
-    .SESA{
-        margin-top: -25px;
-    }
 
 } 
