@@ -1,56 +1,161 @@
 @font-face {
-    font-family: Rubik;
-    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
 @font-face {
-    font-family: Coolvetica;
-    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	font-family: Coolvetica;
+	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
-.HeroImg{
-    width: 100%;
+.HeroHeading {
+	display: grid;
+	place-items: center;
+	text-align: center;
+	width: fit-content;
+	margin: auto;
 }
 
-.BannerLogo{
-    width: 75%;
-    transition: 1s;
+.BannerLogo {
+	width: 100%;
 }
 
-h3{
-    color: #3B4779;
-    font-family: Coolvetica;
-    margin: 0px;
-    font-size: 1.5vw;
-    font-weight: 500;
+h3 {
+	color: #3b4779;
+	font-family: Coolvetica;
+	font-size: clamp(1rem, 2.5vw, 5rem);
+	font-weight: 500;
 }
 
-.ButtonText{
-    font-family: Rubik;
-    margin: 100%;
-    font-weight: 60;
-    font-size: 15px;
+.HeroButton {
+	background-color: #5c71ad;
+	border: none;
+	border-radius: 100px;
+	color: white;
+	transition: 1s;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+	font-size: clamp(1rem, 1vw, 5rem);
+	white-space: nowrap;
+	padding: 1rem 2rem;
+	margin: 5vh auto;
+	cursor: pointer;
+	font-family: Rubik;
 }
 
-@media only screen and (max-width: 900px) {
-    .BannerLogo{
-        width: 85%;
-        transition: 1s;
-    }
-    h3 {
-        font-size: 2.5vw;
-    }
-    .HeroImg{
-        margin-top: 10%;
-    }
+.HeroButton:hover {
+	background-color: #3f4e77;
 }
 
-@media only screen and (max-width: 600px) {
-    .BannerLogo{
-        width: 100%;
-        transition: 1s;
-    }
-    h3 {
-        font-size: 4.5vw;
-    }
+.HeroImg {
+	height: 100%;
+	width: 100%;
+	margin-top: -25%;
+	margin-bottom: -30%;
+	pointer-events: none;
+}
+
+@media screen and (max-width: 540px) {
+	.HeroHeading {
+		width: 100%;
+	}
+
+	.BannerLogo {
+		width: 75%;
+	}
+}
+
+/* Hero SVG animations */
+svg .Snow {
+	animation: snow 100s linear infinite;
+}
+
+svg .Halo {
+	animation: halo 10s linear infinite alternate;
+	transform-box: fill-box;
+	transform-origin: center;
+}
+
+svg .Flag {
+	animation: flag 1s linear infinite alternate;
+	transform-box: fill-box;
+	transform-origin: top left;
+}
+
+svg .Cloud {
+	animation: clouds 100s linear infinite alternate;
+}
+
+svg :is(#ClockLeft, #ClockRight) {
+	animation: clock linear infinite;
+	transform-box: fill-box;
+}
+
+svg #ClockLeft {
+	animation-duration: 3600s;
+	transform-origin: top right;
+}
+
+svg #ClockRight {
+	animation-duration: 60s;
+	transform-origin: top left;
+}
+
+svg .Bird {
+	animation: flap 1s linear infinite alternate;
+}
+
+@keyframes snow {
+	0% {
+		transform: translate(-1vw, -100vh);
+		opacity: 0;
+	}
+
+	10%,
+	95% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(1vw, 0vh);
+		opacity: 0;
+	}
+}
+
+@keyframes halo {
+	50% {
+		transform: scale(1.125);
+		filter: saturate(1.5);
+	}
+}
+
+@keyframes flag {
+	50% {
+		transform: skew(10deg) rotate(10deg);
+	}
+}
+
+@keyframes clouds {
+	0% {
+		transform: translateX(-50%);
+	}
+
+	100% {
+		transform: translateX(50%);
+	}
+}
+
+@keyframes clock {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flap {
+	0% {
+		transform: translateY(-2px);
+	}
+
+	100% {
+		transform: translateY(2px);
+	}
 }
