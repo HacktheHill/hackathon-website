@@ -111,7 +111,7 @@ function Schedule() {
             <Stack sx={{ width:'100%' }}>
               <div className ="eventTitle">
                 Coffee, Code, and Cram
-                <Button target='_blank' href='https://forms.gle/WUgn5g8XTjNf9Eq39' sx={{
+                <Button disabled target='_blank' href='https://forms.gle/WUgn5g8XTjNf9Eq39' sx={{
                   background:'linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2',
                   borderRadius:'100px',
                   color:'#3B4779',
@@ -128,7 +128,7 @@ function Schedule() {
                   }
                   }}
                 >
-                  <p class='ButtonText'>Sign up <b>→</b></p>
+                  <p class='ButtonText'>Completed</p>
                 </Button>
               </div>
               <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
@@ -183,7 +183,7 @@ function Schedule() {
               </div>
               <div className ="subTitle">6 p.m. - 10 p.m. @ STM 117</div>
               <p className="eventDesc" align='left'>
-              Explore the wonders of front-end development! Learn the basics through workshops and participate 
+              Explore the wonders of front-end development! Learn the basics through workshops and participate
               in a one-hour challenge to build a website according to provided guidelines.
               </p>
             </Stack>
@@ -235,7 +235,7 @@ function Schedule() {
                 Discover the best that game development has to offer!
                 Join us along side the uOttawa Game Development Club for an introduction to Unity workshop,
                 presented by Propel VR.
-              </p>              
+              </p>
             </Stack>
           </Stack>
         </Stack>
