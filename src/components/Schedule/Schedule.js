@@ -128,7 +128,7 @@ function Schedule() {
                   }
                   }}
                 >
-                  <p class='ButtonText'>Finished</p>
+                  <p class='ButtonText'>Completed</p>
                 </Button>
               </div>
               <div className ="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
