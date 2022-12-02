@@ -11,77 +11,69 @@
 .HeroHeading {
 	display: grid;
 	place-items: center;
-	text-align: center;
-	width: fit-content;
-	margin: auto;
+	width: 100%;
 }
 
 .BannerLogo {
-	width: 100%;
+	width: calc(10 * clamp(1rem, 4vmin, 10rem));
 }
 
 h3 {
 	color: #3b4779;
 	font-family: Coolvetica;
-	font-size: clamp(1rem, 2.5vw, 5rem);
+	font-size: clamp(1rem, 2.5vmin, 5rem);
 	font-weight: 500;
 }
 
 .HeroButton {
+	margin: 3vmin auto;
+	z-index: 1;
+}
+
+.HeroButton button {
 	background-color: #5c71ad;
 	border: none;
 	border-radius: 100px;
 	color: white;
 	transition: 1s;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	font-size: clamp(1rem, 1vw, 5rem);
+	font-size: clamp(1rem, 1vmin, 5rem);
 	white-space: nowrap;
-	padding: 1rem 2rem;
-	margin: 5vh auto;
+	padding: clamp(.75rem, 1vmin, 5rem) calc(2 * clamp(.75rem, 1vmin, 5rem));
 	cursor: pointer;
 	font-family: Rubik;
 }
 
-.HeroButton:hover {
+.HeroButton button:hover {
 	background-color: #3f4e77;
 }
 
 .HeroImg {
 	height: 100%;
 	width: 100%;
-	margin-top: -25%;
+	margin-top: -27.5%;
 	margin-bottom: -30%;
 	pointer-events: none;
 }
 
-@media screen and (max-width: 540px) {
-	.HeroHeading {
-		width: 100%;
-	}
-
-	.BannerLogo {
-		width: 75%;
-	}
-}
-
 /* Hero SVG animations */
-svg .Snow {
+svg .snow {
 	animation: snow 100s linear infinite;
 }
 
-svg .Halo {
+svg .halo {
 	animation: halo 10s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: center;
 }
 
-svg .Flag {
+svg #flag {
 	animation: flag 1s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: top left;
 }
 
-svg .Cloud {
+svg .cloud {
 	animation: clouds 100s linear infinite alternate;
 }
 
@@ -100,13 +92,22 @@ svg #ClockRight {
 	transform-origin: top left;
 }
 
-svg .Bird {
+svg :is(#leftbird, #rightbird) {
 	animation: flap 1s linear infinite alternate;
+}
+
+svg #leftbird {
+	animation-duration: 2s;
+	animation-delay: 1s;
+}
+
+svg #rightbird {
+	animation-duration: 1s;
 }
 
 @keyframes snow {
 	0% {
-		transform: translate(-1vw, -100vh);
+		transform: translate(-1vw, -50vh);
 		opacity: 0;
 	}
 
