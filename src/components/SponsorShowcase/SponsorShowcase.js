@@ -66,7 +66,7 @@ function SponsorShowcase() {
                   <a href="https://ciena.ca/"><img className="SponsorIcon" alt="SponsorIcon" src={Ciena}></img></a>
               </Grid>
               <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
-                  <a href="https://google.com/"><img className="SponsorIcon" alt="SponsorIcon" src={Google}></img></a>
+                  <a href="https://google.com/about/"><img className="SponsorIcon" alt="SponsorIcon" src={Google}></img></a>
               </Grid>
               <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://stackoverflow.com/"><img className="SponsorIcon" alt="SponsorIcon" src={StackOverFlow}></img></a>
