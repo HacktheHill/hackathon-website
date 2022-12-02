@@ -4,6 +4,8 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Button, useMediaQuery, useTheme, darken, Grid } from '@mui/material';
 import LoneHeaven from '../../assets/Logos/Lonehaven.svg';
+import Ciena from '../../assets/Logos/Ciena.svg';
+import Google from '../../assets/Logos/Google.svg';
 import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
 import MLH from '../../assets/Logos/MLH.svg';
 import Github from '../../assets/Logos/github.svg';
@@ -60,6 +62,12 @@ function SponsorShowcase() {
           </div> 
         </div>
             <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
+                  <a href="https://ciena.ca/"><img className="SponsorIcon" alt="SponsorIcon" src={Ciena}></img></a>
+              </Grid>
+              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
+                  <a href="https://google.com/about/"><img className="SponsorIcon" alt="SponsorIcon" src={Google}></img></a>
+              </Grid>
               <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
                   <a href="https://stackoverflow.com/"><img className="SponsorIcon" alt="SponsorIcon" src={StackOverFlow}></img></a>
               </Grid>
