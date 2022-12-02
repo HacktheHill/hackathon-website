@@ -9,8 +9,8 @@ function Hero() {
 				<h3>University of Ottawa</h3>
 				<img class="BannerLogo" src={BannerLogo} alt="Hack the Hill"></img>
 				<h3>Canada's Capital Hackathon</h3>
-				<a target="_blank" href="https://hackthehill.com/register" rel="noreferrer">
-					<button className="HeroButton">Register Now!</button>
+				<a className="HeroButton" target="_blank" href="https://hackthehill.com/register" rel="noreferrer">
+					<button>Register Now!</button>
 				</a>
 			</div>
 			<HeroImg className="HeroImg" />

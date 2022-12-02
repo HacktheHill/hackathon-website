@@ -4,7 +4,7 @@
 }
 
 .Navbar{
-    height: 150px;
+    height: calc(140px - 12vw);
     width: 100%;
 }
 
@@ -66,5 +66,10 @@
         width: 105px;
         height: 105px;
         top: 0;
+    }
+
+	.Navbar {
+        max-height: calc(140px - 12vw);
+        overflow: hidden;
     }
 }
