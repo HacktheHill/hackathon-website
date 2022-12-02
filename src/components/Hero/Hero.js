@@ -9,7 +9,7 @@ function Hero() {
         <h3>
           Canada's Capital Hackathon &nbsp;&bull;&nbsp; February{' '}
           <time dateTime="03/02/2023">3</time>&ndash;
-          <time datetime="05/02/2023">5</time>, 2023
+          <time dateTime="05/02/2023">5</time>, 2023
         </h3>
         <img class="BannerLogo" src={BannerLogo} alt="Hack the Hill"></img>
         <h3>University of Ottawa &times; Carleton University</h3>
