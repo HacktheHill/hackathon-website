@@ -8,10 +8,26 @@
 	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
+.Hero {
+	background: linear-gradient(
+		0deg,
+		rgba(239, 203, 255, 0) 15%,
+		rgba(236, 211, 247, 0.7723) 48.85%,
+		rgba(236, 210, 248, 0.7373) 48.86%,
+		#ebd5f5 63.96%,
+		#bfcbee 80.96%,
+		#bfcbee 81.77%,
+		#abeffa 100%
+	);
+	background-repeat: no-repeat;
+}
+
 .HeroHeading {
+	position: absolute;
 	display: grid;
 	place-items: center;
-	width: 100%;
+	inset: max(7.5rem, 10vmax) 0 auto 0;
+	text-align: center;
 }
 
 .BannerLogo {
@@ -39,7 +55,7 @@ h3 {
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 	font-size: clamp(1rem, 1vmin, 5rem);
 	white-space: nowrap;
-	padding: clamp(.75rem, 1vmin, 5rem) calc(2 * clamp(.75rem, 1vmin, 5rem));
+	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
 	cursor: pointer;
 	font-family: Rubik;
 }
@@ -51,8 +67,8 @@ h3 {
 .HeroImg {
 	height: 100%;
 	width: 100%;
-	margin-top: -27.5%;
-	margin-bottom: -30%;
+	margin-top: calc(20rem - 20vw);
+	margin-bottom: -25%;
 	pointer-events: none;
 }
 
