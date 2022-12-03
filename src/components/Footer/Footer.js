@@ -12,7 +12,7 @@ function Footer() {
           <img src={FooterLogo} alt="Logo" />
         </div>
         <div className="LogoText">
-          <p>Canada's Capital Hackathon.</p>
+          <p>Canada's Capital Hackathon</p>
         </div>
         <div class="FooterContainer">
           <div className="MediaLinks">
