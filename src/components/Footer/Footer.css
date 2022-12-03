@@ -6,18 +6,18 @@
 .Footer {
     justify-content: center;
   }
-  
+
   .FooterBody {
     display: grid;
-    
+
   }
-  
+
   .FooterLogo {
     display: block;
     margin:auto;
 
   }
-  
+
   .FooterLogo img {
     width: 200px;
     height: auto;
@@ -54,6 +54,8 @@
 
   .MediaLinks {
     text-align: center;
+	display: flex;
+	justify-content: space-evenly;
   }
   .FooterLinks {
     margin-left: auto;
@@ -67,13 +69,13 @@
     color:black;
     font-size: 10px;
   }
-  
+
   .FooterLinks a:hover {
     text-decoration: underline;
   }
 
   @media only screen and (max-width: 10000px) {
-    
+
     .MediaLinks a {
       padding: 15px;
     }
@@ -96,7 +98,7 @@
     .FooterLinks a{
       margin: 0 auto;
     }
-    
+
 
   }
   @media only screen and (max-width: 600px) {
@@ -105,7 +107,7 @@
     }
   }
   @media only screen and (max-width: 450px) {
-  
+
     .MediaLinks a {
       padding: 0px;
     }
@@ -116,5 +118,5 @@
     .MediaLinks a box-icon {
       margin-right: 2px;
     }
-    
+
   }
