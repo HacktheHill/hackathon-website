@@ -4,7 +4,7 @@ import BannerLogo from '../../assets/Logos/hthlogo_banner_ver.svg';
 
 function Hero() {
   return (
-    <>
+    <div className="Hero">
       <div className="HeroHeading">
         <h3>
           Canada's Capital Hackathon &nbsp;&bull;&nbsp; February{' '}
@@ -23,7 +23,7 @@ function Hero() {
         </a>
       </div>
       <HeroImg className="HeroImg" />
-    </>
+    </div>
   );
 }
 

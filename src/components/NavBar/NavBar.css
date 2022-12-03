@@ -1,75 +1,96 @@
 @font-face {
-    font-family: Rubik;
-    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
-.Navbar{
-    height: calc(140px - 12vw);
-    width: 100%;
+.navbar {
+	position: fixed;
+	top: 0;
+	height: 5rem;
+	width: 100%;
+	z-index: 100;
+	transition: all 0.5s ease;
 }
 
-.mlh{
-    float: right;
-    width: 100px;
-    height: 100px;
+.navbar[data-scrolled="true"] {
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    max-width: 125px;
+.navbar ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	gap: 1rem;
 }
 
-.Item{
-    float: right;
-    margin-right: 40px;
-    margin-top: 40px;
-    cursor: pointer;
+.logo {
+	margin-right: auto;
 }
 
-.Item a{
-    color: #3B4779;
-    font-weight: bolder;
-    font-size: 16px;
-    text-decoration: none;
-    position: relative;
-    font-family: Rubik;
+.logo img {
+	height: 100%;
+	width: fit-content;
 }
 
-.Item a::after{
-    background: #3B4779;
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    opacity: 0;
-    transform: translateY(3px);
-    transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+li {
+	height: 100%;
 }
 
-.Item a:hover::after{
-    opacity: 0.8;
-    transform: translateY(0);
+li .link {
+	box-sizing: border-box;
+	position: relative;
+	color: #3b4779;
+	font-weight: bolder;
+	font-size: 1rem;
+	text-decoration: none;
+	font-family: Rubik;
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
 
+li:not(.logo, .mlh) .link::after {
+	background: #3b4779;
+	content: "";
+	position: absolute;
+	bottom: calc(50% - 1rem);
+	left: 0;
+	width: 100%;
+	height: 4px;
+    border-radius: 1rem;
+	opacity: 0;
+	transform: translateY(3px);
+	transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+}
 
+li:not(.logo, .mlh) .link:is(.active, :hover)::after {
+	opacity: 0.8;
+	transform: translateY(0);
+}
 
-@media(max-width: 900px){
-    .Items{
-        visibility: hidden;
-    }
+.mlh img {
+	height: 100%;
+	width: fit-content;
+    margin-right: 1rem;
+}
 
-    .Navbar img{
-        width: 105px;
-        height: 105px;
-        top: 0;
-    }
+@media (max-width: 900px) {
+	.navbar li:not(.logo) .link {
+		display: none;
+	}
 
-	.Navbar {
-        max-height: calc(140px - 12vw);
-        overflow: hidden;
-    }
+	.navbar {
+		position: absolute;
+	}
+
+	.navbar[data-scrolled="true"] {
+		background-color: transparent;
+		box-shadow: none;
+	}
 }

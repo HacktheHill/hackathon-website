@@ -2,12 +2,6 @@
   visibility: hidden;
 }
 
-.Gradient{
-  background: linear-gradient(0deg, rgba(239, 203, 255, 0) 15%, rgba(236, 211, 247, 0.7723) 48.85%,rgba(236, 210, 248, 0.7373) 48.86%, #EBD5F5 63.96%, #BFCBEE 80.96% ,#BFCBEE 81.77%, #ABEFFA 100%);
-  background-repeat: no-repeat;
-  z-index: 1;
-}
-
 hr {
   width: 75%;
   margin: auto;
