@@ -34,8 +34,7 @@ function SponsorShowcase() {
       {href: "https://www2.uottawa.ca/en", src: uOttawa},
       {href: "https://www.facebook.com/uottawaeeffdg/", src: EEF},
       {href: "https://uocsclub.ca/", src: uocs},
-      {href: "https://www.facebook.com/uottawagdc/", src: uogdc},
-      {href: "https://www.ottawashirtprinting.com/", src: OSP},
+      {href: "https://www.instagram.com/uogamedev/", src: uogdc},
     ]
   };
   
