@@ -4,6 +4,8 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Button, useMediaQuery, useTheme, darken, Grid } from '@mui/material';
 import LoneHeaven from '../../assets/Logos/Lonehaven.svg';
+import Ciena from '../../assets/Logos/Ciena.svg';
+import Google from '../../assets/Logos/Google.svg';
 import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
 import MLH from '../../assets/Logos/MLH.svg';
 import Github from '../../assets/Logos/github.svg';
@@ -17,6 +19,25 @@ import uocs from '../../assets/Logos/uocsclub.svg';
 import uogdc from '../../assets/Logos/uOttawaGDC_FullLogo.png';
 
 function SponsorShowcase() {
+
+  const data = {
+    "sponsors": [
+      {href: "https://ciena.ca/", src: Ciena},
+      {href: "https://google.com/about/", src: Google},
+      {href: "https://stackoverflow.com/", src: StackOverFlow},
+      {href: "https://mlh.io/", src: MLH },
+      {href: "https://github.com/about", src: Github},
+      {href: "https://www.lonehaven.com/", src: LoneHeaven},
+      {href: "https://get.tech/", src: DotTech}
+    ],
+    "collaborators": [
+      {href: "https://www2.uottawa.ca/en", src: uOttawa},
+      {href: "https://www.facebook.com/uottawaeeffdg/", src: EEF},
+      {href: "https://uocsclub.ca/", src: uocs},
+      {href: "https://www.facebook.com/uottawagdc/", src: uogdc},
+      {href: "https://www.ottawashirtprinting.com/", src: OSP},
+    ]
+  };
   
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -59,44 +80,22 @@ function SponsorShowcase() {
             </Button>
           </div> 
         </div>
-            <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+          <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+            {data.sponsors.map(sponsor =>
               <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
-                  <a href="https://stackoverflow.com/"><img className="SponsorIcon" alt="SponsorIcon" src={StackOverFlow}></img></a>
+                <a href={sponsor.href}><img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img></a>
               </Grid>
-              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
-                  <a href="https://mlh.io/"><img className="SponsorIcon" alt="SponsorIcon" src={MLH}></img></a>
-                </Grid>
-              <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
-                  <a href="https://github.com/about"><img className="SponsorIcon" alt="SponsorIcon" src={Github}></img></a>
-                </Grid>
-                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
-                  <a href="https://www.lonehaven.com/"><img className="SponsorIcon" alt="SponsorIcon" src={LoneHeaven}></img></a>
-                </Grid>
-                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '50px' : '0px'}}>
-                  <a href="https://get.tech/"><img className="SponsorIcon" alt="SponsorIcon" src={DotTech}></img></a>
-                </Grid>
-            </Grid>
+            )}
+          </Grid>
         <h1>Community Partners</h1>
 
-        
           <Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www2.uottawa.ca/en" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={uOttawa}></img></a>    
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www.facebook.com/uottawaeeffdg/" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={EEF}></img></a>
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://uocsclub.ca/" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={uocs}></img></a>
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www.facebook.com/uottawagdc/" target={'_blank'}><img className="SponsorIcon" alt="SponsorIcon" src={uogdc}></img></a>
-              </Grid>
-              <Grid item direction="column" className ="SponsorIconBox">
-                  <a href="https://www.ottawashirtprinting.com/"><img className="SponsorIcon" alt="SponsorIcon" src={OSP}></img></a>
-              </Grid>
-
-          </Grid> 
+              {data.collaborators.map(sponsor =>
+                <Grid item direction="column" className ="SponsorIconBox" sx={{mt: matchesLG ? '50px' : '0px', mb: matchesLG ? '25px' : '0px'}}>
+                  <a href={sponsor.href}><img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img></a>
+                </Grid>
+              )}
+          </Grid>
       </div>
     );
   }

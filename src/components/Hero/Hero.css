@@ -1,56 +1,197 @@
 @font-face {
-    font-family: Rubik;
-    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
 @font-face {
-    font-family: Coolvetica;
-    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	font-family: Coolvetica;
+	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
-.HeroImg{
-    width: 100%;
+.Hero {
+	background: linear-gradient(
+		0deg,
+		rgba(239, 203, 255, 0) 15%,
+		rgba(236, 211, 247, 0.7723) 48.85%,
+		rgba(236, 210, 248, 0.7373) 48.86%,
+		#ebd5f5 63.96%,
+		#bfcbee 80.96%,
+		#bfcbee 81.77%,
+		#abeffa 100%
+	);
+	background-repeat: no-repeat;
 }
 
-.BannerLogo{
-    width: 75%;
-    transition: 1s;
+.HeroHeading {
+	position: absolute;
+	display: grid;
+	place-items: center;
+	inset: max(7.5rem, 10vmax) 0 auto 0;
+	text-align: center;
+	width: fit-content;
+	margin: auto;
 }
 
-h3{
-    color: #3B4779;
-    font-family: Coolvetica;
-    margin: 0px;
-    font-size: 1.5vw;
-    font-weight: 500;
+.LocationDateHeading {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
 }
 
-.ButtonText{
-    font-family: Rubik;
-    margin: 100%;
-    font-weight: 60;
-    font-size: 15px;
+.LocationPin {
+	width: 1rem;
+	height: 1rem;
 }
 
-@media only screen and (max-width: 900px) {
-    .BannerLogo{
-        width: 85%;
-        transition: 1s;
-    }
-    h3 {
-        font-size: 2.5vw;
-    }
-    .HeroImg{
-        margin-top: 10%;
-    }
+.BannerLogo {
+	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
-@media only screen and (max-width: 600px) {
-    .BannerLogo{
-        width: 100%;
-        transition: 1s;
-    }
-    h3 {
-        font-size: 4.5vw;
-    }
+.HeroHeading h2 {
+	color: #3b4779;
+	font-family: Coolvetica;
+	font-size: clamp(1rem, 3.5vmin, 5rem);
+	font-weight: 500;
+}
+
+.HeroHeading h3 {
+	color: #3b4779;
+	font-size: clamp(1rem, 2vmin, 5rem);
+	font-weight: normal;
+}
+
+.HeroButton {
+	margin: 3vmin auto;
+	z-index: 1;
+}
+
+.HeroButton button {
+	background-color: #5c71ad;
+	border: none;
+	border-radius: 100px;
+	color: white;
+	transition: 1s;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+	font-size: clamp(1rem, 1vmin, 5rem);
+	white-space: nowrap;
+	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
+	cursor: pointer;
+	font-family: Rubik;
+}
+
+.HeroButton button:hover {
+	background-color: #3f4e77;
+}
+
+.HeroImg {
+	height: 100%;
+	width: 100%;
+	margin-top: calc(20rem - 20vw);
+	margin-bottom: -25%;
+	pointer-events: none;
+}
+
+/* Hero SVG animations */
+svg .snow {
+	animation: snow 100s linear infinite;
+}
+
+svg .halo {
+	animation: halo 10s linear infinite alternate;
+	transform-box: fill-box;
+	transform-origin: center;
+}
+
+svg #flag {
+	animation: flag 1s linear infinite alternate;
+	transform-box: fill-box;
+	transform-origin: top left;
+}
+
+svg .cloud {
+	animation: clouds 100s linear infinite alternate;
+}
+
+svg :is(#ClockLeft, #ClockRight) {
+	animation: clock linear infinite;
+	transform-box: fill-box;
+}
+
+svg #ClockLeft {
+	animation-duration: 3600s;
+	transform-origin: top right;
+}
+
+svg #ClockRight {
+	animation-duration: 60s;
+	transform-origin: top left;
+}
+
+svg :is(#leftbird, #rightbird) {
+	animation: flap 1s linear infinite alternate;
+}
+
+svg #leftbird {
+	animation-duration: 2s;
+	animation-delay: 1s;
+}
+
+svg #rightbird {
+	animation-duration: 1s;
+}
+
+@keyframes snow {
+	0% {
+		transform: translate(-1vw, -50vh);
+		opacity: 0;
+	}
+
+	10%,
+	95% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(1vw, 0vh);
+		opacity: 0;
+	}
+}
+
+@keyframes halo {
+	50% {
+		transform: scale(1.125);
+		filter: saturate(1.5);
+	}
+}
+
+@keyframes flag {
+	50% {
+		transform: skew(10deg) rotate(10deg);
+	}
+}
+
+@keyframes clouds {
+	0% {
+		transform: translateX(-50%);
+	}
+
+	100% {
+		transform: translateX(50%);
+	}
+}
+
+@keyframes clock {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flap {
+	0% {
+		transform: translateY(-2px);
+	}
+
+	100% {
+		transform: translateY(2px);
+	}
 }

@@ -3,68 +3,102 @@
     src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
-.Navbar{
-    height: 150px;
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 5rem;
     width: 100%;
+    z-index: 100;
+    transition: all 0.5s ease;
+    display: flex;
 }
 
-.mlh{
-    float: right;
-    width: 100px;
-    height: 100px;
+.navbar[data-scrolled="true"] {
+    background-color: #bfcbee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
+.navbar ul {
     position: absolute;
-    left: 15px;
-    top: 15px;
-    max-width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    gap: 1rem;
 }
 
-.Item{
-    float: right;
-    margin-right: 40px;
-    margin-top: 40px;
+.logo {
+    z-index: 1;
     cursor: pointer;
 }
 
-.Item a{
-    color: #3B4779;
-    font-weight: bolder;
-    font-size: 16px;
-    text-decoration: none;
-    position: relative;
-    font-family: Rubik;
+li {
+    height: 100%;
 }
 
-.Item a::after{
-    background: #3B4779;
+li .link {
+    box-sizing: border-box;
+    position: relative;
+    color: #3b4779;
+    font-weight: bolder;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: Rubik;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+li:not(.logo, .mlh) .link::after {
+    background: #3b4779;
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: calc(50% - 1rem);
     left: 0;
     width: 100%;
     height: 4px;
+    border-radius: 1rem;
     opacity: 0;
     transform: translateY(3px);
     transition: opacity 0.3s ease, transform 0.3s ease-in-out;
 }
 
-.Item a:hover::after{
+li:not(.logo, .mlh) .link:is(.active, :hover)::after {
     opacity: 0.8;
     transform: translateY(0);
 }
 
+.mlh {
+    position: absolute;
+    inset: 0 1rem auto auto;
+    width: 4rem;
+}
 
+.mlh img {
+    height: 100%;
+    width: 100%;
+}
 
-@media(max-width: 900px){
-    .Items{
-        visibility: hidden;
+@media (max-width: 900px) {
+    .navbar li:not(.logo) .link {
+        display: none;
     }
 
-    .Navbar img{
-        width: 105px;
-        height: 105px;
-        top: 0;
+    .navbar {
+        position: absolute;
+    }
+
+    .navbar[data-scrolled="true"] {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .mlh {
+        display: none;
     }
 }
