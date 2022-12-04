@@ -97,4 +97,8 @@ li:not(.logo, .mlh) .link:is(.active, :hover)::after {
         background-color: transparent;
         box-shadow: none;
     }
+
+    .mlh {
+        display: none;
+    }
 }
