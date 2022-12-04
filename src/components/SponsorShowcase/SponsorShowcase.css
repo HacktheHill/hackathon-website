@@ -8,12 +8,6 @@
   src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
-img {
-  width: 250px;
-  align-items: center;
-  transition: 0.5s;
-}
-
 .SponsorsDisplay {
   justify-content: center;
   gap: 40px;
@@ -31,6 +25,9 @@ img {
   max-height: 130px;
   display: block;
   scale: 0.8;
+  width: 250px;
+  align-items: center;
+  transition: 0.5s;
 }
 
 .PaperBox {

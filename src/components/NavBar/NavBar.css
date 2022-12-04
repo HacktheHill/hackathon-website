@@ -36,11 +36,6 @@
     cursor: pointer;
 }
 
-.logo img {
-    height: 100%;
-    width: fit-content;
-}
-
 li {
     height: 100%;
 }
