@@ -26,10 +26,11 @@
 	position: absolute;
 	display: grid;
 	place-items: center;
-	inset: max(7.5rem, 10vmax) 0 auto 0;
+	inset: max(7.5rem, 5vmax) 0 auto 0;
 	text-align: center;
 	width: fit-content;
 	margin: auto;
+	gap: 1.5vh;
 }
 
 .LocationDateHeading {
