@@ -64,7 +64,7 @@ function Navbar({ pageScroll }) {
 							to="Collaborators"
 							spy={true}
 							smooth={true}
-							offset={-120}
+							offset={-115}
 							duration={500}
 						>
 							Collaborators
