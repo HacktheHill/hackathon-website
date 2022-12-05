@@ -1,122 +1,81 @@
 @font-face {
-  font-family: Coolvetica;
-  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	font-family: Coolvetica;
+	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
 .Footer {
-    justify-content: center;
-  }
+	justify-content: center;
+}
 
-  .FooterBody {
-    display: grid;
+.FooterBody {
+	display: grid;
+}
 
-  }
+.FooterLogo {
+	display: block;
+	margin: auto;
+}
 
-  .FooterLogo {
-    display: block;
-    margin:auto;
+.FooterLogo img {
+	width: 200px;
+	height: auto;
+	margin: 0px auto;
+	padding-top: 50px;
+}
 
-  }
+.LogoText {
+	display: block;
+	margin: auto;
+	font-size: 12px;
+	font-size: 15px;
+	margin-bottom: 25px;
+	font-family: Coolvetica;
+	font-weight: normal;
+	letter-spacing: 0.05em;
+}
 
-  .FooterLogo img {
-    width: 200px;
-    height: auto;
-    margin: 0px auto;
-    padding-top: 50px;
-  }
+.FooterContainer {
+	display: flex;
+	margin: 5%;
+	margin-top: 0;
+	justify-content: center;
+}
 
-  .LogoText {
-    display: block;
-    margin:auto;
-    font-size: 12px;
-    font-size: 15px;
-    margin-bottom: 25px;
-    font-family: Coolvetica;
-    font-weight: normal;
-    letter-spacing: 0.05em;
-  }
+.MediaLinks a {
+	margin: 0px;
+}
 
-  .FooterContainer{
-    display: flex;
-    margin-bottom: 50px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 5%;
-  }
-
-
-
-
-  .MediaLinks a {
-    margin: 0px;
-
-  }
-
-  .MediaLinks {
-    text-align: center;
+.MediaLinks {
+	text-align: center;
 	display: flex;
 	justify-content: space-evenly;
-  }
-  .FooterLinks {
-    margin-left: auto;
-    padding-left: 2%;
+}
 
-  }
+@media only screen and (max-width: 10000px) {
+	.MediaLinks a {
+		padding: 15px;
+	}
+}
 
-  .FooterLinks a {
-    padding: 15px;
-    text-decoration: none;
-    color:black;
-    font-size: 10px;
-  }
+@media only screen and (max-width: 900px) {
+	.FooterContainer {
+		display: block;
+		margin-bottom: 2%;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.MediaLinks a {
+		padding: 5px;
+	}
+}
+@media only screen and (max-width: 450px) {
+	.MediaLinks a {
+		padding: 0px;
+	}
+}
 
-  .FooterLinks a:hover {
-    text-decoration: underline;
-  }
-
-  @media only screen and (max-width: 10000px) {
-
-    .MediaLinks a {
-      padding: 15px;
-    }
-  }
-
-  @media only screen and (max-width: 900px) {
-    .FooterLinks a {
-      display: block;
-    }
-    .FooterContainer {
-      display: block;
-      margin-bottom: 2%;
-    }
-    .FooterLinks {
-      display: flex;
-      margin: 0 auto;
-      padding:0;
-    }
-
-    .FooterLinks a{
-      margin: 0 auto;
-    }
-
-
-  }
-  @media only screen and (max-width: 600px) {
-    .MediaLinks a {
-      padding: 5px;
-    }
-  }
-  @media only screen and (max-width: 450px) {
-
-    .MediaLinks a {
-      padding: 0px;
-    }
-  }
-
-  @media only screen and (max-width: 353px) {
-
-    .MediaLinks a box-icon {
-      margin-right: 2px;
-    }
-
-  }
+@media only screen and (max-width: 353px) {
+	.MediaLinks a box-icon {
+		margin-right: 2px;
+	}
+}

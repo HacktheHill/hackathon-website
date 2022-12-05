@@ -11,6 +11,7 @@
     z-index: 100;
     transition: all 0.5s ease;
     display: flex;
+    justify-content: space-between;
 }
 
 .navbar[data-scrolled="true"] {
@@ -19,15 +20,13 @@
 }
 
 .navbar ul {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     padding: 0;
-    margin: 0;
+	margin: 0 2rem;
     height: 100%;
-    width: 100%;
     gap: 1rem;
 }
 
@@ -54,7 +53,7 @@ li .link {
     align-items: center;
 }
 
-li:not(.logo, .mlh) .link::after {
+li:not(.logo) .link::after {
     background: #3b4779;
     content: "";
     position: absolute;
@@ -68,20 +67,9 @@ li:not(.logo, .mlh) .link::after {
     transition: opacity 0.3s ease, transform 0.3s ease-in-out;
 }
 
-li:not(.logo, .mlh) .link:is(.active, :hover)::after {
+li:not(.logo) .link:is(.active, :hover)::after {
     opacity: 0.8;
     transform: translateY(0);
-}
-
-.mlh {
-    position: absolute;
-    inset: 0 1rem auto auto;
-    width: 4rem;
-}
-
-.mlh img {
-    height: 100%;
-    width: 100%;
 }
 
 @media (max-width: 900px) {
@@ -96,9 +84,5 @@ li:not(.logo, .mlh) .link:is(.active, :hover)::after {
     .navbar[data-scrolled="true"] {
         background-color: transparent;
         box-shadow: none;
-    }
-
-    .mlh {
-        display: none;
     }
 }
