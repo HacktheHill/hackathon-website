@@ -7,7 +7,6 @@ import LoneHeaven from '../../assets/Logos/Lonehaven.svg';
 import Ciena from '../../assets/Logos/Ciena.svg';
 import Google from '../../assets/Logos/Google.svg';
 import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
-import MLH from '../../assets/Logos/MLH.svg';
 import Github from '../../assets/Logos/github.svg';
 import DotTech from '../../assets/Logos/DotTech.svg';
 import OSP from '../../assets/Logos/OSP.png';
@@ -25,7 +24,6 @@ function SponsorShowcase() {
       {href: "https://ciena.ca/", src: Ciena},
       {href: "https://google.com/about/", src: Google},
       {href: "https://stackoverflow.com/", src: StackOverFlow},
-      {href: "https://mlh.io/", src: MLH },
       {href: "https://github.com/about", src: Github},
       {href: "https://www.lonehaven.com/", src: LoneHeaven},
       {href: "https://get.tech/", src: DotTech}

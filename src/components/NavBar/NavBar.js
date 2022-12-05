@@ -1,6 +1,5 @@
 import "./NavBar.css";
 import { Link } from "react-scroll";
-import MLH from "../../assets/Logos/mlhbadge.svg";
 
 function Navbar({ pageScroll }) {
 	return (
@@ -85,9 +84,6 @@ function Navbar({ pageScroll }) {
 					</li>
 				</ul>
 			</nav>
-			<a className="mlh" href="https://mlh.io/seasons/2023/events" target="_blank" rel="noreferrer">
-				<img alt="MLH" src={MLH}></img>
-			</a>
 		</>
 	);
 }
