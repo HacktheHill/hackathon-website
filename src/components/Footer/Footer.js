@@ -36,8 +36,8 @@ function Footer() {
             </a>
           </div>
           <div className='FooterLinks'>
-            <a href={MLH_code_of_conduct} target="_blank" rel="noreferrer">Code Of Conduct</a>
-            <a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>
+            {/* <a href={MLH_code_of_conduct} target="_blank" rel="noreferrer">Code Of Conduct</a>
+            <a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> */}
             {/* <a href={MLH_code_of_conduct}>Hack the Hill Constitution</a> */}
           </div>
         </div>
