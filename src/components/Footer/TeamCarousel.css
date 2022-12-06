@@ -11,7 +11,7 @@
 	z-index: 1;
 	height: 100%;
 	width: 10%;
-	background: linear-gradient(to var(--direction), white 10%, transparent);
+	background: linear-gradient(to var(--direction), rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0));
 }
 
 .TeamCarousel::after {
@@ -40,6 +40,7 @@
 	display: grid;
 	grid-template: 1fr / 1fr;
 	perspective: 1000px;
+	width: 100%;
 }
 
 .TeamCarousel .CarouselCardContent {
@@ -70,6 +71,7 @@
 .TeamCarousel .CarouselCard img {
 	border-radius: 50%;
 	width: 100%;
+	object-fit: cover;
 }
 
 .TeamCarousel .CarouselCard figcaption {
