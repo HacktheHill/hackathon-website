@@ -1,0 +1,97 @@
+.TeamCarousel {
+	overflow: hidden;
+	position: relative;
+}
+
+.TeamCarousel::before,
+.TeamCarousel::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	width: 10%;
+	background: linear-gradient(to var(--direction), white 10%, transparent);
+}
+
+.TeamCarousel::after {
+	--direction: left;
+	right: 0;
+}
+
+.TeamCarousel::before {
+	--direction: right;
+	left: 0;
+}
+
+.TeamCarousel .CarouselTrack {
+	display: flex;
+	gap: 0.5rem;
+	padding: 1ch 0;
+	width: calc(2 * var(--carousel-track-width));
+	animation: scroll 60s linear infinite;
+}
+
+.TeamCarousel .CarouselTrack:hover {
+	animation-play-state: paused;
+}
+
+.TeamCarousel .CarouselCard {
+	display: grid;
+	grid-template: 1fr / 1fr;
+	perspective: 1000px;
+}
+
+.TeamCarousel .CarouselCardContent {
+	grid-area: 1 / 1 / 1 / 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	transition: transform 1s;
+	backface-visibility: hidden;
+}
+
+.TeamCarousel .CarouselCard:hover .CarouselCardFront {
+	transform: rotateY(-180deg);
+}
+
+.TeamCarousel .CarouselCardBack {
+	transform: rotateY(180deg);
+	background-color: rgba(0, 0, 0, 0.125);
+}
+
+.TeamCarousel .CarouselCard:hover .CarouselCardBack {
+	transform: rotateY(0deg);
+}
+
+.TeamCarousel .CarouselCard img {
+	border-radius: 50%;
+	width: 100%;
+}
+
+.TeamCarousel .CarouselCard figcaption {
+	text-align: center;
+}
+
+.TeamCarousel .CarouselCardAbout {
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.TeamCarousel .CarouselCardContact {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+@keyframes scroll {
+	to {
+		transform: translateX(calc(var(--carousel-track-width) * -1));
+	}
+}

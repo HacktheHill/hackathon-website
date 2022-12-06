@@ -4,78 +4,34 @@
 }
 
 .Footer {
-	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem 1rem;
 }
 
-.FooterBody {
-	display: grid;
-}
-
-.FooterLogo {
-	display: block;
-	margin: auto;
-}
-
-.FooterLogo img {
-	width: 200px;
+img.FooterLogo {
+	width: 10rem;
 	height: auto;
-	margin: 0px auto;
-	padding-top: 50px;
+	margin: 0 auto;
 }
 
-.LogoText {
-	display: block;
+.FooterLogoText {
 	margin: auto;
-	font-size: 12px;
-	font-size: 15px;
-	margin-bottom: 25px;
+	margin-bottom: 1rem;
 	font-family: Coolvetica;
-	font-weight: normal;
 	letter-spacing: 0.05em;
 }
 
-.FooterContainer {
-	display: flex;
-	margin: 5%;
-	margin-top: 0;
-	justify-content: center;
-}
-
-.MediaLinks a {
-	margin: 0px;
-}
-
 .MediaLinks {
-	text-align: center;
 	display: flex;
-	justify-content: space-evenly;
+	margin: 0 5%;
+	justify-content: center;
+	gap: 1rem;
 }
 
-@media only screen and (max-width: 10000px) {
-	.MediaLinks a {
-		padding: 15px;
-	}
-}
-
-@media only screen and (max-width: 900px) {
-	.FooterContainer {
-		display: block;
-		margin-bottom: 2%;
-	}
-}
-@media only screen and (max-width: 600px) {
-	.MediaLinks a {
-		padding: 5px;
-	}
-}
-@media only screen and (max-width: 450px) {
-	.MediaLinks a {
-		padding: 0px;
-	}
-}
-
-@media only screen and (max-width: 353px) {
-	.MediaLinks a box-icon {
-		margin-right: 2px;
+@media (max-width: 768px) {
+	.MediaLinks {
+		justify-content: space-around;
 	}
 }
