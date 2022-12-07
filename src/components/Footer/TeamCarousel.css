@@ -32,7 +32,7 @@
 	animation: scroll 60s linear infinite;
 }
 
-.TeamCarousel .CarouselTrack:hover {
+.TeamCarousel .CarouselTrack.CarouselHover {
 	animation-play-state: paused;
 }
 
@@ -55,7 +55,7 @@
 	backface-visibility: hidden;
 }
 
-.TeamCarousel .CarouselCard:hover .CarouselCardFront {
+.TeamCarousel .CarouselCard.CarouselHover .CarouselCardFront {
 	transform: rotateY(-180deg);
 }
 
@@ -64,7 +64,7 @@
 	background-color: rgba(0, 0, 0, 0.125);
 }
 
-.TeamCarousel .CarouselCard:hover .CarouselCardBack {
+.TeamCarousel .CarouselCard.CarouselHover .CarouselCardBack {
 	transform: rotateY(0deg);
 }
 

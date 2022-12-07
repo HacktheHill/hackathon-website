@@ -2,7 +2,6 @@ import "./TeamCarousel.css";
 import "boxicons";
 
 export default function TeamCarousel() {
-
 	// TODO: This is just a placeholder for the team members
 	const team = Array.from({ length: 20 }, (_, i) => ({
 		name: `Team Member ${i + 1}`,
@@ -33,6 +32,22 @@ export default function TeamCarousel() {
 		about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nunc nisl ultricies nunc, nec ultricies nisl nunc vel nunc. Sed euismod, nisl vitae ultricies lacinia, nunc nisl ultricies nunc, nec ultricies nisl nunc vel nunc.",
 	}));
 
+	// Track whether the carousel and its cards are being hovered
+	function handleHoverToggle({currentTarget}) {
+		currentTarget.classList.toggle("CarouselHover");
+		currentTarget.closest(".CarouselTrack").classList.toggle("CarouselHover");
+	}
+
+	function handleHoverStart({currentTarget}) {
+		currentTarget.classList.add("CarouselHover");
+		currentTarget.closest(".CarouselTrack").classList.add("CarouselHover");
+	}
+
+	function handleHoverEnd({currentTarget}) {
+		currentTarget.classList.remove("CarouselHover");
+		currentTarget.closest(".CarouselTrack").classList.remove("CarouselHover");
+	}
+
 	return (
 		<div className="TeamCarousel">
 			<div
@@ -42,7 +57,12 @@ export default function TeamCarousel() {
 				}}
 			>
 				{[...team, ...team].map(member => (
-					<div className="CarouselCard">
+					<div
+						className="CarouselCard"
+						onTouchStart={handleHoverToggle}
+						onMouseEnter={handleHoverStart}
+						onMouseLeave={handleHoverEnd}
+					>
 						<figure className="CarouselCardContent CarouselCardFront">
 							<img src={member.image} alt={member.name} />
 							<figcaption>
