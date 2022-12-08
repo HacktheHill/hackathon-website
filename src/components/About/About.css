@@ -23,11 +23,6 @@
   font-weight: normal;
 }
 
-.wrapper{
-  width: 100%;
-  display: flex;
-}
-
 .about-body{
   margin-left: 10%;
   width: 50%;
@@ -92,4 +87,3 @@
     margin-top: 0%;
   }
 }
-  
