@@ -12,6 +12,8 @@ import Footer from "../Footer/Footer.js";
 import { useEffect, useState } from "react";
 
 function App() {
+	document.title = "Hack the Hill | 2023";
+
 	const [pageScroll, setPageScroll] = useState(0);
 
 	useEffect(() => {
