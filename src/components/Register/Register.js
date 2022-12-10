@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 
 
 const Register = () => {
+    document.title = "Register | Hack the Hill";
+
     useEffect(() => {
         const script = document.createElement('script');
         script.src = "https://embed.typeform.com/next/embed.js";
