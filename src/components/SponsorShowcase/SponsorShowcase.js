@@ -3,7 +3,7 @@ import "./SponsorShowcase.css";
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Button, useMediaQuery, useTheme, darken, Grid } from '@mui/material';
-import LoneHeaven from '../../assets/Logos/Lonehaven.svg';
+import lonehaven from '../../assets/Logos/Lonehaven.svg';
 import Ciena from '../../assets/Logos/Ciena.svg';
 import Google from '../../assets/Logos/Google.svg';
 import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
@@ -23,10 +23,7 @@ function SponsorShowcase() {
     "sponsors": [
       {href: "https://ciena.ca/", src: Ciena},
       {href: "https://google.com/about/", src: Google},
-      {href: "https://stackoverflow.com/", src: StackOverFlow},
-      {href: "https://github.com/about", src: Github},
-      {href: "https://www.lonehaven.com/", src: LoneHeaven},
-      {href: "https://get.tech/", src: DotTech}
+      {href: "https://www.lonehaven.com/", src: lonehaven},
     ],
     "collaborators": [
       {href: "https://www2.uottawa.ca/en", src: uOttawa},
