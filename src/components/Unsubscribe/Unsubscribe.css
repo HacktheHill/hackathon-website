@@ -1,0 +1,52 @@
+main {
+	height: 100vh;
+	background: linear-gradient(
+		0deg,
+		rgba(239, 203, 255, 0) 15%,
+		rgba(236, 211, 247, 0.7723) 48.85%,
+		rgba(236, 210, 248, 0.7373) 48.86%,
+		#ebd5f5 63.96%,
+		#bfcbee 80.96%,
+		#bfcbee 81.77%,
+		#abeffa 100%
+	);
+	background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input {
+	font-size: 1rem;
+	border-radius: 1rem;
+	padding: 1rem;
+	width: 100%;
+	background: hsl(0, 0%, 0%, 10%);
+	border: none;
+	color: black;
+}
+
+button {
+	background-color: #5c71ad;
+	border: none;
+	border-radius: 100px;
+	color: white;
+	transition: 1s;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+	font-size: clamp(1rem, 1vmin, 5rem);
+	white-space: nowrap;
+	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
+	cursor: pointer;
+	font-family: Rubik;
+}
+
+button:hover {
+	background-color: #3f4e77;
+}
