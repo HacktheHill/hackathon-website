@@ -1,5 +1,6 @@
 import "./NavBar.css";
 import { Link } from "react-scroll";
+import logo from "../../assets/Logos/hthlogo_icon.svg";
 
 function Navbar({ pageScroll }) {
 	return (
@@ -14,7 +15,7 @@ function Navbar({ pageScroll }) {
 					offset={0}
 					duration={500}
 				>
-					<img alt="Logo" src="Logos\hthlogo_icon_ver.svg"></img>
+					<img alt="Logo" src={logo}></img>
 				</Link>
 				<ul>
 					<li>
