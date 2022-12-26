@@ -11,19 +11,22 @@ class About extends Component {
         <Stack direction = {{xs: "column", md: "row"}} spacing={10}>
           <div class="about-body">
             <p>
-            The University of Ottawa and Carleton Univerisity STEM Student Organizations are incredibly 
-            excited to introduce Canada's Capital Hackathon! 
+            Hack the Hill is an internationally-hosted hackathon taking place in the 
+            heart of Canada's very own capital! In collaboration with the University of Ottawa's 
+            Engineering Faculty, seven major student organizations stepped up to establish Hack the Hill 
+            with the goal of setting the standard for how hackathons are operated.
             <br></br>
             <br></br>
-            Hack the Hill was established to set a new standard for hackathon operations! With a series 
-            of monthly events, also known as "The Hacker Series," hackathon participants will be provided 
-            numerous opportunities to brush up on their technical skills, network with peers and even learn 
-            from notable alumni and business leaders! 
+            The uOttawa Engineering Student Society, IEEE uOttawa Student Branch, Computer Science Student Association, 
+            Software Engineering Student Association, Women in Engineering uOttawa Affinity Group, uOttawa Computer Science Club 
+            and uOttawa Game Development Club are proud to bring a flagship 
+            hackathon to Ottawa where students can network and compete with the best! 
             <br></br>
             <br></br>
-            Our main event is scheduled for February 3rd-5th, 2023, and will be free for all participants. 
-            We look forward to seeing you all at our flagship hackathon and hope you're prepared to network 
-            and compete with the best!
+            With a series of monthly events leading into our main hackathon, also known as "The Hacker Series", 
+            hackathon participants will be provided numerous opportunities to brush up on their technical 
+            skills, network with peers and even learn from notable alumni and business leaders! 
+            Our main event is scheduled for February 3rd-5th, 2023 and will be free for all participants.
             </p>
           </div>
           <div class="mascot1">
