@@ -3,7 +3,7 @@ import "./SponsorShowcase.css";
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Button, useMediaQuery, useTheme, darken, Grid } from '@mui/material';
-import lonehaven from '../../assets/Logos/Lonehaven.svg';
+import lonehaven from '../../assets/Logos/lonehaven.svg';
 import Ciena from '../../assets/Logos/Ciena.svg';
 import Google from '../../assets/Logos/Google.svg';
 import StackOverFlow from '../../assets/Logos/StackOverFlow.svg';
