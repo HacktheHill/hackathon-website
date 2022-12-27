@@ -1,6 +1,6 @@
-import "./NavBar.css";
 import { Link } from "react-scroll";
 import logo from "../../assets/Logos/hthlogo_icon.svg";
+import "./NavBar.css";
 
 function Navbar({ pageScroll }) {
 	return (

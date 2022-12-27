@@ -1,0 +1,145 @@
+---
+import App from "../components/App/App";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<title>Hack the Hill | 2023</title>
+
+		<!-- meta tags for SEO and social media -->
+		<meta
+			property="og:description"
+			name="description"
+			content="Welcome to Hack the Hill’s premier flagship event, HtH 2023, powered by uOttawa student orgs: EES, IEEE, CSSA and SESA. This event brings unparalleled tracks in hardware, software, and game development fields."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Hack the Hill | 2023" />
+		<meta property="og:url" content="https://hackthehill.com" />
+		<meta property="og:image" content="https://hackthehill.com/favicon-196x196.png" />
+		<meta property="og:site_name" content="Hack the Hill" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- TWITTER SEO -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@HackTheHiII" />
+		<meta name="twitter:creator" content="@HackTheHiII" />
+		<meta name="twitter:title" content="Hack the Hill | 2023" />
+		<meta
+			name="twitter:description"
+			content="Welcome to Hack the Hill’s premier flagship event, HtH 2023, powered by uOttawa student orgs: EES, IEEE, CSSA and SESA. This event brings unparalleled tracks in hardware, software, and game development fields."
+		/>
+		<meta name="twitter:image" content="https://hackthehill.com/favicon-196x196.png" />
+		<meta name="twitter:image:alt" content="Hack the Hill logo" />
+
+		<!-- KEYWORDS -->
+		<meta
+			name="keywords"
+			content="Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2023, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon"
+		/>
+
+		<!-- humans.txt -->
+		<link type="text/plain" rel="author" href="https://hackthehill.com/humans.txt" />
+
+		<!-- canonical -->
+		<link rel="canonical" href="https://hackthehill.com" />
+
+		<!-- sitemap -->
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="https://hackthehill.com/sitemap.xml" />
+
+		<!-- robots.txt -->
+		<link rel="robots" type="text/plain" title="Robots" href="https://hackthehill.com/robots.txt" />
+
+		<!-- favicons for all devices -->
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="57x57"
+			href="https://hackthehill.com/icon/apple-touch-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="114x114"
+			href="https://hackthehill.com/icon/apple-touch-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="72x72"
+			href="https://hackthehill.com/icon/apple-touch-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="144x144"
+			href="https://hackthehill.com/icon/apple-touch-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="60x60"
+			href="https://hackthehill.com/icon/apple-touch-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="120x120"
+			href="https://hackthehill.com/icon/apple-touch-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="76x76"
+			href="https://hackthehill.com/icon/apple-touch-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="152x152"
+			href="https://hackthehill.com/icon/apple-touch-icon-152x152.png"
+		/>
+		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-128.png" sizes="128x128" />
+		<meta name="application-name" content="Hack the Hill" />
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileImage" content="https://hackthehill.com/icon/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="https://hackthehill.com/icon/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="https://hackthehill.com/icon/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="https://hackthehill.com/icon/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="https://hackthehill.com/icon/mstile-310x310.png" />
+	</head>
+	<body>
+		<App client:load />
+		<style is:global>
+			@font-face {
+				font-family: Rubik;
+				src: url(/fonts/rubik/Rubik-Regular.ttf);
+			}
+
+			@font-face {
+				font-family: Coolvetica;
+				src: url(/fonts/coolvetica/coolvetica\ rg.otf);
+			}
+
+			body {
+				margin: 0;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+					"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			code {
+				font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin: 0;
+			}
+		</style>
+	</body>
+</html>

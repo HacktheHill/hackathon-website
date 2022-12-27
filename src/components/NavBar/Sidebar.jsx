@@ -1,8 +1,8 @@
 import React from "react";
-import { slide as Menu } from "react-burger-menu";
+import reactBugerMenu from "react-burger-menu";
+const { slide: Menu } = reactBugerMenu;
 import "./Sidebar.css";
 import { Link } from "react-scroll";
-import "boxicons";
 import { useState } from "react";
 
 export default function Sidebar() {

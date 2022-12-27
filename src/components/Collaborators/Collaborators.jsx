@@ -1,5 +1,5 @@
-import "./Collaborators.css";
 import Mountain from "../../assets/Logos/mountain_flags.svg";
+import "./Collaborators.css";
 
 function Collaborators() {
 	return (

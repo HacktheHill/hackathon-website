@@ -127,9 +127,9 @@
 <path d="M849.36 842.269C813.611 842.269 682.88 680.96 642.75 609.382L1012.83 628.5L1615.29 638.769H1971.2C1943.86 665.769 1795.14 842.269 1730.48 842.269H849.36Z" fill="#5C71AD" fill-opacity="0.07"/>
 <rect x="-6" y="838" width="1944" height="263" fill="url(#paint0_linear_118_2)"/>
 <defs>
-<linearGradient id="paint0_linear_118_2" x1="966" y1="838" x2="966" y2="1101" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BFF5FF"/>
-<stop offset="1" stop-color="#ABEFFB" stop-opacity="0"/>
-</linearGradient>
+    <linearGradient id="paint0_linear_118_2" x1="966" y1="838" x2="966" y2="1101" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#BFF5FF"/>
+        <stop offset="1" stop-color="#ABEFFB" stop-opacity="0"/>
+    </linearGradient>
 </defs>
 </svg>

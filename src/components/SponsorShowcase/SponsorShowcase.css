@@ -1,99 +1,99 @@
 @font-face {
-  font-family: Rubik;
-  src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
 }
 
 @font-face {
-  font-family: Coolvetica;
-  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	font-family: Coolvetica;
+	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
 .SponsorsDisplay {
-  justify-content: center;
-  gap: 40px;
+	justify-content: center;
+	gap: 40px;
 }
 
 .SponsorIconBox {
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
 }
 
 .SponsorIcon {
-  position: center;
-  max-height: 130px;
-  display: block;
-  scale: 0.8;
-  width: 250px;
-  align-items: center;
-  transition: 0.5s;
+	position: center;
+	max-height: 130px;
+	display: block;
+	scale: 0.8;
+	width: 250px;
+	align-items: center;
+	transition: 0.5s;
 }
 
 .PaperBox {
-  align-items: center;
+	align-items: center;
 }
 
 .Sponsors {
-  color: black;
-  transition: 0.5s;
-  margin-bottom: 20%;
-  margin-bottom: 10vw;
-  padding: 0 10%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+	color: black;
+	transition: 0.5s;
+	margin-bottom: 20%;
+	margin-bottom: 10vw;
+	padding: 0 10%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .Sponsors h1 {
-  font-family: Coolvetica;
-  font-size: 3em;
-  font-weight: normal;
+	font-family: Coolvetica;
+	font-size: 3em;
+	font-weight: normal;
 }
 
 .PaperBox a:hover img {
-  transform: scale(1.1);
-  transition: 0.5s;
+	transform: scale(1.1);
+	transition: 0.5s;
 }
 
 .text {
-  border-left: 5px solid black;
-  padding-left: 2.25%;
-  width: 80%;
-  font-family: Rubik;
-  font-size: 1.15vw;
+	border-left: 5px solid black;
+	padding-left: 2.25%;
+	width: 80%;
+	font-family: Rubik;
+	font-size: 1.15vw;
 }
 
 .ButtonText {
-  font-weight: normal;
+	font-weight: normal;
 }
 
 @media only screen and (max-width: 900px) {
-  .text {
-    width: 90%;
-  }
-  .text {
-    font-size: 16px;
-    line-height: 5vw;
-  }
+	.text {
+		width: 90%;
+	}
+	.text {
+		font-size: 16px;
+		line-height: 5vw;
+	}
 }
 
 @media only screen and (max-width: 590px) {
-  .text {
-    width: 90%;
-    font-size: 16px;
-    line-height: 8vw;
-  }
+	.text {
+		width: 90%;
+		font-size: 16px;
+		line-height: 8vw;
+	}
 
-  .SponsorIconBox {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    padding: 0 2rem;
-  }
+	.SponsorIconBox {
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		display: flex;
+		padding: 0 2rem;
+	}
 
-  .Sponsors h1 {
-    font-size: 3em;
-  }
+	.Sponsors h1 {
+		font-size: 3em;
+	}
 }

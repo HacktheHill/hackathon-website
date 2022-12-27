@@ -22,4 +22,5 @@
 <circle cx="384" cy="320" r="16" stroke="black" stroke-width="8"/>
 <circle cx="384" cy="240" r="16" stroke="black" stroke-width="8"/>
 <path d="M384 252V308" stroke="black" stroke-width="20"/>
+
 </svg>

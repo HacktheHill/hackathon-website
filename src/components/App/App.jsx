@@ -1,22 +1,19 @@
-import "./App.css";
-import NavBar from "../NavBar/NavBar.js";
-import Sidebar from "../NavBar/Sidebar.js";
-import Hero from "../Hero/Hero.js";
-import About from "../About/About.js";
-import Schedule from "../Schedule/Schedule.js";
-import SponsorEvent from "../SponsorEvent/SponsorEvent.js";
-import SponsorShowcase from "../SponsorShowcase/SponsorShowcase.js";
-import Collaborators from "../Collaborators/Collaborators.js";
-import FAQ from "../FAQ/FAQ.js";
-import Footer from "../Footer/Footer.js";
 import { useEffect, useState } from "react";
+import FAQ from "..//FAQ/FAQ";
+import About from "../About/About";
+import Collaborators from "../Collaborators/Collaborators";
+import Footer from "../Footer/Footer";
+import Hero from "../Hero/Hero";
+import NavBar from "../NavBar/NavBar";
+import Sidebar from "../NavBar/Sidebar";
+import Schedule from "../Schedule/Schedule";
+import SponsorShowcase from "../SponsorShowcase/SponsorShowcase";
+import "./App.css";
 
 function App() {
-	document.title = "Hack the Hill | 2023";
-
 	const [pageScroll, setPageScroll] = useState(0);
-
 	useEffect(() => {
+		document.title = "Hack the Hill | 2023";
 		const onScroll = () => setPageScroll(window.pageYOffset);
 		window.removeEventListener("scroll", onScroll);
 		window.addEventListener("scroll", onScroll, { passive: true });
@@ -25,7 +22,7 @@ function App() {
 
 	return (
 		<div>
-			<Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
+			{<Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />}
 			<div className="page-wrap">
 				<NavBar pageScroll={pageScroll} />
 				<Hero />
