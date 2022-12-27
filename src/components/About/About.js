@@ -11,7 +11,7 @@ class About extends Component {
         <Stack direction = {{xs: "column", md: "row"}} spacing={10}>
           <div class="about-body">
             <p>
-            The University of Ottawa and Carleton Univerisity STEM Student Organizations are incredibly 
+            The University of Ottawa and Carleton University STEM Student Organizations are incredibly 
             excited to introduce Canada's Capital Hackathon! 
             <br></br>
             <br></br>
@@ -22,8 +22,8 @@ class About extends Component {
             <br></br>
             <br></br>
             Our main event is scheduled for February 3rd-5th, 2023, and will be free for all participants. 
-            We look forward to seeing you all at our flagship hackathon and hope you're prepared to compete 
-            with the best!
+            We look forward to seeing you all at our flagship hackathon and hope you're prepared to compete & 
+            network with the best!
             </p>
           </div>
           <div class="mascot1">
