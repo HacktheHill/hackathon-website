@@ -18,7 +18,7 @@ function Hero() {
 						<time dateTime="05/02/2023">5</time>, <strong>2023</strong>
 					</h3>
 				</div>
-				<h1>
+				<h1 id="Hero">
 					<img className="BannerLogo" src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>Canada's Capital Hackathon</h2>

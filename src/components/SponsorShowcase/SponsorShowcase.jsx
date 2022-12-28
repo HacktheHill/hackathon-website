@@ -40,7 +40,7 @@ function SponsorShowcase() {
 	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
 
 	return (
-		<div className="Sponsors">
+		<div id="Sponsors" className="Sponsors">
 			<h1>Sponsors</h1>
 			<div className="out">
 				<div className="sponsors-body">
@@ -84,8 +84,8 @@ function SponsorShowcase() {
 					</Grid>
 				))}
 			</Grid>
-			<h1>Community Partners</h1>
 
+			<h1 id="Community">Community Partners</h1>
 			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
 				{data.collaborators.map((sponsor, i) => (
 					<Grid
