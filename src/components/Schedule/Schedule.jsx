@@ -1,7 +1,13 @@
 import React from "react";
 import "./Schedule.css";
+import { Card, Stack, Box, useTheme, useMediaQuery, Button, Divider } from "@mui/material";
 
 function Schedule() {
+	const theme = useTheme();
+	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
+
 	const styles = {
 		card: {
 			minWidth: "150px",
@@ -10,7 +16,7 @@ function Schedule() {
 			border: "3px solid white",
 			borderRadius: "10px",
 			maxHeight: "140px",
-			marginTop: /* innerWidth > 800 ? */ "10px" /* : "0px" */,
+			mt: matchesMD ? "10px" : "0px",
 			boxShadow: "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
 			transition: "transform 330ms ease-in-out",
 			"&:hover": {
@@ -24,52 +30,48 @@ function Schedule() {
 		<div id="Schedule" className="Schedule">
 			<h1 className="scheduleTitle">The Hacker Series</h1>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-			<div
-				style={{
-					width: /* innerWidth > 800 ? */ "75%" /* : "70%" */,
+			<Box
+				sx={{
+					width: matchesMD ? "75%" : "70%",
 					margin: "auto",
-					marginTop: /* innerWidth < 800 ? */ "15%" /* : "auto" */,
+					mt: matchesSM ? "15%" : "auto",
 				}}
 			>
-				<div
-					style={{ display: "flex", flexDirection: "column", gap: 10 }}
-					id="eventStack"
-					className="eventStack"
-				>
-					<div
-						style={{
-							display: "flex",
-							flexDirection: /* innerWidth < 800 ? */ "column" /*  : "row" */,
-							width: "100%",
-							gap: /* innerWidth > 800 ? */ 5 /* : 10 */,
-						}}
-					>
+				<Stack spacing={10} id="eventStack" className="eventStack">
+					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className="Center">
-							<div className="Card" style={styles.card}>
-								<div style={{ display: "flex", flexDirection: "column" }} direction={"column"}>
+							<Card
+								variant="outlined"
+								style={styles.card}
+								sx={{
+									"&:hover": {
+										transform: "scale(1.05)",
+										transition: "transform 330ms ease-in-out",
+									},
+								}}
+							>
+								<Stack direction={"column"}>
 									<div className="eventMonth">November</div>
 									<div className="eventDay">16</div>
-								</div>
-							</div>
+								</Stack>
+							</Card>
 						</div>
-						<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+						<Stack sx={{ width: "100%" }}>
 							<div className="eventTitle">
 								Resume Roast
-								<button
+								<Button
 									target="_blank"
 									href="https://youtu.be/zpixm4xz_K4"
-									style={{
+									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
 										borderRadius: "100px",
 										color: "#3B4779",
-										marginTop:
-											/* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
-										marginBottom:
-											/* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
-										padding: "7px",
+										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
+										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
+										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: /* innerWidth < 800 ? */ "50%" /* : innerWidth > 1024 ? "25%" : "0%" */,
+										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
 										transition: "1s",
 										"&:hover": {
 											backgroundColor: "#f094bc",
@@ -77,7 +79,7 @@ function Schedule() {
 									}}
 								>
 									<p className="ButtonText">View Video</p>
-								</button>
+								</Button>
 							</div>
 							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
 							<p className="eventDesc" align="left">
@@ -85,43 +87,44 @@ function Schedule() {
 								as they review and evaluate resumes submitted by students, all while filling yourself up
 								with some fresh pizza.
 							</p>
-						</div>
-					</div>
+						</Stack>
+					</Stack>
 
-					<div
-						style={{
-							display: "flex",
-							flexDirection: /* innerWidth < 800 ? */ "column" /* : "row" */,
-							width: "100%",
-							gap: /* innerWidth > 800 ? */ 5 /* : 10 */,
-						}}
-					>
+					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className="Center">
-							<div className="Card" style={styles.card}>
-								<div style={{ display: "flex", flexDirection: "column" }} direction={"column"}>
+							<Card
+								variant="outlined"
+								style={styles.card}
+								sx={{
+									"&:hover": {
+										transform: "scale(1.05)",
+										transition: "transform 330ms ease-in-out",
+									},
+								}}
+							>
+								<Stack direction={"column"}>
 									<div className="eventMonth">November</div>
 									<div className="eventDay">30</div>
-								</div>
-							</div>
+								</Stack>
+							</Card>
 						</div>
-						<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+						<Stack sx={{ width: "100%" }}>
 							<div className="eventTitle">
 								Coffee, Code, and Cram
-								<button
+								<Button
 									disabled
 									target="_blank"
 									href="https://forms.gle/WUgn5g8XTjNf9Eq39"
-									style={{
+									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
 										borderRadius: "100px",
 										color: "#3B4779",
-										marginTop:
-											/* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
-										mb: /* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
+										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
+										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: /* innerWidth < 800 ? */ "50%" /*  : innerWidth > 1024 ? "25%" : "0%" */,
+										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
 										transition: "1s",
 										boxShadow:
 											"rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
@@ -131,48 +134,49 @@ function Schedule() {
 									}}
 								>
 									<p className="ButtonText">Completed</p>
-								</button>
+								</Button>
 							</div>
 							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
 							<p className="eventDesc" align="left">
 								Unwind and take a break from school. Join us alongside the uOttawa Computer Science Club
 								for an evening of socializing and coding with coffee, tea, and snacks.
 							</p>
-						</div>
-					</div>
+						</Stack>
+					</Stack>
 
-					<div
-						style={{
-							display: "flex",
-							flexDirection: /* innerWidth < 800 ? */ "column" /* : "row" */,
-							width: "100%",
-							gap: /* innerWidth > 800 ? */ 5 /* : 10 */,
-						}}
-					>
+					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className="Center">
-							<div className="Card" style={styles.card}>
-								<div style={{ display: "flex", flexDirection: "column" }} direction={"column"}>
+							<Card
+								variant="outlined"
+								style={styles.card}
+								sx={{
+									"&:hover": {
+										transform: "scale(1.05)",
+										transition: "transform 330ms ease-in-out",
+									},
+								}}
+							>
+								<Stack direction={"column"}>
 									<div className="eventMonth">January</div>
 									<div className="eventDay">11</div>
-								</div>
-							</div>
+								</Stack>
+							</Card>
 						</div>
-						<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+						<Stack sx={{ width: "100%" }}>
 							<div className="eventTitle">
 								Wicked Web Work
-								<button
+								<Button
 									disabled
-									style={{
+									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
 										borderRadius: "100px",
 										color: "#3B4779",
-										marginTop:
-											/* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
-										mb: /* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
+										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
+										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: /* innerWidth < 800 ? */ "50%" /*  : innerWidth > 1024 ? "25%" : "0%" */,
+										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
 										transition: "1s",
 										boxShadow:
 											"rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
@@ -184,48 +188,49 @@ function Schedule() {
 									<p className="ButtonText">
 										Sign Up <b>→</b>
 									</p>
-								</button>
+								</Button>
 							</div>
 							<div className="subTitle">6 p.m. - 10 p.m. @ STM 117</div>
 							<p className="eventDesc" align="left">
 								Explore the wonders of front-end development! Learn the basics through workshops and
 								participate in a one-hour challenge to build a website according to provided guidelines.
 							</p>
-						</div>
-					</div>
+						</Stack>
+					</Stack>
 
-					<div
-						style={{
-							display: "flex",
-							flexDirection: /* innerWidth < 800 ? */ "column" /* : "row" */,
-							width: "100%",
-							gap: /* innerWidth > 800 ? */ 5 /* : 10 */,
-						}}
-					>
+					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className="Center">
-							<div className="Card" style={styles.card}>
-								<div style={{ display: "flex", flexDirection: "column" }} direction={"column"}>
+							<Card
+								variant="outlined"
+								style={styles.card}
+								sx={{
+									"&:hover": {
+										transform: "scale(1.05)",
+										transition: "transform 330ms ease-in-out",
+									},
+								}}
+							>
+								<Stack direction={"column"}>
 									<div className="eventMonth">January</div>
 									<div className="eventDay">25</div>
-								</div>
-							</div>
+								</Stack>
+							</Card>
 						</div>
-						<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+						<Stack sx={{ width: "100%" }}>
 							<div className="eventTitle">
 								Got Games?
-								<button
+								<Button
 									disabled
-									style={{
+									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
 										borderRadius: "100px",
 										color: "#3B4779",
-										marginTop:
-											/* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
-										mb: /* innerWidth < 800 ? */ "7vw" /* : innerWidth > 800 ? "3vw" : "0vw" */,
+										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
+										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: /* innerWidth < 800 ? */ "50%" /*  : innerWidth > 1024 ? "25%" : "0%" */,
+										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
 										transition: "1s",
 										"&:hover": {
 											backgroundColor: "#f094bc",
@@ -235,17 +240,17 @@ function Schedule() {
 									<p className="ButtonText">
 										Sign up <b>→</b>
 									</p>
-								</button>
+								</Button>
 							</div>
 							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
 							<p className="eventDesc" align="left">
 								Discover the best that game development has to offer! Join us along side the uOttawa
 								Game Development Club for an introduction to Unity workshop, presented by Propel VR.
 							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+						</Stack>
+					</Stack>
+				</Stack>
+			</Box>
 		</div>
 	);
 }

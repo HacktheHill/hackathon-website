@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import reactBugerMenu from "react-burger-menu";
-const { slide: Menu } = reactBugerMenu;
-import "./Sidebar.css";
 import { Link } from "react-scroll";
-import { useState } from "react";
+import "./Sidebar.css";
+const { slide: Menu } = reactBugerMenu;
 
 export default function Sidebar() {
 	const [isMenuOpen, handleMenu] = useState(false);

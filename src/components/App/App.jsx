@@ -13,9 +13,8 @@ import "./App.css";
 function App() {
 	const [pageScroll, setPageScroll] = useState(0);
 	useEffect(() => {
-		document.title = "Hack the Hill | 2023";
 		const onScroll = () => setPageScroll(window.pageYOffset);
-		window.removeEventListener("scroll", onScroll);
+		onScroll();
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);

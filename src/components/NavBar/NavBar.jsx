@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
-import logo from "../../assets/Logos/hthlogo_icon.svg";
 import "./NavBar.css";
+import logo from "/Logos/hackthehill-logo.svg";
 
 function Navbar({ pageScroll }) {
 	return (
@@ -25,7 +25,7 @@ function Navbar({ pageScroll }) {
 							to="About"
 							spy={true}
 							smooth={true}
-							offset={-120}
+							offset={-160}
 							duration={500}
 						>
 							About
@@ -38,7 +38,7 @@ function Navbar({ pageScroll }) {
 							to="Sponsors"
 							spy={true}
 							smooth={true}
-							offset={-120}
+							offset={-160}
 							duration={500}
 						>
 							Sponsors
@@ -64,7 +64,7 @@ function Navbar({ pageScroll }) {
 							to="Collaborators"
 							spy={true}
 							smooth={true}
-							offset={-150}
+							offset={-160}
 							duration={500}
 						>
 							Collaborators
@@ -77,7 +77,7 @@ function Navbar({ pageScroll }) {
 							to="FAQ"
 							spy={true}
 							smooth={true}
-							offset={-120}
+							offset={-160}
 							duration={500}
 						>
 							FAQ

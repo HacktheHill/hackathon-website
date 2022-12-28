@@ -1,5 +1,6 @@
-import styles from "./FAQ.module.css";
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { useState } from "react";
+import styles from "./FAQ.module.css";
 
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState([]);
@@ -76,14 +77,14 @@ export default function FAQ() {
 				Frequently Asked Questions
 			</div>
 			{quesAns.map((item, i) => (
-				<div
+				<Accordion
 					key={i}
 					className={styles.questionContainer}
-					style={{
+					sx={{
 						backgroundColor: expandedList.includes(item.key) ? "#eaeaea" : "#f7f7f7",
 						justifyContent: "left",
-						marginBottom: "10px",
-						marginTop: "10px",
+						mb: "10px",
+						mt: "10px",
 						boxShadow: "none",
 						borderRadius: "10px",
 						"&:hover": {
@@ -94,26 +95,27 @@ export default function FAQ() {
 						},
 					}}
 				>
-					<summary
+					<AccordionSummary
+						expandIcon={<box-icon name="chevron-down"></box-icon>}
 						className={styles.question}
 						onClick={event => handleKeyList(event, item)}
-						style={{
+						sx={{
 							color: "#3B4779",
 						}}
 					>
 						{item.q}
-					</summary>
-					<details
+					</AccordionSummary>
+					<AccordionDetails
 						className={styles.answer}
-						style={{
+						sx={{
 							color: "#5C71AD",
 							backgroundColor: "#eaeaea",
-							paddingTop: 0,
+							pt: 0,
 						}}
 					>
-						<div align={"left"}>{item.a}</div>
-					</details>
-				</div>
+						<Typography align={"left"}>{item.a}</Typography>
+					</AccordionDetails>
+				</Accordion>
 			))}
 		</div>
 	);

@@ -1,7 +1,7 @@
-import BannerLogo from "../../assets/Logos/hthlogo_banner_ver.svg";
-import LocationPin from "../../assets/svgs/location_pin.svg";
 import "./Hero.css";
 import HeroImg from "./HeroImg";
+import BannerLogo from "/Logos/hackthehill-banner.svg";
+import LocationPin from "/SVGs/location-pin.svg";
 
 function Hero() {
 	return (
@@ -23,7 +23,7 @@ function Hero() {
 				</h1>
 				<h2>Canada's Capital Hackathon</h2>
 				<h3>University of Ottawa &times; Carleton University</h3>
-				<a className="HeroButton" target="_blank" href="https://hackthehill.com/register" rel="noreferrer">
+				<a className="HeroButton" target="_blank" href="/register" rel="noreferrer">
 					<button>Register Now!</button>
 				</a>
 			</div>

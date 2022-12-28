@@ -11,16 +11,16 @@ main {
 		#abeffa 100%
 	);
 	background-repeat: no-repeat;
-    display: grid;
-    place-items: center;
+	display: grid;
+	place-items: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
 }
 
 input {

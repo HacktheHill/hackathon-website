@@ -1,16 +1,21 @@
-import { useRef, useState } from "react";
-import { useQuery } from "../PageRouter/PageRouter";
+import { useEffect, useRef } from "react";
 import "./Unsubscribe.css";
+import logo from "/Logos/hackthehill-logo.svg";
 
 function Unsubscribe() {
-	document.title = "Unsubscribe | Hack the Hill";
-
-	const query = useQuery();
-
-	const [hidden, setHidden] = useState(false);
-
 	const message = useRef(null);
 	const button = useRef(null);
+	const email = new URLSearchParams(window.location.search).get("email");
+
+	useEffect(() => {
+		message.current.textContent = `Are you sure you want to unsubscribe from email notifications for ${email}?`;
+		if (!email) {
+			message.current.textContent = "No email address provided";
+			button.current.textContent = "Go to Hack the Hill";
+			button.current.type = "button";
+			button.current.disabled = false;
+		}
+	});
 
 	async function handleSubmit(event) {
 		event.preventDefault();
@@ -18,9 +23,6 @@ function Unsubscribe() {
 		message.current.textContent = "";
 		button.current.textContent = "Unsubscribing...";
 		button.current.disabled = true;
-		setHidden(true);
-
-		const email = query.get("email") || event.target.email.value;
 
 		try {
 			const response = await fetch(`https://hackthehill.arcanist.workers.dev/unsubscribe?email=${email}`);
@@ -39,18 +41,9 @@ function Unsubscribe() {
 	return (
 		<main>
 			<form onSubmit={handleSubmit}>
-				<img src="Logos\hthlogo_icon_ver.svg" alt="Hack the Hill logo" />
+				<img src={logo} alt="Hack the Hill logo" />
 				<h1>Hack the Hill</h1>
 				<p ref={message} />
-				{!hidden && (
-					<>
-						<p>
-							Are you sure you want to unsubscribe from email notifications
-							{query.get("email") ? ` for ${query.get("email")}` : ""}?
-						</p>
-						{!query.get("email") && <input type="email" name="email" placeholder="Email" />}
-					</>
-				)}
 				<a href="/">
 					<button type="submit" ref={button}>
 						Unsubscribe

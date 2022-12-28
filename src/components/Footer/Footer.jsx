@@ -1,5 +1,8 @@
-	import React from "react";
-import FooterLogo from "../../assets/Logos/hthlogo_banner_ver.svg";
+import { faFacebook, faInstagram, faLinkedin, faMedium, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import "./Footer.css";
+import FooterLogo from "/Logos/hackthehill-banner.svg";
 
 function Footer() {
 	return (
@@ -14,28 +17,22 @@ function Footer() {
 				<div className="FooterContainer">
 					<div className="MediaLinks">
 						<a href="https://www.facebook.com/canadascapitalhackathon" target="_blank" rel="noreferrer">
-							<box-icon color="#3B4779" animation="tada-hover" type="logo" name="facebook-square" />
-							Facebook
+							<Icon icon={faFacebook} />
 						</a>
 						<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer">
-							<box-icon color="#3B4779" animation="tada-hover" name="twitter" type="logo" />
-							Twitter
+							<Icon icon={faTwitter} />
 						</a>
 						<a href="https://www.instagram.com/hackthehill/" target="_blank" rel="noreferrer">
-							<box-icon color="#3B4779" animation="tada-hover" name="instagram" type="logo" />
-							Instagram
+							<Icon icon={faInstagram} />
 						</a>
 						<a href="https://www.tiktok.com/@hackthehill" target="_blank" rel="noreferrer">
-							<box-icon color="#3B4779" animation="tada-hover" name="tiktok" type="logo" />
-							TikTok
+							<Icon icon={faTiktok} />
 						</a>
 						<a href="https://www.linkedin.com/company/hackthehill/" target="_blank" rel="noreferrer">
-							<box-icon color="#3B4779" animation="tada-hover" name="linkedin" type="logo"></box-icon>
-							LinkedIn
+							<Icon icon={faLinkedin} />
 						</a>
 						<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer">
-							<box-icon color="#3B4779" animation="tada-hover" name="medium" type="logo"></box-icon>
-							Medium
+							<Icon icon={faMedium} />
 						</a>
 					</div>
 				</div>

@@ -1,11 +1,11 @@
 @font-face {
 	font-family: Rubik;
-	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	src: url(/fonts/rubik/Rubik-Regular.ttf);
 }
 
 @font-face {
 	font-family: Coolvetica;
-	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	src: url(/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
 .Schedule h1 {
@@ -19,8 +19,8 @@
 .Schedule {
 	background-color: #3b477a;
 	padding-bottom: 60px;
-	background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg),
-		url(../../assets/svgs/xGroup.svg);
+	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
+		url(/SVGs/xGroup.svg);
 	background-repeat: no-repeat;
 	background-position: left 50px, right 400px, top 100px right 100px;
 	background-size: 10%, 8%, 2%;
@@ -106,8 +106,8 @@
 
 @media only screen and (max-width: 900px) {
 	.Schedule {
-		background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg),
-			url(../../assets/svgs/xGroup.svg);
+		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
+			url(/SVGs/xGroup.svg);
 		background-repeat: no-repeat;
 		background-position: left 50px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;
@@ -122,8 +122,8 @@
 
 @media only screen and (max-width: 600px) {
 	.Schedule {
-		background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg),
-			url(../../assets/svgs/xGroup.svg);
+		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
+			url(/SVGs/xGroup.svg);
 		background-repeat: no-repeat;
 		background-position: left 150px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;

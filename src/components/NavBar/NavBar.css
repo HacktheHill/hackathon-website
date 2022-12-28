@@ -1,6 +1,6 @@
 @font-face {
 	font-family: Rubik;
-	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	src: url(/fonts/rubik/Rubik-Regular.ttf);
 }
 
 .navbar {

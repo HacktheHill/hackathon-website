@@ -1,33 +1,43 @@
+import { Button, darken, Grid, useMediaQuery, useTheme } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
 import React from "react";
-import Ciena from "../../assets/Logos/Ciena.svg";
-import DotTech from "../../assets/Logos/DotTech.svg";
-import EEF from "../../assets/Logos/eef_logo.svg";
-import Github from "../../assets/Logos/github.svg";
-import Google from "../../assets/Logos/Google.svg";
-import LoneHeaven from "../../assets/Logos/Lonehaven.svg";
-import StackOverFlow from "../../assets/Logos/StackOverFlow.svg";
-import uOttawa from "../../assets/Logos/university-of-ottawa-seeklogo.com.svg";
-import uocs from "../../assets/Logos/uocsclub.svg";
-import uogdc from "../../assets/Logos/uOttawaGDC_FullLogo.png";
 import "./SponsorShowcase.css";
+import Ciena from "/Logos/Ciena.svg";
+import CSClub from "/Logos/CSClub.svg";
+import EEF from "/Logos/EEF.svg";
+import Google from "/Logos/Google.svg";
+import lonehaven from "/Logos/Lonehaven.svg";
+import uOttawa from "/Logos/uOttawa.svg";
+import uOGDC from "/Logos/uOttawaGDC.svg";
 
 function SponsorShowcase() {
 	const data = {
 		sponsors: [
 			{ href: "https://ciena.ca/", src: Ciena },
 			{ href: "https://google.com/about/", src: Google },
-			{ href: "https://stackoverflow.com/", src: StackOverFlow },
-			{ href: "https://github.com/about", src: Github },
-			{ href: "https://www.lonehaven.com/", src: LoneHeaven },
-			{ href: "https://get.tech/", src: DotTech },
+			{ href: "https://www.lonehaven.com/", src: lonehaven },
 		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
-			{ href: "https://uocsclub.ca/", src: uocs },
-			{ href: "https://www.instagram.com/uogamedev/", src: uogdc },
+			{ href: "https://uocsclub.ca/", src: CSClub },
+			{ href: "https://www.instagram.com/uogamedev/", src: uOGDC },
 		],
 	};
+
+	const Item = styled(Paper)(({ theme }) => ({
+		backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+		...theme.typography.body2,
+		padding: theme.spacing(1),
+		textAlign: "center",
+		color: theme.palette.text.secondary,
+	}));
+
+	const theme = useTheme();
+	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
 
 	return (
 		<div className="Sponsors">
@@ -38,62 +48,58 @@ function SponsorShowcase() {
 						Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
 						hackathon?
 					</p>
-					<button
+					<Button
 						href={`mailto:sponsorship@hackthehill.com`}
-						style={{
+						sx={{
 							backgroundColor: "#5C71AD",
 							borderRadius: "100px",
 							color: "white",
-							marginTop: /* innerWidth < 800 ? */ "7vw"/*  : "2vw" */,
-							padding: "10px",
+							mt: matchesSM ? "7vw" : "2vw",
+							p: "10px",
 							textTransform: "none",
 							minWidth: "12%",
-							width: /* innerWidth < 800 ? */ "50%" /* : innerWidth > 1024 ? "20%" : "0%" */,
+							width: matchesSM ? "50%" : matchesLG ? "20%" : "0%",
 							transition: "1s",
-							marginLeft: "2.5%",
+							ml: "2.5%",
 							"&:hover": {
-								backgroundColor: "#5C71AD",
+								backgroundColor: darken("#5C71AD", 0.3),
 							},
 						}}
 					>
 						<p className="ButtonText">Get in touch</p>
-					</button>
+					</Button>
 				</div>
 			</div>
-			<div style={{ display: "flex", flexWrap: "wrap" }} id="SponsorsDisplay" className="SponsorsDisplay">
+			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
 				{data.sponsors.map((sponsor, i) => (
-					<div
+					<Grid
 						key={i}
+						item
 						className="SponsorIconBox"
-						style={{
-							marginTop: /* innerWidth > 1024 ? */ "50px" /* : "0px" */,
-							marginBottom: /* innerWidth > 1024 ? */ "25px" /* : "0px" */,
-						}}
+						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
 					>
 						<a href={sponsor.href}>
 							<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
 						</a>
-					</div>
+					</Grid>
 				))}
-			</div>
-
+			</Grid>
 			<h1>Community Partners</h1>
-			<div style={{ display: "flex", flexWrap: "wrap" }} id="SponsorsDisplay" className="SponsorsDisplay">
+
+			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
 				{data.collaborators.map((sponsor, i) => (
-					<div
-					key={i}
+					<Grid
+						key={i}
+						item
 						className="SponsorIconBox"
-						style={{
-							marginTop: /* innerWidth > 1024 ? */ "50px" /* : "0px" */,
-							marginBottom: /* innerWidth > 1024 ? */ "25px" /* : "0px" */,
-						}}
+						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
 					>
 						<a href={sponsor.href}>
 							<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
 						</a>
-					</div>
+					</Grid>
 				))}
-			</div>
+			</Grid>
 		</div>
 	);
 }
