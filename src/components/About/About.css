@@ -33,8 +33,8 @@
 	padding-left: 5%;
 	width: 100%;
 	font-family: Rubik;
-	font-size: 1.15vw;
-	line-height: 2.5vw;
+	font-size: max(1rem, 1.15vmin);
+	line-height: max(2rem, 2.5vmin);
 }
 
 .mascot1 {
@@ -64,21 +64,12 @@
 		display: block;
 		margin-top: 0%;
 	}
-	.about-body p {
-		font-size: 14px;
-		line-height: 5vw;
-	}
 }
 
 @media only screen and (max-width: 600px) {
 	.mascot1 img {
 		width: 75%;
 		display: block;
-	}
-	.about-body p {
-		width: 95%;
-		font-size: 16px;
-		line-height: 8vw;
 	}
 	.wrapper {
 		flex-direction: column;

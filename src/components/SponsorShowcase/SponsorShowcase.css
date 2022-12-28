@@ -10,7 +10,8 @@
 
 .SponsorsDisplay {
 	justify-content: center;
-	gap: 40px;
+	gap: 2.5rem;
+	margin: 2.5rem 0;
 }
 
 .SponsorIconBox {
@@ -21,13 +22,10 @@
 }
 
 .SponsorIcon {
-	position: center;
-	max-height: 130px;
-	display: block;
-	scale: 0.8;
-	width: 250px;
-	align-items: center;
 	transition: 0.5s;
+	object-fit: contain;
+	max-height: 130px;
+	width: 250px;
 }
 
 .PaperBox {
@@ -37,12 +35,11 @@
 .Sponsors {
 	color: black;
 	transition: 0.5s;
-	margin-bottom: 20%;
-	margin-bottom: 10vw;
+	margin-bottom: 5%;
 	padding: 0 10%;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 3rem
 }
 
 .Sponsors h1 {
@@ -61,30 +58,15 @@
 	padding-left: 2.25%;
 	width: 80%;
 	font-family: Rubik;
-	font-size: 1.15vw;
+	font-size: max(1rem, 1.15vmin);
+	line-height: max(2rem, 2.5vmin);
 }
 
 .ButtonText {
 	font-weight: normal;
 }
 
-@media only screen and (max-width: 900px) {
-	.text {
-		width: 90%;
-	}
-	.text {
-		font-size: 16px;
-		line-height: 5vw;
-	}
-}
-
 @media only screen and (max-width: 590px) {
-	.text {
-		width: 90%;
-		font-size: 16px;
-		line-height: 8vw;
-	}
-
 	.SponsorIconBox {
 		align-items: center;
 		justify-content: center;

@@ -58,7 +58,7 @@ function SponsorShowcase() {
 							p: "10px",
 							textTransform: "none",
 							minWidth: "12%",
-							width: matchesSM ? "50%" : matchesLG ? "20%" : "0%",
+							width: matchesSM ? "50%" : matchesLG ? "max(10rem, 20%)" : "0%",
 							transition: "1s",
 							ml: "2.5%",
 							"&:hover": {
@@ -85,21 +85,23 @@ function SponsorShowcase() {
 				))}
 			</Grid>
 
-			<h1 id="Community">Community Partners</h1>
-			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-				{data.collaborators.map((sponsor, i) => (
-					<Grid
-						key={i}
-						item
-						className="SponsorIconBox"
-						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
-					>
-						<a href={sponsor.href}>
-							<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
-						</a>
-					</Grid>
-				))}
-			</Grid>
+			<section>
+				<h1 id="Community">Community Partners</h1>
+				<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+					{data.collaborators.map((sponsor, i) => (
+						<Grid
+							key={i}
+							item
+							className="SponsorIconBox"
+							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
+						>
+							<a href={sponsor.href}>
+								<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
+							</a>
+						</Grid>
+					))}
+				</Grid>
+			</section>
 		</div>
 	);
 }
