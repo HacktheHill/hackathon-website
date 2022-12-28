@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import React, { Component } from "react";
 import "./About.css";
-import Mascot from "/Logos/mascot-waving.svg";
+import Mascot from "/SVGs/mascot-waving.svg";
 
 class About extends Component {
 	render() {
