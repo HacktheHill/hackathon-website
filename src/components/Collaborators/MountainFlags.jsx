@@ -20,7 +20,8 @@ function MountainFlags({ data }) {
 		data.forEach(item => {
 			const element = svg?.querySelector(`#${item.id}`);
 			if (!element) return;
-			element.outerHTML = `<a href="${item.href}" target="_blank" rel="noopener noreferrer">
+			element.outerHTML = `
+			<a href="${item.href}" target="_blank" rel="noopener noreferrer" aria-label="${item.id.toUpperCase()}">
 				${element.outerHTML}
 			</a>`;
 		});
