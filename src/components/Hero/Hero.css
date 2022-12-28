@@ -74,10 +74,6 @@
 	background-color: #3f4e77;
 }
 
-.HeroImg {
-	display: contents;
-}
-
 .HeroImg svg {
 	height: 100%;
 	width: 100%;
