@@ -18,19 +18,23 @@
 		display: block;
 	}
 
-	.row {
-		text-align: center;
-		justify-content: center;
-		align-items: center;
+	.MediaLinks {
+		font-size: inherit;
+		margin: auto;
+	}
+
+	.MediaLinks a {
+		color: white;
+		padding: 0 0.5em;
 	}
 
 	/* Position and sizing of burger button */
 	.bm-burger-button {
 		position: absolute;
-		width: 28px;
-		height: 23px;
-		right: 36px;
-		top: 40px;
+		width: 2em;
+		height: 2em;
+		right: 1.5em;
+		top: 1.5em;
 	}
 
 	/* Color/shape of burger icon bars */
@@ -40,8 +44,8 @@
 
 	/* Position and sizing of clickable cross button */
 	.bm-cross-button {
-		transform: scale(1.5);
-		margin: 23px;
+		transform: scale(2.5);
+		margin: 1.5em;
 	}
 
 	/* Color/shape of close button cross */
@@ -50,9 +54,9 @@
 	}
 
 	/*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
+	Sidebar wrapper styles
+	Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+	*/
 	.bm-menu-wrap {
 		position: fixed;
 		height: 100%;
@@ -61,9 +65,8 @@
 	/* General sidebar styles */
 	.bm-menu {
 		background: #3b4779;
-		padding-top: 25%;
-		padding-bottom: 25%;
-		font-size: 1.15em;
+		font-size: 2em;
+		padding: 25% 0 0;
 	}
 
 	/* Morph shape necessary with bubble or elastic */
@@ -73,29 +76,26 @@
 
 	/* Wrapper for item list */
 	.bm-item-list {
-		color: white;
+		color: #d1d1d1;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
 	}
 
 	/* Individual item */
 	.bm-item {
+		color: inherit;
 		display: inline-block;
-		color: #d1d1d1;
-		margin-bottom: 30px;
 		text-align: center;
 		text-decoration: none;
 		transition: color 0.2s;
-		font-size: 15px;
 		font-family: Rubik;
 		font-weight: normal;
 		letter-spacing: 0.05em;
 	}
 
-	box-icon {
-		margin: 10px;
-	}
-
 	.bm-item:hover {
-		color: #ffffff;
+		color: white;
 		cursor: pointer;
 	}
 

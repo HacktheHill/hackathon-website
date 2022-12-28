@@ -1,8 +1,10 @@
+import { faFacebook, faInstagram, faLinkedin, faMedium, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import reactBugerMenu from "react-burger-menu";
+import reactBurgerMenu from "react-burger-menu";
 import { Link } from "react-scroll";
 import "./Sidebar.css";
-const { slide: Menu } = reactBugerMenu;
+const { slide: Menu } = reactBurgerMenu;
 
 export default function Sidebar() {
 	const [isMenuOpen, handleMenu] = useState(false);
@@ -15,7 +17,15 @@ export default function Sidebar() {
 	return (
 		<div className="outer">
 			<Menu className="sidebar" right width={"100%"} isOpen={isMenuOpen} onStateChange={handleStateChange}>
-				<Link to="About" spy={true} smooth={true} offset={-30} duration={500} onClick={() => handleCloseMenu()}>
+				<Link
+					to="About"
+					spy={true}
+					smooth={true}
+					offset={-30}
+					duration={500}
+					onClick={() => handleCloseMenu()}
+					href="#About"
+				>
 					About
 				</Link>
 				<Link
@@ -25,6 +35,7 @@ export default function Sidebar() {
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
+					href="#Sponsors"
 				>
 					Sponsors
 				</Link>
@@ -35,6 +46,7 @@ export default function Sidebar() {
 					offset={0}
 					duration={500}
 					onClick={() => handleCloseMenu()}
+					href="#Schedule"
 				>
 					The Hacker Series
 				</Link>
@@ -45,30 +57,54 @@ export default function Sidebar() {
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
+					href="#Collaborators"
 				>
 					Collaborators
 				</Link>
-				<Link to="FAQ" spy={true} smooth={true} offset={-30} duration={500} onClick={() => handleCloseMenu()}>
+				<Link
+					to="FAQ"
+					spy={true}
+					smooth={true}
+					offset={-30}
+					duration={500}
+					onClick={() => handleCloseMenu()}
+					href="#FAQ"
+				>
 					FAQ
 				</Link>
-				<div className="row">
-					<a href="https://www.facebook.com/canadascapitalhackathon" target="_blank" rel="noreferrer">
-						<box-icon size="sm" color="white" animation="tada-hover" type="logo" name="facebook-square" />
+				<div className="MediaLinks">
+					<a
+						href="https://www.facebook.com/canadascapitalhackathon"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Facebook"
+					>
+						<Icon icon={faFacebook} />
 					</a>
-					<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer">
-						<box-icon size="sm" color="white" animation="tada-hover" name="twitter" type="logo" />
+					<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer" aria-label="Twitter">
+						<Icon icon={faTwitter} />
 					</a>
-					<a href="https://www.instagram.com/hackthehill/" target="_blank" rel="noreferrer">
-						<box-icon size="sm" color="white" animation="tada-hover" name="instagram" type="logo" />
+					<a
+						href="https://www.instagram.com/hackthehill/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Instagram"
+					>
+						<Icon icon={faInstagram} />
 					</a>
-					<a href="https://www.tiktok.com/@hackthehill" target="_blank" rel="noreferrer">
-						<box-icon size="sm" color="white" animation="tada-hover" name="tiktok" type="logo" />
+					<a href="https://www.tiktok.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="TikTok">
+						<Icon icon={faTiktok} />
 					</a>
-					<a href="https://www.linkedin.com/company/hackthehill/" target="_blank" rel="noreferrer">
-						<box-icon size="sm" color="white" animation="tada-hover" name="linkedin" type="logo"></box-icon>
+					<a
+						href="https://www.linkedin.com/company/hackthehill/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="LinkedIn"
+					>
+						<Icon icon={faLinkedin} />
 					</a>
-					<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer">
-						<box-icon size="sm" color="white" animation="tada-hover" name="medium" type="logo"></box-icon>
+					<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="Medium">
+						<Icon icon={faMedium} />
 					</a>
 				</div>
 			</Menu>
