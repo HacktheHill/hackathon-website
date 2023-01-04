@@ -1,12 +1,12 @@
-.Sidebar{
-  visibility: hidden;
+.Sidebar {
+	visibility: hidden;
 }
 
 hr {
-  width: 75%;
-  margin: auto;
-  background: gainsboro;
-  color: gainsboro;
-  border: none;
-  height: 1px;
+	width: 75%;
+	margin: auto;
+	background: gainsboro;
+	color: gainsboro;
+	border: none;
+	height: 1px;
 }
