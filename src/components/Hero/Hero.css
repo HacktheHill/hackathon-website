@@ -1,13 +1,3 @@
-@font-face {
-	font-family: Rubik;
-	src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
-}
-
-@font-face {
-	font-family: Coolvetica;
-	src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
-}
-
 .Hero {
 	background: linear-gradient(
 		0deg,
@@ -84,7 +74,7 @@
 	background-color: #3f4e77;
 }
 
-.HeroImg {
+.HeroImg svg {
 	height: 100%;
 	width: 100%;
 	margin-top: calc(20rem - 20vw);

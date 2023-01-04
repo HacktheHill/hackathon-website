@@ -1,89 +1,80 @@
 @font-face {
-  font-family: Rubik;
-  src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(/fonts/rubik/Rubik-Regular.ttf);
 }
 
 @font-face {
-  font-family: Coolvetica;
-  src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	font-family: Coolvetica;
+	src: url(/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
 .About {
-  color: black;
-  margin-top: -10%;
-  transition: 0.5s;
-  margin-bottom: 10vw;
+	color: black;
+	margin-top: -10%;
+	transition: 0.5s;
+	margin-bottom: 10vw;
 }
 
-.About h1{
-  font-family: Coolvetica;
-  margin-bottom: 3%;
-  font-size: 3em;
-  margin-left: 10%;
-  font-weight: normal;
+.About h1 {
+	font-family: Coolvetica;
+	margin-bottom: 3%;
+	font-size: 3em;
+	margin-left: 10%;
+	font-weight: normal;
 }
 
-.about-body{
-  margin-left: 10%;
-  width: 50%;
+.about-body {
+	margin-left: 10%;
+	width: 50%;
 }
 
-.about-body p{
-  border-left: 5px solid black;
-  padding-left: 5%;
-  width: 100%;
-  font-family: Rubik;
-  font-size: 1.15vw;
-  line-height: 2.5vw;
+.about-body p {
+	border-left: 5px solid black;
+	padding-left: 5%;
+	width: 100%;
+	font-family: Rubik;
+	font-size: max(1rem, 1.15vmin);
+	line-height: max(2rem, 2.5vmin);
 }
 
-.mascot1{
-  width: 50%;
-  margin-left: 15%;
-  margin-top: 10%;
+.mascot1 {
+	width: 50%;
+	margin-left: 15%;
+	margin-top: 10%;
 }
-.mascot1 img{
-  width: 60%;
-  display: block;
-    filter: drop-shadow(-2px -4px 22px #ABEFFB);
-    /* Similar syntax to box-shadow */
-}
-
-@media only screen and (max-width: 900px){
-  .about-body{
-    width: 80%;
-  }
-  .mascot1{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-left: 0%;
-  }
-  .mascot1 img{
-    width: 50%;
-    display: block;
-    margin-top: 0%;
-  }
-  .about-body p{
-    font-size: 14px;
-    line-height: 5vw;
-  }
+.mascot1 img {
+	width: 60%;
+	display: block;
+	filter: drop-shadow(-2px -4px 22px #abeffb);
+	/* Similar syntax to box-shadow */
 }
 
-@media only screen and (max-width: 600px){
-  .mascot1 img{
-    width: 75%;
-    display: block;
-  }
-  .about-body p{
-    width: 95%;
-    font-size: 16px;
-    line-height: 8vw;
-  }
-  .wrapper{
-    flex-direction: column;
-  }
-  .About {
-    margin-top: 0%;
-  }
+@media only screen and (max-width: 900px) {
+	.about-body {
+		width: 80%;
+	}
+	.mascot1 {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-left: 0%;
+	}
+	.mascot1 img {
+		width: 50%;
+		display: block;
+		margin-top: 0%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.mascot1 img {
+		width: 75%;
+		display: block;
+	}
+	.wrapper {
+		flex-direction: column;
+	}
+	.About {
+		margin-top: 0%;
+	}
 }

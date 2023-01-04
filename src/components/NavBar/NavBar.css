@@ -1,88 +1,88 @@
 @font-face {
-    font-family: Rubik;
-    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(/fonts/rubik/Rubik-Regular.ttf);
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    height: 5rem;
-    width: 100%;
-    z-index: 100;
-    transition: all 0.5s ease;
-    display: flex;
-    justify-content: space-between;
+	position: fixed;
+	top: 0;
+	height: 5rem;
+	width: 100%;
+	z-index: 100;
+	transition: all 0.5s ease;
+	display: flex;
+	justify-content: space-between;
 }
 
 .navbar[data-scrolled="true"] {
-    background-color: #bfcbee;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #bfcbee;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	padding: 0;
 	margin: 0 2rem;
-    height: 100%;
-    gap: 1rem;
+	height: 100%;
+	gap: 1rem;
 }
 
 .logo {
-    z-index: 1;
-    cursor: pointer;
+	z-index: 1;
+	cursor: pointer;
 }
 
 li {
-    height: 100%;
+	height: 100%;
 }
 
 li .link {
-    box-sizing: border-box;
-    position: relative;
-    color: #3b4779;
-    font-weight: bolder;
-    font-size: 1rem;
-    text-decoration: none;
-    font-family: Rubik;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    align-items: center;
+	box-sizing: border-box;
+	position: relative;
+	color: #3b4779;
+	font-weight: bolder;
+	font-size: 1rem;
+	text-decoration: none;
+	font-family: Rubik;
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
 
 li:not(.logo) .link::after {
-    background: #3b4779;
-    content: "";
-    position: absolute;
-    bottom: calc(50% - 1rem);
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border-radius: 1rem;
-    opacity: 0;
-    transform: translateY(3px);
-    transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+	background: #3b4779;
+	content: "";
+	position: absolute;
+	bottom: calc(50% - 1rem);
+	left: 0;
+	width: 100%;
+	height: 4px;
+	border-radius: 1rem;
+	opacity: 0;
+	transform: translateY(3px);
+	transition: opacity 0.3s ease, transform 0.3s ease-in-out;
 }
 
 li:not(.logo) .link:is(.active, :hover)::after {
-    opacity: 0.8;
-    transform: translateY(0);
+	opacity: 0.8;
+	transform: translateY(0);
 }
 
 @media (max-width: 900px) {
-    .navbar li:not(.logo) .link {
-        display: none;
-    }
+	.navbar li:not(.logo) .link {
+		display: none;
+	}
 
-    .navbar {
-        position: absolute;
-    }
+	.navbar {
+		position: absolute;
+	}
 
-    .navbar[data-scrolled="true"] {
-        background-color: transparent;
-        box-shadow: none;
-    }
+	.navbar[data-scrolled="true"] {
+		background-color: transparent;
+		box-shadow: none;
+	}
 }

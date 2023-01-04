@@ -1,128 +1,131 @@
 @font-face {
-    font-family: Rubik;
-    src: url(../../assets/fonts/rubik/Rubik-Regular.ttf);
+	font-family: Rubik;
+	src: url(/fonts/rubik/Rubik-Regular.ttf);
 }
 
 @font-face {
-    font-family: Coolvetica;
-    src: url(../../assets/fonts/coolvetica/coolvetica\ rg.otf);
+	font-family: Coolvetica;
+	src: url(/fonts/coolvetica/coolvetica\ rg.otf);
 }
 
-.Schedule h1{
-    font-family: Coolvetica;
-    margin-bottom: 3%;
-    font-size: 3em;
-    margin-left: 10%;
-    font-weight: normal;
+.Schedule h1 {
+	font-family: Coolvetica;
+	margin-bottom: 3%;
+	font-size: 3em;
+	margin-left: 10%;
+	font-weight: normal;
 }
 
-.Schedule{
-    background-color:#3b477a;
-    padding-bottom:60px;
-    background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
-    background-repeat: no-repeat;
-    background-position: left 50px, right 400px, top 100px right 100px;
-    background-size: 10%, 8%, 2%;
+.Schedule {
+	background-color: #3b477a;
+	padding-bottom: 60px;
+	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
+		url(/SVGs/xGroup.svg);
+	background-repeat: no-repeat;
+	background-position: left 50px, right 400px, top 100px right 100px;
+	background-size: 10%, 8%, 2%;
 }
 
-.scheduleTitle{
-    color:#FFFFFF;
-    font-family: Coolvetica;
-    margin-bottom: 3%;
-    padding-top: 3%;
-    font-size: 3.25em;
-    margin-left: 10%;
-    font-weight: normal;
+.scheduleTitle {
+	color: #ffffff;
+	font-family: Coolvetica;
+	margin-bottom: 3%;
+	padding-top: 3%;
+	font-size: 3.25em;
+	margin-left: 10%;
+	font-weight: normal;
 }
 
-.ButtonText{
-    font-family: Rubik;
-    margin: auto;
-    font-weight: bold;
-    font-size: 15px;
+.ButtonText {
+	font-family: Rubik;
+	margin: auto;
+	font-weight: bold;
+	font-size: 15px;
 }
 
-.eventMonth{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    font-size:25px;
-    font-weight: normal;
-    color: #FFFFFF;
-    font-family: Coolvetica;
+.eventMonth {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	font-size: 25px;
+	font-weight: normal;
+	color: #ffffff;
+	font-family: Coolvetica;
 }
 
-.eventDay{
-    margin-left: auto;
-    margin-right: auto;
-    font-size:75px;
-    font-weight: normal;
-    color: #FFFFFF;
-    font-family: Coolvetica;
+.eventDay {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 75px;
+	font-weight: normal;
+	color: #ffffff;
+	font-family: Coolvetica;
 }
 
-.eventTitle{
-    font-size:30px;
-    font-weight:normal;
-    color:#FFFFFF;
-    text-align: left;
-    font-family: Coolvetica;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.eventTitle {
+	font-size: 30px;
+	font-weight: normal;
+	color: #ffffff;
+	text-align: left;
+	font-family: Coolvetica;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
-.event{
-    width:'20%';
-    border-radius:'10px';
-    border-width:'3px';
-    border-color: #FFFFFF;
+.event {
+	width: "20%";
+	border-radius: "10px";
+	border-width: "3px";
+	border-color: #ffffff;
 }
 
-.eventStack{
-    flex-wrap: wrap;
+.eventStack {
+	flex-wrap: wrap;
 }
 
-.Center{
-    display: flex;
-    justify-content: center;
+.Center {
+	display: flex;
+	justify-content: center;
 }
 
-.eventDesc{
-    color: #FFFFFF;
-    font-family: Rubik;
-    font-size: 16px;
-    margin-top: 30px;
+.eventDesc {
+	color: #ffffff;
+	font-family: Rubik;
+	font-size: 16px;
+	margin-top: 30px;
 }
 
-.subTitle{
-    color: #FFFFFF;
-    font-family: Rubik;
-    font-size: 18px;
-    font-weight: normal;
-    margin-top: 5px;
+.subTitle {
+	color: #ffffff;
+	font-family: Rubik;
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 5px;
 }
 
 @media only screen and (max-width: 900px) {
-    .Schedule{
-        background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
-        background-repeat: no-repeat;
-        background-position: left 50px, right 750px, top 100px right 50px;
-        background-size: 18%, 18%, 7%;
-    }
-    .eventTitle{
-        flex-direction: column;
-    }
-    .scheduleTitle{
-        font-size: 3em;
-    }
+	.Schedule {
+		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
+			url(/SVGs/xGroup.svg);
+		background-repeat: no-repeat;
+		background-position: left 50px, right 750px, top 100px right 50px;
+		background-size: 18%, 18%, 7%;
+	}
+	.eventTitle {
+		flex-direction: column;
+	}
+	.scheduleTitle {
+		font-size: 3em;
+	}
 }
 
 @media only screen and (max-width: 600px) {
-    .Schedule{
-        background-image: url(../../assets/svgs/snowflake_1.svg), url(../../assets//svgs/snowflake_2.svg), url(../../assets/svgs/xGroup.svg);
-        background-repeat: no-repeat;
-        background-position: left 150px, right 750px, top 100px right 50px;
-        background-size: 18%, 18%, 7%;
-    }
+	.Schedule {
+		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
+			url(/SVGs/xGroup.svg);
+		background-repeat: no-repeat;
+		background-position: left 150px, right 750px, top 100px right 50px;
+		background-size: 18%, 18%, 7%;
+	}
 }
