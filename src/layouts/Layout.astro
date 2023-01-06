@@ -1,5 +1,8 @@
 ---
 const { title } = Astro.props;
+
+const description =
+	"Hack the Hill, Canada's Capital's premier flagship hackathon event, is presented by the University of Ottawa and Carleton University STEM Student Organizations. From February 3rd to 5th, 2023, come prepared to network and compete with the best!";
 ---
 
 <!DOCTYPE html>
@@ -11,11 +14,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 
 		<!-- Meta tags for SEO and social media -->
-		<meta
-			property="og:description"
-			name="description"
-			content="Welcome to Hack the Hill’s premier flagship event, HtH 2023, powered by uOttawa student orgs: EES, IEEE, CSSA and SESA. This event brings unparalleled tracks in hardware, software, and game development fields."
-		/>
+		<meta property="og:description" name="description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:url" content="https://hackthehill.com" />
@@ -28,17 +27,14 @@ const { title } = Astro.props;
 		<meta name="twitter:site" content="@HackTheHiII" />
 		<meta name="twitter:creator" content="@HackTheHiII" />
 		<meta name="twitter:title" content={title} />
-		<meta
-			name="twitter:description"
-			content="Welcome to Hack the Hill’s premier flagship event, HtH 2023, powered by uOttawa student orgs: EES, IEEE, CSSA and SESA. This event brings unparalleled tracks in hardware, software, and game development fields."
-		/>
+		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="https://hackthehill.com/favicon-196x196.png" />
 		<meta name="twitter:image:alt" content="Hack the Hill logo" />
 
 		<!-- KEYWORDS -->
 		<meta
 			name="keywords"
-			content="Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2023, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon"
+			content="Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2023, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University"
 		/>
 
 		<!-- humans.txt -->
