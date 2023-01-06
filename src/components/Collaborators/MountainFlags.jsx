@@ -1,14 +1,5 @@
-import fs from "fs";
-import path from "path";
 import { useEffect, useRef } from "react";
-
-// This is a hack to get the SVG to work on both the server and the client
-let mountainFlags = "";
-if (typeof window === "undefined") {
-	mountainFlags = fs.readFileSync(path.resolve("public/SVGs/mountain-flags.svg"));
-} else {
-	mountainFlags = await (await fetch("/SVGs/mountain-flags.svg")).text();
-}
+import mountainFlags from "../../assets/mountain-flags.svg?raw";
 
 function MountainFlags({ data }) {
 	const mountain = useRef(null);
