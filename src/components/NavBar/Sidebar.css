@@ -1,13 +1,3 @@
-@font-face {
-	font-family: Rubik;
-	src: url(/fonts/rubik/Rubik-Regular.ttf);
-}
-
-@font-face {
-	font-family: Coolvetica;
-	src: url(/fonts/coolvetica/coolvetica\ rg.otf);
-}
-
 .outer {
 	display: none;
 	overflow: hidden;
@@ -18,12 +8,12 @@
 		display: block;
 	}
 
-	.MediaLinks {
+	.sidebar .MediaLinks {
 		font-size: inherit;
 		margin: auto;
 	}
 
-	.MediaLinks a {
+	.sidebar .MediaLinks a {
 		color: white;
 		padding: 0 0.5em;
 	}

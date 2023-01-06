@@ -108,8 +108,6 @@ export default function FAQ() {
 					<AccordionDetails
 						className={styles.answer}
 						sx={{
-							color: "#5C71AD",
-							backgroundColor: "#eaeaea",
 							pt: 0,
 						}}
 					>

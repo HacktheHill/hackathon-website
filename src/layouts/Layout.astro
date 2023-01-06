@@ -112,12 +112,41 @@ const { title } = Astro.props;
 		<style is:global>
 			@font-face {
 				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-Regular.ttf);
+				src: url(/fonts/rubik/Rubik-Medium.ttf) format("truetype");
+				font-weight: 500;
+				font-weight: medium;
+				font-display: swap;
+			}
+
+			@font-face {
+				font-family: Rubik;
+				src: url(/fonts/rubik/Rubik-Regular.ttf) format("truetype");
+				font-weight: 400;
+				font-weight: normal;
+				font-display: swap;
+			}
+
+			@font-face {
+				font-family: Rubik;
+				src: url(/fonts/rubik/Rubik-SemiBold.ttf) format("truetype");
+				font-weight: 600;
+				font-weight: semi-bold;
+				font-display: swap;
+			}
+
+			@font-face {
+				font-family: Rubik;
+				src: url(/fonts/rubik/Rubik-VariableFont_wght.ttf) format("truetype-variations");
+				font-weight: 300 400 500 600 700 800 900;
+				font-display: swap;
 			}
 
 			@font-face {
 				font-family: Coolvetica;
-				src: url(/fonts/coolvetica/coolvetica\ rg.otf);
+				src: url(/fonts/coolvetica/coolvetica.otf) format("opentype");
+				font-weight: 400;
+				font-weight: normal;
+				font-display: swap;
 			}
 
 			body {
