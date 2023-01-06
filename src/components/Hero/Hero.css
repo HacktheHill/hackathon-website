@@ -1,14 +1,12 @@
 .Hero {
-	background: linear-gradient(
-		0deg,
-		rgba(239, 203, 255, 0) 15%,
-		rgba(236, 211, 247, 0.7723) 48.85%,
-		rgba(236, 210, 248, 0.7373) 48.86%,
-		#ebd5f5 63.96%,
-		#bfcbee 80.96%,
-		#bfcbee 81.77%,
-		#abeffa 100%
-	);
+	background: linear-gradient(0deg,
+			rgba(239, 203, 255, 0) 15%,
+			rgba(236, 211, 247, 0.7723) 48.85%,
+			rgba(236, 210, 248, 0.7373) 48.86%,
+			#ebd5f5 63.96%,
+			#bfcbee 80.96%,
+			#bfcbee 81.77%,
+			#abeffa 100%);
 	background-repeat: no-repeat;
 }
 
@@ -53,7 +51,6 @@
 
 .HeroButton {
 	margin: 3vmin auto;
-	z-index: 1;
 }
 
 .HeroButton button {
@@ -79,7 +76,51 @@
 	width: 100%;
 	margin-top: calc(20rem - 20vw);
 	margin-bottom: -25%;
+}
+
+.CountdownDialog {
+	box-sizing: border-box;
+	position: absolute;
+	top: calc(50vmin + max(20rem, 20vmin));
+	left: 50vw;
+	z-index: 99;
+	transform: translateX(-50%);
+	margin: 0;
+	padding: max(1rem, 2vmin) max(2rem, 4vmin);
+	text-align: center;
+	border-radius: 100px;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+	border: 5px solid #3b4779;
+	background-color: #bfcbee;
+	font-size: clamp(.75rem, 2vmin, 5rem);
+	opacity: 0;
 	pointer-events: none;
+	transition: opacity 1s ease-in-out;
+	display: flex;
+	gap: max(1rem, 5vmin);
+}
+
+.CountdownDialog[open] {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.CountdownItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.CountdownItem h3 {
+	font-size: 1.5em;
+	font-family: Rubik;
+	font-weight: normal;
+}
+
+.CountdownItem h4 {
+	color: #3b4779;
+	font-weight: normal;
 }
 
 /* Hero SVG animations */
