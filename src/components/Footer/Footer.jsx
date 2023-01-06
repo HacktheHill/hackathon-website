@@ -16,25 +16,54 @@ function Footer() {
 				</div>
 				<div className="FooterContainer">
 					<div className="MediaLinks">
-						<a href="https://www.facebook.com/canadascapitalhackathon" target="_blank" rel="noreferrer" aria-label="Facebook">
+						<a
+							href="https://www.facebook.com/canadascapitalhackathon"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Facebook"
+						>
 							<Icon icon={faFacebook} />
 						</a>
 						<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer" aria-label="Twitter">
 							<Icon icon={faTwitter} />
 						</a>
-						<a href="https://www.instagram.com/hackthehill/" target="_blank" rel="noreferrer" aria-label="Instagram">
+						<a
+							href="https://www.instagram.com/hackthehill/"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Instagram"
+						>
 							<Icon icon={faInstagram} />
 						</a>
-						<a href="https://www.tiktok.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="TikTok">
+						<a
+							href="https://www.tiktok.com/@hackthehill"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="TikTok"
+						>
 							<Icon icon={faTiktok} />
 						</a>
-						<a href="https://www.linkedin.com/company/hackthehill/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+						<a
+							href="https://www.linkedin.com/company/hackthehill/"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="LinkedIn"
+						>
 							<Icon icon={faLinkedin} />
 						</a>
-						<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="Medium">
+						<a
+							href="https://www.medium.com/@hackthehill"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Medium"
+						>
 							<Icon icon={faMedium} />
 						</a>
 					</div>
+				</div>
+				<div className="FooterText">
+					<p>Control the Capital, Command the Cabinet, Build until you Hack the Hill</p>
+					<small>© 2022 Hack the Hill</small>
 				</div>
 			</div>
 		</div>

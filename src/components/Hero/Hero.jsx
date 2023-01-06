@@ -1,5 +1,5 @@
+import hero from "../../assets/hero.svg?raw";
 import "./Hero.css";
-import HeroImg from "./HeroImg";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 
@@ -27,7 +27,12 @@ function Hero() {
 					<button>Register Now!</button>
 				</a>
 			</div>
-			<HeroImg />
+			<div
+				className="HeroImg"
+				dangerouslySetInnerHTML={{
+					__html: hero,
+				}}
+			></div>
 		</div>
 	);
 }

@@ -1,8 +1,3 @@
-@font-face {
-	font-family: Coolvetica;
-	src: url(/fonts/coolvetica/coolvetica\ rg.otf);
-}
-
 .Footer {
 	justify-content: center;
 }
@@ -24,20 +19,14 @@
 }
 
 .LogoText {
-	display: block;
-	margin: auto;
-	font-size: 12px;
-	font-size: 15px;
-	margin-bottom: 25px;
+	margin-bottom: 1rem;
 	font-family: Coolvetica;
-	font-weight: normal;
-	letter-spacing: 0.05em;
+	text-align: center;
 }
 
 .FooterContainer {
 	display: flex;
-	margin: 5%;
-	margin-top: 0;
+	margin: 0 5%;
 	justify-content: center;
 }
 
@@ -57,6 +46,13 @@
 .MediaLinks a:hover {
 	animation: tada 1s;
 	animation-iteration-count: 1;
+}
+
+.FooterText {
+	text-align: center;
+	font-size: 0.8rem;
+	padding: 1rem;
+	font-family: "Rubik", sans-serif;
 }
 
 @keyframes tada {

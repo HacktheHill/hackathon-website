@@ -1,13 +1,3 @@
-@font-face {
-	font-family: Rubik;
-	src: url(/fonts/rubik/Rubik-Regular.ttf);
-}
-
-@font-face {
-	font-family: Coolvetica;
-	src: url(/fonts/coolvetica/coolvetica\ rg.otf);
-}
-
 .Collaborators h1 {
 	color: #242a42;
 	font-family: Coolvetica;
