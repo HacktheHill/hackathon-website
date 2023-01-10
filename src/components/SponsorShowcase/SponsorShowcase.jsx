@@ -10,6 +10,9 @@ import Google from "/Logos/Google.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
+import CSE from "/Logos/CSE.svg";
+import DigitalOcean from "/Logos/DigitalOcean.svg";
+import echo3d from "/Logos/echo3d.webp";
 
 function SponsorShowcase() {
 	const data = {
@@ -17,6 +20,9 @@ function SponsorShowcase() {
 			{ href: "https://ciena.ca/", src: Ciena },
 			{ href: "https://google.com/about/", src: Google },
 			{ href: "https://www.lonehaven.com/", src: lonehaven },
+			{ href: "https://www.digitalocean.com/", src: DigitalOcean },
+			{ href: "https://www.cse-cst.gc.ca/", src: CSE },
+			{ href: "https://www.echo3d.com/", src: echo3d },
 		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
