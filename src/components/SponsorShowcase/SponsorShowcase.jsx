@@ -13,6 +13,7 @@ import uOGDC from "/Logos/uOttawaGDC.svg";
 import CSE from "/Logos/CSE.svg";
 import DigitalOcean from "/Logos/DigitalOcean.svg";
 import echo3d from "/Logos/echo3d.webp";
+import balsamiq from "/Logos/balsamiq.svg";
 
 function SponsorShowcase() {
 	const data = {
@@ -23,6 +24,7 @@ function SponsorShowcase() {
 			{ href: "https://www.digitalocean.com/", src: DigitalOcean },
 			{ href: "https://www.cse-cst.gc.ca/", src: CSE },
 			{ href: "https://www.echo3d.com/", src: echo3d },
+			{ href: "https://balsamiq.com/", src: balsamiq },
 		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
