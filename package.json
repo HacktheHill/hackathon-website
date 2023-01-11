@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",
+    "@astrojs/sitemap": "^1.0.0",
     "@emotion/styled": "^11.10.5",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",

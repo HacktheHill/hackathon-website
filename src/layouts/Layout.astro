@@ -3,6 +3,8 @@ const { title } = Astro.props;
 
 const description =
 	"Hack the Hill, Canada's Capital's premier flagship hackathon event, is presented by the University of Ottawa and Carleton University STEM Student Organizations. From February 3rd to 5th, 2023, come prepared to network and compete with the best!";
+
+const url = import.meta.env.SITE.replace(/\/$/, "")
 ---
 
 <!DOCTYPE html>
@@ -17,8 +19,8 @@ const description =
 		<meta property="og:description" name="description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
-		<meta property="og:url" content="https://hackthehill.com" />
-		<meta property="og:image" content="https://hackthehill.com/favicon-196x196.png" />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={`${url}/favicon-196x196.png`} />
 		<meta property="og:site_name" content="Hack the Hill" />
 		<meta property="og:locale" content="en_US" />
 
@@ -28,7 +30,7 @@ const description =
 		<meta name="twitter:creator" content="@HackTheHiII" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="https://hackthehill.com/favicon-196x196.png" />
+		<meta name="twitter:image" content={`${url}/favicon-196x196.png`} />
 		<meta name="twitter:image:alt" content="Hack the Hill logo" />
 
 		<!-- KEYWORDS -->
@@ -38,70 +40,70 @@ const description =
 		/>
 
 		<!-- humans.txt -->
-		<link type="text/plain" rel="author" href="https://hackthehill.com/humans.txt" />
+		<link type="text/plain" rel="author" href={`${url}/humans.txt`} />
 
 		<!-- canonical -->
-		<link rel="canonical" href="https://hackthehill.com" />
+		<link rel="canonical" href={url} />
 
 		<!-- sitemap -->
-		<link rel="sitemap" type="application/xml" title="Sitemap" href="https://hackthehill.com/sitemap.xml" />
+		<link rel="sitemap" type="application/xml" title="Sitemap" href={`${url}/sitemap-index.xml`} />
 
 		<!-- robots.txt -->
-		<link rel="robots" type="text/plain" title="Robots" href="https://hackthehill.com/robots.txt" />
+		<link rel="robots" type="text/plain" title="Robots" href={`${url}/robots.txt`} />
 
 		<!-- favicons for all devices -->
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="57x57"
-			href="https://hackthehill.com/icon/apple-touch-icon-57x57.png"
+			href={`${url}/icon/apple-touch-icon-57x57.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="114x114"
-			href="https://hackthehill.com/icon/apple-touch-icon-114x114.png"
+			href={`${url}/icon/apple-touch-icon-114x114.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="72x72"
-			href="https://hackthehill.com/icon/apple-touch-icon-72x72.png"
+			href={`${url}/icon/apple-touch-icon-72x72.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="144x144"
-			href="https://hackthehill.com/icon/apple-touch-icon-144x144.png"
+			href={`${url}/icon/apple-touch-icon-144x144.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="60x60"
-			href="https://hackthehill.com/icon/apple-touch-icon-60x60.png"
+			href={`${url}/icon/apple-touch-icon-60x60.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="120x120"
-			href="https://hackthehill.com/icon/apple-touch-icon-120x120.png"
+			href={`${url}/icon/apple-touch-icon-120x120.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="76x76"
-			href="https://hackthehill.com/icon/apple-touch-icon-76x76.png"
+			href={`${url}/icon/apple-touch-icon-76x76.png`}
 		/>
 		<link
 			rel="apple-touch-icon-precomposed"
 			sizes="152x152"
-			href="https://hackthehill.com/icon/apple-touch-icon-152x152.png"
+			href={`${url}/icon/apple-touch-icon-152x152.png`}
 		/>
-		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-196x196.png" sizes="196x196" />
-		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-16x16.png" sizes="16x16" />
-		<link rel="icon" type="image/png" href="https://hackthehill.com/icon/favicon-128.png" sizes="128x128" />
+		<link rel="icon" type="image/png" href={`${url}/icon/favicon-196x196.png`} sizes="196x196" />
+		<link rel="icon" type="image/png" href={`${url}/icon/favicon-96x96.png`} sizes="96x96" />
+		<link rel="icon" type="image/png" href={`${url}/icon/favicon-32x32.png`} sizes="32x32" />
+		<link rel="icon" type="image/png" href={`${url}/icon/favicon-16x16.png`} sizes="16x16" />
+		<link rel="icon" type="image/png" href={`${url}/icon/favicon-128.png`} sizes="128x128" />
 		<meta name="application-name" content="Hack the Hill" />
 		<meta name="msapplication-TileColor" content="#FFFFFF" />
-		<meta name="msapplication-TileImage" content="https://hackthehill.com/icon/mstile-144x144.png" />
-		<meta name="msapplication-square70x70logo" content="https://hackthehill.com/icon/mstile-70x70.png" />
-		<meta name="msapplication-square150x150logo" content="https://hackthehill.com/icon/mstile-150x150.png" />
-		<meta name="msapplication-wide310x150logo" content="https://hackthehill.com/icon/mstile-310x150.png" />
-		<meta name="msapplication-square310x310logo" content="https://hackthehill.com/icon/mstile-310x310.png" />
+		<meta name="msapplication-TileImage" content={`${url}/icon/mstile-144x144.png`} />
+		<meta name="msapplication-square70x70logo" content={`${url}/icon/mstile-70x70.png`} />
+		<meta name="msapplication-square150x150logo" content={`${url}/icon/mstile-150x150.png`} />
+		<meta name="msapplication-wide310x150logo" content={`${url}/icon/mstile-310x150.png`} />
+		<meta name="msapplication-square310x310logo" content={`${url}/icon/mstile-310x310.png`} />
 	</head>
 	<body>
 		<slot />
