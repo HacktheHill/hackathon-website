@@ -37,7 +37,7 @@ function Hero() {
 						<strong> @ uOttawa</strong>
 					</h3>
 					<h3>
-						Feb &nbsp;
+						Mar &nbsp;
 						<time dateTime="03/02/2023">3</time>&ndash;
 						<time dateTime="05/02/2023">5</time>, <strong>2023</strong>
 					</h3>

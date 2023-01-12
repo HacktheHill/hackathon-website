@@ -21,7 +21,7 @@ class About extends Component {
 							and even learn from notable alumni and business leaders!
 							<br></br>
 							<br></br>
-							Our main event is scheduled for February 3rd-5th, 2023, and will be free for all
+							Our main event is scheduled for March 3rd to 5th, 2023, and will be free for all
 							participants. We look forward to seeing you all at our flagship hackathon and hope you're
 							prepared to compete & network with the best!
 						</p>
