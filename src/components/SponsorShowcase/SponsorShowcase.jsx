@@ -3,28 +3,32 @@ import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import React from "react";
 import "./SponsorShowcase.css";
+import balsamiq from "/Logos/balsamiq.svg";
+import CanadianTire from "/Logos/CanadianTire.svg";
 import Ciena from "/Logos/Ciena.svg";
 import CSClub from "/Logos/CSClub.svg";
+import CSE from "/Logos/CSE.svg";
+import DigitalOcean from "/Logos/DigitalOcean.svg";
+import echo3d from "/Logos/echo3d.webp";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
-import CSE from "/Logos/CSE.svg";
-import DigitalOcean from "/Logos/DigitalOcean.svg";
-import echo3d from "/Logos/echo3d.webp";
-import balsamiq from "/Logos/balsamiq.svg";
+import voiceflow from "/Logos/voiceflow.svg";
 
 function SponsorShowcase() {
 	const data = {
 		sponsors: [
 			{ href: "https://ciena.ca/", src: Ciena },
+			{ href: "https://canadiantire.ca/", src: CanadianTire },
 			{ href: "https://google.com/about/", src: Google },
+			{ href: "https://www.cse-cst.gc.ca/", src: CSE },
 			{ href: "https://www.lonehaven.com/", src: lonehaven },
 			{ href: "https://www.digitalocean.com/", src: DigitalOcean },
-			{ href: "https://www.cse-cst.gc.ca/", src: CSE },
 			{ href: "https://www.echo3d.com/", src: echo3d },
 			{ href: "https://balsamiq.com/", src: balsamiq },
+			{ href: "https://www.voiceflow.com/", src: voiceflow },
 		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
@@ -72,8 +76,7 @@ function SponsorShowcase() {
 							"&:hover": {
 								backgroundColor: darken("#5C71AD", 0.3),
 							},
-						}}
-					>
+						}}>
 						<p className="ButtonText">Get in touch</p>
 					</Button>
 				</div>
@@ -84,8 +87,7 @@ function SponsorShowcase() {
 						key={i}
 						item
 						className="SponsorIconBox"
-						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
-					>
+						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}>
 						<a href={sponsor.href}>
 							<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
 						</a>
@@ -101,8 +103,7 @@ function SponsorShowcase() {
 							key={i}
 							item
 							className="SponsorIconBox"
-							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
-						>
+							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}>
 							<a href={sponsor.href}>
 								<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
 							</a>
