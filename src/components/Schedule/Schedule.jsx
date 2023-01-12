@@ -35,8 +35,7 @@ function Schedule() {
 					width: matchesMD ? "75%" : "70%",
 					margin: "auto",
 					mt: matchesSM ? "15%" : "auto",
-				}}
-			>
+				}}>
 				<Stack spacing={10} id="eventStack" className="eventStack">
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className="Center">
@@ -48,8 +47,7 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}
-							>
+								}}>
 								<Stack direction={"column"}>
 									<div className="eventMonth">November</div>
 									<div className="eventDay">16</div>
@@ -76,8 +74,7 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}
-								>
+									}}>
 									<p className="ButtonText">View Video</p>
 								</Button>
 							</div>
@@ -100,8 +97,7 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}
-							>
+								}}>
 								<Stack direction={"column"}>
 									<div className="eventMonth">November</div>
 									<div className="eventDay">30</div>
@@ -131,8 +127,7 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}
-								>
+									}}>
 									<p className="ButtonText">Completed</p>
 								</Button>
 							</div>
@@ -154,8 +149,7 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}
-							>
+								}}>
 								<Stack direction={"column"}>
 									<div className="eventMonth">January</div>
 									<div className="eventDay">11</div>
@@ -183,11 +177,8 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}
-								>
-									<p className="ButtonText">
-										Sign Up <b>→</b>
-									</p>
+									}}>
+									<p className="ButtonText">Completed</p>
 								</Button>
 							</div>
 							<div className="subTitle">6 p.m. - 10 p.m. @ STM 117</div>
@@ -208,8 +199,7 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}
-							>
+								}}>
 								<Stack direction={"column"}>
 									<div className="eventMonth">January</div>
 									<div className="eventDay">25</div>
@@ -235,8 +225,7 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}
-								>
+									}}>
 									<p className="ButtonText">
 										Sign up <b>→</b>
 									</p>
