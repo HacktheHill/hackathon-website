@@ -51,11 +51,11 @@
 	font-weight: normal;
 }
 
-.HeroButton {
+.Button {
 	margin: 3vmin auto;
 }
 
-.HeroButton button {
+.Button button {
 	background-color: #5c71ad;
 	border: none;
 	border-radius: 100px;
@@ -69,7 +69,7 @@
 	font-family: Rubik;
 }
 
-.HeroButton button:hover {
+.Button button:hover {
 	background-color: #3f4e77;
 }
 

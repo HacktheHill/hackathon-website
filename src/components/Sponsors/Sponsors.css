@@ -1,0 +1,71 @@
+.SponsorsDisplay {
+	justify-content: center;
+	gap: 3rem;
+	margin: 2.5rem 0;
+}
+
+.SponsorIconBox {
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+}
+
+.SponsorIcon {
+	transition: 0.5s;
+	object-fit: contain;
+	max-height: 130px;
+	width: 250px;
+}
+
+.PaperBox {
+	align-items: center;
+}
+
+.Sponsors {
+	color: black;
+	transition: 0.5s;
+	margin-bottom: 5%;
+	padding: 0 10%;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.Sponsors h1 {
+	font-family: Coolvetica;
+	font-size: 3em;
+	font-weight: normal;
+}
+
+.PaperBox a:hover img {
+	transform: scale(1.1);
+	transition: 0.5s;
+}
+
+.SponsorsText {
+	border-left: 5px solid black;
+	padding-left: 2rem;
+	width: 80%;
+	font-family: Rubik;
+	font-size: max(1rem, 1.15vmin);
+	line-height: max(2rem, 2.5vmin);
+}
+
+.ButtonText {
+	font-weight: normal;
+}
+
+@media only screen and (max-width: 590px) {
+	.SponsorIconBox {
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		display: flex;
+		padding: 0 2rem;
+	}
+
+	.Sponsors h1 {
+		font-size: 3em;
+	}
+}
