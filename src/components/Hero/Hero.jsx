@@ -48,7 +48,7 @@ function Hero() {
 				</h1>
 				<h2>Canada's Capital Hackathon</h2>
 				<h3>University of Ottawa &times; Carleton University</h3>
-				<a className="HeroButton" target="_blank" href="/register" rel="noreferrer">
+				<a className="Button" target="_blank" href="/register" rel="noreferrer">
 					<button>Register Now!</button>
 				</a>
 			</div>
@@ -56,8 +56,7 @@ function Hero() {
 				className="HeroImg"
 				dangerouslySetInnerHTML={{
 					__html: hero,
-				}}
-			></div>
+				}}></div>
 			<dialog className="CountdownDialog" open={popupOpen}>
 				<div className="CountdownItem">
 					<h3>{days}</h3>

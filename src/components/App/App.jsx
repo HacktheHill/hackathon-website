@@ -7,7 +7,7 @@ import Hero from "../Hero/Hero";
 import NavBar from "../NavBar/NavBar";
 import Sidebar from "../NavBar/Sidebar";
 import Schedule from "../Schedule/Schedule";
-import SponsorShowcase from "../SponsorShowcase/SponsorShowcase";
+import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
 				<NavBar pageScroll={pageScroll} />
 				<Hero />
 				<About />
-				<SponsorShowcase />
+				<Sponsors />
 				<Schedule />
 				<Collaborators />
 				<FAQ />
