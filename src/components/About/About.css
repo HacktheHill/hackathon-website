@@ -1,70 +1,48 @@
 .About {
-	color: black;
-	margin-top: -10%;
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	margin: auto;
 	transition: 0.5s;
-	margin-bottom: 10vw;
+	margin-bottom: 3rem;
+	gap: 2rem;
 }
 
 .About h1 {
 	font-family: Coolvetica;
-	margin-bottom: 3%;
 	font-size: 3em;
-	margin-left: 10%;
 	font-weight: normal;
 }
 
-.about-body {
-	margin-left: 10%;
+.AboutText {
 	width: 50%;
 }
 
-.about-body p {
+.AboutText p {
 	border-left: 5px solid black;
-	padding-left: 5%;
-	width: 100%;
+	padding-left: 2rem;
 	font-family: Rubik;
 	font-size: max(1rem, 1.15vmin);
 	line-height: max(2rem, 2.5vmin);
 }
 
-.mascot1 {
-	width: 50%;
-	margin-left: 15%;
-	margin-top: 10%;
-}
-.mascot1 img {
-	width: 60%;
-	display: block;
-	filter: drop-shadow(-2px -4px 22px #abeffb);
+img.Mascot {
+	width: 40vmin;
+	margin: auto;
 	/* Similar syntax to box-shadow */
+	filter: drop-shadow(-2px -4px 22px #abeffb);
 }
 
-@media only screen and (max-width: 900px) {
-	.about-body {
-		width: 80%;
-	}
-	.mascot1 {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		margin-left: 0%;
-	}
-	.mascot1 img {
-		width: 50%;
-		display: block;
-		margin-top: 0%;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-	.mascot1 img {
-		width: 75%;
-		display: block;
-	}
-	.wrapper {
+@media screen and (max-width: 1024px) {
+	.About {
 		flex-direction: column;
 	}
-	.About {
-		margin-top: 0%;
+
+	.AboutText {
+		width: 100%;
+	}
+
+	img.Mascot {
+		width: 50vmin;
 	}
 }

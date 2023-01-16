@@ -54,32 +54,30 @@ function SponsorShowcase() {
 	return (
 		<div id="Sponsors" className="Sponsors">
 			<h1>Sponsors</h1>
-			<div className="out">
-				<div className="sponsors-body">
-					<p className="text">
-						Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
-						hackathon?
-					</p>
-					<Button
-						href={`mailto:sponsorship@hackthehill.com`}
-						sx={{
-							backgroundColor: "#5C71AD",
-							borderRadius: "100px",
-							color: "white",
-							mt: matchesSM ? "7vw" : "2vw",
-							p: "10px",
-							textTransform: "none",
-							minWidth: "12%",
-							width: matchesSM ? "50%" : matchesLG ? "max(10rem, 20%)" : "0%",
-							transition: "1s",
-							ml: "2.5%",
-							"&:hover": {
-								backgroundColor: darken("#5C71AD", 0.3),
-							},
-						}}>
-						<p className="ButtonText">Get in touch</p>
-					</Button>
-				</div>
+			<div>
+				<p className="SponsorsText">
+					Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
+					hackathon?
+				</p>
+				<Button
+					href={`mailto:sponsorship@hackthehill.com`}
+					sx={{
+						backgroundColor: "#5C71AD",
+						borderRadius: "100px",
+						color: "white",
+						mt: matchesSM ? "7vw" : "2vw",
+						p: "10px",
+						textTransform: "none",
+						minWidth: "12%",
+						width: matchesSM ? "50%" : matchesLG ? "max(10rem, 20%)" : "0%",
+						transition: "1s",
+						ml: "2.5%",
+						"&:hover": {
+							backgroundColor: darken("#5C71AD", 0.3),
+						},
+					}}>
+					<p className="ButtonText">Get in touch</p>
+				</Button>
 			</div>
 			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
 				{data.sponsors.map((sponsor, i) => (
