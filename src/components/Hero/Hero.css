@@ -83,7 +83,7 @@
 .CountdownDialog {
 	box-sizing: border-box;
 	position: absolute;
-	top: calc(50vmin + max(20rem, 20vmin));
+	top: calc(40vmin + max(20rem, 20vmin));
 	left: 50vw;
 	z-index: 99;
 	transform: translateX(-50%);

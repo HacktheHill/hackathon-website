@@ -8,9 +8,10 @@ const date = new Date("2023-02-03T00:00:00-05:00");
 
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
-	const [time, setTime] = useState(Date.now());
+	const [time, setTime] = useState(0);
 
 	useEffect(() => {
+		setTime(Date.now());
 		const interval = setInterval(() => setTime(Date.now()), 1000);
 		return () => clearInterval(interval);
 	}, []);
