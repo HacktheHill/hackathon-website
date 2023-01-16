@@ -4,7 +4,7 @@ import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 
-const date = new Date("2023-02-03T00:00:00-05:00");
+const date = new Date("2023-03-03T00:00:00-05:00");
 
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
