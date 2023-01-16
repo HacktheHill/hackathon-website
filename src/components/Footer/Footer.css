@@ -1,8 +1,4 @@
 .Footer {
-	justify-content: center;
-}
-
-.FooterBody {
 	display: grid;
 }
 
@@ -36,11 +32,11 @@
 	justify-content: space-evenly;
 	font-size: 1.5rem;
 	width: min(100%, 30rem);
+	gap: 0.5rem;
 }
 
 .MediaLinks a {
 	color: #3b4779;
-	padding: 0 0.5rem;
 }
 
 .MediaLinks a:hover {
@@ -55,25 +51,38 @@
 	font-family: "Rubik", sans-serif;
 }
 
+.FooterLink {
+	display: flex;
+	gap: 0.5ch;
+	justify-content: center;
+	margin: 1em;
+	color: #3b4779;
+	text-decoration: none;
+}
+
 @keyframes tada {
 	0% {
 		transform: scale(1);
 	}
+
 	10%,
 	20% {
 		transform: scale(0.9) rotate(-3deg);
 	}
+
 	30%,
 	50%,
 	70%,
 	90% {
 		transform: scale(1.1) rotate(3deg);
 	}
+
 	40%,
 	60%,
 	80% {
 		transform: scale(1.1) rotate(-3deg);
 	}
+
 	100% {
 		transform: scale(1) rotate(0);
 	}
