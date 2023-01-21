@@ -22,17 +22,15 @@ function App() {
 	return (
 		<div>
 			{<Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />}
-			<div className="page-wrap">
-				<NavBar pageScroll={pageScroll} />
-				<Hero />
-				<About />
-				<Sponsors />
-				<Schedule />
-				<Collaborators />
-				<FAQ />
-				<hr></hr>
-				<Footer />
-			</div>
+			<NavBar pageScroll={pageScroll} />
+			<Hero />
+			<About />
+			<Sponsors />
+			<Schedule />
+			<Collaborators />
+			<FAQ />
+			<hr></hr>
+			<Footer />
 		</div>
 	);
 }
