@@ -5,7 +5,7 @@ import logo from "/Logos/hackthehill-logo.svg";
 function Navbar({ pageScroll }) {
 	return (
 		<>
-			<nav className="navbar" data-scrolled={pageScroll > 50}>
+			<nav className="navbar" data-scrolled={pageScroll > 50} aria-label="Main Navigation">
 				<Link
 					className="link logo"
 					activeClass="active"

@@ -210,7 +210,8 @@ function Schedule() {
 							<div className="eventTitle">
 								Got Games?
 								<Button
-									disabled
+									href="https://forms.gle/rMP4BLrkQvaKBkpA8"
+									target={"_blank"}
 									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
 										borderRadius: "100px",

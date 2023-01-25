@@ -1,0 +1,19 @@
+.Notification {
+	position: fixed;
+	inset: auto 0 0 0;
+	display: flex;
+	gap: 1rem;
+	padding: 1rem;
+	background-color: #414f7f;
+	color: white;
+	transition: transform 0.3s ease-in-out;
+}
+
+.Notification .CloseButton {
+	display: flex;
+	align-items: flex-start;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 0;
+}
