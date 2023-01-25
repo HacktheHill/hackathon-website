@@ -1,29 +1,32 @@
 import { faFacebook, faInstagram, faLinkedin, faMedium, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import reactBurgerMenu from "react-burger-menu";
 import { Link } from "react-scroll";
 import "./Sidebar.css";
 const { slide: Menu } = reactBurgerMenu;
 
 export default function Sidebar() {
-	const [isMenuOpen, handleMenu] = useState(false);
-	const handleCloseMenu = () => {
-		handleMenu(false);
-	};
-	const handleStateChange = state => {
-		handleMenu(state.isOpen);
-	};
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	const handleCloseMenu = useCallback(() => {
+		setMenuOpen(false);
+	}, []);
+
+	const handleStateChange = useCallback(state => {
+		setMenuOpen(state.isOpen);
+	}, []);
+
 	return (
-		<div className="outer">
-			<Menu className="sidebar" right width={"100%"} isOpen={isMenuOpen} onStateChange={handleStateChange}>
+		<div className="Sidebar">
+			<Menu right width={"100%"} isOpen={menuOpen} onStateChange={handleStateChange}>
 				<Link
 					to="About"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
-					onClick={() => handleCloseMenu()}
+					onClick={handleCloseMenu}
 					href="#About"
 				>
 					About
@@ -34,7 +37,7 @@ export default function Sidebar() {
 					smooth={true}
 					offset={-30}
 					duration={500}
-					onClick={() => handleCloseMenu()}
+					onClick={handleCloseMenu}
 					href="#Sponsors"
 				>
 					Sponsors
@@ -45,7 +48,7 @@ export default function Sidebar() {
 					smooth={true}
 					offset={0}
 					duration={500}
-					onClick={() => handleCloseMenu()}
+					onClick={handleCloseMenu}
 					href="#Schedule"
 				>
 					The Hacker Series
@@ -56,7 +59,7 @@ export default function Sidebar() {
 					smooth={true}
 					offset={-30}
 					duration={500}
-					onClick={() => handleCloseMenu()}
+					onClick={handleCloseMenu}
 					href="#Collaborators"
 				>
 					Collaborators
@@ -67,7 +70,7 @@ export default function Sidebar() {
 					smooth={true}
 					offset={-30}
 					duration={500}
-					onClick={() => handleCloseMenu()}
+					onClick={handleCloseMenu}
 					href="#FAQ"
 				>
 					FAQ
