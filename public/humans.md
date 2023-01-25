@@ -1,6 +1,9 @@
 # Team
 
-2023-DevLead: Taj Loodu
+Director: Daniel Thorp
+Github: @arcanistzed
+
+Director: Taj Loodu
 GitHub: @tloodu
 
 Developer: Alex Govier
@@ -20,6 +23,3 @@ Github: @Arjuunan
 
 Developer: Arman Doǧru
 Github: @arman-dogru
-
-Developer: Daniel Thorp
-Github: @arcanistzed
