@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Notification.css";
 
-const contents = `Calling all aspiring game developers! Get ready to level up your game development skills at the Got Games introduction to Unity workshop! Join us on January 25th from 7pm to 9pm in STM117 and on Twitch.`;
-
-const action = () => {
-	window.open("https://forms.gle/rMP4BLrkQvaKBkpA8", "_blank");
-};
-
 function Notification() {
 	const [visible, setVisible] = useState(false);
 
@@ -28,9 +22,14 @@ function Notification() {
 				transform: visible ? "translateY(0)" : "translateY(100%)",
 			}}
 			aria-hidden={!visible}
-			onClick={action}
 		>
-			{contents}
+			<a href="https://forms.gle/rMP4BLrkQvaKBkpA8" target="_blank" rel="noreferrer">
+				<p>
+					Calling all aspiring game developers! Get ready to level up your game development skills at the Got
+					Games introduction to Unity workshop! Join us on January 25th from 7pm to 9pm in STM117 and on
+					Twitch.
+				</p>
+			</a>
 			<button
 				className="CloseButton"
 				aria-label="Close Notification"
