@@ -93,21 +93,24 @@ export default function FAQ() {
 						"&:before": {
 							display: "none",
 						},
-					}}>
+					}}
+				>
 					<AccordionSummary
 						expandIcon={<box-icon name="chevron-down"></box-icon>}
 						className={styles.question}
 						onClick={event => handleKeyList(event, item)}
 						sx={{
 							color: "#3B4779",
-						}}>
+						}}
+					>
 						{item.q}
 					</AccordionSummary>
 					<AccordionDetails
 						className={styles.answer}
 						sx={{
 							pt: 0,
-						}}>
+						}}
+					>
 						<Typography align={"left"}>{item.a}</Typography>
 					</AccordionDetails>
 				</Accordion>

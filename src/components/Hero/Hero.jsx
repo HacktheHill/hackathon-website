@@ -56,7 +56,8 @@ function Hero() {
 				className="HeroImg"
 				dangerouslySetInnerHTML={{
 					__html: hero,
-				}}></div>
+				}}
+			></div>
 			<dialog className="CountdownDialog" open={popupOpen}>
 				<div className="CountdownItem">
 					<h3>{days}</h3>

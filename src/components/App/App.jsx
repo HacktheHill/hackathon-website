@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import FAQ from "..//FAQ/FAQ";
 import About from "../About/About";
-import Notification from "../Notification/Notification";
 import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
 import Hero from "../Hero/Hero";
 import NavBar from "../NavBar/NavBar";
 import Sidebar from "../NavBar/Sidebar";
+import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";

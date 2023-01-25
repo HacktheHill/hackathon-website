@@ -62,7 +62,8 @@ function Sponsors() {
 						key={i}
 						item
 						className="SponsorIconBox"
-						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}>
+						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
+					>
 						<a href={sponsor.href}>
 							<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
 						</a>
@@ -78,7 +79,8 @@ function Sponsors() {
 							key={i}
 							item
 							className="SponsorIconBox"
-							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}>
+							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
+						>
 							<a href={sponsor.href}>
 								<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
 							</a>
