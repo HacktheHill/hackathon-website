@@ -23,13 +23,10 @@ function Notification() {
 			}}
 			aria-hidden={!visible}
 		>
-			<a href="https://forms.gle/rMP4BLrkQvaKBkpA8" target="_blank" rel="noreferrer">
-				<p>
-					Calling all aspiring game developers! Get ready to level up your game development skills at the Got
-					Games introduction to Unity workshop! Join us on January 25th from 7pm to 9pm in STM117 and on
-					Twitch.
-				</p>
-			</a>
+			<p>
+				Attention hackers! Round 2 of applications will be sent out on{" "}
+				<time dateTime="2023-01-29">Sunday, January 29th</time>! Be sure to check your email!
+			</p>
 			<button
 				className="CloseButton"
 				aria-label="Close Notification"
