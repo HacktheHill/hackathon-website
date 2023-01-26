@@ -23,3 +23,6 @@ Github: @Arjuunan
 
 Developer: Arman Doǧru
 Github: @arman-dogru
+
+Developer: Emilien Breton
+GitHub: @Bricktech2000
