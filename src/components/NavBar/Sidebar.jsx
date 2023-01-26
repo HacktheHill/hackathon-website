@@ -84,7 +84,7 @@ export default function Sidebar() {
 					>
 						<Icon icon={faFacebook} />
 					</a>
-					<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer" aria-label="Twitter">
+					<a href="https://twitter.com/hackthehill_" target="_blank" rel="noreferrer" aria-label="Twitter">
 						<Icon icon={faTwitter} />
 					</a>
 					<a
