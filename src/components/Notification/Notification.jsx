@@ -19,13 +19,13 @@ function Notification() {
 			id="Notification"
 			className="Notification"
 			style={{
-				transform: visible ? "translateY(0)" : "translateY(100%)",
+				transform: visible ? "translateY(0)" : "translateY(100%) scaleY(0)",
 			}}
 			aria-hidden={!visible}
 		>
 			<p>
-				Attention hackers! Round 2 of applications will be sent out on{" "}
-				<time dateTime="2023-01-29">Sunday, January 29th</time>! Be sure to check your email!
+				Attention hackers! Registrations close on <time dateTime="2023-01-29">Sunday, January 29th</time>! Don't
+				miss out!
 			</p>
 			<button
 				className="CloseButton"
