@@ -218,7 +218,8 @@ function Schedule() {
 							<div className="eventTitle">
 								Got Games?
 								<Button
-									href="https://forms.gle/rMP4BLrkQvaKBkpA8"
+									disabled
+									href="https://twitch.tv/hackthehill/videos"
 									target={"_blank"}
 									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
@@ -236,9 +237,7 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="ButtonText">
-										Sign up <b>→</b>
-									</p>
+									<p className="ButtonText">View Video</p>
 								</Button>
 							</div>
 							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
