@@ -30,7 +30,7 @@ function App() {
 			<Collaborators />
 			<FAQ />
 			<Footer />
-			<Notification />
+			{/* <Notification /> */}
 		</>
 	);
 }
