@@ -67,51 +67,23 @@ function Sponsors() {
 					<button>Sponsorship Package</button>
 				</a>
 			</div>
-
-			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-				{data.sponsors.large.map((sponsor, i) => (
-					<Grid
+			
+			{Object.values(data.sponsors).map((tier, i) => (
+				<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+					{tier.map((sponsor, j) => (
+						<Grid
 						key={i}
 						item
 						className="SponsorIconBox"
 						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
 					>
 						<a href={sponsor.href}>
-							<img className="SponsorIcon IconLarge" alt="SponsorIcon" src={sponsor.src}></img>
+							<img className={"SponsorIcon Icon" + (({ 0: "Large", 1: "Medium", 2: "Small"})[i])} alt="SponsorIcon" src={sponsor.src}></img> {/* I am not sure on a better way to implement the CSS class. */}
 						</a>
 					</Grid>
-				))}
-			</Grid>
-
-			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-				{data.sponsors.medium.map((sponsor, i) => (
-					<Grid
-						key={i}
-						item
-						className="SponsorIconBox"
-						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
-					>
-						<a href={sponsor.href}>
-							<img className="SponsorIcon IconMedium" alt="SponsorIcon" src={sponsor.src}></img>
-						</a>
-					</Grid>
-				))}
-			</Grid>
-
-			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
-				{data.sponsors.small.map((sponsor, i) => (
-					<Grid
-						key={i}
-						item
-						className="SponsorIconBox"
-						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
-					>
-						<a href={sponsor.href}>
-							<img className="SponsorIcon IconSmall" alt="SponsorIcon" src={sponsor.src}></img>
-						</a>
-					</Grid>
-				))}
-			</Grid>
+			))}
+				</Grid>
+			))}
 
 			<section>
 				<h1 id="Community">Community Partners</h1>
