@@ -78,7 +78,7 @@ function Sponsors() {
 						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
 					>
 						<a href={sponsor.href}>
-							<img className={"SponsorIcon Icon" + (({ 0: "Large", 1: "Medium", 2: "Small"})[i])} alt="SponsorIcon" src={sponsor.src}></img> {/* I am not sure on a better way to implement the CSS class. */}
+							<img className={`SponsorIcon Icon${["Large", "Medium", "Small"][i]}`} alt="SponsorIcon" src={sponsor.src}></img>
 						</a>
 					</Grid>
 			))}
