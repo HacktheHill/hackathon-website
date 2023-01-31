@@ -41,17 +41,6 @@ function Sponsors() {
 				{ href: "https://www.voiceflow.com/", src: voiceflow },
 			]
 		},
-		sponsors_old: [
-			{ href: "https://ciena.ca/", src: Ciena },
-			{ href: "https://canadiantire.ca/", src: CanadianTire },
-			{ href: "https://google.com/about/", src: Google },
-			{ href: "https://www.cse-cst.gc.ca/", src: CSE },
-			{ href: "https://www.lonehaven.com/", src: lonehaven },
-			{ href: "https://www.digitalocean.com/", src: DigitalOcean },
-			{ href: "https://www.echo3d.com/", src: echo3d },
-			{ href: "https://balsamiq.com/", src: balsamiq },
-			{ href: "https://www.voiceflow.com/", src: voiceflow },
-		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://carleton.ca/", src: Carleton },
