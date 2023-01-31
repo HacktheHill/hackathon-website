@@ -218,8 +218,7 @@ function Schedule() {
 							<div className="eventTitle">
 								Got Games?
 								<Button
-									disabled
-									href="https://twitch.tv/hackthehill/videos"
+									href="https://youtu.be/mbr4ZmXtx0k"
 									target={"_blank"}
 									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
