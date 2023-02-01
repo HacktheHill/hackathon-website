@@ -106,9 +106,6 @@ export default function Sidebar() {
 					>
 						<Icon icon={faLinkedin} />
 					</a>
-					<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="Medium">
-						<Icon icon={faMedium} />
-					</a>
 				</div>
 			</Menu>
 		</div>
