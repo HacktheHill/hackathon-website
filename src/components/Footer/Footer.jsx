@@ -53,9 +53,6 @@ function Footer() {
 					>
 						<Icon icon={faLinkedin} />
 					</a>
-					<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="Medium">
-						<Icon icon={faMedium} />
-					</a>
 				</div>
 			</div>
 			<div className="FooterText">
