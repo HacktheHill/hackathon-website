@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 import hero from "../../assets/hero.svg?raw";
 import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
@@ -48,9 +49,9 @@ function Hero() {
 				</h1>
 				<h2>Canada's Capital Hackathon</h2>
 				<h3>University of Ottawa &times; Carleton University</h3>
-				<a className="Button" target="_blank" href="/register" rel="noreferrer">
-					<button>Register Now!</button>
-				</a>
+				<Link className="Button" to="About" smooth={true} offset={-160} duration={500} href="#About">
+					<button>Learn More</button>
+				</Link>
 			</div>
 			<div
 				className="HeroImg"
