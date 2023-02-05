@@ -18,9 +18,7 @@ function Footer() {
 			<div className="FooterLogo">
 				<img src={FooterLogo} alt="Logo" />
 			</div>
-			<div className="LogoText">
-				<p>Canada's Capital Hackathon</p>
-			</div>
+			<p className="LogoText">Canada's Capital Hackathon</p>
 			<div className="FooterContainer">
 				<div className="MediaLinks">
 					<a
