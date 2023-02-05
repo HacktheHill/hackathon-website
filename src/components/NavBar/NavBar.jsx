@@ -27,7 +27,7 @@ function Navbar({ pageScroll }) {
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#About">
+							href="#about">
 							About
 						</Link>
 					</li>
@@ -61,12 +61,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="Collaborators"
+							to="collaborators"
 							spy={true}
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#Collaborators">
+							href="#collaborators">
 							Collaborators
 						</Link>
 					</li>
@@ -74,12 +74,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="FAQ"
+							to="faq"
 							spy={true}
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#FAQ">
+							href="#faq">
 							FAQ
 						</Link>
 					</li>
