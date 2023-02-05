@@ -20,7 +20,7 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<>
 			{<Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />}
 			<div className="page-wrap">
 				<NavBar pageScroll={pageScroll} />
@@ -33,7 +33,7 @@ function App() {
 				<hr></hr>
 				<Footer />
 			</div>
-		</div>
+		</>
 	);
 }
 
