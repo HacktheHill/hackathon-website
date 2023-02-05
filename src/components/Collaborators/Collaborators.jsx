@@ -11,7 +11,7 @@ const data = [
 
 function Collaborators() {
 	return (
-		<div id="Collaborators" className="Collaborators">
+		<div id="collaborators" className="collaborators">
 			<h1>Collaborators </h1>
 			<MountainFlags data={data} />
 		</div>
