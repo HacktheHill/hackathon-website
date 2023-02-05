@@ -1,19 +1,18 @@
-.outer {
+.Sidebar {
 	display: none;
-	overflow: hidden;
 }
 
 @media (max-width: 900px) {
-	.outer {
+	.Sidebar {
 		display: block;
 	}
 
-	.sidebar .MediaLinks {
+	.Sidebar .MediaLinks {
 		font-size: inherit;
 		margin: auto;
 	}
 
-	.sidebar .MediaLinks a {
+	.Sidebar .MediaLinks a {
 		color: white;
 		padding: 0 0.5em;
 	}
@@ -70,12 +69,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
+		padding: 0 2rem;
 	}
 
 	/* Individual item */
 	.bm-item {
 		color: inherit;
-		display: inline-block;
 		text-align: center;
 		text-decoration: none;
 		transition: color 0.2s;

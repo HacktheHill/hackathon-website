@@ -25,7 +25,7 @@ async function handleRequest(request, env) {
 
 	const response = await (
 		await fetch(
-			`https://script.google.com/macros/s/${env.SHEETS_MACRO_ID}/exec?email=${email}&spreadsheetId=${env.SHEETS_ID}`
+			`https://script.google.com/macros/s/${env.SHEETS_MACRO_ID}/exec?email=${email}&spreadsheetId=${env.SHEETS_ID}`,
 		)
 	).text();
 

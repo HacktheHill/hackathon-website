@@ -14,8 +14,21 @@
 .SponsorIcon {
 	transition: 0.5s;
 	object-fit: contain;
+}
+
+.IconLarge {
+	max-height: 200px;
+	width: 300px;
+}
+
+.IconMedium {
 	max-height: 130px;
 	width: 250px;
+}
+
+.IconSmall {
+	max-height: 80px;
+	width: 200px;
 }
 
 .PaperBox {

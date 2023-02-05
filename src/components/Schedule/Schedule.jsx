@@ -1,6 +1,6 @@
+import { Box, Button, Card, Stack, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import "./Schedule.css";
-import { Card, Stack, Box, useTheme, useMediaQuery, Button, Divider } from "@mui/material";
 
 function Schedule() {
 	const theme = useTheme();
@@ -35,7 +35,8 @@ function Schedule() {
 					width: matchesMD ? "75%" : "70%",
 					margin: "auto",
 					mt: matchesSM ? "15%" : "auto",
-				}}>
+				}}
+			>
 				<Stack spacing={10} id="eventStack" className="eventStack">
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className="Center">
@@ -47,7 +48,8 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}>
+								}}
+							>
 								<Stack direction={"column"}>
 									<div className="eventMonth">November</div>
 									<div className="eventDay">16</div>
@@ -74,7 +76,8 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}>
+									}}
+								>
 									<p className="ButtonText">View Video</p>
 								</Button>
 							</div>
@@ -97,7 +100,8 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}>
+								}}
+							>
 								<Stack direction={"column"}>
 									<div className="eventMonth">November</div>
 									<div className="eventDay">30</div>
@@ -127,7 +131,8 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}>
+									}}
+								>
 									<p className="ButtonText">Completed</p>
 								</Button>
 							</div>
@@ -149,7 +154,8 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}>
+								}}
+							>
 								<Stack direction={"column"}>
 									<div className="eventMonth">January</div>
 									<div className="eventDay">11</div>
@@ -177,7 +183,8 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}>
+									}}
+								>
 									<p className="ButtonText">Completed</p>
 								</Button>
 							</div>
@@ -199,7 +206,8 @@ function Schedule() {
 										transform: "scale(1.05)",
 										transition: "transform 330ms ease-in-out",
 									},
-								}}>
+								}}
+							>
 								<Stack direction={"column"}>
 									<div className="eventMonth">January</div>
 									<div className="eventDay">25</div>
@@ -210,7 +218,8 @@ function Schedule() {
 							<div className="eventTitle">
 								Got Games?
 								<Button
-									disabled
+									href="https://youtu.be/mbr4ZmXtx0k"
+									target={"_blank"}
 									sx={{
 										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
 										borderRadius: "100px",
@@ -225,16 +234,15 @@ function Schedule() {
 										"&:hover": {
 											backgroundColor: "#f094bc",
 										},
-									}}>
-									<p className="ButtonText">
-										Sign up <b>→</b>
-									</p>
+									}}
+								>
+									<p className="ButtonText">View Video</p>
 								</Button>
 							</div>
 							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
 							<p className="eventDesc" align="left">
 								Discover the best that game development has to offer! Join us along side the uOttawa
-								Game Development Club for an introduction to Unity workshop, presented by Propel VR.
+								Game Development Club for an introduction to Unity workshop.
 							</p>
 						</Stack>
 					</Stack>

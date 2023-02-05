@@ -1,0 +1,30 @@
+.Notification {
+	position: sticky;
+	inset: auto 0 0 0;
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem;
+	background-color: #414f7f;
+	color: white;
+	transition: transform 0.3s ease-in-out;
+	transform: translateY(100%) scaleY(0);
+}
+
+.Notification a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.Notification p {
+	margin: 0;
+}
+
+.Notification .CloseButton {
+	display: flex;
+	align-items: flex-start;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 0;
+}

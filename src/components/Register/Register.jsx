@@ -17,7 +17,7 @@ const Register = () => {
 	return (
 		<div
 			id="formwrapper"
-			data-tf-widget="YWPbYwPy"
+			data-tf-widget="" // this is the id of the typeform
 			data-tf-inline-on-mobile
 			data-tf-hide-headers
 			data-tf-medium="snippet"

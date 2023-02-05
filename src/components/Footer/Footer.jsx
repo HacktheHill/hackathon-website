@@ -25,17 +25,19 @@ function Footer() {
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="Facebook">
+						aria-label="Facebook"
+					>
 						<Icon icon={faFacebook} />
 					</a>
-					<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer" aria-label="Twitter">
+					<a href="https://twitter.com/hackthehill_" target="_blank" rel="noreferrer" aria-label="Twitter">
 						<Icon icon={faTwitter} />
 					</a>
 					<a
 						href="https://www.instagram.com/hackthehill/"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="Instagram">
+						aria-label="Instagram"
+					>
 						<Icon icon={faInstagram} />
 					</a>
 					<a href="https://www.tiktok.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="TikTok">
@@ -45,11 +47,9 @@ function Footer() {
 						href="https://www.linkedin.com/company/hackthehill/"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="LinkedIn">
+						aria-label="LinkedIn"
+					>
 						<Icon icon={faLinkedin} />
-					</a>
-					<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="Medium">
-						<Icon icon={faMedium} />
 					</a>
 				</div>
 			</div>
@@ -60,7 +60,8 @@ function Footer() {
 					target="_blank"
 					rel="noreferrer"
 					aria-label="GitHub"
-					className="FooterLink">
+					className="FooterLink"
+				>
 					<Icon icon={faGithub} />
 					Source Code
 				</a>
