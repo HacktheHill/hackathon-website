@@ -29,7 +29,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#about"
 				>
-					> About
+					About
 				</Link>
 				<Link
 					to="sponsors"
@@ -40,7 +40,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#sponsors"
 				>
-					> Sponsors
+					Sponsors
 				</Link>
 				<Link
 					to="schedule"
