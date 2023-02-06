@@ -44,10 +44,10 @@ function Sponsors() {
 	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
 
 	return (
-		<div id="Sponsors" className="Sponsors">
+		<div id="sponsors" className="sponsors">
 			<h1>Sponsors</h1>
 			<div>
-				<p className="SponsorsText">
+				<p className="sponsors-text">
 					Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
 					hackathon?
 				</p>
@@ -56,31 +56,31 @@ function Sponsors() {
 				</a>
 			</div>
 
-			<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+			<Grid container id="sponsors-display" className="sponsors-display">
 				{data.sponsors.map((sponsor, i) => (
 					<Grid
 						key={i}
 						item
-						className="SponsorIconBox"
+						className="sponsor-icon-box"
 						sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}>
 						<a href={sponsor.href}>
-							<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
+							<img className="sponsor-icon" alt="sponsor-icon" src={sponsor.src}></img>
 						</a>
 					</Grid>
 				))}
 			</Grid>
 
 			<section>
-				<h1 id="Community">Community Partners</h1>
-				<Grid container id="SponsorsDisplay" className="SponsorsDisplay">
+				<h1 id="community">Community Partners</h1>
+				<Grid container id="sponsors-display" className="sponsors-display">
 					{data.collaborators.map((sponsor, i) => (
 						<Grid
 							key={i}
 							item
-							className="SponsorIconBox"
+							className="sponsor-icon-box"
 							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}>
 							<a href={sponsor.href}>
-								<img className="SponsorIcon" alt="SponsorIcon" src={sponsor.src}></img>
+								<img className="sponsor-icon" alt="sponsor-icon" src={sponsor.src}></img>
 							</a>
 						</Grid>
 					))}

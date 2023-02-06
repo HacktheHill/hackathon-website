@@ -28,13 +28,13 @@ export default function Sidebar() {
 					About
 				</Link>
 				<Link
-					to="Sponsors"
+					to="sponsors"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
-					href="#Sponsors">
+					href="#sponsors">
 					Sponsors
 				</Link>
 				<Link

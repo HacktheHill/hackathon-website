@@ -35,12 +35,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="Sponsors"
+							to="sponsors"
 							spy={true}
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#Sponsors">
+							href="#sponsors">
 							Sponsors
 						</Link>
 					</li>
