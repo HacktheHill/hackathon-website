@@ -8,12 +8,12 @@
 		display: block;
 	}
 
-	.sidebar .MediaLinks {
+	.sidebar .media-links {
 		font-size: inherit;
 		margin: auto;
 	}
 
-	.sidebar .MediaLinks a {
+	.sidebar .media-links a {
 		color: white;
 		padding: 0 0.5em;
 	}

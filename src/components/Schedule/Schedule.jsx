@@ -27,8 +27,8 @@ function Schedule() {
 	};
 
 	return (
-		<div id="Schedule" className="Schedule">
-			<h1 className="scheduleTitle">The Hacker Series</h1>
+		<div id="schedule" className="schedule">
+			<h1 className="schedule-title">The Hacker Series</h1>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 			<Box
 				sx={{
@@ -36,9 +36,9 @@ function Schedule() {
 					margin: "auto",
 					mt: matchesSM ? "15%" : "auto",
 				}}>
-				<Stack spacing={10} id="eventStack" className="eventStack">
+				<Stack spacing={10} id="eventStack" className="event-stack">
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="Center">
+						<div className="center">
 							<Card
 								variant="outlined"
 								style={styles.card}
@@ -49,13 +49,13 @@ function Schedule() {
 									},
 								}}>
 								<Stack direction={"column"}>
-									<div className="eventMonth">November</div>
-									<div className="eventDay">16</div>
+									<div className="event-month">November</div>
+									<div className="event-day">16</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="eventTitle">
+							<div className="event-title">
 								Resume Roast
 								<Button
 									target="_blank"
@@ -75,11 +75,11 @@ function Schedule() {
 											backgroundColor: "#f094bc",
 										},
 									}}>
-									<p className="ButtonText">View Video</p>
+									<p className="button-text">View Video</p>
 								</Button>
 							</div>
-							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
-							<p className="eventDesc" align="left">
+							<div className="sub-title">7 p.m. - 9 p.m. @ STM 117</div>
+							<p className="event-desc" align="left">
 								Need resume advice on the spot? Hang out with some developers from Ciena and Microsoft
 								as they review and evaluate resumes submitted by students, all while filling yourself up
 								with some fresh pizza.
@@ -88,7 +88,7 @@ function Schedule() {
 					</Stack>
 
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="Center">
+						<div className="center">
 							<Card
 								variant="outlined"
 								style={styles.card}
@@ -99,13 +99,13 @@ function Schedule() {
 									},
 								}}>
 								<Stack direction={"column"}>
-									<div className="eventMonth">November</div>
-									<div className="eventDay">30</div>
+									<div className="event-month">November</div>
+									<div className="event-day">30</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="eventTitle">
+							<div className="event-title">
 								Coffee, Code, and Cram
 								<Button
 									disabled
@@ -128,11 +128,11 @@ function Schedule() {
 											backgroundColor: "#f094bc",
 										},
 									}}>
-									<p className="ButtonText">Completed</p>
+									<p className="button-text">Completed</p>
 								</Button>
 							</div>
-							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
-							<p className="eventDesc" align="left">
+							<div className="sub-title">7 p.m. - 9 p.m. @ STM 117</div>
+							<p className="event-desc" align="left">
 								Unwind and take a break from school. Join us alongside the uOttawa Computer Science Club
 								for an evening of socializing and coding with coffee, tea, and snacks.
 							</p>
@@ -140,7 +140,7 @@ function Schedule() {
 					</Stack>
 
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="Center">
+						<div className="center">
 							<Card
 								variant="outlined"
 								style={styles.card}
@@ -151,13 +151,13 @@ function Schedule() {
 									},
 								}}>
 								<Stack direction={"column"}>
-									<div className="eventMonth">January</div>
-									<div className="eventDay">11</div>
+									<div className="event-month">January</div>
+									<div className="event-day">11</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="eventTitle">
+							<div className="event-title">
 								Wicked Web Work
 								<Button
 									disabled
@@ -178,11 +178,11 @@ function Schedule() {
 											backgroundColor: "#f094bc",
 										},
 									}}>
-									<p className="ButtonText">Completed</p>
+									<p className="button-text">Completed</p>
 								</Button>
 							</div>
-							<div className="subTitle">6 p.m. - 10 p.m. @ STM 117</div>
-							<p className="eventDesc" align="left">
+							<div className="sub-title">6 p.m. - 10 p.m. @ STM 117</div>
+							<p className="event-desc" align="left">
 								Explore the wonders of front-end development! Learn the basics through workshops and
 								participate in a one-hour challenge to build a website according to provided guidelines.
 							</p>
@@ -190,7 +190,7 @@ function Schedule() {
 					</Stack>
 
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="Center">
+						<div className="center">
 							<Card
 								variant="outlined"
 								style={styles.card}
@@ -201,13 +201,13 @@ function Schedule() {
 									},
 								}}>
 								<Stack direction={"column"}>
-									<div className="eventMonth">January</div>
-									<div className="eventDay">25</div>
+									<div className="event-month">January</div>
+									<div className="event-day">25</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="eventTitle">
+							<div className="event-title">
 								Got Games?
 								<Button
 									disabled
@@ -226,13 +226,13 @@ function Schedule() {
 											backgroundColor: "#f094bc",
 										},
 									}}>
-									<p className="ButtonText">
+									<p className="button-text">
 										Sign up <b>→</b>
 									</p>
 								</Button>
 							</div>
-							<div className="subTitle">7 p.m. - 9 p.m. @ STM 117</div>
-							<p className="eventDesc" align="left">
+							<div className="sub-title">7 p.m. - 9 p.m. @ STM 117</div>
+							<p className="event-desc" align="left">
 								Discover the best that game development has to offer! Join us along side the uOttawa
 								Game Development Club for an introduction to Unity workshop, presented by Propel VR.
 							</p>

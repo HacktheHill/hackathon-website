@@ -1,4 +1,4 @@
-.Schedule h1 {
+.schedule h1 {
 	font-family: Coolvetica;
 	margin-bottom: 3%;
 	font-size: 3em;
@@ -6,17 +6,16 @@
 	font-weight: normal;
 }
 
-.Schedule {
+.schedule {
 	background-color: #3b477a;
 	padding-bottom: 60px;
-	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
-		url(/SVGs/xGroup.svg);
+	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
 	background-repeat: no-repeat;
 	background-position: left 50px, right 400px, top 100px right 100px;
 	background-size: 10%, 8%, 2%;
 }
 
-.scheduleTitle {
+.schedule-title {
 	color: #ffffff;
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -26,14 +25,14 @@
 	font-weight: normal;
 }
 
-.ButtonText {
+.button-text {
 	font-family: Rubik;
 	margin: auto;
 	font-weight: bold;
 	font-size: 15px;
 }
 
-.eventMonth {
+.event-month {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
@@ -43,7 +42,7 @@
 	font-family: Coolvetica;
 }
 
-.eventDay {
+.event-day {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 75px;
@@ -52,7 +51,7 @@
 	font-family: Coolvetica;
 }
 
-.eventTitle {
+.event-title {
 	font-size: 30px;
 	font-weight: normal;
 	color: #ffffff;
@@ -70,23 +69,23 @@
 	border-color: #ffffff;
 }
 
-.eventStack {
+.event-stack {
 	flex-wrap: wrap;
 }
 
-.Center {
+.center {
 	display: flex;
 	justify-content: center;
 }
 
-.eventDesc {
+.event-desc {
 	color: #ffffff;
 	font-family: Rubik;
 	font-size: 16px;
 	margin-top: 30px;
 }
 
-.subTitle {
+.sub-title {
 	color: #ffffff;
 	font-family: Rubik;
 	font-size: 18px;
@@ -95,25 +94,23 @@
 }
 
 @media only screen and (max-width: 900px) {
-	.Schedule {
-		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
-			url(/SVGs/xGroup.svg);
+	.schedule {
+		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
 		background-repeat: no-repeat;
 		background-position: left 50px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;
 	}
-	.eventTitle {
+	.event-title {
 		flex-direction: column;
 	}
-	.scheduleTitle {
+	.schedule-title {
 		font-size: 3em;
 	}
 }
 
 @media only screen and (max-width: 600px) {
-	.Schedule {
-		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg),
-			url(/SVGs/xGroup.svg);
+	.schedule {
+		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
 		background-repeat: no-repeat;
 		background-position: left 150px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;

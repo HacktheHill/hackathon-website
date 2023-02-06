@@ -18,14 +18,13 @@ export default function Sidebar() {
 		<div className="outer">
 			<Menu className="sidebar" right width={"100%"} isOpen={isMenuOpen} onStateChange={handleStateChange}>
 				<Link
-					to="About"
+					to="about"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
-					href="#About"
-				>
+					href="#about">
 					About
 				</Link>
 				<Link
@@ -35,50 +34,45 @@ export default function Sidebar() {
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
-					href="#Sponsors"
-				>
+					href="#Sponsors">
 					Sponsors
 				</Link>
 				<Link
-					to="Schedule"
+					to="schedule"
 					spy={true}
 					smooth={true}
 					offset={0}
 					duration={500}
 					onClick={() => handleCloseMenu()}
-					href="#Schedule"
-				>
+					href="#schedule">
 					The Hacker Series
 				</Link>
 				<Link
-					to="Collaborators"
+					to="collaborators"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
-					href="#Collaborators"
-				>
+					href="#collaborators">
 					Collaborators
 				</Link>
 				<Link
-					to="FAQ"
+					to="faq"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={() => handleCloseMenu()}
-					href="#FAQ"
-				>
+					href="#faq">
 					FAQ
 				</Link>
-				<div className="MediaLinks">
+				<div className="media-links">
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="Facebook"
-					>
+						aria-label="Facebook">
 						<Icon icon={faFacebook} />
 					</a>
 					<a href="https://twitter.com/hackthehiII" target="_blank" rel="noreferrer" aria-label="Twitter">
@@ -88,8 +82,7 @@ export default function Sidebar() {
 						href="https://www.instagram.com/hackthehill/"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="Instagram"
-					>
+						aria-label="Instagram">
 						<Icon icon={faInstagram} />
 					</a>
 					<a href="https://www.tiktok.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="TikTok">
@@ -99,8 +92,7 @@ export default function Sidebar() {
 						href="https://www.linkedin.com/company/hackthehill/"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="LinkedIn"
-					>
+						aria-label="LinkedIn">
 						<Icon icon={faLinkedin} />
 					</a>
 					<a href="https://www.medium.com/@hackthehill" target="_blank" rel="noreferrer" aria-label="Medium">

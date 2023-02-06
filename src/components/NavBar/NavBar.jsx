@@ -48,12 +48,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="Schedule"
+							to="schedule"
 							spy={true}
 							smooth={true}
 							offset={-80}
 							duration={500}
-							href="#Schedule">
+							href="#schedule">
 							The Hacker Series
 						</Link>
 					</li>
