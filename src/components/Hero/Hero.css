@@ -1,4 +1,4 @@
-.Hero {
+.hero {
 	background: linear-gradient(
 		0deg,
 		rgba(239, 203, 255, 0) 15%,
@@ -12,7 +12,7 @@
 	background-repeat: no-repeat;
 }
 
-.HeroHeading {
+.hero-heading {
 	position: absolute;
 	display: grid;
 	place-items: center;
@@ -23,39 +23,39 @@
 	gap: 1.5vh;
 }
 
-.LocationDateHeading {
+.location-date-heading {
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
 }
 
-.LocationPin {
+.location-pin {
 	width: 1rem;
 	height: 1rem;
 }
 
-.BannerLogo {
+.banner-logo {
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
-.HeroHeading h2 {
+.hero-heading h2 {
 	color: #3b4779;
 	font-family: Coolvetica;
 	font-size: clamp(1rem, 3.5vmin, 5rem);
 	font-weight: 500;
 }
 
-.HeroHeading h3 {
+.hero-heading h3 {
 	color: #3b4779;
 	font-size: clamp(1rem, 2vmin, 5rem);
 	font-weight: normal;
 }
 
-.Button {
+.button {
 	margin: 3vmin auto;
 }
 
-.Button button {
+.button button {
 	background-color: #5c71ad;
 	border: none;
 	border-radius: 100px;
@@ -69,18 +69,18 @@
 	font-family: Rubik;
 }
 
-.Button button:hover {
+.button button:hover {
 	background-color: #3f4e77;
 }
 
-.HeroImg svg {
+.hero-img svg {
 	height: 100%;
 	width: 100%;
 	margin-top: calc(20rem - 20vw);
 	margin-bottom: -35%;
 }
 
-.CountdownDialog {
+.countdown-dialog {
 	box-sizing: border-box;
 	position: absolute;
 	top: calc(40vmin + max(20rem, 20vmin));
@@ -102,25 +102,25 @@
 	gap: max(1rem, 5vmin);
 }
 
-.CountdownDialog[open] {
+.countdown-dialog[open] {
 	opacity: 1;
 	pointer-events: all;
 }
 
-.CountdownItem {
+.countdown-item {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.CountdownItem h3 {
+.countdown-item h3 {
 	font-size: 1.5em;
 	font-family: Rubik;
 	font-weight: normal;
 }
 
-.CountdownItem h4 {
+.countdown-item h4 {
 	color: #3b4779;
 	font-weight: normal;
 }

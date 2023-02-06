@@ -1,17 +1,17 @@
-.SponsorsDisplay {
+.sponsors-display {
 	justify-content: center;
 	gap: 3rem;
 	margin: 2.5rem 0;
 }
 
-.SponsorIconBox {
+.sponsor-icon-box {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	display: flex;
 }
 
-.SponsorIcon {
+.sponsor-icon {
 	transition: 0.5s;
 	object-fit: contain;
 }
@@ -26,16 +26,11 @@
 	width: 250px;
 }
 
-.IconSmall {
-	max-height: 80px;
-	width: 200px;
-}
-
-.PaperBox {
+.paper-box {
 	align-items: center;
 }
 
-.Sponsors {
+.sponsors {
 	color: black;
 	transition: 0.5s;
 	margin-bottom: 5%;
@@ -45,18 +40,18 @@
 	gap: 3rem;
 }
 
-.Sponsors h1 {
+.sponsors h1 {
 	font-family: Coolvetica;
 	font-size: 3em;
 	font-weight: normal;
 }
 
-.PaperBox a:hover img {
+.paper-box a:hover img {
 	transform: scale(1.1);
 	transition: 0.5s;
 }
 
-.SponsorsText {
+.sponsors-text {
 	border-left: 5px solid black;
 	padding-left: 2rem;
 	width: 80%;
@@ -65,12 +60,12 @@
 	line-height: max(2rem, 2.5vmin);
 }
 
-.ButtonText {
+.button-text {
 	font-weight: normal;
 }
 
 @media only screen and (max-width: 590px) {
-	.SponsorIconBox {
+	.sponsor-icon-box {
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
@@ -78,7 +73,7 @@
 		padding: 0 2rem;
 	}
 
-	.Sponsors h1 {
+	.sponsors h1 {
 		font-size: 3em;
 	}
 }
