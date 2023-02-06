@@ -9,12 +9,12 @@ function Navbar({ pageScroll }) {
 				<Link
 					className="link logo"
 					activeClass="active"
-					to="Hero"
+					to="hero"
 					spy={true}
 					smooth={true}
 					offset={0}
 					duration={500}
-					href="#Hero">
+					href="#hero">
 					<img alt="Logo" src={logo}></img>
 				</Link>
 				<ul>
