@@ -29,12 +29,14 @@ function Hero() {
 		}
 	};
 
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div className="hero" onPointerMove={popup} onTouchStart={popup}>
 			<div className="hero-heading">
 				<div className="location-date-heading">
 					<h3>
-						<img className="location-pin" src={LocationPin} alt="Location Pin" /> Hybrid
+						<img className="location-pin" src={LocationPin} alt="Location Pin" /> {t("hero.hybrid")}
 						<strong> @ uOttawa</strong>
 					</h3>
 					<h3>
@@ -46,10 +48,12 @@ function Hero() {
 				<h1 id="Hero">
 					<img className="banner-logo" src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
-				<h2>Canada's Capital Hackathon</h2>
-				<h3>University of Ottawa &times; Carleton University</h3>
+				<h2>{t("hero.h2")}</h2>
+				<h3>
+					{t("hero.h3")}&times;{t("hero.h3_p2")}
+				</h3>
 				<Button href="#about" offset={-160}>
-					Learn More
+					{t("hero.more")}
 				</Button>
 			</div>
 			<div

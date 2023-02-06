@@ -69,6 +69,23 @@ li:not(.logo) .link:is(.active, :hover)::after {
 	transform: translateY(0);
 }
 
+.language-selector {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	text-decoration: none;
+	height: 100%;
+}
+
+.language-button {
+	background: none;
+	border: none;
+	color: #3b4779;
+	font-weight: bolder;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
 @media (max-width: 900px) {
 	.navbar li:not(.logo) .link {
 		display: none;

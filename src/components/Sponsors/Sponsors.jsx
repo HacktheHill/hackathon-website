@@ -60,13 +60,10 @@ function Sponsors() {
 	return (
 		<div>
 			<section id="sponsors" className="sponsors">
-				<h1>Sponsors</h1>
+				<h1>{t("sponsors.title")}</h1>
 				<div>
-					<p className="sponsors-text">
-						Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
-						hackathon?
-					</p>
-					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">Sponsorship Package</Button>
+					<p className="sponsors-text">{t("sponsors.p")}</p>
+					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
 				</div>
 
 				<div className="sponsors-col">
@@ -93,7 +90,7 @@ function Sponsors() {
 			</section>
 
 			<section className="sponsors">
-				<h1 id="community">Community Partners</h1>
+				<h1 id="community">{t("partners.title")}</h1>
 				<div className="sponsors-row">
 					{data.collaborators.map((sponsor, i) => (
 						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className="sponsor-icon-box">
