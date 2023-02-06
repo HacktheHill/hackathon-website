@@ -1,23 +1,20 @@
-import {
-	faFacebook,
-	faGithub,
-	faInstagram,
-	faLinkedin,
-	faTiktok,
-	faTwitter
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Footer.css";
 import FooterLogo from "/Logos/hackthehill-banner.svg";
+import { useTranslation, Trans } from "react-i18next";
+import "../Localization/i18n";
 
 function Footer() {
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div className="footer">
 			<div className="footer-logo">
 				<img src={FooterLogo} alt="Logo" />
 			</div>
-			<p className="logo-text">Canada's Capital Hackathon</p>
+			<p className="logo-text">{t("footer.title")}</p>
 			<div className="footer-container">
 				<div className="media-links">
 					<a
@@ -53,7 +50,7 @@ function Footer() {
 				</div>
 			</div>
 			<div className="footer-text">
-				<p>Control the Capital, Command the Cabinet, Build until you Hack the Hill</p>
+				<p>{t("footer.description")}</p>
 				<a
 					href="https://github.com/HacktheHill/2023.hackthehill.com"
 					target="_blank"
@@ -62,7 +59,7 @@ function Footer() {
 					className="footer-link"
 				>
 					<Icon icon={faGithub} />
-					Source Code
+					{t("footer.github")}
 				</a>
 				<small>&copy; 2022-2023 Hack the Hill</small>
 			</div>

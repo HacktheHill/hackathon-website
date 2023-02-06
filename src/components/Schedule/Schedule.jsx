@@ -1,6 +1,8 @@
 import { Box, Button, Card, Stack, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import "./Schedule.css";
+import { useTranslation, Trans } from "react-i18next";
+import "../Localization/i18n";
 
 function Schedule() {
 	const theme = useTheme();
@@ -26,9 +28,11 @@ function Schedule() {
 		},
 	};
 
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div id="schedule" className="schedule">
-			<h1 className="schedule-title">The Hacker Series</h1>
+			<h1 className="schedule-title">{t("schedule.title")}</h1>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 			<Box
 				sx={{
@@ -51,14 +55,14 @@ function Schedule() {
 								}}
 							>
 								<Stack direction={"column"}>
-									<div className="event-month">November</div>
+									<div className="event-month">{t("schedule.event1.month")}</div>
 									<div className="event-day">16</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
 							<div className="event-title">
-								Resume Roast
+								{t("schedule.event1.title")}
 								<Button
 									target="_blank"
 									href="https://youtu.be/zpixm4xz_K4"
@@ -78,14 +82,12 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">View Video</p>
+									<p className="button-text">{t("schedule.event1.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">7 p.m. - 9 p.m. @ STM 117</div>
+							<div className="sub-title">{t("schedule.event1.time")}</div>
 							<p className="event-desc" align="left">
-								Need resume advice on the spot? Hang out with some developers from Ciena and Microsoft
-								as they review and evaluate resumes submitted by students, all while filling yourself up
-								with some fresh pizza.
+								{t("schedule.event1.description")}
 							</p>
 						</Stack>
 					</Stack>
@@ -103,14 +105,14 @@ function Schedule() {
 								}}
 							>
 								<Stack direction={"column"}>
-									<div className="event-month">November</div>
+									<div className="event-month">{t("schedule.event2.month")}</div>
 									<div className="event-day">30</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
 							<div className="event-title">
-								Coffee, Code, and Cram
+								{t("schedule.event2.title")}
 								<Button
 									disabled
 									target="_blank"
@@ -133,13 +135,12 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">Completed</p>
+									<p className="button-text">{t("schedule.event2.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">7 p.m. - 9 p.m. @ STM 117</div>
+							<div className="sub-title">{t("schedule.event2.time")}</div>
 							<p className="event-desc" align="left">
-								Unwind and take a break from school. Join us alongside the uOttawa Computer Science Club
-								for an evening of socializing and coding with coffee, tea, and snacks.
+								{t("schedule.event2.description")}
 							</p>
 						</Stack>
 					</Stack>
@@ -157,14 +158,14 @@ function Schedule() {
 								}}
 							>
 								<Stack direction={"column"}>
-									<div className="event-month">January</div>
+									<div className="event-month">{t("schedule.event3.month")}</div>
 									<div className="event-day">11</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
 							<div className="event-title">
-								Wicked Web Work
+								{t("schedule.event3.title")}
 								<Button
 									disabled
 									sx={{
@@ -185,13 +186,12 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">Completed</p>
+									<p className="button-text">{t("schedule.event3.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">6 p.m. - 10 p.m. @ STM 117</div>
+							<div className="sub-title">{t("schedule.event3.time")}</div>
 							<p className="event-desc" align="left">
-								Explore the wonders of front-end development! Learn the basics through workshops and
-								participate in a one-hour challenge to build a website according to provided guidelines.
+								{t("schedule.event3.description")}
 							</p>
 						</Stack>
 					</Stack>
@@ -209,14 +209,14 @@ function Schedule() {
 								}}
 							>
 								<Stack direction={"column"}>
-									<div className="event-month">January</div>
+									<div className="event-month">{t("schedule.event4.month")}</div>
 									<div className="event-day">25</div>
 								</Stack>
 							</Card>
 						</div>
 						<Stack sx={{ width: "100%" }}>
 							<div className="event-title">
-								Got Games?
+								{t("schedule.event4.title")}
 								<Button
 									href="https://youtu.be/mbr4ZmXtx0k"
 									target={"_blank"}
@@ -236,13 +236,12 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">View Video</p>
+									<p className="button-text">{t("schedule.event4.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">7 p.m. - 9 p.m. @ STM 117</div>
+							<div className="sub-title">{t("schedule.event4.time")}</div>
 							<p className="event-desc" align="left">
-								Discover the best that game development has to offer! Join us along side the uOttawa
-								Game Development Club for an introduction to Unity workshop.
+								{t("schedule.event4.description")}
 							</p>
 						</Stack>
 					</Stack>

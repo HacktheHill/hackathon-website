@@ -37,7 +37,7 @@ function Hero() {
 				<div className="location-date-heading">
 					<h3>
 						<img className="location-pin" src={LocationPin} alt="Location Pin" /> {t("hero.hybrid")}
-						<strong> @ uOttawa</strong>
+						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
 						Mar &nbsp;

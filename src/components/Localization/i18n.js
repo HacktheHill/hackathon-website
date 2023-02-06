@@ -19,28 +19,12 @@ i18n.use(Backend)
 		resources: {
 			en: {
 				translation: {
-					navbar: {
-						links: {
-							about: "About",
-							sponsors: "Sponsors",
-							hacker: "The Hacker Series",
-							collaborators: "Collaborators",
-							faq: "FAQ",
-						},
-					},
+					//ENGLISH TRANSLATIONS
 				},
 			},
 			fr: {
 				translation: {
-					navbar: {
-						links: {
-							about: "À Propos",
-							sponsors: "Commanditaires",
-							hacker: "La Série Hacker",
-							collaborators: "Collaborateurs",
-							faq: "FAQ",
-						},
-					},
+					//FRENCH TRANSLATIONS
 				},
 			},
 		},*/
