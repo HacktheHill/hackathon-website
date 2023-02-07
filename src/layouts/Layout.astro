@@ -86,20 +86,39 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 			"@context": "http://schema.org",
 			"@type": "Event",
 			"name": "Hack the Hill",
-			"startDate": [
-				"2023-03-03",
-				"2023-03-05"
-			],
+			"organizer": {
+				"@type": "Organization",
+				"name": "Hack the Hill",
+			},
+			"performer": {
+				"@type": "PerformingGroup",
+				"name": "Hack the Hill"
+			},
+			"startDate": "2023-03-03",
+			"endDate": "2023-03-05",
 			"location": {
 				"@type": "Place",
 				"name": "uOttawa"
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "75 Laurier Ave. E",
+					"addressLocality": "Ottawa",
+					"postalCode": "K1N 6N5",
+					"addressRegion": "ON",
+					"addressCountry": "Canada"
 			},
+			"eventAttendanceMode": "https://https://hackthehill.com/",
+      		"eventStatus": "https://https://hackthehill.com/",
 			"image": "https://hackthehill.com/Logos/hackthehill-logo.svg",
 			"description": "Canada&#39;s Capital Hackathon",
 			"url": "https://hackthehill.com/register",
 			"offers": {
 				"@type": "Offer",
-				"price": "0"
+				"price": "0",
+				"priceCurrency": "CAD",
+				"availability": "https://https://hackthehill.com/",
+				"validFrom": "2023-01-01",
+				"url": "https://https://hackthehill.com/"
 			}
 		}
 		</script>
