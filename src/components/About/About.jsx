@@ -1,12 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
+import { t } from "../../i18n";
 import "./About.css";
 import Mascot from "/SVGs/mascot-waving.svg";
-import { useTranslation, Trans } from "react-i18next";
-import "../Localization/i18n";
 
 function About() {
-	const { t, i18n } = useTranslation();
-
 	return (
 		<div className="about" id="about">
 			<div className="about-text">

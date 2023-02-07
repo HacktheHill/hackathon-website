@@ -1,16 +1,13 @@
 import { Link } from "react-scroll";
+import { t, locale } from "../../i18n";
 import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
-import { useTranslation, Trans } from "react-i18next";
-import "../Localization/i18n";
-
-const lngs = {
-	en: { nativeName: "En" },
-	fr: { nativeName: "Fr" },
-};
 
 function Navbar({ pageScroll }) {
-	const { t, i18n } = useTranslation();
+	const languages = {
+		en: "English",
+		fr: "Français",
+	};
 
 	return (
 		<>
@@ -30,15 +27,15 @@ function Navbar({ pageScroll }) {
 				<ul>
 					<li>
 						<div className="language-selector">
-							{Object.keys(lngs).map(lng => (
+							{Object.keys(languages).map(language => (
 								<button
 									className="link language-button"
-									key={lng}
-									style={{ fontWeight: i18n.resolvedLanguage === lng ? "bold" : "normal" }}
+									key={language}
+									style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
 									type="submit"
-									onClick={() => i18n.changeLanguage(lng)}
+									onClick={() => locale.set(language)}
 								>
-									{lngs[lng].nativeName}
+									{languages[language]}
 								</button>
 							))}
 							<p>&nbsp;</p>
@@ -55,7 +52,7 @@ function Navbar({ pageScroll }) {
 							duration={500}
 							href="#about"
 						>
-							<Trans i18nKey="navbar.links.about"></Trans>
+							{t("navbar.links.about")}
 						</Link>
 					</li>
 					<li>

@@ -1,14 +1,11 @@
 import { faFacebook, faGithub, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { t } from "../../i18n";
 import "./Footer.css";
 import FooterLogo from "/Logos/hackthehill-banner.svg";
-import { useTranslation } from "react-i18next";
-import "../Localization/i18n";
 
 function Footer() {
-	const { t, i18n } = useTranslation();
-
 	return (
 		<div className="footer">
 			<div className="footer-logo">

@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
+import { t } from "../../i18n";
 import "./Notification.css";
-import { useTranslation, Trans } from "react-i18next";
-import "../Localization/i18n";
 
 function Notification() {
 	const [visible, setVisible] = useState(false);
-	const { t, i18n } = useTranslation();
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {

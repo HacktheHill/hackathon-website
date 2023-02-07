@@ -1,12 +1,10 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { useState } from "react";
+import { t } from "../../i18n";
 import styles from "./FAQ.module.css";
-import { useTranslation, Trans } from "react-i18next";
-import "../Localization/i18n";
 
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState([]);
-	const { t, i18n } = useTranslation();
 
 	const handleKeyList = (event, e) => {
 		if (expandedList.includes(e.key)) {

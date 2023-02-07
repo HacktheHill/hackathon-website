@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button.jsx";
 import "./Sponsors.css";
-
+import { t } from "../../i18n";
 import balsamiq from "/Logos/balsamiq.svg";
 import Blackberry from "/Logos/Blackberry.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";

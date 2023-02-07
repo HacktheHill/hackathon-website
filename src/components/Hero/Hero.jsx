@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
 import Button from "../Button/Button.jsx";
+import { t } from "../../i18n";
 import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
+
 const date = new Date("2023-03-03T00:00:00-05:00");
 
 function Hero() {
@@ -28,8 +30,6 @@ function Hero() {
 			setPopupOpen(false);
 		}
 	};
-
-	const { t, i18n } = useTranslation();
 
 	return (
 		<div className="hero" onPointerMove={popup} onTouchStart={popup}>

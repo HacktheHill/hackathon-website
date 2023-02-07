@@ -1,7 +1,6 @@
 import "./Collaborators.css";
 import MountainFlags from "./MountainFlags";
-import { useTranslation, Trans } from "react-i18next";
-import "../Localization/i18n";
+import { t } from "../../i18n";
 
 const data = [
 	{ id: "wie", href: "https://wie.ieeeottawa.ca/" },
@@ -12,8 +11,6 @@ const data = [
 ];
 
 function Collaborators() {
-	const { t, i18n } = useTranslation();
-
 	return (
 		<>
 			<h1 id="collaborators" className="collaborators">

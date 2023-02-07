@@ -1,8 +1,7 @@
 import { Box, Button, Card, Stack, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
+import { t } from "../../i18n";
 import "./Schedule.css";
-import { useTranslation, Trans } from "react-i18next";
-import "../Localization/i18n";
 
 function Schedule() {
 	const theme = useTheme();
@@ -27,8 +26,6 @@ function Schedule() {
 			},
 		},
 	};
-
-	const { t, i18n } = useTranslation();
 
 	return (
 		<div id="schedule" className="schedule">

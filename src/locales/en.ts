@@ -1,0 +1,115 @@
+export default {
+	navbar: {
+		links: {
+			about: "About",
+			sponsors: "Sponsors",
+			hacker: "The Hacker Series",
+			collaborators: "Collaborators",
+			faq: "FAQ",
+		},
+	},
+	hero: {
+		hybrid: "Hybrid",
+		at: "@",
+		h2: "Canada's Capital Hackathon",
+		h3: "University of Ottawa ",
+		h3_p2: " Carleton University",
+		more: "Learn More",
+	},
+	about: {
+		title: "About Us",
+		p1: "The University of Ottawa and Carleton University STEM Student Organizations are incredibly excited to introduce Canada's Capital Hackathon!",
+		p2: 'Hack the Hill was established to set a new standard for hackathon operations! With a series of monthly events, also known as "The Hacker Series," hackathon participants will be provided numerous opportunities to brush up on their technical skills, network with peers and even learn from notable alumni and business leaders!',
+		p3: "Our main event is scheduled for March 3rd to 5th, 2023, and will be free for all participants. We look forward to seeing you all at our flagship hackathon and hope you're prepared to compete & network with the best!",
+	},
+	sponsors: {
+		title: "Sponsors",
+		p: "Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital's hackathon?",
+		button: "Sponsorship Packages",
+	},
+	partners: {
+		title: "Community Partners",
+	},
+	schedule: {
+		title: "The Hacker Series",
+		event1: {
+			title: "Resume Roast",
+			month: "November",
+			time: "7 p.m. - 9 p.m. @ STM 117",
+			description:
+				"Need resume advice on the spot? Hang out with some developers from Ciena and Microsoft as they review and evaluate resumes submitted by students, all while filling yourself up with some fresh pizza.",
+			status: "View Video",
+		},
+		event2: {
+			title: "Coffee, Code, and Cram",
+			month: "November",
+			time: "7 p.m. - 9 p.m. @ STM 117",
+			description:
+				"Unwind and take a break from school. Join us alongside the uOttawa Computer Science Club for an evening of socializing and coding with coffee, tea, and snacks.",
+			status: "Completed",
+		},
+		event3: {
+			title: "Wicked Web Work",
+			month: "January",
+			time: "6 p.m. - 10 p.m. @ STM 117",
+			description:
+				"Explore the wonders of front-end development! Learn the basics through workshops and participate in a one-hour challenge to build a website according to provided guidelines.",
+			status: "Completed",
+		},
+		event4: {
+			title: "Got Games?",
+			month: "January",
+			time: "7 p.m. - 9 p.m. @ STM 117",
+			description:
+				"Discover the best that game development has to offer! Join us along side the uOttawa Game Development Club for an introduction to Unity workshop.",
+			status: "View Video",
+		},
+	},
+	collaborators: { title: "Collaborators" },
+	faq: {
+		title: "Frequently Asked Questions",
+
+		q1: "What is a hackathon?",
+		a1: "A hackathon is a large-scale event where people design and build a project from scratch.",
+
+		q2: "How much does it cost to participate?",
+		a2: "It's completely free to attend! There is no cost to participate! We cover the cost of food at the event and provide cheaper methods of transport to bring participants from Waterloo, the GTA, and Montreal to Ottawa.",
+
+		q3: "Do I need any experience?",
+		a3: "No experience is needed! There will be workshops to teach you everything you need to know to hack at Hack the Hill.",
+
+		q4: "This is my first hackathon, what should I expect?",
+		a4: "36 hours of networking with our sponsors, learning, and collaborating with other hackers. As a first-time hacker, you can participate in our first-time hacker competition for a more structured learning experience.",
+
+		q5: "Can I start on the project before the hackathon?",
+		a5: "No, all projects must be started after open ceremonies on the first day of the event. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
+
+		q6: "Is the hackathon online or in-person?",
+		a6: "Both online and in-person, we're hybrid this year!",
+
+		q7: "What should I bring to an in-person hackathon?",
+		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 36 hours. We will provide snacks and food for the entire event!",
+
+		q8: "Who can participate and how do I apply?",
+		a8: "Any current high school, university, or recent graduate student can join. Follow us on social media to stay up-to-date with hackathon updates!",
+
+		q9: "Can I work in a team?",
+		a9: "Yes, teams of up to 4 can work together at Hack the Hill.",
+
+		q10: "What are the themes for Hack the Hill?",
+		a10: "Full details about the hackathon themes will not be released until a few days before the event. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+
+		q11: "How much Red Bull should I drink in a day?",
+		a11: "Yes.",
+	},
+	footer: {
+		title: "Canada's Capital Hackathon",
+		description: "Control the Capital, Command the Cabinet, Build until you Hack the Hill",
+		github: "Source Code",
+	},
+	notification: {
+		message:
+			'Attention hackers! Registrations close on <time dateTime="2023-01-29"> Sunday, January 29th</time>! Don\'t miss out!',
+		close: "Close Notification",
+	},
+} as const;
