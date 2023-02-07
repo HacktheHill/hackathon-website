@@ -3,7 +3,8 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 
-i18n.use(Backend)
+i18n
+	//.use(Backend)
 
 	.use(LanguageDetector)
 
@@ -11,12 +12,11 @@ i18n.use(Backend)
 
 	.init({
 		debug: false,
-		fallbackLng: "en",
+		fallbackLng: "en", //i18n.resolvedLanguage == "en" ? "en" : "fr",
 		interpolation: {
 			escapeValue: false,
 		},
 
-		/*
 		resources: {
 			en: {
 				translation: {
@@ -252,6 +252,6 @@ i18n.use(Backend)
 					},
 				},
 			},
-		},*/
+		},
 	});
 export default i18n;

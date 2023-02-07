@@ -3,7 +3,7 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Footer.css";
 import FooterLogo from "/Logos/hackthehill-banner.svg";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "../Localization/i18n";
 
 function Footer() {

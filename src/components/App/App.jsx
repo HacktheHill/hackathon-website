@@ -1,4 +1,4 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, createContext } from "react";
 import FAQ from "..//FAQ/FAQ";
 import About from "../About/About";
 import Collaborators from "../Collaborators/Collaborators";
@@ -10,7 +10,8 @@ import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";
-function App() {
+function App({ i18n }) {
+	const I18nContext = createContext(i18n);
 	const [pageScroll, setPageScroll] = useState(0);
 	useEffect(() => {
 		const onScroll = () => setPageScroll(window.scrollY);
