@@ -3,9 +3,7 @@
 	flex-direction: column;
 	color: black;
 	transition: 0.5s;
-	margin-bottom: 5%;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin: 0% 10% 5% 10%;
 	font-weight: bold;
 	font-family: Rubik;
 }
