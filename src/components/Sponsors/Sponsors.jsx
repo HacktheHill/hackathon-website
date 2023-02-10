@@ -12,6 +12,7 @@ import echo3d from "/Logos/echo3d.webp";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
+import CarletonIEEE from "/Logos/CarletonIEEE.svg";
 import SCESoc from "/Logos/SCESoc.svg";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
@@ -42,6 +43,7 @@ function Sponsors() {
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://carleton.ca/", src: Carleton },
+			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
 			{ href: "https://uocsclub.ca/", src: CSClub },
