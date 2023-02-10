@@ -16,7 +16,6 @@ import SCESoc from "/Logos/SCESoc.svg";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
-import Accenture from "/Logos/Accenture.svg";
 import Redbull from "/Logos/Redbull.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 
@@ -26,7 +25,6 @@ function Sponsors() {
 			large: [
 				{ href: "https://ciena.ca/", src: Ciena },
 				{ href: "https://canadiantire.ca/", src: CanadianTire },
-				{ href: "https://www.accenture.com/ca-en", src: Accenture },
 				{ href: "https://www.cse-cst.gc.ca/", src: CSE },
 			],
 			medium: [
