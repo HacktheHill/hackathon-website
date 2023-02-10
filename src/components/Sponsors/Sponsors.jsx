@@ -67,10 +67,10 @@ function Sponsors() {
 			</div>
 
 			{Object.values(data.sponsors).map((tier, i) => (
-				<Grid container id="sponsors-display" className="sponsors-display">
+				<Grid key={i} container id="sponsors-display" className="sponsors-display">
 					{tier.map((sponsor, j) => (
 						<Grid
-							key={i}
+							key={j}
 							item
 							className="sponsor-icon-box"
 							sx={{ mt: matchesLG ? "50px" : "0px", mb: matchesLG ? "25px" : "0px" }}
