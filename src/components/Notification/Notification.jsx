@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Notification.css";
+import "./Notification.module.css";
 
 function Notification() {
 	const [visible, setVisible] = useState(false);

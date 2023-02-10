@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import "./Footer.css";
+import "./Footer.modulecss";
 import FooterLogo from "/Logos/hackthehill-banner.svg";
 
 function Footer() {

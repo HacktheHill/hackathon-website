@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./Unsubscribe.css";
+import "./Unsubscribe.module.css";
 import logo from "/Logos/hackthehill-logo.svg";
 
 function Unsubscribe() {

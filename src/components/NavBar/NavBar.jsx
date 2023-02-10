@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import "./NavBar.css";
+import "./NavBar.module.css";
 import logo from "/Logos/hackthehill-logo.svg";
 
 function Navbar({ pageScroll }) {

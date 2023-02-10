@@ -1,4 +1,4 @@
-import "./Collaborators.css";
+import "./Collaborators.module.css";
 import MountainFlags from "./MountainFlags";
 
 const data = [

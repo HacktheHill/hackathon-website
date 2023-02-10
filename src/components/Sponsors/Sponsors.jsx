@@ -1,6 +1,6 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import "./Sponsors.css";
+import "./Sponsors.module.css";
 import balsamiq from "/Logos/balsamiq.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";

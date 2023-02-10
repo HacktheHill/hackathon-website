@@ -1,4 +1,4 @@
-import "./Register.css";
+import "./Register.module.css";
 
 // import and run the js file found at embed.typeform.com/next/embed.js
 import { useEffect } from "react";

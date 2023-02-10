@@ -1,6 +1,6 @@
 import { Box, Button, Card, Stack, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import "./Schedule.css";
+import "./Schedule.module.css";
 
 function Schedule() {
 	const theme = useTheme();

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./About.css";
+import "./About.module.css";
 import Mascot from "/SVGs/mascot-waving.svg";
 
 class About extends Component {
