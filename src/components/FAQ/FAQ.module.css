@@ -1,3 +1,4 @@
+
 /* Below are mostly classes which do not have effect. All styles are in .jsx since its MUI. */
 
 .faqContainer {
@@ -17,7 +18,7 @@
 	font-family: Rubik;
 }
 
-.faqHeader {
+.faqheader {
 	font-family: Coolvetica;
 	margin-bottom: 2%;
 	font-size: 3em;
@@ -26,16 +27,17 @@
 
 
 
+
 .questionContainer {
 	display: flex;
 	flex-direction: column;
 }
 
-.questionContainer:hover {
+.questioncontainer:hover {
 	background-color: "#eaeaea";
 }
 
-.questionContainer:before {
+.questioncontainer:before {
 	display: "none";
 }
 

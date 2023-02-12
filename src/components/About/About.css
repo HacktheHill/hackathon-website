@@ -13,25 +13,27 @@
 	gap: 2rem;
 }
 
-.About h1 {
+.about h1 {
 	font-family: Coolvetica;
 	font-size: 3em;
 	font-weight: normal;
 }
 
-.AboutText {
+.about-text {
 	width: 50%;
 }
 
+
 .AboutText p {
 	border-left: 5px solid var(--about-text-sidebar);
+
 	padding-left: 2rem;
 	font-family: Rubik;
 	font-size: max(1rem, 1.15vmin);
 	line-height: max(2rem, 2.5vmin);
 }
 
-img.Mascot {
+img.mascot {
 	width: 40vmin;
 	margin: auto;
 	/* Similar syntax to box-shadow */
@@ -39,15 +41,15 @@ img.Mascot {
 }
 
 @media screen and (max-width: 1024px) {
-	.About {
+	.about {
 		flex-direction: column;
 	}
 
-	.AboutText {
+	.about-text {
 		width: 100%;
 	}
 
-	img.Mascot {
+	img.mascot {
 		width: 50vmin;
 	}
 }

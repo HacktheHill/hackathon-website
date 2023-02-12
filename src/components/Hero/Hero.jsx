@@ -31,11 +31,11 @@ function Hero() {
 	};
 
 	return (
-		<div className="Hero" onPointerMove={popup} onTouchStart={popup}>
-			<div className="HeroHeading">
-				<div className="LocationDateHeading">
+		<div className="hero" onPointerMove={popup} onTouchStart={popup}>
+			<div className="hero-heading">
+				<div className="location-date-heading">
 					<h3>
-						<img className="LocationPin" src={LocationPin} alt="Location Pin" /> Hybrid
+						<img className="location-pin" src={LocationPin} alt="Location Pin" /> Hybrid
 						<strong> @ uOttawa</strong>
 					</h3>
 					<h3>
@@ -45,34 +45,34 @@ function Hero() {
 					</h3>
 				</div>
 				<h1 id="Hero">
-					<img className="BannerLogo" src={BannerLogo} alt="Hack the Hill"></img>
+					<img className="banner-logo" src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>Canada's Capital Hackathon</h2>
 				<h3>University of Ottawa &times; Carleton University</h3>
-				<Link className="Button" to="About" smooth={true} offset={-160} duration={500} href="#About">
+				<Link className="button" to="about" smooth={true} offset={-160} duration={500} href="#about">
 					<button>Learn More</button>
 				</Link>
 			</div>
 			<div
-				className="HeroImg"
+				className="hero-img"
 				dangerouslySetInnerHTML={{
 					__html: hero,
 				}}
 			></div>
-			<dialog className="CountdownDialog" open={popupOpen}>
-				<div className="CountdownItem">
+			<dialog className="countdown-dialog" open={popupOpen}>
+				<div className="countdown-item">
 					<h3>{days}</h3>
 					<h4>day{days === 1 ? "" : "s"}</h4>
 				</div>
-				<div className="CountdownItem">
+				<div className="countdown-item">
 					<h3>{hours}</h3>
 					<h4>hour{hours === 1 ? "" : "s"}</h4>
 				</div>
-				<div className="CountdownItem">
+				<div className="countdown-item">
 					<h3>{minutes}</h3>
 					<h4>minute{minutes === 1 ? "" : "s"}</h4>
 				</div>
-				<div className="CountdownItem">
+				<div className="countdown-item">
 					<h3>{seconds}</h3>
 					<h4>second{seconds === 1 ? "" : "s"}</h4>
 				</div>
