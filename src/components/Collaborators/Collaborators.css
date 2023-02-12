@@ -1,5 +1,5 @@
 .Collaborators {
-	--title-text-color: #242a42;
+	--title-text-color: var(--dark-text-color);
 }
 
 .Collaborators h1 {
