@@ -1,5 +1,9 @@
 .Footer {
+	--media-links: var(--medium-primary-color);
+	--footer-links: var(--medium-primary-color);
+
 	display: grid;
+	color: var(--medium-primary-color);
 }
 
 .FooterLogo {
@@ -36,7 +40,7 @@
 }
 
 .MediaLinks a {
-	color: #3b4779;
+	color: var(--media-links);
 }
 
 .MediaLinks a:hover {
@@ -56,7 +60,7 @@
 	gap: 0.5ch;
 	justify-content: center;
 	margin: 1em;
-	color: #3b4779;
+	color: var(--footer-links);
 	text-decoration: none;
 }
 

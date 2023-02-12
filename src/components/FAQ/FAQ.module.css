@@ -1,7 +1,14 @@
+/* Below are mostly classes which do not have effect. All styles are in .jsx since its MUI. */
+
 .faqContainer {
+	--title-text-color: var(--dark-color);
+	--question-text-color: var(--light-primary-color);
+	--answer-text-color: var(--dark-color);
+
+
 	display: flex;
 	flex-direction: column;
-	color: black;
+	color: var(--title-text-color);
 	transition: 0.5s;
 	margin-bottom: 5%;
 	margin-left: 10%;
@@ -17,6 +24,8 @@
 	font-weight: normal;
 }
 
+
+
 .questionContainer {
 	display: flex;
 	flex-direction: column;
@@ -31,13 +40,13 @@
 }
 
 .question {
-	color: #5c71ad;
+	color: var(--question-text-color);
 	font-size: 32;
 	font-family: Rubik;
 }
 
 .answer {
-	color: black;
+	color: var(--answer-text-color);
 	font-size: 16px;
 	font-family: Rubik;
 }

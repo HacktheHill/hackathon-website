@@ -1,3 +1,23 @@
+.Schedule {
+	--background-color: var(--medium-primary-color);
+	--title-color: var(--light-color);
+	--event-month-color: var(--light-color);
+	--event-day-color: var(--light-color);
+	--event-title-color: var(--light-color);
+	--event-border-color: var(--light-color);
+	--event-desc-color: var(--light-color);
+	--event-subtitle-color: var(--light-color);
+
+	
+
+	background-color: var(--background-color);
+	padding-bottom: 60px;
+	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
+	background-repeat: no-repeat;
+	background-position: left 50px, right 400px, top 100px right 100px;
+	background-size: 10%, 8%, 2%;
+}
+
 .Schedule h1 {
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -6,17 +26,10 @@
 	font-weight: normal;
 }
 
-.Schedule {
-	background-color: #3b477a;
-	padding-bottom: 60px;
-	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
-	background-repeat: no-repeat;
-	background-position: left 50px, right 400px, top 100px right 100px;
-	background-size: 10%, 8%, 2%;
-}
+
 
 .scheduleTitle {
-	color: #ffffff;
+	color: var(--title-color);
 	font-family: Coolvetica;
 	margin-bottom: 3%;
 	padding-top: 3%;
@@ -38,7 +51,7 @@
 	margin-top: 10px;
 	font-size: 25px;
 	font-weight: normal;
-	color: #ffffff;
+	color: var(--event-month-color);
 	font-family: Coolvetica;
 }
 
@@ -47,14 +60,14 @@
 	margin-right: auto;
 	font-size: 75px;
 	font-weight: normal;
-	color: #ffffff;
+	color: var(--event-day-color);
 	font-family: Coolvetica;
 }
 
 .eventTitle {
 	font-size: 30px;
 	font-weight: normal;
-	color: #ffffff;
+	color: var(--event-title-color);
 	text-align: left;
 	font-family: Coolvetica;
 	display: flex;
@@ -66,7 +79,7 @@
 	width: "20%";
 	border-radius: "10px";
 	border-width: "3px";
-	border-color: #ffffff;
+	border-color: var(--event-border-color);
 }
 
 .eventStack {
@@ -79,14 +92,14 @@
 }
 
 .eventDesc {
-	color: #ffffff;
+	color: var(--event-desc-color);
 	font-family: Rubik;
 	font-size: 16px;
 	margin-top: 30px;
 }
 
 .subTitle {
-	color: #ffffff;
+	color: var(--event-subtitle-color);
 	font-family: Rubik;
 	font-size: 18px;
 	font-weight: normal;

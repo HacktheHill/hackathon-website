@@ -1,4 +1,9 @@
+
+
 .About {
+	--about-text-sidebar: var(--dark-color);
+	--mascot-drop-shadow: var(--highlight-color);
+
 	display: flex;
 	justify-content: space-between;
 	width: 80%;
@@ -19,7 +24,7 @@
 }
 
 .AboutText p {
-	border-left: 5px solid black;
+	border-left: 5px solid var(--about-text-sidebar);
 	padding-left: 2rem;
 	font-family: Rubik;
 	font-size: max(1rem, 1.15vmin);
@@ -30,7 +35,7 @@ img.Mascot {
 	width: 40vmin;
 	margin: auto;
 	/* Similar syntax to box-shadow */
-	filter: drop-shadow(-2px -4px 22px #abeffb);
+	filter: drop-shadow(-2px -4px 22px var(--mascot-drop-shadow));
 }
 
 @media screen and (max-width: 1024px) {

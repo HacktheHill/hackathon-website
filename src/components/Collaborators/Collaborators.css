@@ -1,5 +1,9 @@
+.Collaborators {
+	--title-text-color: #242a42;
+}
+
 .Collaborators h1 {
-	color: #242a42;
+	color: var(--title-text-color);
 	font-family: Coolvetica;
 	margin: 6% 10%;
 	font-size: 3em;

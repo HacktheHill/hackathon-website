@@ -1,4 +1,8 @@
 .navbar {
+	--background-on-scroll: var(--background-color);
+	--link-color: var(--medium-primary-color);
+	--link-underline-color: var(--medium-primary-color);
+
 	position: fixed;
 	top: 0;
 	height: 5rem;
@@ -10,7 +14,7 @@
 }
 
 .navbar[data-scrolled="true"] {
-	background-color: #bfcbee;
+	background-color: var(--background-on-scroll);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,7 +40,7 @@ li {
 li .link {
 	box-sizing: border-box;
 	position: relative;
-	color: #3b4779;
+	color: var(--link-color);
 	font-weight: bolder;
 	font-size: 1rem;
 	text-decoration: none;
@@ -48,7 +52,7 @@ li .link {
 }
 
 li:not(.logo) .link::after {
-	background: #3b4779;
+	background: var(--link-underline-color);
 	content: "";
 	position: absolute;
 	bottom: calc(50% - 1rem);

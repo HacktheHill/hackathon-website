@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { useState } from "react";
 import styles from "./FAQ.module.css";
-
+import "../App/App.css";
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState([]);
 
@@ -81,14 +81,14 @@ export default function FAQ() {
 					key={i}
 					className={styles.questionContainer}
 					sx={{
-						backgroundColor: expandedList.includes(item.key) ? "#eaeaea" : "#f7f7f7",
+						backgroundColor: expandedList.includes(item.key) ? 'var(--light-button-hover-color)' : "#f7f7f7",
 						justifyContent: "left",
 						mb: "10px",
 						mt: "10px",
 						boxShadow: "none",
 						borderRadius: "10px",
 						"&:hover": {
-							backgroundColor: "#eaeaea",
+							backgroundColor: 'var(--light-button-hover-color)',
 						},
 						"&:before": {
 							display: "none",
@@ -100,7 +100,7 @@ export default function FAQ() {
 						className={styles.question}
 						onClick={event => handleKeyList(event, item)}
 						sx={{
-							color: "#3B4779",
+							color: 'var(--light-primary-color)',
 						}}
 					>
 						{item.q}

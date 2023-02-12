@@ -1,15 +1,13 @@
 main {
+
+	--input-color: var(--dark-color);
+	--button-color: var(--light-primary-color);
+	--button-text-color: var(--light-color);
+	--button-text-hover-color: var(--primary-button-hover-color);
+	background: var(--color-gradient);
+
+
 	height: 100vh;
-	background: linear-gradient(
-		0deg,
-		rgba(239, 203, 255, 0) 15%,
-		rgba(236, 211, 247, 0.7723) 48.85%,
-		rgba(236, 210, 248, 0.7373) 48.86%,
-		#ebd5f5 63.96%,
-		#bfcbee 80.96%,
-		#bfcbee 81.77%,
-		#abeffa 100%
-	);
 	background-repeat: no-repeat;
 	display: grid;
 	place-items: center;
@@ -30,14 +28,14 @@ input {
 	width: 100%;
 	background: hsl(0, 0%, 0%, 10%);
 	border: none;
-	color: black;
+	color: var(--input-color);
 }
 
 button {
-	background-color: #5c71ad;
+	background-color: var(--button-color);
 	border: none;
 	border-radius: 100px;
-	color: white;
+	color: var(--button-text-color);
 	transition: 1s;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 	font-size: clamp(1rem, 1vmin, 5rem);
@@ -48,5 +46,5 @@ button {
 }
 
 button:hover {
-	background-color: #3f4e77;
+	background-color: var(--button-text-hover-color);
 }

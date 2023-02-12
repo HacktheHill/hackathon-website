@@ -1,14 +1,21 @@
 .Hero {
-	background: linear-gradient(
-		0deg,
-		rgba(239, 203, 255, 0) 15%,
-		rgba(236, 211, 247, 0.7723) 48.85%,
-		rgba(236, 210, 248, 0.7373) 48.86%,
-		#ebd5f5 63.96%,
-		#bfcbee 80.96%,
-		#bfcbee 81.77%,
-		#abeffa 100%
-	);
+
+	--hero-heading: var(--medium-primary-color);
+	--button-color: var(--light-primary-color);
+	--button-color-hover: var(--primary-button-hover-color);
+	--button-text-color: var(--light-color);
+	
+	/* countdown colours */
+	--count-down-border: var(--medium-primary-color);
+	--count-down-background-color: var(--background-color);
+	--countdown-item-color: var(--medium-primary-color);
+
+	/*hero animation colours*/
+	--snow-svg-color: snow;
+
+	/* background gradient */
+	background: var(--color-gradient);
+	
 	background-repeat: no-repeat;
 }
 
@@ -39,14 +46,14 @@
 }
 
 .HeroHeading h2 {
-	color: #3b4779;
+	color: var(--hero-heading);
 	font-family: Coolvetica;
 	font-size: clamp(1rem, 3.5vmin, 5rem);
 	font-weight: 500;
 }
 
 .HeroHeading h3 {
-	color: #3b4779;
+	color: var(--hero-heading);
 	font-size: clamp(1rem, 2vmin, 5rem);
 	font-weight: normal;
 }
@@ -56,10 +63,10 @@
 }
 
 .Button button {
-	background-color: #5c71ad;
+	background-color: var(--button-color);
 	border: none;
 	border-radius: 100px;
-	color: white;
+	color: var(--button-text-color);
 	transition: 1s;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 	font-size: clamp(1rem, 1vmin, 5rem);
@@ -70,7 +77,7 @@
 }
 
 .Button button:hover {
-	background-color: #3f4e77;
+	background-color: var(--button-color-hover);
 }
 
 .HeroImg svg {
@@ -92,8 +99,8 @@
 	text-align: center;
 	border-radius: 100px;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	border: 5px solid #3b4779;
-	background-color: #bfcbee;
+	border: 5px solid var(--count-down-border);
+	background-color: var(--count-down-background-color);
 	font-size: clamp(0.75rem, 2vmin, 5rem);
 	opacity: 0;
 	pointer-events: none;
@@ -121,13 +128,13 @@
 }
 
 .CountdownItem h4 {
-	color: #3b4779;
+	color: var(--countdown-item-color);
 	font-weight: normal;
 }
 
 /* Hero SVG animations */
 svg .snow {
-	animation: snow 100s linear infinite;
+	animation: var(--snow-svg-color) 100s linear infinite;
 }
 
 svg .halo {
