@@ -21,61 +21,61 @@ export default function Sidebar() {
 		<div className="Sidebar">
 			<Menu right width={"100%"} isOpen={menuOpen} onStateChange={handleStateChange}>
 				<Link
-					to="about"
+					to="About"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={handleCloseMenu}
-					href="#about"
+					href="#About"
 				>
 					About
 				</Link>
 				<Link
-					to="sponsors"
+					to="Sponsors"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={handleCloseMenu}
-					href="#sponsors"
+					href="#Sponsors"
 				>
 					Sponsors
 				</Link>
 				<Link
-					to="schedule"
+					to="Schedule"
 					spy={true}
 					smooth={true}
 					offset={0}
 					duration={500}
 					onClick={handleCloseMenu}
-					href="#schedule"
+					href="#Schedule"
 				>
 					The Hacker Series
 				</Link>
 				<Link
-					to="collaborators"
+					to="Collaborators"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={handleCloseMenu}
-					href="#collaborators"
+					href="#Collaborators"
 				>
 					Collaborators
 				</Link>
 				<Link
-					to="faq"
+					to="FAQ"
 					spy={true}
 					smooth={true}
 					offset={-30}
 					duration={500}
 					onClick={handleCloseMenu}
-					href="#faq"
+					href="#FAQ"
 				>
 					FAQ
 				</Link>
-				<div className="media-links">
+				<div className="MediaLinks">
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"

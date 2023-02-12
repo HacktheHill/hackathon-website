@@ -5,8 +5,8 @@ import Mascot from "/SVGs/mascot-waving.svg";
 class About extends Component {
 	render() {
 		return (
-			<div className="about" id="about">
-				<div className="about-text">
+			<div className="About" id="About">
+				<div className="AboutText">
 					<h1>About Us</h1>
 					<p>
 						The University of Ottawa and Carleton University STEM Student Organizations are incredibly
@@ -24,7 +24,7 @@ class About extends Component {
 						& network with the best!
 					</p>
 				</div>
-				<img className="mascot" src={Mascot} alt="Bea.var, the Hack the Hill Mascot" />
+				<img className="Mascot" src={Mascot} alt="Bea.var, the Hack the Hill Mascot" />
 			</div>
 		);
 	}

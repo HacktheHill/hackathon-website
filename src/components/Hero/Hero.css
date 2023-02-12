@@ -1,4 +1,3 @@
-
 .Hero {
 
 	--hero-heading: var(--medium-primary-color);
@@ -17,11 +16,10 @@
 	/* background gradient */
 	background: var(--color-gradient);
 	
-
 	background-repeat: no-repeat;
 }
 
-.hero-heading {
+.HeroHeading {
 	position: absolute;
 	display: grid;
 	place-items: center;
@@ -32,46 +30,40 @@
 	gap: 1.5vh;
 }
 
-.location-date-heading {
+.LocationDateHeading {
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
 }
 
-.location-pin {
+.LocationPin {
 	width: 1rem;
 	height: 1rem;
 }
 
-.banner-logo {
+.BannerLogo {
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
-
 .HeroHeading h2 {
 	color: var(--hero-heading);
-
 	font-family: Coolvetica;
 	font-size: clamp(1rem, 3.5vmin, 5rem);
 	font-weight: 500;
 }
 
-
 .HeroHeading h3 {
 	color: var(--hero-heading);
-
 	font-size: clamp(1rem, 2vmin, 5rem);
 	font-weight: normal;
 }
 
-.button {
+.Button {
 	margin: 3vmin auto;
 }
 
-
 .Button button {
 	background-color: var(--button-color);
-
 	border: none;
 	border-radius: 100px;
 	color: var(--button-text-color);
@@ -84,20 +76,18 @@
 	font-family: Rubik;
 }
 
-
 .Button button:hover {
 	background-color: var(--button-color-hover);
-
 }
 
-.hero-img svg {
+.HeroImg svg {
 	height: 100%;
 	width: 100%;
 	margin-top: calc(20rem - 20vw);
 	margin-bottom: -35%;
 }
 
-.countdown-dialog {
+.CountdownDialog {
 	box-sizing: border-box;
 	position: absolute;
 	top: calc(40vmin + max(20rem, 20vmin));
@@ -119,28 +109,26 @@
 	gap: max(1rem, 5vmin);
 }
 
-.countdown-dialog[open] {
+.CountdownDialog[open] {
 	opacity: 1;
 	pointer-events: all;
 }
 
-.countdown-item {
+.CountdownItem {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.countdown-item h3 {
+.CountdownItem h3 {
 	font-size: 1.5em;
 	font-family: Rubik;
 	font-weight: normal;
 }
 
-
 .CountdownItem h4 {
 	color: var(--countdown-item-color);
-
 	font-weight: normal;
 }
 

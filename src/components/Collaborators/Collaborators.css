@@ -1,18 +1,16 @@
-
 .Collaborators {
 	--title-text-color: var(--dark-text-color);
 }
 
 .Collaborators h1 {
 	color: var(--title-text-color);
-
 	font-family: Coolvetica;
 	margin: 6% 10%;
 	font-size: 3em;
 	font-weight: normal;
 }
 
-.mountain-flags svg {
+.MountainFlags svg {
 	width: 100%;
 	height: 100%;
 	margin-bottom: 6%;

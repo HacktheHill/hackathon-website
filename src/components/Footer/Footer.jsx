@@ -14,13 +14,15 @@ import FooterLogo from "/Logos/hackthehill-banner.svg";
 
 function Footer() {
 	return (
-		<div className="footer">
-			<div className="footer-logo">
+		<div className="Footer">
+			<div className="FooterLogo">
 				<img src={FooterLogo} alt="Logo" />
 			</div>
-			<p className="logo-text">Canada's Capital Hackathon</p>
-			<div className="footer-container">
-				<div className="media-links">
+			<div className="LogoText">
+				<p>Canada's Capital Hackathon</p>
+			</div>
+			<div className="FooterContainer">
+				<div className="MediaLinks">
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
@@ -53,14 +55,14 @@ function Footer() {
 					</a>
 				</div>
 			</div>
-			<div className="footer-text">
+			<div className="FooterText">
 				<p>Control the Capital, Command the Cabinet, Build until you Hack the Hill</p>
 				<a
 					href="https://github.com/HacktheHill/2023.hackthehill.com"
 					target="_blank"
 					rel="noreferrer"
 					aria-label="GitHub"
-					className="footer-link"
+					className="FooterLink"
 				>
 					<Icon icon={faGithub} />
 					Source Code

@@ -16,15 +16,13 @@
 		display: block;
 	}
 
-	.sidebar .media-links {
+	.Sidebar .MediaLinks {
 		font-size: inherit;
 		margin: auto;
 	}
 
-
 	.Sidebar .MediaLinks a {
 		color: var(--media-link-color);
-
 		padding: 0 0.5em;
 	}
 

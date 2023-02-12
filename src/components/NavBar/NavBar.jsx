@@ -9,12 +9,13 @@ function Navbar({ pageScroll }) {
 				<Link
 					className="link logo"
 					activeClass="active"
-					to="hero"
+					to="Hero"
 					spy={true}
 					smooth={true}
 					offset={0}
 					duration={500}
-					href="#hero">
+					href="#Hero"
+				>
 					<img alt="Logo" src={logo}></img>
 				</Link>
 				<ul>
@@ -22,12 +23,13 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="about"
+							to="About"
 							spy={true}
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#about">
+							href="#About"
+						>
 							About
 						</Link>
 					</li>
@@ -35,12 +37,13 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="sponsors"
+							to="Sponsors"
 							spy={true}
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#sponsors">
+							href="#Sponsors"
+						>
 							Sponsors
 						</Link>
 					</li>
@@ -48,12 +51,13 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="schedule"
+							to="Schedule"
 							spy={true}
 							smooth={true}
 							offset={-80}
 							duration={500}
-							href="#schedule">
+							href="#Schedule"
+						>
 							The Hacker Series
 						</Link>
 					</li>
@@ -61,12 +65,13 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="collaborators"
+							to="Collaborators"
 							spy={true}
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#collaborators">
+							href="#Collaborators"
+						>
 							Collaborators
 						</Link>
 					</li>
@@ -74,12 +79,13 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="faq"
+							to="FAQ"
 							spy={true}
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#faq">
+							href="#FAQ"
+						>
 							FAQ
 						</Link>
 					</li>

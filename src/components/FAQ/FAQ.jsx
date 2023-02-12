@@ -71,16 +71,15 @@ export default function FAQ() {
 		}
 	};
 
-	// Class names in this section could not be hyphenated due to 'faq-container' being interpreted as 'faq - container', thus throwing errors.
 	return (
-		<div className={styles.faqcontainer}>
-			<div id="faq" className={styles.faqheader}>
+		<div className={styles.faqContainer}>
+			<div id="FAQ" className={styles.faqHeader}>
 				Frequently Asked Questions
 			</div>
 			{quesAns.map((item, i) => (
 				<Accordion
 					key={i}
-					className={styles.questioncontainer}
+					className={styles.questionContainer}
 					sx={{
 						backgroundColor: expandedList.includes(item.key) ? 'var(--light-button-hover-color)' : "#f7f7f7",
 						justifyContent: "left",
