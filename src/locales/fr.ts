@@ -69,8 +69,9 @@ export default {
 			status: "Visionner",
 		},
 	},
-	collaborators: {
-		title: "Collaborateurs",
+	collaborators: { title: "Collaborateurs" },
+	faq: {
+		title: "Foire aux questions",
 
 		q1: "C'est quoi un hackathon ?",
 		a1: "Un hackathon est un événement à grande échelle où les participants conçoivent et construisent un projet à partir de zéro.",
@@ -105,7 +106,6 @@ export default {
 		q11: "Combien de Red Bull devrais-je boire par jour ?",
 		a11: "Oui.",
 	},
-	faq: { title: "Foire aux questions" },
 	footer: {
 		title: "Le Hackathon de la Capitale Canadienne",
 		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
