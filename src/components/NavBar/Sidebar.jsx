@@ -18,7 +18,7 @@ export default function Sidebar() {
 	}, []);
 
 	return (
-		<div className="Sidebar">
+		<div className="sidebar">
 			<Menu right width={"100%"} isOpen={menuOpen} onStateChange={handleStateChange}>
 				<Link
 					to="about"

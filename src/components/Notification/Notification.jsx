@@ -17,7 +17,7 @@ function Notification() {
 	return (
 		<div
 			id="Notification"
-			className="Notification"
+			className="notification"
 			style={{
 				transform: visible ? "translateY(0)" : "translateY(100%) scaleY(0)",
 			}}
@@ -28,7 +28,7 @@ function Notification() {
 				miss out!
 			</p>
 			<button
-				className="CloseButton"
+				className="close-button"
 				aria-label="Close Notification"
 				title="Close Notification"
 				onClick={() => setVisible(false)}
