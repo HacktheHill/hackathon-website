@@ -1,6 +1,6 @@
-import { faFacebook, faInstagram, faLinkedin, faMedium, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import React, { useState, useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import reactBurgerMenu from "react-burger-menu";
 import { Link } from "react-scroll";
 import "./Sidebar.css";
