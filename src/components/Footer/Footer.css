@@ -8,6 +8,7 @@
 }
 
 .footer-logo img {
+	box-sizing: border-box;
 	width: 200px;
 	height: auto;
 	margin: 0px auto;
