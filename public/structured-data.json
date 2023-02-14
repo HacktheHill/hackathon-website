@@ -1,0 +1,117 @@
+{
+	"@context": "http://schema.org",
+	"@type": "Event",
+	"about": "36-hour hackathon in Canada's capital",
+	"audience": {
+		"audienceType": "University Students",
+		"geographicArea": "Ottawa"
+	},
+	"doorTime": "2023-03-03T18:00",
+	"duration": "PT36H",
+	"endDate": "2023-03-05",
+	"eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+	"eventSchedule": {
+		"@type": "Schedule",
+		"endDate": "2023-03-05",
+		"endTime": "2023-03-05T17:00",
+		"repeatCount": 1,
+		"scheduleTimezone": "America/Toronto",
+		"startDate": "2023-03-03",
+		"startTime": "2023-03-03T18:00"
+	},
+	"eventStatus": "https://schema.org/EventScheduled",
+	"funder": [
+		{
+			"@type": "Organization",
+			"name": "Ciena",
+			"url": "https://www.ciena.com/"
+		},
+		{
+			"@type": "Organization",
+			"name": "Canadian Tire",
+			"url": "https://www.canadiantire.ca/"
+		},
+		{
+			"@type": "Organization",
+			"name": "Blackberry",
+			"url": "https://www.blackberry.com/"
+		},
+		{
+			"@type": "Organization",
+			"name": "CSE/CST",
+			"url": "https://www.cse-cst.gc.ca/"
+		},
+		{
+			"@type": "Organization",
+			"name": "LoneHaven",
+			"url": "https://www.lonehaven.com/"
+		}
+	],
+	"inLanguage": "English",
+	"isAccessibleForFree": true,
+	"location": [
+		{
+			"@type": "Place",
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "Canada",
+				"addressLocality": "Ottawa",
+				"addressRegion": "ON",
+				"postalCode": "K1N 9N3",
+				"streetAddress": "100 Louis-Pasteur Private"
+			},
+			"name": "uOttawa"
+		},
+		{
+			"@type": "VirtualLocation",
+			"url": "https://twitch.tv/hackthehill"
+		}
+	],
+	"maximumPhysicalAttendeeCapacity": 350,
+	"name": "Hack the Hill",
+	"offers": {
+		"@type": "Offer",
+		"availability": "https://schema.org/LimitedAvailability",
+		"availabilityEnds": "2023-03-03",
+		"availabilityStarts": "2023-03-03",
+		"price": "0",
+		"priceCurrency": "CAD",
+		"validFrom": "2023-03-03",
+		"validThrough": "2023-03-05"
+	},
+	"organizer": {
+		"@type": "Organization",
+		"areaServed": {
+			"@type": "Country",
+			"name": "Canada"
+		},
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"contactType": "Customer Service",
+			"email": "logistics@hackthehill.com"
+		},
+		"knowsLanguage": [
+			{
+				"@type": "Language",
+				"name": "English"
+			},
+			{
+				"@type": "Language",
+				"name": "French"
+			}
+		],
+		"logo": "https://hackthehill.com/Logos/hackthehill-logo.svg",
+		"name": "Hack the Hill",
+		"sameAs": [
+			"https://www.facebook.com/canadascapitalhackathon",
+			"https://twitter.com/hackthehill",
+			"https://www.instagram.com/hackthehill",
+			"https://www.tiktok.com/@hackthehill",
+			"https://www.linkedin.com/company/hackthehill",
+			"https://www.youtube.com/@hackthehill"
+		],
+		"url": "https://hackthehill.com/"
+	},
+	"startDate": "2023-03-03",
+	"typicalAgeRange": "18-25"
+}
