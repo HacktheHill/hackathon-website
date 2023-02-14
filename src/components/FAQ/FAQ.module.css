@@ -1,4 +1,4 @@
-.faqcontainer {
+.container {
 	/* Note there are colors embed in the MUI in FAQ.jsx which are not referenced here*/
 	--title-text-color: var(--dark-color);
 	--question-text-color: var(--medium-primary-color);
@@ -16,23 +16,23 @@
 	font-family: Rubik;
 }
 
-.faqheader {
+.header {
 	font-family: Coolvetica;
 	margin-bottom: 2%;
 	font-size: 3em;
 	font-weight: normal;
 }
 
-.questioncontainer {
+.question-container {
 	display: flex;
 	flex-direction: column;
 }
 
-.questioncontainer:hover {
+.question-container:hover {
 	background-color: var(--question-container-hover-color);
 }
 
-.questioncontainer:before {
+.question-container:before {
 	display: "none";
 }
 
