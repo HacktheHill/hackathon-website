@@ -1,4 +1,7 @@
 ---
+import fs from "fs/promises";
+import path from "path";
+
 const { title } = Astro.props;
 
 const description =
@@ -7,11 +10,17 @@ const description =
 const keywords =
 	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2023, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University";
 
-const structuredData = await (await fetch(`${import.meta.env.SITE.replace(/\/$/, "")}/structured-data.json`)).json();
-structuredData.description = description;
-structuredData.keywords = keywords;
-structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
-structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
+let structuredData = {} as any;
+try {
+	structuredData = JSON.parse(await fs.readFile(path.resolve("./public/structured-data.json"), "utf-8"));
+	structuredData.description = description;
+	structuredData.keywords = keywords;
+	structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
+	structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
+} catch (error) {
+	console.error(error);
+}
+const structuredDataString = JSON.stringify(structuredData);
 
 const url = import.meta.env.SITE.replace(/\/$/, "");
 ---
@@ -86,7 +95,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="msapplication-wide310x150logo" content={`${url}/icons/mstile-310x150.png`} />
 		<meta name="msapplication-square310x310logo" content={`${url}/icons/mstile-310x310.png`} />
 
-		<script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+		<script type="application/ld+json" set:html={structuredDataString}></script>
 	</head>
 	<body>
 		<slot />
