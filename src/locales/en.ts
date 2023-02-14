@@ -11,6 +11,7 @@ export default {
 	hero: {
 		hybrid: "Hybrid",
 		at: "@",
+		pin_alt: "Location Pin",
 		h2: "Canada's Capital Hackathon",
 		h3: "University of Ottawa ",
 		h3_p2: " Carleton University",
@@ -18,17 +19,20 @@ export default {
 	},
 	about: {
 		title: "About Us",
+		img_alt: "Bea.var, the Hack the Hill Mascot",
 		p1: "The University of Ottawa and Carleton University STEM Student Organizations are incredibly excited to introduce Canada's Capital Hackathon!",
 		p2: 'Hack the Hill was established to set a new standard for hackathon operations! With a series of monthly events, also known as "The Hacker Series," hackathon participants will be provided numerous opportunities to brush up on their technical skills, network with peers and even learn from notable alumni and business leaders!',
 		p3: "Our main event is scheduled for March 3rd to 5th, 2023, and will be free for all participants. We look forward to seeing you all at our flagship hackathon and hope you're prepared to compete & network with the best!",
 	},
 	sponsors: {
 		title: "Sponsors",
+		icon_alt: "Sponsor Icon",
 		p: "Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital's hackathon?",
 		button: "Sponsorship Packages",
 	},
 	partners: {
 		title: "Community Partners",
+		icon_alt: "Community Partner Icon",
 	},
 	schedule: {
 		title: "The Hacker Series",

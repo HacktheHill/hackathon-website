@@ -17,6 +17,12 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-leftside {
+	display: flex;
+	align-items: center;
+	margin: 20px 0px 12px 0px;
+}
+
 .navbar ul {
 	display: flex;
 	justify-content: center;
@@ -70,11 +76,12 @@ li:not(.logo) .link:is(.active, :hover)::after {
 }
 
 .language-selector {
+	transform: translateY(-2px);
 	display: flex;
-	align-items: center;
-	gap: 1rem;
+	gap: 0.6rem;
 	text-decoration: none;
 	height: 100%;
+	padding-left: 12px;
 }
 
 .language-button {
@@ -86,8 +93,8 @@ li:not(.logo) .link:is(.active, :hover)::after {
 	cursor: pointer;
 }
 
-@media (max-width: 900px) {
-	.navbar li:not(.logo) .link {
+@media (max-width: 940px) {
+	.navbar li:not(.excluded) .link {
 		display: none;
 	}
 

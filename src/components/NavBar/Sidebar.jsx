@@ -5,6 +5,7 @@ import reactBurgerMenu from "react-burger-menu";
 import { Link } from "react-scroll";
 import "./Sidebar.css";
 const { slide: Menu } = reactBurgerMenu;
+import { t } from "../../i18n";
 
 export default function Sidebar() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#about"
 				>
-					About
+					{t("navbar.links.about")}
 				</Link>
 				<Link
 					to="sponsors"
@@ -40,7 +41,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#sponsors"
 				>
-					Sponsors
+					{t("navbar.links.sponsors")}
 				</Link>
 				<Link
 					to="schedule"
@@ -51,7 +52,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#schedule"
 				>
-					The Hacker Series
+					{t("navbar.links.hacker")}
 				</Link>
 				<Link
 					to="collaborators"
@@ -62,7 +63,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#collaborators"
 				>
-					Collaborators
+					{t("navbar.links.collaborators")}
 				</Link>
 				<Link
 					to="faq"
@@ -73,7 +74,7 @@ export default function Sidebar() {
 					onClick={handleCloseMenu}
 					href="#faq"
 				>
-					FAQ
+					{t("navbar.links.faq")}
 				</Link>
 				<div className="media-links">
 					<a

@@ -94,7 +94,11 @@ function Sponsors() {
 				<div className="sponsors-row">
 					{data.collaborators.map((sponsor, i) => (
 						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className="sponsor-icon-box">
-							<img className="sponsor-icon icon-medium" alt="sponsor-icon" src={sponsor.src}></img>
+							<img
+								className="sponsor-icon icon-medium"
+								alt={t("partners.icon_alt")}
+								src={sponsor.src}
+							></img>
 						</a>
 					))}
 				</div>

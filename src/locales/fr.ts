@@ -11,6 +11,7 @@ export default {
 	hero: {
 		hybrid: "Hybride",
 		at: "à",
+		pin_alt: "Punaise de localisation",
 		h2: "Le Hackathon de la Capitale Canadienne",
 		h3: "Université d'Ottawa ",
 		h3_p2: " Université Carleton",
@@ -18,17 +19,20 @@ export default {
 	},
 	about: {
 		title: "À propos de nous",
+		img_alt: "Bea.var, la Mascotte de Hack the Hill",
 		p1: "Hack the Hill est un hackathon international qui se déroule au cœur de la capitale du Canada! En collaboration avec la Faculté de génie de l'Université d'Ottawa, sept grandes organisations étudiantes travaillent main dans la main afin d'établir une fondation solide pour tous les hackathons du future.",
 		p2: "L'Association des étudiants en génie d'uOttawa, la Branche étudiante de l'IEEE d'uOttawa, l'Association des étudiants en informatique, l'Association des étudiants en génie logiciel, le Groupe d'affinité des femmes en génie d'uOttawa, le Club d'informatique d'uOttawa et le Club de développement de jeux d'uOttawa sont fiers d'offrir un hackathon à Ottawa, où les étudiants peuvent former des connections et compétitionner parmis meilleurs!",
 		p3: "Grâce à une série d'événements mensuels menant à notre hackathon principal, également connue sous le nom de \"La série hacker\", les participants du hackathon auront de nombreuses occasions pour perfectionner leurs compétences techniques, réseauter avec leurs collègues et apprendre d'étudiants diplômés ainsi que de leaders d'entreprises notables! Notre événement principal est prévu du 3 au 5 février 2023 et l'inscription est gratuite!",
 	},
 	sponsors: {
 		title: "Commanditaires",
+		icon_alt: "Icon de Commanditaire",
 		p: "Hack the Hill est rendu possible grâce à nos généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
 		button: "Forfaits de Parrainage",
 	},
 	partners: {
 		title: "Partenaires Communautaires",
+		icon_alt: "Icon de Partenaire Communautaire",
 	},
 	schedule: {
 		title: "La Série du Hacker",

@@ -18,7 +18,7 @@ function About() {
 					{t("about.p3")}
 				</p>
 			</div>
-			<img className="mascot" src={Mascot} alt="Bea.var, the Hack the Hill Mascot" />
+			<img className="mascot" src={Mascot} alt={t("about.img_alt")} />
 		</div>
 	);
 }
