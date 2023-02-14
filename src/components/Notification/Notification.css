@@ -1,26 +1,29 @@
-.Notification {
+.notification {
+	--background-color: var(--notification-background-color);
+	--primary-color: var(--light-color);
+
 	position: sticky;
 	inset: auto 0 0 0;
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
 	padding: 1rem;
-	background-color: #414f7f;
-	color: white;
+	background-color: var(--background-color);
+	color: var(--primary-color);
 	transition: transform 0.3s ease-in-out;
 	transform: translateY(100%) scaleY(0);
 }
 
-.Notification a {
+.notification a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.Notification p {
+.notification p {
 	margin: 0;
 }
 
-.Notification .CloseButton {
+.notification .CloseButton {
 	display: flex;
 	align-items: flex-start;
 	border: none;

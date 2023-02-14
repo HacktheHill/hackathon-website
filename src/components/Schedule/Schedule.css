@@ -7,6 +7,16 @@
 }
 
 .schedule {
+	/* Note: there are also colors in the MUI in .Schedule.jsx */
+	--background-color: var(--medium-primary-color);
+	--title-color: var(--light-color);
+	--event-month-color: var(--light-color);
+	--event-day-color: var(--light-color);
+	--event-title-color: var(--light-color);
+	--event-border-color: var(--light-color);
+	--event-desc-color: var(--light-color);
+	--event-subtitle-color: var(--light-color);
+
 	background-color: #3b477a;
 	padding-bottom: 60px;
 	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
@@ -16,7 +26,7 @@
 }
 
 .schedule-title {
-	color: #ffffff;
+	color: var(--title-color);
 	font-family: Coolvetica;
 	margin-bottom: 3%;
 	padding-top: 3%;
@@ -38,7 +48,7 @@
 	margin-top: 10px;
 	font-size: 25px;
 	font-weight: normal;
-	color: #ffffff;
+	color: var(--event-month-color);
 	font-family: Coolvetica;
 }
 
@@ -47,14 +57,14 @@
 	margin-right: auto;
 	font-size: 75px;
 	font-weight: normal;
-	color: #ffffff;
+	color: var(--event-day-color);
 	font-family: Coolvetica;
 }
 
 .event-title {
 	font-size: 30px;
 	font-weight: normal;
-	color: #ffffff;
+	color: var(--event-title-color);
 	text-align: left;
 	font-family: Coolvetica;
 	display: flex;
@@ -66,7 +76,7 @@
 	width: "20%";
 	border-radius: "10px";
 	border-width: "3px";
-	border-color: #ffffff;
+	border-color: var(--event-border-color);
 }
 
 .event-stack {
@@ -79,14 +89,14 @@
 }
 
 .event-desc {
-	color: #ffffff;
+	color: var(--event-desc-color);
 	font-family: Rubik;
 	font-size: 16px;
 	margin-top: 30px;
 }
 
 .sub-title {
-	color: #ffffff;
+	color: var(--event-subtitle-color);
 	font-family: Rubik;
 	font-size: 18px;
 	font-weight: normal;

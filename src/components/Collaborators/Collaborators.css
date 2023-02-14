@@ -1,5 +1,5 @@
 .collaborators {
-	color: #242a42;
+	color: var(--dark-text-color);
 	font-family: Coolvetica;
 	margin: 6% 10%;
 	font-size: 3em;

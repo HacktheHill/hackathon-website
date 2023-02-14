@@ -14,7 +14,8 @@ function Navbar({ pageScroll }) {
 					smooth={true}
 					offset={0}
 					duration={500}
-					href="#hero">
+					href="#hero"
+				>
 					<img alt="Logo" src={logo}></img>
 				</Link>
 				<ul>
@@ -27,7 +28,8 @@ function Navbar({ pageScroll }) {
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#about">
+							href="#about"
+						>
 							About
 						</Link>
 					</li>
@@ -40,7 +42,8 @@ function Navbar({ pageScroll }) {
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#sponsors">
+							href="#sponsors"
+						>
 							Sponsors
 						</Link>
 					</li>
@@ -53,7 +56,8 @@ function Navbar({ pageScroll }) {
 							smooth={true}
 							offset={-80}
 							duration={500}
-							href="#schedule">
+							href="#schedule"
+						>
 							The Hacker Series
 						</Link>
 					</li>
@@ -66,7 +70,8 @@ function Navbar({ pageScroll }) {
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#collaborators">
+							href="#collaborators"
+						>
 							Collaborators
 						</Link>
 					</li>
@@ -79,7 +84,8 @@ function Navbar({ pageScroll }) {
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#faq">
+							href="#faq"
+						>
 							FAQ
 						</Link>
 					</li>

@@ -1,9 +1,16 @@
-.Sidebar {
+.sidebar {
+	--list-item-color: var(--dark-button-hover-color);
+	--list-item-hover-color: var(--dark-color);
+	--media-link-color: var(--dark-color);
+
+	--hamburger-menu-color: var(--medium-primary-color);
+	--hamburger-close-button-color: var(--dark-color);
+
 	display: none;
 }
 
 @media (max-width: 900px) {
-	.Sidebar {
+	.sidebar {
 		display: block;
 	}
 
@@ -13,7 +20,7 @@
 	}
 
 	.sidebar .media-links a {
-		color: white;
+		color: var(--media-link-color);
 		padding: 0 0.5em;
 	}
 
@@ -22,13 +29,13 @@
 		position: absolute;
 		width: 2em;
 		height: 2em;
-		right: 1.5em;
-		top: 1.5em;
+		right: calc(1.5em + 8px);
+		top: calc(1.5em + 8px);
 	}
 
 	/* Color/shape of burger icon bars */
 	.bm-burger-bars {
-		background: #3b4779;
+		background: var(--hamburger-menu-color);
 	}
 
 	/* Position and sizing of clickable cross button */
@@ -39,7 +46,7 @@
 
 	/* Color/shape of close button cross */
 	.bm-cross {
-		background: white;
+		background: var(--hamburger-close-button-color);
 	}
 
 	/*
@@ -53,19 +60,19 @@
 
 	/* General sidebar styles */
 	.bm-menu {
-		background: #3b4779;
+		background: var(--background-color);
 		font-size: 2em;
 		padding: 25% 0 0;
 	}
 
 	/* Morph shape necessary with bubble or elastic */
 	.bm-morph-shape {
-		fill: #3b4779;
+		fill: var(--background-color);
 	}
 
 	/* Wrapper for item list */
 	.bm-item-list {
-		color: #d1d1d1;
+		color: var(--list-item-color);
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
@@ -84,7 +91,7 @@
 	}
 
 	.bm-item:hover {
-		color: white;
+		color: var(--list-item-hover-color);
 		cursor: pointer;
 	}
 

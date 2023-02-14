@@ -19,7 +19,7 @@ import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
-
+import Button from "../Button/Button.jsx";
 function Sponsors() {
 	const data = {
 		sponsors: {
@@ -62,9 +62,7 @@ function Sponsors() {
 						Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
 						hackathon?
 					</p>
-					<a className="button" target="_blank" href="/assets/Hack-the-Hill-Sponsorship.pdf" rel="noreferrer">
-						<button>Sponsorship Package</button>
-					</a>
+					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">Sponsorship Package</Button>
 				</div>
 
 				<div className="sponsors-col">

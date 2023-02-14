@@ -82,14 +82,14 @@ export default function FAQ() {
 					key={i}
 					className={styles.questioncontainer}
 					sx={{
-						backgroundColor: expandedList.includes(item.key) ? "#eaeaea" : "#f7f7f7",
+						backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "",
 						justifyContent: "left",
 						mb: "10px",
 						mt: "10px",
 						boxShadow: "none",
 						borderRadius: "10px",
 						"&:hover": {
-							backgroundColor: "#eaeaea",
+							backgroundColor: "var(--question-container-hover-color)",
 						},
 						"&:before": {
 							display: "none",
@@ -101,7 +101,7 @@ export default function FAQ() {
 						className={styles.question}
 						onClick={event => handleKeyList(event, item)}
 						sx={{
-							color: "#3B4779",
+							color: "var(--question-text-color)",
 						}}
 					>
 						{item.q}
