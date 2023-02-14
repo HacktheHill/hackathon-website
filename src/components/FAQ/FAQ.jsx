@@ -82,7 +82,7 @@ export default function FAQ() {
 					key={i}
 					className={styles.questioncontainer}
 					sx={{
-						backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "var(--accordian-background-color)",
+						backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "",
 						justifyContent: "left",
 						mb: "10px",
 						mt: "10px",
