@@ -40,7 +40,7 @@ function Navbar({ pageScroll }) {
 							to="sponsors"
 							spy={true}
 							smooth={true}
-							offset={-160}
+							offset={-120}
 							duration={500}
 							href="#sponsors"
 						>

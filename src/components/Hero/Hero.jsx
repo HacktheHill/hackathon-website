@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
+import Button from "../Button/Button.jsx";
 import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
-import Button from "../Button/Button.jsx";
 const date = new Date("2023-03-03T00:00:00-05:00");
 
 function Hero() {
@@ -48,7 +48,9 @@ function Hero() {
 				</h1>
 				<h2>Canada's Capital Hackathon</h2>
 				<h3>University of Ottawa &times; Carleton University</h3>
-				<Button href="#about">Learn More</Button>
+				<Button href="#about" offset={-160}>
+					Learn More
+				</Button>
 			</div>
 			<div
 				className="hero-img"
