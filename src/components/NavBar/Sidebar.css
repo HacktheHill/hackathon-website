@@ -1,12 +1,10 @@
 .sidebar {
-	--background-color: var(--medium-primary-color);
-
-	--list-item-color: var(--light-button-hover-color);
-	--list-item-hover-color: var(--light-color);
-	--media-link-color: var(--light-color);
+	--list-item-color: var(--dark-button-hover-color);
+	--list-item-hover-color: var(--dark-color);
+	--media-link-color: var(--dark-color);
 
 	--hamburger-menu-color: var(--medium-primary-color);
-	--hamburger-close-button-color: var(--light-color);
+	--hamburger-close-button-color: var(--dark-color);
 
 	display: none;
 }
@@ -31,8 +29,8 @@
 		position: absolute;
 		width: 2em;
 		height: 2em;
-		right: 1.5em;
-		top: 1.5em;
+		right: calc(1.5em + 8px);
+		top: calc(1.5em + 8px);
 	}
 
 	/* Color/shape of burger icon bars */
