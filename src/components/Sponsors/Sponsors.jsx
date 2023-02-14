@@ -20,6 +20,7 @@ import SCESoc from "/Logos/SCESoc.svg";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
+import Vercel from "/Logos/Vercel.svg";
 import voiceflow from "/Logos/voiceflow.svg";
 
 function Sponsors() {
