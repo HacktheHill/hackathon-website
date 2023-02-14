@@ -1,12 +1,12 @@
 .hero {
 	--hero-heading: var(--medium-primary-color);
-	
+
 	/* countdown colours */
 	--count-down-border: var(--medium-primary-color);
 	--count-down-background-color: var(--background-color);
 	--countdown-item-color: var(--medium-primary-color);
 
-	/*hero animation colours*/
+	/* hero animation colours */
 	--snow-svg-color: snow;
 
 	/* background gradient */
@@ -127,31 +127,31 @@ svg .cloud {
 	animation: clouds 100s linear infinite alternate;
 }
 
-svg :is(#ClockLeft, #ClockRight) {
+svg :is(#clock-left, #clock-right) {
 	animation: clock linear infinite;
 	transform-box: fill-box;
 }
 
-svg #ClockLeft {
+svg #clock-left {
 	animation-duration: 3600s;
 	transform-origin: top right;
 }
 
-svg #ClockRight {
+svg #clock-right {
 	animation-duration: 60s;
 	transform-origin: top left;
 }
 
-svg :is(#leftbird, #rightbird) {
+svg :is(#left-bird, #right-bird) {
 	animation: flap 1s linear infinite alternate;
 }
 
-svg #leftbird {
+svg #left-bird {
 	animation-duration: 2s;
 	animation-delay: 1s;
 }
 
-svg #rightbird {
+svg #right-bird {
 	animation-duration: 1s;
 }
 

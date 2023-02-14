@@ -1,6 +1,6 @@
-.Notification {
-	
-	--background-color: var(--notifcation-background-color);
+.notification {
+
+	--background-color: var(--notification-background-color);
 	--primary-color: var(--light-color);
 
 
@@ -16,16 +16,16 @@
 	transform: translateY(100%) scaleY(0);
 }
 
-.Notification a {
+.notification a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.Notification p {
+.notification p {
 	margin: 0;
 }
 
-.Notification .CloseButton {
+.notification .CloseButton {
 	display: flex;
 	align-items: flex-start;
 	border: none;

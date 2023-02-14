@@ -1,19 +1,22 @@
-.Sidebar {
+body:has(.bm-overlay) {
+	overflow: hidden;
+}
+
+.sidebar {
 	--background-color: var(--medium-primary-color);
-	
+
 	--list-item-color: var(--light-button-hover-color);
 	--list-item-hover-color: var(--light-color);
 	--media-link-color: var(--light-color);
 
 	--hamburger-menu-color: var(--medium-primary-color);
 	--hamburger-close-button-color: var(--light-color);
-	
+
 	display: none;
-	
 }
 
 @media (max-width: 900px) {
-	.Sidebar {
+	.sidebar {
 		display: block;
 	}
 
