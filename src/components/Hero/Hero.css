@@ -1,8 +1,5 @@
 .hero {
 	--hero-heading: var(--medium-primary-color);
-	--button-color: var(--light-primary-color);
-	--button-color-hover: var(--primary-button-hover-color);
-	--button-text-color: var(--light-color);
 	
 	/* countdown colours */
 	--count-down-border: var(--medium-primary-color);
@@ -55,28 +52,6 @@
 	color: var(--hero-heading);
 	font-size: clamp(1rem, 2vmin, 5rem);
 	font-weight: normal;
-}
-
-.button {
-	margin: 3vmin auto;
-}
-
-.button button {
-	background-color: var(--button-color);
-	border: none;
-	border-radius: 100px;
-	color: var(--button-text-color);
-	transition: 1s;
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	font-size: clamp(1rem, 1vmin, 5rem);
-	white-space: nowrap;
-	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
-	cursor: pointer;
-	font-family: Rubik;
-}
-
-.button button:hover {
-	background-color: var(--button-color-hover);
 }
 
 .hero-img svg {

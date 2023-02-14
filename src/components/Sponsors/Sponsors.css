@@ -2,11 +2,6 @@
 .sponsors {
 	--text-color: var(--dark-color);
 
-	
-	--button-color: var(--light-primary-color);
-	--button-color-hover: var(--primary-button-hover-color);
-	--button-text-color: var(--light-color);
-
 
 	color: var(--text-color);
 	transition: 0.5s;
@@ -76,28 +71,6 @@
 	font-family: Rubik;
 	font-size: max(1rem, 1.15vmin);
 	line-height: max(2rem, 2.5vmin);
-}
-
-.button-container {
-	margin: 3vmin auto;
-}
-
-.button-container .inner-button {
-	background-color: var(--button-color);
-	border: none;
-	border-radius: 100px;
-	color: var(--button-text-color);
-	transition: 1s;
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	font-size: clamp(1rem, 1vmin, 5rem);
-	white-space: nowrap;
-	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
-	cursor: pointer;
-	font-family: Rubik;
-}
-
-.button-container .inner-button:hover {
-	background-color: var(--button-color-hover);
 }
 
 @media only screen and (max-width: 590px) {
