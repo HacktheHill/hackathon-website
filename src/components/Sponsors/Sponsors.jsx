@@ -1,5 +1,7 @@
 import React from "react";
+import Button from "../Button/Button.jsx";
 import "./Sponsors.css";
+
 import balsamiq from "/Logos/balsamiq.svg";
 import Blackberry from "/Logos/Blackberry.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
@@ -19,26 +21,27 @@ import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
-import Button from "../Button/Button.jsx";
+
 function Sponsors() {
 	const data = {
 		sponsors: {
 			large: [
-				{ href: "https://ciena.ca/", src: Ciena },
-				{ href: "https://canadiantire.ca/", src: CanadianTire },
+				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
+				{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
 			],
 			medium: [
-				{ href: "https://blackberry.com/", src: Blackberry },
-				{ href: "https://www.cse-cst.gc.ca/", src: CSE },
-				{ href: "https://www.lonehaven.com/", src: lonehaven },
+				{ href: "https://blackberry.com/", src: Blackberry, alt: "Blackberry" },
+				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
+				{ href: "https://www.lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
 			],
 			small: [
-				{ href: "https://google.com/about/", src: Google },
-				{ href: "https://www.redbull.com/ca-en/", src: Redbull },
-				{ href: "https://www.digitalocean.com/", src: DigitalOcean },
-				{ href: "https://www.echo3d.com/", src: echo3d },
-				{ href: "https://balsamiq.com/", src: balsamiq },
-				{ href: "https://www.voiceflow.com/", src: voiceflow },
+				{ href: "https://about.google", src: Google, alt: "Google" },
+				{ href: "https://www.redbull.com/ca-en/", src: Redbull, alt: "RedBull" },
+				{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
+				{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
+				{ href: "https://www.echo3d.com/", src: echo3d, alt: "echo3D" },
+				{ href: "https://balsamiq.com/", src: balsamiq, alt: "balsamiq" },
+				{ href: "https://www.voiceflow.com/", src: voiceflow, alt: "Voiceflow" },
 			],
 		},
 		collaborators: [
@@ -78,7 +81,7 @@ function Sponsors() {
 								>
 									<img
 										className={`sponsor-icon icon-${Object.keys(data.sponsors)[i]}`}
-										alt={Object.keys(data.sponsors)[i]}
+										alt={`${sponsor.alt} logo`}
 										src={sponsor.src}
 									></img>
 								</a>
