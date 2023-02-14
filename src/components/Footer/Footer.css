@@ -1,5 +1,9 @@
 .footer {
+	--media-links: var(--medium-primary-color);
+	--footer-links: var(--medium-primary-color);
+
 	display: grid;
+	color: var(--medium-primary-color);
 }
 
 .footer-logo {
@@ -37,7 +41,7 @@
 }
 
 .media-links a {
-	color: #3b4779;
+	color: var(--media-links);
 }
 
 .media-links a:hover {
@@ -57,7 +61,7 @@
 	gap: 0.5ch;
 	justify-content: center;
 	margin: 1em;
-	color: #3b4779;
+	color: var(--footer-links);
 	text-decoration: none;
 }
 

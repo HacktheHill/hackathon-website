@@ -1,7 +1,14 @@
 .faqcontainer {
+	/* Note there are colors embed in the MUI in FAQ.jsx which are not referenced here*/
+	--title-text-color: var(--dark-color);
+	--question-text-color: var(--light-primary-color);
+	--answer-text-color: var(--dark-color);
+	--question-container-hover-color: var(--light-button-hover-color);
+
+
 	display: flex;
 	flex-direction: column;
-	color: black;
+	color: var(--title-text-color);
 	transition: 0.5s;
 	margin-bottom: 5%;
 	margin-left: 10%;
@@ -23,7 +30,7 @@
 }
 
 .questioncontainer:hover {
-	background-color: "#eaeaea";
+	background-color: var(--question-container-hover-color);
 }
 
 .questioncontainer:before {
@@ -31,13 +38,13 @@
 }
 
 .question {
-	color: #5c71ad;
+	color: var(--question-text-color);
 	font-size: 32;
 	font-family: Rubik;
 }
 
 .answer {
-	color: black;
+	color: var(--answer-text-color);
 	font-size: 16px;
 	font-family: Rubik;
 }

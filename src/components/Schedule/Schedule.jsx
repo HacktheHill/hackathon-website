@@ -63,9 +63,9 @@ function Schedule() {
 									target="_blank"
 									href="https://youtu.be/zpixm4xz_K4"
 									sx={{
-										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
+										background: "var(--button-gradient)",
 										borderRadius: "100px",
-										color: "#3B4779",
+										color: "var(--medium-primary-color)",
 										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",
@@ -116,9 +116,9 @@ function Schedule() {
 									target="_blank"
 									href="https://forms.gle/WUgn5g8XTjNf9Eq39"
 									sx={{
-										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
+										background: "var(--button-gradient)",
 										borderRadius: "100px",
-										color: "#3B4779",
+										color: "var(--medium-primary-color)",
 										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",
@@ -168,9 +168,9 @@ function Schedule() {
 								<Button
 									disabled
 									sx={{
-										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
+										background: "var(--button-gradient)",
 										borderRadius: "100px",
-										color: "#3B4779",
+										color: "var(--medium-primary-color)",
 										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",
@@ -221,9 +221,9 @@ function Schedule() {
 									href="https://youtu.be/mbr4ZmXtx0k"
 									target={"_blank"}
 									sx={{
-										background: "linear-gradient(90deg, #ABEFFB, transparent) #E9D9F2",
+										background: "var(--button-gradient)",
 										borderRadius: "100px",
-										color: "#3B4779",
+										color: "var(--medium-primary-color)",
 										mt: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										mb: matchesSM ? "7vw" : matchesMD ? "3vw" : "0vw",
 										p: "7px",

@@ -1,5 +1,15 @@
 .Sidebar {
+	--background-color: var(--medium-primary-color);
+	
+	--list-item-color: var(--light-button-hover-color);
+	--list-item-hover-color: var(--light-color);
+	--media-link-color: var(--light-color);
+
+	--hamburger-menu-color: var(--medium-primary-color);
+	--hamburger-close-button-color: var(--light-color);
+	
 	display: none;
+	
 }
 
 @media (max-width: 900px) {
@@ -13,7 +23,7 @@
 	}
 
 	.sidebar .media-links a {
-		color: white;
+		color: var(--media-link-color);
 		padding: 0 0.5em;
 	}
 
@@ -28,7 +38,7 @@
 
 	/* Color/shape of burger icon bars */
 	.bm-burger-bars {
-		background: #3b4779;
+		background: var(--hamburger-menu-color);
 	}
 
 	/* Position and sizing of clickable cross button */
@@ -39,7 +49,7 @@
 
 	/* Color/shape of close button cross */
 	.bm-cross {
-		background: white;
+		background: var(--hamburger-close-button-color);
 	}
 
 	/*
@@ -53,19 +63,19 @@
 
 	/* General sidebar styles */
 	.bm-menu {
-		background: #3b4779;
+		background: var(--background-color);
 		font-size: 2em;
 		padding: 25% 0 0;
 	}
 
 	/* Morph shape necessary with bubble or elastic */
 	.bm-morph-shape {
-		fill: #3b4779;
+		fill: var(--background-color);
 	}
 
 	/* Wrapper for item list */
 	.bm-item-list {
-		color: #d1d1d1;
+		color: var(--list-item-color);
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
@@ -84,7 +94,7 @@
 	}
 
 	.bm-item:hover {
-		color: white;
+		color: var(--list-item-hover-color);
 		cursor: pointer;
 	}
 
