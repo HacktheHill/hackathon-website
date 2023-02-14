@@ -101,7 +101,7 @@ export default {
 		a9: "Oui, chaque équipe peut contenir jusqu'à 4 personnes.",
 
 		q10: "Quels sont les thèmes de Hack the Hill ?",
-		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début du hackathon, mais voici un aperçu de ce qu'ils pourraient impliquer : développement de jeux, développement matériel/embarqué et développement web !",
+		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement de jeux vidéos, développement matériel/embarqué et développement web !",
 
 		q11: "Combien de Red Bull devrais-je boire par jour ?",
 		a11: "Oui.",
