@@ -62,8 +62,8 @@ function Sponsors() {
 						Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital’s
 						hackathon?
 					</p>
-					<a className="button" target="_blank" href="/assets/Hack-the-Hill-Sponsorship.pdf" rel="noreferrer">
-						<button>Sponsorship Package</button>
+					<a className="button-container" target="_blank" href="/assets/Hack-the-Hill-Sponsorship.pdf" rel="noreferrer">
+						<button className="inner-button">Sponsorship Package</button>
 					</a>
 				</div>
 

@@ -1,7 +1,7 @@
 .faqcontainer {
 	/* Note there are colors embed in the MUI in FAQ.jsx which are not referenced here*/
 	--title-text-color: var(--dark-color);
-	--question-text-color: var(--light-primary-color);
+	--question-text-color: var(--medium-primary-color);
 	--answer-text-color: var(--dark-color);
 	--question-container-hover-color: var(--light-button-hover-color);
 
