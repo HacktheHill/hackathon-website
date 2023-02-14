@@ -1,7 +1,3 @@
-body:has(.bm-overlay) {
-	overflow: hidden;
-}
-
 .sidebar {
 	--background-color: var(--medium-primary-color);
 
