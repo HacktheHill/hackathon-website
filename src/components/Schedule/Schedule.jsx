@@ -71,7 +71,7 @@ function Schedule() {
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
+										width: matchesSM ? "50%" : matchesLG ? "25%" : undefined,
 										transition: "1s",
 										"&:hover": {
 											backgroundColor: "#f094bc",
@@ -124,7 +124,7 @@ function Schedule() {
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
+										width: matchesSM ? "50%" : matchesLG ? "25%" : undefined,
 										transition: "1s",
 										boxShadow:
 											"rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
@@ -176,7 +176,7 @@ function Schedule() {
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
+										width: matchesSM ? "50%" : matchesLG ? "25%" : undefined,
 										transition: "1s",
 										boxShadow:
 											"rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
@@ -229,7 +229,7 @@ function Schedule() {
 										p: "7px",
 										textTransform: "none",
 										minWidth: "16%",
-										width: matchesSM ? "50%" : matchesLG ? "25%" : "0%",
+										width: matchesSM ? "50%" : matchesLG ? "25%" : undefined,
 										transition: "1s",
 										"&:hover": {
 											backgroundColor: "#f094bc",
