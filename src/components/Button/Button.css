@@ -1,8 +1,8 @@
 .button {
-	margin: 3vmin auto;
-    --button-color: var(--light-primary-color);
+	--button-color: var(--light-primary-color);
 	--button-hover-color: var(--primary-button-hover-color);
 	--button-text-color: var(--light-color);
+	margin: 3vmin auto;
 }
 
 .button button {
