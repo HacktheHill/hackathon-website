@@ -1,7 +1,0 @@
-name = "hackthehill"
-main = "index.js"
-compatibility_date = "2022-12-25"
-
-[vars]
-SHEETS_MACRO_ID = "AKfycbyE8QkJqinie8Q_uEHqOI8xvz_M9rlRytSL814rd10PI4dQpqn55NvRmBGb0-QU4goC"
-SHEETS_ID = "1MvRTBKdibe1K4JlkkKnQhA6RHHhZQjQ_-Q9aLhP7n2A"
