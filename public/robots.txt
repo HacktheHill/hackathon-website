@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
-SiteMap: https://hackthehill.com/sitemap.xml
+SiteMap: https://hackthehill.com/sitemap-index.xml
 User-agent: *
 Disallow:
