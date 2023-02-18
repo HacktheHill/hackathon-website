@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Button from "../Button/Button";
 import "./Notification.css";
 
 function Notification() {
@@ -16,7 +17,7 @@ function Notification() {
 
 	return (
 		<div
-			id="Notification"
+			id="notification"
 			className="notification"
 			style={{
 				transform: visible ? "translateY(0)" : "translateY(100%) scaleY(0)",
@@ -24,9 +25,13 @@ function Notification() {
 			aria-hidden={!visible}
 		>
 			<p>
-				Attention hackers! Registrations close on <time dateTime="2023-01-29">Sunday, January 29th</time>! Don't
-				miss out!
+				Did you hear about the Fulcrum Article about Hack the Hill? UOTTA GO TO HACK THE HILL. Check out the
+				"Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you can
+				expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!
 			</p>
+			<Button href="https://thefulcrum.ca/science-tech/ready-set-hack/" target="_blank">
+				Read the Article
+			</Button>
 			<button
 				className="close-button"
 				aria-label="Close Notification"
