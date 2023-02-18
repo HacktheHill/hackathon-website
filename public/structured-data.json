@@ -77,7 +77,8 @@
 		"price": "0",
 		"priceCurrency": "CAD",
 		"validFrom": "2023-03-03",
-		"validThrough": "2023-03-05"
+		"validThrough": "2023-03-05",
+		"url": "https://hackthehill.com/"
 	},
 	"organizer": {
 		"@type": "Organization",
@@ -111,6 +112,11 @@
 			"https://www.youtube.com/@hackthehill"
 		],
 		"url": "https://hackthehill.com/"
+	},
+	"performer": {
+		"@type": "PerformingGroup",
+		"genre": "Hackathon",
+		"name": "Hack the Hill"
 	},
 	"startDate": "2023-03-03",
 	"typicalAgeRange": "18-25"
