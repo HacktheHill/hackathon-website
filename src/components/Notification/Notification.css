@@ -14,6 +14,12 @@
 	transform: translateY(100%) scaleY(0);
 }
 
+.notification-content {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
 .notification a {
 	--button-color: var(--dark-primary-color);
 	--button-hover-color: var(--dark-color);
@@ -28,7 +34,6 @@
 
 .notification a.button {
 	margin: 0;
-	display: inherit;
 }
 
 .notification .close-button {
@@ -38,4 +43,10 @@
 	background-color: transparent;
 	cursor: pointer;
 	padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.notification-content {
+		flex-direction: column;
+	}
 }

@@ -24,14 +24,16 @@ function Notification() {
 			}}
 			aria-hidden={!visible}
 		>
-			<p>
-				Did you hear about the Fulcrum Article about Hack the Hill? UOTTA GO TO HACK THE HILL. Check out the
-				"Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you can
-				expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!
-			</p>
-			<Button href="https://thefulcrum.ca/sciencetech/u-of-o-hackathon-hosted-by-hack-the-hill/" target="_blank">
-				Read the Article
-			</Button>
+			<div className="notification-content">
+				<p>
+					Did you hear about the Fulcrum Article about Hack the Hill? UOTTA GO TO HACK THE HILL. Check out the
+					"Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you can
+					expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!
+				</p>
+				<Button href="https://thefulcrum.ca/sciencetech/u-of-o-hackathon-hosted-by-hack-the-hill/" target="_blank">
+					Read the Article
+				</Button>
+			</div>
 			<button
 				className="close-button"
 				aria-label="Close Notification"

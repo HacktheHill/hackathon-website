@@ -69,17 +69,3 @@
 	font-size: max(1rem, 1.15vmin);
 	line-height: max(2rem, 2.5vmin);
 }
-
-@media only screen and (max-width: 590px) {
-	.sponsor-icon-box {
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		display: flex;
-		padding: 0 2rem;
-	}
-
-	.sponsors h1 {
-		font-size: 3em;
-	}
-}
