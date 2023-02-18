@@ -29,7 +29,7 @@ function Notification() {
 				"Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you can
 				expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!
 			</p>
-			<Button href="https://thefulcrum.ca/science-tech/ready-set-hack/" target="_blank">
+			<Button href="https://thefulcrum.ca/sciencetech/u-of-o-hackathon-hosted-by-hack-the-hill/" target="_blank">
 				Read the Article
 			</Button>
 			<button
