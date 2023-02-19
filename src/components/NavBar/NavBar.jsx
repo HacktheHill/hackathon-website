@@ -18,12 +18,12 @@ function Navbar({ pageScroll }) {
 					<Link
 						className="link logo"
 						activeClass="active"
-						to="Hero"
+						to="hero"
 						spy={true}
 						smooth={true}
 						offset={0}
 						duration={500}
-						href="#Hero"
+						href="#hero"
 					>
 						<img alt="Logo" src={logo}></img>
 					</Link>
@@ -51,12 +51,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="About"
+							to="about"
 							spy={true}
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#About"
+							href="#about"
 						>
 							{t("navbar.links.about")}
 						</Link>
@@ -65,12 +65,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="Sponsors"
+							to="sponsors"
 							spy={true}
 							smooth={true}
 							offset={-160}
 							duration={500}
-							href="#Sponsors"
+							href="#sponsors"
 						>
 							{t("navbar.links.sponsors")}
 						</Link>
@@ -79,12 +79,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="Schedule"
+							to="schedule"
 							spy={true}
 							smooth={true}
 							offset={-80}
 							duration={500}
-							href="#Schedule"
+							href="#schedule"
 						>
 							{t("navbar.links.hacker")}
 						</Link>
@@ -93,12 +93,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="Collaborators"
+							to="collaborators"
 							spy={true}
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#Collaborators"
+							href="#collaborators"
 						>
 							{t("navbar.links.collaborators")}
 						</Link>
@@ -107,12 +107,12 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="FAQ"
+							to="faq"
 							spy={true}
 							smooth={true}
 							offset={-130}
 							duration={500}
-							href="#FAQ"
+							href="#faq"
 						>
 							{t("navbar.links.faq")}
 						</Link>
