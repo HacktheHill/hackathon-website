@@ -14,38 +14,32 @@ function Navbar({ pageScroll }) {
 	return (
 		<>
 			<nav className="navbar" data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
-				<div className="navbar-leftside">
-					<Link
-						className="link logo"
-						activeClass="active"
-						to="hero"
-						spy={true}
-						smooth={true}
-						offset={0}
-						duration={500}
-						href="#hero"
-					>
-						<img alt="Logo" src={logo}></img>
-					</Link>
-					<ul>
-						<li className="excluded">
-							<div className="language-selector">
-								{Object.keys(languages).map(language => (
-									<button
-										className="link language-button"
-										key={language}
-										style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
-										type="submit"
-										onClick={() => locale.set(language)}
-									>
-										{languages[language]}
-									</button>
-								))}
-								<p>&nbsp;</p>
-							</div>
+				<Link
+					className="link logo"
+					activeClass="active"
+					to="hero"
+					spy={true}
+					smooth={true}
+					offset={0}
+					duration={500}
+					href="#hero"
+				>
+					<img alt="Logo" src={logo}></img>
+				</Link>
+				<ul className="language-selector">
+					{Object.keys(languages).map(language => (
+						<li key={language}>
+							<button
+								className="link language-button"
+								style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
+								type="submit"
+								onClick={() => locale.set(language)}
+							>
+								{languages[language]}
+							</button>
 						</li>
-					</ul>
-				</div>
+					))}
+				</ul>
 				<ul>
 					<li>
 						<Link
