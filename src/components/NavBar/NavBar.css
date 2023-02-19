@@ -20,7 +20,7 @@
 .navbar-leftside {
 	display: flex;
 	align-items: center;
-	margin: 20px 0px 12px 0px;
+	margin: 1.25rem 0rem 0.75rem 0rem;
 }
 
 .navbar ul {
@@ -76,15 +76,14 @@ li:not(.logo) .link:is(.active, :hover)::after {
 }
 
 .language-selector {
-	transform: translateY(-2px);
 	display: flex;
-	gap: 0.6rem;
+	column-gap: 0.2rem;
 	text-decoration: none;
 	height: 100%;
-	padding-left: 12px;
 }
 
 .language-button {
+	display: flex;
 	background: none;
 	border: none;
 	color: #3b4779;
