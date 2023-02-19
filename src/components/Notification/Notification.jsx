@@ -26,24 +26,15 @@ function Notification() {
 			aria-hidden={!visible}
 		>
 			<div className="notification-content">
-				<p>
-					Did you hear about the Fulcrum Article about Hack the Hill? UOTTA GO TO HACK THE HILL. Check out the
-					"Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you
-					can expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!
-				</p>
+				<p>{t("notification.message")}</p>
 				<Button
 					href="https://thefulcrum.ca/sciencetech/u-of-o-hackathon-hosted-by-hack-the-hill/"
 					target="_blank"
 				>
-					Read the Article
+					{t("notification.button_text")}
 				</Button>
 			</div>
-			<button
-				className="close-button"
-				aria-label="Close Notification"
-				title="Close Notification"
-				onClick={() => setVisible(false)}
-			>
+			<button className="close-button" title={t("notification.close")} onClick={() => setVisible(false)}>
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<title>{t("notification.close")}</title>
 					<path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

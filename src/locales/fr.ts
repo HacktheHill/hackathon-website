@@ -7,6 +7,7 @@ export default {
 			collaborators: "Collaborateurs",
 			faq: "FAQ",
 		},
+		aria_label: "Barre de Navigation",
 	},
 	hero: {
 		hybrid: "Hybride",
@@ -113,7 +114,8 @@ export default {
 	},
 	notification: {
 		message:
-			'Attention hackers! L\'enregistrement se termine le <time dateTime="2023-01-29"> Dimanche, 29 Janvier</time>! Ne manquer pas votre chance !',
+			'Avez vous entendu parlé de l\'article du Fulcrum sur Hack the Hill? UOTTA GO TO HACK THE HILL. Consultez la section "Science & Tech" du Fulcrum et cherchez "Ready, Set, Hack" pour en savoir plus sur ce que vous pouvez attendre de Hack the Hill de la part de certains de nos directeurs d\'événements. Merci au Fulcrum pour la publication!',
+		button_text: "Lire l'article",
 		close: "Fermer Notification",
 	},
 } as const;

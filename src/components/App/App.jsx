@@ -10,8 +10,8 @@ import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";
-function App({ i18n }) {
-	const I18nContext = createContext(i18n);
+
+function App() {
 	const [pageScroll, setPageScroll] = useState(0);
 	useEffect(() => {
 		const onScroll = () => setPageScroll(window.scrollY);
