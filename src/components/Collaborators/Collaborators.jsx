@@ -1,5 +1,6 @@
 import "./Collaborators.css";
 import MountainFlags from "./MountainFlags";
+import { t } from "../../i18n";
 
 const data = [
 	{ id: "wie", href: "https://wie.ieeeottawa.ca/" },
@@ -13,7 +14,7 @@ function Collaborators() {
 	return (
 		<>
 			<h1 id="collaborators" className="collaborators">
-				Collaborators{" "}
+				{t("collaborators.title")}
 			</h1>
 			<MountainFlags data={data} />
 		</>

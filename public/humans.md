@@ -26,3 +26,6 @@ Github: @arman-dogru
 
 Developer: Emilien Breton
 GitHub: @Bricktech2000
+
+Developer: Sacha Arseneault
+GitHub: @xsachax

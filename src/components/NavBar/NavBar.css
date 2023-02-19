@@ -69,8 +69,22 @@ li:not(.logo) .link:is(.active, :hover)::after {
 	transform: translateY(0);
 }
 
-@media (max-width: 900px) {
-	.navbar li:not(.logo) .link {
+.navbar ul.language-selector {
+	margin-right: auto;
+}
+
+.language-button {
+	display: flex;
+	background: none;
+	border: none;
+	color: #3b4779;
+	font-weight: bolder;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+@media (max-width: 940px) {
+	.navbar ul:not(.language-selector) .link {
 		display: none;
 	}
 
@@ -81,5 +95,13 @@ li:not(.logo) .link:is(.active, :hover)::after {
 	.navbar[data-scrolled="true"] {
 		background-color: transparent;
 		box-shadow: none;
+	}
+}
+
+@media (max-width: 375px) {
+	.navbar ul.language-selector {
+		margin: 0;
+		margin-right: auto;
+		gap: 0;
 	}
 }

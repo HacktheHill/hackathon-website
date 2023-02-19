@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
 import Button from "../Button/Button.jsx";
+import { t } from "../../i18n";
 import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
+
 const date = new Date("2023-03-03T00:00:00-05:00");
 
 function Hero() {
@@ -34,8 +36,8 @@ function Hero() {
 			<div className="hero-heading">
 				<div className="location-date-heading">
 					<h3>
-						<img className="location-pin" src={LocationPin} alt="Location Pin" /> Hybrid
-						<strong> @ uOttawa</strong>
+						<img className="location-pin" src={LocationPin} alt={t("hero.alt_pin")} /> {t("hero.hybrid")}
+						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
 						Mar &nbsp;
@@ -46,10 +48,12 @@ function Hero() {
 				<h1 id="Hero">
 					<img className="banner-logo" src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
-				<h2>Canada's Capital Hackathon</h2>
-				<h3>University of Ottawa &times; Carleton University</h3>
+				<h2>{t("hero.h2")}</h2>
+				<h3>
+					{t("hero.h3")}&times;{t("hero.h3_p2")}
+				</h3>
 				<Button href="#about" offset={-160}>
-					Learn More
+					{t("hero.more")}
 				</Button>
 			</div>
 			<div
