@@ -78,13 +78,13 @@ export default {
 		a1: "Un hackathon est un événement à grande échelle où les participants conçoivent et construisent un projet à partir de zéro.",
 
 		q2: "Combien ça coûte pour participer ?",
-		a2: "La participation est entièrement gratuite ! Nous couvrons le coût de la nourriture lors de l'événement et fournissons des moyens de transport pour amener les participants de Waterloo, de Toronto et de Montréal à Ottawa.",
+		a2: "La participation est entièrement gratuite ! Nous couvrons le coût de la nourriture lors de l'événement et fournissons des cadeaux à tous les participants.",
 
 		q3: "Dois-je avoir de l'expérience ?",
 		a3: "Aucune expérience n'est nécessaire ! Des ateliers vous enseignerons tout ce que vous devez savoir pour bien réussir à Hack the Hill.",
 
 		q4: "C'est mon premier hackathon, à quoi dois-je m'attendre ?",
-		a4: "36 heures de réseautage avec nos commanditaires, d'apprentissage et de collaboration. Si vous êtes un hacker débutant, vous pouvez participer à notre concours junior pour une expérience d'apprentissage plus structurée.",
+		a4: "36 heures de réseautage avec nos commanditaires, d'apprentissage et de collaboration. En tant que hacker débutant, vous pouvez participer à nos ateliers pour apprendre les bases du développement web, du développement de jeux, et du développement embarqué.",
 
 		q5: "Puis-je commencer à travailler sur mon projet avant le hackathon ?",
 		a5: "Non, tous les projets doivent être commencés après les cérémonies d'ouverture. Aucun code ne doit être écrit pour le projet avant le hackathon, cependant, vous pouvez commencer à réfléchir à un projet une fois que les thèmes ont été publiés.",
