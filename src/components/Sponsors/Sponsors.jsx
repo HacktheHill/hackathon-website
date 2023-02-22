@@ -7,6 +7,7 @@ import Blackberry from "/Logos/Blackberry.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
+import Ceed from "/Logos/ceed.svg";
 import Ciena from "/Logos/Ciena.svg";
 import CSClub from "/Logos/CSClub.svg";
 import CSE from "/Logos/CSE.svg";
@@ -46,6 +47,7 @@ function Sponsors() {
 			],
 		},
 		collaborators: [
+			{ href: "https://ceed-uottawa.ca/", src: Ceed },
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://carleton.ca/", src: Carleton },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
