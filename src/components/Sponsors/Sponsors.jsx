@@ -47,7 +47,7 @@ function Sponsors() {
 			],
 		},
 		collaborators: [
-			{ href: "https://ceed.uottawa.ca/", src: Ceed },
+			{ href: "https://ceed-uottawa.ca/", src: Ceed },
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://carleton.ca/", src: Carleton },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
