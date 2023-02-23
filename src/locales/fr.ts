@@ -21,9 +21,9 @@ export default {
 	about: {
 		title: "À propos de nous",
 		img_alt: "Bea.var, la Mascotte de Hack the Hill",
-		p1: "Hack the Hill est un hackathon international qui se déroule au cœur de la capitale du Canada! En collaboration avec la Faculté de génie de l'Université d'Ottawa, sept grandes organisations étudiantes travaillent main dans la main afin d'établir une fondation solide pour tous les hackathons du future.",
-		p2: "L'Association des étudiants en génie d'uOttawa, la Branche étudiante de l'IEEE d'uOttawa, l'Association des étudiants en informatique, l'Association des étudiants en génie logiciel, le Groupe d'affinité des femmes en génie d'uOttawa, le Club d'informatique d'uOttawa et le Club de développement de jeux d'uOttawa sont fiers d'offrir un hackathon à Ottawa, où les étudiants peuvent former des connections et compétitionner parmis meilleurs!",
-		p3: "Grâce à une série d'événements mensuels menant à notre hackathon principal, également connue sous le nom de \"La série hacker\", les participants du hackathon auront de nombreuses occasions pour perfectionner leurs compétences techniques, réseauter avec leurs collègues et apprendre d'étudiants diplômés ainsi que de leaders d'entreprises notables! Notre événement principal est prévu du 3 au 5 février 2023 et l'inscription est gratuite!",
+		p1: "Les organisations étudiantes en génie de l'Université d'Ottawa et de l'Université Carleton sont extrêmement heureuses de présenter Hack The Hill, le hackathon de la capitale canadienne !",
+		p2: "Hack the Hill a été créé afin d'établir un nouveau standard pour les hackathons du futur ! Lors d'une série d'événements mensuels, également connue sous le nom de \"La Série du Hacker\", les participants au hackathon auront de nombreuses opportunités de perfectionner leurs compétences techniques et de réseauter avec leurs pairs !",
+		p3: "Notre hackathon est prévu du 3 au 5 mars 2023 et sera gratuit pour tous les participants. Nous avons tous hâte de vous voir et espérons que vous êtes prêt à rivaliser avec les meilleurs !",
 	},
 	sponsors: {
 		title: "Commanditaires",
@@ -54,7 +54,7 @@ export default {
 			status: "Complété",
 		},
 		event3: {
-			title: "Développement Web Maléfique",
+			title: "Wicked Web Work",
 			month: "Janvier",
 			time: "18h - 22h à STM 117",
 			description:
@@ -62,7 +62,7 @@ export default {
 			status: "Complété",
 		},
 		event4: {
-			title: "Atelier de Développement de Jeux",
+			title: "Got Games?",
 			month: "Janvier",
 			time: "19h - 21h à STM 117",
 			description:
