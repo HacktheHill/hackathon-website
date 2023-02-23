@@ -7,7 +7,7 @@ import Blackberry from "/Logos/Blackberry.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
-import Ceed from "/Logos/Ceed.svg";
+import Ceed from "/Logos/ceed.svg";
 import Ciena from "/Logos/Ciena.svg";
 import CSClub from "/Logos/CSClub.svg";
 import CSE from "/Logos/CSE.svg";
