@@ -1,7 +1,7 @@
 # Team
 
 Director: Daniel Thorp
-Github: @arcanistzed
+GitHub: @arcanistzed
 
 Director: Taj Loodu
 GitHub: @tloodu
@@ -16,13 +16,13 @@ Developer: Victor Sandru
 GitHub: @victorsandru
 
 Developer: Isabelle Wang
-Github: @iwang14
+GitHub: @iwang14
 
 Developer: Arjuunan Arulnamby
-Github: @Arjuunan
+GitHub: @Arjuunan
 
 Developer: Arman Doǧru
-Github: @arman-dogru
+GitHub: @arman-dogru
 
 Developer: Emilien Breton
 GitHub: @Bricktech2000
