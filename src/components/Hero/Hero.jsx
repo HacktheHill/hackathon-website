@@ -6,7 +6,23 @@ import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 
-const date = new Date("2023-03-03T00:00:00-05:00");
+// 7:00 PM EST on March 3rd, 2023
+const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
+// 9:00 AM EST on March 5th, 2023
+const HACKING_END_DATE = new Date("2023-03-05T09:00:00-05:00");
+
+// If the current time is before the event start date, the countdown will show the time until the event starts
+// If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
+// If the current time is after the hacking end date, the countdown will not show
+let date = null;
+switch (true) {
+	case Date.now() < EVENT_START_DATE:
+		date = EVENT_START_DATE;
+		break;
+	case Date.now() < HACKING_END_DATE:
+		date = HACKING_END_DATE;
+		break;
+}
 
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
@@ -36,7 +52,7 @@ function Hero() {
 			<div className="hero-heading">
 				<div className="location-date-heading">
 					<h3>
-						<img className="location-pin" src={LocationPin} alt={t("hero.alt_pin")} /> {t("hero.hybrid")}
+						<img className="location-pin" src={LocationPin} alt={t("hero.pin_alt")} /> {t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
@@ -62,24 +78,26 @@ function Hero() {
 					__html: hero,
 				}}
 			></div>
-			<dialog className="countdown-dialog" open={popupOpen}>
-				<div className="countdown-item">
-					<h3>{days}</h3>
-					<h4>day{days === 1 ? "" : "s"}</h4>
-				</div>
-				<div className="countdown-item">
-					<h3>{hours}</h3>
-					<h4>hour{hours === 1 ? "" : "s"}</h4>
-				</div>
-				<div className="countdown-item">
-					<h3>{minutes}</h3>
-					<h4>minute{minutes === 1 ? "" : "s"}</h4>
-				</div>
-				<div className="countdown-item">
-					<h3>{seconds}</h3>
-					<h4>second{seconds === 1 ? "" : "s"}</h4>
-				</div>
-			</dialog>
+			{date && (
+				<dialog className="countdown-dialog" open={popupOpen}>
+					<div className="countdown-item">
+						<h3>{days}</h3>
+						<h4>day{days === 1 ? "" : "s"}</h4>
+					</div>
+					<div className="countdown-item">
+						<h3>{hours}</h3>
+						<h4>hour{hours === 1 ? "" : "s"}</h4>
+					</div>
+					<div className="countdown-item">
+						<h3>{minutes}</h3>
+						<h4>minute{minutes === 1 ? "" : "s"}</h4>
+					</div>
+					<div className="countdown-item">
+						<h3>{seconds}</h3>
+						<h4>second{seconds === 1 ? "" : "s"}</h4>
+					</div>
+				</dialog>
+			)}
 		</div>
 	);
 }
