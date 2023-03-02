@@ -68,7 +68,7 @@ function Hero() {
 				<h3>
 					{t("hero.h3")}&times;{t("hero.h3_p2")}
 				</h3>
-				<Button href="#about" offset={-160}>
+				<Button href={t("hero.link")} offset={-160}>
 					{t("hero.more")}
 				</Button>
 			</div>
