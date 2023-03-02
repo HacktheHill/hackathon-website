@@ -16,7 +16,7 @@ export default {
 		h2: "Le Hackathon de la Capitale Canadienne",
 		h3: "Université d'Ottawa ",
 		h3_p2: " Université Carleton",
-		more: "Suivez le piratage!",
+		more: "Suivez le hackathon!",
 		link: "https://tracker.hackthehill.com/",
 	},
 	about: {
