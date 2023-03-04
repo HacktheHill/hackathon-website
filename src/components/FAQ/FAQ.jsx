@@ -65,11 +65,6 @@ export default function FAQ() {
 			a: t("faq.a10"),
 			key: "9",
 		},
-		{
-			q: t("faq.q11"),
-			a: t("faq.a11"),
-			key: "10",
-		},
 	];
 
 	return (

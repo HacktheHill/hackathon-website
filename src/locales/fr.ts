@@ -104,9 +104,6 @@ export default {
 
 		q10: "Quels sont les thèmes de Hack the Hill ?",
 		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement de jeux vidéos, développement matériel/embarqué et développement web !",
-
-		q11: "Combien de Red Bull devrais-je boire par jour ?",
-		a11: "Oui.",
 	},
 	footer: {
 		title: "Le Hackathon de la Capitale Canadienne",

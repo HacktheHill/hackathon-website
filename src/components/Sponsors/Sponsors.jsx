@@ -16,7 +16,6 @@ import echo3d from "/Logos/echo3d.webp";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
-import Redbull from "/Logos/Redbull.svg";
 import SCESoc from "/Logos/SCESoc.svg";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
@@ -40,7 +39,6 @@ function Sponsors() {
 			],
 			small: [
 				{ href: "https://about.google", src: Google, alt: "Google" },
-				{ href: "https://www.redbull.com/ca-en/", src: Redbull, alt: "RedBull" },
 				{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
 				{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
 				{ href: "https://www.echo3d.com/", src: echo3d, alt: "echo3D" },
