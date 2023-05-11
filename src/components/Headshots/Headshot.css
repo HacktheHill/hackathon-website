@@ -1,0 +1,42 @@
+
+.wrapper {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden; /* hide the parts of the image outside the circle */
+    display: flex; /* align items horizontally */
+    justify-content: center; /* center items horizontally */
+    align-items: center; /* center items vertically */
+    gap: 100px;
+  }
+  
+img {
+  height: 100%;
+
+}
+
+
+
+.personName, .teamName{
+    text-align: center;
+    color: white;
+    font-family: Coolvetica;
+    font-size: 20px;
+    margin: 0;
+    padding:0  10px;
+}
+.personName {
+    padding: 10px 0;
+}
+
+
+.card {
+    background-color: var(--medium-primary-color);
+    width: 150px;
+    background-blend-mode: color;
+    display: inline-block;
+    border-radius: 2%;
+    padding: 10px;
+    outline: 2px solid white;
+    justify-content: center;
+}

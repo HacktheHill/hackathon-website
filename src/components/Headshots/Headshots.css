@@ -1,0 +1,29 @@
+.meetTheTeamContainer {
+    background-color: var(--light-primary-color);
+    
+}
+
+.meetTheTeamContainer > h1 {
+    color: white;
+    font-family: Coolvetica;
+    font-size: 48px;
+    font-weight: normal;
+    padding: 0 10%;
+    padding-top: 5%;
+}
+
+.org {
+   display: flex;
+   gap: 25px;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 5% 0;
+}
+.team {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}

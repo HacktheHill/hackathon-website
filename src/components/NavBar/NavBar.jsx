@@ -87,6 +87,20 @@ function Navbar({ pageScroll }) {
 						<Link
 							className="link"
 							activeClass="active"
+							to="headshots"
+							spy={true}
+							smooth={true}
+							offset={-80}
+							duration={500}
+							href="#headshots"
+						>
+							{t("navbar.links.headshots")}
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="link"
+							activeClass="active"
 							to="collaborators"
 							spy={true}
 							smooth={true}
