@@ -17,18 +17,32 @@ img {
 
 
 
+
 .personName, .teamName{
     text-align: center;
     color: white;
     font-family: Coolvetica;
     font-size: 20px;
     margin: 0;
-    padding:0  10px;
 }
 .personName {
     padding: 10px 0;
 }
 
+.invert  {
+  color: white;
+
+}
+
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+padding-top: 10px;
+
+}
 
 .card {
     background-color: var(--medium-primary-color);

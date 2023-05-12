@@ -6,6 +6,7 @@ import "./Footer.css";
 import FooterLogo from "/Logos/hackthehill-banner.svg";
 
 function Footer() {
+	
 	return (
 		<div className="footer">
 			<div className="footer-logo">
