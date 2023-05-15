@@ -51,7 +51,7 @@ function Hero() {
 		<div className="hero" onPointerMove={popup} onTouchStart={popup}>
 			<div className="hero-heading">
 				<div className="location-date-heading">
-					<h3>
+					<h3 className="location">
 						<img className="location-pin" src={LocationPin} alt={t("hero.pin_alt")} /> {t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
