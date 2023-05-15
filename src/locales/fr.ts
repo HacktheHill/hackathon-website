@@ -33,7 +33,7 @@ export default {
 	},
 	partners: {
 		title: "Partenaires Communautaires",
-		icon_alt: "Icon de Partenaire Communautaire",
+		icon_alt: "Icon du Partenaire Communautaire",
 	},
 	schedule: {
 		title: "La Série du Hacker",
