@@ -30,6 +30,13 @@
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
+	align-items: center;
+	gap: 1ch;
+}
+
+.location-date-heading h3 {
+	display: flex;
+	gap: 0.5ch;
 }
 
 .location-pin {
