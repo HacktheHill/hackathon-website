@@ -34,14 +34,13 @@
 	gap: 1ch;
 }
 
-.location-date-heading h3 {
+.location-date-heading .location {
 	display: flex;
 	gap: 0.5ch;
 }
 
 .location-pin {
 	width: 1rem;
-	height: 1rem;
 }
 
 .banner-logo {
