@@ -31,7 +31,8 @@ function App() {
 			<Collaborators />
 			<FAQ />
 			<Footer />
-			<Notification />
+			{/* Commented out because the information provided is outdated-> */}
+			{/* <Notification /> */}
 		</>
 	);
 }
