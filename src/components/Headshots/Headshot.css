@@ -54,3 +54,8 @@ padding-top: 10px;
     outline: 2px solid white;
     justify-content: center;
 }
+
+.card:hover {
+  transform: scale(1.075);
+  transition: 0.2s ease-in;
+}
