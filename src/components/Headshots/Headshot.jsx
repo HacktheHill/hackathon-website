@@ -60,18 +60,23 @@ const Headshot = (props) => {
 
   return (
     <div className='card'>
+      <div className='card-content'>
         <div className='wrapper'>
                 <img className='headshot' src={path} alt={alt}/>
         </div>
-        <p className='personName'>{props.name}</p>
-        <p className='teamName'>{props.team}</p>
-        <p className='teamName'>{props.role}</p>
         
-        <div className="socials">
-          {insta}
-          {linkedin}
-					{website}
-				  </div>
+        <div className='back'>
+          <p className='personName'>{props.name}</p>
+          <p className='teamName'>{props.team}</p>
+          <p className='teamName'>{props.role}</p>                                                 {/* teamName?! */}
+           <div className="socials">
+              {insta}
+              {linkedin}
+			    		{website}
+		  		  </div>
+
+        </div>
+      </div>
     </div>
   )
 }
