@@ -2,10 +2,10 @@
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	overflow: hidden; /* hide the parts of the image outside the circle */
-	display: flex; /* align items horizontally */
-	justify-content: center; /* center items horizontally */
-	align-items: center; /* center items vertically */
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	z-index: 2;
 	backface-visibility: hidden;
 }
@@ -34,7 +34,7 @@ img {
 .socials {
 	display: flex;
 	justify-content: center;
-	gap: 5px;
+	gap: 0.5rem;
 	padding-top: 1rem;
 }
 
