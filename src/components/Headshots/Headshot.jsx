@@ -7,39 +7,39 @@ import "./Headshot.css";
 const Headshot = ({ team, name, role, insta, linkedin, website }) => {
 	const path = `./headshots/${team}/${name}.webp`;
 	const alt = `image of ${name}`;
-	var role = role ?? "";
+	role = role ?? "";
 
-	var insta;
+	let instaDiv;
 	if (insta) {
-		insta = (
+		instaDiv = (
 			<a href={`https://www.instagram.com/${insta}`} target="_blank" rel="noreferrer" aria-label="Instagram">
 				<Icon className="invert" icon={faInstagram} />
 			</a>
 		);
 	} else {
-		<div></div>;
+		instaDiv = <div></div>;
 	}
 
-	var linkedin;
+	let linkedinDiv;
 	if (linkedin) {
-		linkedin = (
+		linkedinDiv = (
 			<a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer" aria-label="Linkedin">
 				<Icon className="invert" icon={faLinkedin} />
 			</a>
 		);
 	} else {
-		<div></div>;
+		linkedinDiv = <div></div>;
 	}
 
-	var website;
+	let websiteDiv;
 	if (website) {
-		website = (
+		websiteDiv = (
 			<a href={website} target="_blank" rel="noreferrer" aria-label="Website">
 				<Icon className="invert" icon={faWindowMaximize} />
 			</a>
 		);
 	} else {
-		<div></div>;
+		websiteDiv = <div></div>;
 	}
 
 	return (
@@ -54,9 +54,9 @@ const Headshot = ({ team, name, role, insta, linkedin, website }) => {
 					<p className="teamName">{team}</p>
 					<p className="teamName">{role}</p> {/* teamName?! */}
 					<div className="socials">
-						{insta}
-						{linkedin}
-						{website}
+						{instaDiv}
+						{linkedinDiv}
+						{websiteDiv}
 					</div>
 				</div>
 			</div>
