@@ -1,81 +1,79 @@
-
 .wrapper {
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    overflow: hidden; /* hide the parts of the image outside the circle */
-    display: flex; /* align items horizontally */
-    justify-content: center; /* center items horizontally */
-    align-items: center; /* center items vertically */
-    gap: 100px;
-    z-index: 2;
-    backface-visibility: hidden;
-  }
-  
-img {
-  height: 100%;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden; /* hide the parts of the image outside the circle */
+	display: flex; /* align items horizontally */
+	justify-content: center; /* center items horizontally */
+	align-items: center; /* center items vertically */
+	gap: 100px;
+	z-index: 2;
+	backface-visibility: hidden;
 }
 
+img {
+	height: 100%;
+}
 
-.personName, .teamName{
-    text-align: center;
-    color: white;
-    font-family: Coolvetica;
-    font-size: 20px;
-    margin: 0;
+.personName,
+.teamName {
+	text-align: center;
+	color: white;
+	font-family: Rubik;
+	font-size: max(1rem, 1.15vmin);
+	line-height: max(2rem, 2.5vmin);
+	margin: 0;
 }
 .personName {
-    padding: 10px 0;
+	padding: 10px 0;
 }
 
-.invert  {
-  color: white;
-
+.invert {
+	color: white;
 }
 
 .socials {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  padding-top: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	padding-top: 10px;
 }
 
-
-.card:hover .card-content{
-  transform: rotateY(180deg);
+.card:hover .card-content {
+	transform: rotateY(180deg);
 }
 
-.card{
-  height: 200px;
-  width: 200px;
-  perspective: 500px;
-  cursor: pointer;
+.card {
+	height: 200px;
+	width: 200px;
+	perspective: 500px;
+	cursor: pointer;
 }
 
-.card-content{
-  height: 100%;
-  width: 100%;
-  position: relative;
-  transition: all 1s linear;
-  transform-style: preserve-3d;
+.card-content {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	transition: all 1s linear;
+	transform-style: preserve-3d;
 }
 
 .wrapper,
-.back{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    position: absolute;
+.back {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	position: absolute;
 }
 
 .back {
-    background-color: var(--medium-primary-color);
-    z-index: 1;
-    transform: rotateY(180deg);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+	background-color: var(--medium-primary-color);
+	z-index: 1;
+	transform: rotateY(180deg);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }

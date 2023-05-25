@@ -34,7 +34,6 @@ function App() {
 			<FAQ />
 			<Footer />
 			<Notification />
-
 		</>
 	);
 }
