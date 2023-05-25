@@ -6,7 +6,6 @@
 	display: flex; /* align items horizontally */
 	justify-content: center; /* center items horizontally */
 	align-items: center; /* center items vertically */
-	gap: 100px;
 	z-index: 2;
 	backface-visibility: hidden;
 }
@@ -25,7 +24,7 @@ img {
 	margin: 0;
 }
 .personName {
-	padding: 10px 0;
+	padding: 1rem 0;
 }
 
 .invert {
@@ -36,7 +35,7 @@ img {
 	display: flex;
 	justify-content: center;
 	gap: 5px;
-	padding-top: 10px;
+	padding-top: 1rem;
 }
 
 .card:hover .card-content {
@@ -65,7 +64,7 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 10px;
+	border-radius: 1rem;
 	position: absolute;
 }
 
