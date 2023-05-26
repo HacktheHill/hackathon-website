@@ -1,4 +1,4 @@
-.hero {
+.hero{
 	--hero-heading: var(--medium-primary-color);
 
 	/* countdown colours */
@@ -15,7 +15,7 @@
 	background-repeat: no-repeat;
 }
 
-.hero-heading {
+.heroHeading {
 	position: absolute;
 	display: grid;
 	place-items: center;
@@ -26,7 +26,7 @@
 	gap: 1.5vh;
 }
 
-.location-date-heading {
+.locationDateHeading {
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
@@ -39,11 +39,11 @@
 	gap: 0.5ch;
 }
 
-.location-pin {
+.locationPin {
 	width: 1rem;
 }
 
-.banner-logo {
+.bannerLogo {
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
@@ -60,14 +60,14 @@
 	font-weight: normal;
 }
 
-.hero-img svg {
+.heroImge svg {
 	height: 100%;
 	width: 100%;
 	margin-top: calc(20rem - 20vw);
 	margin-bottom: -35%;
 }
 
-.countdown-dialog {
+.countdownDialog {
 	box-sizing: border-box;
 	position: absolute;
 	top: calc(40vmin + max(20rem, 20vmin));
@@ -94,21 +94,21 @@
 	pointer-events: all;
 }
 
-.countdown-item {
+.countdownItem {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.countdown-item h3 {
+.countdownItem h3 {
 	font-size: 1.5em;
 	font-family: Rubik;
 	font-weight: normal;
 }
 
-.countdown-item h4 {
-	color: var(--countdown-item-color);
+.countdownItem h4 {
+	color: var(--countdownItem-color);
 	font-weight: normal;
 }
 

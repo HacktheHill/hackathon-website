@@ -1,8 +1,8 @@
 import { Link } from "react-scroll";
-import { locale, t } from "../../i18n";
-import "./NavBar.css";
+import { t, locale } from "../../i18n";
 import logo from "/Logos/hackthehill-logo.svg";
-
+import { useStore } from "@nanostores/react";
+import styles from "./NavBar.module.css";
 function Navbar({ pageScroll }) {
 	const languages = {
 		en: "EN",
@@ -11,9 +11,9 @@ function Navbar({ pageScroll }) {
 
 	return (
 		<>
-			<nav className="navbar" data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
+			<nav className={styles.navbar} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
 				<Link
-					className="link logo"
+					className={`${styles.link} ${styles.logo}`}
 					activeClass="active"
 					to="hero"
 					spy={true}
@@ -24,11 +24,11 @@ function Navbar({ pageScroll }) {
 				>
 					<img alt="Logo" src={logo}></img>
 				</Link>
-				<ul className="language-selector">
+				<ul id={styles.special}>
 					{Object.keys(languages).map(language => (
 						<li key={language}>
 							<button
-								className="link language-button"
+								className={`${styles.link} ${styles["language-button"]}`}
 								style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
 								type="submit"
 								onClick={() => locale.set(language)}
@@ -41,7 +41,7 @@ function Navbar({ pageScroll }) {
 				<ul>
 					<li>
 						<Link
-							className="link"
+							className={styles.link}
 							activeClass="active"
 							to="about"
 							spy={true}
@@ -55,7 +55,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className="link"
+							className={styles.link}
 							activeClass="active"
 							to="sponsors"
 							spy={true}
@@ -69,7 +69,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className="link"
+							className={styles.link}
 							activeClass="active"
 							to="schedule"
 							spy={true}
@@ -97,7 +97,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className="link"
+							className={styles.link}
 							activeClass="active"
 							to="collaborators"
 							spy={true}
@@ -111,7 +111,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className="link"
+							className={styles.link}
 							activeClass="active"
 							to="faq"
 							spy={true}

@@ -1,6 +1,6 @@
-import { t } from "../../i18n";
-import "./Collaborators.css";
 import MountainFlags from "./MountainFlags";
+import { t } from "../../i18n";
+import styles from "./Collaborators.module.css";
 
 const data = [
 	{ id: "wie", href: "https://wie.ieeeottawa.ca/" },
@@ -12,8 +12,10 @@ const data = [
 
 function Collaborators() {
 	return (
-		<div id="collaborators" className="collaborators">
-			<h1>{t("collaborators.title")}</h1>
+		<>
+			<h1 id={styles.collaborators} className={styles.collaborators}>
+				{t("collaborators.title")}
+			</h1>
 			<MountainFlags data={data} />
 		</div>
 	);

@@ -8,8 +8,8 @@ import NavBar from "../NavBar/NavBar";
 import Sidebar from "../NavBar/Sidebar";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
-import "./App.css";
 import Headshots from "../Headshots/Headshots";
+import "global.css";
 
 function App() {
 	const [pageScroll, setPageScroll] = useState(0);
