@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
 import Button from "../Button/Button.jsx";
 import { t } from "../../i18n";
-import "./Hero.css";
+import styles from "./Hero.module.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 
@@ -48,11 +48,11 @@ function Hero() {
 	};
 
 	return (
-		<div className="hero" onPointerMove={popup} onTouchStart={popup}>
-			<div className="hero-heading">
-				<div className="location-date-heading">
-					<h3 className="location">
-						<img className="location-pin" src={LocationPin} alt={t("hero.pin_alt")} /> {t("hero.hybrid")}
+		<div className={styles.hero} onPointerMove={popup} onTouchStart={popup}>
+			<div className={styles.heroHeading}>
+				<div className={styles.locationDateHeading}>
+					<h3 className={styles.location}>
+						<img className={styles.locationPin} src={LocationPin} alt={t("hero.pin_alt")} /> {t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
@@ -62,7 +62,7 @@ function Hero() {
 					</h3>
 				</div>
 				<h1 id="Hero">
-					<img className="banner-logo" src={BannerLogo} alt="Hack the Hill"></img>
+					<img className={styles.bannerLogo} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>{t("hero.h2")}</h2>
 				<h3>{t("hero.h3")}</h3>
@@ -71,26 +71,26 @@ function Hero() {
 				</Button>
 			</div>
 			<div
-				className="hero-img"
+				className={styles.heroImge}
 				dangerouslySetInnerHTML={{
 					__html: hero,
 				}}
 			></div>
 			{date && (
-				<dialog className="countdown-dialog" open={popupOpen}>
-					<div className="countdown-item">
+				<dialog className={styles.countdownDialog} open={popupOpen}>
+					<div className={styles.countdownItem}>
 						<h3>{days}</h3>
 						<h4>day{days === 1 ? "" : "s"}</h4>
 					</div>
-					<div className="countdown-item">
+					<div className={styles.countdownItem}>
 						<h3>{hours}</h3>
 						<h4>hour{hours === 1 ? "" : "s"}</h4>
 					</div>
-					<div className="countdown-item">
+					<div className={styles.countdownItem}>
 						<h3>{minutes}</h3>
 						<h4>minute{minutes === 1 ? "" : "s"}</h4>
 					</div>
-					<div className="countdown-item">
+					<div className={styles.countdownItem}>
 						<h3>{seconds}</h3>
 						<h4>second{seconds === 1 ? "" : "s"}</h4>
 					</div>

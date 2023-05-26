@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button.jsx";
-import "./Sponsors.css";
+import styles from "./Sponsors.module.css";
 import { t } from "../../i18n";
 import balsamiq from "/Logos/balsamiq.svg";
 import Blackberry from "/Logos/Blackberry.svg";
@@ -66,26 +66,26 @@ function Sponsors() {
 
 	return (
 		<div>
-			<section id="sponsors" className="sponsors">
+			<section id="sponsors" className={styles.sponsors}>
 				<h1>{t("sponsors.title")}</h1>
 				<div>
-					<p className="sponsors-text">{t("sponsors.p")}</p>
+					<p className={styles.sponsorsText}>{t("sponsors.p")}</p>
 					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
 				</div>
 
-				<div className="sponsors-col">
+				<div className={styles.sponsorsCol}>
 					{Object.values(data.sponsors).map((tier, i) => (
-						<div key={i} className="sponsors-row">
+						<div key={i} className={styles.sponsorsRow}>
 							{tier.map((sponsor, j) => (
 								<a
 									key={j}
 									href={sponsor.href}
 									target="_blank"
 									rel="noreferrer"
-									className="sponsor-icon-box"
+									className={styles.sponsorIconBox}
 								>
 									<img
-										className={`sponsor-icon icon-${Object.keys(data.sponsors)[i]}`}
+										className={`${styles["sponsor-icon"]} ${styles[`icon-${Object.keys(data.sponsors)[i]}`]}`}
 										alt={`${sponsor.alt} logo`}
 										src={sponsor.src}
 									></img>
@@ -96,13 +96,13 @@ function Sponsors() {
 				</div>
 			</section>
 
-			<section className="sponsors">
+			<section className={styles.sponsors}>
 				<h1 id="community">{t("partners.title")}</h1>
-				<div className="sponsors-row">
+				<div className={styles.sponsorsRow}>
 					{data.collaborators.map((sponsor, i) => (
 						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className="sponsor-icon-box">
 							<img
-								className="sponsor-icon icon-medium"
+								className={`${styles["sponsor-icon"]} ${styles["icon-medium"]}`}
 								alt={t("partners.icon_alt")}
 								src={sponsor.src}
 							></img>

@@ -69,11 +69,11 @@ li:not(.logo) .link:is(.active, :hover)::after {
 	transform: translateY(0);
 }
 
-.navbar ul.language-selector {
+#special {
 	margin-right: auto;
 }
 
-.languageButton {
+.language-button {
 	display: flex;
 	background: none;
 	border: none;

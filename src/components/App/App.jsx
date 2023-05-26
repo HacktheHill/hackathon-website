@@ -9,7 +9,7 @@ import Sidebar from "../NavBar/Sidebar";
 import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
-import "./App.css";
+import "./global.css";
 
 function App() {
 	const [pageScroll, setPageScroll] = useState(0);
