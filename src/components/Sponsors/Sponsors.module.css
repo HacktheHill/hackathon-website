@@ -10,7 +10,7 @@
 	gap: 3rem;
 }
 
-.sponsorsCol {
+.sponsors-col {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -18,7 +18,7 @@
 	gap: 5rem;
 }
 
-.sponsorsRow {
+.sponsors-row{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -26,7 +26,7 @@
 	width: 100%;
 }
 
-.sponsorIconBox {
+.sponsor-icon-box {
 	flex-direction: column;
 	display: flex;
 	align-items: center;
@@ -34,7 +34,7 @@
 	flex: 0 0 20%;
 }
 
-.sponsorIcon {
+.sponsor-icon {
 	transition: 0.5s;
 	object-fit: contain;
 }
@@ -60,7 +60,7 @@
 	font-weight: normal;
 }
 
-.sponsorsText {
+.sponsors-text {
 	box-sizing: border-box;
 	border-left: 5px solid black;
 	padding-left: 2rem;

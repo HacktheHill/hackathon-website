@@ -2,8 +2,8 @@ import { faFacebook, faGithub, faInstagram, faLinkedin, faTiktok, faTwitter } fr
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { t } from "../../i18n";
-import styles from "./Footer.module.css";
 import FooterLogo from "/Logos/hackthehill-banner.svg";
+import styles from "./Footer.module.css";
 
 function Footer() {
 	return (
@@ -13,7 +13,7 @@ function Footer() {
 			</div>
 			<p className={styles.logoText}>{t("footer.title")}</p>
 			<div className={styles.footerContainer}>
-				<div className={styles.mediaLinks}>
+				<div className={styles["media-links"]}>
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
@@ -46,14 +46,14 @@ function Footer() {
 					</a>
 				</div>
 			</div>
-			<div className={styles.footerText}>
+			<div className={styles["footer-text"]}>
 				<p>{t("footer.description")}</p>
 				<a
 					href="https://github.com/HacktheHill/2023.hackthehill.com"
 					target="_blank"
 					rel="noreferrer"
 					aria-label="GitHub"
-					className="footer-link"
+					className={styles["footer-link"]}
 				>
 					<Icon icon={faGithub} />
 					{t("footer.github")}

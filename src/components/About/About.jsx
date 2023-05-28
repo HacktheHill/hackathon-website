@@ -6,7 +6,7 @@ import styles from "./About.module.css";
 function About() {
 	return (
 		<div className={styles.about} id={styles.about}>
-			<div className={styles.aboutText}>
+			<div className={styles["about-text"]}>
 				<h1>{t("about.title")}</h1>
 				<p>
 					{t("about.p1")}
