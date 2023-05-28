@@ -15,7 +15,7 @@
 	background-repeat: no-repeat;
 }
 
-.heroHeading {
+.hero-heading {
 	position: absolute;
 	display: grid;
 	place-items: center;
@@ -26,7 +26,7 @@
 	gap: 1.5vh;
 }
 
-.locationDateHeading {
+.location-date-heading {
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
@@ -39,11 +39,11 @@
 	gap: 0.5ch;
 }
 
-.locationPin {
+.location-pin {
 	width: 1rem;
 }
 
-.bannerLogo {
+.banner-logo {
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
@@ -60,14 +60,14 @@
 	font-weight: normal;
 }
 
-.heroImge svg {
+.hero-img svg {
 	height: 100%;
 	width: 100%;
 	margin-top: calc(20rem - 20vw);
 	margin-bottom: -35%;
 }
 
-.countdownDialog {
+.countdown-dialog {
 	box-sizing: border-box;
 	position: absolute;
 	top: calc(40vmin + max(20rem, 20vmin));
@@ -94,7 +94,7 @@
 	pointer-events: all;
 }
 
-.countdownItem {
+.countdown-item {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
