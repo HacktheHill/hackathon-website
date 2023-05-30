@@ -4,43 +4,31 @@ import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import "./Headshot.css";
 
-const Headshot = ({ team, name, role, insta, linkedin, website }) => {
+const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 	const path = `./headshots/${team}/${name}.webp`;
 	const alt = `image of ${name}`;
 	role = role ?? "";
 
-	let instaDiv;
-	if (insta) {
-		instaDiv = (
-			<a href={`https://www.instagram.com/${insta}`} target="_blank" rel="noreferrer" aria-label="Instagram">
+	let instagramLink = instagram ? (
+			<a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noreferrer" aria-label="Instagram">
 				<Icon className="invert" icon={faInstagram} />
 			</a>
-		);
-	} else {
-		instaDiv = <div></div>;
-	}
+		) : 
+		<></>
 
-	let linkedinDiv;
-	if (linkedin) {
-		linkedinDiv = (
+	let linkedinLink = linkedin ? (
 			<a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer" aria-label="Linkedin">
 				<Icon className="invert" icon={faLinkedin} />
 			</a>
-		);
-	} else {
-		linkedinDiv = <div></div>;
-	}
-
-	let websiteDiv;
-	if (website) {
-		websiteDiv = (
-			<a href={website} target="_blank" rel="noreferrer" aria-label="Website">
-				<Icon className="invert" icon={faWindowMaximize} />
-			</a>
-		);
-	} else {
-		websiteDiv = <div></div>;
-	}
+		) : 
+		<></>
+	// to be added when we ask for others websites
+	// let websiteLink = website ? 
+	// 		<a href={website} target="_blank" rel="noreferrer" aria-label="Website">
+	// 			<Icon className="invert" icon={faWindowMaximize} />
+	// 		</a>
+	// 	:
+	// 	<></>;
 
 	return (
 		<div className="card">
@@ -52,11 +40,11 @@ const Headshot = ({ team, name, role, insta, linkedin, website }) => {
 				<div className="back">
 					<p className="personName">{name}</p>
 					<p className="teamName">{team}</p>
-					<p className="teamName">{role}</p> {/* teamName?! */}
+					<p className="teamName">{role}</p>
 					<div className="socials">
-						{instaDiv}
-						{linkedinDiv}
-						{websiteDiv}
+						{instagramLink}
+						{linkedinLink}
+						{/* {websiteLink} */}
 					</div>
 				</div>
 			</div>

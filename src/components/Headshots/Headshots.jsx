@@ -3,18 +3,18 @@ import "./Headshots.css";
 import Headshot from "./Headshot";
 const Headshots = () => {
 	return (
-		<div className="meetTheTeamContainer" id="headshots">
+		<div className="teamContainer" id="headshots">
 			<h1>Meet the team</h1>
 			<div className="org">
 				<Headshot
 					name="Disala"
 					team="Co-Director"
-					role=" "
+					role=""
 					insta="disala_desilva"
 					linkedin="disaladesilva"
 					website=""
 				/>
-				<Headshot name="Mingye" team="Co-Director" role=" " insta="" linkedin="mingye-chen-ca" website="" />
+				<Headshot name="Mingye" team="Co-Director" role="" insta="" linkedin="mingye-chen-ca" website=""/>
 				<Headshot
 					name="Steven"
 					team="Community"
@@ -229,7 +229,7 @@ const Headshots = () => {
 					linkedin="saif-dine"
 					website=""
 				/>
-				<Headshot name="Abbygail" team="Sponsorship" role="Coordinator" insta="" linkedin="" website="" />
+				<Headshot name="Abbygail" team="Sponsorship" role="Coordinator" insta="" linkedin="" website=""/>
 				<Headshot
 					name="Erik"
 					team="Sponsorship"
