@@ -110,10 +110,10 @@
 		background-position: left 50px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;
 	}
-	.event-title {
+	.eventTitle{
 		flex-direction: column;
 	}
-	.schedule-title {
+	.scheduleTitle{
 		font-size: 3em;
 	}
 }

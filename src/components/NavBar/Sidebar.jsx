@@ -3,6 +3,7 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React, { useCallback, useState } from "react";
 import reactBurgerMenu from "react-burger-menu";
 import { Link } from "react-scroll";
+import "./Sidebar.module.css";
 const { slide: Menu } = reactBurgerMenu;
 import { t } from "../../i18n";
 

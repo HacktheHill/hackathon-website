@@ -69,7 +69,7 @@ li:not(.logo) .link:is(.active, :hover)::after {
 	transform: translateY(0);
 }
 
-#special {
+.navbar ul.language-selector {
 	margin-right: auto;
 }
 
