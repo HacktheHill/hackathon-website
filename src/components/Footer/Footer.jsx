@@ -8,11 +8,11 @@ import styles from "./Footer.module.css";
 function Footer() {
 	return (
 		<div className={styles.footer}>
-			<div className={styles.footerLogo}>
+			<div className={styles["footer-logo"]}>
 				<img src={FooterLogo} alt="Logo" />
 			</div>
-			<p className={styles.logoText}>{t("footer.title")}</p>
-			<div className={styles.footerContainer}>
+			<p className={styles["logo-text"]}>{t("footer.title")}</p>
+			<div className={styles["footer-container"]}>
 				<div className={styles["media-links"]}>
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"

@@ -1,4 +1,4 @@
-.schedule h1{
+.schedule h1 {
 	font-family: Coolvetica;
 	margin-bottom: 3%;
 	font-size: 3em;
@@ -6,7 +6,7 @@
 	font-weight: normal;
 }
 
-.schedule{
+.schedule {
 	/* Note: there are also colors in the MUI in .Schedule.jsx */
 	--background-color: var(--medium-primary-color);
 	--title-color: var(--light-color);
@@ -25,7 +25,7 @@
 	background-size: 10%, 8%, 2%;
 }
 
-.scheduleTitle{
+.scheduleTitle {
 	color: var(--title-color);
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -35,14 +35,14 @@
 	font-weight: normal;
 }
 
-.buttonText{
+.buttonText {
 	font-family: Rubik;
 	margin: auto;
 	font-weight: bold;
 	font-size: 15px;
 }
 
-.eventMonth{
+.eventMonth {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
@@ -52,7 +52,7 @@
 	font-family: Coolvetica;
 }
 
-.eventDay{
+.eventDay {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 75px;
@@ -61,7 +61,7 @@
 	font-family: Coolvetica;
 }
 
-.eventTitle{
+.eventTitle {
 	font-size: 30px;
 	font-weight: normal;
 	color: var(--event-title-color);
@@ -72,30 +72,30 @@
 	width: 100%;
 }
 
-.event{
+.event {
 	width: "20%";
 	border-radius: "10px";
 	border-width: "3px";
 	border-color: var(--event-border-color);
 }
 
-.eventStack{
+.eventStack {
 	flex-wrap: wrap;
 }
 
-.center{
+.center {
 	display: flex;
 	justify-content: center;
 }
 
-.eventDesc{
+.eventDesc {
 	color: var(--event-desc-color);
 	font-family: Rubik;
 	font-size: 16px;
 	margin-top: 30px;
 }
 
-.subTitle{
+.subTitle {
 	color: var(--event-subtitle-color);
 	font-family: Rubik;
 	font-size: 18px;

@@ -14,12 +14,12 @@
 		display: block;
 	}
 
-	.sidebar .mediaLinks {
+	.sidebar .media-links {
 		font-size: inherit;
 		margin: auto;
 	}
 
-	.sidebar .mediaLinks a {
+	.sidebar .media-links a {
 		color: var(--media-link-color);
 		padding: 0 0.5em;
 	}
