@@ -5,7 +5,7 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import "./Headshot.css";
 
 const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
-	const path = `./headshots/${team}/${name}.webp`;
+	const path = `./${name}.webp`;
 	const alt = `image of ${name}`;
 	role = role ?? "";
 
@@ -33,7 +33,7 @@ const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 	return (
 		<div className="card">
 			<div className="card-content">
-				<div className="wrapper">
+				<div className="front">
 					<img className="headshot" src={path} alt={alt} />
 				</div>
 
