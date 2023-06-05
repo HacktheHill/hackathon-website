@@ -4,9 +4,15 @@ import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import "./Headshot.css";
 
+const getImagePath = (team, name) => {
+	const imagePath = `/headshots/${team}/${name}.webp`;
+	return new URL(imagePath, import.meta.url);
+  };
+
 const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
-	const path = `/headshots/${team}/${name}.webp`;
-	const alt = 'image of {name}';
+	const path = getImagePath(team, name);
+	//const path = `/headshots/${team}/${name}.webp`;
+	const alt = 'image of '+ name;
 	role = role ?? "";
 
 	let instagramLink = instagram ? (
