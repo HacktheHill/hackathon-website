@@ -6,8 +6,7 @@ import "./Headshot.css";
 
 const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 	const path = `/headshots/${team}/${name}.webp`;
-	<img className="headshots" src={path} ></img>
-	const alt = 'image of ${name}';
+	const alt = 'image of {name}';
 	role = role ?? "";
 
 	let instagramLink = instagram ? (
@@ -35,7 +34,7 @@ const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 		<div className="card">
 			<div className="card-content">
 				<div className="front">
-					<img className="headshot" src={path} alt={alt} />
+					<img class="headshot" src={path}></img>
 				</div>
 
 				<div className="back">
