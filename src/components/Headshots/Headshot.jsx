@@ -34,7 +34,7 @@ const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 		<div className="card">
 			<div className="card-content">
 				<div className="front">
-					<img class="headshot" src={path}></img>
+					<img class="headshot" src={path} alt={alt}></img>
 				</div>
 
 				<div className="back">
