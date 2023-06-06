@@ -116,4 +116,22 @@ export default {
 		button_text: "Lire l'article",
 		close: "Fermer Notification",
 	},
+	headshot: {
+		imgAlt: "Image de ",
+
+		team_CoDir_Girl: "Co-Directrice",
+		team_CoDir_Boy: "Co-Directeur",
+		team_Com: "communauté",
+		team_Design: "Désign",
+		team_Dev: "Développement",
+		team_Fin: "Finance",
+		team_Log: "Logistique",
+		team_Mark: "Commercialisation",
+		team_spons: "Parrainage",
+
+		role_Dir_Girl: "Directrice",
+		role_Dir_Boy: "Directeur",
+		role_coord_Girl: "Coordinatrice",
+		role_coord_Boy: "Coordinateur",
+	},
 } as const;

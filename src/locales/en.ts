@@ -116,4 +116,22 @@ export default {
 		button_text: "Read Article",
 		close: "Close Notification",
 	},
+	headshot: {
+		imgAlt: "Image of ",
+
+		team_CoDir_Girl: "Co-Director",
+		team_CoDir_Boy: "Co-Director",
+		team_Com: "community",
+		team_Design: "Design",
+		team_Dev: "Development",
+		team_Fin: "Finance",
+		team_Log: "Logistics",
+		team_Mark: "Marketing",
+		team_spons: "Sponsorship",
+
+		role_Dir_Girl: "Director",
+		role_Dir_Boy: "Director",
+		role_coord_Girl: "Coordinator",
+		role_coord_Boy: "Coordinator",
+	},
 } as const;

@@ -2,12 +2,13 @@ import React from "react";
 import { faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { t, locale } from "../../i18n";
 import "./Headshot.css";
 
 
 const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 	const path = `/headshots/${team}/${name}.webp`.toLowerCase();
-	const alt = 'image of '+ name;
+	const alt = t("headshot.imgAlt") + name;
 	role = role ?? "";
 
 	let instagramLink = instagram ? (
