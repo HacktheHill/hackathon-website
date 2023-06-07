@@ -46,7 +46,6 @@ const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
 					<div className="socials">
 						{instagramLink}
 						{linkedinLink}
-						{/* {websiteLink} */}
 					</div>
 				</div>
 			</div>
