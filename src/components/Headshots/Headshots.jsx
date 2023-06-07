@@ -12,7 +12,7 @@ const Headshots = () => {
 				<Headshot
 					name="Disala"
 					team="Co-Director"
-					insta="disala_desilva"
+					instagram="disala_desilva"
 					linkedin="disaladesilva"
 					
 				/>
@@ -26,7 +26,7 @@ const Headshots = () => {
 					name="Steven"
 					team="Community"
 					role="Director"
-					insta="_stevenli"
+					instagram="_stevenli"
 					linkedin="-steven"
 					
 				/>
@@ -34,7 +34,7 @@ const Headshots = () => {
 					name="Fatimah"
 					team="Design"
 					role="Director"
-					insta="fatimbit_v"
+					instagram="fatimbit_v"
 					linkedin="fatimah-vakily"
 					
 				/>
@@ -42,7 +42,7 @@ const Headshots = () => {
 					name="Daniel"
 					team="Development"
 					role="Director"
-					insta="arcanistzed"
+					instagram="arcanistzed"
 					linkedin="arcanistzed"
 					
 				/>
@@ -50,7 +50,7 @@ const Headshots = () => {
 					name="Ali"
 					team="Finance"
 					role="Co-Director"
-					insta="notalibhangu"
+					instagram="notalibhangu"
 					linkedin="ali-raza-bhangu-061274214"
 					
 				/>
@@ -58,7 +58,7 @@ const Headshots = () => {
 					name="Pavly"
 					team="Logistics"
 					role="Co-Director"
-					insta="pav_saleh"
+					instagram="pav_saleh"
 					linkedin="pavly"
 					
 				/>
@@ -66,7 +66,7 @@ const Headshots = () => {
 					name="Tomer"
 					team="Logistics"
 					role="Co-Director"
-					insta="tomersz12"
+					instagram="tomersz12"
 					linkedin="tomersz12"
 					
 				/>
@@ -81,20 +81,26 @@ const Headshots = () => {
 					name="Kian"
 					team="Sponsorship"
 					role="Director"
-					insta="kiiankiing"
+					instagram="kiiankiing"
 					linkedin="kiansalehi"
 					
 				/>
-				<Headshot name="Brandon" team="Community" role="Coordinator" insta="" linkedin="" website="" />
+				<Headshot name="Brandon" team="Community" role="Coordinator" />
 				<Headshot
 					name="Manaal"
 					team="Community"
 					role="Coordinator"
-					insta="manaalm20"
+					instagram="manaalm20"
 					linkedin="manaal-mujeebuddin-ab2379199"
 					
 				/>
-				<Headshot name="Rafael" team="Community" role="Coordinator" insta="" linkedin="rafaelarif" website="" />
+				<Headshot 
+				name="Rafael" 
+				team="Community" 
+				role="Coordinator"
+				linkedin="rafaelarif"
+				/>
+
 				<Headshot
 					name="Saheen"
 					team="Community"
@@ -106,25 +112,36 @@ const Headshots = () => {
 					name="Emma"
 					team="Design"
 					role="Coordinator"
-					insta="et.tangg"
+					instagram="et.tangg"
 					linkedin="emmatang-"
 					
 				/>
-				<Headshot name="Sakeena" team="Design" role="Coordinator" insta="" linkedin="" website="" />
-				<Headshot name="Sheena" team="Design" role="Coordinator" insta="" linkedin="sheenaverana" website="" />
+				<Headshot 
+				name="Sakeena"
+				team="Design" 
+				role="Coordinator" 
+				/>
+				
+				<Headshot 
+				name="Sheena" 
+				team="Design" 
+				role="Coordinator"
+				linkedin="sheenaverana" 
+				/>
+
 				<Headshot
-					name="Arjuunan"
-					team="Development"
-					role="Coordinator"
-					insta="itsarjuunan"
-					linkedin="arjuunan"
+				name="Arjuunan"
+				team="Development"
+				role="Coordinator"
+				instagram="itsarjuunan"
+				linkedin="arjuunan"
 					
 				/>
 				<Headshot
 					name="Aydin"
 					team="Development"
 					role="Coordinator"
-					insta="ayay"
+					instagram="ayay"
 					linkedin="aydinyalcinkaya"
 					
 				/>
@@ -137,25 +154,37 @@ const Headshots = () => {
 					name="Farabi"
 					team="Development"
 					role="Coordinator"
-					insta="farabi.01"
+					instagram="farabi.01"
 					linkedin="mfarabi"
 					
 				/>
-				<Headshot name="Sacha" team="Development" role="Coordinator" insta="" linkedin="sacha-ars" website="" />
+				<Headshot 
+				name="Sacha" 
+				team="Development" 
+				role="Coordinator" 
+				linkedin="sacha-ars" 
+				/>
+
 				<Headshot
 					name="Stefan"
 					team="Development"
 					role="Coordinator"
-					insta="steftodor"
+					instagram="steftodor"
 					linkedin="todorovicstefan"
 					
 				/>
-				<Headshot name="Victor" team="Development" role="Coordinator" insta="" linkedin="" website="" />
+
+				<Headshot 
+				name="Victor" 
+				team="Development" 
+				role="Coordinator"
+				/>
+
 				<Headshot
 					name="Anna"
 					team="Logistics"
 					role="Coordinator"
-					insta="annarie_88"
+					instagram="annarie_88"
 					linkedin="anna-schubert-689620202"
 					
 				/>
@@ -163,7 +192,7 @@ const Headshots = () => {
 					name="Juan"
 					team="Logistics"
 					role="Coordinator"
-					insta="jchhhiedrap"
+					instagram="jchhhiedrap"
 					linkedin="jchiedrap"
 					
 				/>
@@ -171,7 +200,7 @@ const Headshots = () => {
 					name="Philippe"
 					team="Logistics"
 					role="Coordinator"
-					insta="philippegagne00"
+					instagram="philippegagne00"
 					linkedin="p-gagne"
 					
 				/>
@@ -179,7 +208,7 @@ const Headshots = () => {
 					name="Satrajit"
 					team="Logistics"
 					role="Coordinator"
-					insta="satrajit.c"
+					instagram="satrajit.c"
 					linkedin="satrajit-c"
 					
 				/>
@@ -187,7 +216,7 @@ const Headshots = () => {
 					name="Thinula"
 					team="Logistics"
 					role="Coordinator"
-					insta="Thinula_desilva"
+					instagram="Thinula_desilva"
 					linkedin="thinula-de-silva-0a4202228"
 					
 				/>
@@ -195,7 +224,7 @@ const Headshots = () => {
 					name="Andrea"
 					team="Marketing"
 					role="Coordinator"
-					insta="dreatodor"
+					instagram="dreatodor"
 					linkedin="todorovic-andrea"
 					
 				/>
@@ -203,7 +232,7 @@ const Headshots = () => {
 					name="Anjaliya"
 					team="Marketing"
 					role="Coordinator"
-					insta="anjievs"
+					instagram="anjievs"
 					linkedin="anjaliya-sonnilal-859586257"
 					
 				/>
@@ -211,7 +240,7 @@ const Headshots = () => {
 					name="Kaitlyn"
 					team="Marketing"
 					role="Coordinator"
-					insta="callherkdaddy"
+					instagram="callherkdaddy"
 					linkedin="kaitlyn-dompaul-3485a7180"
 					
 				/>
@@ -219,7 +248,7 @@ const Headshots = () => {
 					name="Rabih"
 					team="Marketing"
 					role="Coordinator"
-					insta="rabi3daoudd"
+					instagram="rabi3daoudd"
 					linkedin="rabihdaoud"
 					
 				/>
@@ -227,16 +256,22 @@ const Headshots = () => {
 					name="Saif"
 					team="Marketing"
 					role="Coordinator"
-					insta="safesaif7"
+					instagram="safesaif7"
 					linkedin="saif-dine"
 					
 				/>
-				<Headshot name="Abbygail" team="Sponsorship" role="Coordinator" insta="" linkedin="" website=""/>
+				
+				<Headshot 
+				name="Abbygail" 
+				team="Sponsorship" 
+				role="Coordinator" 
+				/>
+
 				<Headshot
 					name="Erik"
 					team="Sponsorship"
 					role="Coordinator"
-					insta="erik_ang_"
+					instagram="erik_ang_"
 					linkedin="erik-ang-97773b260"
 					
 				/>
@@ -244,7 +279,7 @@ const Headshots = () => {
 					name="Shreya"
 					team="Sponsorship"
 					role="Coordinator"
-					insta="slanghe"
+					instagram="slanghe"
 					linkedin="shreya-langhe"
 					
 				/>
@@ -259,7 +294,7 @@ const Headshots = () => {
 					name="Zahra"
 					team="Sponsorship"
 					role="Coordinator"
-					insta="zahrasnva"
+					instagram="zahrasnva"
 					linkedin="zahra-suleymanova"
 					
 				/>
