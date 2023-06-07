@@ -6,10 +6,11 @@ import { t, locale } from "../../i18n";
 import "./Headshot.css";
 
 
-const Headshot = ({ team, name, role, instagram, linkedin, website }) => {
-	const path = `/headshots/${team}/${name}.webp`.toLowerCase();
+const Headshot = ({ team, teamEnglish, name, role, instagram, linkedin, website }) => {
+
+	const path = `/headshots/${teamEnglish}/${name}.webp`.toLowerCase();
 	const alt = t("headshot.imgAlt") + name;
-	role = role ?? "";
+	role ??= "";
 
 	let instagramLink = instagram ? (
 			<a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noreferrer" aria-label="Instagram">

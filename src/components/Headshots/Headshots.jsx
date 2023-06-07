@@ -11,293 +11,342 @@ const Headshots = () => {
 			<div className="org">
 				<Headshot
 					name="Disala"
-					team="Co-Director"
+					team= {t("headshot.team_codir_boy")}
+					teamEnglish="Co-Director"
 					instagram="disala_desilva"
 					linkedin="disaladesilva"
-					
 				/>
+
 				<Headshot 
 					name="Mingye" 
-					team="Co-Director"
+					team= {t("headshot.team_codir_boy")}
+					teamEnglish="Co-Director"
 					linkedin="mingye-chen-ca" 
-					
 				/>
+
 				<Headshot
 					name="Steven"
-					team="Community"
-					role="Director"
+					team= {t("headshot.team_community")}
+					teamEnglish="Community"
+					role= {t("headshot.role_dir_boy")}
 					instagram="_stevenli"
 					linkedin="-steven"
-					
 				/>
+
 				<Headshot
 					name="Fatimah"
-					team="Design"
-					role="Director"
+					team= {t("headshot.team_design")}
+					teamEnglish="Design"
+					role= {t("headshot.role_dir_girl")}
 					instagram="fatimbit_v"
 					linkedin="fatimah-vakily"
-					
 				/>
+
 				<Headshot
 					name="Daniel"
-					team="Development"
-					role="Director"
+					team= {t("headshot.team_development")}
+					teamEnglish="Development"
+					role= {t("headshot.role_dir_boy")}
 					instagram="arcanistzed"
 					linkedin="arcanistzed"
-					
 				/>
+
 				<Headshot
 					name="Ali"
-					team="Finance"
-					role="Co-Director"
+					team= {t("headshot.team_finance")}
+					teamEnglish="Finance"
+					role= {t("headshot.team_codir_boy")}
 					instagram="notalibhangu"
 					linkedin="ali-raza-bhangu-061274214"
 					
 				/>
+
 				<Headshot
 					name="Pavly"
-					team="Logistics"
-					role="Co-Director"
+					team= {t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role= {t("headshot.team_codir_boy")}
 					instagram="pav_saleh"
 					linkedin="pavly"
-					
 				/>
+
 				<Headshot
 					name="Tomer"
-					team="Logistics"
-					role="Co-Director"
+					team= {t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role= {t("headshot.team_codir_boy")}
 					instagram="tomersz12"
 					linkedin="tomersz12"
-					
 				/>
+
 				<Headshot
 					name="Nyah"
-					team="Marketing"
-					role="Director"
+					team= {t("headshot.team_marketing")}
+					teamEnglish="Marketing"
+					role={t("headshot.role_dir_girl")}
 					linkedin="nyah-wagner-a62064192"
 					
 				/>
+
 				<Headshot
 					name="Kian"
-					team="Sponsorship"
-					role="Director"
+					team={t("headshot.team_sponsorship")}
+					teamEnglish="Sponsorship"
+					role= {t("headshot.role_dir_boy")}
 					instagram="kiiankiing"
 					linkedin="kiansalehi"
-					
 				/>
-				<Headshot name="Brandon" team="Community" role="Coordinator" />
+
+				<Headshot 
+					name="Brandon" 
+					team={t("headshot.team_community")}
+					teamEnglish="Community"
+					role={t("headshot.role_coord_boy")} 
+				/>
 				<Headshot
 					name="Manaal"
-					team="Community"
-					role="Coordinator"
+					team= {t("headshot.team_community")}
+					teamEnglish="Community"
+					role= {t("headshot.role_coord_girl")}
 					instagram="manaalm20"
 					linkedin="manaal-mujeebuddin-ab2379199"
-					
 				/>
+
 				<Headshot 
-				name="Rafael" 
-				team="Community" 
-				role="Coordinator"
-				linkedin="rafaelarif"
+					name="Rafael" 
+					team= {t("headshot.team_community")}
+					teamEnglish="Community"
+					role= {t("headshot.role_coord_boy")}
+					linkedin="rafaelarif"
 				/>
 
 				<Headshot
 					name="Saheen"
-					team="Community"
-					role="Coordinator"
+					team= {t("headshot.team_community")}
+					teamEnglish="Community"
+					role= {t("headshot.role_coord_boy")}
 					linkedin="saheen-jeyarajah"
-					
-				/>
-				<Headshot
-					name="Emma"
-					team="Design"
-					role="Coordinator"
-					instagram="et.tangg"
-					linkedin="emmatang-"
-					
-				/>
-				<Headshot 
-				name="Sakeena"
-				team="Design" 
-				role="Coordinator" 
-				/>
-				
-				<Headshot 
-				name="Sheena" 
-				team="Design" 
-				role="Coordinator"
-				linkedin="sheenaverana" 
 				/>
 
 				<Headshot
-				name="Arjuunan"
-				team="Development"
-				role="Coordinator"
-				instagram="itsarjuunan"
-				linkedin="arjuunan"
-					
+					name="Emma"
+					team={t("headshot.team_design")}
+					teamEnglish="Design"
+					role={t("headshot.role_coord_girl")}
+					instagram="et.tangg"
+					linkedin="emmatang-"
 				/>
+
+				<Headshot 
+					name="Sakeena"
+					team={t("headshot.team_design")} 
+					teamEnglish="Design"
+					role={t("headshot.role_coord_girl")}
+				/>
+				
+				<Headshot 
+					name="Sheena" 
+					team={t("headshot.team_design")} 
+					teamEnglish="Design"
+					role={t("headshot.role_coord_girl")}
+					linkedin="sheenaverana" 
+				/>
+
+				<Headshot
+					name="Arjuunan"
+					team={t("headshot.team_development")}
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
+					instagram="itsarjuunan"
+					linkedin="arjuunan"
+				/>
+
 				<Headshot
 					name="Aydin"
-					team="Development"
-					role="Coordinator"
+					team={t("headshot.team_development")}
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
 					instagram="ayay"
 					linkedin="aydinyalcinkaya"
-					
 				/>
+
 				<Headshot
 					name="Emilien"
-					team="Development"
-					role="Coordinator"
+					team={t("headshot.team_development")}
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
 				/>
+
 				<Headshot
 					name="Farabi"
-					team="Development"
-					role="Coordinator"
+					team={t("headshot.team_development")}
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
 					instagram="farabi.01"
 					linkedin="mfarabi"
 					
 				/>
+
 				<Headshot 
-				name="Sacha" 
-				team="Development" 
-				role="Coordinator" 
-				linkedin="sacha-ars" 
+					name="Sacha" 
+					team={t("headshot.team_development")}
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
+					linkedin="sacha-ars" 
 				/>
 
 				<Headshot
 					name="Stefan"
-					team="Development"
-					role="Coordinator"
+					team={t("headshot.team_development")}
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
 					instagram="steftodor"
 					linkedin="todorovicstefan"
 					
 				/>
 
 				<Headshot 
-				name="Victor" 
-				team="Development" 
-				role="Coordinator"
+					name="Victor" 
+					team={t("headshot.team_development")} 
+					teamEnglish="Development"
+					role={t("headshot.role_coord_boy")}
 				/>
 
 				<Headshot
 					name="Anna"
-					team="Logistics"
-					role="Coordinator"
+					team={t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role={t("headshot.role_coord_girl")}
 					instagram="annarie_88"
 					linkedin="anna-schubert-689620202"
-					
 				/>
+
 				<Headshot
 					name="Juan"
-					team="Logistics"
-					role="Coordinator"
+					team={t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role={t("headshot.role_coord_boy")}
 					instagram="jchhhiedrap"
 					linkedin="jchiedrap"
-					
 				/>
+
 				<Headshot
 					name="Philippe"
-					team="Logistics"
-					role="Coordinator"
+					team={t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role={t("headshot.role_coord_boy")}
 					instagram="philippegagne00"
 					linkedin="p-gagne"
 					
 				/>
+
 				<Headshot
 					name="Satrajit"
-					team="Logistics"
-					role="Coordinator"
+					team={t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role={t("headshot.role_coord_boy")}
 					instagram="satrajit.c"
 					linkedin="satrajit-c"
 					
 				/>
+
 				<Headshot
 					name="Thinula"
-					team="Logistics"
-					role="Coordinator"
+					team={t("headshot.team_logistics")}
+					teamEnglish="Logistics"
+					role={t("headshot.role_coord_boy")}
 					instagram="Thinula_desilva"
 					linkedin="thinula-de-silva-0a4202228"
 					
 				/>
+
 				<Headshot
 					name="Andrea"
-					team="Marketing"
-					role="Coordinator"
+					team={t("headshot.team_marketing")}
+					teamEnglish="Marketing"
+					role={t("headshot.role_coord_girl")}
 					instagram="dreatodor"
 					linkedin="todorovic-andrea"
 					
 				/>
+
 				<Headshot
 					name="Anjaliya"
-					team="Marketing"
-					role="Coordinator"
+					team={t("headshot.team_marketing")}
+					teamEnglish="Marketing"
+					role={t("headshot.role_coord_girl")}
 					instagram="anjievs"
 					linkedin="anjaliya-sonnilal-859586257"
-					
 				/>
+
 				<Headshot
 					name="Kaitlyn"
-					team="Marketing"
-					role="Coordinator"
+					team={t("headshot.team_marketing")}
+					teamEnglish="Marketing"
+					role={t("headshot.role_coord_girl")}
 					instagram="callherkdaddy"
 					linkedin="kaitlyn-dompaul-3485a7180"
-					
 				/>
+
 				<Headshot
 					name="Rabih"
-					team="Marketing"
-					role="Coordinator"
+					team={t("headshot.team_marketing")}
+					teamEnglish="Marketing"
+					role={t("headshot.role_coord_boy")}
 					instagram="rabi3daoudd"
 					linkedin="rabihdaoud"
-					
 				/>
+
 				<Headshot
 					name="Saif"
-					team="Marketing"
-					role="Coordinator"
+					team={t("headshot.team_marketing")}
+					teamEnglish="Marketing"
+					role={t("headshot.role_coord_boy")}
 					instagram="safesaif7"
 					linkedin="saif-dine"
-					
 				/>
-				
+
 				<Headshot 
-				name="Abbygail" 
-				team="Sponsorship" 
-				role="Coordinator" 
+					name="Abbygail" 
+					team={t("headshot.team_sponsorship")}
+					teamEnglish="Sponsorship"
+					role={t("headshot.role_coord_girl")}
 				/>
 
 				<Headshot
 					name="Erik"
-					team="Sponsorship"
-					role="Coordinator"
+					team={t("headshot.team_sponsorship")}
+					teamEnglish="Sponsorship"
+					role={t("headshot.role_coord_boy")}
 					instagram="erik_ang_"
 					linkedin="erik-ang-97773b260"
 					
 				/>
 				<Headshot
 					name="Shreya"
-					team="Sponsorship"
-					role="Coordinator"
+					team={t("headshot.team_sponsorship")}
+					teamEnglish="Sponsorship"
+					role={t("headshot.role_coord_girl")}
 					instagram="slanghe"
 					linkedin="shreya-langhe"
 					
 				/>
 				<Headshot
 					name="Sophie"
-					team="Sponsorship"
-					role="Coordinator"
+					team={t("headshot.team_sponsorship")}
+					teamEnglish="Sponsorship"
+					role={t("headshot.role_coord_girl")}
 					linkedin="sophie-tomlin-49163b20b"
 					
 				/>
 				<Headshot
 					name="Zahra"
-					team="Sponsorship"
-					role="Coordinator"
+					team={t("headshot.team_sponsorship")}
+					teamEnglish="Sponsorship"
+					role={t("headshot.role_coord_girl")}
 					instagram="zahrasnva"
-					linkedin="zahra-suleymanova"
-					
-				/>
+					linkedin="zahra-suleymanova"	
+				/> 
 			</div>
 		</div>
 	);
