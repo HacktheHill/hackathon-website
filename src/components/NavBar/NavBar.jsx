@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { t, locale } from "../../i18n";
 import logo from "/Logos/hackthehill-logo.svg";
 import { useStore } from "@nanostores/react";
-import styles from "./NavBar.module.css"
+import styles from "./NavBar.module.css";
 function Navbar({ pageScroll }) {
 	const languages = {
 		en: "EN",
