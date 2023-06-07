@@ -1,5 +1,6 @@
 import { Link } from "react-scroll";
 import { t, locale } from "../../i18n";
+import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
 import { useStore } from "@nanostores/react";
 import styles from "./NavBar.module.css";
@@ -11,9 +12,9 @@ function Navbar({ pageScroll }) {
 
 	return (
 		<>
-			<nav className={styles.navbar} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
+			<nav className="navbar" data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
 				<Link
-					className={`${styles.link} ${styles.logo}`}
+					className="link logo"
 					activeClass="active"
 					to="hero"
 					spy={true}
@@ -24,11 +25,11 @@ function Navbar({ pageScroll }) {
 				>
 					<img alt="Logo" src={logo}></img>
 				</Link>
-				<ul className={styles["language-selector"]}>
+				<ul className="language-selector">
 					{Object.keys(languages).map(language => (
 						<li key={language}>
 							<button
-								className={`${styles.link} ${styles["language-button"]}`}
+								className="link language-button"
 								style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
 								type="submit"
 								onClick={() => locale.set(language)}
@@ -41,7 +42,7 @@ function Navbar({ pageScroll }) {
 				<ul>
 					<li>
 						<Link
-							className={styles.link}
+							className="link"
 							activeClass="active"
 							to="about"
 							spy={true}
@@ -55,7 +56,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className={styles.link}
+							className="link"
 							activeClass="active"
 							to="sponsors"
 							spy={true}
@@ -69,7 +70,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className={styles.link}
+							className="link"
 							activeClass="active"
 							to="schedule"
 							spy={true}
@@ -79,20 +80,6 @@ function Navbar({ pageScroll }) {
 							href="#schedule"
 						>
 							{t("navbar.links.hacker")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="headshots"
-							spy={true}
-							smooth={true}
-							offset={-80}
-							duration={500}
-							href="#headshots"
-						>
-							{t("navbar.links.headshots")}
 						</Link>
 					</li>
 					<li>
@@ -111,7 +98,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className={styles.link}
+							className="link"
 							activeClass="active"
 							to="faq"
 							spy={true}
