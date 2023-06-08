@@ -6,9 +6,9 @@ import { t, locale } from "../../i18n";
 import "./Headshot.css";
 
 
-const Headshot = ({ team, teamEnglish, name, role, instagram, linkedin, website }) => {
+const Headshot = ({ team, teamName, name, role, instagram, linkedin, website }) => {
 
-	const path = `/headshots/${teamEnglish}/${name}.webp`.toLowerCase();
+	const path = `/headshots/${teamName}/${name}.webp`.toLowerCase();
 	const alt = t("headshot.imgAlt") + name;
 	role ??= "";
 
