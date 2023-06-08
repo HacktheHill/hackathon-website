@@ -1,8 +1,8 @@
-.teamContainer {
+.headshots {
 	background-color: var(--light-primary-color);
 }
 
-.teamContainer > h1 {
+.headshots > h1 {
 	color: white;
 	font-family: Coolvetica;
 	font-size: 3em;
