@@ -12,7 +12,7 @@ const Headshots = () => {
 				<Headshot
 					name="Disala"
 					team= {t("headshot.team_codir_boy")}
-					teamName="Co-Director"
+					image="/headshots/co-director/disala.webp"
 					instagram="disala_desilva"
 					linkedin="disaladesilva"
 				/>
@@ -20,14 +20,14 @@ const Headshots = () => {
 				<Headshot 
 					name="Mingye" 
 					team= {t("headshot.team_codir_boy")}
-					teamName="Co-Director"
+					image="/headshots/co-director/mingye.webp"
 					linkedin="mingye-chen-ca" 
 				/>
 
 				<Headshot
 					name="Steven"
 					team= {t("headshot.team_community")}
-					teamName="Community"
+					image="/headshots/community/steven.webp"
 					role= {t("headshot.role_dir_boy")}
 					instagram="_stevenli"
 					linkedin="-steven"
@@ -36,7 +36,7 @@ const Headshots = () => {
 				<Headshot
 					name="Fatimah"
 					team= {t("headshot.team_design")}
-					teamName="Design"
+					image="/headshots/design/fatimah.webp"
 					role= {t("headshot.role_dir_girl")}
 					instagram="fatimbit_v"
 					linkedin="fatimah-vakily"
@@ -45,7 +45,7 @@ const Headshots = () => {
 				<Headshot
 					name="Daniel"
 					team= {t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/daniel.webp"
 					role= {t("headshot.role_dir_boy")}
 					instagram="arcanistzed"
 					linkedin="arcanistzed"
@@ -54,7 +54,7 @@ const Headshots = () => {
 				<Headshot
 					name="Ali"
 					team= {t("headshot.team_finance")}
-					teamName="Finance"
+					image="/headshots/finance/ali.webp"
 					role= {t("headshot.team_codir_boy")}
 					instagram="notalibhangu"
 					linkedin="ali-raza-bhangu-061274214"
@@ -64,7 +64,7 @@ const Headshots = () => {
 				<Headshot
 					name="Pavly"
 					team= {t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/pavly.webp"
 					role= {t("headshot.team_codir_boy")}
 					instagram="pav_saleh"
 					linkedin="pavly"
@@ -73,7 +73,7 @@ const Headshots = () => {
 				<Headshot
 					name="Tomer"
 					team= {t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/tomer.webp"
 					role= {t("headshot.team_codir_boy")}
 					instagram="tomersz12"
 					linkedin="tomersz12"
@@ -82,7 +82,7 @@ const Headshots = () => {
 				<Headshot
 					name="Nyah"
 					team= {t("headshot.team_marketing")}
-					teamName="Marketing"
+					image="/headshots/marketing/nyah.webp"
 					role={t("headshot.role_dir_girl")}
 					linkedin="nyah-wagner-a62064192"
 					
@@ -91,7 +91,7 @@ const Headshots = () => {
 				<Headshot
 					name="Kian"
 					team={t("headshot.team_sponsorship")}
-					teamName="Sponsorship"
+					image="/headshots/sponsorship/kian.webp"
 					role= {t("headshot.role_dir_boy")}
 					instagram="kiiankiing"
 					linkedin="kiansalehi"
@@ -100,13 +100,13 @@ const Headshots = () => {
 				<Headshot 
 					name="Brandon" 
 					team={t("headshot.team_community")}
-					teamName="Community"
+					image="/headshots/community/brandon.webp"
 					role={t("headshot.role_coord_boy")} 
 				/>
 				<Headshot
 					name="Manaal"
 					team= {t("headshot.team_community")}
-					teamName="Community"
+					image="/headshots/community/manaal.webp"
 					role= {t("headshot.role_coord_girl")}
 					instagram="manaalm20"
 					linkedin="manaal-mujeebuddin-ab2379199"
@@ -115,7 +115,7 @@ const Headshots = () => {
 				<Headshot 
 					name="Rafael" 
 					team= {t("headshot.team_community")}
-					teamName="Community"
+					image="/headshots/community/rafael.webp"
 					role= {t("headshot.role_coord_boy")}
 					linkedin="rafaelarif"
 				/>
@@ -123,7 +123,7 @@ const Headshots = () => {
 				<Headshot
 					name="Saheen"
 					team= {t("headshot.team_community")}
-					teamName="Community"
+					image="/headshots/community/saheen.webp"
 					role= {t("headshot.role_coord_boy")}
 					linkedin="saheen-jeyarajah"
 				/>
@@ -131,7 +131,7 @@ const Headshots = () => {
 				<Headshot
 					name="Emma"
 					team={t("headshot.team_design")}
-					teamName="Design"
+					image="/headshots/design/emma.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="et.tangg"
 					linkedin="emmatang-"
@@ -140,14 +140,14 @@ const Headshots = () => {
 				<Headshot 
 					name="Sakeena"
 					team={t("headshot.team_design")} 
-					teamName="Design"
+					image="/headshots/design/sakeena.webp"
 					role={t("headshot.role_coord_girl")}
 				/>
 				
 				<Headshot 
 					name="Sheena" 
 					team={t("headshot.team_design")} 
-					teamName="Design"
+					image="/headshots/design/sheena.webp"
 					role={t("headshot.role_coord_girl")}
 					linkedin="sheenaverana" 
 				/>
@@ -155,7 +155,7 @@ const Headshots = () => {
 				<Headshot
 					name="Arjuunan"
 					team={t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/arjuunan.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="itsarjuunan"
 					linkedin="arjuunan"
@@ -164,7 +164,7 @@ const Headshots = () => {
 				<Headshot
 					name="Aydin"
 					team={t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/aydin.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="ayay"
 					linkedin="aydinyalcinkaya"
@@ -173,14 +173,14 @@ const Headshots = () => {
 				<Headshot
 					name="Emilien"
 					team={t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/emilien.webp"
 					role={t("headshot.role_coord_boy")}
 				/>
 
 				<Headshot
 					name="Farabi"
 					team={t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/farabi.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="farabi.01"
 					linkedin="mfarabi"
@@ -190,7 +190,7 @@ const Headshots = () => {
 				<Headshot 
 					name="Sacha" 
 					team={t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/sacha.webp"
 					role={t("headshot.role_coord_boy")}
 					linkedin="sacha-ars" 
 				/>
@@ -198,7 +198,7 @@ const Headshots = () => {
 				<Headshot
 					name="Stefan"
 					team={t("headshot.team_development")}
-					teamName="Development"
+					image="/headshots/development/stefan.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="steftodor"
 					linkedin="todorovicstefan"
@@ -208,14 +208,14 @@ const Headshots = () => {
 				<Headshot 
 					name="Victor" 
 					team={t("headshot.team_development")} 
-					teamName="Development"
+					image="/headshots/development/victor.webp"
 					role={t("headshot.role_coord_boy")}
 				/>
 
 				<Headshot
 					name="Anna"
 					team={t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/anna.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="annarie_88"
 					linkedin="anna-schubert-689620202"
@@ -224,7 +224,7 @@ const Headshots = () => {
 				<Headshot
 					name="Juan"
 					team={t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/juan.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="jchhhiedrap"
 					linkedin="jchiedrap"
@@ -233,7 +233,7 @@ const Headshots = () => {
 				<Headshot
 					name="Philippe"
 					team={t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/philippe.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="philippegagne00"
 					linkedin="p-gagne"
@@ -243,7 +243,7 @@ const Headshots = () => {
 				<Headshot
 					name="Satrajit"
 					team={t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/satrajit.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="satrajit.c"
 					linkedin="satrajit-c"
@@ -253,7 +253,7 @@ const Headshots = () => {
 				<Headshot
 					name="Thinula"
 					team={t("headshot.team_logistics")}
-					teamName="Logistics"
+					image="/headshots/logistics/thinula.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="Thinula_desilva"
 					linkedin="thinula-de-silva-0a4202228"
@@ -263,7 +263,7 @@ const Headshots = () => {
 				<Headshot
 					name="Andrea"
 					team={t("headshot.team_marketing")}
-					teamName="Marketing"
+					image="/headshots/marketing/andrea.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="dreatodor"
 					linkedin="todorovic-andrea"
@@ -273,7 +273,7 @@ const Headshots = () => {
 				<Headshot
 					name="Anjaliya"
 					team={t("headshot.team_marketing")}
-					teamName="Marketing"
+					image="/headshots/marketing/anjaliya.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="anjievs"
 					linkedin="anjaliya-sonnilal-859586257"
@@ -282,7 +282,7 @@ const Headshots = () => {
 				<Headshot
 					name="Kaitlyn"
 					team={t("headshot.team_marketing")}
-					teamName="Marketing"
+					image="/headshots/marketing/kaitlyn.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="callherkdaddy"
 					linkedin="kaitlyn-dompaul-3485a7180"
@@ -291,7 +291,7 @@ const Headshots = () => {
 				<Headshot
 					name="Rabih"
 					team={t("headshot.team_marketing")}
-					teamName="Marketing"
+					image="/headshots/marketing/rabih.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="rabi3daoudd"
 					linkedin="rabihdaoud"
@@ -300,7 +300,7 @@ const Headshots = () => {
 				<Headshot
 					name="Saif"
 					team={t("headshot.team_marketing")}
-					teamName="Marketing"
+					image="/headshots/marketing/saif.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="safesaif7"
 					linkedin="saif-dine"
@@ -309,14 +309,14 @@ const Headshots = () => {
 				<Headshot 
 					name="Abbygail" 
 					team={t("headshot.team_sponsorship")}
-					teamName="Sponsorship"
+					image="/headshots/sponsorship/abbygail.webp"
 					role={t("headshot.role_coord_girl")}
 				/>
 
 				<Headshot
 					name="Erik"
 					team={t("headshot.team_sponsorship")}
-					teamName="Sponsorship"
+					image="/headshots/sponsorship/erik.webp"
 					role={t("headshot.role_coord_boy")}
 					instagram="erik_ang_"
 					linkedin="erik-ang-97773b260"
@@ -325,7 +325,7 @@ const Headshots = () => {
 				<Headshot
 					name="Shreya"
 					team={t("headshot.team_sponsorship")}
-					teamName="Sponsorship"
+					image="/headshots/sponsorship/shreya.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="slanghe"
 					linkedin="shreya-langhe"
@@ -334,7 +334,7 @@ const Headshots = () => {
 				<Headshot
 					name="Sophie"
 					team={t("headshot.team_sponsorship")}
-					teamName="Sponsorship"
+					image="/headshots/sponsorship/sophie.webp"
 					role={t("headshot.role_coord_girl")}
 					linkedin="sophie-tomlin-49163b20b"
 					
@@ -342,7 +342,7 @@ const Headshots = () => {
 				<Headshot
 					name="Zahra"
 					team={t("headshot.team_sponsorship")}
-					teamName="Sponsorship"
+					image="/headshots/sponsorship/zahra.webp"
 					role={t("headshot.role_coord_girl")}
 					instagram="zahrasnva"
 					linkedin="zahra-suleymanova"	

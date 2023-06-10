@@ -6,9 +6,8 @@ import { t, locale } from "../../i18n";
 import "./Headshot.css";
 
 
-const Headshot = ({ team, teamName, name, role, instagram, linkedin, website }) => {
+const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => {
 
-	const path = `/headshots/${teamName}/${name}.webp`.toLowerCase();
 	const alt = t("headshot.imgAlt") + name;
 	role ??= "";
 
@@ -37,7 +36,7 @@ const Headshot = ({ team, teamName, name, role, instagram, linkedin, website }) 
 		<div className="card">
 			<div className="card-content">
 				<div className="front">
-					<img class="headshot" src={path} alt={alt}></img>
+					<img class="headshot" src={image} alt={alt}></img>
 				</div>
 
 				<div className="back">
