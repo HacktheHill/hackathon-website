@@ -23,7 +23,7 @@ function MountainFlags({ data }) {
 		};
 	}, []);
 
-	return <div ref={mountain} className={styles.mountainFlags}></div>;
+	return <div ref={mountain} className={styles["mountain-flags"]}></div>;
 }
 
 export default MountainFlags;

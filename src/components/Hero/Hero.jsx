@@ -79,19 +79,19 @@ function Hero() {
 			></div>
 			{date && (
 				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
-					<div className={styles["countdow-item"]}>
+					<div className={styles["countdown-item"]}>
 						<h3>{days}</h3>
 						<h4>day{days === 1 ? "" : "s"}</h4>
 					</div>
-					<div className={styles["countdow-item"]}>
+					<div className={styles["countdown-item"]}>
 						<h3>{hours}</h3>
 						<h4>hour{hours === 1 ? "" : "s"}</h4>
 					</div>
-					<div className={styles["countdow-item"]}>
+					<div className={styles["countdown-item"]}>
 						<h3>{minutes}</h3>
 						<h4>minute{minutes === 1 ? "" : "s"}</h4>
 					</div>
-					<div className={styles["countdow-item"]}>
+					<div className={styles["countdown-item"]}>
 						<h3>{seconds}</h3>
 						<h4>second{seconds === 1 ? "" : "s"}</h4>
 					</div>
