@@ -101,13 +101,13 @@
 	align-items: center;
 }
 
-.countdownItem h3 {
+.countdown-item h3 {
 	font-size: 1.5em;
 	font-family: Rubik;
 	font-weight: normal;
 }
 
-.countdownItem h4 {
+.countdown-item h4 {
 	color: var(--countdownItem-color);
 	font-weight: normal;
 }
