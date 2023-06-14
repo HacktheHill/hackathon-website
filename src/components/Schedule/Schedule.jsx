@@ -1,4 +1,4 @@
-import { Box, Button, Card, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, Stack, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import { t } from "../../i18n";
 import styles from "./Schedule.module.css";
@@ -8,26 +8,6 @@ function Schedule() {
 	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
-
-	/*
-	const cardStyles = {
-		card: {
-			minWidth: "150px",
-			maxWidth: "150px",
-			backgroundColor: "#3b477a",
-			border: "3px solid white",
-			borderRadius: "10px",
-			maxHeight: "140px",
-			mt: matchesMD ? "10px" : "0px",
-			boxShadow: "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
-			transition: "transform 330ms ease-in-out",
-			"&:hover": {
-				transform: "scale(1.05)",
-				transition: "transform 330ms ease-in-out",
-			},
-		},
-	};
-	*/
 
 	return (
 		<div id="schedule" className={styles.schedule}>
