@@ -121,7 +121,7 @@ export default {
 
 		team_codir_girl: "Co-Director",
 		team_codir_boy: "Co-Director",
-		team_community: "community",
+		team_community: "Community",
 		team_design: "Design",
 		team_development: "Development",
 		team_finance: "Finance",
