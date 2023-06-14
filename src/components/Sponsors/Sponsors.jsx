@@ -66,7 +66,7 @@ function Sponsors() {
 
 	return (
 		<div>
-			<section id={styles["sponsors"]} className={styles["sponsors"]}>
+			<section id="sponsors" className={styles["sponsors"]}>
 				<h1>{t("sponsors.title")}</h1>
 				<div>
 					<p className={styles["sponsors-text"]}>{t("sponsors.p")}</p>
@@ -85,7 +85,9 @@ function Sponsors() {
 									className={styles["sponsors-icon-box"]}
 								>
 									<img
-										className={`${styles["sponsor-icon"]} ${styles[`icon-${Object.keys(data.sponsors)[i]}`]}`}
+										className={`${styles["sponsor-icon"]} ${
+											styles[`icon-${Object.keys(data.sponsors)[i]}`]
+										}`}
 										alt={`${sponsor.alt} logo`}
 										src={sponsor.src}
 									></img>
@@ -100,7 +102,13 @@ function Sponsors() {
 				<h1 id="community">{t("partners.title")}</h1>
 				<div className={styles["sponsors-row"]}>
 					{data.collaborators.map((sponsor, i) => (
-						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className={styles["sponsor-icon-box"]}>
+						<a
+							key={i}
+							href={sponsor.href}
+							target="_blank"
+							rel="noreferrer"
+							className={styles["sponsor-icon-box"]}
+						>
 							<img
 								className={`${styles["sponsor-icon"]} ${styles[`icon-medium`]}`}
 								alt={t("partners.icon_alt")}

@@ -5,7 +5,6 @@ import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
 import { useStore } from "@nanostores/react";
 
-
 function Navbar({ pageScroll }) {
 	const languages = {
 		en: "EN",
@@ -82,6 +81,20 @@ function Navbar({ pageScroll }) {
 							href="#schedule"
 						>
 							{t("navbar.links.hacker")}
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="link"
+							activeClass="active"
+							to="headshots"
+							spy={true}
+							smooth={true}
+							offset={-80}
+							duration={500}
+							href="#headshots"
+						>
+							{t("navbar.links.headshots")}
 						</Link>
 					</li>
 					<li>

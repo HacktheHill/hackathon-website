@@ -4,7 +4,7 @@ import Button from "../Button/Button.jsx";
 import { t } from "../../i18n";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
-import styles from "./Hero.module.css"
+import styles from "./Hero.module.css";
 // 7:00 PM EST on March 3rd, 2023
 const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
 // 9:00 AM EST on March 5th, 2023
@@ -47,11 +47,12 @@ function Hero() {
 	};
 
 	return (
-		<div className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]}>
 					<h3 className={styles["location"]}>
-						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} /> {t("hero.hybrid")}
+						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} />{" "}
+						{t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
@@ -98,6 +99,5 @@ function Hero() {
 		</div>
 	);
 }
-
 
 export default Hero;
