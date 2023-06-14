@@ -5,27 +5,27 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { t, locale } from "../../i18n";
 import "./Headshot.css";
 
-
 const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => {
-
 	const alt = t("headshot.imgAlt") + name;
 	role ??= "";
 
 	let instagramLink = instagram ? (
-			<a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noreferrer" aria-label="Instagram">
-				<Icon className="invert" icon={faInstagram} />
-			</a>
-		) : 
+		<a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noreferrer" aria-label="Instagram">
+			<Icon className="invert" icon={faInstagram} />
+		</a>
+	) : (
 		<></>
+	);
 
 	let linkedinLink = linkedin ? (
-			<a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer" aria-label="Linkedin">
-				<Icon className="invert" icon={faLinkedin} />
-			</a>
-		) : 
+		<a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer" aria-label="Linkedin">
+			<Icon className="invert" icon={faLinkedin} />
+		</a>
+	) : (
 		<></>
+	);
 	// to be added when we ask for others websites
-	// let websiteLink = website ? 
+	// let websiteLink = website ?
 	// 		<a href={website} target="_blank" rel="noreferrer" aria-label="Website">
 	// 			<Icon className="invert" icon={faWindowMaximize} />
 	// 		</a>
@@ -36,7 +36,7 @@ const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => 
 		<div className="card">
 			<div className="card-content">
 				<div className="front">
-					<img class="headshot" src={image} alt={alt}></img>
+					<img className="headshot" src={image} alt={alt}></img>
 				</div>
 
 				<div className="back">
