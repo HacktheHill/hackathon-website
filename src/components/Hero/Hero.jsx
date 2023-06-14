@@ -48,7 +48,7 @@ function Hero() {
 	};
 
 	return (
-		<div className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]}>
 					<h3 className={styles["location"]}>

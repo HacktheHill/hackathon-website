@@ -13,7 +13,7 @@ const data = [
 function Collaborators() {
 	return (
 		<>
-			<h1 id={styles.collaborators} className={styles.collaborators}>
+			<h1 id="collaborators" className={styles.collaborators}>
 				{t("collaborators.title")}
 			</h1>
 			<MountainFlags data={data} />
