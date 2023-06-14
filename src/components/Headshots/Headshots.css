@@ -17,6 +17,8 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 5% 0;
+	width: 90%;
+	margin: 0 auto;
 }
 .team {
 	display: flex;
