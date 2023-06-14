@@ -4,11 +4,8 @@ import { t, locale } from "../../i18n";
 import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
 import { useStore } from "@nanostores/react";
-<<<<<<< HEAD
 
-=======
-import styles from "./NavBar.module.css";
->>>>>>> 905f19ad4192cc8130758a20716c876ee4ea8f43
+
 function Navbar({ pageScroll }) {
 	const languages = {
 		en: "EN",
