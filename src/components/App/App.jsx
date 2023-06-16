@@ -9,6 +9,7 @@ import Sidebar from "../NavBar/Sidebar";
 import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
+import Headshots from "../Headshots/Headshots";
 import "./global.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 			<About />
 			<Sponsors />
 			<Schedule />
+			<Headshots />
 			<Collaborators />
 			<FAQ />
 			<Footer />

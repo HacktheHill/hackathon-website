@@ -4,6 +4,7 @@ export default {
 			about: "À Propos",
 			sponsors: "Commanditaires",
 			hacker: "La Série du Hacker",
+			headshots: "Rencontrez l'Équipe",
 			collaborators: "Collaborateurs",
 			faq: "FAQ",
 		},
@@ -114,5 +115,23 @@ export default {
 			'Avez vous entendu parlé de l\'article du Fulcrum sur Hack the Hill? UOTTA GO TO HACK THE HILL. Consultez la section "Science & Tech" du Fulcrum et cherchez "Ready, Set, Hack" pour en savoir plus sur ce que vous pouvez attendre de Hack the Hill de la part de certains de nos directeurs d\'événements. Merci au Fulcrum pour la publication!',
 		button_text: "Lire l'article",
 		close: "Fermer Notification",
+	},
+	headshot: {
+		imgAlt: "Image de ",
+		
+		team_codir_girl: "Co-Directrice",
+		team_codir_boy: "Co-Directeur",
+		team_community: "Communauté",
+		team_design: "Désign",
+		team_development: "Développement",
+		team_finance: "Finance",
+		team_logistics: "Logistique",
+		team_marketing: "Commercialisation",
+		team_sponsorship: "Parrainage",
+
+		role_dir_girl: "Directrice",
+		role_dir_boy: "Directeur",
+		role_coord_girl: "Coordinatrice",
+		role_coord_boy: "Coordinateur",
 	},
 } as const;

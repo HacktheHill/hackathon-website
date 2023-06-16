@@ -1,0 +1,79 @@
+.front {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+	backface-visibility: hidden;
+}
+
+img {
+	height: 100%;
+}
+
+.personName,
+.teamName {
+	text-align: center;
+	color: white;
+	font-family: Rubik;
+	font-size: max(1rem, 1.15vmin);
+	line-height: clamp(1.5rem, 1.4vmin, 2rem);
+	margin: 0;
+}
+.personName {
+	padding: 0.5rem 0;
+	font-weight: bold;
+}
+
+.invert {
+	color: white;
+}
+
+.socials {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	padding-top: clamp(0.5rem, 1vmin, 1rem);
+}
+
+.card:hover .card-content {
+	transform: rotateY(180deg);
+}
+
+.card {
+	height: clamp(130px, 25vw, 200px);
+	width: clamp(130px, 25vw, 200px);
+	perspective: 500px;
+	cursor: pointer;
+}
+
+.card-content {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	transition: all 0.5s linear;
+	transform-style: preserve-3d;
+}
+
+.front,
+.back {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1rem;
+	position: absolute;
+}
+
+.back {
+	background-color: var(--medium-primary-color);
+	z-index: 1;
+	transform: rotateY(180deg);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
