@@ -1,24 +1,23 @@
 .headshots {
 	background-color: var(--light-primary-color);
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	padding: 5% 10%;
 }
 
-.headshots > h1 {
+.headshots>h1 {
 	color: white;
 	font-family: Coolvetica;
 	font-size: 3em;
 	font-weight: normal;
-	padding: 0 10%;
-	padding-top: 5%;
 }
 
-.headshots > div {
+.headshots>div {
 	display: flex;
 	gap: 2.5em;
 	flex-wrap: wrap;
-	justify-content: center;
-	padding: 5% 0;
-	width: 90%;
-	margin: 0 auto;
+	justify-content: space-between;
 }
 
 .team {
