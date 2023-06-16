@@ -119,8 +119,8 @@ export default {
 	headshot: {
 		imgAlt: "Image of ",
 
-		team_codir_girl: "Co-Director",
-		team_codir_boy: "Co-Director",
+		team_codir_f: "Co-Director",
+		team_codir_m: "Co-Director",
 		team_community: "Community",
 		team_design: "Design",
 		team_development: "Development",
@@ -129,9 +129,9 @@ export default {
 		team_marketing: "Marketing",
 		team_sponsorship: "Sponsorship",
 
-		role_dir_girl: "Director",
-		role_dir_boy: "Director",
-		role_coord_girl: "Coordinator",
-		role_coord_boy: "Coordinator",
+		role_dir_f: "Director",
+		role_dir_m: "Director",
+		role_coord_f: "Coordinator",
+		role_coord_m: "Coordinator",
 	},
 } as const;
