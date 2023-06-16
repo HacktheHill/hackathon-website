@@ -11,7 +11,7 @@
 	padding-top: 5%;
 }
 
-.org {
+.headshots > div {
 	display: flex;
 	gap: 2.5em;
 	flex-wrap: wrap;
@@ -20,6 +20,7 @@
 	width: 90%;
 	margin: 0 auto;
 }
+
 .team {
 	display: flex;
 	gap: 2.5em;

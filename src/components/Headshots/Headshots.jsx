@@ -7,7 +7,7 @@ const Headshots = () => {
 	return (
 		<div className="headshots" id="headshots">
 			<h1>Meet the team</h1>
-			<div className="org">
+			<div>
 				<Headshot
 					name="Disala"
 					team={t("headshot.team_codir_m")}
