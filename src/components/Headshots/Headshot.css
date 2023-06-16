@@ -60,6 +60,7 @@ img {
 
 .front,
 .back {
+	background-color: var(--medium-primary-color);
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -70,7 +71,7 @@ img {
 }
 
 .back {
-	background-color: var(--medium-primary-color);
+	backface-visibility: hidden;
 	z-index: 1;
 	transform: rotateY(180deg);
 	justify-content: center;
