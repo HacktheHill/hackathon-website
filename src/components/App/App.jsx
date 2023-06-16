@@ -10,6 +10,7 @@ import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";
+import Headshots from "../Headshots/Headshots";
 
 function App() {
 	const [pageScroll, setPageScroll] = useState(0);
@@ -28,6 +29,7 @@ function App() {
 			<About />
 			<Sponsors />
 			<Schedule />
+			<Headshots />
 			<Collaborators />
 			<FAQ />
 			<Footer />
