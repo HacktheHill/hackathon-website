@@ -24,6 +24,7 @@ function Navbar({ pageScroll }) {
 				>
 					<img alt="Logo" src={logo}></img>
 				</Link>
+
 				<ul className="language-selector">
 					{Object.keys(languages).map(language => (
 						<li key={language}>

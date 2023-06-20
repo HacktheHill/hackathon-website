@@ -1,102 +1,119 @@
-.sidebar {
-	--list-item-color: var(--dark-button-hover-color);
-	--list-item-hover-color: var(--dark-color);
-	--media-link-color: var(--dark-color);
-
-	--hamburger-menu-color: var(--medium-primary-color);
-	--hamburger-close-button-color: var(--dark-color);
-
+.icon-container {
 	display: none;
+	position: absolute;
+	width: 100%;
+	height: 5rem;
+	align-items: center;
+	justify-content: end;
 }
 
-@media (max-width: 900px) {
-	.sidebar {
-		display: block;
-	}
+.sidebar-icon {
+	margin-right: 1rem;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	z-index: 9999;
+}
 
-	.sidebar .media-links {
-		font-size: inherit;
-		margin: auto;
-	}
+.sidebar-change {
+	position: fixed;
+}
 
-	.sidebar .media-links a {
-		color: var(--media-link-color);
-		padding: 0 0.5em;
-	}
+.bar1,
+.bar2,
+.bar3 {
+	width: 1.75rem;
+	height: 0.25rem;
+	background-color: #3b4779;
+	margin: 0.3rem 0;
+	transition: 0.4s;
+	border-radius: 0.25rem;
+}
 
-	/* Position and sizing of burger button */
-	.bm-burger-button {
-		position: absolute;
-		width: 2em;
-		height: 2em;
-		right: calc(1.5em + 8px);
-		top: calc(1.5em + 8px);
-	}
+.sidebar-change .bar1 {
+	transform: translate(0, 8.8px) rotate(-45deg);
+}
 
-	/* Color/shape of burger icon bars */
-	.bm-burger-bars {
-		background: var(--hamburger-menu-color);
-	}
+.sidebar-change .bar2 {
+	opacity: 0;
+}
 
-	/* Position and sizing of clickable cross button */
-	.bm-cross-button {
-		transform: scale(2.5);
-		margin: 1.5em;
-	}
+.sidebar-change .bar3 {
+	transform: translate(0, -8.8px) rotate(45deg);
+}
 
-	/* Color/shape of close button cross */
-	.bm-cross {
-		background: var(--hamburger-close-button-color);
-	}
+.sidebar-content {
+	display: none;
+	--media-link-color: var(--dark-color);
+	--sidebar-gradient: linear-gradient(
+		0deg,
+		rgba(239, 203, 255, 1) 0%,
+		rgba(236, 211, 247, 1) 48.85%,
+		rgba(236, 210, 248, 1) 48.86%,
+		#ebd5f5 63.96%,
+		#bfcbee 80.96%,
+		#bfcbee 81.77%,
+		#abeffa 100%
+	);
+	/*dsdsds*/
+}
 
-	/*
-	Sidebar wrapper styles
-	Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-	*/
-	.bm-menu-wrap {
-		position: fixed;
-		height: 100%;
-	}
+.nav {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: fixed;
+	right: -3200px;
+	z-index: 100;
+	height: 100%;
+	transition: right 0.5s;
+	align-items: center;
+	padding: 8rem 0 0 0;
+	gap: 3.5rem;
+	background: var(--sidebar-gradient);
+}
 
-	/* General sidebar styles */
-	.bm-menu {
-		background: var(--background-color);
-		font-size: 2em;
-		padding: 25% 0 0;
-	}
+.nav-links {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+}
 
-	/* Morph shape necessary with bubble or elastic */
-	.bm-morph-shape {
-		fill: var(--background-color);
-	}
+.nav-open {
+	right: 0;
+}
 
-	/* Wrapper for item list */
-	.bm-item-list {
-		color: var(--list-item-color);
+.nav-closed {
+	right: -300%;
+}
+
+.link {
+	text-decoration: none;
+	list-style: none;
+	color: #3b4779;
+	font-size: 1.75rem;
+}
+
+.media-links {
+	display: flex;
+	justify-content: center;
+	font-size: 0.75rem;
+	gap: 2rem;
+}
+
+.media-links a {
+	color: var(--media-link-color);
+}
+@media (max-width: 940px) {
+	.icon-container {
 		display: flex;
-		flex-direction: column;
-		gap: 1em;
-		padding: 0 2rem;
 	}
 
-	/* Individual item */
-	.bm-item {
-		color: inherit;
-		text-align: center;
-		text-decoration: none;
-		transition: color 0.2s;
-		font-family: Rubik;
-		font-weight: normal;
-		letter-spacing: 0.05em;
-	}
-
-	.bm-item:hover {
-		color: var(--list-item-hover-color);
-		cursor: pointer;
-	}
-
-	/* Styling of overlay */
-	.bm-overlay {
-		background: rgba(0, 0, 0, 0.3);
+	.sidebar-content {
+		display: block;
 	}
 }
