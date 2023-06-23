@@ -65,7 +65,7 @@ function Sponsors() {
 	};
 
 	return (
-		<div>
+		<div className="sponsors__container">
 			<section id="sponsors" className="sponsors">
 				<h1>{t("sponsors.title")}</h1>
 				<div>
