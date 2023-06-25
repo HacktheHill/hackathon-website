@@ -9,18 +9,23 @@
 	flex-direction: column;
 	color: var(--title-text-color);
 	transition: 0.5s;
-	margin-bottom: 5%;
+	/* margin-bottom: 5%;
 	margin-left: 10%;
-	margin-right: 10%;
+	margin-right: 10%; */
+	margin: 0% 10% auto;
 	font-weight: bold;
 	font-family: Rubik;
 }
 
 .header {
 	font-family: Coolvetica;
-	margin-bottom: 2%;
+	/* margin-bottom: 2%; */
 	font-size: 3em;
 	font-weight: normal;
+}
+
+.quesAns-container {
+	margin: 2% auto;
 }
 
 .question-container {
