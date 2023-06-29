@@ -14,16 +14,7 @@
 }
 
 .headshots>div {
-	display: flex;
-	gap: 2.5em;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-.team {
-	display: flex;
-	gap: 2.5em;
-	padding: 3em;
-	flex-wrap: wrap;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+	gap: 1rem;
 }

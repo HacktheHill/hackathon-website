@@ -11,7 +11,7 @@ const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => 
 
 	let instagramLink = instagram ? (
 		<a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noreferrer" aria-label="Instagram">
-			<Icon className="invert" icon={faInstagram} />
+			<Icon icon={faInstagram} />
 		</a>
 	) : (
 		<></>
@@ -19,7 +19,7 @@ const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => 
 
 	let linkedinLink = linkedin ? (
 		<a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer" aria-label="Linkedin">
-			<Icon className="invert" icon={faLinkedin} />
+			<Icon icon={faLinkedin} />
 		</a>
 	) : (
 		<></>
@@ -40,9 +40,10 @@ const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => 
 				</div>
 
 				<div className="back">
-					<p className="person-name">{name}</p>
-					<p className="team-name">{team}</p>
-					<p className="team-name">{role}</p>
+					<p className="name">{name}</p>
+					<p className="role">
+						{team} {role}
+					</p>
 					<div className="socials">
 						{instagramLink}
 						{linkedinLink}
