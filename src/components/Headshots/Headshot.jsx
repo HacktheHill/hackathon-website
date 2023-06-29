@@ -40,9 +40,9 @@ const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => 
 				</div>
 
 				<div className="back">
-					<p className="personName">{name}</p>
-					<p className="teamName">{team}</p>
-					<p className="teamName">{role}</p>
+					<p className="person-name">{name}</p>
+					<p className="team-name">{team}</p>
+					<p className="team-name">{role}</p>
 					<div className="socials">
 						{instagramLink}
 						{linkedinLink}
