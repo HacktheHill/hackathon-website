@@ -65,7 +65,7 @@ function Sponsors() {
 	};
 
 	return (
-		<div className="sponsors-container">
+		<>
 			<section id="sponsors" className="sponsors">
 				<h1>{t("sponsors.title")}</h1>
 				<div>
@@ -110,7 +110,7 @@ function Sponsors() {
 					))}
 				</div>
 			</section>
-		</div>
+		</>
 	);
 }
 
