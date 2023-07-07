@@ -1,16 +1,15 @@
 .collaborators {
 	color: var(--dark-text-color);
 	font-family: Coolvetica;
-	/* margin: 6% 10%; */
-	margin: 6% 10% auto;
+	margin: 6% auto;
 	font-size: 3em;
 	font-weight: normal;
+	width: 80%;
 }
 
 .mountain-flags svg {
 	width: 100%;
 	height: 100%;
-	/* margin-bottom: 6%; */
 }
 
 .mountain-flags {
