@@ -5,7 +5,7 @@
 	display: grid;
 	color: var(--medium-primary-color);
 
-	margin: 5% 0% auto;
+	margin: 10% 0% auto;
 }
 
 .footer-logo {
@@ -17,19 +17,20 @@
 	box-sizing: border-box;
 	width: 200px;
 	height: auto;
-	/* margin: 0px auto;
-	padding-top: 50px;*/
+	margin: auto;
+	/*padding-top: 50px;*/
 }
 
 .logo-text {
-	margin: 1% auto;
+	margin: 2% auto;
 	font-family: Coolvetica;
 	text-align: center;
 }
 
 .footer-container {
 	display: flex;
-	margin: 0 5% auto;
+	margin: auto;
+	width: 100%;
 	justify-content: center;
 }
 
@@ -54,17 +55,15 @@
 .footer-text {
 	text-align: center;
 	font-size: 0.8rem;
-	/* padding: 1rem; */
-	margin: 1% 2% auto;
+	padding: 1rem;
+	margin: auto;
 	font-family: "Rubik", sans-serif;
 }
 
 .footer-link {
 	display: flex;
-	gap: 0.5ch;
 	justify-content: center;
-	/* margin: 1em; */
-	margin: 1% auto;
+	margin: 2% auto;
 	color: var(--footer-links);
 	text-decoration: none;
 }
