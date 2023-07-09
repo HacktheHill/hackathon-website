@@ -1,17 +1,15 @@
 .footer {
 	--media-links: var(--medium-primary-color);
 	--footer-links: var(--medium-primary-color);
-
-	display: grid;
+	display: flex;
 	color: var(--medium-primary-color);
-
-	margin: 10% 0% auto;
+	font-size: 0.8rem;
+	margin: 10% auto 2% auto;
 	gap: 2vh;
-}
-
-.footer-logo {
-	display: block;
-	margin: auto;
+	width: 90%;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .footer-logo img {
@@ -25,13 +23,11 @@
 	margin: auto;
 	font-family: Coolvetica;
 	text-align: center;
+	font-size: 1rem;
 }
 
-.footer-container {
-	display: flex;
-	margin: auto;
-	width: 100%;
-	justify-content: center;
+.footer-desc {
+	margin: 0;
 }
 
 .media-links {
@@ -52,20 +48,12 @@
 	animation-iteration-count: 1;
 }
 
-.footer-text {
-	text-align: center;
-	font-size: 0.8rem;
-	padding: 1rem;
-	margin: auto;
-	font-family: "Rubik", sans-serif;
-}
-
 .footer-link {
 	display: flex;
 	justify-content: center;
-	margin: 3% auto;
 	color: var(--footer-links);
 	text-decoration: none;
+	gap: 0.2rem;
 }
 
 @keyframes tada {
