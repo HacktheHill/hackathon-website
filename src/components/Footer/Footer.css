@@ -6,6 +6,7 @@
 	color: var(--medium-primary-color);
 
 	margin: 10% 0% auto;
+	gap: 2vh;
 }
 
 .footer-logo {
@@ -18,11 +19,10 @@
 	width: 200px;
 	height: auto;
 	margin: auto;
-	/*padding-top: 50px;*/
 }
 
 .logo-text {
-	margin: 2% auto;
+	margin: auto;
 	font-family: Coolvetica;
 	text-align: center;
 }
@@ -63,7 +63,7 @@
 .footer-link {
 	display: flex;
 	justify-content: center;
-	margin: 2% auto;
+	margin: 3% auto;
 	color: var(--footer-links);
 	text-decoration: none;
 }
