@@ -2,13 +2,13 @@
 	--media-links: var(--medium-primary-color);
 	--footer-links: var(--medium-primary-color);
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	color: var(--medium-primary-color);
 	font-size: 0.8rem;
 	margin: 10% auto 2% auto;
-	gap: 2vh;
-	width: 90%;
-	flex-direction: column;
-	align-items: center;
+	gap: 1rem;
+	width: 80%;
 }
 
 .footer-logo img {

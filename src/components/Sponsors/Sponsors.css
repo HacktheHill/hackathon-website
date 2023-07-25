@@ -6,7 +6,7 @@
 	margin: 6% auto;
     display: flex;
     flex-direction: column;
-    gap: 8vh;
+    gap: 2rem;
 }
 
 .sponsors-col {
@@ -14,15 +14,15 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 10vh;
-	margin: auto
-} 
+	gap: 4rem;
+	margin: auto;
+}
 
 .sponsors-row {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	gap: 10vh;
+	gap: 4rem;
 	width: 100%;
 }
 
