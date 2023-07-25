@@ -1,28 +1,28 @@
 import React from "react";
+import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import "./Sponsors.css";
-import { t } from "../../i18n";
-import balsamiq from "/Logos/balsamiq.svg";
 import Blackberry from "/Logos/Blackberry.svg";
+import CSClub from "/Logos/CSClub.svg";
+import CSE from "/Logos/CSE.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
-import Ceed from "/Logos/ceed.svg";
 import Ciena from "/Logos/Ciena.svg";
-import CSClub from "/Logos/CSClub.svg";
-import CSE from "/Logos/CSE.svg";
 import DigitalOcean from "/Logos/DigitalOcean.svg";
-import echo3d from "/Logos/echo3d.webp";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
+import Law from "/Logos/Law.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
+import MakerJam from "/Logos/MakerJam.svg";
 import SCESoc from "/Logos/SCESoc.svg";
+import Vercel from "/Logos/Vercel.svg";
+import balsamiq from "/Logos/balsamiq.svg";
+import Ceed from "/Logos/ceed.svg";
+import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
-import Vercel from "/Logos/Vercel.svg";
-import Law from "/Logos/Law.svg";
-import MakerJam from "/Logos/MakerJam.svg";
 import voiceflow from "/Logos/voiceflow.svg";
 
 function Sponsors() {
@@ -65,7 +65,7 @@ function Sponsors() {
 	};
 
 	return (
-		<div>
+		<>
 			<section id="sponsors" className="sponsors">
 				<h1>{t("sponsors.title")}</h1>
 				<div>
@@ -73,9 +73,9 @@ function Sponsors() {
 					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
 				</div>
 
-				<div className="sponsors-col">
+				<div className="sponsor-icons">
 					{Object.values(data.sponsors).map((tier, i) => (
-						<div key={i} className="sponsors-row">
+						<div key={i} className="sponsor-icons-row">
 							{tier.map((sponsor, j) => (
 								<a
 									key={j}
@@ -96,9 +96,9 @@ function Sponsors() {
 				</div>
 			</section>
 
-			<section className="sponsors">
+			<section id="community" className="sponsors">
 				<h1 id="community">{t("partners.title")}</h1>
-				<div className="sponsors-row">
+				<div className="sponsor-icons-row">
 					{data.collaborators.map((sponsor, i) => (
 						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className="sponsor-icon-box">
 							<img
@@ -110,7 +110,7 @@ function Sponsors() {
 					))}
 				</div>
 			</section>
-		</div>
+		</>
 	);
 }
 

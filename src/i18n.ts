@@ -1,6 +1,6 @@
+import { useStore } from "@nanostores/react";
 import en from "./locales/en";
 import fr from "./locales/fr";
-import { useStore } from "@nanostores/react";
 
 import { atom } from "nanostores";
 
