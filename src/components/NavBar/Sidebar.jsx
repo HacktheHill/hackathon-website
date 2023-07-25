@@ -60,6 +60,10 @@ const Sidebar = () => {
 		},
 	];
 
+	useEffect(() => {
+		document.body.style.overflow = isNavOpen ? "hidden" : "auto";
+	}, [isNavOpen]);
+
 	return (
 		<>
 			<div className={styles["icon-container"]}>
