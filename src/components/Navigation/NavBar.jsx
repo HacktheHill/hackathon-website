@@ -3,7 +3,7 @@ import { locale, t } from "../../i18n";
 import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
 
-function Navbar({ pageScroll }) {
+function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 	const languages = {
 		en: "EN",
 		fr: "FR",
@@ -125,6 +125,14 @@ function Navbar({ pageScroll }) {
 						</Link>
 					</li>
 				</ul>
+				<button
+					className={`sidebar-icon ${sidebarOpen ? "sidebar-open" : ""}`}
+					onClick={() => setSidebarOpen(!sidebarOpen)}
+				>
+					<div></div>
+					<div></div>
+					<div></div>
+				</button>
 			</nav>
 		</>
 	);
