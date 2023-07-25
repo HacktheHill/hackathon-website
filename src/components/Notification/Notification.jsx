@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Button from "../Button/Button";
 import { t } from "../../i18n";
+import Button from "../Button/Button";
 import "./Notification.css";
 
 function Notification() {

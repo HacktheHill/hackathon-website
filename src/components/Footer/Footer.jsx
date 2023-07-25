@@ -12,7 +12,6 @@ function Footer() {
 				<img src={FooterLogo} alt="Logo" />
 			</div>
 			<p className="logo-text">{t("footer.title")}</p>
-
 			<div className="media-links">
 				<a
 					href="https://www.facebook.com/canadascapitalhackathon"

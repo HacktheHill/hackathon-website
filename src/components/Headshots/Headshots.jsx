@@ -1,7 +1,7 @@
 import React from "react";
-import "./Headshots.css";
+import { t } from "../../i18n";
 import Headshot from "./Headshot";
-import { t, locale } from "../../i18n";
+import "./Headshots.css";
 
 const Headshots = () => {
 	return (

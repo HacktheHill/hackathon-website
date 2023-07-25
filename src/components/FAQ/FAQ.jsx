@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import { useState, useEffect } from "react";
-import { t, locale } from "../../i18n";
+import { useState } from "react";
+import { t } from "../../i18n";
 import styles from "./FAQ.module.css";
 
 export default function FAQ() {

@@ -1,28 +1,28 @@
 import React from "react";
+import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import "./Sponsors.css";
-import { t } from "../../i18n";
-import balsamiq from "/Logos/balsamiq.svg";
 import Blackberry from "/Logos/Blackberry.svg";
+import CSClub from "/Logos/CSClub.svg";
+import CSE from "/Logos/CSE.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
-import Ceed from "/Logos/ceed.svg";
 import Ciena from "/Logos/Ciena.svg";
-import CSClub from "/Logos/CSClub.svg";
-import CSE from "/Logos/CSE.svg";
 import DigitalOcean from "/Logos/DigitalOcean.svg";
-import echo3d from "/Logos/echo3d.webp";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
+import Law from "/Logos/Law.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
+import MakerJam from "/Logos/MakerJam.svg";
 import SCESoc from "/Logos/SCESoc.svg";
+import Vercel from "/Logos/Vercel.svg";
+import balsamiq from "/Logos/balsamiq.svg";
+import Ceed from "/Logos/ceed.svg";
+import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
-import Vercel from "/Logos/Vercel.svg";
-import Law from "/Logos/Law.svg";
-import MakerJam from "/Logos/MakerJam.svg";
 import voiceflow from "/Logos/voiceflow.svg";
 
 function Sponsors() {

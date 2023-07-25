@@ -4,11 +4,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: var(--medium-primary-color);
-	font-size: 0.8rem;
-	margin: 10% auto 2% auto;
 	gap: 1rem;
 	width: 80%;
+	margin: 10% auto 2% auto;
+	color: var(--medium-primary-color);
+	font-family: "Rubik", sans-serif;
+	font-size: 0.8rem;
 }
 
 .footer-logo img {

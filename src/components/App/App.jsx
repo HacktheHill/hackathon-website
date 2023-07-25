@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer";
 import Hero from "../Hero/Hero";
 import NavBar from "../NavBar/NavBar";
 import Sidebar from "../NavBar/Sidebar";
-import Notification from "../Notification/Notification";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";

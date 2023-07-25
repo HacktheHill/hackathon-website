@@ -1,5 +1,5 @@
-import { Link } from "react-scroll";
 import React from "react";
+import { Link } from "react-scroll";
 import "./Button.css";
 function InnerButton({ children, ...rest }) {
 	return <button {...rest}>{children}</button>;

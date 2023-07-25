@@ -1,12 +1,12 @@
 .sponsors {
-    --text-color: var(--dark-color);
-    color: var(--text-color);
-    transition: 0.5s;
+	--text-color: var(--dark-color);
+	color: var(--text-color);
+	transition: 0.5s;
 	width: 80%;
 	margin: 6% auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .sponsor-icons {
