@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import "./Sidebar.css";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
 import { t } from "../../i18n";
 import styles from "./Sidebar.module.css";
 
@@ -68,16 +67,16 @@ const Sidebar = () => {
 		<>
 			<div className={styles["icon-container"]}>
 				<button
-					className={` ${ styles["sidebar-icon"]} ${isNavOpen ?  styles["sidebar-change"] : null}`}
+					className={`${styles["sidebar-icon"]} ${isNavOpen ? styles["sidebar-change"] : null}`}
 					onClick={() => setIsNavOpen(!isNavOpen)}
 				>
 					<div className={styles.bar1}></div>
-        <div className={styles.bar2}></div>
-        <div className={styles.bar3}></div>
+					<div className={styles.bar2}></div>
+					<div className={styles.bar3}></div>
 				</button>
 			</div>
 			<div className={styles["sidebar-content"]}>
-				<nav className={`${ styles.nav} ${isNavOpen ? styles["nav-open"] : styles["nav-closed"]}`}>
+				<nav className={`${styles.nav} ${isNavOpen ? styles["nav-open"] : styles["nav-closed"]}`}>
 					<ul className={styles["nav-links"]}>
 						{links.map(link => (
 							<li className={styles.link} key={link.text}>
