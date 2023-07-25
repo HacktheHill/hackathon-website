@@ -73,9 +73,9 @@ function Sponsors() {
 					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
 				</div>
 
-				<div className="sponsors-col">
+				<div className="sponsor-icons">
 					{Object.values(data.sponsors).map((tier, i) => (
-						<div key={i} className="sponsors-row">
+						<div key={i} className="sponsor-icons-row">
 							{tier.map((sponsor, j) => (
 								<a
 									key={j}
@@ -96,9 +96,9 @@ function Sponsors() {
 				</div>
 			</section>
 
-			<section className="sponsors">
+			<section id="community" className="sponsors">
 				<h1 id="community">{t("partners.title")}</h1>
-				<div className="sponsors-row">
+				<div className="sponsor-icons-row">
 					{data.collaborators.map((sponsor, i) => (
 						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className="sponsor-icon-box">
 							<img

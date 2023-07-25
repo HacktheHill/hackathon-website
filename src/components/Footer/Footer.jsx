@@ -45,8 +45,7 @@ function Footer() {
 					<Icon icon={faLinkedin} />
 				</a>
 			</div>
-
-			<p className="footer-desc">{t("footer.description")}</p>
+			<p className="footer-slogan">{t("footer.description")}</p>
 			<a
 				href="https://github.com/HacktheHill/2023.hackthehill.com"
 				target="_blank"
