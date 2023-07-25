@@ -1,17 +1,20 @@
 .collaborators {
+	display: flex;
+	flex-direction: column;
+	margin: 6% auto;
+	gap: 2rem;
+}
+
+.collaborators h1 {
+	width: 80%;
+	margin: auto;
 	color: var(--dark-text-color);
 	font-family: Coolvetica;
-	margin: 6% auto;
 	font-size: 3em;
 	font-weight: normal;
-	width: 80%;
 }
 
 .mountain-flags svg {
 	width: 100%;
 	height: 100%;
-}
-
-.mountain-flags {
-	margin: 6% auto;
 }
