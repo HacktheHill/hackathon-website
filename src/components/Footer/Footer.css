@@ -9,11 +9,9 @@
 	width: 90%;
 	flex-direction: column;
 	align-items: center;
-	text-align: center;
 }
 
 .footer-logo img {
-	box-sizing: border-box;
 	width: 200px;
 	height: auto;
 	margin: auto;
@@ -31,7 +29,6 @@
 }
 
 .media-links {
-	text-align: center;
 	display: flex;
 	justify-content: space-evenly;
 	font-size: 1.5rem;

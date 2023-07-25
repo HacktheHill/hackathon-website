@@ -57,7 +57,6 @@ function Footer() {
 				<Icon icon={faGithub} />
 				{t("footer.github")}
 			</a>
-
 			<small>&copy; 2022-2023 Hack the Hill</small>
 		</div>
 	);

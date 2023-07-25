@@ -72,7 +72,6 @@ export default function FAQ() {
 			<div id="faq" className={styles.header}>
 				{t("faq.title")}
 			</div>
-			<div className={styles["quesAns-container"]}>
 			{quesAns.map((item, i) => (
 				<Accordion
 					key={i}
@@ -112,7 +111,6 @@ export default function FAQ() {
 					</AccordionDetails>
 				</Accordion>
 			))}
-			</div>
 		</div>
 	);
 }
