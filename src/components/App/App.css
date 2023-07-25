@@ -23,4 +23,12 @@
 			#abeffa 100%);
 
 	--button-gradient: linear-gradient(90deg, #abeffb, transparent) #e9d9f2;
+
+	color-scheme: light;
+	scrollbar-gutter: stable;
+	background-color: var(--background-color);
+}
+
+body {
+	background-color: var(--light-color);
 }

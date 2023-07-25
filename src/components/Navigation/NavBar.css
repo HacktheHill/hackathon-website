@@ -2,19 +2,23 @@
 	--background-on-scroll: var(--background-color);
 	--link-color: var(--medium-primary-color);
 	--link-underline-color: var(--medium-primary-color);
+	--box-shadow-color: rgba(0, 0, 0, 0.1);
+
+	box-sizing: border-box;
 	position: fixed;
-	top: 0;
-	height: 5rem;
-	width: 100%;
-	z-index: 100;
-	transition: all 0.5s ease;
 	display: flex;
 	justify-content: space-between;
+	height: 5rem;
+	width: 100%;
+	padding-right: 1rem;
+	gap: 1rem;
+	transition: background-color 0.5s ease;
+	pointer-events: auto;
 }
 
 .navbar[data-scrolled="true"] {
 	background-color: var(--background-on-scroll);
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px var(--box-shadow-color);
 }
 
 .navbar ul {
@@ -23,7 +27,7 @@
 	align-items: center;
 	list-style: none;
 	padding: 0;
-	margin: 0 2rem;
+	margin: 0;
 	height: 100%;
 	gap: 1rem;
 }
@@ -32,11 +36,11 @@
 	cursor: pointer;
 }
 
-li {
+.navbar li {
 	height: 100%;
 }
 
-li .link {
+.navbar li .link {
 	box-sizing: border-box;
 	position: relative;
 	color: var(--link-color);
@@ -50,7 +54,7 @@ li .link {
 	align-items: center;
 }
 
-li:not(.logo) .link::after {
+.navbar li:not(.logo) .link::after {
 	background: var(--link-underline-color);
 	content: "";
 	position: absolute;
@@ -64,7 +68,7 @@ li:not(.logo) .link::after {
 	transition: opacity 0.3s ease, transform 0.3s ease-in-out;
 }
 
-li:not(.logo) .link:is(.active, :hover)::after {
+.navbar li:not(.logo) .link:is(.active, :hover)::after {
 	opacity: 0.8;
 	transform: translateY(0);
 }
@@ -74,27 +78,55 @@ li:not(.logo) .link:is(.active, :hover)::after {
 }
 
 .language-button {
-	display: flex;
 	background: none;
 	border: none;
-	color: #3b4779;
-	font-weight: bolder;
-	font-size: 1rem;
+}
+
+.sidebar-icon {
+	display: none;
+	height: 100%;
+	background-color: transparent;
+	border: none;
 	cursor: pointer;
 }
 
-@media (max-width: 940px) {
-	.navbar ul:not(.language-selector) .link {
-		display: none;
-	}
+.sidebar-icon div {
+	width: 1.75rem;
+	height: 0.25rem;
+	background-color: var(--link-color);
+	margin: 0.3rem 0;
+	transition: 0.5s;
+	border-radius: 0.25rem;
+}
 
+.sidebar-open :nth-child(1) {
+	transform: translate(0, 1.2ch) rotate(-45deg);
+}
+
+.sidebar-open :nth-child(2) {
+	opacity: 0;
+}
+
+.sidebar-open :nth-child(3) {
+	transform: translate(0, -1.2ch) rotate(45deg);
+}
+
+@media (max-width: 940px) {
 	.navbar {
 		position: absolute;
+	}
+
+	.navbar ul:not(.language-selector) {
+		display: none;
 	}
 
 	.navbar[data-scrolled="true"] {
 		background-color: transparent;
 		box-shadow: none;
+	}
+
+	.sidebar-icon {
+		display: block;
 	}
 }
 

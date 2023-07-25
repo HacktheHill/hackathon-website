@@ -4,8 +4,7 @@ import About from "../About/About";
 import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
 import Hero from "../Hero/Hero";
-import NavBar from "../NavBar/NavBar";
-import Sidebar from "../NavBar/Sidebar";
+import Navigation from "../Navigation/Navigation";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "./App.css";
@@ -22,8 +21,7 @@ function App() {
 
 	return (
 		<>
-			<Sidebar />
-			<NavBar pageScroll={pageScroll} />
+			<Navigation pageScroll={pageScroll} />
 			<Hero />
 			<About />
 			<Sponsors />
