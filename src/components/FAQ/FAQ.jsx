@@ -1,18 +1,23 @@
+<<<<<<< Updated upstream
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+=======
+>>>>>>> Stashed changes
 import { useState } from "react";
 import { t } from "../../i18n";
 import styles from "./FAQ.module.css";
 
 export default function FAQ() {
-	const [expandedList, setExpandedList] = useState([]);
+  const [expandedList, setExpandedList] = useState([]);
 
-	const handleKeyList = (event, e) => {
-		if (expandedList.includes(e.key)) {
-			setExpandedList(prev => prev.filter(keys => keys !== e.key));
-		} else {
-			setExpandedList(arr => [...arr, `${e.key}`]);
-		}
-	};
+ const handleKeyList = (event, item) => {
+    const key = item.key;
+    if (expandedList.includes(key)) {
+      setExpandedList((prevList) => prevList.filter((k) => k !== key));
+    } else {
+      setExpandedList((prevList) => [...prevList, key]);
+    }
+  };
+
 
 	const quesAns = [
 		{
@@ -66,51 +71,48 @@ export default function FAQ() {
 			key: "9",
 		},
 	];
+return (
+    <div className={styles.container}>
+      <div id="faq" className={styles.header}>
+        {t("faq.title")}
+      </div>
+      {quesAns.map((item, i) => (
+        <div
+          key={i}
+          className={styles["question-container"]}
+          sx={{
+            backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "",
+            justifyContent: "left",
+            mb: "10px",
+            mt: "10px",
+            boxShadow: "none",
+            borderRadius: "10px",
+            "&:hover": {
+              backgroundColor: "var(--question-container-hover-color)",
+            },
+            "&:before": {
+              display: "none",
+            },
+          }}
+        >
+          <div
+            expandIcon={<box-icon name="chevron-down"></box-icon>}
+            className={styles.question}
+            onClick={(event) => handleKeyList(event, item)} // Pass the item as the second argument
+            sx={{
+              color: "var(--question-text-color)",
+            }}
+          >
+            {item.q}
+          </div>
 
-	return (
-		<div className={styles.container}>
-			<div id="faq" className={styles.header}>
-				{t("faq.title")}
-			</div>
-			{quesAns.map((item, i) => (
-				<Accordion
-					key={i}
-					className={styles["question-container"]}
-					sx={{
-						backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "",
-						justifyContent: "left",
-						mb: "10px",
-						mt: "10px",
-						boxShadow: "none",
-						borderRadius: "10px",
-						"&:hover": {
-							backgroundColor: "var(--question-container-hover-color)",
-						},
-						"&:before": {
-							display: "none",
-						},
-					}}
-				>
-					<AccordionSummary
-						expandIcon={<box-icon name="chevron-down"></box-icon>}
-						className={styles.question}
-						onClick={event => handleKeyList(event, item)}
-						sx={{
-							color: "var(--question-text-color)",
-						}}
-					>
-						{item.q}
-					</AccordionSummary>
-					<AccordionDetails
-						className={styles.answer}
-						sx={{
-							pt: 0,
-						}}
-					>
-						<Typography align={"left"}>{item.a}</Typography>
-					</AccordionDetails>
-				</Accordion>
-			))}
-		</div>
-	);
+          {expandedList.includes(item.key) && (
+            <div className={styles.answer}>
+              {item.a}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }
