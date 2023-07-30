@@ -1,4 +1,4 @@
-.footer{
+.footer {
 	--media-links: var(--medium-primary-color);
 	--footer-links: var(--medium-primary-color);
 
@@ -6,7 +6,7 @@
 	color: var(--medium-primary-color);
 }
 
-.footer-logo{
+.footer-logo {
 	display: block;
 	margin: auto;
 }
@@ -19,19 +19,19 @@
 	padding-top: 50px;
 }
 
-.logo-text{
+.logo-text {
 	margin-bottom: 1rem;
 	font-family: Coolvetica;
 	text-align: center;
 }
 
-.footer-container{
+.footer-container {
 	display: flex;
 	margin: 0 5%;
 	justify-content: center;
 }
 
-.media-links{
+.media-links {
 	text-align: center;
 	display: flex;
 	justify-content: space-evenly;
