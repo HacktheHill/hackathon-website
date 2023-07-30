@@ -119,8 +119,8 @@ export default {
 	headshot: {
 		imgAlt: "Image de ",
 
-		team_codir_f: "Co-Directrice",
-		team_codir_m: "Co-Directeur",
+		team_codir_girl: "Co-Directrice",
+		team_codir_boy: "Co-Directeur",
 		team_community: "Communauté",
 		team_design: "Désign",
 		team_development: "Développement",
