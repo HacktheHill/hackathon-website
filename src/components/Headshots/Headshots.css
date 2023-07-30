@@ -6,14 +6,14 @@
 	padding: 5% 10%;
 }
 
-.headshots>h1 {
+.headshots > h1 {
 	color: white;
 	font-family: Coolvetica;
 	font-size: 3em;
 	font-weight: normal;
 }
 
-.headshots>div {
+.headshots > div {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 	gap: 1rem;

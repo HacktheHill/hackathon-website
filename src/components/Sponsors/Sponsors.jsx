@@ -66,7 +66,7 @@ function Sponsors() {
 	};
 
 	return (
-		<div>
+		<>
 			<section id="sponsors" className={styles["sponsors"]}>
 				<h1>{t("sponsors.title")}</h1>
 				<div>
