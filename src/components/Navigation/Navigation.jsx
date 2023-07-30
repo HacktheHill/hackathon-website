@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./NavBar";
 import "./Navigation.css";
 import Sidebar from "./Sidebar";
 
 const Navigation = ({ pageScroll }) => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
+
+	useEffect(() => {
+		if (sidebarOpen) {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	}, [sidebarOpen]);
 
 	return (
 		<div className="navigation">
