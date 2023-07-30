@@ -18,7 +18,6 @@ import lonehaven from "/Logos/Lonehaven.svg";
 import MakerJam from "/Logos/MakerJam.svg";
 import SCESoc from "/Logos/SCESoc.svg";
 import Vercel from "/Logos/Vercel.svg";
-import balsamiq from "/Logos/balsamiq.svg";
 import Ceed from "/Logos/ceed.svg";
 import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";

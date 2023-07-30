@@ -17,7 +17,7 @@ function Collaborators() {
 				{t("collaborators.title")}
 			</h1>
 			<MountainFlags data={data} />
-		</div>
+		</>
 	);
 }
 

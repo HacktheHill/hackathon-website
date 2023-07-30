@@ -4,7 +4,6 @@ import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
 import { useStore } from "@nanostores/react";
 
-import styles from "./NavBar.module.css";
 function Navbar({ pageScroll }) {
 	const languages = {
 		en: "EN",
@@ -99,7 +98,7 @@ function Navbar({ pageScroll }) {
 					</li>
 					<li>
 						<Link
-							className={styles.link}
+							className="link"
 							activeClass="active"
 							to="collaborators"
 							spy={true}
