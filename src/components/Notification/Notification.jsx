@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { t } from "../../i18n";
 import Button from "../Button/Button";
-import "./Notification.css";
+import styles from "./Notification.module.css";
 
 function Notification() {
 	const [visible, setVisible] = useState(false);
@@ -19,13 +19,13 @@ function Notification() {
 	return (
 		<div
 			id="notification"
-			className="notification"
+			className={styles.notification}
 			style={{
 				transform: visible ? "translateY(0)" : "translateY(100%) scaleY(0)",
 			}}
 			aria-hidden={!visible}
 		>
-			<div className="notification-content">
+			<div className={styles["notification-content"]}>
 				<p>{t("notification.message")}</p>
 				<Button
 					href="https://thefulcrum.ca/sciencetech/u-of-o-hackathon-hosted-by-hack-the-hill/"
@@ -34,7 +34,11 @@ function Notification() {
 					{t("notification.button_text")}
 				</Button>
 			</div>
-			<button className="close-button" title={t("notification.close")} onClick={() => setVisible(false)}>
+			<button
+				className={styles["close-button"]}
+				title={t("notification.close")}
+				onClick={() => setVisible(false)}
+			>
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<title>{t("notification.close")}</title>
 					<path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

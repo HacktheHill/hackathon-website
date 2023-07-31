@@ -1,5 +1,5 @@
 import { t } from "../../i18n";
-import "./Collaborators.css";
+import styles from "./Collaborators.module.css";
 import MountainFlags from "./MountainFlags";
 
 const data = [
@@ -12,7 +12,7 @@ const data = [
 
 function Collaborators() {
 	return (
-		<div id="collaborators" className="collaborators">
+		<div id="collaborators" className={styles.collaborators}>
 			<h1>{t("collaborators.title")}</h1>
 			<MountainFlags data={data} />
 		</div>

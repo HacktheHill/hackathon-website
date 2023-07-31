@@ -1,3 +1,16 @@
+.card {
+	min-width: 150px;
+	max-width: 150px;
+	border: 3px solid white;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+	transition: 330ms ease-in-out;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
 .schedule h1 {
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -104,7 +117,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-	.Schedule {
+	.schedule {
 		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
 		background-repeat: no-repeat;
 		background-position: left 50px, right 750px, top 100px right 50px;

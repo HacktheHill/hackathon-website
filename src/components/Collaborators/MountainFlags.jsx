@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import mountainFlags from "../../assets/mountain-flags.svg?raw";
+import styles from "./Collaborators.module.css";
 
 function MountainFlags({ data }) {
 	const mountain = useRef(null);
@@ -22,7 +23,7 @@ function MountainFlags({ data }) {
 		};
 	}, []);
 
-	return <div ref={mountain} className="mountain-flags"></div>;
+	return <div ref={mountain} className={styles["mountain-flags"]}></div>;
 }
 
 export default MountainFlags;
