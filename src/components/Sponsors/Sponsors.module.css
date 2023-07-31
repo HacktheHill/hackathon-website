@@ -1,28 +1,28 @@
 .sponsors {
 	--text-color: var(--dark-color);
+
 	color: var(--text-color);
 	transition: 0.5s;
-	width: 80%;
-	margin: 6% auto;
+	margin-bottom: 5%;
+	padding: 0 10%;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 3rem;
 }
 
-.sponsor-icons {
+.sponsors-col {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 4rem;
-	margin: auto;
+	gap: 5rem;
 }
 
-.sponsor-icons-row {
+.sponsors-row {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	gap: 4rem;
+	gap: 3rem;
 	width: 100%;
 }
 

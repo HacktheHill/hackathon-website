@@ -1,12 +1,12 @@
 import React from "react";
 import { t } from "../../i18n";
-import "./About.css";
 import Mascot from "/SVGs/mascot-waving.svg";
+import styles from "./About.module.css";
 
 function About() {
 	return (
-		<div className="about" id="about">
-			<div className="about-text">
+		<div className={styles.about} id="about">
+			<div className={styles["about-text"]}>
 				<h1>{t("about.title")}</h1>
 				<p>
 					{t("about.p1")}
@@ -18,7 +18,7 @@ function About() {
 					{t("about.p3")}
 				</p>
 			</div>
-			<img className="mascot" src={Mascot} alt={t("about.img_alt")} />
+			<img className={styles.mascot} src={Mascot} alt={t("about.img_alt")} />
 		</div>
 	);
 }

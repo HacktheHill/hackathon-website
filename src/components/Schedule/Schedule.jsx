@@ -1,7 +1,7 @@
-import { Box, Button, Card, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, Stack, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import { t } from "../../i18n";
-import "./Schedule.css";
+import styles from "./Schedule.module.css";
 
 function Schedule() {
 	const theme = useTheme();
@@ -9,27 +9,9 @@ function Schedule() {
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
 
-	const styles = {
-		card: {
-			minWidth: "150px",
-			maxWidth: "150px",
-			backgroundColor: "#3b477a",
-			border: "3px solid white",
-			borderRadius: "10px",
-			maxHeight: "140px",
-			mt: matchesMD ? "10px" : "0px",
-			boxShadow: "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
-			transition: "transform 330ms ease-in-out",
-			"&:hover": {
-				transform: "scale(1.05)",
-				transition: "transform 330ms ease-in-out",
-			},
-		},
-	};
-
 	return (
-		<div id="schedule" className="schedule">
-			<h1 className="schedule-title">{t("schedule.title")}</h1>
+		<div id="schedule" className={styles.schedule}>
+			<h1 className={styles.scheduleTitle}>{t("schedule.title")}</h1>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 			<Box
 				sx={{
@@ -38,27 +20,18 @@ function Schedule() {
 					mt: matchesSM ? "15%" : "auto",
 				}}
 			>
-				<Stack spacing={10} id="eventStack" className="event-stack">
+				<Stack spacing={10} id="eventStack" className={styles.eventStack}>
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="center">
-							<Card
-								variant="outlined"
-								style={styles.card}
-								sx={{
-									"&:hover": {
-										transform: "scale(1.05)",
-										transition: "transform 330ms ease-in-out",
-									},
-								}}
-							>
+						<div className={styles.center}>
+							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className="event-month">{t("schedule.event1.month")}</div>
-									<div className="event-day">16</div>
+									<div className={styles.eventMonth}>{t("schedule.event1.month")}</div>
+									<div className={styles.eventDay}>16</div>
 								</Stack>
-							</Card>
+							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="event-title">
+							<div className={styles.eventTitle}>
 								{t("schedule.event1.title")}
 								<Button
 									target="_blank"
@@ -79,36 +52,27 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">{t("schedule.event1.status")}</p>
+									<p className={styles.buttonText}>{t("schedule.event1.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">{t("schedule.event1.time")}</div>
-							<p className="event-desc" align="left">
+							<div className={styles.subTitle}>{t("schedule.event1.time")}</div>
+							<p className={styles.eventDesc} align="left">
 								{t("schedule.event1.description")}
 							</p>
 						</Stack>
 					</Stack>
 
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="center">
-							<Card
-								variant="outlined"
-								style={styles.card}
-								sx={{
-									"&:hover": {
-										transform: "scale(1.05)",
-										transition: "transform 330ms ease-in-out",
-									},
-								}}
-							>
+						<div className={styles.center}>
+							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className="event-month">{t("schedule.event2.month")}</div>
-									<div className="event-day">30</div>
+									<div className={styles.eventMonth}>{t("schedule.event2.month")}</div>
+									<div className={styles.eventDay}>30</div>
 								</Stack>
-							</Card>
+							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="event-title">
+							<div className={styles.eventTitle}>
 								{t("schedule.event2.title")}
 								<Button
 									disabled
@@ -132,36 +96,27 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">{t("schedule.event2.status")}</p>
+									<p className={styles.buttonText}>{t("schedule.event2.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">{t("schedule.event2.time")}</div>
-							<p className="event-desc" align="left">
+							<div className={styles.subTitle}>{t("schedule.event2.time")}</div>
+							<p className={styles.eventDesc} align="left">
 								{t("schedule.event2.description")}
 							</p>
 						</Stack>
 					</Stack>
 
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="center">
-							<Card
-								variant="outlined"
-								style={styles.card}
-								sx={{
-									"&:hover": {
-										transform: "scale(1.05)",
-										transition: "transform 330ms ease-in-out",
-									},
-								}}
-							>
+						<div className={styles.center}>
+							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className="event-month">{t("schedule.event3.month")}</div>
-									<div className="event-day">11</div>
+									<div className={styles.eventMonth}>{t("schedule.event3.month")}</div>
+									<div className={styles.eventDay}>11</div>
 								</Stack>
-							</Card>
+							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="event-title">
+							<div className={styles.eventTitle}>
 								{t("schedule.event3.title")}
 								<Button
 									disabled
@@ -183,36 +138,27 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">{t("schedule.event3.status")}</p>
+									<p className={styles.buttonText}>{t("schedule.event3.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">{t("schedule.event3.time")}</div>
-							<p className="event-desc" align="left">
+							<div className={styles.subTitle}>{t("schedule.event3.time")}</div>
+							<p className={styles.eventDesc} align="left">
 								{t("schedule.event3.description")}
 							</p>
 						</Stack>
 					</Stack>
 
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
-						<div className="center">
-							<Card
-								variant="outlined"
-								style={styles.card}
-								sx={{
-									"&:hover": {
-										transform: "scale(1.05)",
-										transition: "transform 330ms ease-in-out",
-									},
-								}}
-							>
+						<div className={styles.center}>
+							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className="event-month">{t("schedule.event4.month")}</div>
-									<div className="event-day">25</div>
+									<div className={styles.eventMonth}>{t("schedule.event4.month")}</div>
+									<div className={styles.eventDay}>25</div>
 								</Stack>
-							</Card>
+							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className="event-title">
+							<div className={styles.eventTitle}>
 								{t("schedule.event4.title")}
 								<Button
 									href="https://youtu.be/mbr4ZmXtx0k"
@@ -233,11 +179,11 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className="button-text">{t("schedule.event4.status")}</p>
+									<p className={styles.buttonText}>{t("schedule.event4.status")}</p>
 								</Button>
 							</div>
-							<div className="sub-title">{t("schedule.event4.time")}</div>
-							<p className="event-desc" align="left">
+							<div className={styles.subTitle}>{t("schedule.event4.time")}</div>
+							<p className={styles.eventDesc} align="left">
 								{t("schedule.event4.description")}
 							</p>
 						</Stack>

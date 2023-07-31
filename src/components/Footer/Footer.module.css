@@ -10,28 +10,35 @@
 	margin-top: 10%;
 	padding-bottom: 1rem;
 	color: var(--medium-primary-color);
-	font-family: "Rubik", sans-serif;
-	font-size: 0.8rem;
+}
+
+.footer-logo {
+	display: block;
+	margin: auto;
 }
 
 .footer-logo img {
+	box-sizing: border-box;
 	width: 200px;
 	height: auto;
-	margin: auto;
+	margin: 0px auto;
+	padding-top: 50px;
 }
 
 .logo-text {
-	margin: auto;
+	margin-bottom: 1rem;
 	font-family: Coolvetica;
 	text-align: center;
-	font-size: 1rem;
 }
 
-.footer-slogan {
-	margin: 0;
+.footer-container {
+	display: flex;
+	margin: 0 5%;
+	justify-content: center;
 }
 
 .media-links {
+	text-align: center;
 	display: flex;
 	justify-content: space-evenly;
 	font-size: 1.5rem;
@@ -48,12 +55,20 @@
 	animation-iteration-count: 1;
 }
 
+.footer-text {
+	text-align: center;
+	font-size: 0.8rem;
+	padding: 1rem;
+	font-family: "Rubik", sans-serif;
+}
+
 .footer-link {
 	display: flex;
+	gap: 0.5ch;
 	justify-content: center;
+	margin: 1em;
 	color: var(--footer-links);
 	text-decoration: none;
-	gap: 0.2rem;
 }
 
 @keyframes tada {

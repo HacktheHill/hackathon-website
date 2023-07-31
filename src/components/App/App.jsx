@@ -7,8 +7,8 @@ import Hero from "../Hero/Hero";
 import Navigation from "../Navigation/Navigation";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
-import "./App.css";
 import Headshots from "../Headshots/Headshots";
+import "./global.css";
 
 function App() {
 	const [pageScroll, setPageScroll] = useState(0);
