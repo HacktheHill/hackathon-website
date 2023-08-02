@@ -11,7 +11,7 @@ function Schedule() {
 
 	return (
 		<div id="schedule" className={styles.schedule}>
-			<h1 className={styles.scheduleTitle}>{t("schedule.title")}</h1>
+			<h1 className={styles["schedule-title"]}>{t("schedule.title")}</h1>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 			<Box
 				sx={{
@@ -20,7 +20,7 @@ function Schedule() {
 					mt: matchesSM ? "15%" : "auto",
 				}}
 			>
-				<Stack spacing={10} id="eventStack" className={styles.eventStack}>
+				<Stack spacing={10} id="eventStack" className={styles["event-stack"]}>
 					<Stack direction={{ xs: "column", md: "row" }} spacing={matchesMD ? 5 : 10} sx={{ width: "100%" }}>
 						<div className={styles.center}>
 							<div className={styles.card}>
@@ -31,7 +31,7 @@ function Schedule() {
 							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className={styles.eventTitle}>
+							<div className={styles["event-title"]}>
 								{t("schedule.event1.title")}
 								<Button
 									target="_blank"
@@ -72,7 +72,7 @@ function Schedule() {
 							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className={styles.eventTitle}>
+							<div className={styles["event-title"]}>
 								{t("schedule.event2.title")}
 								<Button
 									disabled
@@ -116,7 +116,7 @@ function Schedule() {
 							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className={styles.eventTitle}>
+							<div className={styles["event-title"]}>
 								{t("schedule.event3.title")}
 								<Button
 									disabled
@@ -158,7 +158,7 @@ function Schedule() {
 							</div>
 						</div>
 						<Stack sx={{ width: "100%" }}>
-							<div className={styles.eventTitle}>
+							<div className={styles["event-title"]}>
 								{t("schedule.event4.title")}
 								<Button
 									href="https://youtu.be/mbr4ZmXtx0k"

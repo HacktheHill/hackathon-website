@@ -37,7 +37,7 @@
 	background-size: 10%, 8%, 2%;
 }
 
-.scheduleTitle {
+.schedule-title {
 	color: var(--title-color);
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -73,7 +73,7 @@
 	font-family: Coolvetica;
 }
 
-.eventTitle {
+.event-title {
 	font-size: 30px;
 	font-weight: normal;
 	color: var(--event-title-color);
@@ -91,7 +91,7 @@
 	border-color: var(--event-border-color);
 }
 
-.eventStack {
+.event-stack {
 	flex-wrap: wrap;
 }
 
@@ -122,10 +122,10 @@
 		background-position: left 50px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;
 	}
-	.eventTitle {
+	.event-title {
 		flex-direction: column;
 	}
-	.scheduleTitle {
+	.schedule-title {
 		font-size: 3em;
 	}
 }
