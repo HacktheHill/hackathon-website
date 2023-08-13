@@ -1,7 +1,5 @@
-<<<<<<< Updated upstream
+
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-=======
->>>>>>> Stashed changes
 import { useState } from "react";
 import { t } from "../../i18n";
 import styles from "./FAQ.module.css";
@@ -9,7 +7,7 @@ import styles from "./FAQ.module.css";
 export default function FAQ() {
   const [expandedList, setExpandedList] = useState([]);
 
- const handleKeyList = (event, item) => {
+  const handleKeyList = (event, item) => {
     const key = item.key;
     if (expandedList.includes(key)) {
       setExpandedList((prevList) => prevList.filter((k) => k !== key));
@@ -71,46 +69,28 @@ export default function FAQ() {
 			key: "9",
 		},
 	];
-return (
+    return (
     <div className={styles.container}>
       <div id="faq" className={styles.header}>
         {t("faq.title")}
       </div>
       {quesAns.map((item, i) => (
         <div
-          key={i}
-          className={styles["question-container"]}
-          sx={{
-            backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "",
-            justifyContent: "left",
-            mb: "10px",
-            mt: "10px",
-            boxShadow: "none",
-            borderRadius: "10px",
-            "&:hover": {
-              backgroundColor: "var(--question-container-hover-color)",
-            },
-            "&:before": {
-              display: "none",
-            },
-          }}
+          key={item.key}
+          className={`${styles["question-container"]} ${styles.itemSpacing} ${expandedList.includes(item.key) ? styles.faqItemActive : ""}`}
         >
           <div
-            expandIcon={<box-icon name="chevron-down"></box-icon>}
-            className={styles.question}
-            onClick={(event) => handleKeyList(event, item)} // Pass the item as the second argument
-            sx={{
-              color: "var(--question-text-color)",
-            }}
+            className={`${styles["question-and-answer"]} ${styles.faqItem}`}
+            onClick={(event) => handleKeyList(event, item)} 
           >
-            {item.q}
-          </div>
+            <div className={`${styles.question} ${expandedList.includes(item.key) ? styles.questionWithClickedMargins : styles.questionWithMargins}`}>{item.q}</div>
 
-          {expandedList.includes(item.key) && (
-            <div className={styles.answer}>
-              {item.a}
-            </div>
-          )}
+            {expandedList.includes(item.key) && (
+              <div className={`${styles.answer} ${styles.answerOpen} ${expandedList.includes(item.key) ? styles.answerWithClickedMargins : ""}`}>
+                {item.a}
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>
