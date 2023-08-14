@@ -14,7 +14,6 @@
 	font-weight: normal;
 	font-family: Rubik;
 	gap: 1rem;
-
 }
 
 .header {
@@ -22,8 +21,6 @@
 	font-size: 3em;
 	font-weight: normal;
 	margin-bottom: 1em;
-	
-
 }
 
 .question-container {
@@ -34,18 +31,22 @@
 .question-container:hover {
 	background-color: var(--question-container-hover-color);
 	border-radius: 1em;
-	
-	
+
+
 }
+
 .questionWithClickedMargins {
 	margin: 10px;
 }
+
 .answerWithClickedMargins {
 	margin: 10px;
 }
+
 .questionWithMargins {
 	margin: 10px;
 }
+
 .question-container:before {
 	display: "none";
 }
@@ -62,11 +63,10 @@
 	background-color: var(--question-container-hover-color);
 	/* Set background color for active question */
 	border-radius: 1em;
-	
 }
 
 .answer {
-	
+
 	font-size: 16px;
 	color: var(--answer-text-color);
 	transition: max-height 1s ease-out;
