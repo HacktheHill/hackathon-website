@@ -1,26 +1,4 @@
-.card {
-	min-width: 150px;
-	max-width: 150px;
-	border: 3px solid white;
-	border-radius: 10px;
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-	transition: 330ms ease-in-out;
-}
-
-.card:hover {
-	transform: scale(1.05);
-}
-
-.schedule h1 {
-	font-family: Coolvetica;
-	margin-bottom: 3%;
-	font-size: 3em;
-	margin-left: 10%;
-	font-weight: normal;
-}
-
 .schedule {
-	/* Note: there are also colors in the MUI in .Schedule.jsx */
 	--background-color: var(--medium-primary-color);
 	--title-color: var(--light-color);
 	--event-month-color: var(--light-color);
@@ -29,6 +7,11 @@
 	--event-border-color: var(--light-color);
 	--event-desc-color: var(--light-color);
 	--event-subtitle-color: var(--light-color);
+	--disabled-text-color-btn: rgba(147, 147, 147, 0.659);
+	--background-color-hover-btn: #f094bc;
+
+	--coolvetica-font-family: Coolvetica;
+	--rubik-font-family: Rubik;
 
 	background-color: #3b477a;
 	padding-bottom: 60px;
@@ -36,63 +19,38 @@
 	background-repeat: no-repeat;
 	background-position: left 50px, right 400px, top 100px right 100px;
 	background-size: 10%, 8%, 2%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	gap: 3rem;
+}
+
+.schedule-content {
+	width: 80%;
+	margin: 3% auto;
+	gap: 2rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .schedule-title {
 	color: var(--title-color);
-	font-family: Coolvetica;
-	margin-bottom: 3%;
-	padding-top: 3%;
-	font-size: 3.25em;
-	margin-left: 10%;
-	font-weight: normal;
-}
-
-.button-text {
-	font-family: Rubik;
 	margin: auto;
-	font-weight: bold;
-	font-size: 15px;
-}
-
-.event-month {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
-	font-size: 25px;
+	font-family: var(--coolvetica-font-family);
+	font-size: 3em;
 	font-weight: normal;
-	color: var(--event-month-color);
-	font-family: Coolvetica;
+	display: contents;
 }
 
-.event-day {
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 75px;
-	font-weight: normal;
-	color: var(--event-day-color);
-	font-family: Coolvetica;
-}
-
-.event-title {
-	font-size: 30px;
-	font-weight: normal;
-	color: var(--event-title-color);
-	text-align: left;
-	font-family: Coolvetica;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-}
-
-.event {
-	width: "20%";
-	border-radius: "10px";
-	border-width: "3px";
-	border-color: var(--event-border-color);
+.schedule-box {
+	width: 90%;
+    display: flex;
+    margin: auto;
 }
 
 .event-stack {
+	display: flex;
+	gap: 5rem;
 	flex-wrap: wrap;
 }
 
@@ -101,19 +59,109 @@
 	justify-content: center;
 }
 
-.event-desc {
-	color: var(--event-desc-color);
-	font-family: Rubik;
-	font-size: 16px;
-	margin-top: 30px;
+.event-container {
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.event-card {
+	transition: transform 330ms ease-in-out;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+	border: 3px solid white;
+	border-radius: 10px;
+	width: 9rem;
+    height: 9rem;
+	background-color: var(background-color);
+	justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.event-card:hover {
+	transform: scale(1.05);
+	transition: transform 330ms ease-in-out;
+}
+
+.event-card-content {
+	display: grid;
+	justify-content: center;
+	margin: auto;
+}
+
+.event-month {
+	font-size: 25px;
+	font-weight: normal;
+	color: var(--event-month-color);
+	font-family: var(--coolvetica-font-family);
+}
+
+.event-day {
+	margin: auto;
+	font-size: 75px;
+	font-weight: normal;
+	color: var(--event-day-color);
+	font-family: var(--coolvetica-font-family);
+}
+
+.event-details {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.event-title {
+	font-size: 30px;
+	font-weight: normal;
+	color: var(--event-title-color);
+	text-align: left;
+	font-family: var(--coolvetica-font-family);;
+	display: flex;
+	justify-content: space-between;
+}
+
+.event-btn {
+	background: var(--button-gradient);
+	border-radius: 100px;
+	color: var(--medium-primary-color);
+	text-transform: none;
+	height: 2.5rem;
+	transition: 1s;
+	cursor: pointer;
+	border: 0;
+	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
+}
+
+.event-btn:hover {
+	background-color: var(--background-color-hover-btn);
+}
+
+.event-btn:disabled {
+	cursor: default;
+	color: var(--disabled-text-color-btn);
+	background: var(--button-gradient);
+	transition: none;
+}
+
+.button-text {
+	font-family: var(--rubik-font-family);
+	margin: auto;
+	font-weight: bold;
+	font-size: 1rem;
 }
 
 .sub-title {
 	color: var(--event-subtitle-color);
-	font-family: Rubik;
+	font-family: var(--rubik-font-family);
 	font-size: 18px;
 	font-weight: normal;
-	margin-top: 5px;
+}
+
+.event-desc {
+	color: var(--event-desc-color);
+	font-family: var(--rubik-font-family);
+	font-size: 16px;
+	margin: 1.5rem 0 0 0;
 }
 
 @media only screen and (max-width: 900px) {
@@ -131,6 +179,11 @@
 	.schedule-title {
 		font-size: 3em;
 	}
+
+	.event-container {
+		flex-direction: column;
+	}
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -140,4 +193,13 @@
 		background-position: left 150px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;
 	}
+
+	.schedule-card {
+		margin-top: 10px;
+	}
+
+	.event-container {
+		flex-direction: column;
+	}
+
 }
