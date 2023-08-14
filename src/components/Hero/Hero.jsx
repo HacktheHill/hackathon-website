@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
+import { t } from "../../i18n";
+import "./Hero.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 import styles from "./Hero.module.css";

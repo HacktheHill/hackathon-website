@@ -3,11 +3,11 @@ import FAQ from "..//FAQ/FAQ";
 import About from "../About/About";
 import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
+import Headshots from "../Headshots/Headshots";
 import Hero from "../Hero/Hero";
 import Navigation from "../Navigation/Navigation";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
-import Headshots from "../Headshots/Headshots";
 import "./global.css";
 
 function App() {

@@ -1,8 +1,7 @@
 import React from "react";
+import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
-import { t } from "../../i18n";
-import balsamiq from "/Logos/balsamiq.svg";
 import Blackberry from "/Logos/Blackberry.svg";
 import CSClub from "/Logos/CSClub.svg";
 import CSE from "/Logos/CSE.svg";
@@ -18,6 +17,7 @@ import lonehaven from "/Logos/Lonehaven.svg";
 import MakerJam from "/Logos/MakerJam.svg";
 import SCESoc from "/Logos/SCESoc.svg";
 import Vercel from "/Logos/Vercel.svg";
+import balsamiq from "/Logos/balsamiq.svg";
 import Ceed from "/Logos/ceed.svg";
 import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
@@ -98,7 +98,7 @@ function Sponsors() {
 				</div>
 			</section>
 
-			<section id="community"  className={styles["sponsors"]}>
+			<section id="community" className={styles["sponsors"]}>
 				<h1 id="community">{t("partners.title")}</h1>
 				<div className={styles["sponsors-icons-row"]}>
 					{data.collaborators.map((sponsor, i) => (
@@ -110,7 +110,7 @@ function Sponsors() {
 							className={styles["sponsor-icon-box"]}
 						>
 							<img
-								className={`${styles["sponsor-icon"]} ${styles[`icon-medium`]}`}
+								className={`${styles["sponsor-icon"]} ${styles["icon-medium"]}`}
 								alt={t("partners.icon_alt")}
 								src={sponsor.src}
 							></img>

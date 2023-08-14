@@ -6,6 +6,7 @@
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 	transition: 330ms ease-in-out;
 }
+
 .card:hover {
 	transform: scale(1.05);
 }
@@ -37,7 +38,7 @@
 	background-size: 10%, 8%, 2%;
 }
 
-.schedule-title {
+.scheduleTitle {
 	color: var(--title-color);
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -73,7 +74,7 @@
 	font-family: Coolvetica;
 }
 
-.event-title {
+.eventTitle {
 	font-size: 30px;
 	font-weight: normal;
 	color: var(--event-title-color);
@@ -91,7 +92,7 @@
 	border-color: var(--event-border-color);
 }
 
-.event-stack {
+.eventStack {
 	flex-wrap: wrap;
 }
 
@@ -122,9 +123,11 @@
 		background-position: left 50px, right 750px, top 100px right 50px;
 		background-size: 18%, 18%, 7%;
 	}
+
 	.event-title {
 		flex-direction: column;
 	}
+
 	.schedule-title {
 		font-size: 3em;
 	}

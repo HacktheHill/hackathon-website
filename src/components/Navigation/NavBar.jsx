@@ -1,8 +1,7 @@
 import { Link } from "react-scroll";
-import { t, locale } from "../../i18n";
+import { locale, t } from "../../i18n";
 import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
-import { useStore } from "@nanostores/react";
 
 function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 	const languages = {

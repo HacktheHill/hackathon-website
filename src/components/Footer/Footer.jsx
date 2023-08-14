@@ -2,8 +2,8 @@ import { faFacebook, faGithub, faInstagram, faLinkedin, faTiktok, faTwitter } fr
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { t } from "../../i18n";
-import FooterLogo from "/Logos/hackthehill-banner.svg";
 import styles from "./Footer.module.css";
+import FooterLogo from "/Logos/hackthehill-banner.svg";
 
 function Footer() {
 	return (

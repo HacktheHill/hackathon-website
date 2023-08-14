@@ -1,8 +1,7 @@
-import React from "react";
-import { faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
+import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { t, locale } from "../../i18n";
+import React from "react";
+import { t } from "../../i18n";
 import "./Headshot.css";
 
 const Headshot = ({ team, name, role, instagram, linkedin, website, image }) => {

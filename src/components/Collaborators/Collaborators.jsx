@@ -1,6 +1,6 @@
-import MountainFlags from "./MountainFlags";
 import { t } from "../../i18n";
 import styles from "./Collaborators.module.css";
+import MountainFlags from "./MountainFlags";
 
 const data = [
 	{ id: "wie", href: "https://wie.ieeeottawa.ca/" },
