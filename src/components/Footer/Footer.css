@@ -6,7 +6,9 @@
 	align-items: center;
 	gap: 1rem;
 	width: 80%;
-	margin: 10% auto 2% auto;
+	margin: auto;
+	margin-top: 10%;
+	padding-bottom: 1rem;
 	color: var(--medium-primary-color);
 	font-family: "Rubik", sans-serif;
 	font-size: 0.8rem;
