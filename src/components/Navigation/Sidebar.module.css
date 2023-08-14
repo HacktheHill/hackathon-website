@@ -1,6 +1,7 @@
 .sidebar {
 	--sidebar-color: var(--background-color);
-	--link-color: var(--dark-color);
+	--link-color: var(--medium-primary-color);
+	--link-color-hover: var(--dark-primary-color);
 
 	box-sizing: border-box;
 	position: absolute;
@@ -13,6 +14,7 @@
 	height: 100%;
 	padding: 8rem 0 0 0;
 	gap: 3.5rem;
+	color: var(--link-color);
 	background-color: var(--sidebar-color);
 	transform: translateX(100%);
 	transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
@@ -25,7 +27,6 @@
 	justify-content: center;
 	align-items: center;
 	list-style: none;
-	color: var(--media-link-color);
 }
 
 .sidebar .links {
@@ -33,6 +34,15 @@
 	gap: 1.5rem;
 	font-family: "Rubik";
 	font-size: 2rem;
+}
+
+.sidebar .links a {
+	font-weight: 500;
+	transition: 0.5s;
+}
+
+.sidebar .links a:hover {
+	color: var(--link-color-hover);
 }
 
 .sidebar .media {
