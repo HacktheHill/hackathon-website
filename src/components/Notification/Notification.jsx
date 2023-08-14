@@ -26,7 +26,7 @@ function Notification() {
 			}}
 			aria-hidden={!visible}
 		>
-			<div className={styles.notificationContent}>
+			<div className={styles["notification-content"]}>
 				<p>{t("notification.message")}</p>
 				<Button
 					href="https://thefulcrum.ca/sciencetech/u-of-o-hackathon-hosted-by-hack-the-hill/"
@@ -36,7 +36,7 @@ function Notification() {
 				</Button>
 			</div>
 			<button
-				className={styles.notification.closeButton}
+				className={styles["close-button"]}
 				title={t("notification.close")}
 				onClick={() => setVisible(false)}
 			>

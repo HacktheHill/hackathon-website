@@ -12,12 +12,10 @@ const data = [
 
 function Collaborators() {
 	return (
-		<>
-			<h1 id="collaborators" className={styles.collaborators}>
-				{t("collaborators.title")}
-			</h1>
+		<div id="collaborators" className={styles.collaborators}>
+			<h1>{t("collaborators.title")}</h1>
 			<MountainFlags data={data} />
-		</>
+		</div>
 	);
 }
 

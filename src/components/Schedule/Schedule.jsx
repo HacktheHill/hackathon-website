@@ -25,8 +25,8 @@ function Schedule() {
 						<div className={styles.center}>
 							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className={styles.eventMonth}>{t("schedule.event1.month")}</div>
-									<div className={styles.eventDay}>16</div>
+									<div className={styles["event-month"]}>{t("schedule.event1.month")}</div>
+									<div className={styles["event-day"]}>16</div>
 								</Stack>
 							</div>
 						</div>
@@ -52,11 +52,11 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className={styles.buttonText}>{t("schedule.event1.status")}</p>
+									<p className={styles["button-text"]}>{t("schedule.event1.status")}</p>
 								</Button>
 							</div>
-							<div className={styles.subTitle}>{t("schedule.event1.time")}</div>
-							<p className={styles.eventDesc} align="left">
+							<div className={styles["sub-title"]}>{t("schedule.event1.time")}</div>
+							<p className={styles["event-desc"]} align="left">
 								{t("schedule.event1.description")}
 							</p>
 						</Stack>
@@ -66,8 +66,8 @@ function Schedule() {
 						<div className={styles.center}>
 							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className={styles.eventMonth}>{t("schedule.event2.month")}</div>
-									<div className={styles.eventDay}>30</div>
+									<div className={styles["event-month"]}>{t("schedule.event2.month")}</div>
+									<div className={styles["event-day"]}>30</div>
 								</Stack>
 							</div>
 						</div>
@@ -96,11 +96,11 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className={styles.buttonText}>{t("schedule.event2.status")}</p>
+									<p className={styles["button-text"]}>{t("schedule.event2.status")}</p>
 								</Button>
 							</div>
-							<div className={styles.subTitle}>{t("schedule.event2.time")}</div>
-							<p className={styles.eventDesc} align="left">
+							<div className={styles["sub-title"]}>{t("schedule.event2.time")}</div>
+							<p className={styles["event-desc"]} align="left">
 								{t("schedule.event2.description")}
 							</p>
 						</Stack>
@@ -110,8 +110,8 @@ function Schedule() {
 						<div className={styles.center}>
 							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className={styles.eventMonth}>{t("schedule.event3.month")}</div>
-									<div className={styles.eventDay}>11</div>
+									<div className={styles["event-month"]}>{t("schedule.event3.month")}</div>
+									<div className={styles["event-day"]}>11</div>
 								</Stack>
 							</div>
 						</div>
@@ -138,11 +138,11 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className={styles.buttonText}>{t("schedule.event3.status")}</p>
+									<p className={styles["button-text"]}>{t("schedule.event3.status")}</p>
 								</Button>
 							</div>
-							<div className={styles.subTitle}>{t("schedule.event3.time")}</div>
-							<p className={styles.eventDesc} align="left">
+							<div className={styles["sub-title"]}>{t("schedule.event3.time")}</div>
+							<p className={styles["event-desc"]} align="left">
 								{t("schedule.event3.description")}
 							</p>
 						</Stack>
@@ -152,8 +152,8 @@ function Schedule() {
 						<div className={styles.center}>
 							<div className={styles.card}>
 								<Stack direction={"column"}>
-									<div className={styles.eventMonth}>{t("schedule.event4.month")}</div>
-									<div className={styles.eventDay}>25</div>
+									<div className={styles["event-month"]}>{t("schedule.event4.month")}</div>
+									<div className={styles["event-day"]}>25</div>
 								</Stack>
 							</div>
 						</div>
@@ -179,11 +179,11 @@ function Schedule() {
 										},
 									}}
 								>
-									<p className={styles.buttonText}>{t("schedule.event4.status")}</p>
+									<p className={styles["button-text"]}>{t("schedule.event4.status")}</p>
 								</Button>
 							</div>
-							<div className={styles.subTitle}>{t("schedule.event4.time")}</div>
-							<p className={styles.eventDesc} align="left">
+							<div className={styles["sub-title"]}>{t("schedule.event4.time")}</div>
+							<p className={styles["event-desc"]} align="left">
 								{t("schedule.event4.description")}
 							</p>
 						</Stack>

@@ -38,7 +38,7 @@
 	background-size: 10%, 8%, 2%;
 }
 
-.scheduleTitle {
+.schedule-title {
 	color: var(--title-color);
 	font-family: Coolvetica;
 	margin-bottom: 3%;
@@ -48,14 +48,14 @@
 	font-weight: normal;
 }
 
-.buttonText {
+.button-text {
 	font-family: Rubik;
 	margin: auto;
 	font-weight: bold;
 	font-size: 15px;
 }
 
-.eventMonth {
+.event-month {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
@@ -65,7 +65,7 @@
 	font-family: Coolvetica;
 }
 
-.eventDay {
+.event-day {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 75px;
@@ -74,7 +74,7 @@
 	font-family: Coolvetica;
 }
 
-.eventTitle {
+.event-title {
 	font-size: 30px;
 	font-weight: normal;
 	color: var(--event-title-color);
@@ -92,7 +92,7 @@
 	border-color: var(--event-border-color);
 }
 
-.eventStack {
+.event-stack {
 	flex-wrap: wrap;
 }
 
@@ -101,14 +101,14 @@
 	justify-content: center;
 }
 
-.eventDesc {
+.event-desc {
 	color: var(--event-desc-color);
 	font-family: Rubik;
 	font-size: 16px;
 	margin-top: 30px;
 }
 
-.subTitle {
+.sub-title {
 	color: var(--event-subtitle-color);
 	font-family: Rubik;
 	font-size: 18px;
@@ -117,7 +117,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-	.Schedule {
+	.schedule {
 		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
 		background-repeat: no-repeat;
 		background-position: left 50px, right 750px, top 100px right 50px;

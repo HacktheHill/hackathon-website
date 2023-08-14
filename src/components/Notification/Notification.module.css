@@ -14,7 +14,7 @@
 	transform: translateY(100%) scaleY(0);
 }
 
-.notificationContent {
+.notification-content {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
@@ -36,7 +36,7 @@
 	margin: 0;
 }
 
-.notification .closeButton {
+.notification .close-button {
 	display: flex;
 	align-items: flex-start;
 	border: none;

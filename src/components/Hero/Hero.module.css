@@ -108,7 +108,7 @@
 }
 
 .countdown-item h4 {
-	color: var(--countdownItem-color);
+	color: var(--countdown-item-color);
 	font-weight: normal;
 }
 
