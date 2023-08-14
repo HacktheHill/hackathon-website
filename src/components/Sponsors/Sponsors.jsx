@@ -75,7 +75,7 @@ function Sponsors() {
 
 				<div className={styles["sponsor-icons"]}>
 					{Object.values(data.sponsors).map((tier, i) => (
-						<div key={i} className={styles["sponsors-icons-row"]}>
+						<div key={i} className={styles["sponsor-icons-row"]}>
 							{tier.map((sponsor, j) => (
 								<a
 									key={j}
@@ -100,7 +100,7 @@ function Sponsors() {
 
 			<section id="community" className={styles["sponsors"]}>
 				<h1 id="community">{t("partners.title")}</h1>
-				<div className={styles["sponsors-icons-row"]}>
+				<div className={styles["sponsor-icons-row"]}>
 					{data.collaborators.map((sponsor, i) => (
 						<a
 							key={i}
