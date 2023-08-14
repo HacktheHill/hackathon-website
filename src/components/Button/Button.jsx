@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-scroll";
 import styles from "./Button.module.css";
+
 function InnerButton({ children, ...rest }) {
 	return <button {...rest}>{children}</button>;
 }
 
 export default function Button({ children, href, target, offset, ...rest }) {
-	if (href.startsWith("#")) {
+	if (href?.startsWith("#")) {
 		return (
 			<Link className={styles.button} to={href.slice(1)} smooth={true} offset={offset} duration={500} href={href}>
 				<InnerButton {...rest}>{children}</InnerButton>
