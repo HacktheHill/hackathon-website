@@ -5,7 +5,7 @@ import styles from "./FAQ.module.css";
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState([]);
 
-	const handleKeyList = (event, item) => {
+	const handleKeyList = item => {
 		const key = item.key;
 		if (expandedList.includes(key)) {
 			setExpandedList(prevList => prevList.filter(k => k !== key));
@@ -71,31 +71,30 @@ export default function FAQ() {
 			<div id="faq" className={styles.header}>
 				{t("faq.title")}
 			</div>
-			{quesAns.map((item, i) => (
+			{quesAns.map(item => (
 				<div
 					key={item.key}
 					className={`${styles["question-container"]} ${styles.itemSpacing} ${
-						expandedList.includes(item.key) ? styles.faqItemActive : ""
+						expandedList.includes(item.key) ? styles["faq"] : ""
 					}`}
 				>
-					<div
-						className={`${styles["question-and-answer"]} ${styles.faqItem}`}
-						onClick={event => handleKeyList(event, item)}
-					>
+					<div className={`${styles["question-and-answer"]} `} onClick={() => handleKeyList(item)}>
+						<div
+							className={`${styles.plusminus} ${expandedList.includes(item.key) ? styles.active : ""}`}
+						></div>
 						<div
 							className={`${styles.question} ${
 								expandedList.includes(item.key)
-									? styles.questionWithClickedMargins
-									: styles.questionWithMargins
+									? styles["question-with-clicked-margins"]
+									: styles["question-with-margins"]
 							}`}
 						>
 							{item.q}
 						</div>
-
 						{expandedList.includes(item.key) && (
 							<div
 								className={`${styles.answer} ${styles.answerOpen} ${
-									expandedList.includes(item.key) ? styles.answerWithClickedMargins : ""
+									expandedList.includes(item.key) ? styles["answer-margins"] : ""
 								}`}
 							>
 								{item.a}

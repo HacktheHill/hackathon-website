@@ -31,20 +31,18 @@
 .question-container:hover {
 	background-color: var(--question-container-hover-color);
 	border-radius: 1em;
-
-
 }
 
-.questionWithClickedMargins {
-	margin: 10px;
+.question-with-clicked-margins {
+	margin: 1em;
 }
 
-.answerWithClickedMargins {
-	margin: 10px;
+.answer-margins {
+	margin: 1em;
 }
 
-.questionWithMargins {
-	margin: 10px;
+.question-with-margins {
+	margin: 1em;
 }
 
 .question-container:before {
@@ -59,21 +57,57 @@
 	margin-bottom: 1em;
 }
 
-.faqItemActive {
+.faq {
 	background-color: var(--question-container-hover-color);
 	/* Set background color for active question */
 	border-radius: 1em;
 }
 
 .answer {
-
-	font-size: 16px;
+	font-size: 1rem;
 	color: var(--answer-text-color);
 	transition: max-height 1s ease-out;
 }
 
-
-.itemSpacing {
+.item-spacing {
 	margin-bottom: 3em;
 	/* Adjust the value as needed */
+}
+.plusminus {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+
+	&.active {
+		&:before {
+			transform: translatey(-50%) rotate(-90deg);
+			opacity: 0;
+		}
+
+		&:after {
+			transform: translatey(-50%) rotate(0);
+		}
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		background-color: var(--question-text-color);
+		position: absolute;
+		top: 2.5em;
+		left: 35rem;
+		transition: 0.35s;
+		width: 100%;
+		height: 0.2em;
+	}
+
+	&:before {
+		transform: translatey(-50%);
+	}
+
+	&:after {
+		transform: translatey(-50%) rotate(90deg);
+	}
 }
