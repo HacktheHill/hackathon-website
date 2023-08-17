@@ -38,37 +38,51 @@ export default {
 	},
 	schedule: {
 		title: "La Série du Hacker",
-		event1: {
-			title: "Évaluations des CV",
-			month: "Novembre",
-			time: "19h - 21h à STM 117",
-			description:
-				"Avez-vous besoin de conseils sur votre CV ? Rencontrez des développeurs de Ciena et de Microsoft qui examineront et évalueront les CV soumis par les étudiants, tout en mangeant des pizzas fraîches.",
-			status: "Visionner",
-		},
-		event2: {
-			title: "Café, Code et Cram",
-			month: "Novembre",
-			time: "19h - 21h à STM 117",
-			description:
-				"Détendez-vous et prenez une pause de l'école. Joignez-nous et le Club d'informatique de l'Université d'Ottawa pour une soirée de socialisation et de codage avec café et collations.",
-			status: "Complété",
-		},
-		event3: {
-			title: "Wicked Web Work",
-			month: "Janvier",
-			time: "18h - 22h à STM 117",
-			description:
-				"Explorez les merveilles du développement web ! Apprenez les bases avec des ateliers et participez à un défi d'une heure pour construire un site Web selon les directives fournies.",
-			status: "Complété",
-		},
-		event4: {
-			title: "Got Games?",
-			month: "Janvier",
-			time: "19h - 21h à STM 117",
-			description:
-				"Découvrez le meilleur que le développement de jeux a à offrir ! Joignez-vous à nous aux côtés du Club de développement de jeux de l'Université d'Ottawa pour un atelier d'introduction à Unity.",
-			status: "Visionner",
+		events: {
+			event1: {
+				title: "Évaluations des CV",
+				month: "Novembre",
+				day:"16",
+				time: "19h - 21h à STM 117",
+				description:
+					"Avez-vous besoin de conseils sur votre CV ? Rencontrez des développeurs de Ciena et de Microsoft qui examineront et évalueront les CV soumis par les étudiants, tout en mangeant des pizzas fraîches.",
+				status: "Visionner",
+				link:"https://youtu.be/zpixm4xz_K4",
+				btn_Status: "",
+			},
+			event2: {
+				title: "Café, Code et Cram",
+				month: "Novembre",
+				day:"30",
+				time: "19h - 21h à STM 117",
+				description:
+					"Détendez-vous et prenez une pause de l'école. Joignez-nous et le Club d'informatique de l'Université d'Ottawa pour une soirée de socialisation et de codage avec café et collations.",
+				status: "Complété",
+				link:"https://forms.gle/WUgn5g8XTjNf9Eq39",
+				btn_Status: "disabled",
+			},
+			event3: {
+				title: "Wicked Web Work",
+				month: "Janvier",
+				day:"11",
+				time: "18h - 22h à STM 117",
+				description:
+					"Explorez les merveilles du développement web ! Apprenez les bases avec des ateliers et participez à un défi d'une heure pour construire un site Web selon les directives fournies.",
+				status: "Complété",
+				link:"",
+				btn_Status: "disabled",
+			},
+			event4: {
+				title: "Got Games?",
+				month: "Janvier",
+				day:"25",
+				time: "19h - 21h à STM 117",
+				description:
+					"Découvrez le meilleur que le développement de jeux a à offrir ! Joignez-vous à nous aux côtés du Club de développement de jeux de l'Université d'Ottawa pour un atelier d'introduction à Unity.",
+				status: "Visionner",
+				link:"https://youtu.be/mbr4ZmXtx0k",
+				btn_Status: "",
+			},
 		},
 	},
 	collaborators: { title: "Collaborateurs" },
