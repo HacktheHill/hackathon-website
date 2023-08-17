@@ -31,7 +31,6 @@
 	color: var(--title-color);
 	font-family: var(--coolvetica-font-family);
 	font-size: 3rem;
-	text-align: center;
 }
 
 .schedule-list {
@@ -95,6 +94,7 @@
 	font-weight: normal;
 	color: var(--event-title-color);
 	font-family: var(--coolvetica-font-family);
+	text-align: center;
 }
 
 .event-button {
