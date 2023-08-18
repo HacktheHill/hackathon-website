@@ -147,17 +147,8 @@
 		background-size: 18%, 18%, 7%;
 	}
 
-	.schedule-list {
-		text-align: center;
-		width: 100%;
-	}
-
 	.schedule-list-item {
 		grid-template-columns: 1fr;
-	}
-
-	.schedule-title {
-		text-align: center;
 	}
 
 	.event-card {
