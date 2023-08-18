@@ -25,9 +25,13 @@
 	background-size: 10%, 8%, 2%;
 }
 
-.schedule-title {
+.schedule-title,
+.schedule-list {
 	width: 70%;
 	margin: auto;
+}
+
+.schedule-title {
 	color: var(--title-color);
 	font-family: var(--coolvetica-font-family);
 	font-size: 3rem;
@@ -36,9 +40,6 @@
 .schedule-list {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	width: 70%;
-	margin: auto;
 	gap: 4rem;
 }
 
@@ -105,7 +106,8 @@
 	text-align: center;
 }
 
-.event-button {
+.event-button,
+.event-button-disabled {
 	background: var(--button-gradient);
 	border-radius: 100px;
 	color: var(--medium-primary-color);
@@ -124,17 +126,6 @@
 }
 
 .event-button-disabled {
-	background: var(--button-gradient);
-	border-radius: 100px;
-	color: var(--medium-primary-color);
-	transition: 1s;
-	cursor: pointer;
-	border: 0;
-	padding: 1rem 2rem;
-	font-weight: bold;
-	font-size: 1rem;
-	white-space: nowrap;
-
 	cursor: default;
 	color: var(--disabled-text-color-button);
 	background: var(--button-gradient);
