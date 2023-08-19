@@ -79,22 +79,24 @@ export default function FAQ() {
 					}`}
 				>
 					<div className={`${styles["question-and-answer"]} `} onClick={() => handleKeyList(item)}>
-						<div
-							className={`${styles.plusminus} ${expandedList.includes(item.key) ? styles.active : ""}`}
-						></div>
-						<div
-							className={`${styles.question} ${
-								expandedList.includes(item.key)
-									? styles["question-with-clicked-margins"]
-									: styles["question-with-margins"]
-							}`}
-						>
-							{item.q}
+						<div className={`${styles["question-and-icon"]} `}>
+							<div
+								className={`${styles.question} ${
+									expandedList.includes(item.key) ? styles["question"] : ""
+								}`}
+							>
+								{item.q}
+							</div>
+							<div
+								className={`${styles.plusminus} ${
+									expandedList.includes(item.key) ? styles.active : ""
+								}`}
+							></div>
 						</div>
 						{expandedList.includes(item.key) && (
 							<div
 								className={`${styles.answer} ${styles.answerOpen} ${
-									expandedList.includes(item.key) ? styles["answer-margins"] : ""
+									expandedList.includes(item.key) ? styles["answer"] : ""
 								}`}
 							>
 								{item.a}

@@ -33,20 +33,21 @@
 	border-radius: 1em;
 }
 
-.question-with-clicked-margins {
-	margin: 1em;
-}
-
-.answer-margins {
-	margin: 1em;
-}
-
-.question-with-margins {
-	margin: 1em;
-}
-
 .question-container:before {
 	display: "none";
+}
+
+.faq {
+	background-color: var(--question-container-hover-color);
+	border-radius: 1em;
+}
+
+.question-and-icon {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5rem;
+	cursor: pointer;
+	align-items: center;
 }
 
 .question {
@@ -54,29 +55,20 @@
 	font-size: 32;
 	font-family: Rubik;
 	font-weight: bold;
-	margin-bottom: 1em;
-}
-
-.faq {
-	background-color: var(--question-container-hover-color);
-	/* Set background color for active question */
-	border-radius: 1em;
 }
 
 .answer {
 	font-size: 1rem;
 	color: var(--answer-text-color);
 	transition: max-height 1s ease-out;
+	margin: 1.5rem;
+	margin-top: 0;
 }
 
-.item-spacing {
-	margin-bottom: 3em;
-	/* Adjust the value as needed */
-}
 .plusminus {
 	position: relative;
-	width: 1em;
-	height: 1em;
+	width: 2rem;
+	height: 100%;
 	cursor: pointer;
 
 	&.active {
@@ -95,11 +87,8 @@
 		content: "";
 		display: block;
 		background-color: var(--question-text-color);
-		position: absolute;
-		top: 2.5em;
-		left: 35rem;
 		transition: 0.35s;
-		width: 100%;
+		width: 1rem;
 		height: 0.2em;
 	}
 
