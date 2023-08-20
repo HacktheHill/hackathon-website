@@ -93,15 +93,19 @@ export default function FAQ() {
 								}`}
 							></div>
 						</div>
-						{expandedList.includes(item.key) && (
-							<div
-								className={`${styles.answer} ${styles.answerOpen} ${
-									expandedList.includes(item.key) ? styles["answer"] : ""
-								}`}
-							>
-								{item.a}
-							</div>
-						)}
+						<div
+							className={`${styles.answer} ${expandedList.includes(item.key) ? styles.answerExpand : ""}`}
+						>
+							{expandedList.includes(item.key) && (
+								<div
+									className={`${styles.answer} ${
+										expandedList.includes(item.key) ? styles.answerExpand : ""
+									}`}
+								>
+									{item.a}
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			))}

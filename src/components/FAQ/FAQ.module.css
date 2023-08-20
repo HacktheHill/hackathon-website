@@ -23,11 +23,6 @@
 	margin-bottom: 1em;
 }
 
-.question-container {
-	display: flex;
-	flex-direction: column;
-}
-
 .question-container:hover {
 	background-color: var(--question-container-hover-color);
 	border-radius: 1em;
@@ -35,6 +30,7 @@
 
 .question-container:before {
 	display: "none";
+	transition: max-height 4s ease-in-out;
 }
 
 .faq {
@@ -45,7 +41,7 @@
 .question-and-icon {
 	display: flex;
 	justify-content: space-between;
-	padding: 1.5rem;
+	padding: 1rem;
 	cursor: pointer;
 	align-items: center;
 }
@@ -60,14 +56,18 @@
 .answer {
 	font-size: 1rem;
 	color: var(--answer-text-color);
-	transition: max-height 1s ease-out;
-	margin: 1.5rem;
+	margin: 0.5rem;
 	margin-top: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 1s ease-in-out;
 }
-
+.answerExpand {
+	max-height: 50em;
+}
 .plusminus {
 	position: relative;
-	width: 2rem;
+	width: 1rem;
 	height: 100%;
 	cursor: pointer;
 
@@ -89,7 +89,8 @@
 		background-color: var(--question-text-color);
 		transition: 0.35s;
 		width: 1rem;
-		height: 0.2em;
+		height: 0.15em;
+		position: absolute;
 	}
 
 	&:before {
