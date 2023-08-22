@@ -3,7 +3,7 @@ import FAQ from "..//FAQ/FAQ";
 import About from "../About/About";
 import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
-import Memories from "../Memories/Memories";
+import Testimonials from "../Testimonials/Testimonials";
 import Notification from "../Notification/Notification";
 import Stats from "../Stats/Stats";
 import Hero from "../Hero/Hero";
@@ -24,17 +24,15 @@ function App() {
 	return (
 		<>
 			<Navigation pageScroll={pageScroll} />
-			<Hero />
-			{/* 
-			<About />
-			<Stats />
-			<Memories />
-			<Schedule />
-			<Sponsors />
-			<Collaborators />	
-			<FAQ />
-			<Footer />
-			*/}
+			{/* <Hero /> */}
+			{/* <About /> */}
+			{/* <Stats /> */}
+			{/* <Testimonials /> */}
+			{/* <Schedule /> */}
+			{/* <Sponsors /> */}
+			{/* <Collaborators /> */}
+			{/* <FAQ /> */}
+			{/* <Footer /> */}
 			{/* <Notification /> */}
 		</>
 	);
