@@ -46,7 +46,7 @@ function Footer() {
 			</div>
 			<p className={styles["footer-slogan"]}>{t("footer.description")}</p>
 			<a
-				href="https://github.com/HacktheHill/2023.hackthehill.com"
+				href="https://github.com/HacktheHill/website"
 				target="_blank"
 				rel="noreferrer"
 				aria-label="GitHub"

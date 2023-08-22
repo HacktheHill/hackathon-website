@@ -1,1 +1,3 @@
-# 2023.hackthehill.com
+# Website
+
+Website for [Hack the Hill](http://hackthehill.com) hackathon
