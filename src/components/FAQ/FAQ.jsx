@@ -94,12 +94,14 @@ export default function FAQ() {
 							></div>
 						</div>
 						<div
-							className={`${styles.answer} ${expandedList.includes(item.key) ? styles.answerExpand : ""}`}
+							className={`${styles.answer} ${
+								expandedList.includes(item.key) ? styles.answerExpand : styles.deanswerExpand
+							}`}
 						>
 							{expandedList.includes(item.key) && (
 								<div
 									className={`${styles.answer} ${
-										expandedList.includes(item.key) ? styles.answerExpand : ""
+										expandedList.includes(item.key) ? styles.answerExpand : styles.deanswerExpand
 									}`}
 								>
 									{item.a}

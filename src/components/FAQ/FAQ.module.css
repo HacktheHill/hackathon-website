@@ -60,10 +60,20 @@
 	margin-top: 0;
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 1s ease-in-out;
+	transition: max-height 4s ease-in-out;
 }
+
 .answerExpand {
 	max-height: 50em;
+	transition: max-height 4s ease-in-out;
+}
+.deanswerExpand {
+	max-height: 0;
+	transition: max-height 4s ease-in-out;
+}
+.resetMaxHeight {
+	max-height: 0;
+	transition: max-height 4s ease-in-out;
 }
 .plusminus {
 	position: relative;
