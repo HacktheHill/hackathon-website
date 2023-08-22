@@ -3,7 +3,9 @@ import FAQ from "..//FAQ/FAQ";
 import About from "../About/About";
 import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
-import Headshots from "../Headshots/Headshots";
+import Memories from "../Memories/Memories";
+import Notification from "../Notification/Notification";
+import Stats from "../Stats/Stats";
 import Hero from "../Hero/Hero";
 import Navigation from "../Navigation/Navigation";
 import Schedule from "../Schedule/Schedule";
@@ -23,14 +25,16 @@ function App() {
 		<>
 			<Navigation pageScroll={pageScroll} />
 			<Hero />
+			{/* 
 			<About />
-			<Sponsors />
+			<Stats />
+			<Memories />
 			<Schedule />
-			<Headshots />
-			<Collaborators />
+			<Sponsors />
+			<Collaborators />	
 			<FAQ />
 			<Footer />
-			{/* Commented out because the information provided is outdated-> */}
+			*/}
 			{/* <Notification /> */}
 		</>
 	);
