@@ -13,7 +13,7 @@ Welcome to the Hack the Hill Website repository. This static marketing website s
 
 We appreciate your enthusiasm, but please be aware that external contributions are currently not being accepted.
 
-If you're part of the Hack the Hill team, refer to our internal documentation for guidelines.
+If you're part of the Hack the Hill team, refer to our [Contribution guidelines](https://github.com/HacktheHill/.github/blob/main/CONTRIBUTING.md).
 
 ## Contact
 
