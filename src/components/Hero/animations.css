@@ -1,0 +1,103 @@
+svg .snow {
+    animation: var(--snow-svg-color) 100s linear infinite;
+}
+
+svg .halo {
+    animation: halo 10s linear infinite alternate;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+svg #flag {
+    animation: flag 1s linear infinite alternate;
+    transform-box: fill-box;
+    transform-origin: top left;
+}
+
+svg .cloud {
+    animation: clouds 100s linear infinite alternate;
+}
+
+svg :is(#clock-left, #clock-right) {
+    animation: clock linear infinite;
+    transform-box: fill-box;
+}
+
+svg #clock-left {
+    animation-duration: 3600s;
+    transform-origin: top right;
+}
+
+svg #clock-right {
+    animation-duration: 60s;
+    transform-origin: top left;
+}
+
+svg :is(#left-bird, #right-bird) {
+    animation: flap 1s linear infinite alternate;
+}
+
+svg #left-bird {
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+svg #right-bird {
+    animation-duration: 1s;
+}
+
+@keyframes snow {
+    0% {
+        transform: translate(-1vw, -50vh);
+        opacity: 0;
+    }
+
+    10%,
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(1vw, 0vh);
+        opacity: 0;
+    }
+}
+
+@keyframes halo {
+    50% {
+        transform: scale(1.125);
+        filter: saturate(1.5);
+    }
+}
+
+@keyframes flag {
+    50% {
+        transform: skew(10deg) rotate(10deg);
+    }
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes clock {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flap {
+    0% {
+        transform: translateY(-2px);
+    }
+
+    100% {
+        transform: translateY(2px);
+    }
+}
