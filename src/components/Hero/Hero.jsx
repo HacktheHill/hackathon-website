@@ -65,8 +65,7 @@ function Hero() {
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>{t("hero.h2")}</h2>
-				<h3>{t("hero.h3")}</h3>
-				<Button href={t("hero.link")} target={"_blank"} offset={-160}>
+				<Button className={styles["hero-btn"]} href={t("hero.link")} target={"_blank"} offset={-180}>
 					{t("hero.more")}
 				</Button>
 			</div>
