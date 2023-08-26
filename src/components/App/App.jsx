@@ -24,7 +24,7 @@ function App() {
 	return (
 		<>
 			<Navigation pageScroll={pageScroll} />
-			{/* <Hero /> */}
+			<Hero />
 			{/* <About /> */}
 			{/* <Stats /> */}
 			{/* <Testimonials /> */}

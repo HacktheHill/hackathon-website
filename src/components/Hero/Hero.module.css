@@ -19,7 +19,7 @@
 	position: absolute;
 	display: grid;
 	place-items: center;
-	inset: max(7.5rem, 5vmax) 0 auto 0;
+	inset: max(10rem, 7vmax) 0 auto 0;
 	text-align: center;
 	width: fit-content;
 	margin: auto;
@@ -31,7 +31,7 @@
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
-	gap: 1ch;
+	gap: 0.75ch;
 }
 
 .location-date-heading .location {
@@ -40,23 +40,23 @@
 }
 
 .location-pin {
-	width: 1rem;
+	width: 2rem;
 }
 
 .banner-logo {
-	width: calc(10 * clamp(1rem, 5vmin, 10rem));
+	width: calc(10 * clamp(1rem, 9vmin, 10rem));
 }
 
 .hero-heading h2 {
 	color: var(--hero-heading);
 	font-family: Coolvetica;
-	font-size: clamp(1rem, 3.5vmin, 5rem);
+	font-size: clamp(1rem, 5vmin, 9rem);
 	font-weight: 500;
 }
 
 .hero-heading h3 {
 	color: var(--hero-heading);
-	font-size: clamp(1rem, 2vmin, 5rem);
+	font-size: clamp(1rem, 4vmin, 6rem);
 	font-weight: normal;
 }
 
@@ -64,8 +64,13 @@
 	height: 100%;
 	width: 100%;
 	margin-top: calc(20rem - 20vw);
-	margin-bottom: -35%;
+	margin-bottom: -25%;
 }
+
+.hero-btn {
+	padding: clamp(0.75rem, 1vmin, 5rem) calc(5 * clamp(1rem, 2vmin, 7rem));
+}
+
 
 .countdown-dialog {
 	box-sizing: border-box;
