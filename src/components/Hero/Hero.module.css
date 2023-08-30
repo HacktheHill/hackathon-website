@@ -1,5 +1,5 @@
 .hero {
-	--hero-heading: var(--medium-primary-color);
+	--hero-heading: #841618;
 
 	/* countdown colours */
 	--count-down-border: var(--medium-primary-color);
@@ -69,6 +69,7 @@
 
 .hero-btn {
 	padding: clamp(0.75rem, 1vmin, 5rem) calc(5 * clamp(1rem, 2vmin, 7rem));
+	background: linear-gradient(#841618, #841618BF);
 }
 
 
