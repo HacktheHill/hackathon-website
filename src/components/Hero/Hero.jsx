@@ -4,7 +4,7 @@ import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Hero.module.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
-import LocationPin from "/SVGs/2023/location-pin.svg";
+import LocationPin from "/SVGs/2024/location-pin.svg";
 // 7:00 PM EST on March 3rd, 2023
 const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
 // 9:00 AM EST on March 5th, 2023
