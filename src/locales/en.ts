@@ -16,7 +16,7 @@ export default {
 		pin_alt: "Location Pin",
 		h2: "Canada's Capital Hackathon",
 		h3: "Ottawa's Largest Hackathon",
-		more: "Register Now !",
+		more: "Register Now!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
 	},
 	about: {

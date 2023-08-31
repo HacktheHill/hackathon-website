@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
@@ -58,9 +60,9 @@ function Hero() {
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
-						Mar &nbsp;
-						<time dateTime="03/02/2023">3</time>&ndash;
-						<time dateTime="05/02/2023">5</time>, <strong>2023</strong>
+						Feb &nbsp;
+						<time dateTime="02/02/2024">2</time>&ndash;
+						<time dateTime="04/02/2024">4</time>, <strong>2024</strong>
 					</h3>
 				</div>
 				<h1 id="Hero">
@@ -68,7 +70,7 @@ function Hero() {
 				</h1>
 				<h2>{t("hero.h2")}</h2>
 				<Button className={styles["hero-btn"]} href={t("hero.link")} target={"_blank"} offset={-180}>
-					{t("hero.more")}
+					{t("hero.more")} <Icon icon={faArrowRight} />
 				</Button>
 			</div>
 			<div
