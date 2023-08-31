@@ -13,14 +13,7 @@
 
 	--notification-background-color: #414f7f;
 
-	--color-gradient: linear-gradient(0deg,
-				rgba(239, 203, 255, 0) 15%,
-				rgba(236, 211, 247, 0.7723) 48.85%,
-				rgba(236, 210, 248, 0.7373) 48.86%,
-				#ebd5f5 63.96%,
-				#bfcbee 80.96%,
-				#bfcbee 81.77%,
-			#abeffa 100%);
+	--color-gradient: linear-gradient(359deg, #FFF3B6 50.49%, #EE9E6F 128.48%, #EA885E 178.51%, #EA8A60 188.81%);
 
 	--button-gradient: linear-gradient(90deg, #abeffb, transparent) #e9d9f2;
 

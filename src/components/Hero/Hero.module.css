@@ -17,13 +17,13 @@
 
 .hero-heading {
 	position: absolute;
-	display: grid;
-	place-items: center;
-	inset: max(10rem, 7vmax) 0 auto 0;
-	text-align: center;
-	width: fit-content;
-	margin: auto;
-	gap: 1.5vh;
+    display: grid;
+    place-items: center;
+    inset: max(6rem, 7vmax) 0 auto 0;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    gap: 1.5vh;
 }
 
 .location-date-heading {
@@ -63,13 +63,13 @@
 .hero-img svg {
 	height: 100%;
 	width: 100%;
-	margin-top: calc(20rem - 20vw);
-	margin-bottom: -25%;
+	margin-top: calc(24rem - 20vw);
+	margin-bottom: -1%;
 }
 
 .hero-btn {
-	padding: clamp(0.75rem, 1vmin, 5rem) calc(5 * clamp(1rem, 2vmin, 7rem));
 	background: linear-gradient(#841618, #841618BF);
+	gap: 1rem;
 }
 
 
