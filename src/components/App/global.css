@@ -1,4 +1,15 @@
 :root {
+	/* 2024 Website Colors */
+	--pale-yellow: #fff3b6;
+	--peach-yellow: #f8cc8d;
+	--deep-yellow: #f6bf70;
+	--light-orange: #ea885f;
+	--light-red: #dd484d;
+	--solid-red: #c11f25;
+	--dark-red: #84010b;
+	--garnet: #650014;
+
+	/* 2023 Website Colors */
 	--light-color: white;
 	--dark-color: black;
 	--dark-primary-color: #242a42;
@@ -13,14 +24,16 @@
 
 	--notification-background-color: #414f7f;
 
-	--color-gradient: linear-gradient(0deg,
-				rgba(239, 203, 255, 0) 15%,
-				rgba(236, 211, 247, 0.7723) 48.85%,
-				rgba(236, 210, 248, 0.7373) 48.86%,
-				#ebd5f5 63.96%,
-				#bfcbee 80.96%,
-				#bfcbee 81.77%,
-			#abeffa 100%);
+	--color-gradient: linear-gradient(
+		0deg,
+		rgba(239, 203, 255, 0) 15%,
+		rgba(236, 211, 247, 0.7723) 48.85%,
+		rgba(236, 210, 248, 0.7373) 48.86%,
+		#ebd5f5 63.96%,
+		#bfcbee 80.96%,
+		#bfcbee 81.77%,
+		#abeffa 100%
+	);
 
 	--button-gradient: linear-gradient(90deg, #abeffb, transparent) #e9d9f2;
 
@@ -30,5 +43,5 @@
 }
 
 body {
-	background-color: var(--light-color);
+	background-color: var(--light-orange);
 }
