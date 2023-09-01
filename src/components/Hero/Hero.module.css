@@ -19,7 +19,7 @@
 	position: absolute;
     display: grid;
     place-items: center;
-    inset: max(6rem, 7vmax) 0 auto 0;
+	inset: max(7.5rem, 5vmax) 0 auto 0;
     text-align: center;
     width: fit-content;
     margin: auto;
@@ -31,7 +31,7 @@
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
-	gap: 0.75ch;
+	gap: 1ch;
 }
 
 .location-date-heading .location {
@@ -40,23 +40,23 @@
 }
 
 .location-pin {
-	width: 2rem;
+	width: 1rem;
 }
 
 .banner-logo {
-	width: calc(10 * clamp(1rem, 9vmin, 10rem));
+	width: calc(10*clamp(1rem,5vmin,10rem));
 }
 
 .hero-heading h2 {
 	color: var(--hero-heading);
 	font-family: Coolvetica;
-	font-size: clamp(1rem, 5vmin, 9rem);
+	font-size: clamp(1rem,3.5vmin,5rem);
 	font-weight: 500;
 }
 
 .hero-heading h3 {
 	color: var(--hero-heading);
-	font-size: clamp(1rem, 4vmin, 6rem);
+	font-size: clamp(1rem,2vmin,5rem);
 	font-weight: normal;
 }
 
@@ -69,7 +69,6 @@
 
 .hero-btn {
 	background: linear-gradient(#841618, #841618BF);
-	gap: 1rem;
 }
 
 
