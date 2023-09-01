@@ -39,6 +39,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 						</li>
 					))}
 				</ul>
+				{/*
 				<ul>
 					<li>
 						<Link
@@ -133,6 +134,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 					<div></div>
 					<div></div>
 				</button>
+					*/}
 			</nav>
 		</>
 	);
