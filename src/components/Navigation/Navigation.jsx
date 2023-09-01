@@ -15,7 +15,7 @@ const Navigation = ({ pageScroll }) => {
 	return (
 		<div className="navigation">
 			<Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} pageScroll={pageScroll} />
-			<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+			{/*<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />*/}
 		</div>
 	);
 };
