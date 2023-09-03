@@ -46,6 +46,33 @@ function Hero() {
 		}
 	};
 
+	const [email, setEmail] = useState('');
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+	
+		try {
+		  const response = await fetch('https://tracker.hackthehill.com/api/subscribe', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ email }),
+		  });
+	
+		  if (response.ok) {
+			// Handle successful subscription (e.g., show a success message).
+			console.log("sent")
+		  } else {
+			// Handle errors (e.g., show an error message).
+			console.error('Subscription failed:', response.status, response.statusText);
+		  }
+		} catch (error) {
+		  // Handle network errors or other exceptions.
+		  console.error('Subscription failed:', error.message);
+		}
+	  };
+
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
 			<div className={styles["hero-heading"]}>
@@ -65,10 +92,17 @@ function Hero() {
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>{t("hero.h2")}</h2>
-				<h3>{t("hero.h3")}</h3>
-				<Button href={t("hero.link")} target={"_blank"} offset={-160}>
-					{t("hero.more")}
-				</Button>
+
+				<form onSubmit={handleSubmit}>
+					<input
+						type="email"
+						placeholder="Enter your email"
+						required
+						value={email}
+        				onChange={(e) => setEmail(e.target.value)}
+					/>
+					<button className={styles["hero-btn"]} target={"_blank"} type="submit" offset={-180}>{t("hero.more")}</button>
+				</form>
 			</div>
 			<div
 				className={styles["hero-img"]}

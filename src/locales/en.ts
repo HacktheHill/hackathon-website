@@ -16,8 +16,8 @@ export default {
 		pin_alt: "Location Pin",
 		h2: "Canada's Capital Hackathon",
 		h3: "Ottawa's Largest Hackathon",
-		more: "Rewatch!",
-		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
+		more: "Subscribe to our newsletter",
+		link: "tracker.hackthehill.com/api/subscribe"
 	},
 	about: {
 		title: "About Us",
