@@ -17,13 +17,13 @@
 
 .hero-heading {
 	position: absolute;
-    display: grid;
-    place-items: center;
+	display: grid;
+	place-items: center;
 	inset: max(calc(17.5rem - 10vw), 5vmax) 0 auto 0;
-    text-align: center;
-    width: fit-content;
-    margin: auto;
-    gap: 1.5vh;
+	text-align: center;
+	width: fit-content;
+	margin: auto;
+	gap: 1.5vh;
 }
 
 .location-date-heading {
@@ -44,19 +44,19 @@
 }
 
 .banner-logo {
-	width: calc(10*clamp(1rem,5vmin,10rem));
+	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
 .hero-heading h2 {
 	color: var(--hero-heading);
 	font-family: Coolvetica;
-	font-size: clamp(1rem,3.5vmin,5rem);
+	font-size: clamp(1rem, 3.5vmin, 5rem);
 	font-weight: 500;
 }
 
 .hero-heading h3 {
 	color: var(--hero-heading);
-	font-size: clamp(1rem,2vmin,5rem);
+	font-size: clamp(1rem, 2vmin, 5rem);
 	font-weight: normal;
 }
 
@@ -73,7 +73,6 @@
 .hero-btn {
 	background: linear-gradient(#841618, #841618BF);
 }
-
 
 .countdown-dialog {
 	box-sizing: border-box;
