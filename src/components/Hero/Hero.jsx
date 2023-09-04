@@ -5,6 +5,7 @@ import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Hero.module.css";
+import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/2024/location-pin.svg";
 // 7:00 PM EST on March 3rd, 2023

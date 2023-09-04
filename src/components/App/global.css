@@ -1,4 +1,15 @@
 :root {
+	/* 2024 Website Colors */
+	--pale-yellow: #fff3b6;
+	--peach-yellow: #f8cc8d;
+	--deep-yellow: #f6bf70;
+	--light-orange: #ea885f;
+	--light-red: #dd484d;
+	--solid-red: #c11f25;
+	--dark-red: #84010b;
+	--garnet: #650014;
+
+	/* 2023 Website Colors */
 	--light-color: white;
 	--dark-color: black;
 	--dark-primary-color: #242a42;
@@ -23,5 +34,5 @@
 }
 
 body {
-	background-color: var(--light-color);
+	background-color: var(--light-orange);
 }
