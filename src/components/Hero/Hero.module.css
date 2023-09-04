@@ -60,11 +60,14 @@
 	font-weight: normal;
 }
 
+.hero-img {
+	height: 100vh;
+	display: flex;
+	align-items: flex-end;
+}
+
 .hero-img svg {
-	height: 100%;
 	width: 100%;
-	margin-top: calc(24rem - 20vw);
-	margin-bottom: -1%;
 }
 
 .hero-btn {
