@@ -19,7 +19,7 @@
 	position: absolute;
     display: grid;
     place-items: center;
-	inset: max(7.5rem, 5vmax) 0 auto 0;
+	inset: max(calc(17.5rem - 10vw), 5vmax) 0 auto 0;
     text-align: center;
     width: fit-content;
     margin: auto;
