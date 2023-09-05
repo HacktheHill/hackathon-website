@@ -45,7 +45,7 @@
 }
 
 .banner-logo {
-	width: calc(10*clamp(1rem,5vmin,10rem));
+	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
 .hero-heading h2 {
@@ -72,7 +72,7 @@
 }
 
 .hero-btn {
-	background: var(--hero-btn-background-color);
+	background-color: var(--hero-btn-background-color);
 }
 
 
