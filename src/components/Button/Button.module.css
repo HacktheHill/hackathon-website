@@ -1,5 +1,5 @@
 .button {
-	--button-color: var(--dark-red);;
+	--button-color: var(--dark-red);
 	--button-hover-color: var(--primary-button-hover-color);
 	--button-text-color: var(--light-color);
 	margin: 3vmin auto;

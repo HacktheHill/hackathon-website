@@ -16,8 +16,11 @@ export default {
 		pin_alt: "Location Pin",
 		h2: "Canada's Capital Hackathon",
 		h3: "Ottawa's Largest Hackathon",
-		more: "Register Now!",
+		more: "Follow us!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
+		empty_email_field: "Email field cannot be empty",
+		invalid_email_field: "Email field must contain an email",
+		email_placeholder: "E-mail",
 	},
 	about: {
 		title: "About Us",
@@ -38,49 +41,49 @@ export default {
 	},
 	schedule: {
 		title: "The Hacker Series",
-		events:{
+		events: {
 			event1: {
 				title: "Resume Roast",
 				month: "November",
-				day:"16",
+				day: "16",
 				time: "7 p.m. - 9 p.m. @ STM 117",
 				description:
 					"Need resume advice on the spot? Hang out with some developers from Ciena and Microsoft as they review and evaluate resumes submitted by students, all while filling yourself up with some fresh pizza.",
 				status: "View Video",
-				link:"https://youtu.be/zpixm4xz_K4",
+				link: "https://youtu.be/zpixm4xz_K4",
 				btn_Status: "",
 			},
 			event2: {
 				title: "Coffee, Code, and Cram",
 				month: "November",
-				day:"30",
+				day: "30",
 				time: "7 p.m. - 9 p.m. @ STM 117",
 				description:
 					"Unwind and take a break from school. Join us alongside the uOttawa Computer Science Club for an evening of socializing and coding with coffee, tea, and snacks.",
 				status: "Completed",
-				link:"https://forms.gle/WUgn5g8XTjNf9Eq39",
+				link: "https://forms.gle/WUgn5g8XTjNf9Eq39",
 				btn_Status: "disabled",
 			},
 			event3: {
 				title: "Wicked Web Work",
 				month: "January",
-				day:"11",
+				day: "11",
 				time: "6 p.m. - 10 p.m. @ STM 117",
 				description:
 					"Explore the wonders of front-end development! Learn the basics through workshops and participate in a one-hour challenge to build a website according to provided guidelines.",
 				status: "Completed",
-				link:"",
+				link: "",
 				btn_Status: "disabled",
 			},
 			event4: {
 				title: "Got Games?",
 				month: "January",
-				day:"25",
+				day: "25",
 				time: "7 p.m. - 9 p.m. @ STM 117",
 				description:
 					"Discover the best that game development has to offer! Join us along side the uOttawa Game Development Club for an introduction to Unity workshop.",
 				status: "View Video",
-				link:"https://youtu.be/mbr4ZmXtx0k",
+				link: "https://youtu.be/mbr4ZmXtx0k",
 				btn_Status: "",
 			},
 		},

@@ -29,10 +29,15 @@ switch (true) {
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
+	const [email, setEmail] = useState("");
+	const [emailError, setEmailError] = useState("");
+	const [isFormValid, setIsFormValid] = useState(true); // Initially set to true
 
 	useEffect(() => {
 		setTime(Date.now());
 		const interval = setInterval(() => setTime(Date.now()), 1000);
+		setEmail();
+
 		return () => clearInterval(interval);
 	}, []);
 
@@ -40,13 +45,27 @@ function Hero() {
 	const hours = Math.floor((date - time) / 1000 / 60 / 60) % 24;
 	const minutes = Math.floor((date - time) / 1000 / 60) % 60;
 	const seconds = Math.floor((date - time) / 1000) % 60;
-
+	const email_regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 	const popup = event => {
 		if (event.target.closest("#clock-tower")) {
 			setPopupOpen(true);
 		} else {
 			setPopupOpen(false);
 		}
+	};
+	const handleEmailChange = e => {
+		const enteredEmail = e.target.value;
+		setEmail(enteredEmail);
+
+		// Validate email and set error message
+		if (!enteredEmail) {
+			setEmailError("Email is required");
+		} else if (!email_regex.test(enteredEmail)) {
+			setEmailError("Invalid email format");
+		} else {
+			setEmailError("");
+		}
+		setIsFormValid(!emailError);
 	};
 
 	return (
@@ -68,9 +87,29 @@ function Hero() {
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>{t("hero.h2")}</h2>
-				<Button className={styles["hero-btn"]} href={t("hero.link")} target={"_blank"} offset={-180}>
-					{t("hero.more")} <Icon icon={faArrowRight} />
-				</Button>
+				<form
+					className={styles["hero-form"]}
+					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
+				>
+					<input
+						className={styles["hero-input"]}
+						onChange={handleEmailChange}
+						type="text"
+						id="email"
+						name="email"
+						placeholder={t("hero.email_placeholder")}
+					/>
+					<button
+						type="submit"
+						disabled={!isFormValid}
+						className={styles["hero-btn"]}
+						target={"_blank"}
+						offset={-180}
+					>
+						{t("hero.more")} <Icon icon={faArrowRight} />
+					</button>
+				</form>
+				{emailError && <p> {emailError}</p>}
 			</div>
 			<div
 				className={styles["hero-img"]}

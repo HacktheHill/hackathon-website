@@ -74,7 +74,28 @@
 .hero-btn {
 	background-color: var(--hero-btn-background-color);
 }
+.hero-input {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+}
 
+.hero-form {
+	display: flex;
+	gap: 1rem;
+}
+
+.hero-btn {
+	background: #841618;
+	color: white;
+	cursor: pointer;
+	white-space: nowrap;
+	border: none;
+	font-family: Coolvetica;
+	font-size: clamp(1rem, 1vmin, 5rem);
+	border-radius: 5px;
+	padding: 0.75rem;
+}
 
 .countdown-dialog {
 	box-sizing: border-box;
