@@ -63,6 +63,7 @@
 
 .hero-img {
 	height: 100vh;
+	height: 100svh;
 	display: flex;
 	align-items: flex-end;
 }
