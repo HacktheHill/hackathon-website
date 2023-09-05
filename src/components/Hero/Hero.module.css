@@ -87,7 +87,7 @@
 	background-color: var(--hero-btn-background-color);
 	color: white;
 	cursor: pointer;
-	white-space: nowrap;	
+	white-space: nowrap;
 	border: none;
 	font-family: Coolvetica;
 	font-size: clamp(1rem, 1vmin, 5rem);
