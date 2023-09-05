@@ -59,9 +59,9 @@ function Hero() {
 
 		// Validate email and set error message
 		if (!enteredEmail) {
-			setEmailError("Email is required");
+			setEmailError(t("hero.empty_email_field"));
 		} else if (!email_regex.test(enteredEmail)) {
-			setEmailError("Invalid email format");
+			setEmailError(t("hero.invalid_email_field"));
 		} else {
 			setEmailError("");
 		}

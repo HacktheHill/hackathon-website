@@ -1,6 +1,6 @@
 .hero {
-	--hero-heading: var(--dark-red);
-	--hero-btn-background-color: var(--dark-red);
+	--hero-heading: var(--dark-primary-color);
+	--hero-btn-background-color: var(--dark-primary-color);
 
 	/* countdown colours */
 	--count-down-border: var(--medium-primary-color);
@@ -72,11 +72,8 @@
 	width: 100%;
 }
 
-.hero-btn {
-	background-color: var(--hero-btn-background-color);
-}
 .hero-input {
-	padding: 10px;
+	padding: 1rem;
 	border: none;
 	border-radius: 5px;
 }
@@ -87,10 +84,10 @@
 }
 
 .hero-btn {
-	background: #841618;
+	background-color: var(--hero-btn-background-color);
 	color: white;
 	cursor: pointer;
-	white-space: nowrap;
+	white-space: nowrap;	
 	border: none;
 	font-family: Coolvetica;
 	font-size: clamp(1rem, 1vmin, 5rem);

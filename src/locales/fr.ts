@@ -18,8 +18,8 @@ export default {
 		h3: "Le Plus Grand Hackathon d'Ottawa",
 		more: "Suivons-nous!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
-		empty_email_field: "Email field cannot be empty",
-		invalid_email_field: "Email field must contain an email",
+		empty_email_field: "L'adresse électronique est obligatoire",
+		invalid_email_field: "Format d'email invalide",	
 		email_placeholder: "Courriel",
 	},
 	about: {

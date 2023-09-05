@@ -12,15 +12,15 @@
 	/* 2023 Website Colors */
 	--light-color: white;
 	--dark-color: black;
-	--dark-primary-color: #242a42;
-	--medium-primary-color: #3b4779;
-	--light-primary-color: #5c71ad;
+	--dark-primary-color: #84010b;
+	--medium-primary-color: #c11f25;
+	--light-primary-color: #dd484d;
 	--highlight-color: #abeffb;
 
 	--primary-button-hover-color: #3f4e77;
 	--light-button-hover-color: #d1d1d1;
-
-	--background-color: #bfcbee;
+	
+	--background-color: #ea885f;
 
 	--notification-background-color: #414f7f;
 
