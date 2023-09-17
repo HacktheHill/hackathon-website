@@ -30,8 +30,6 @@ function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
 	const [email, setEmail] = useState("");
-	const [emailError, setEmailError] = useState("");
-	const [isFormValid, setIsFormValid] = useState(true); // Initially set to true
 
 	useEffect(() => {
 		setTime(Date.now());
@@ -45,27 +43,13 @@ function Hero() {
 	const hours = Math.floor((date - time) / 1000 / 60 / 60) % 24;
 	const minutes = Math.floor((date - time) / 1000 / 60) % 60;
 	const seconds = Math.floor((date - time) / 1000) % 60;
-	const email_regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
 	const popup = event => {
 		if (event.target.closest("#clock-tower")) {
 			setPopupOpen(true);
 		} else {
 			setPopupOpen(false);
 		}
-	};
-	const handleEmailChange = e => {
-		const enteredEmail = e.target.value;
-		setEmail(enteredEmail);
-
-		// Validate email and set error message
-		if (!enteredEmail) {
-			setEmailError(t("hero.empty_email_field"));
-		} else if (!email_regex.test(enteredEmail)) {
-			setEmailError(t("hero.invalid_email_field"));
-		} else {
-			setEmailError("");
-		}
-		setIsFormValid(!emailError);
 	};
 
 	return (
@@ -92,24 +76,18 @@ function Hero() {
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
 				>
 					<input
-						className={styles["hero-input"]}
-						onChange={handleEmailChange}
-						type="text"
 						id="email"
 						name="email"
+						className={styles["hero-input"]}
+						type="email"
+						required
 						placeholder={t("hero.email_placeholder")}
+						onChange={event => setEmail(event.target.value)}
 					/>
-					<button
-						type="submit"
-						disabled={!isFormValid}
-						className={styles["hero-btn"]}
-						target={"_blank"}
-						offset={-180}
-					>
+					<button type="submit" className={styles["hero-btn"]} target={"_blank"}>
 						{t("hero.more")} <Icon icon={faArrowRight} />
 					</button>
 				</form>
-				{emailError && <p> {emailError}</p>}
 			</div>
 			<div
 				className={styles["hero-img"]}
