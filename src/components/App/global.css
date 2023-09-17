@@ -12,28 +12,19 @@
 	/* 2023 Website Colors */
 	--light-color: white;
 	--dark-color: black;
-	--dark-primary-color: #242a42;
-	--medium-primary-color: #3b4779;
-	--light-primary-color: #5c71ad;
+	--dark-primary-color: #84010b;
+	--medium-primary-color: #c11f25;
+	--light-primary-color: #dd484d;
 	--highlight-color: #abeffb;
 
 	--primary-button-hover-color: #3f4e77;
 	--light-button-hover-color: #d1d1d1;
 
-	--background-color: #bfcbee;
+	--background-color: #ea885f;
 
 	--notification-background-color: #414f7f;
 
-	--color-gradient: linear-gradient(
-		0deg,
-		rgba(239, 203, 255, 0) 15%,
-		rgba(236, 211, 247, 0.7723) 48.85%,
-		rgba(236, 210, 248, 0.7373) 48.86%,
-		#ebd5f5 63.96%,
-		#bfcbee 80.96%,
-		#bfcbee 81.77%,
-		#abeffa 100%
-	);
+	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
 
 	--button-gradient: linear-gradient(90deg, #abeffb, transparent) #e9d9f2;
 

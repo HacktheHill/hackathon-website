@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
-import LocationPin from "/SVGs/2023/location-pin.svg";
-
+import LocationPin from "/SVGs/2024/location-pin.svg";
 // 7:00 PM EST on March 3rd, 2023
 const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
 // 9:00 AM EST on March 5th, 2023
@@ -28,10 +29,13 @@ switch (true) {
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
+	const [email, setEmail] = useState("");
 
 	useEffect(() => {
 		setTime(Date.now());
 		const interval = setInterval(() => setTime(Date.now()), 1000);
+		setEmail();
+
 		return () => clearInterval(interval);
 	}, []);
 
@@ -58,19 +62,32 @@ function Hero() {
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
 					<h3>
-						Mar &nbsp;
-						<time dateTime="03/02/2023">3</time>&ndash;
-						<time dateTime="05/02/2023">5</time>, <strong>2023</strong>
+						Feb &nbsp;
+						<time dateTime="02/02/2024">2</time>&ndash;
+						<time dateTime="04/02/2024">4</time>, <strong>2024</strong>
 					</h3>
 				</div>
 				<h1 id="Hero">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
 				<h2>{t("hero.h2")}</h2>
-				<h3>{t("hero.h3")}</h3>
-				<Button href={t("hero.link")} target={"_blank"} offset={-160}>
-					{t("hero.more")}
-				</Button>
+				<form
+					className={styles["hero-form"]}
+					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
+				>
+					<input
+						id="email"
+						name="email"
+						className={styles["hero-input"]}
+						type="email"
+						required
+						placeholder={t("hero.email_placeholder")}
+						onChange={event => setEmail(event.target.value)}
+					/>
+					<button type="submit" className={styles["hero-btn"]} target={"_blank"}>
+						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
+					</button>
+				</form>
 			</div>
 			<div
 				className={styles["hero-img"]}

@@ -6,47 +6,21 @@
 		"audienceType": "University Students",
 		"geographicArea": "Ottawa"
 	},
-	"doorTime": "2023-03-03T18:00",
+	"doorTime": "2024-02-02T18:00",
 	"duration": "PT36H",
-	"endDate": "2023-03-05",
+	"endDate": "2024-02-04",
 	"eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
 	"eventSchedule": {
 		"@type": "Schedule",
-		"endDate": "2023-03-05",
-		"endTime": "2023-03-05T17:00",
+		"endDate": "2024-02-04",
+		"endTime": "2024-02-04T17:00",
 		"repeatCount": 1,
 		"scheduleTimezone": "America/Toronto",
-		"startDate": "2023-03-03",
-		"startTime": "2023-03-03T18:00"
+		"startDate": "2024-02-02",
+		"startTime": "2024-02-02T18:00"
 	},
 	"eventStatus": "https://schema.org/EventScheduled",
-	"funder": [
-		{
-			"@type": "Organization",
-			"name": "Ciena",
-			"url": "https://www.ciena.com/"
-		},
-		{
-			"@type": "Organization",
-			"name": "Canadian Tire",
-			"url": "https://www.canadiantire.ca/"
-		},
-		{
-			"@type": "Organization",
-			"name": "Blackberry",
-			"url": "https://www.blackberry.com/"
-		},
-		{
-			"@type": "Organization",
-			"name": "CSE/CST",
-			"url": "https://www.cse-cst.gc.ca/"
-		},
-		{
-			"@type": "Organization",
-			"name": "LoneHaven",
-			"url": "https://www.lonehaven.com/"
-		}
-	],
+	"funder": [],
 	"inLanguage": "English",
 	"isAccessibleForFree": true,
 	"location": [
@@ -72,12 +46,12 @@
 	"offers": {
 		"@type": "Offer",
 		"availability": "https://schema.org/LimitedAvailability",
-		"availabilityEnds": "2023-03-03",
-		"availabilityStarts": "2023-03-03",
+		"availabilityEnds": "2024-02-04",
+		"availabilityStarts": "2024-02-02",
 		"price": "0",
 		"priceCurrency": "CAD",
-		"validFrom": "2023-03-03",
-		"validThrough": "2023-03-05",
+		"validFrom": "2024-02-02",
+		"validThrough": "2024-02-04",
 		"url": "https://hackthehill.com/"
 	},
 	"organizer": {
@@ -118,6 +92,6 @@
 		"genre": "Hackathon",
 		"name": "Hack the Hill"
 	},
-	"startDate": "2023-03-03",
+	"startDate": "2024-02-02",
 	"typicalAgeRange": "18-25"
 }
