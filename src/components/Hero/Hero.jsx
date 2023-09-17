@@ -85,7 +85,7 @@ function Hero() {
 						onChange={event => setEmail(event.target.value)}
 					/>
 					<button type="submit" className={styles["hero-btn"]} target={"_blank"}>
-						{t("hero.more")} <Icon icon={faArrowRight} />
+						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</form>
 			</div>

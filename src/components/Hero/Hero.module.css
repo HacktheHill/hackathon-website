@@ -95,6 +95,12 @@
 	padding: 0.75rem;
 }
 
+.hero-btn-icon {
+	height: 1rem;
+	width: 1rem;
+	vertical-align: middle;
+}
+
 .countdown-dialog {
 	box-sizing: border-box;
 	position: absolute;
