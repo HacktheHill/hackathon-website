@@ -91,7 +91,9 @@ export default {
 	footer: {
 		title: "Le Hackathon de la Capitale Canadienne",
 		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
-		github: "Code Source",
+		github: "Github",
+		privacy: "Politique de Confidentialité",
+		constitution: "Constitution",
 	},
 	notification: {
 		message:

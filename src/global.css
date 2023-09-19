@@ -1,28 +1,14 @@
 :root {
-	/* 2024 Website Colors */
-	--pale-yellow: #fff3b6;
-	--peach-yellow: #f8cc8d;
-	--deep-yellow: #f6bf70;
-	--light-orange: #ea885f;
-	--light-red: #dd484d;
-	--solid-red: #c11f25;
-	--dark-red: #84010b;
-	--garnet: #650014;
-
-	/* 2023 Website Colors */
 	--light-color: white;
 	--dark-color: black;
+	--light-primary-color: #fff3b6;
+	--light-secondary-color: #f8cc8d;
+	--light-tertiary-color: #f6bf70;
+	--medium-primary-color: #dd484d;
+	--medium-secondary-color: #c11f25;
 	--dark-primary-color: #84010b;
-	--medium-primary-color: #c11f25;
-	--light-primary-color: #dd484d;
-	--highlight-color: #abeffb;
-
-	--primary-button-hover-color: #3f4e77;
-	--light-button-hover-color: #d1d1d1;
-
+	--dark-secondary-color-2: #650014;
 	--background-color: #ea885f;
-
-	--notification-background-color: #414f7f;
 
 	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
 
@@ -31,8 +17,9 @@
 	color-scheme: light;
 	scrollbar-gutter: stable;
 	background-color: var(--background-color);
+	--carousel-track-width: 100%;
 }
 
 body {
-	background-color: var(--light-orange);
+	background-color: var(--background-color);
 }

@@ -91,7 +91,9 @@ export default {
 	footer: {
 		title: "Canada's Capital Hackathon",
 		description: "Control the Capital, Command the Cabinet, Build until you Hack the Hill",
-		github: "Source Code",
+		github: "Github",
+		privacy: "Privacy Policy",
+		constitution: "Constitution",
 	},
 	notification: {
 		message:
