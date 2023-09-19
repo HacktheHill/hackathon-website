@@ -1,0 +1,103 @@
+.team-carousel {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	background-color: var(--dark-primary-color);
+}
+
+.team-carousel::before,
+.team-carousel::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	width: 10%;
+	background: linear-gradient(to var(--direction), var(--dark-primary-color) 10%, var(--medium-primary-color));
+}
+
+.team-carousel::after {
+	--direction: left;
+	right: 0;
+}
+
+.team-carousel::before {
+	--direction: right;
+	left: 0;
+}
+
+.team-carousel .carousel-track {
+	display: flex;
+	gap: 0.5rem;
+	padding: 1ch 0;
+	width: calc(2 * var(--carousel-track-width));
+	animation: scroll 60s linear infinite;
+}
+
+.team-carousel .carousel-track.carousel-hover {
+	animation-play-state: paused;
+}
+
+.team-carousel .carousel-card {
+	display: grid;
+	grid-template: 1fr / 1fr;
+	perspective: 1000px;
+	width: 100%;
+}
+
+.team-carousel .carousel-card-content {
+	grid-area: 1 / 1 / 1 / 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	border-radius: 50%;
+	justify-content: center;
+	transition: transform 1s;
+	backface-visibility: hidden;
+	margin: 0;
+	font-size: 0.55rem;
+}
+
+.team-carousel .carousel-card.carousel-hover .carousel-card-front {
+	transform: rotateY(-180deg);
+}
+
+.team-carousel .carousel-card-back {
+	transform: rotateY(180deg);
+	background-color: var(--light-primary-color);
+}
+
+.team-carousel .carousel-card.carousel-hover .carousel-card-back {
+	transform: rotateY(0deg);
+}
+
+.team-carousel .carousel-card img {
+	border-radius: 50%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.team-carousel .carousel-card figcaption {
+	text-align: center;
+}
+
+.team-carousel .carousel-card-about {
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.team-carousel .carousel-card-contact {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+@keyframes scroll {
+	to {
+		transform: translateX(calc(var(--carousel-track-width) * -1));
+	}
+}
