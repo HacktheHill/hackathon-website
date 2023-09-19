@@ -1,23 +1,51 @@
 .footer {
-	--media-links: var(--medium-primary-color);
-	--footer-links: var(--medium-primary-color);
-	display: flex;
+	--media-links: var(--light-secondary-color);
+	--footer-links: var(--light-secondary-color);
+	background-color: var(--dark-primary-color);
+	color: var(--light-secondary-color);
+	display: inline-flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
-	width: 80%;
-	margin: auto;
-	margin-top: 10%;
-	padding-bottom: 1rem;
-	color: var(--medium-primary-color);
 	font-family: "Rubik", sans-serif;
 	font-size: 0.8rem;
+	width: 100%;
+}
+
+.media-links-container {
+	position: absolute;
+	z-index: 2;
+	margin: calc(2% - 6px) 0;
+}
+
+.bottom-footer {
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+	justify-content: space-between;
+	margin: 2% 10%;
+}
+
+.bottom-footer .footer-link-group {
+	display: flex;
+	align-items: center;
+}
+
+.bottom-footer .copyright-group {
+	display: flex;
+	align-items: center;
 }
 
 .footer-logo img {
 	width: 200px;
 	height: auto;
 	margin: auto;
+}
+
+.footer-link-group {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
 }
 
 .logo-text {
@@ -34,10 +62,10 @@
 
 .media-links {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
+	gap: 1rem;
 	font-size: 1.5rem;
-	width: min(100%, 30rem);
-	gap: 0.5rem;
+	width: min(100%, 20rem);
 }
 
 .media-links a {
@@ -52,9 +80,14 @@
 .footer-link {
 	display: flex;
 	justify-content: center;
+	flex-direction: row;
 	color: var(--footer-links);
 	text-decoration: none;
 	gap: 0.2rem;
+	font-size: 0.65rem;
+}
+.footer-link:hover {
+	text-decoration: underline;
 }
 
 @keyframes tada {
@@ -82,5 +115,44 @@
 
 	100% {
 		transform: scale(1) rotate(0);
+	}
+}
+
+@media (max-width: 800px) {
+	.footer {
+		gap: 0;
+	}
+
+	.bottom-footer {
+		display: block;
+		margin: 0% 10%;
+	}
+
+	.media-links-container {
+		position: relative;
+	}
+	.bottom-footer .footer-link-group {
+		display: flex;
+		justify-content: center;
+		margin: 5% 0;
+	}
+
+	.bottom-footer .copyright-group {
+		display: flex;
+		justify-content: center;
+		margin: 5% 0;
+	}
+	.media-links {
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.media-links-container {
+		display: flex;
+		justify-content: center;
+		margin: 1% 0;
+		padding-bottom: 4%;
 	}
 }

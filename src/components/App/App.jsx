@@ -23,7 +23,7 @@ function App() {
 			{/* <Sponsors /> */}
 			{/* <Collaborators /> */}
 			{/* <FAQ /> */}
-			{/* <Footer /> */}
+			<Footer />
 			{/* <Notification /> */}
 		</>
 	);
