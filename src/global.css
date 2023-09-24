@@ -11,6 +11,8 @@
 	--dark-secondary-color: #650014;
 
 	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
+	
+	--about-stats-gradient: linear-gradient(359deg, var(--solid-red) 20%, var(--solid-red) 50%, var(--dark-red) 80%, var(--dark-red) 100%);
 
 	--button-gradient: linear-gradient(90deg, var(--light-tertiary-color), transparent) var(--light-secondary-color);
 

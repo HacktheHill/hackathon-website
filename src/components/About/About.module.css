@@ -1,5 +1,4 @@
 .about {
-	--about-text-sidebar: var(--dark-color);
 	--mascot-drop-shadow: var(--highlight-color);
 
 	display: flex;
@@ -7,14 +6,19 @@
 	width: 80%;
 	margin: auto;
 	transition: 0.5s;
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
 	gap: 2rem;
+	padding-top: 4rem;
+	padding-left: 10%;
+	padding-right: 10%;
+	background: var(--about-stats-gradient);
 }
 
 .about h1 {
 	font-family: Coolvetica;
 	font-size: 3em;
 	font-weight: normal;
+	color: var(--pale-yellow);
 }
 
 .about-text {
@@ -22,18 +26,16 @@
 }
 
 .about-text p {
-	border-left: 5px solid var(--about-text-sidebar);
-	padding-left: 2rem;
-	font-family: Rubik;
-	font-size: max(1rem, 1.15vmin);
+	color: var(--pale-yellow);
+	font-family: Coolvetica;
+	font-size: max(1.25rem, 1.15vmin);
 	line-height: max(2rem, 2.5vmin);
 }
 
 img.mascot {
 	width: 40vmin;
 	margin: auto;
-	/* Similar syntax to box-shadow */
-	filter: drop-shadow(-2px -4px 22px var(--mascot-drop-shadow));
+	opacity: 0; 
 }
 
 @media screen and (max-width: 1024px) {
