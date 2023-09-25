@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import Navbar from "./NavBar";
 import "./Navigation.css";
-import Sidebar from "./Sidebar";
 
-const Navigation = ({ pageScroll }) => {
+const Navigation = () => {
+	const [pageScroll, setPageScroll] = useState(0);
 	const [sidebarOpen, setSidebarOpen] = useState(false);
+
+	useEffect(() => {
+		const onScroll = () => setPageScroll(window.scrollY);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
 
 	useEffect(() => {
 		if (sidebarOpen) {
