@@ -41,52 +41,18 @@ export default {
 	},
 	schedule: {
 		title: "La Série du Hacker",
-		events: {
-			event1: {
-				title: "Évaluations des CV",
-				month: "Novembre",
-				day: "16",
-				time: "19h - 21h à STM 117",
+		events: [
+			{
+				title: "Sauvetage de CV",
+				month: "Octobre",
+				day: "10",
+				time: "19h00 - 21h00 @ STM 117",
 				description:
-					"Avez-vous besoin de conseils sur votre CV ? Rencontrez des développeurs de Ciena et de Microsoft qui examineront et évalueront les CV soumis par les étudiants, tout en mangeant des pizzas fraîches.",
-				status: "Visionner",
-				link: "https://youtu.be/zpixm4xz_K4",
-				btn_Status: "",
+					"Votre CV mérite une refonte. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès. Laissez Hack the Hill vous guider pour sauver votre CV de l'ordinaire. Rejoignez Hack the Hill pour une session dynamique dédiée à la revitalisation de vos CV!",
+				status: "Plus d'infos",
+				link: "https://l.hackthehill.com",
 			},
-			event2: {
-				title: "Café, Code et Cram",
-				month: "Novembre",
-				day: "30",
-				time: "19h - 21h à STM 117",
-				description:
-					"Détendez-vous et prenez une pause de l'école. Joignez-nous et le Club d'informatique de l'Université d'Ottawa pour une soirée de socialisation et de codage avec café et collations.",
-				status: "Complété",
-				link: "https://forms.gle/WUgn5g8XTjNf9Eq39",
-				btn_Status: "disabled",
-			},
-			event3: {
-				title: "Wicked Web Work",
-				month: "Janvier",
-				day: "11",
-				time: "18h - 22h à STM 117",
-				description:
-					"Explorez les merveilles du développement web ! Apprenez les bases avec des ateliers et participez à un défi d'une heure pour construire un site Web selon les directives fournies.",
-				status: "Complété",
-				link: "",
-				btn_Status: "disabled",
-			},
-			event4: {
-				title: "Got Games?",
-				month: "Janvier",
-				day: "25",
-				time: "19h - 21h à STM 117",
-				description:
-					"Découvrez le meilleur que le développement de jeux a à offrir ! Joignez-vous à nous aux côtés du Club de développement de jeux de l'Université d'Ottawa pour un atelier d'introduction à Unity.",
-				status: "Visionner",
-				link: "https://youtu.be/mbr4ZmXtx0k",
-				btn_Status: "",
-			},
-		},
+		],
 	},
 	collaborators: { title: "Collaborateurs" },
 	faq: {
@@ -150,5 +116,31 @@ export default {
 		role_dir_m: "Directeur",
 		role_coord_f: "Coordinatrice",
 		role_coord_m: "Coordinateur",
+	},
+	/*
+	"events-page": {
+		title: "Events",
+		description: "Join us for a series of exhilarating events leading up to Hack the Hill 2024!",
+		description2:
+			"Whether you're a coding novice or a seasoned hacker, our events offer a platform to learn, network, and showcase your skills. Dive into the world of innovation and problem-solving, and be part of the hacker community that's making a real-world impact.",
+		description3:
+			"Don't miss out on this opportunity to challenge yourself and be inspired – sign up for the Hacker Series Events!",
+		button: {
+			start: "Learn more about us on the",
+			end: "website",
+		},
+	},
+	 */
+	"events-page": {
+		title: "Événements",
+		description: "Joignez-nous pour une série d'événements exaltants menant à Hack the Hill 2024!",
+		description2:
+			"Que vous soyez un novice en codage ou un hacker chevronné, nos événements offrent une plateforme pour apprendre, réseauter et mettre en valeur vos compétences. Plongez dans le monde de l'innovation et de la résolution de problèmes, et faites partie de la communauté des hackers qui ont un impact réel.",
+		description3:
+			"Ne manquez pas cette occasion de vous mettre au défi et de vous inspirer – inscrivez-vous aux événements de la série Hacker!",
+		button: {
+			start: "Apprenez-en plus sur nous sur le site web",
+			end: "",
+		},
 	},
 } as const;

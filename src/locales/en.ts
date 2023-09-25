@@ -41,52 +41,18 @@ export default {
 	},
 	schedule: {
 		title: "The Hacker Series",
-		events: {
-			event1: {
-				title: "Resume Roast",
-				month: "November",
-				day: "16",
+		events: [
+			{
+				title: "Resume Rescue",
+				month: "October",
+				day: "10",
 				time: "7 p.m. - 9 p.m. @ STM 117",
 				description:
-					"Need resume advice on the spot? Hang out with some developers from Ciena and Microsoft as they review and evaluate resumes submitted by students, all while filling yourself up with some fresh pizza.",
-				status: "View Video",
-				link: "https://youtu.be/zpixm4xz_K4",
-				btn_Status: "",
+					"Your resume deserves a makeover. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success. Let Hack the Hill guide you in rescuing your resume from the ordinary. Join Hack the Hill for a dynamic session dedicated to revitalizing your resumes!",
+				status: "More Info",
+				link: "https://l.hackthehill.com",
 			},
-			event2: {
-				title: "Coffee, Code, and Cram",
-				month: "November",
-				day: "30",
-				time: "7 p.m. - 9 p.m. @ STM 117",
-				description:
-					"Unwind and take a break from school. Join us alongside the uOttawa Computer Science Club for an evening of socializing and coding with coffee, tea, and snacks.",
-				status: "Completed",
-				link: "https://forms.gle/WUgn5g8XTjNf9Eq39",
-				btn_Status: "disabled",
-			},
-			event3: {
-				title: "Wicked Web Work",
-				month: "January",
-				day: "11",
-				time: "6 p.m. - 10 p.m. @ STM 117",
-				description:
-					"Explore the wonders of front-end development! Learn the basics through workshops and participate in a one-hour challenge to build a website according to provided guidelines.",
-				status: "Completed",
-				link: "",
-				btn_Status: "disabled",
-			},
-			event4: {
-				title: "Got Games?",
-				month: "January",
-				day: "25",
-				time: "7 p.m. - 9 p.m. @ STM 117",
-				description:
-					"Discover the best that game development has to offer! Join us along side the uOttawa Game Development Club for an introduction to Unity workshop.",
-				status: "View Video",
-				link: "https://youtu.be/mbr4ZmXtx0k",
-				btn_Status: "",
-			},
-		},
+		],
 	},
 	collaborators: { title: "Collaborators" },
 	faq: {
@@ -150,5 +116,17 @@ export default {
 		role_dir_m: "Director",
 		role_coord_f: "Coordinator",
 		role_coord_m: "Coordinator",
+	},
+	"events-page": {
+		title: "Events",
+		description: "Join us for a series of exhilarating events leading up to Hack the Hill 2024!",
+		description2:
+			"Whether you're a coding novice or a seasoned hacker, our events offer a platform to learn, network, and showcase your skills. Dive into the world of innovation and problem-solving, and be part of the hacker community that's making a real-world impact.",
+		description3:
+			"Don't miss out on this opportunity to challenge yourself and be inspired – sign up for the Hacker Series Events!",
+		button: {
+			start: "Learn more about us on the",
+			end: "website",
+		},
 	},
 } as const;

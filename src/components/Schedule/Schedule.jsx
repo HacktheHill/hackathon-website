@@ -3,15 +3,14 @@ import { t } from "../../i18n";
 import styles from "./Schedule.module.css";
 
 function Schedule() {
-	const eventsObject = t("schedule.events");
-	const eventsArray = Object.values(eventsObject);
+	const events = t("schedule.events");
 
 	return (
 		<div id="schedule" className={styles["schedule"]}>
 			<div className={styles["schedule-title"]}>{t("schedule.title")}</div>
 
 			<div className={styles["schedule-list"]}>
-				{eventsArray.map((event, index) => (
+				{events.map((event, index) => (
 					<div className={styles["schedule-list-item"]} key={index}>
 						<div className={styles["event-card"]}>
 							<div className={styles["event-month"]}>{event.month}</div>
@@ -21,7 +20,9 @@ function Schedule() {
 							<div className={styles["event-heading"]}>
 								<h1 className={styles["event-title"]}>{event.title}</h1>
 
-								{event.btn_Status === "" ? (
+								{event.disabled ? (
+									<a className={styles["event-button-disabled"]}>{event.status}</a>
+								) : (
 									<a
 										className={styles["event-button"]}
 										target="_blank"
@@ -30,8 +31,6 @@ function Schedule() {
 									>
 										{event.status}
 									</a>
-								) : (
-									<a className={styles["event-button-disabled"]}>{event.status}</a>
 								)}
 							</div>
 							<div className={styles["sub-title"]}>{event.time}</div>

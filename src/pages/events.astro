@@ -1,0 +1,11 @@
+---
+import "../components/App/global.css";
+import EventsPage from "../components/EventsPage/EventsPage";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Events";
+---
+
+<Layout title={title}>
+	<EventsPage client:load />
+</Layout>

@@ -10,6 +10,8 @@ const description =
 const keywords =
 	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2023, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University";
 
+const color = "#ea885f";
+
 let structuredData = {} as any;
 try {
 	structuredData = JSON.parse(await fs.readFile(path.resolve("./public/structured-data.json"), "utf-8"));
@@ -30,9 +32,9 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#ffffff" />
-		<meta name="msapplication-TileColor" content="#ffffff" />
-		<link rel="mask-icon" href={`${url}/safari-pinned-tab.svg`} color="#ffffff" />
+		<meta name="theme-color" content={color} />
+		<meta name="msapplication-TileColor" content={color} />
+		<link rel="mask-icon" href={`${url}/safari-pinned-tab.svg`} color={color} />
 		<link rel="manifest" href={`${url}/site.webmanifest`} />
 		<title>{title}</title>
 
@@ -88,7 +90,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<link rel="icon" type="image/png" href={`${url}/icons/favicon-16x16.svg`} sizes="16x16" />
 		<link rel="icon" type="image/png" href={`${url}/icons/favicon-128.svg`} sizes="128x128" />
 		<meta name="application-name" content="Hack the Hill" />
-		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileColor" content={color} />
 		<meta name="msapplication-TileImage" content={`${url}/icons/mstile-144x144.png`} />
 		<meta name="msapplication-square70x70logo" content={`${url}/icons/mstile-70x70.png`} />
 		<meta name="msapplication-square150x150logo" content={`${url}/icons/mstile-150x150.png`} />
