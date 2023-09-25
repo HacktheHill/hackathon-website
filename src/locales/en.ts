@@ -39,6 +39,41 @@ export default {
 		title: "Community Partners",
 		icon_alt: "Community Partner Icon",
 	},
+	testimonials: {
+		title: "Making Moments Matter",
+		sub_heading:
+			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learing, and fun. These experiences are what shape our hackathon.",
+		t1: {
+			name: "Maddie Whibbs",
+			content: "Great and well organized event - career fair was my favorite part!",
+			role: "Blackberry",
+			img: "/Logos/Blackberry.svg",
+		},
+		t2: {
+			name: "Adam Laderoute",
+			content: "We enjoyed the event, well run, great organizers.",
+			role: "CSE-CST",
+			img: "/Logos/CSE.svg",
+		},
+		t3: {
+			name: "Humrayah",
+			content: "Getting to meet awesome people! Loved the web dev workshop as well!",
+			role: "Hack the Hill I Experienced Hacker",
+			img: "",
+		},
+		t4: {
+			name: "Patrick",
+			content: "Connecting with other people and talk about what they built and do.",
+			role: "Hack the Hill I Experienced Hacker",
+			img: "",
+		},
+		t5: {
+			name: "Hasin Zaman",
+			content: "Just the people and chill environment and solving problems.",
+			role: "Hack the Hill I Experienced Hacker",
+			img: "",
+		},
+	},
 	schedule: {
 		title: "The Hacker Series",
 		events: [
