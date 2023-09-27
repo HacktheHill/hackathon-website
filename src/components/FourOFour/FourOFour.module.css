@@ -1,0 +1,66 @@
+.four-o-four {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(var(--light-red), var(--light-orange), var(--peach-yellow));
+	height: 100vh;
+	width: 100vw;
+	margin: auto;
+}
+
+.logo-404 {
+	top: 0.7rem;
+	left: 0.7rem;
+	position: absolute;
+	opacity: 0.2;
+	transition: all 0.15s ease-in-out;
+}
+
+.logo-404 a {
+	text-decoration: none;
+	color: white;
+}
+
+.logo-404:hover {
+	opacity: 0.6;
+}
+
+.content-404 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	flex-wrap: wrap;
+	color: white;
+}
+
+.text-404 h1 {
+	font-size: 800%;
+	opacity: 0.3;
+}
+
+.text-404 a {
+	text-decoration: none;
+	background: white;
+	border: 3px solid white;
+	border-radius: 10px;
+	color: var(--light-orange);
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	font-size: 0.8rem;
+}
+
+.text-404 a:hover {
+	background: var(--light-orange);
+	color: white;
+}
+
+.image-404 {
+	transition: all 0.4s ease-in-out;
+}
+
+.image-404:hover {
+	transform: scale(1.05);
+}

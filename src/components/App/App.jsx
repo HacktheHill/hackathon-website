@@ -9,7 +9,7 @@ import Hero from "../Hero/Hero";
 import Navigation from "../Navigation/Navigation";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
-import "./global.css";
+import "../../global.css";
 
 function App() {
 	return (

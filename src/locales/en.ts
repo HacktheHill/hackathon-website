@@ -129,4 +129,9 @@ export default {
 			end: "website",
 		},
 	},
+	"four-o-four": {
+		title: "Uh Oh...",
+		description: "Bea.var thinks you got lost in the sauce.",
+		button: "Back Home",
+	},
 } as const;
