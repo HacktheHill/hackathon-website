@@ -143,4 +143,9 @@ export default {
 			end: "",
 		},
 	},
+	"four-o-four": {
+		title: "Oh non!",
+		description: "Bea.var pense que vous êtes perdu...",
+		button: "Retourner",
+	},
 } as const;
