@@ -8,23 +8,6 @@
 	margin: auto;
 }
 
-.logo-404 {
-	top: 0.7rem;
-	left: 0.7rem;
-	position: absolute;
-	opacity: 0.2;
-	transition: all 0.15s ease-in-out;
-}
-
-.logo-404 a {
-	text-decoration: none;
-	color: white;
-}
-
-.logo-404:hover {
-	opacity: 0.6;
-}
-
 .content-404 {
 	display: flex;
 	align-items: center;
@@ -33,6 +16,12 @@
 	gap: 2rem;
 	flex-wrap: wrap;
 	color: white;
+}
+
+.text-404 {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .text-404 h1 {
