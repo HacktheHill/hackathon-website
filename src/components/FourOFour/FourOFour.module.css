@@ -33,7 +33,7 @@
 	text-decoration: none;
 	background: white;
 	border: 3px solid white;
-	border-radius: 10px;
+	border-radius: 5px;
 	color: var(--light-orange);
 	padding: 0.5rem 1rem;
 	cursor: pointer;
@@ -47,9 +47,9 @@
 }
 
 .image-404 {
-	transition: all 0.4s ease-in-out;
+	transition: transform 8s ease-in-out;
 }
 
 .image-404:hover {
-	transform: scale(1.05);
+	transform: rotate(720deg);
 }
