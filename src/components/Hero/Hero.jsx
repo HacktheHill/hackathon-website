@@ -8,10 +8,11 @@ import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/2024/location-pin.svg";
+
 // 7:00 PM EST on March 3rd, 2023
-const EVENT_START_DATE = new Date("2023-09-25T12:00:00-12:30");
+const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
 // 9:00 AM EST on March 5th, 2023
-const HACKING_END_DATE = new Date("2023-09-25T1:00:00-05:00");
+const HACKING_END_DATE = new Date("2023-03-05T09:00:00-05:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
