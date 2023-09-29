@@ -1,7 +1,7 @@
 import React from "react";
 import { t } from "../../i18n";
 import styles from "./About.module.css";
-import Mascot from "/SVGs/2023/mascot-waving.svg";
+import Mascot from "/SVGs/2024/about-stats/frame.svg";
 
 function About() {
 	return (
