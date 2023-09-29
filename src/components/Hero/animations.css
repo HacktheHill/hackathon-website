@@ -38,16 +38,12 @@ svg .cloud {
 animation: clouds 100s linear infinite alternate;
 }
 
-svg .clud {
+svg :is(.cloud-2, .cloud-3) {
 	animation: solo 10s linear infinite alternate;
 }
 
-svg .clud-2 {
-	animation: solo 40s linear infinite alternate;
-}
-
-svg .cloud-up {
-	animation: s-cloud 10s linear infinite alternate;
+svg .cloud-3 {
+	animation-duration: 40s;
 }
 
 svg :is(.clock-left, .clock-right) {
@@ -87,9 +83,23 @@ svg .right-bird {
 animation-duration: 1s;
 }
 
-@keyframes sun {
-	0% {
-		transform: translateY(25vh);
+svg .light {
+	animation: light 2s infinite alternate;
+}
+
+svg .s-light {
+	animation: s-light 1s infinite alternate;
+}
+
+@keyframes s-light {
+	50% {
+		transform: rotateX(-2deg);
+	}
+}
+
+@keyframes light {
+	50% {
+		transform: rotateX(5deg) skewX(0.05deg);
 	}
 }
 
@@ -154,7 +164,7 @@ transform: translateX(50%);
 
 @keyframes solo {
 	100% {
-		transform: translate(10vh, 10vh);;
+		transform: translate(10vh, 15vh);;
 	}
 }
 
