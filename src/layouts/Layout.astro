@@ -38,6 +38,18 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<link rel="manifest" href={`${url}/site.webmanifest`} />
 		<title>{title}</title>
 
+		<!--- Google analytics tags  -->
+		
+		<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-7SJDSSNG3P"></script>
+		<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+		dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+		gtag("config", "G-7SJDSSNG3P");
+		</script>
+
 		<!-- Meta tags for SEO and social media -->
 		<meta property="og:description" name="description" content={description} />
 		<meta property="og:type" content="website" />
