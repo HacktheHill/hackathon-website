@@ -1,6 +1,7 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
+import partytown from "@astrojs/partytown";
 
 const DEV = process.argv[2] === "build" ? false : true;
 
