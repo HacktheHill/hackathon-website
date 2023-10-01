@@ -8,5 +8,5 @@ const DEV = process.argv[2] === "build" ? false : true;
 export default defineConfig({
 	outDir: "build",
 	site: DEV ? "http://localhost:3000" : "https://hackthehill.com",
-	integrations: [react(), sitemap()],
+	integrations: [react(), sitemap(), partytown()],
 });
