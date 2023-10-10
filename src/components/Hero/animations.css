@@ -7,11 +7,11 @@ animation: leafDrop 3s linear forwards;
 }
 
 svg .leaf-drop-slower {
-	animation: leafDrop 3s linear forwards;
+	animation: leafDrop 4s linear forwards;
 	}
 
 svg .leaf-drop-faster {
-	animation: leafDrop 2s linear forwards;
+	animation: leafDrop 1s linear forwards;
 }
 
 svg .leaf-drop-slower-right {
@@ -35,15 +35,15 @@ transform-origin: top left;
 }
 
 svg .cloud {
-animation: clouds 100s linear infinite alternate;
+animation: clouds 50s linear infinite alternate;
 }
 
 svg :is(.cloud-2, .cloud-3) {
-	animation: solo 10s linear infinite alternate;
+	animation: solo 80s linear infinite alternate;
 }
 
 svg .cloud-3 {
-	animation-duration: 40s;
+	animation-duration: 80s;
 }
 
 svg :is(.clock-left, .clock-right) {
@@ -163,9 +163,13 @@ transform: translateX(50%);
 }
 
 @keyframes solo {
-	100% {
-		transform: translate(10vh, 15vh);;
-	}
+	0% {
+		transform: translateX(-50%) translateY(10%);
+		}
+		
+		100% {
+		transform: translateX(50%) translateY(10%);
+		}
 }
 
 @keyframes clock {

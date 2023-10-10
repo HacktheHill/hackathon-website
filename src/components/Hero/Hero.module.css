@@ -1,3 +1,7 @@
+:root {
+	--scroll: 0;
+}
+
 .hero {
 	--hero-heading: var(--dark-primary-color);
 	--hero-btn-background-color: var(--dark-primary-color);
@@ -14,6 +18,7 @@
 	background: var(--color-gradient);
 
 	background-repeat: no-repeat;
+
 }
 
 .hero-heading {
@@ -25,6 +30,9 @@
 	width: fit-content;
 	margin: auto;
 	gap: 1.5vh;
+
+	transform: translateY(calc(1% * (max(var(--scroll), 25)- 25) * 100 / 75));
+
 }
 
 .location-date-heading {
@@ -41,7 +49,8 @@
 }
 
 .location-pin {
-	width: 9.5%;
+	width: 1.1rem;
+	object-fit: cover;
 }
 
 .banner-logo {
@@ -105,27 +114,44 @@
 	box-sizing: border-box;
 	position: absolute;
 	top: calc(40vmin + max(20rem, 20vmin));
-	left: 50vw;
+	left: 48.5vw;
 	z-index: 99;
 	transform: translateX(-50%);
 	margin: 0;
 	padding: max(1rem, 2vmin) max(2rem, 4vmin);
 	text-align: center;
-	border-radius: 100px;
+	border-radius: 50px;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	border: 5px solid var(--count-down-border);
-	background-color: var(--count-down-background-color);
+	border: 5px solid #84010B;
+	background-color: #EEE4D4;
 	font-size: clamp(0.75rem, 2vmin, 5rem);
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 1s ease-in-out;
 	display: flex;
-	gap: max(1rem, 5vmin);
+	flex-direction: column;
+	gap: max(0.5rem, 2vmin);
 }
 
 .countdown-dialog[open] {
 	opacity: 1;
 	pointer-events: all;
+}
+
+.countdown-dialog:hover {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.countdown-header {
+	color: #84010B;
+	margin: 0;
+	font-family: Rubik;
+}
+
+.countdown-items-container {
+	display: flex;
+	justify-content: space-between;
 }
 
 .countdown-item {
@@ -142,6 +168,6 @@
 }
 
 .countdown-item h4 {
-	color: var(--countdown-item-color);
+	color: #84010B;
 	font-weight: normal;
 }

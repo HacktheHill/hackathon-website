@@ -9,10 +9,10 @@ import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/2024/location-pin.svg";
 
-// 7:00 PM EST on March 3rd, 2023
-const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
-// 9:00 AM EST on March 5th, 2023
-const HACKING_END_DATE = new Date("2023-03-05T09:00:00-05:00");
+// 7:00 PM EST on February 2rd, 2024
+const EVENT_START_DATE = new Date("2024-02-02T19:00:00-05:00");
+// 9:00 AM EST on February 4th, 2024
+const HACKING_END_DATE = new Date("2024-02-04T09:00:00-05:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
@@ -28,6 +28,7 @@ switch (true) {
 }
 
 function Hero() {
+	
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
 	const [email, setEmail] = useState("");
@@ -52,6 +53,23 @@ function Hero() {
 			setPopupOpen(false);
 		}
 	};
+
+	const [scroll, setScrollVar] = useState(0);
+	
+  useEffect(() => {
+    function handleScroll() {
+      const htmlElement = document.documentElement;
+      const percentOfScreenHeightScrolled = (htmlElement.scrollTop / htmlElement.clientHeight) * 100;
+	  console.log(Math.min(percentOfScreenHeightScrolled, 100));
+      setScrollVar(Math.min(percentOfScreenHeightScrolled, 100));
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scroll]);
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
@@ -93,6 +111,8 @@ function Hero() {
 			></div>
 			{date && (
 				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
+					<p className={styles["countdown-header"]}> <strong>psst... Mark your calendar, Hackathon is in</strong></p>
+					<div className={styles["countdown-items-container"]}>
 					<div className={styles["countdown-item"]}>
 						<h3>{days}</h3>
 						<h4>day{days === 1 ? "" : "s"}</h4>
@@ -108,6 +128,7 @@ function Hero() {
 					<div className={styles["countdown-item"]}>
 						<h3>{seconds}</h3>
 						<h4>second{seconds === 1 ? "" : "s"}</h4>
+					</div>
 					</div>
 				</dialog>
 			)}
