@@ -1,7 +1,7 @@
 import React from "react";
 import { t } from "../../i18n";
 import styles from "./About.module.css";
-import Mascot from "/SVGs/2024/about-stats/frame.svg";
+import frame from "/SVGs/2024/about-stats/frame.svg";
 
 function About() {
 	return (
@@ -18,7 +18,7 @@ function About() {
 					{t("about.p3")}
 				</p>
 			</div>
-			<img className={styles.mascot} src={Mascot} alt={t("about.img_alt")} />
+			<img className={styles.frame} src={frame} alt={t("about.img_alt")} />
 		</div>
 	);
 }

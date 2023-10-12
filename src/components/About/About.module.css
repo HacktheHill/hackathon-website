@@ -1,16 +1,10 @@
 .about {
-	--mascot-drop-shadow: var(--highlight-color);
-
 	display: flex;
 	justify-content: space-between;
 	width: 80%;
 	margin: auto;
 	transition: 0.5s;
-	margin-bottom: 3rem;
 	gap: 2rem;
-	padding-top: 4rem;
-	padding-left: 10%;
-	padding-right: 10%;
 	background: var(--about-stats-gradient);
 }
 
@@ -22,7 +16,8 @@
 }
 
 .about-text {
-	width: 50%;
+	width: 80%;
+	margin: auto;
 }
 
 .about-text p {
@@ -32,9 +27,9 @@
 	line-height: max(2rem, 2.5vmin);
 }
 
-img.mascot {
-	width: 45vmin;
-	margin: auto;
+img.frame {
+	width: 50vmin;
+	margin: auto; 
 }
 
 @media screen and (max-width: 1024px) {
@@ -46,13 +41,13 @@ img.mascot {
 		width: 100%;
 	}
 
-	img.mascot {
+	img.frame {
 		width: 50vmin;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	img.mascot {
+	img.frame {
 		width: 80vmin;
 	}
 }
