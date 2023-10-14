@@ -1,7 +1,3 @@
-:root {
-	--scroll: 0;
-}
-
 .hero {
 	--hero-heading: var(--dark-primary-color);
 	--hero-btn-background-color: var(--dark-primary-color);
@@ -30,9 +26,6 @@
 	width: fit-content;
 	margin: auto;
 	gap: 1.5vh;
-
-	transform: translateY(calc(1% * (max(var(--scroll), 25)- 25) * 100 / 75));
-
 }
 
 .location-date-heading {

@@ -54,22 +54,26 @@ function Hero() {
 		}
 	};
 
-	const [scroll, setScrollVar] = useState(0);
-	
-  useEffect(() => {
-    function handleScroll() {
-      const htmlElement = document.documentElement;
-      const percentOfScreenHeightScrolled = (htmlElement.scrollTop / htmlElement.clientHeight) * 100;
-	  console.log(Math.min(percentOfScreenHeightScrolled, 100));
-      setScrollVar(Math.min(percentOfScreenHeightScrolled, 100));
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scroll]);
+	useEffect(() => {
+		function handleScroll() {
+		  const svgContainer = document.getElementById("hero");
+	  
+		  if (svgContainer) {
+			if (window.scrollY > 50) {
+			  svgContainer.classList.add("move-away");
+			} else {
+			  svgContainer.classList.remove("move-away");
+			}
+		  }
+		}
+	  
+		window.addEventListener("scroll", handleScroll);
+	  
+		return () => {
+		  window.removeEventListener("scroll", handleScroll);
+		};
+	  }, []);
+	  
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>

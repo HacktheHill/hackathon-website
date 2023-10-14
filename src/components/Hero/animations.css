@@ -1,3 +1,7 @@
+.move-away {
+	animation: moveAway 1s forwards; 
+}
+
 svg .leaf {
 	animation: leaf 3s linear forwards;
 }
@@ -89,6 +93,15 @@ svg .light {
 
 svg .s-light {
 	animation: s-light 1s infinite alternate;
+}
+
+@keyframes moveAway {
+	0% {
+		transform: translateY(0%); 
+	}
+	100% {
+	  transform: translateY(-25%); 
+	}
 }
 
 @keyframes s-light {
@@ -210,4 +223,4 @@ transform: translateY(2px);
 		opacity: 0.9;
 		transform: rotate(0deg);
 	}
-}
+} 
