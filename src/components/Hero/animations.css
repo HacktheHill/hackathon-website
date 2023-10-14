@@ -1,5 +1,5 @@
 .move-away {
-	animation: moveAway 1s forwards; 
+	animation: moveAway 1s forwards;
 }
 
 svg .leaf {
@@ -7,12 +7,12 @@ svg .leaf {
 }
 
 svg .leaf-drop {
-animation: leafDrop 3s linear forwards;
+	animation: leafDrop 3s linear forwards;
 }
 
 svg .leaf-drop-slower {
 	animation: leafDrop 4s linear forwards;
-	}
+}
 
 svg .leaf-drop-faster {
 	animation: leafDrop 1s linear forwards;
@@ -20,26 +20,26 @@ svg .leaf-drop-faster {
 
 svg .leaf-drop-slower-right {
 	animation: leafDrop 3s linear forwards;
-	}
+}
 
 svg .disappearleaf {
 	animation: disappearleaf 3s linear forwards;
 }
 
 svg .halo {
-animation: halo 10s linear infinite alternate;
-transform-box: fill-box;
-transform-origin: center;
+	animation: halo 10s linear infinite alternate;
+	transform-box: fill-box;
+	transform-origin: center;
 }
 
 svg .flag {
-animation: flag 1s linear infinite alternate;
-transform-box: fill-box;
-transform-origin: top left;
+	animation: flag 1s linear infinite alternate;
+	transform-box: fill-box;
+	transform-origin: top left;
 }
 
 svg .cloud {
-animation: clouds 50s linear infinite alternate;
+	animation: clouds 50s linear infinite alternate;
 }
 
 svg :is(.cloud-2, .cloud-3) {
@@ -51,26 +51,25 @@ svg .cloud-3 {
 }
 
 svg :is(.clock-left, .clock-right) {
-animation: clock linear infinite;
-transform-box: fill-box;
+	animation: clock linear infinite;
+	transform-box: fill-box;
 }
 
 svg .clock-left {
-animation-duration: 3600s;
-transform-origin: top right;
+	animation-duration: 3600s;
+	transform-origin: top right;
 }
 
 svg .clock-right {
-animation-duration: 60s;
-transform-origin: top left;
+	animation-duration: 60s;
+	transform-origin: top left;
 }
 
 svg :is(.left-bird, .right-bird) {
-animation: flap 1s linear infinite alternate;
+	animation: flap 1s linear infinite alternate;
 }
 
-
-svg .awayBird{
+svg .awayBird {
 	animation: flying 5s ease-in forwards;
 }
 
@@ -79,12 +78,12 @@ svg .comingBird {
 }
 
 svg .left-bird {
-animation-duration: 2s;
-animation-delay: 1s;
+	animation-duration: 2s;
+	animation-delay: 1s;
 }
 
 svg .right-bird {
-animation-duration: 1s;
+	animation-duration: 1s;
 }
 
 svg .light {
@@ -97,10 +96,10 @@ svg .s-light {
 
 @keyframes moveAway {
 	0% {
-		transform: translateY(0%); 
+		transform: translateY(0%);
 	}
 	100% {
-	  transform: translateY(-25%); 
+		transform: translateY(-25%);
 	}
 }
 
@@ -117,110 +116,107 @@ svg .s-light {
 }
 
 @keyframes leaf {
-
 	from {
-        transform: translateY(-20vh);
-    }
-    to {
-        transform: translateY(2vh);
-    }
+		transform: translateY(-20vh);
+	}
+	to {
+		transform: translateY(2vh);
+	}
 }
 
 @keyframes leafDrop {
 	0% {
-	transform: translate(0, 0);
+		transform: translate(0, 0);
 	}
 
 	100% {
-		transform: translate(0.5vw, 1vh)
+		transform: translate(0.5vw, 1vh);
 	}
-
 }
 
 @keyframes disappearleaf {
-
 	0% {
-        transform: translateY(-5vh);
+		transform: translateY(-5vh);
 	}
 	95% {
-        transform: translateY(8vh);
+		transform: translateY(8vh);
 		opacity: 0.6;
-    }
+	}
 	100% {
-        transform: translateY(8.5vh);
+		transform: translateY(8.5vh);
 		opacity: 0;
-    }
+	}
 }
 
 @keyframes halo {
-50% {
-transform: scale(1.125);
-filter: saturate(1.5);
-}
+	50% {
+		transform: scale(1.125);
+		filter: saturate(1.5);
+	}
 }
 
 @keyframes flag {
-50% {
-transform: skew(10deg) rotate(10deg);
-}
+	50% {
+		transform: skew(10deg) rotate(10deg);
+	}
 }
 
 @keyframes clouds {
-0% {
-transform: translateX(-50%);
-}
+	0% {
+		transform: translateX(-50%);
+	}
 
-100% {
-transform: translateX(50%);
-}
+	100% {
+		transform: translateX(50%);
+	}
 }
 
 @keyframes solo {
 	0% {
 		transform: translateX(-50%) translateY(10%);
-		}
-		
-		100% {
+	}
+
+	100% {
 		transform: translateX(50%) translateY(10%);
-		}
+	}
 }
 
 @keyframes clock {
-100% {
-transform: rotate(360deg);
-}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes flap {
-0% {
-transform: translateY(-2px);
-}
+	0% {
+		transform: translateY(-2px);
+	}
 
-100% {
-transform: translateY(2px);
-}
+	100% {
+		transform: translateY(2px);
+	}
 }
 
 @keyframes flying {
 	0% {
-        transform: translate3d(100,0,0);
-        transform: rotate(0deg);
-    }
-    
-    100% {
-		transform: translate3d(-350px,700px,0);
-        transform: rotate(90deg);
-    }
+		transform: translate3d(100, 0, 0);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: translate3d(-350px, 700px, 0);
+		transform: rotate(90deg);
+	}
 }
 
 @keyframes coming {
-	0%{
-		transform: translate3d(200px,100px,0);
+	0% {
+		transform: translate3d(200px, 100px, 0);
 		opacity: 0;
 		transform: rotate(-5deg);
 	}
-	100%{
+	100% {
 		opacity: 0.9;
 		transform: rotate(0deg);
 	}
-} 
+}

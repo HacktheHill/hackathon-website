@@ -28,7 +28,6 @@ switch (true) {
 }
 
 function Hero() {
-	
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
 	const [email, setEmail] = useState("");
@@ -56,24 +55,23 @@ function Hero() {
 
 	useEffect(() => {
 		function handleScroll() {
-		  const svgContainer = document.getElementById("hero");
-	  
-		  if (svgContainer) {
-			if (window.scrollY > 50) {
-			  svgContainer.classList.add("move-away");
-			} else {
-			  svgContainer.classList.remove("move-away");
+			const svgContainer = document.getElementById("hero");
+
+			if (svgContainer) {
+				if (window.scrollY > 50) {
+					svgContainer.classList.add("move-away");
+				} else {
+					svgContainer.classList.remove("move-away");
+				}
 			}
-		  }
 		}
-	  
+
 		window.addEventListener("scroll", handleScroll);
-	  
+
 		return () => {
-		  window.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("scroll", handleScroll);
 		};
-	  }, []);
-	  
+	}, []);
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
@@ -115,24 +113,27 @@ function Hero() {
 			></div>
 			{date && (
 				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
-					<p className={styles["countdown-header"]}> <strong>psst... Mark your calendar, Hackathon is in</strong></p>
+					<p className={styles["countdown-header"]}>
+						{" "}
+						<strong>psst... Mark your calendar, Hackathon is in</strong>
+					</p>
 					<div className={styles["countdown-items-container"]}>
-					<div className={styles["countdown-item"]}>
-						<h3>{days}</h3>
-						<h4>day{days === 1 ? "" : "s"}</h4>
-					</div>
-					<div className={styles["countdown-item"]}>
-						<h3>{hours}</h3>
-						<h4>hour{hours === 1 ? "" : "s"}</h4>
-					</div>
-					<div className={styles["countdown-item"]}>
-						<h3>{minutes}</h3>
-						<h4>minute{minutes === 1 ? "" : "s"}</h4>
-					</div>
-					<div className={styles["countdown-item"]}>
-						<h3>{seconds}</h3>
-						<h4>second{seconds === 1 ? "" : "s"}</h4>
-					</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{days}</h3>
+							<h4>day{days === 1 ? "" : "s"}</h4>
+						</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{hours}</h3>
+							<h4>hour{hours === 1 ? "" : "s"}</h4>
+						</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{minutes}</h3>
+							<h4>minute{minutes === 1 ? "" : "s"}</h4>
+						</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{seconds}</h3>
+							<h4>second{seconds === 1 ? "" : "s"}</h4>
+						</div>
 					</div>
 				</dialog>
 			)}
