@@ -35,11 +35,11 @@
 .location-date-heading .location {
 	display: flex;
 	gap: 0.5ch;
+	align-items: center;
 }
 
 .location-pin {
-	width: 1.1rem;
-	object-fit: cover;
+	height: 1.2rem;
 }
 
 .banner-logo {
