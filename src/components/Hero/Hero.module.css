@@ -3,9 +3,9 @@
 	--hero-btn-background-color: var(--dark-primary-color);
 
 	/* countdown colours */
-	--count-down-border: var(--medium-primary-color);
-	--count-down-background-color: var(--background-color);
-	--countdown-item-color: var(--medium-primary-color);
+	--count-down-border: var(--medium-secondary-color);
+	--count-down-background-color: var(--medium-primary-color);
+	--countdown-item-color: var(--medium-secondary-color);
 
 	/* hero animation colours */
 	--snow-svg-color: snow;

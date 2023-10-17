@@ -1,16 +1,14 @@
 .container {
 	/* Note there are colors embed in the MUI in FAQ.jsx which are not referenced here*/
-	--title-text-color: var(--dark-color);
-	--question-text-color: var(--medium-primary-color);
-	--answer-text-color: var(--dark-color);
+	--text-color: var(--light-primary-color);
 	--question-container-hover-color: var(--light-button-hover-color);
 
 	display: flex;
 	flex-direction: column;
-	color: var(--title-text-color);
+	color: var(--text-color);
 	transition: 0.5s;
 	margin: auto;
-	width: 80%;
+	width: 90%;
 	font-weight: bold;
 	font-family: Rubik;
 	gap: 1rem;
@@ -20,6 +18,23 @@
 	font-family: Coolvetica;
 	font-size: 3em;
 	font-weight: normal;
+	display: flex;
+	gap: 39%;
+	flex-direction: row;
+}
+
+.faq-img {
+	height: 2vh;
+}
+
+.faq-columns {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	flex: 1;
+	max-width: 45%;
 }
 
 .question-container {
@@ -28,7 +43,7 @@
 }
 
 .question-container:hover {
-	background-color: var(--question-container-hover-color);
+	background-color: transparent;
 }
 
 .question-container:before {
@@ -36,13 +51,27 @@
 }
 
 .question {
-	color: var(--question-text-color);
-	font-size: 32;
+	color: var(--text-color);
+	font-size: 16px;
 	font-family: Rubik;
 }
 
 .answer {
-	color: var(--answer-text-color);
+	color: var(--text-color);
 	font-size: 16px;
 	font-family: Rubik;
+}
+
+@media (max-width: 768px) {
+	.header {
+		gap: 0;
+	}
+
+	.faqColumns {
+		flex-direction: column;
+	}
+
+	.column {
+		max-width: none;
+	}
 }

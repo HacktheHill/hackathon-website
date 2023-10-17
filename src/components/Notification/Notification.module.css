@@ -1,5 +1,5 @@
 .notification {
-	--background-color: var(--notification-background-color);
+	--medium-primary-color: var(--notification-background-color);
 	--primary-color: var(--light-color);
 
 	position: sticky;
@@ -8,7 +8,7 @@
 	justify-content: space-between;
 	gap: 1rem;
 	padding: 1rem;
-	background-color: var(--background-color);
+	background-color: var(--medium-primary-color);
 	color: var(--primary-color);
 	transition: transform 0.3s ease-in-out;
 	transform: translateY(100%) scaleY(0);

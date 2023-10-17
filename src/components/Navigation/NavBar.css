@@ -1,7 +1,7 @@
 .navbar {
-	--background-on-scroll: var(--deep-yellow);
-	--link-color: var(--dark-red);
-	--link-underline-color: var(--dark-red);
+	--background-on-scroll: var(--light-tertiary-color);
+	--link-color: var(--dark-primary-color);
+	--link-underline-color: var(--dark-primary-color);
 	--box-shadow-color: rgba(0, 0, 0, 0.1);
 
 	box-sizing: border-box;

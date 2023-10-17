@@ -22,7 +22,7 @@ function App() {
 			{/* <Schedule /> */}
 			{/* <Sponsors /> */}
 			{/* <Collaborators /> */}
-			{/* <FAQ /> */}
+			<FAQ />
 			<Footer />
 			{/* <Notification /> */}
 		</>
