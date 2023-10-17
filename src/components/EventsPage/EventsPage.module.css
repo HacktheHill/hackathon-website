@@ -1,7 +1,7 @@
 .header {
 	--title-color: var(--dark-primary-color);
 	--text-color: var(--dark-primary-color);
-	--button-color: var(--medium-primary-color);
+	--button-color: var(--medium-secondary-color);
 
 	--coolvetica-font-family: Coolvetica;
 	--rubik-font-family: Rubik;

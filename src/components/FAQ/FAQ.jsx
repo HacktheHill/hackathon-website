@@ -1,5 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { useState } from "react";
+import faq from "../../assets/faq-leaves.svg?raw";
 import { t } from "../../i18n";
 import styles from "./FAQ.module.css";
 
@@ -71,46 +72,173 @@ export default function FAQ() {
 		<div className={styles.container}>
 			<div id="faq" className={styles.header}>
 				{t("faq.title")}
-			</div>
-			{quesAns.map((item, i) => (
-				<Accordion
-					key={i}
-					className={styles["question-container"]}
-					sx={{
-						backgroundColor: expandedList.includes(item.key) ? "var(--question-container-hover-color)" : "",
-						justifyContent: "left",
-						mb: "10px",
-						mt: "10px",
-						boxShadow: "none",
-						borderRadius: "10px",
-						"&:hover": {
-							backgroundColor: "var(--question-container-hover-color)",
-						},
-						"&:before": {
-							display: "none",
-						},
+				<div
+					className={styles["faq-img"]}
+					dangerouslySetInnerHTML={{
+						__html: faq,
 					}}
-				>
-					<AccordionSummary
-						expandIcon={<box-icon name="chevron-down"></box-icon>}
-						className={styles.question}
-						onClick={event => handleKeyList(event, item)}
-						sx={{
-							color: "var(--question-text-color)",
-						}}
-					>
-						{item.q}
-					</AccordionSummary>
-					<AccordionDetails
-						className={styles.answer}
-						sx={{
-							pt: 0,
-						}}
-					>
-						<Typography align={"left"}>{item.a}</Typography>
-					</AccordionDetails>
-				</Accordion>
-			))}
+				></div>
+			</div>
+			<div className={styles.faqColumns}>
+				<div className={styles.column}>
+					{quesAns.slice(0, Math.ceil(quesAns.length / 2)).map((item, i) => (
+						<Accordion
+							key={i}
+							className={styles["question-container"]}
+							sx={{
+								backgroundColor: expandedList.includes(item.key) ? "transparent" : "transparent",
+								justifyContent: "left",
+								mb: "10px",
+								mt: "10px",
+								boxShadow: "none",
+								"&:before": {
+									display: "none",
+								},
+							}}
+						>
+							<AccordionSummary
+								className={styles.question}
+								onClick={event => handleKeyList(event, item)}
+								sx={{
+									color: "var(--text-color)",
+									"&:hover": {
+										color: "var(--question-container-hover-color)",
+									},
+								}}
+							>
+								{expandedList.includes(item.key) ? (
+									<svg
+										style={{ marginRight: "0.5rem" }}
+										stroke="currentColor"
+										fill="var(--text-color)"
+										strokeWidth="0"
+										viewBox="0 0 1024 1024"
+										height="1em"
+										width="1em"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
+									</svg>
+								) : (
+									<svg
+										style={{ marginRight: "0.5rem" }}
+										stroke="currentColor"
+										fill="var(--text-color)"
+										strokeWidth="0"
+										t="1551322312294"
+										viewBox="0 0 1024 1024"
+										version="1.1"
+										pId="10297"
+										height="1em"
+										width="1em"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<defs></defs>
+										<path
+											d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"
+											pId="10298"
+										></path>
+										<path
+											d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"
+											pId="10299"
+										></path>
+									</svg>
+								)}
+								{item.q}
+							</AccordionSummary>
+
+							<AccordionDetails
+								className={styles.answer}
+								sx={{
+									marginLeft: "1.5rem",
+									pt: 0,
+								}}
+							>
+								<Typography align={"left"}>{item.a}</Typography>
+							</AccordionDetails>
+						</Accordion>
+					))}
+				</div>
+				<div className={styles.column}>
+					{quesAns.slice(Math.ceil(quesAns.length / 2)).map((item, i) => (
+						<Accordion
+							key={i}
+							className={styles["question-container"]}
+							sx={{
+								backgroundColor: expandedList.includes(item.key) ? "transparent" : "transparent",
+								justifyContent: "left",
+								mb: "10px",
+								mt: "10px",
+								boxShadow: "none",
+								"&:before": {
+									display: "none",
+								},
+							}}
+						>
+							<AccordionSummary
+								className={styles.question}
+								onClick={event => handleKeyList(event, item)}
+								sx={{
+									color: "var(--text-color)",
+									"&:hover": {
+										color: "var(--question-container-hover-color)",
+									},
+								}}
+							>
+								{expandedList.includes(item.key) ? (
+									<svg
+										style={{ marginRight: "0.5rem" }}
+										stroke="currentColor"
+										fill="var(--text-color)"
+										strokeWidth="0"
+										viewBox="0 0 1024 1024"
+										height="1em"
+										width="1em"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
+									</svg>
+								) : (
+									<svg
+										style={{ marginRight: "0.5rem" }}
+										stroke="currentColor"
+										fill="var(--text-color)"
+										strokeWidth="0"
+										t="1551322312294"
+										viewBox="0 0 1024 1024"
+										version="1.1"
+										pId="10297"
+										height="1em"
+										width="1em"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<defs></defs>
+										<path
+											d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"
+											pId="10298"
+										></path>
+										<path
+											d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"
+											pId="10299"
+										></path>
+									</svg>
+								)}
+								{item.q}
+							</AccordionSummary>
+
+							<AccordionDetails
+								className={styles.answer}
+								sx={{
+									marginLeft: "1.5rem",
+									pt: 0,
+								}}
+							>
+								<Typography align={"left"}>{item.a}</Typography>
+							</AccordionDetails>
+						</Accordion>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 }

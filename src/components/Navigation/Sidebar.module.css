@@ -1,6 +1,6 @@
 .sidebar {
-	--sidebar-color: var(--background-color);
-	--link-color: var(--medium-primary-color);
+	--sidebar-color: var(--medium-primary-color);
+	--link-color: var(--medium-secondary-color);
 	--link-color-hover: var(--dark-primary-color);
 
 	box-sizing: border-box;
