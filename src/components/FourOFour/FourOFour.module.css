@@ -2,7 +2,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(var(--light-red), var(--light-orange), var(--peach-yellow));
+	background: linear-gradient(
+		var(--medium-secondary-color),
+		var(--medium-primary-color),
+		var(--light-secondary-color)
+	);
 	height: 100vh;
 	width: 100vw;
 	margin: auto;
@@ -34,7 +38,7 @@
 	background: white;
 	border: 3px solid white;
 	border-radius: 5px;
-	color: var(--light-orange);
+	color: var(--medium-primary-color);
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
@@ -42,7 +46,7 @@
 }
 
 .text-404 a:hover {
-	background: var(--light-orange);
+	background: var(--medium-primary-color);
 	color: white;
 }
 

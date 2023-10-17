@@ -123,7 +123,7 @@
 }
 
 @media (max-width: 800px) {
-.testimonial-sub-heading {
+	.testimonial-sub-heading {
 		max-width: 100%;
 	}
 
@@ -133,7 +133,7 @@
 		text-align: center;
 	}
 
-		.testimonial-container {
-			align-items: center;
-		}
+	.testimonial-container {
+		align-items: center;
+	}
 }

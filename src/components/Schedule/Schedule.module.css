@@ -1,13 +1,13 @@
 .schedule {
-	--title-color: var(--dark-red);
-	--event-month-color: var(--dark-red);
-	--event-day-color: var(--dark-red);
-	--event-title-color: var(--dark-red);
-	--event-border-color: var(--dark-red);
-	--event-desc-color: var(--dark-red);
-	--event-subtitle-color: var(--dark-red);
+	--title-color: var(--dark-primary-color);
+	--event-month-color: var(--dark-primary-color);
+	--event-day-color: var(--dark-primary-color);
+	--event-title-color: var(--dark-primary-color);
+	--event-border-color: var(--dark-primary-color);
+	--event-desc-color: var(--dark-primary-color);
+	--event-subtitle-color: var(--dark-primary-color);
 	--disabled-text-color-button: rgba(147, 147, 147, 0.659);
-	--background-color-hover-button: var(--pale-yellow);
+	--medium-primary-color-hover-button: var(--light-primary-color);
 
 	--coolvetica-font-family: Coolvetica;
 	--rubik-font-family: Rubik;
@@ -17,7 +17,7 @@
 	justify-content: space-between;
 	gap: 2rem;
 	padding: 5% 0;
-	background-color: var(--background-color);
+	background-color: var(--medium-primary-color);
 	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
 	background-repeat: no-repeat;
 	background-position: left 50px, right 400px, top 100px right 100px;
@@ -107,7 +107,7 @@
 .event-button-disabled {
 	background: var(--button-gradient);
 	border-radius: 100px;
-	color: var(--medium-primary-color);
+	color: var(--medium-secondary-color);
 	transition: 1s;
 	cursor: pointer;
 	border: 0;
@@ -119,7 +119,7 @@
 }
 
 .event-button:hover {
-	background-color: var(--background-color-hover-button);
+	background-color: var(--medium-primary-color-hover-button);
 }
 
 .event-button-disabled {

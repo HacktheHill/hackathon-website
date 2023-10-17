@@ -23,7 +23,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	border-radius: 50%;
-	background-color: var(--medium-primary-color);
+	background-color: var(--medium-secondary-color);
 	backface-visibility: hidden;
 }
 
