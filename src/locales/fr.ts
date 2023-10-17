@@ -47,34 +47,34 @@ export default {
 			name: "Maddie Whibbs",
 			content: "Événement spectaculaire et bien organisé - j'ai adoré la foire des carrières!",
 			role: "Blackberry",
-			img: "/Logos/Blackberry.svg"
+			img: "/Logos/Blackberry.svg",
 		},
 		t2: {
 			name: "Adam Laderoute",
 			content: "Notre équipe a beaucoup apprécié l'événement. Bien géré et les organisateurs étaient excellents!",
 			role: "CSE-CST",
-			img: "/Logos/CSE.svg"
+			img: "/Logos/CSE.svg",
 		},
 		t3: {
 			name: "Humrayah",
 			content:
 				"J'ai eu le chance de rencontrer des personnes incroyables! J'ai adoré l'atelier portant sur le développement web!",
 			role: "Hack the Hill I Experienced Hacker",
-			img: ""
+			img: "",
 		},
 		t4: {
 			name: "Patrick",
 			content:
 				"J'ai formé des connections avec d'autres participants et j'ai pu discuter de leurs projets ainsi que de leurs passions.",
 			role: "Hack the Hill I Experienced Hacker",
-			img: ""
+			img: "",
 		},
 		t5: {
 			name: "Hasin Zaman",
 			content:
 				"J'ai apprécié l'environment, la foule et les opportunités de résoudre toutes sortes de problèmes!",
 			role: "Hack the Hill I Experienced Hacker",
-			img: ""
+			img: "",
 		},
 	},
 	schedule: {
