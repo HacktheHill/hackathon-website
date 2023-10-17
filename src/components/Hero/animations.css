@@ -7,7 +7,7 @@ svg .leaf {
 }
 
 svg .leaf-drop {
-	animation: leafDrop 3s linear forwards;
+	animation: leafDrop 2s linear forwards;
 }
 
 svg .leaf-drop-slower {
@@ -99,7 +99,7 @@ svg .s-light {
 		transform: translateY(0%);
 	}
 	100% {
-		transform: translateY(-20%);
+		transform: translateY(-25%);
 	}
 }
 
