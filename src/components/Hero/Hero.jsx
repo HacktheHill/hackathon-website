@@ -58,7 +58,7 @@ function Hero() {
 			const svgContainer = document.getElementById("hero");
 
 			if (svgContainer) {
-				if (window.scrollY > 50) {
+				if (window.scrollY > 80) {
 					svgContainer.classList.add("move-away");
 				} else {
 					svgContainer.classList.remove("move-away");
