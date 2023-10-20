@@ -61,11 +61,7 @@ function Hero() {
 						{t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
-					<h3>
-						Feb &nbsp;
-						<time dateTime="02/02/2024">2</time>&ndash;
-						<time dateTime="04/02/2024">4</time>, <strong>2024</strong>
-					</h3>
+					
 				</div>
 				<h1 id="Hero">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
