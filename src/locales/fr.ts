@@ -91,9 +91,9 @@ export default {
 	footer: {
 		title: "Le Hackathon de la Capitale Canadienne",
 		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
-		github: "Github",
 		privacy: "Politique de Confidentialité",
 		constitution: "Constitution",
+		copyright: "Copyright © 2023 Hack the Hill. Tous droits réservés.",
 	},
 	notification: {
 		message:
