@@ -1,54 +1,54 @@
 .header {
-    --title-color: var(--dark-primary-color);
-    --text-color: var(--dark-primary-color);
-    --button-color: var(--medium-primary-color);
+	--title-color: var(--dark-primary-color);
+	--text-color: var(--dark-primary-color);
+	--button-color: var(--medium-primary-color);
 
-    --coolvetica-font-family: Coolvetica;
-    --rubik-font-family: Rubik;
+	--coolvetica-font-family: Coolvetica;
+	--rubik-font-family: Rubik;
 
-    display: flex;
-    flex-direction: column;
-    padding-top: 5rem;
-    width: 70%;
-    margin: auto;
-    gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding-top: 5rem;
+	width: 70%;
+	margin: auto;
+	gap: 1rem;
 }
 
 .title {
-    font-size: 4rem;
-    font-family: var(--coolvetica-font-family);
-    font-weight: normal;
-    text-align: center;
-    color: var(--title-color);
+	font-size: 4rem;
+	font-family: var(--coolvetica-font-family);
+	font-weight: normal;
+	text-align: center;
+	color: var(--title-color);
 }
 
 .description-text {
-    color: var(--text-color);
-    font-family: var(--rubik-font-family);
-    font-size: 1.25rem;
-    margin: 0;
+	color: var(--text-color);
+	font-family: var(--rubik-font-family);
+	font-size: 1.25rem;
+	margin: 0;
 }
 
 .home-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+	background: none;
+	border: none;
+	cursor: pointer;
+	width: 100%;
 }
 
 .home-button a {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: center;
-    width: 100%;
-    text-decoration: none;
-    color: var(--button-color);
-    font-family: var(--coolvetica-font-family);
-    font-size: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: center;
+	width: 100%;
+	text-decoration: none;
+	color: var(--button-color);
+	font-family: var(--coolvetica-font-family);
+	font-size: 2rem;
 }
 
 .home-button img {
-    height: 1.5rem;
-    margin: 0 0.5ch;
+	height: 1.5rem;
+	margin: 0 0.5ch;
 }

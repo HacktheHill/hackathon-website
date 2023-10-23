@@ -61,7 +61,6 @@ function Hero() {
 						{t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h3>
-					
 				</div>
 				<h1 id="Hero">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
