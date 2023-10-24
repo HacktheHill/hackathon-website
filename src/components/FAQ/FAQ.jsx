@@ -79,7 +79,7 @@ export default function FAQ() {
 					}}
 				></div>
 			</div>
-			<div className={styles.faqColumns}>
+			<div className={styles["faq-columns"]}>
 				<div className={styles.column}>
 					{quesAns.slice(0, Math.ceil(quesAns.length / 2)).map((item, i) => (
 						<Accordion
