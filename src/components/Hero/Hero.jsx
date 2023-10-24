@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
-import Button from "../Button/Button.jsx";
 import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
@@ -52,26 +51,6 @@ function Hero() {
 			setPopupOpen(false);
 		}
 	};
-
-	useEffect(() => {
-		function handleScroll() {
-			const svgContainer = document.getElementById("hero");
-
-			if (svgContainer) {
-				if (window.scrollY > 80) {
-					svgContainer.classList.add("move-away");
-				} else {
-					svgContainer.classList.remove("move-away");
-				}
-			}
-		}
-
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
