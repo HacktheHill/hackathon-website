@@ -17,7 +17,7 @@ function App() {
 		<div className={styles.app}>
 			<Navigation />
 			<Hero />
-			<About />
+			{/* <About /> */}
 			{/* <Stats /> */}
 			<Testimonials />
 			{/* <Schedule /> */}
