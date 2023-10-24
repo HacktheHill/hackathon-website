@@ -1,7 +1,7 @@
 .container {
 	/* Note there are colors embed in the MUI in FAQ.jsx which are not referenced here*/
 	--text-color: var(--light-primary-color);
-	--question-container-hover-color: var(--light-button-hover-color);
+	--question-container-hover-color: var(--light-secondary-color);
 
 	display: flex;
 	flex-direction: column;
@@ -16,15 +16,15 @@
 
 .header {
 	font-family: Coolvetica;
-	font-size: 3em;
+	font-size: 3rem;
 	font-weight: normal;
-	display: flex;
-	gap: 39%;
-	flex-direction: row;
+	position: relative;
 }
 
 .faq-img {
-	height: 2vh;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 .faq-columns {
@@ -32,46 +32,28 @@
 	justify-content: space-between;
 }
 
-.column {
-	flex: 1;
-	max-width: 45%;
-}
-
-.question-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.question-container:hover {
-	background-color: transparent;
-}
-
-.question-container:before {
-	display: "none";
-}
-
-.question {
-	color: var(--text-color);
-	font-size: 16px;
-	font-family: Rubik;
-}
-
+.question,
 .answer {
 	color: var(--text-color);
-	font-size: 16px;
 	font-family: Rubik;
 }
 
-@media (max-width: 768px) {
-	.header {
-		gap: 0;
+@media screen and (max-width: 600px) {
+	.container {
+		width: 90%;
 	}
 
-	.faqColumns {
+	.header {
+		text-align: center;
+	}
+
+	.faq-columns {
 		flex-direction: column;
 	}
+}
 
-	.column {
-		max-width: none;
+@media screen and (max-width: 1024px) {
+	.faq-img {
+		display: none;
 	}
 }
