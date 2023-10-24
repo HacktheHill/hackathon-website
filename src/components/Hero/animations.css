@@ -1,5 +1,25 @@
-svg .snow {
-	animation: var(--snow-svg-color) 100s linear infinite;
+svg .leaf {
+	animation: leaf 3s linear forwards;
+}
+
+svg .leaf-drop {
+	animation: leafDrop 2s linear forwards;
+}
+
+svg .leaf-drop-slower {
+	animation: leafDrop 4s linear forwards;
+}
+
+svg .leaf-drop-faster {
+	animation: leafDrop 1s linear forwards;
+}
+
+svg .leaf-drop-slower-right {
+	animation: leafDrop 3s linear forwards;
+}
+
+svg .disappearleaf {
+	animation: disappearleaf 3s linear forwards;
 }
 
 svg .halo {
@@ -8,57 +28,109 @@ svg .halo {
 	transform-origin: center;
 }
 
-svg #flag {
+svg .flag {
 	animation: flag 1s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: top left;
 }
 
 svg .cloud {
-	animation: clouds 100s linear infinite alternate;
+	animation: clouds 50s linear infinite alternate;
 }
 
-svg :is(#clock-left, #clock-right) {
+svg :is(.cloud-2, .cloud-3) {
+	animation: solo 80s linear infinite alternate;
+}
+
+svg .cloud-3 {
+	animation-duration: 80s;
+}
+
+svg :is(.clock-left, .clock-right) {
 	animation: clock linear infinite;
 	transform-box: fill-box;
 }
 
-svg #clock-left {
+svg .clock-left {
 	animation-duration: 3600s;
 	transform-origin: top right;
 }
 
-svg #clock-right {
+svg .clock-right {
 	animation-duration: 60s;
 	transform-origin: top left;
 }
 
-svg :is(#left-bird, #right-bird) {
+svg :is(.left-bird, .right-bird) {
 	animation: flap 1s linear infinite alternate;
 }
 
-svg #left-bird {
+svg .awayBird {
+	animation: flying 5s ease-in forwards;
+}
+
+svg .comingBird {
+	animation: coming 9s ease-in forwards;
+}
+
+svg .left-bird {
 	animation-duration: 2s;
 	animation-delay: 1s;
 }
 
-svg #right-bird {
+svg .right-bird {
 	animation-duration: 1s;
 }
 
-@keyframes snow {
-	0% {
-		transform: translate(-1vw, -50vh);
-		opacity: 0;
-	}
+svg .light {
+	animation: light 2s infinite alternate;
+}
 
-	10%,
-	95% {
-		opacity: 1;
+svg .s-light {
+	animation: s-light 1s infinite alternate;
+}
+
+@keyframes s-light {
+	50% {
+		transform: rotateX(-2deg);
+	}
+}
+
+@keyframes light {
+	50% {
+		transform: rotateX(5deg) skewX(0.05deg);
+	}
+}
+
+@keyframes leaf {
+	from {
+		transform: translateY(-20vh);
+	}
+	to {
+		transform: translateY(2vh);
+	}
+}
+
+@keyframes leafDrop {
+	0% {
+		transform: translate(0, 0);
 	}
 
 	100% {
-		transform: translate(1vw, 0vh);
+		transform: translate(0.5vw, 1vh);
+	}
+}
+
+@keyframes disappearleaf {
+	0% {
+		transform: translateY(-5vh);
+	}
+	95% {
+		transform: translateY(8vh);
+		opacity: 0.6;
+	}
+	100% {
+		transform: translateY(8.5vh);
 		opacity: 0;
 	}
 }
@@ -86,6 +158,16 @@ svg #right-bird {
 	}
 }
 
+@keyframes solo {
+	0% {
+		transform: translateX(-50%) translateY(10%);
+	}
+
+	100% {
+		transform: translateX(50%) translateY(10%);
+	}
+}
+
 @keyframes clock {
 	100% {
 		transform: rotate(360deg);
@@ -99,5 +181,29 @@ svg #right-bird {
 
 	100% {
 		transform: translateY(2px);
+	}
+}
+
+@keyframes flying {
+	0% {
+		transform: translate3d(100, 0, 0);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: translate3d(-350px, 700px, 0);
+		transform: rotate(90deg);
+	}
+}
+
+@keyframes coming {
+	0% {
+		transform: translate3d(200px, 100px, 0);
+		opacity: 0;
+		transform: rotate(-5deg);
+	}
+	100% {
+		opacity: 0.9;
+		transform: rotate(0deg);
 	}
 }

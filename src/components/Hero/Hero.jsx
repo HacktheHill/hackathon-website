@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
-import Button from "../Button/Button.jsx";
 import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/2024/location-pin.svg";
-// 7:00 PM EST on March 3rd, 2023
-const EVENT_START_DATE = new Date("2023-03-03T19:00:00-05:00");
-// 9:00 AM EST on March 5th, 2023
-const HACKING_END_DATE = new Date("2023-03-05T09:00:00-05:00");
+
+// 7:00 PM EST on February 2rd, 2024
+const EVENT_START_DATE = new Date("2024-02-02T19:00:00-05:00");
+// 9:00 AM EST on February 4th, 2024
+const HACKING_END_DATE = new Date("2024-02-04T09:00:00-05:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
@@ -92,21 +92,27 @@ function Hero() {
 			></div>
 			{date && (
 				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
-					<div className={styles["countdown-item"]}>
-						<h3>{days}</h3>
-						<h4>day{days === 1 ? "" : "s"}</h4>
-					</div>
-					<div className={styles["countdown-item"]}>
-						<h3>{hours}</h3>
-						<h4>hour{hours === 1 ? "" : "s"}</h4>
-					</div>
-					<div className={styles["countdown-item"]}>
-						<h3>{minutes}</h3>
-						<h4>minute{minutes === 1 ? "" : "s"}</h4>
-					</div>
-					<div className={styles["countdown-item"]}>
-						<h3>{seconds}</h3>
-						<h4>second{seconds === 1 ? "" : "s"}</h4>
+					<p className={styles["countdown-header"]}>
+						{" "}
+						<strong>psst... Mark your calendar, Hackathon is in</strong>
+					</p>
+					<div className={styles["countdown-items-container"]}>
+						<div className={styles["countdown-item"]}>
+							<h3>{days}</h3>
+							<h4>day{days === 1 ? "" : "s"}</h4>
+						</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{hours}</h3>
+							<h4>hour{hours === 1 ? "" : "s"}</h4>
+						</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{minutes}</h3>
+							<h4>minute{minutes === 1 ? "" : "s"}</h4>
+						</div>
+						<div className={styles["countdown-item"]}>
+							<h3>{seconds}</h3>
+							<h4>second{seconds === 1 ? "" : "s"}</h4>
+						</div>
 					</div>
 				</dialog>
 			)}
