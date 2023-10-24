@@ -1,6 +1,5 @@
 .testimonials {
 	margin: 0 auto;
-	background-color: var(--dark-primary-color);
 	color: var(--light-primary-color);
 	display: flex;
 	flex-direction: column;
@@ -104,7 +103,7 @@
 	border-radius: 20%;
 	display: inline-block;
 	padding: 0.5rem;
-	background-color: var(--dark-primary-color);
+	background-color: transparent;
 	cursor: pointer;
 	transition: opacity 0.3s ease;
 }

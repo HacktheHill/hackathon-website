@@ -21,5 +21,5 @@
 }
 
 body {
-	background-color: var(--dark-primary-color);
+	background: linear-gradient(180deg, #640718 0%, #800A1F 2.76%, #8E0B23 5.53%, #84010B 19.33%, #8E0B23 24.35%, #9C0E1F 29.97%, #A31120 100%);
 }

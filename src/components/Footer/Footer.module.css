@@ -1,6 +1,5 @@
 .footer {
 	--links: var(--light-primary-color);
-	background-color: var(--dark-primary-color);
 	color: var(--light-primary-color);
 	display: grid;
 	grid-auto-flow: column;
