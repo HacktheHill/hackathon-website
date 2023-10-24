@@ -1,4 +1,4 @@
-import FAQ from "..//FAQ/FAQ";
+import FAQ from "../FAQ/FAQ";
 import About from "../About/About";
 import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
@@ -10,10 +10,11 @@ import Navigation from "../Navigation/Navigation";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import "../../global.css";
+import styles from "./App.module.css";
 
 function App() {
 	return (
-		<>
+		<div className={styles.app}>
 			<Navigation />
 			<Hero />
 			{/* <About /> */}
@@ -25,7 +26,7 @@ function App() {
 			<FAQ />
 			<Footer />
 			{/* <Notification /> */}
-		</>
+		</div>
 	);
 }
 
