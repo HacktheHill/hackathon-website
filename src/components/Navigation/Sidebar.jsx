@@ -13,14 +13,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 			text: t("navbar.links.about"),
 		},
 		{
-			to: "sponsors",
+			to: "testimonials",
 			offset: -30,
-			text: t("navbar.links.sponsors"),
+			text: t("navbar.links.testimonials"),
 		},
 		{
 			to: "schedule",
 			offset: 0,
 			text: t("navbar.links.hacker"),
+		},
+		{
+			to: "sponsors",
+			offset: -30,
+			text: t("navbar.links.sponsors"),
 		},
 		{
 			to: "collaborators",

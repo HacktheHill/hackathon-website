@@ -39,7 +39,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 						</li>
 					))}
 				</ul>
-				{/*
+				
 				<ul>
 					<li>
 						<Link
@@ -59,14 +59,14 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 						<Link
 							className="link"
 							activeClass="active"
-							to="sponsors"
+							to="testimonials"
 							spy={true}
 							smooth={true}
 							offset={-120}
 							duration={500}
-							href="#sponsors"
+							href="#testimonials"
 						>
-							{t("navbar.links.sponsors")}
+							{t("navbar.links.testimonials")}
 						</Link>
 					</li>
 					<li>
@@ -81,6 +81,20 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 							href="#schedule"
 						>
 							{t("navbar.links.hacker")}
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="link"
+							activeClass="active"
+							to="sponsors"
+							spy={true}
+							smooth={true}
+							offset={-80}
+							duration={500}
+							href="#sponsors"
+						>
+							{t("navbar.links.sponsors")}
 						</Link>
 					</li>
 					<li>
@@ -134,7 +148,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 					<div></div>
 					<div></div>
 				</button>
-					*/}
+					
 			</nav>
 		</>
 	);

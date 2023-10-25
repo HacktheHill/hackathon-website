@@ -7,6 +7,7 @@ export default {
 			headshots: "Meet the Team",
 			collaborators: "Collaborators",
 			faq: "FAQ",
+			testimonials:"Testimonials",
 		},
 		aria_label: "Navigation Bar",
 	},
