@@ -7,6 +7,7 @@ export default {
 			headshots: "Rencontrez l'Équipe",
 			collaborators: "Collaborateurs",
 			faq: "FAQ",
+			testimonials: "Témoinages",
 		},
 		aria_label: "Barre de Navigation",
 	},
