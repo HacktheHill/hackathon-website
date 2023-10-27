@@ -48,7 +48,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 							to="about"
 							spy={true}
 							smooth={true}
-							offset={-160}
+							offset={-130}
 							duration={500}
 							href="#about"
 						>
@@ -62,7 +62,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 							to="testimonials"
 							spy={true}
 							smooth={true}
-							offset={-120}
+							offset={-130}
 							duration={500}
 							href="#testimonials"
 						>
@@ -95,20 +95,6 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 							href="#sponsors"
 						>
 							{t("navbar.links.sponsors")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="headshots"
-							spy={true}
-							smooth={true}
-							offset={-80}
-							duration={500}
-							href="#headshots"
-						>
-							{t("navbar.links.headshots")}
 						</Link>
 					</li>
 					<li>

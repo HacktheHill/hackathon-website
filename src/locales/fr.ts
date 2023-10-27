@@ -4,7 +4,6 @@ export default {
 			about: "À Propos",
 			sponsors: "Commanditaires",
 			hacker: "La Série du Hacker",
-			headshots: "Rencontrez l'Équipe",
 			collaborators: "Collaborateurs",
 			faq: "FAQ",
 			testimonials: "Témoinages",

@@ -4,7 +4,6 @@ export default {
 			about: "About",
 			sponsors: "Sponsors",
 			hacker: "The Hacker Series",
-			headshots: "Meet the Team",
 			collaborators: "Collaborators",
 			faq: "FAQ",
 			testimonials:"Testimonials",
