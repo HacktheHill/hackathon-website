@@ -88,7 +88,7 @@ function Testimonials() {
 	}, []);
 
 	return (
-		<div className={styles["testimonials"]}>
+		<div id="testimonials" className={styles["testimonials"]}>
 			<h1 className={styles["testimonials-heading-title"]}>{t("testimonials.title")}</h1>
 			<h3 className={styles["testimonial-sub-heading"]}>{t("testimonials.sub_heading")}</h3>
 			<div className={styles["testimonial-body"]} ref={ref}>
