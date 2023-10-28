@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./NavBar";
 import Sidebar from "./Sidebar";
-import "./Navigation.css";
-import "./Sidebar.module.css";
+import style from "./Navigation.module.css";
 
 const Navigation = () => {
 	const [pageScroll, setPageScroll] = useState(0);
@@ -16,7 +15,7 @@ const Navigation = () => {
 	}, []);
 
 	return (
-		<div className="navigation">
+		<div className={style["navigation"]}>
 			<Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} pageScroll={pageScroll} />
 			<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 		</div>
