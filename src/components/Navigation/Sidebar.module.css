@@ -1,5 +1,5 @@
 .sidebar {
-	--sidebar-color: var(--medium-primary-color);
+	--sidebar-color: var(--light-secondary-color);
 	--link-color: var(--dark-primary-color);
 	--link-color-hover: var(--dark-primary-color);
 
