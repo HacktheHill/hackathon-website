@@ -15,12 +15,6 @@ const Navigation = () => {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
-	useEffect(() => {
-		if (sidebarOpen) {
-			window.scrollTo({ top: 0, behavior: "smooth" });
-		}
-	}, [sidebarOpen]);
-
 	return (
 		<div className="navigation">
 			<Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} pageScroll={pageScroll} />

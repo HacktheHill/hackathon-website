@@ -112,17 +112,8 @@
 }
 
 @media (max-width: 940px) {
-	.navbar {
-		position: absolute;
-	}
-
 	.navbar ul:not(.language-selector) {
 		display: none;
-	}
-
-	.navbar[data-scrolled="true"] {
-		background-color: transparent;
-		box-shadow: none;
 	}
 
 	.sidebar-icon {

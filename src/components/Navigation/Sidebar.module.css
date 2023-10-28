@@ -4,7 +4,7 @@
 	--link-color-hover: var(--dark-primary-color);
 
 	box-sizing: border-box;
-	position: absolute;
+	position: fixed;
 	inset: 0;
 	z-index: -1;
 	display: flex;
