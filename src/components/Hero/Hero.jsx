@@ -1,7 +1,8 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import hero from "../../assets/hero.svg?raw";
+import InlineSVG from "react-inlinesvg";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -52,9 +53,38 @@ function Hero() {
 		}
 	};
 
+	// For parallax scrolling effect
+	const [scrollY, setScrollY] = useState(0);
+	const heroRef = useRef(null);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrollY(window.scrollY);
+		};
+
+		window.addEventListener("scroll", handleScroll, { passive: true });
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
+	useEffect(() => {
+		// console.log("Updated scrollY:", scrollY);
+	}, [scrollY]);
+
+	useEffect(() => {
+		// console.log("Updated heroRef:", heroRef);
+		const sun = document.querySelector(".sun");
+		console.log("Updated sun:", sun);
+		if (sun) {
+			const newY = scrollY * 0.1;
+			sun.style.transform = `translateY(${newY}px)`;
+		}
+	}, [scrollY]);
+
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
-
 			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]}>
@@ -89,11 +119,14 @@ function Hero() {
 
 			{/* Background, clouds, birds, trees, hills, buildings, etc. */}
 			<div
+				ref={heroRef}
 				className={styles["hero-img"]}
-				dangerouslySetInnerHTML={{
-					__html: hero,
-				}}
-			></div>
+				// dangerouslySetInnerHTML={{
+				// 	__html: hero,
+				// }}
+			>
+				<InlineSVG src={hero} />
+			</div>
 
 			{/* Popup for countdown when hovering over clock tower */}
 			{date && (
