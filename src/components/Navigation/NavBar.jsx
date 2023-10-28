@@ -2,12 +2,10 @@ import { Link } from "react-scroll";
 import { locale, t } from "../../i18n";
 import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
+import { useState } from "react";
 
 function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
-	const languages = {
-		en: "EN",
-		fr: "FR",
-	};
+	const [language, setLanguage] = useState(true);
 
 	return (
 		<>
@@ -25,21 +23,15 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 					<img alt="Logo" src={logo}></img>
 				</Link>
 
-				<ul className="language-selector">
-					{Object.keys(languages).map(language => (
-						<li key={language}>
-							<button
-								className="link language-button"
-								style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
-								type="submit"
-								onClick={() => locale.set(language)}
-							>
-								{languages[language]}
-							</button>
-						</li>
-					))}
-				</ul>
-				
+				<div className="language-selector">
+					<button className="link language-button" type="submit" onClick={() => {
+						setLanguage(!language);
+						locale.set(language ? "fr" : "en");
+					}}>
+						{language ? "FR" : "EN"}
+					</button>
+				</div>
+
 				<ul>
 					<li>
 						<Link
@@ -134,7 +126,6 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 					<div></div>
 					<div></div>
 				</button>
-					
 			</nav>
 		</>
 	);
