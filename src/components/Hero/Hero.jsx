@@ -54,6 +54,8 @@ function Hero() {
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+
+			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]}>
 					<h3 className={styles["location"]}>
@@ -84,12 +86,16 @@ function Hero() {
 					</button>
 				</form>
 			</div>
+
+			{/* Background, clouds, birds, trees, hills, buildings, etc. */}
 			<div
 				className={styles["hero-img"]}
 				dangerouslySetInnerHTML={{
 					__html: hero,
 				}}
 			></div>
+
+			{/* Popup for countdown when hovering over clock tower */}
 			{date && (
 				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
 					<p className={styles["countdown-header"]}>
