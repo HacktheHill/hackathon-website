@@ -69,10 +69,9 @@ function Hero() {
 	}, []);
 
 	useEffect(() => {
-		const sun = document.querySelector(".sun");
-		console.log("Updated sun:", sun);
+		const sun = heroRef.current.querySelector(".sun");
 		if (sun) {
-			const newY = scrollY * 0.1;
+			const newY = scrollY * 0.5;
 			sun.style.transform = `translateY(${newY}px)`;
 		}
 	}, [scrollY]);
