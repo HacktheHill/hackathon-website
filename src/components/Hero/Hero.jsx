@@ -2,7 +2,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
 import hero from "../../assets/hero.svg?raw";
-import InlineSVG from "react-inlinesvg";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -70,11 +69,6 @@ function Hero() {
 	}, []);
 
 	useEffect(() => {
-		// console.log("Updated scrollY:", scrollY);
-	}, [scrollY]);
-
-	useEffect(() => {
-		// console.log("Updated heroRef:", heroRef);
 		const sun = document.querySelector(".sun");
 		console.log("Updated sun:", sun);
 		if (sun) {
@@ -121,12 +115,10 @@ function Hero() {
 			<div
 				ref={heroRef}
 				className={styles["hero-img"]}
-				// dangerouslySetInnerHTML={{
-				// 	__html: hero,
-				// }}
-			>
-				<InlineSVG src={hero} />
-			</div>
+				dangerouslySetInnerHTML={{
+					__html: hero,
+				}}
+			></div>
 
 			{/* Popup for countdown when hovering over clock tower */}
 			{date && (

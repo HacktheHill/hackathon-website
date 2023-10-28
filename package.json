@@ -32,7 +32,6 @@
 		"react-burger-menu": "^3.0.8",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.11.0",
-		"react-inlinesvg": "^4.1.0",
 		"react-scroll": "^1.8.9"
 	},
 	"devDependencies": {
