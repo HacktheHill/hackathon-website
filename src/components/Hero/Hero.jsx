@@ -56,6 +56,7 @@ function Hero() {
 	const [scrollY, setScrollY] = useState(0);
 	const heroRef = useRef(null);
 
+	// Detect if the user is scrolling and update the scrollY state variable accordingly
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrollY(window.scrollY);
@@ -68,27 +69,30 @@ function Hero() {
 		};
 	}, []);
 
-useEffect(() => {
-    const transformations = [
-        { selector: ".sun", x: 0, y: 3 },
-        { selector: ".hill1", x: 0, y: 1.6 },
-        { selector: ".hill2", x: -3, y: 0.2 },
-        { selector: ".hill3", x: 2, y: 1.6 },
-        { selector: ".hill4", x: 0.6, y: 1.6 },
-    ];
+	// API for the parallax scrolling effect
+	useEffect(() => {
+		// The selector is used to select all elements with the same class name
+		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
+		const transformations = [
+			{ selector: ".sun", x: 0, y: 3 },
+			{ selector: ".hill1", x: 0, y: 1.6 },
+			{ selector: ".hill2", x: -3, y: 0.2 },
+			{ selector: ".hill3", x: 2, y: 1.6 },
+			{ selector: ".hill4", x: 0.6, y: 1.6 },
+		];
 
-    const applyTransformation = ({ selector, x, y }) => {
-        const elements = heroRef.current.querySelectorAll(selector);
-        elements.forEach(element => {
-            const xValue = scrollY * x;
-            const yValue = scrollY * y;
-            element.style.transform = `translate(${xValue}px, ${yValue}px)`;
-        });
-    };
+		// Select all elements with the same class name and apply the CSS transformation to each of them
+		const applyTransformation = ({ selector, x, y }) => {
+			const elements = heroRef.current.querySelectorAll(selector);
+			elements.forEach(element => {
+				const xValue = scrollY * x;
+				const yValue = scrollY * y;
+				element.style.transform = `translate(${xValue}px, ${yValue}px)`;
+			});
+		};
 
-    transformations.forEach(transformation => applyTransformation(transformation));
-}, [scrollY]);
-
+		transformations.forEach(transformation => applyTransformation(transformation));
+	}, [scrollY]);
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
@@ -124,7 +128,7 @@ useEffect(() => {
 				</form>
 			</div>
 
-			{/* Background, clouds, birds, trees, hills, buildings, etc. */}
+			{/*Parallax, background, clouds, birds, trees, hills, buildings, etc. */}
 			<div
 				ref={heroRef}
 				className={styles["hero-img"]}
