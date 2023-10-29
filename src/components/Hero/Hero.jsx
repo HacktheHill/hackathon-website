@@ -70,10 +70,19 @@ function Hero() {
 
 	useEffect(() => {
 		const sun = heroRef.current.querySelector(".sun");
-		if (sun) {
-			const newY = scrollY * 0.5;
-			sun.style.transform = `translateY(${newY}px)`;
-		}
+		const parallax = heroRef.current.querySelector(".hillsGroup");
+		const hill2 = heroRef.current.querySelector(".hill2");
+		const hill4 = heroRef.current.querySelector(".hill4");
+
+		const sunY = scrollY * 2;
+		const parallaxY = scrollY * 1.6;
+		const hill2X = scrollY * -1;
+		const hill4X = scrollY * 0.6;
+
+		sun.style.transform = `translateY(${sunY}px)`;
+		parallax.style.transform = `translateY(${parallaxY}px)`;
+		hill2.style.transform = `translateX(${hill2X}px)`;
+		hill4.style.transform = `translateX(${hill4X}px)`;
 	}, [scrollY]);
 
 	return (
