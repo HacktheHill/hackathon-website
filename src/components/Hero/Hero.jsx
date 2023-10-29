@@ -69,23 +69,25 @@ function Hero() {
 	}, []);
 
 useEffect(() => {
-    const applyTransformation = (selector, type, value) => {
+    const transformations = [
+        { selector: ".sun", x: 0, y: 2 },
+        { selector: ".hillsGroup", x: 0, y: 1.6 },
+        { selector: ".hill2", x: -1, y: 0 },
+        { selector: ".hill4", x: 0.6, y: 0 },
+    ];
+
+    const applyTransformation = ({ selector, x, y }) => {
         const elements = heroRef.current.querySelectorAll(selector);
         elements.forEach(element => {
-            element.style.transform = `${type}(${value}px)`;
+            const xValue = scrollY * x;
+            const yValue = scrollY * y;
+            element.style.transform = `translate(${xValue}px, ${yValue}px)`;
         });
     };
 
-    const sunY = scrollY * 2;
-    const parallaxY = scrollY * 1.6;
-    const hill2X = scrollY * -1;
-    const hill4X = scrollY * 0.6;
-
-    applyTransformation(".sun", "translateY", sunY);
-    applyTransformation(".hillsGroup", "translateY", parallaxY);
-    applyTransformation(".hill2", "translateX", hill2X);
-    applyTransformation(".hill4", "translateX", hill4X);
+    transformations.forEach(transformation => applyTransformation(transformation));
 }, [scrollY]);
+
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
