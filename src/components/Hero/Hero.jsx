@@ -72,7 +72,7 @@ useEffect(() => {
     const transformations = [
         { selector: ".sun", x: 0, y: 2 },
         { selector: ".hillsGroup", x: 0, y: 1.6 },
-        { selector: ".hill2", x: -1, y: 0 },
+        { selector: ".hill2", x: -3, y: 0 },
         { selector: ".hill4", x: 0.6, y: 0 },
     ];
 
