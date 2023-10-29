@@ -68,22 +68,24 @@ function Hero() {
 		};
 	}, []);
 
-	useEffect(() => {
-		const sun = heroRef.current.querySelector(".sun");
-		const parallax = heroRef.current.querySelector(".hillsGroup");
-		const hill2 = heroRef.current.querySelector(".hill2");
-		const hill4 = heroRef.current.querySelector(".hill4");
+useEffect(() => {
+    const applyTransformation = (selector, type, value) => {
+        const elements = heroRef.current.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.style.transform = `${type}(${value}px)`;
+        });
+    };
 
-		const sunY = scrollY * 2;
-		const parallaxY = scrollY * 1.6;
-		const hill2X = scrollY * -1;
-		const hill4X = scrollY * 0.6;
+    const sunY = scrollY * 2;
+    const parallaxY = scrollY * 1.6;
+    const hill2X = scrollY * -1;
+    const hill4X = scrollY * 0.6;
 
-		sun.style.transform = `translateY(${sunY}px)`;
-		parallax.style.transform = `translateY(${parallaxY}px)`;
-		hill2.style.transform = `translateX(${hill2X}px)`;
-		hill4.style.transform = `translateX(${hill4X}px)`;
-	}, [scrollY]);
+    applyTransformation(".sun", "translateY", sunY);
+    applyTransformation(".hillsGroup", "translateY", parallaxY);
+    applyTransformation(".hill2", "translateX", hill2X);
+    applyTransformation(".hill4", "translateX", hill4X);
+}, [scrollY]);
 
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
