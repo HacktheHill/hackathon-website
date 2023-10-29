@@ -70,10 +70,11 @@ function Hero() {
 
 useEffect(() => {
     const transformations = [
-        { selector: ".sun", x: 0, y: 2 },
-        { selector: ".hillsGroup", x: 0, y: 1.6 },
-        { selector: ".hill2", x: -3, y: 0 },
-        { selector: ".hill4", x: 0.6, y: 0 },
+        { selector: ".sun", x: 0, y: 3 },
+        { selector: ".hill1", x: 0, y: 1.6 },
+        { selector: ".hill2", x: -3, y: 0.2 },
+        { selector: ".hill3", x: 2, y: 1.6 },
+        { selector: ".hill4", x: 0.6, y: 1.6 },
     ];
 
     const applyTransformation = ({ selector, x, y }) => {
