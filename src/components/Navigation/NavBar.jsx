@@ -1,17 +1,48 @@
 import { Link } from "react-scroll";
 import { locale, t } from "../../i18n";
-import "./NavBar.css";
 import logo from "/Logos/hackthehill-logo.svg";
+import { useState } from "react";
+import style from "./NavBar.module.css";
 
 function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
-	const languages = {
-		en: "EN",
-		fr: "FR",
-	};
+	const [language, setLanguage] = useState(true);
+
+	const links = [
+		{
+			to: "about",
+			offset: -120,
+			text: t("navbar.links.about"),
+		},
+		{
+			to: "testimonials",
+			offset: -120,
+			text: t("navbar.links.testimonials"),
+		},
+		{
+			to: "schedule",
+			offset: 0,
+			text: t("navbar.links.hacker"),
+		},
+		{
+			to: "sponsors",
+			offset: -120,
+			text: t("navbar.links.sponsors"),
+		},
+		{
+			to: "collaborators",
+			offset: -120,
+			text: t("navbar.links.collaborators"),
+		},
+		{
+			to: "faq",
+			offset: -120,
+			text: t("navbar.links.faq"),
+		},
+	];
 
 	return (
 		<>
-			<nav className="navbar" data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
+			<nav className={style["navbar"]} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
 				<Link
 					className="link logo"
 					activeClass="active"
@@ -25,116 +56,45 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 					<img alt="Logo" src={logo}></img>
 				</Link>
 
-				<ul className="language-selector">
-					{Object.keys(languages).map(language => (
-						<li key={language}>
-							<button
-								className="link language-button"
-								style={{ fontWeight: locale.get() === language ? "bold" : "normal" }}
-								type="submit"
-								onClick={() => locale.set(language)}
+				<div className={style["language-selector"]}>
+					<button
+						className={style["language-button"]}
+						type="submit"
+						onClick={() => {
+							setLanguage(!language);
+							locale.set(language ? "fr" : "en");
+						}}
+					>
+						{language ? "FR" : "EN"}
+					</button>
+				</div>
+
+				<ul>
+					{links.map(link => (
+						<li key={link.text}>
+							<Link
+								className={style["link"]}
+								activeClass={style["active"]}
+								to={link.to}
+								spy={true}
+								smooth={true}
+								offset={link.offset}
+								duration={500}
+								href={`#${link.to}`}
 							>
-								{languages[language]}
-							</button>
+								{link.text}
+							</Link>
 						</li>
 					))}
 				</ul>
-				
-				<ul>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="about"
-							spy={true}
-							smooth={true}
-							offset={-130}
-							duration={500}
-							href="#about"
-						>
-							{t("navbar.links.about")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="testimonials"
-							spy={true}
-							smooth={true}
-							offset={-130}
-							duration={500}
-							href="#testimonials"
-						>
-							{t("navbar.links.testimonials")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="schedule"
-							spy={true}
-							smooth={true}
-							offset={-80}
-							duration={500}
-							href="#schedule"
-						>
-							{t("navbar.links.hacker")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="sponsors"
-							spy={true}
-							smooth={true}
-							offset={-80}
-							duration={500}
-							href="#sponsors"
-						>
-							{t("navbar.links.sponsors")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="collaborators"
-							spy={true}
-							smooth={true}
-							offset={-130}
-							duration={500}
-							href="#collaborators"
-						>
-							{t("navbar.links.collaborators")}
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="link"
-							activeClass="active"
-							to="faq"
-							spy={true}
-							smooth={true}
-							offset={-130}
-							duration={500}
-							href="#faq"
-						>
-							{t("navbar.links.faq")}
-						</Link>
-					</li>
-				</ul>
 				<button
-					className={`sidebar-icon ${sidebarOpen ? "sidebar-open" : ""}`}
+					className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
 					onClick={() => setSidebarOpen(!sidebarOpen)}
 				>
 					<div></div>
 					<div></div>
 					<div></div>
 				</button>
-					
 			</nav>
 		</>
 	);
