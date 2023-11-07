@@ -5,7 +5,6 @@
 	margin: auto;
 	transition: 0.5s;
 	gap: 2rem;
-	background: var(--about-stats-gradient);
 }
 
 .about h1 {
