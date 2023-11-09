@@ -1,6 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
@@ -52,8 +52,51 @@ function Hero() {
 		}
 	};
 
+	// For parallax scrolling effect
+	const [scrollY, setScrollY] = useState(0);
+	const heroRef = useRef(null);
+
+	// Detect if the user is scrolling and update the scrollY state variable accordingly
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrollY(window.scrollY);
+		};
+
+		window.addEventListener("scroll", handleScroll, { passive: true });
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
+	// API for the parallax scrolling effect
+	useEffect(() => {
+		// The selector is used to select all elements with the same class name
+		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
+		const transformations = [
+			{ selector: ".sun", x: 0, y: 3 },
+			{ selector: ".hill1", x: 0, y: 1.6 },
+			{ selector: ".hill2", x: -3, y: 0.2 },
+			{ selector: ".hill3", x: 2, y: 1.6 },
+			{ selector: ".hill4", x: 0.6, y: 1.6 },
+		];
+
+		// Select all elements with the same class name and apply the CSS transformation to each of them
+		const applyTransformation = ({ selector, x, y }) => {
+			const elements = heroRef.current.querySelectorAll(selector);
+			elements.forEach(element => {
+				const xValue = scrollY * x;
+				const yValue = scrollY * y;
+				element.style.transform = `translate(${xValue}px, ${yValue}px)`;
+			});
+		};
+
+		transformations.forEach(transformation => applyTransformation(transformation));
+	}, [scrollY]);
+
 	return (
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]}>
 					<h3 className={styles["location"]}>
@@ -84,12 +127,17 @@ function Hero() {
 					</button>
 				</form>
 			</div>
+
+			{/*Parallax, background, clouds, birds, trees, hills, buildings, etc. */}
 			<div
+				ref={heroRef}
 				className={styles["hero-img"]}
 				dangerouslySetInnerHTML={{
 					__html: hero,
 				}}
 			></div>
+
+			{/* Popup for countdown when hovering over clock tower */}
 			{date && (
 				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
 					<p className={styles["countdown-header"]}>
