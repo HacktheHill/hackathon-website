@@ -108,7 +108,7 @@
 	position: absolute;
 	z-index: -1;
 	bottom: -10rem;
-	left: -10rem
+	left: -10rem;
 }
 
 @media only screen and (max-width: 600px) {
