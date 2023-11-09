@@ -119,7 +119,9 @@
 }
 
 @media screen and (max-width: 768px) {
-	.icons {
+	.sponsors .icons,
+	.collaborators .icons-row {
 		margin-left: 1rem;
+		width: fit-content;
 	}
 }
