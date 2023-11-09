@@ -68,7 +68,7 @@ function Sponsors() {
 
 	return (
 		<>
-			<div id="sponsors" className={styles["sponsors-collaborators"]}>
+			<div id="sponsors" className={`${styles["sponsors-collaborators"]} ${styles["sponsors"]}`}>
 				<h1>{t("sponsors.title")}</h1>
 				<div className={styles.header}>
 					<img className={styles["maple-leaf"]} src={maple1} alt="maple leaf"></img>
