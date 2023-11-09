@@ -1,24 +1,57 @@
-.sponsors {
-	--text-color: var(--dark-color);
-	color: var(--text-color);
+.sponsors-collaborators {
+	color: var(--light-primary-color);
 	transition: 0.5s;
-	width: 80%;
-	margin: 6% auto;
+	width: 90%;
+	margin: auto;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 }
 
-.sponsor-icons {
+.collaborators {
+	margin-bottom: 7.5rem;
+}
+
+.header {
+	display: flex;
+	gap: 2rem;
+}
+
+.header-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+.sponsors-collaborators h1 {
+	font-family: Coolvetica;
+	font-size: 4rem;
+	font-weight: 500;
+	letter-spacing: 0.125rem;
+	color: var(--light-primary-color);
+	text-align: center;
+}
+
+.text {
+	font-family: Rubik;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 400;
+	color: var(--light-primary-color);
+	margin: 0;
+}
+
+.icons {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 4rem;
-	margin: auto;
+	margin: 3rem auto;
 }
 
-.sponsor-icons-row {
+.icons-row {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -26,16 +59,40 @@
 	width: 100%;
 }
 
-.sponsor-icon-box {
-	flex-direction: column;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex: 0 0 20%;
+.icon-box::before,
+.icon-box::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	border-radius: 1.5rem;
 }
 
-.sponsor-icon {
-	transition: 0.5s;
+.icon-box::before {
+	background: var(--light-primary-color);
+	bottom: -1rem;
+	left: -1rem;
+	filter: drop-shadow(0 0 1rem var(--light-secondary-color));
+}
+
+.icon-box::after {
+	background: var(--light-color);
+	inset: 0;
+}
+
+.icon-box {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	isolation: isolate;
+	padding: 1rem;
+}
+
+.icon {
 	object-fit: contain;
 }
 
@@ -50,22 +107,6 @@
 }
 
 .icon-small {
-	max-height: 80px;
-	width: 200px;
-}
-
-.sponsors h1 {
-	font-family: Coolvetica;
-	font-size: 3em;
-	font-weight: normal;
-}
-
-.sponsors-text {
-	box-sizing: border-box;
-	border-left: 5px solid black;
-	padding-left: 2rem;
-	width: 80%;
-	font-family: Rubik;
-	font-size: max(1rem, 1.15vmin);
-	line-height: max(2rem, 2.5vmin);
+	max-height: 50px;
+	width: 150px;
 }

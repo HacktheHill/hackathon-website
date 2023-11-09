@@ -42,14 +42,14 @@ export default {
 		p5tag: "Funding Raised",
 	},
 	sponsors: {
-		title: "Sponsors",
+		title: "Previous Sponsors",
 		icon_alt: "Sponsor Icon",
-		p: "Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital's hackathon?",
-		button: "Sponsorship Packages",
+		p: "The first edition of Hack the Hill was made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
+		button: "Become a Sponsor",
 	},
-	partners: {
-		title: "Community Partners",
-		icon_alt: "Community Partner Icon",
+	collaborators: {
+		title: "Collaborators",
+		icon_alt: "Collaborators Icon",
 	},
 	testimonials: {
 		title: "Making Moments Matter",
@@ -101,7 +101,6 @@ export default {
 			},
 		],
 	},
-	collaborators: { title: "Collaborators" },
 	faq: {
 		title: "Frequently Asked Questions",
 
