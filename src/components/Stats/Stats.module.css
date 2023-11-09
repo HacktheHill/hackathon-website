@@ -1,5 +1,55 @@
 .stats {
-	display: flex;
-	width: 80%;
+	--stats-gradient: linear-gradient(180deg, #FFF3B6 0%, rgba(255, 243, 182, 0.75) 100%);
+	--stats-shadow: 0.5px 5px 7.5px 0px #FFF3B633, 2px 4px 5px 0px #00000033 inset;
+	width: 90%;
 	margin: 0 auto;
+}
+
+.stats h1 {
+	font-family: Coolvetica;
+	font-size: 3rem;
+	font-weight: 500;
+	letter-spacing: 0.125rem;
+	color: var(--light-primary-color);
+}
+
+.stats-text {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.stats p {
+	color: var(--dark-secondary-color);
+	font-family: Coolvetica;
+}
+
+.stats-container {
+	width: 100%;
+	background: var(--stats-gradient);
+	border-radius: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	box-shadow: var(--stats-shadow);
+}
+
+.stats-item {
+	padding: 1rem;
+}
+
+.stats-item h2 {
+	font-family: Rubik;
+	font-weight: 500;
+	font-size: 3rem;
+	color: var(--dark-secondary-color);
+	text-align: center;
+}
+
+.stats-item p {
+	font-family: Rubik;
+	font-weight: 500;
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 0;
 }
