@@ -6,10 +6,9 @@
 }
 
 .stats h1 {
-	font-family: Coolvetica;
-	font-size: 3rem;
+	font-family: Rubik;
+	font-size: 4rem;
 	font-weight: 500;
-	letter-spacing: 0.125rem;
 	color: var(--light-primary-color);
 }
 

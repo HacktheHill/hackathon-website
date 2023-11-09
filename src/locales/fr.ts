@@ -42,14 +42,14 @@ export default {
 		p5tag: "Financement Levé",
 	},
 	sponsors: {
-		title: "Commanditaires",
+		title: "Commanditaires Précédents",
 		icon_alt: "Icon de Commanditaire",
-		p: "Hack the Hill est rendu possible grâce à nos généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
-		button: "Forfaits de Parrainage",
+		p: "La première édition de Hack the Hill a été rendue possible grâce à de généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
+		button: "Devenir un Commanditaire",
 	},
-	partners: {
-		title: "Partenaires Communautaires",
-		icon_alt: "Icon de Partenaire Communautaire",
+	collaborators: {
+		title: "Collaborateurs",
+		icon_alt: "Icon de Collaborateurs",
 	},
 	testimonials: {
 		title: "Making Moments Matter",
@@ -104,7 +104,6 @@ export default {
 			},
 		],
 	},
-	collaborators: { title: "Collaborateurs" },
 	faq: {
 		title: "Foire aux questions",
 
