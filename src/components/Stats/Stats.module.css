@@ -1,15 +1,8 @@
 .stats {
-	--stats-gradient: linear-gradient(180deg, #FFF3B6 0%, rgba(255, 243, 182, 0.75) 100%);
-	--stats-shadow: 0.5px 5px 7.5px 0px #FFF3B633, 2px 4px 5px 0px #00000033 inset;
+	--stats-gradient: linear-gradient(180deg, #fff3b6 0%, rgba(255, 243, 182, 0.75) 100%);
+	--stats-shadow: 0.5px 5px 7.5px 0px #fff3b633, 2px 4px 5px 0px #00000033 inset;
 	width: 90%;
 	margin: 0 auto;
-}
-
-.stats h1 {
-	font-family: Rubik;
-	font-size: 4rem;
-	font-weight: 500;
-	color: var(--light-primary-color);
 }
 
 .stats-text {

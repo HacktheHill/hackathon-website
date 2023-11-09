@@ -114,6 +114,7 @@ function Testimonials() {
 									key={index}
 									className={`${styles.dot} ${index === activeIndex ? styles.active : ""}`}
 									onClick={() => setActiveIndex(index)}
+									onKeyDown={() => setActiveIndex(index)}
 								></span>
 							))}
 						</div>

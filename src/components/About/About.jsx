@@ -1,8 +1,8 @@
 import React from "react";
 import { t } from "../../i18n";
 import styles from "./About.module.css";
-import leftLeaves from "/SVGs/2024/about-stats/left-leaves.svg";
-import rightLeaves from "/SVGs/2024/about-stats/right-leaves.svg";
+import leftLeaves from "/SVGs/About/left-leaves.svg";
+import rightLeaves from "/SVGs/About/right-leaves.svg";
 
 function About() {
 	return (
@@ -24,9 +24,8 @@ function About() {
 				<iframe
 					src="https://www.youtube.com/embed/videoseries?si=ZobjNMvDAoBIorPw&controls=0&list=PLvXySQVib-mmNoOeoORHRGz2UyeSEgj7Q&autoplay=1&loop=1&mute=1"
 					title={t("about.title")}
-					allow="accelerometer; autoplay;
-				clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowFullScreen
 				></iframe>
 				<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
 			</div>

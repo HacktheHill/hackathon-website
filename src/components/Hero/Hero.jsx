@@ -6,7 +6,7 @@ import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
-import LocationPin from "/SVGs/2024/location-pin.svg";
+import LocationPin from "/SVGs/location-pin.svg";
 
 // 7:00 PM EST on February 2rd, 2024
 const EVENT_START_DATE = new Date("2024-02-02T19:00:00-05:00");
