@@ -10,14 +10,12 @@
 	--dark-primary-color: #84010b;
 	--dark-secondary-color: #650014;
 
-
 	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
 	--button-gradient: linear-gradient(90deg, var(--light-tertiary-color), transparent) var(--light-secondary-color);
 
 	color-scheme: light;
 	scrollbar-gutter: stable;
 	background-color: var(--dark-primary-color);
-	overflow: hidden;
 }
 
 h1 {
