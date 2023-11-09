@@ -23,10 +23,10 @@ export default {
 		email_placeholder: "Courriel",
 	},
 	about: {
-		title: "À propos de nous",
-		p1: "Les organisations étudiantes en génie de l'Université d'Ottawa et de l'Université Carleton sont extrêmement heureuses de présenter Hack The Hill, le hackathon de la capitale canadienne !",
-		p2: "Hack the Hill a été créé afin d'établir un nouveau standard pour les hackathons du futur ! Lors d'une série d'événements mensuels, également connue sous le nom de \"La Série du Hacker\", les participants au hackathon auront de nombreuses opportunités de perfectionner leurs compétences techniques et de réseauter avec leurs pairs !",
-		p3: "Notre hackathon est prévu du 3 au 5 mars 2023 et sera gratuit pour tous les participants. Nous avons tous hâte de vous voir et espérons que vous êtes prêt à rivaliser avec les meilleurs !",
+		title: "Bienvenue au Hackathon de la Capitale Canadienne",
+		p1: "Joignez-vous à plus de 1000 hackers de partout au pays pour créer quelque chose d'incroyable en seulement 36 heures.",
+		p2: "Hack the Hill II est la deuxième édition du Hackathon de la Capitale Canadienne, un événement de trois jours où des étudiants de différentes disciplines se réunissent pour créer des solutions innovantes à des problèmes du monde réel.",
+		p3: "Les participants auront l'occasion d'apprendre de nouvelles compétences, de réseauter avec leurs pairs et de mettre en valeur leurs talents et leurs idées. Que vous soyez débutant ou hacker chevronné, vous trouverez certainement quelque chose qui vous met au défi et vous inspire à Hack the Hill II.",
 	},
 	stats: {
 		title: "Hack the Hill I avait...",
