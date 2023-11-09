@@ -11,10 +11,6 @@
 }
 
 .about h1 {
-	font-family: Rubik;
-	font-size: 4rem;
-	font-weight: 500;
-	color: var(--light-primary-color);
 	margin-top: 4rem;
 }
 
@@ -45,13 +41,11 @@
 .frame img.left-leaves {
 	bottom: -5rem;
 	left: -4rem;
-	background: url("/SVGs/2024/about-stats/left-leaves.svg") no-repeat;
 }
 
 .frame img.right-leaves {
 	top: -5rem;
 	right: -4rem;
-	background: url("/SVGs/2024/about-stats/right-leaves.svg") no-repeat;
 }
 
 @media screen and (max-width: 1200px) {
