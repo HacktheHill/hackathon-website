@@ -75,11 +75,6 @@ function Testimonials() {
 		carousel.addEventListener("touchstart", handleTouchStart, false);
 		carousel.addEventListener("touchend", handleTouchEnd, false);
 
-		// Auto slide
-		const interval = setInterval(() => {
-			nextSlide();
-		}, 5000);
-
 		return () => {
 			carousel.removeEventListener("touchstart", handleTouchStart, false);
 			carousel.removeEventListener("touchend", handleTouchEnd, false);
@@ -89,9 +84,10 @@ function Testimonials() {
 
 	return (
 		<div id="testimonials" className={styles["testimonials"]}>
-			<h1 className={styles["testimonials-heading-title"]}>{t("testimonials.title")}</h1>
-			<h3 className={styles["testimonial-sub-heading"]}>{t("testimonials.sub_heading")}</h3>
+			<h1>{t("testimonials.title")}</h1>
+			<h3>{t("testimonials.sub_heading")}</h3>
 			<div className={styles["testimonial-body"]} ref={ref}>
+				<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 				<img
 					className={styles["testimonial-img"]}
 					src={testimonialData[activeIndex].img}
@@ -121,6 +117,7 @@ function Testimonials() {
 						<button onClick={nextSlide} className={styles["next-button"]}></button>
 					</div>
 				</div>
+				<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 			</div>
 		</div>
 	);
