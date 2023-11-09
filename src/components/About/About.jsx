@@ -9,15 +9,9 @@ function About() {
 		<div className={styles.about} id="about">
 			<div className={styles["about-text"]}>
 				<h1>{t("about.title")}</h1>
-				<p>
-					{t("about.p1")}
-					<br></br>
-					<br></br>
-					{t("about.p2")}
-					<br></br>
-					<br></br>
-					{t("about.p3")}
-				</p>
+				<p>{t("about.p1")}</p>
+				<p>{t("about.p2")}</p>
+				<p>{t("about.p3")}</p>
 			</div>
 			<div className={styles.frame}>
 				<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />

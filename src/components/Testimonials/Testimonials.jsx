@@ -84,10 +84,10 @@ function Testimonials() {
 
 	return (
 		<div id="testimonials" className={styles["testimonials"]}>
+			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 			<h1>{t("testimonials.title")}</h1>
 			<h3>{t("testimonials.sub_heading")}</h3>
 			<div className={styles["testimonial-body"]} ref={ref}>
-				<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 				<img
 					className={styles["testimonial-img"]}
 					src={testimonialData[activeIndex].img}
@@ -97,9 +97,7 @@ function Testimonials() {
 					<div className={styles["testimonial-content-container"]}>
 						<p className={styles["testimonial-content"]}>{testimonialData[activeIndex].content}</p>
 						<p className={styles["testimonial-provider"]}>
-							<strong>
-								{testimonialData[activeIndex].name}, {testimonialData[activeIndex].role}
-							</strong>
+							{testimonialData[activeIndex].name}, {testimonialData[activeIndex].role}
 						</p>
 					</div>
 					<div className={styles["carousel-control"]}>
@@ -117,8 +115,8 @@ function Testimonials() {
 						<button onClick={nextSlide} className={styles["next-button"]}></button>
 					</div>
 				</div>
-				<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 			</div>
+			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 		</div>
 	);
 }

@@ -30,7 +30,7 @@
 	font-family: Rubik;
 	text-align: center;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: 450;
 	color: var(--light-primary-color);
 	margin: 0;
 }
@@ -41,6 +41,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 4rem;
+	margin: 3rem 0;
 }
 
 .icons-row {
