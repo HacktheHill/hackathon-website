@@ -135,4 +135,8 @@
 	.event-heading {
 		justify-content: center;
 	}
+
+	.sun {
+		display: none;
+	}
 }
