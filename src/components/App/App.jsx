@@ -19,7 +19,7 @@ function App() {
 			<Hero />
 			<div className={styles.wrapper}>
 				<About />
-				{/* <Stats /> */}
+				<Stats />
 				<Testimonials />
 				{/* <Schedule /> */}
 				{/* <Sponsors /> */}
