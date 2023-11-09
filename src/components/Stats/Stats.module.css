@@ -1,8 +1,7 @@
 .stats {
 	--stats-gradient: linear-gradient(180deg, #fff3b6 0%, rgba(255, 243, 182, 0.75) 100%);
 	--stats-shadow: 0.5px 5px 7.5px 0px #fff3b633, 2px 4px 5px 0px #00000033 inset;
-	width: 90%;
-	margin: 0 auto;
+	margin: 0;
 }
 
 .stats-text {
