@@ -7,8 +7,6 @@
 	flex-direction: column;
 	color: var(--text-color);
 	transition: 0.5s;
-	margin: auto;
-	width: 90%;
 	font-weight: bold;
 	font-family: Rubik;
 	gap: 1rem;
@@ -39,10 +37,6 @@
 }
 
 @media screen and (max-width: 600px) {
-	.container {
-		width: 90%;
-	}
-
 	.header {
 		text-align: center;
 	}
