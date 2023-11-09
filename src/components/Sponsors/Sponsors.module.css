@@ -1,8 +1,6 @@
 .sponsors-collaborators {
 	color: var(--light-primary-color);
 	transition: 0.5s;
-	width: 90%;
-	margin: auto;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -43,7 +41,6 @@
 	align-items: center;
 	justify-content: center;
 	gap: 4rem;
-	margin: 3rem auto;
 }
 
 .icons-row {
