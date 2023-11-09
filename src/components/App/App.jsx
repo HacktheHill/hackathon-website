@@ -14,19 +14,21 @@ import styles from "./App.module.css";
 
 function App() {
 	return (
-		<div className={styles.app}>
+		<>
 			<Navigation />
 			<Hero />
-			{/* <About /> */}
-			{/* <Stats /> */}
-			<Testimonials />
-			{/* <Schedule /> */}
-			{/* <Sponsors /> */}
-			{/* <Collaborators /> */}
-			<FAQ />
-			<Footer />
-			{/* <Notification /> */}
-		</div>
+			<div className={styles.wrapper}>
+				<About />
+				{/* <Stats /> */}
+				<Testimonials />
+				{/* <Schedule /> */}
+				{/* <Sponsors /> */}
+				{/* <Collaborators /> */}
+				<FAQ />
+				<Footer />
+				{/* <Notification /> */}
+			</div>
+		</>
 	);
 }
 
