@@ -1,6 +1,5 @@
 import FAQ from "../FAQ/FAQ";
 import About from "../About/About";
-import Collaborators from "../Collaborators/Collaborators";
 import Footer from "../Footer/Footer";
 import Testimonials from "../Testimonials/Testimonials";
 import Notification from "../Notification/Notification";
@@ -22,8 +21,7 @@ function App() {
 				<Stats />
 				<Testimonials />
 				{/* <Schedule /> */}
-				{/* <Sponsors /> */}
-				{/* <Collaborators /> */}
+				<Sponsors />
 				<FAQ />
 				<Footer />
 				{/* <Notification /> */}

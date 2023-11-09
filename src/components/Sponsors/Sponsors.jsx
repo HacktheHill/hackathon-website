@@ -24,6 +24,8 @@ import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
+import maple1 from "/SVGs/2024/Sponsors/Maple Leaves/mapleleaf-1.svg";
+import maple2 from "/SVGs/2024/Sponsors/Maple Leaves/mapleleaf-2.svg";
 
 function Sponsors() {
 	const data = {
@@ -66,26 +68,30 @@ function Sponsors() {
 
 	return (
 		<>
-			<section id="sponsors" className={styles["sponsors"]}>
+			<div id="sponsors" className={styles["sponsors-collaborators"]}>
 				<h1>{t("sponsors.title")}</h1>
-				<div>
-					<p className={styles["sponsors-text"]}>{t("sponsors.p")}</p>
-					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
+				<div className={styles.header}>
+					<img className={styles["maple-leaf"]} src={maple1} alt="maple leaf"></img>
+					<div className={styles["header-column"]}>
+						<p className={styles.text}>{t("sponsors.p")}</p>
+						<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
+					</div>
+					<img className={styles["maple-leaf"]} src={maple2} alt="maple leaf"></img>
 				</div>
 
-				<div className={styles["sponsor-icons"]}>
+				<div className={styles["icons"]}>
 					{Object.values(data.sponsors).map((tier, i) => (
-						<div key={i} className={styles["sponsor-icons-row"]}>
+						<div key={i} className={styles["icons-row"]}>
 							{tier.map((sponsor, j) => (
 								<a
 									key={j}
 									href={sponsor.href}
 									target="_blank"
 									rel="noreferrer"
-									className={styles["sponsor-icon-box"]}
+									className={styles["icon-box"]}
 								>
 									<img
-										className={`${styles["sponsor-icon"]} ${
+										className={`${styles["icon"]} ${
 											styles[`icon-${Object.keys(data.sponsors)[i]}`]
 										}`}
 										alt={`${sponsor.alt} logo`}
@@ -96,28 +102,21 @@ function Sponsors() {
 						</div>
 					))}
 				</div>
-			</section>
-
-			<section id="community" className={styles["sponsors"]}>
-				<h1 id="community">{t("partners.title")}</h1>
-				<div className={styles["sponsor-icons-row"]}>
+			</div>
+			<div id="collaborators" className={`${styles["sponsors-collaborators"]} ${styles["collaborators"]}`}>
+				<h1>{t("collaborators.title")}</h1>
+				<div className={styles["icons-row"]}>
 					{data.collaborators.map((sponsor, i) => (
-						<a
-							key={i}
-							href={sponsor.href}
-							target="_blank"
-							rel="noreferrer"
-							className={styles["sponsor-icon-box"]}
-						>
+						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className={styles["icon-box"]}>
 							<img
-								className={`${styles["sponsor-icon"]} ${styles["icon-medium"]}`}
+								className={`${styles["icon"]} ${styles["icon-medium"]}`}
 								alt={t("partners.icon_alt")}
 								src={sponsor.src}
 							></img>
 						</a>
 					))}
 				</div>
-			</section>
+			</div>
 		</>
 	);
 }
