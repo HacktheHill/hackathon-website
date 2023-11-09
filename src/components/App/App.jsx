@@ -20,12 +20,12 @@ function App() {
 				<About />
 				<Stats />
 				<Testimonials />
-				{/* <Schedule /> */}
+				<Schedule />
 				<Sponsors />
 				<FAQ />
 				<Footer />
-				{/* <Notification /> */}
 			</div>
+			{/* <Notification /> */}
 		</>
 	);
 }
