@@ -1,27 +1,9 @@
 .schedule {
-	--title-color: var(--dark-primary-color);
-	--event-month-color: var(--dark-primary-color);
-	--event-day-color: var(--dark-primary-color);
-	--event-title-color: var(--dark-primary-color);
-	--event-border-color: var(--dark-primary-color);
-	--event-desc-color: var(--dark-primary-color);
-	--event-subtitle-color: var(--dark-primary-color);
-	--disabled-text-color-button: rgba(147, 147, 147, 0.659);
-	--medium-primary-color-hover-button: var(--light-primary-color);
-
-	--coolvetica-font-family: Coolvetica;
-	--rubik-font-family: Rubik;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 2rem;
 	padding: 5% 0;
-	background-color: var(--medium-primary-color);
-	background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
-	background-repeat: no-repeat;
-	background-position: left 50px, right 400px, top 100px right 100px;
-	background-size: 10%, 8%, 2%;
 }
 
 .schedule-title,
@@ -31,8 +13,8 @@
 }
 
 .schedule-title {
-	color: var(--title-color);
-	font-family: var(--coolvetica-font-family);
+	color: var(--light-primary-color);
+	font-family: Coolvetica;
 	font-size: 3rem;
 }
 
@@ -55,11 +37,11 @@
 	justify-content: center;
 	aspect-ratio: 1;
 	padding: 1rem;
-	border: 3px solid var(--event-border-color);
+	border: 3px solid var(--light-primary-color);
 	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 	transition: transform 330ms ease-in-out;
-	font-family: var(--coolvetica-font-family);
+	font-family: Coolvetica;
 }
 
 .event-card:hover {
@@ -70,14 +52,14 @@
 .event-month {
 	font-size: 2rem;
 	font-weight: normal;
-	color: var(--event-month-color);
+	color: var(--light-primary-color);
 }
 
 .event-day {
 	margin: auto;
 	font-size: 5rem;
 	font-weight: normal;
-	color: var(--event-day-color);
+	color: var(--light-primary-color);
 }
 
 .event-details {
@@ -85,7 +67,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	font-family: var(--rubik-font-family);
+	font-family: Rubik;
 }
 
 .event-heading {
@@ -98,44 +80,19 @@
 .event-title {
 	font-size: 2rem;
 	font-weight: normal;
-	color: var(--event-title-color);
-	font-family: var(--coolvetica-font-family);
+	color: var(--light-primary-color);
+	font-family: Coolvetica;
 	text-align: center;
-}
-
-.event-button,
-.event-button-disabled {
-	background: var(--button-gradient);
-	border-radius: 100px;
-	color: var(--medium-secondary-color);
-	transition: 1s;
-	cursor: pointer;
-	border: 0;
-	padding: 1rem 2rem;
-	font-weight: bold;
-	font-size: 1rem;
-	white-space: nowrap;
-	text-decoration: none;
-}
-
-.event-button:hover {
-	background-color: var(--medium-primary-color-hover-button);
-}
-
-.event-button-disabled {
-	cursor: default;
-	color: var(--disabled-text-color-button);
-	background: var(--button-gradient);
 }
 
 .sub-title {
 	font-size: 1.125rem;
-	color: var(--event-subtitle-color);
+	color: var(--light-primary-color);
 }
 
 .event-description {
 	margin: 0;
-	color: var(--event-desc-color);
+	color: var(--light-primary-color);
 }
 
 @media only screen and (max-width: 600px) {
