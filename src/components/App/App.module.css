@@ -16,6 +16,12 @@
 
 @media screen and (min-width: 768px) {
 	.wrapper {
+		padding: 5rem 5% 0;
+	}
+}
+
+@media screen and (min-width: 2000px) {
+	.wrapper {
 		padding: 5rem 20% 0;
 	}
 }

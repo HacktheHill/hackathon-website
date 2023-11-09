@@ -69,9 +69,9 @@ export default function FAQ() {
 	];
 
 	return (
-		<div className={styles.container}>
-			<div id="faq" className={styles.header}>
-				{t("faq.title")}
+		<div id="faq" className={styles.container}>
+			<div className={styles.header}>
+				<h1>{t("faq.title")}</h1>
 				<div
 					className={styles["faq-img"]}
 					dangerouslySetInnerHTML={{

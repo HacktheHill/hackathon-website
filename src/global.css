@@ -21,8 +21,8 @@
 }
 
 h1 {
-	font-family: Coolvetica;
-	font-size: min(4rem, 12vw);
+	font-family: Rubik;
+	font-size: min(3rem, 12vw);
 	font-weight: 500;
 	letter-spacing: 0.125rem;
 	color: var(--light-primary-color);

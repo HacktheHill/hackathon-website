@@ -1,10 +1,10 @@
 .about {
 	display: flex;
 	justify-content: space-between;
-	gap: 2rem;
+	gap: 1rem;
 }
 
-.about div {
+.about-text {
 	flex: 1;
 }
 
@@ -16,12 +16,14 @@
 	color: var(--light-primary-color);
 	font-family: Rubik;
 	font-size: 1.5rem;
+	font-weight: 450;
 }
 
 .frame {
+	flex: 1;
 	aspect-ratio: 16/9;
 	position: relative;
-	margin: auto 5rem;
+	margin: auto 4rem;
 }
 
 .frame iframe {
