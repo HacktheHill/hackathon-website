@@ -23,11 +23,10 @@ export default {
 		email_placeholder: "E-mail",
 	},
 	about: {
-		title: "About Us",
-		img_alt: "Bea.var, the Hack the Hill Mascot",
-		p1: "The University of Ottawa and Carleton University STEM Student Organizations are incredibly excited to introduce Canada's Capital Hackathon!",
-		p2: 'Hack the Hill was established to set a new standard for hackathon operations! With a series of monthly events, also known as "The Hacker Series," hackathon participants will be provided numerous opportunities to brush up on their technical skills, network with peers and even learn from notable alumni and business leaders!',
-		p3: "Our main event is scheduled for March 3rd to 5th, 2023, and will be free for all participants. We look forward to seeing you all at our flagship hackathon and hope you're prepared to compete & network with the best!",
+		title: "Welcome to Canada's Capital Hackathon",
+		p1: "Join 1,000+ hackers from around the country to make something incredible in just 36 hours.",
+		p2: "Hack the Hill II is the second edition of Canada\'s Capital Hackathon, a three-day event where students from different disciplines come together to create innovative solutions for real-world problems",
+		p3: "Participants will be provided with opportunities to learn new skills, network with peers, and showcase their talents and ideas. Whether you are a beginner or a seasoned hacker, you will definitely find something that challenges and inspires you at Hack the Hill II.",
 	},
 	sponsors: {
 		title: "Sponsors",

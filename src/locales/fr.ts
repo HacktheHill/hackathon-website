@@ -24,7 +24,6 @@ export default {
 	},
 	about: {
 		title: "À propos de nous",
-		img_alt: "Bea.var, la Mascotte de Hack the Hill",
 		p1: "Les organisations étudiantes en génie de l'Université d'Ottawa et de l'Université Carleton sont extrêmement heureuses de présenter Hack The Hill, le hackathon de la capitale canadienne !",
 		p2: "Hack the Hill a été créé afin d'établir un nouveau standard pour les hackathons du futur ! Lors d'une série d'événements mensuels, également connue sous le nom de \"La Série du Hacker\", les participants au hackathon auront de nombreuses opportunités de perfectionner leurs compétences techniques et de réseauter avec leurs pairs !",
 		p3: "Notre hackathon est prévu du 3 au 5 mars 2023 et sera gratuit pour tous les participants. Nous avons tous hâte de vous voir et espérons que vous êtes prêt à rivaliser avec les meilleurs !",

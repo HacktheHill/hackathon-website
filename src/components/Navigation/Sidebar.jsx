@@ -9,12 +9,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 	const links = [
 		{
 			to: "about",
-			offset: -30,
+			offset: -120,
 			text: t("navbar.links.about"),
 		},
 		{
 			to: "testimonials",
-			offset: -30,
+			offset: -120,
 			text: t("navbar.links.testimonials"),
 		},
 		{
@@ -24,17 +24,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 		},
 		{
 			to: "sponsors",
-			offset: -30,
+			offset: -120,
 			text: t("navbar.links.sponsors"),
 		},
 		{
 			to: "collaborators",
-			offset: -30,
+			offset: -120,
 			text: t("navbar.links.collaborators"),
 		},
 		{
 			to: "faq",
-			offset: -30,
+			offset: -120,
 			text: t("navbar.links.faq"),
 		},
 	];
