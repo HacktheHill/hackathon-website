@@ -8,10 +8,10 @@ import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 
-// 7:00 PM EST on February 2rd, 2024
-const EVENT_START_DATE = new Date("2024-02-02T19:00:00-05:00");
-// 9:00 AM EST on February 4th, 2024
-const HACKING_END_DATE = new Date("2024-02-04T09:00:00-05:00");
+// 7:00 PM EST on September 20th, 2024
+const EVENT_START_DATE = new Date("2024-09-20T19:00:00-05:00");
+// 9:00 AM EST on February 22nd, 2024
+const HACKING_END_DATE = new Date("2024-09-22T09:00:00-05:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
@@ -128,7 +128,7 @@ function Hero() {
 				</form>
 			</div>
 
-			{/*Parallax, background, clouds, birds, trees, hills, buildings, etc. */}
+			{/* Parallax, background, clouds, birds, trees, hills, buildings, etc. */}
 			<div
 				ref={heroRef}
 				className={styles["hero-img"]}
