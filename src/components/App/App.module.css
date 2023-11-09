@@ -1,7 +1,7 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
+	gap: 3rem;
 	background: linear-gradient(180deg,
 			#640718 0%,
 			#800a1f 2.76%,
