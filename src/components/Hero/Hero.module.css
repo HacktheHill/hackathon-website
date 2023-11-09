@@ -73,23 +73,40 @@
 .hero-input {
 	padding: 1rem;
 	border: none;
-	border-radius: 5px;
+	border-radius: 1rem;
+	font-family: Rubik;
+	color: var(--dark-primary-color);
+	background-color: var(--light-tertiary-color);
+	transition: all 0.3s ease-in-out;
+}
+
+.hero-input:hover,
+.hero-input:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px var(--dark-primary-color);
+	background-color: var(--light-secondary-color);
+}
+
+.hero-input::placeholder {
+	color: var(--dark-primary-color);
 }
 
 .hero-form {
 	display: flex;
 	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .hero-btn {
 	background-color: var(--hero-btn-background-color);
-	color: white;
+	color: var(--light-color);
 	cursor: pointer;
 	white-space: nowrap;
 	border: none;
 	font-family: Coolvetica;
-	font-size: clamp(1rem, 1vmin, 5rem);
-	border-radius: 5px;
+	font-size: 1.125rem;
+	border-radius: 1rem;
 	padding: 0.75rem;
 }
 
@@ -113,7 +130,7 @@
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 	border: 5px solid var(--dark-red);
 	background-color: var(--count-down-background-color);
-	font-size: clamp(0.75rem, 2vmin, 5rem);
+	font-size: 1.5rem;
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 1s ease-in-out;
@@ -151,7 +168,7 @@
 }
 
 .countdown-item h3 {
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	font-family: Rubik;
 	font-weight: normal;
 }
