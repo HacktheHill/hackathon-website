@@ -11,6 +11,23 @@
 	font-family: Coolvetica;
 }
 
+.button button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
 .button button:hover {
 	transform: scale(1.05);
+}
+
+.button button:disabled:hover {
+	transform: none;
+}
+
+.button button:active {
+	transform: scale(0.95);
+}
+
+.button button:disabled:active {
+	transform: none;
 }

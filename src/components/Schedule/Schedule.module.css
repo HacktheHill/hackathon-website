@@ -2,32 +2,29 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: 2rem;
-	padding: 5% 0;
-}
-
-.schedule-title,
-.schedule-list {
-	width: 70%;
-	margin: auto;
-}
-
-.schedule-title {
-	color: var(--light-primary-color);
-	font-family: Coolvetica;
-	font-size: 3rem;
+	gap: 3rem;
+	position: relative;
+	isolation: isolate;
 }
 
 .schedule-list {
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
+	gap: 3rem;
+	width: 75%;
+	margin: 0 auto;
 }
 
 .schedule-list-item {
 	display: grid;
 	grid-template-columns: 10rem auto;
 	gap: 2rem;
+	position: relative;
+}
+
+.cloud {
+	position: absolute;
+	z-index: -2;
 }
 
 .event-card {
@@ -39,9 +36,10 @@
 	padding: 1rem;
 	border: 3px solid var(--light-primary-color);
 	border-radius: 10px;
+	background-color: var(--dark-primary-color);
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 	transition: transform 330ms ease-in-out;
-	font-family: Coolvetica;
+	font-family: Rubik;
 }
 
 .event-card:hover {
@@ -50,15 +48,16 @@
 }
 
 .event-month {
-	font-size: 2rem;
-	font-weight: normal;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 500;
 	color: var(--light-primary-color);
 }
 
 .event-day {
 	margin: auto;
-	font-size: 5rem;
-	font-weight: normal;
+	font-size: 6rem;
+	font-weight: 500;
 	color: var(--light-primary-color);
 }
 
@@ -70,15 +69,23 @@
 	font-family: Rubik;
 }
 
-.event-heading {
+.event-header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	gap: 1rem;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.event-heading {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 0.5rem;
 }
 
 .event-title {
-	font-size: 2rem;
+	font-size: 2.25rem;
 	font-weight: normal;
 	color: var(--light-primary-color);
 	font-family: Coolvetica;
@@ -86,13 +93,22 @@
 }
 
 .sub-title {
-	font-size: 1.125rem;
+	font-size: 1.5rem;
+	font-weight: 450;
 	color: var(--light-primary-color);
 }
 
 .event-description {
 	margin: 0;
+	font-size: 1.125rem;
 	color: var(--light-primary-color);
+}
+
+.sun {
+	position: absolute;
+	z-index: -1;
+	bottom: -10rem;
+	left: -10rem
 }
 
 @media only screen and (max-width: 600px) {
