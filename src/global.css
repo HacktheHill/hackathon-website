@@ -19,3 +19,11 @@
 	background-color: var(--dark-primary-color);
 	--carousel-track-width: 100%;
 }
+
+h1 {
+	font-family: Coolvetica;
+	font-size: min(4rem, 12vw);
+	font-weight: 500;
+	letter-spacing: 0.125rem;
+	color: var(--light-primary-color);
+}

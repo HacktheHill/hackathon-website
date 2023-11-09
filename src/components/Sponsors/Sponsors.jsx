@@ -24,8 +24,8 @@ import uOttawa from "/Logos/uOttawa.svg";
 import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
-import maple1 from "/SVGs/2024/Sponsors/Maple Leaves/mapleleaf-1.svg";
-import maple2 from "/SVGs/2024/Sponsors/Maple Leaves/mapleleaf-2.svg";
+import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
+import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
 
 function Sponsors() {
 	const data = {

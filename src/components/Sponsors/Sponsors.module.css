@@ -8,6 +8,10 @@
 	gap: 2rem;
 }
 
+.sponsors-collaborators h1 {
+	text-align: center;
+}
+
 .collaborators {
 	margin-bottom: 7.5rem;
 }
@@ -22,15 +26,6 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 2rem;
-}
-
-.sponsors-collaborators h1 {
-	font-family: Coolvetica;
-	font-size: 4rem;
-	font-weight: 500;
-	letter-spacing: 0.125rem;
-	color: var(--light-primary-color);
-	text-align: center;
 }
 
 .text {
@@ -108,5 +103,15 @@
 
 .icon-small {
 	max-height: 50px;
-	width: 150px;
+	width: 120px;
+}
+
+@media screen and (max-width: 1024px) {
+	.header img {
+		display: none;
+	}
+
+	.collaborators {
+		margin-bottom: 2rem;
+	}
 }
