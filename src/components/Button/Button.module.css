@@ -1,24 +1,16 @@
-.button {
-	--button-color: var(--dark-primary-color);
-	--button-hover-color: var(--primary-button-hover-color);
-	--button-text-color: var(--light-color);
-	margin: 3vmin auto;
-}
-
 .button button {
-	background-color: var(--button-color);
+	background: linear-gradient(180deg, var(--light-tertiary-color) 0%, var(--light-primary-color) 100%);
 	border: none;
-	border-radius: 100px;
-	color: var(--button-text-color);
-	transition: 1s;
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	font-size: clamp(1rem, 1vmin, 5rem);
+	border-radius: 2rem;
+	transition: all 0.3s ease-in-out;
+	color: var(--dark-primary-color);
+	font-size: 1.5rem;
 	white-space: nowrap;
-	padding: clamp(0.75rem, 1vmin, 5rem) calc(2 * clamp(0.75rem, 1vmin, 5rem));
+	padding: 1rem 2rem;
 	cursor: pointer;
-	font-family: Rubik;
+	font-family: Coolvetica;
 }
 
 .button button:hover {
-	background-color: var(--button-hover-color);
+	transform: scale(1.05);
 }
