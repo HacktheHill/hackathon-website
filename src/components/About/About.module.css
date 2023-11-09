@@ -1,52 +1,62 @@
 .about {
 	display: flex;
 	justify-content: space-between;
-	width: 80%;
+	width: 90%;
 	margin: auto;
-	transition: 0.5s;
 	gap: 2rem;
 }
 
 .about h1 {
 	font-family: Coolvetica;
-	font-size: 3em;
+	font-size: 3rem;
 	font-weight: normal;
-	color: var(--pale-yellow);
+	letter-spacing: 0.25rem;
+	color: var(--light-primary-color);
+	margin-top: 4rem;
 }
 
 .about-text {
-	width: 80%;
-	margin: auto;
+	width: 50%;
 }
 
 .about-text p {
-	color: var(--pale-yellow);
-	font-family: Coolvetica;
-	font-size: max(1.25rem, 1.15vmin);
-	line-height: max(2rem, 2.5vmin);
+	color: var(--light-primary-color);
+	font-family: Rubik;
+	font-size: 1.5rem;
 }
 
-img.frame {
-	width: 50vmin;
-	margin: auto; 
+.frame {
+	width: 40%;
+	aspect-ratio: 16/9;
+	position: relative;
+	margin: auto;
 }
 
-@media screen and (max-width: 1024px) {
+.frame iframe {
+	box-sizing: border-box;
+	border: 5px solid var(--light-primary-color);
+	width: 100%;
+	height: 100%;
+}
+
+.frame img {
+	position: absolute;
+}
+
+.frame .left-leaves {
+	bottom: -5rem;
+	left: -4rem;
+	background: url("/SVGs/2024/about-stats/left-leaves.svg") no-repeat;
+}
+
+.frame .right-leaves {
+	top: -5rem;
+	right: -4rem;
+	background: url("/SVGs/2024/about-stats/right-leaves.svg") no-repeat;
+}
+
+@media screen and (max-width: 1200px) {
 	.about {
 		flex-direction: column;
-	}
-
-	.about-text {
-		width: 100%;
-	}
-
-	img.frame {
-		width: 50vmin;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	img.frame {
-		width: 80vmin;
 	}
 }
