@@ -1,5 +1,14 @@
-.app {
+.wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+	background: linear-gradient(180deg,
+			#640718 0%,
+			#800a1f 2.76%,
+			#8e0b23 5.53%,
+			#84010b 19.33%,
+			#8e0b23 24.35%,
+			#9c0e1f 29.97%,
+			#a31120 100%);
+	padding-top: 5rem;
 }
