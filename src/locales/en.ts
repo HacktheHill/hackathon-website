@@ -68,7 +68,7 @@ export default {
 			img: "/Logos/CSE.svg",
 		},
 		t3: {
-			name: "Humrayah",
+			name: "Humayrah",
 			content: "Getting to meet awesome people! Loved the web dev workshop as well!",
 			role: "Hack the Hill I Experienced Hacker",
 			img: "",
