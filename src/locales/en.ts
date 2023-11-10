@@ -203,7 +203,7 @@ export default {
 		description2:
 			"Whether you're a coding novice or a seasoned hacker, our events offer a platform to learn, network, and showcase your skills. Dive into the world of innovation and problem-solving, and be part of the hacker community that's making a real-world impact.",
 		description3:
-			"Don't miss out on this opportunity to challenge yourself and be inspired – sign up for the Hacker Series Events!",
+			"Don't miss out on this opportunity to challenge yourself and be inspired - sign up for the Hacker Series Events!",
 		button: {
 			start: "Learn more about us on the",
 			end: "website",
