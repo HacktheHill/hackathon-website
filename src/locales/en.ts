@@ -59,31 +59,26 @@ export default {
 			name: "Maddie Whibbs",
 			content: "Great and well organized event - career fair was my favorite part!",
 			role: "Blackberry",
-			img: "/Logos/Blackberry.svg",
 		},
 		t2: {
 			name: "Adam Laderoute",
 			content: "We enjoyed the event, well run, great organizers.",
 			role: "CSE-CST",
-			img: "/Logos/CSE.svg",
 		},
 		t3: {
 			name: "Humayrah",
 			content: "Getting to meet awesome people! Loved the web dev workshop as well!",
 			role: "Hack the Hill I Experienced Hacker",
-			img: "",
 		},
 		t4: {
 			name: "Patrick",
 			content: "Connecting with other people and talk about what they built and do.",
 			role: "Hack the Hill I Experienced Hacker",
-			img: "",
 		},
 		t5: {
 			name: "Hasin Zaman",
 			content: "Just the people and chill environment and solving problems.",
 			role: "Hack the Hill I Experienced Hacker",
-			img: "",
 		},
 	},
 	schedule: {
