@@ -41,62 +41,60 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 	];
 
 	return (
-		<>
-			<nav className={style["navbar"]} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
-				<Link
-					className="link logo"
-					activeClass="active"
-					to="hero"
-					spy={true}
-					smooth={true}
-					offset={0}
-					duration={500}
-					href="#hero"
-				>
-					<img alt="Logo" src={logo}></img>
-				</Link>
+		<nav className={style["navbar"]} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
+			<Link
+				className="link logo"
+				activeClass="active"
+				to="hero"
+				spy={true}
+				smooth={true}
+				offset={0}
+				duration={500}
+				href="#hero"
+			>
+				<img alt="Logo" src={logo}></img>
+			</Link>
 
-				<div className={style["language-selector"]}>
-					<button
-						className={style["language-button"]}
-						type="submit"
-						onClick={() => {
-							setLanguage(!language);
-							locale.set(language ? "fr" : "en");
-						}}
-					>
-						{language ? "FR" : "EN"}
-					</button>
-				</div>
-
-				<ul>
-					{links.map(link => (
-						<li key={link.text}>
-							<Link
-								className={style["link"]}
-								activeClass={style["active"]}
-								to={link.to}
-								spy={true}
-								smooth={true}
-								offset={link.offset}
-								duration={500}
-								href={`#${link.to}`}
-							>
-								{link.text}
-							</Link>
-						</li>
-					))}
-				</ul>
+			<div className={style["language-selector"]}>
 				<button
-					className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
-					onClick={() => setSidebarOpen(!sidebarOpen)}
+					className={style["language-button"]}
+					type="submit"
+					onClick={() => {
+						setLanguage(!language);
+						locale.set(language ? "fr" : "en");
+					}}
 				>
-					<div></div>
-					<div></div>
-					<div></div>
+					{language ? "FR" : "EN"}
 				</button>
-			</nav>
-		</>
+			</div>
+
+			<ul>
+				{links.map(link => (
+					<li key={link.text}>
+						<Link
+							className={style["link"]}
+							activeClass={style["active"]}
+							to={link.to}
+							spy={true}
+							smooth={true}
+							offset={link.offset}
+							duration={500}
+							href={`#${link.to}`}
+						>
+							{link.text}
+						</Link>
+					</li>
+				))}
+			</ul>
+			<button
+				className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
+				onClick={() => setSidebarOpen(!sidebarOpen)}
+			>
+				<div></div>
+				<div></div>
+				<div></div>
+			</button>
+		</nav>
 	);
 }
 
