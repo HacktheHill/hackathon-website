@@ -102,6 +102,38 @@ export default {
 				status: "Plus d'infos",
 				link: "https://l.hackthehill.com",
 			},
+
+			{
+				title: "HtH x IEEE CU Panel",
+				month: "Novembre",
+				day: "15",
+				time: "18h30 - 20h30 @ Carleton Bell Theatre",
+				description:
+					"Préparez-vous à une expérience enrichissante alors que Hack the Hill et IEEE Carleton unissent leurs forces pour présenter un panel composé de cinq stagiaires issus d'horizons professionnels divers. Ces stagiaires accomplis sont réunis pour partager leurs expériences et leurs idées aux multiples facettes, offrant ainsi une perspective unique sur les domaines de la technologie et de l'innovation. Attendez-vous à être à la fois informé et inspiré par la diversité et le talent exceptionnels que ces stagiaires représentent collectivement alors qu'ils vous guident dans une exploration approfondie de l'avenir de la technologie.",
+				status: "Plus d'infos",
+				link: "https://l.hackthehill.com",
+			},
+
+			{
+				title: "HtH x Cybersecurity",
+				month: "Novembre",
+				day: "25",
+				time: "12h00 - 16h00 @ CBY A03 & A04",
+				description:
+					"Préparez-vous à participer au test ultime de cybersécurité avec « Capture le Drapeau :  Édition Cybersécurité». Dans cet événement exaltant, les participants seront confrontés à une série de tâches et d'énigmes difficiles, chacune conçue pour imiter des scénarios de cybersécurité réels. Votre mission, si vous choisissez de l'accepter, est d'infiltrer, de sécuriser et de défendre les systèmes virtuels. Le temps presse et les enjeux sont élevés alors que vous affrontez vos adversaires pour vous emparer du drapeau numérique et devenir le champion incontesté de la cybersécurité. Sortez-vous victorieux et capturez-vous le drapeau, ou vos adversaires vous déjoueront-ils dans cette aventure de cybersécurité aux enjeux élevés ? ",
+				status: "Plus d'infos",
+				link: "https://l.hackthehill.com",
+			},
+			{
+				title: "Code, Café et Cram",
+				month: "Decembre",
+				day: "2",
+				time: "18h30 - 20h30 @ STM 117",
+				description:
+					"Préparez-vous à enflammer votre parcours académique alors que 'Code, Café et Cram' vous emmène sur un chemin revigorant vers la réussite. En préparation des prochains examens d'hiver, cette session unique offre aux étudiants une opportunité de se détendre et de participer à des sessions d'études complètes. Rejoignez-nous dans un espace conçu pour vous aider à libérer votre potentiel académique, où vous pourrez vous connecter à vos cours et élever votre compréhension. Préparez-vous aux examens d'hiver comme jamais auparavant - avec le mélange idéal de code, de caféine et de concentration.",
+				status: "Plus d'infos",
+				link: "https://l.hackthehill.com",
+			},
 		],
 	},
 	faq: {
