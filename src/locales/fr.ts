@@ -6,7 +6,7 @@ export default {
 			hacker: "La Série du Hacker",
 			collaborators: "Collaborateurs",
 			faq: "FAQ",
-			testimonials: "Témoinages",
+			testimonials: "Témoignages",
 		},
 		aria_label: "Barre de Navigation",
 	},
@@ -16,10 +16,10 @@ export default {
 		pin_alt: "Punaise de localisation",
 		h2: "Le Hackathon de la Capitale Canadienne",
 		h3: "Le Plus Grand Hackathon d'Ottawa",
-		more: "Suivons-nous!",
+		more: "Suivez-nous!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
 		empty_email_field: "L'adresse électronique est obligatoire",
-		invalid_email_field: "Format d'email invalide",
+		invalid_email_field: "Format de courriel invalide",
 		email_placeholder: "Courriel",
 	},
 	about: {
@@ -31,7 +31,7 @@ export default {
 	stats: {
 		title: "Hack the Hill I avait...",
 		p1: "600+",
-		p1tag: "Hackeurs",
+		p1tag: "Hackers",
 		p2: "1250+",
 		p2tag: "Candidats",
 		p3: "70+",
@@ -52,9 +52,9 @@ export default {
 		icon_alt: "Icon de Collaborateurs",
 	},
 	testimonials: {
-		title: "Making Moments Matter",
+		title: "Créons des Moments Marquants",
 		sub_heading:
-			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learing, and fun. These experiences are what shape our hackathon.",
+			"À Hack the Hill, des étudiants de disciplines et d'horizons différents donnent vie à leurs idées en créant une communauté de collaboration, d'apprentissage et de plaisir. Ces expériences façonnent notre hackathon.",
 		t1: {
 			name: "Maddie Whibbs",
 			content: "Événement spectaculaire et bien organisé - j'ai adoré la foire des carrières!",
@@ -71,21 +71,21 @@ export default {
 			name: "Humrayah",
 			content:
 				"J'ai eu le chance de rencontrer des personnes incroyables! J'ai adoré l'atelier portant sur le développement web!",
-			role: "Hack the Hill I Experienced Hacker",
+			role: "Hacker chevroné(e) de Hack the Hill I",
 			img: "",
 		},
 		t4: {
 			name: "Patrick",
 			content:
 				"J'ai formé des connections avec d'autres participants et j'ai pu discuter de leurs projets ainsi que de leurs passions.",
-			role: "Hack the Hill I Experienced Hacker",
+			role: "Hacker chevroné(e) de Hack the Hill I",
 			img: "",
 		},
 		t5: {
 			name: "Hasin Zaman",
 			content:
 				"J'ai apprécié l'environment, la foule et les opportunités de résoudre toutes sortes de problèmes!",
-			role: "Hack the Hill I Experienced Hacker",
+			role: "Hacker chevroné(e) de Hack the Hill I",
 			img: "",
 		},
 	},
@@ -99,39 +99,39 @@ export default {
 				time: "19h00 - 21h00 @ STM 117",
 				description:
 					"Votre CV mérite une refonte. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès. Laissez Hack the Hill vous guider pour sauver votre CV de l'ordinaire. Rejoignez Hack the Hill pour une session dynamique dédiée à la revitalisation de vos CV!",
-				status: "Plus d'infos",
+				status: "Plus d'info",
 				link: "https://l.hackthehill.com",
 			},
 
 			{
-				title: "HtH x IEEE CU Panel",
+				title: "Panel HtH x IEEE Carleton",
 				month: "Novembre",
 				day: "15",
 				time: "18h30 - 20h30 @ Carleton Bell Theatre",
 				description:
 					"Préparez-vous à une expérience enrichissante alors que Hack the Hill et IEEE Carleton unissent leurs forces pour présenter un panel composé de cinq stagiaires issus d'horizons professionnels divers. Ces stagiaires accomplis sont réunis pour partager leurs expériences et leurs idées aux multiples facettes, offrant ainsi une perspective unique sur les domaines de la technologie et de l'innovation. Attendez-vous à être à la fois informé et inspiré par la diversité et le talent exceptionnels que ces stagiaires représentent collectivement alors qu'ils vous guident dans une exploration approfondie de l'avenir de la technologie.",
-				status: "Plus d'infos",
+				status: "Plus d'info",
 				link: "https://l.hackthehill.com",
 			},
 
 			{
-				title: "HtH x Cybersecurity",
+				title: "HtH x Cybersécurité",
 				month: "Novembre",
 				day: "25",
 				time: "12h00 - 16h00 @ CBY A03 & A04",
 				description:
 					"Préparez-vous à participer au test ultime de cybersécurité avec « Capture le Drapeau :  Édition Cybersécurité». Dans cet événement exaltant, les participants seront confrontés à une série de tâches et d'énigmes difficiles, chacune conçue pour imiter des scénarios de cybersécurité réels. Votre mission, si vous choisissez de l'accepter, est d'infiltrer, de sécuriser et de défendre les systèmes virtuels. Le temps presse et les enjeux sont élevés alors que vous affrontez vos adversaires pour vous emparer du drapeau numérique et devenir le champion incontesté de la cybersécurité. Sortez-vous victorieux et capturez-vous le drapeau, ou vos adversaires vous déjoueront-ils dans cette aventure de cybersécurité aux enjeux élevés ? ",
-				status: "Plus d'infos",
+				status: "Plus d'info",
 				link: "https://l.hackthehill.com",
 			},
 			{
 				title: "Code, Café et Cram",
-				month: "Decembre",
+				month: "Décembre",
 				day: "2",
 				time: "18h30 - 20h30 @ STM 117",
 				description:
 					"Préparez-vous à enflammer votre parcours académique alors que 'Code, Café et Cram' vous emmène sur un chemin revigorant vers la réussite. En préparation des prochains examens d'hiver, cette session unique offre aux étudiants une opportunité de se détendre et de participer à des sessions d'études complètes. Rejoignez-nous dans un espace conçu pour vous aider à libérer votre potentiel académique, où vous pourrez vous connecter à vos cours et élever votre compréhension. Préparez-vous aux examens d'hiver comme jamais auparavant - avec le mélange idéal de code, de caféine et de concentration.",
-				status: "Plus d'infos",
+				status: "Plus d'info",
 				link: "https://l.hackthehill.com",
 			},
 		],
@@ -188,7 +188,7 @@ export default {
 		team_codir_f: "Co-Directrice",
 		team_codir_m: "Co-Directeur",
 		team_community: "Communauté",
-		team_design: "Désign",
+		team_design: "Conception",
 		team_development: "Développement",
 		team_finance: "Finance",
 		team_logistics: "Logistique",
@@ -200,35 +200,21 @@ export default {
 		role_coord_f: "Coordinatrice",
 		role_coord_m: "Coordinateur",
 	},
-	/*
-	"events-page": {
-		title: "Events",
-		description: "Join us for a series of exhilarating events leading up to Hack the Hill 2024!",
-		description2:
-			"Whether you're a coding novice or a seasoned hacker, our events offer a platform to learn, network, and showcase your skills. Dive into the world of innovation and problem-solving, and be part of the hacker community that's making a real-world impact.",
-		description3:
-			"Don't miss out on this opportunity to challenge yourself and be inspired – sign up for the Hacker Series Events!",
-		button: {
-			start: "Learn more about us on the",
-			end: "website",
-		},
-	},
-	 */
 	"events-page": {
 		title: "Événements",
 		description: "Joignez-nous pour une série d'événements exaltants menant à Hack the Hill 2024!",
 		description2:
-			"Que vous soyez un novice en codage ou un hacker chevronné, nos événements offrent une plateforme pour apprendre, réseauter et mettre en valeur vos compétences. Plongez dans le monde de l'innovation et de la résolution de problèmes, et faites partie de la communauté des hackers qui ont un impact réel.",
+			"Que vous soyez un novice en codage ou un hacker chevroné, nos événements offrent une plateforme pour apprendre, réseauter et mettre en valeur vos compétences. Plongez dans le monde de l'innovation et de la résolution de problèmes, et faites partie de la communauté des hackers qui cherchent à faire un vrai impact.",
 		description3:
-			"Ne manquez pas cette occasion de vous mettre au défi et de vous inspirer – inscrivez-vous aux événements de la série Hacker!",
+			"Ne manquez pas cette occasion de vous mettre au défi et de vous inspirer - inscrivez-vous aux événements de la Série du Hacker!",
 		button: {
-			start: "Apprenez-en plus sur nous sur le site web",
-			end: "",
+			start: "Apprenez-en plus sur notre",
+			end: "site web",
 		},
 	},
 	"four-o-four": {
 		title: "Oh non!",
-		description: "Bea.var pense que vous êtes perdu...",
+		description: "Bea.var pense que vous êtes perdus...",
 		button: "Retourner",
 	},
 } as const;
