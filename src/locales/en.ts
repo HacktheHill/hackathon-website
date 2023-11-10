@@ -97,32 +97,32 @@ export default {
 				description:
 					"Your resume deserves a makeover. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success. Let Hack the Hill guide you in rescuing your resume from the ordinary. Join Hack the Hill for a dynamic session dedicated to revitalizing your resumes!",
 				status: "More Info",
-				link: "https://l.hackthehill.com",
+				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-",
 			},
 
 			{
-				title: "HtH x IEEE CU Panel",
+				title: "Intern Panel",
 				month: "November",
 				day: "15",
 				time: "6:30 p.m. - 8:30 p.m. @ Carleton Bell Theatre",
 				description:
 					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
-				status: "More Info",
-				link: "https://l.hackthehill.com",
+				status: "Register",
+				link: "https://buytickets.at/hackthehill1/1054404",
 			},
 
 			{
-				title: "HtH x Cybersecurity",
+				title: "Capture the Flag",
 				month: "November",
 				day: "25",
 				time: "12 p.m. - 4 p.m. @ CBY A03 & A04",
 				description:
 					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
-				status: "More Info",
-				link: "https://l.hackthehill.com",
+				status: "Register",
+				link: "https://buytickets.at/hackthehill1/1063393",
 			},
 			{
-				title: "Code, Coffee, Cram",
+				title: "Code, Coffee, and Cram",
 				month: "December",
 				day: "2",
 				time: "6:30 p.m. - 8:30 p.m. @ STM 117",
@@ -130,6 +130,7 @@ export default {
 					"Get ready to ignite your academic journey as 'Code, Coffee, and Cram' takes you on an invigorating path to success. In preparation for the upcoming winter exams, this unique session offers students a tranquil haven to relax and immerse themselves in focused study. The aroma of freshly brewed coffee provides the perfect backdrop to sharpen your intellect. Join us in a space designed to help you unlock your academic potential, where you can connect with your coursework and elevate your understanding. Prepare for winter exams like never before - with the ideal blend of code, caffeine, and concentration.",
 				status: "More Info",
 				link: "https://l.hackthehill.com",
+				disabled: true,
 			},
 		],
 	},
