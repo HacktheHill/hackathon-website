@@ -74,7 +74,7 @@ function Sponsors() {
 					<img className={styles["maple-leaf"]} src={maple1} alt="maple leaf"></img>
 					<div className={styles["header-column"]}>
 						<p className={styles.text}>{t("sponsors.p")}</p>
-						<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
+						<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
 					</div>
 					<img className={styles["maple-leaf"]} src={maple2} alt="maple leaf"></img>
 				</div>
