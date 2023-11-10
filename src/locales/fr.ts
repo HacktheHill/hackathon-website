@@ -68,7 +68,7 @@ export default {
 			img: "/Logos/CSE.svg",
 		},
 		t3: {
-			name: "Humrayah",
+			name: "Humayrah",
 			content:
 				"J'ai eu le chance de rencontrer des personnes incroyables! J'ai adoré l'atelier portant sur le développement web!",
 			role: "Hacker chevroné(e) de Hack the Hill I",
