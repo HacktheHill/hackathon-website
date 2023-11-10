@@ -99,6 +99,38 @@ export default {
 				status: "More Info",
 				link: "https://l.hackthehill.com",
 			},
+
+			{
+				title: "HtH x IEEE CU Panel",
+				month: "November",
+				day: "15",
+				time: "6:30 p.m. - 8:30 p.m. @ Carleton Bell Theatre",
+				description:
+					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
+				status: "More Info",
+				link: "https://l.hackthehill.com",
+			},
+
+			{
+				title: "HtH x Cybersecurity",
+				month: "November",
+				day: "25",
+				time: "12 p.m. - 4 p.m. @ CBY A03 & A04",
+				description:
+					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
+				status: "More Info",
+				link: "https://l.hackthehill.com",
+			},
+			{
+				title: "Code, Coffee, Cram",
+				month: "December",
+				day: "2",
+				time: "6:30 p.m. - 8:30 p.m. @ STM 117",
+				description:
+					"Get ready to ignite your academic journey as 'Code, Coffee, and Cram' takes you on an invigorating path to success. In preparation for the upcoming winter exams, this unique session offers students a tranquil haven to relax and immerse themselves in focused study. The aroma of freshly brewed coffee provides the perfect backdrop to sharpen your intellect. Join us in a space designed to help you unlock your academic potential, where you can connect with your coursework and elevate your understanding. Prepare for winter exams like never before - with the ideal blend of code, caffeine, and concentration.",
+				status: "More Info",
+				link: "https://l.hackthehill.com",
+			},
 		],
 	},
 	faq: {
