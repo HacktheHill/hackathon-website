@@ -70,7 +70,7 @@ function Sponsors() {
 				<h1>{t("sponsors.title")}</h1>
 				<div>
 					<p className={styles["sponsors-text"]}>{t("sponsors.p")}</p>
-					<Button href="/assets/Hack-the-Hill-Sponsorship.pdf">{t("sponsors.button")}</Button>
+					<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
 				</div>
 
 				<div className={styles["sponsor-icons"]}>
