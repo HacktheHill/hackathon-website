@@ -107,6 +107,17 @@ export default {
 			},
 
 			{
+				title: "Cybersecurity Workshop",
+				month: "November",
+				day: "21",
+				time: "6:00 p.m. - 7:30 p.m. @ STM 117",
+				description:
+					"This workshop will demonstrate how to use OpenAI's GPT models and Python APIs to answer cyber security related questions! With a combination of presentation and demos, participants will gain a basic understanding of LLMs, OpenAI's GPT models and OpenAI's Python APIs. Bring your laptop and see how we can leverage AI to help with the day-to-day cyber security challenges that the Canadian Centre for Cyber Security is facing.",
+				status: "Register",
+				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
+			},
+
+			{
 				title: "Capture the Flag",
 				month: "November",
 				day: "25",

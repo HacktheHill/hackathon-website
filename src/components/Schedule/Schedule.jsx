@@ -40,7 +40,9 @@ function Schedule() {
 										{event.status}
 									</Button>
 								) : (
-									<Button href={event.link}>{event.status}</Button>
+									<Button href={event.link} target="_blank">
+										{event.status}
+									</Button>
 								)}
 							</div>
 							<p className={styles["event-description"]}>{event.description}</p>
