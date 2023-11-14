@@ -105,19 +105,8 @@ export default {
 				time: "18h30 - 20h30 @ Théâtre Bell Carleton",
 				description:
 					"Préparez-vous à une expérience enrichissante alors que Hack the Hill et IEEE Carleton unissent leurs forces pour présenter un panel composé de cinq stagiaires issus d'horizons professionnels divers. Ces stagiaires accomplis sont réunis pour partager leurs expériences et leurs idées aux multiples facettes, offrant ainsi une perspective unique sur les domaines de la technologie et de l'innovation. Attendez-vous à être à la fois informé et inspiré par la diversité et le talent exceptionnels que ces stagiaires représentent collectivement alors qu'ils vous guident dans une exploration approfondie de l'avenir de la technologie.",
-				status: "S'inscrire",
+				status: "Rejoignez-nous",
 				link: "https://buytickets.at/hackthehill1/1054404",
-			},
-
-			{
-				title: "Atelier de Cybersécurité",
-				month: "Novembre",
-				day: "21",
-				time: "18h00 - 19h30 @ STM 117",
-				description:
-					"Cet atelier démontrera comment utiliser les modèles GPT et les API Python d'OpenAI pour répondre aux questions liées à la cybersécurité ! Avec une combinaison de présentations et de démonstrations, les participants acquerront une compréhension de base des LLM, des modèles GPT d'OpenAI et des API Python d'OpenAI. Apportez votre ordinateur portable et voyez comment nous pouvons tirer parti de l'IA pour relever les défis quotidiens en matière de cybersécurité auxquels le Centre canadien pour la cybersécurité est confronté.",
-				status: "S'inscrire",
-				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
 			},
 
 			{
@@ -125,9 +114,8 @@ export default {
 				month: "Novembre",
 				day: "25",
 				time: "12h00 - 16h00 @ CBY A03 & A04",
-				description:
-					"Préparez-vous à participer au test ultime de cybersécurité avec « Capture le Drapeau :  Édition Cybersécurité». Dans cet événement exaltant, les participants seront confrontés à une série de tâches et d'énigmes difficiles, chacune conçue pour imiter des scénarios de cybersécurité réels. Votre mission, si vous choisissez de l'accepter, est d'infiltrer, de sécuriser et de défendre les systèmes virtuels. Le temps presse et les enjeux sont élevés alors que vous affrontez vos adversaires pour vous emparer du drapeau numérique et devenir le champion incontesté de la cybersécurité. Sortez-vous victorieux et capturez-vous le drapeau, ou vos adversaires vous déjoueront-ils dans cette aventure de cybersécurité aux enjeux élevés ? ",
-				status: "S'inscrire",
+				description: "Rejoignez-nous pour le défi ultime de cybersécurité organisé en collaboration avec le Club de cybersécurité de l'Université d'Ottawa. uOCTF est une compétition passionnante de Capture the Flag où vous testerez vos compétences en piratage et en cybersécurité, ce qui vous obligera à exploiter des vulnérabilités et à résoudre des énigmes.",
+				status: "Plus d'info",
 				link: "https://buytickets.at/hackthehill1/1063393",
 			},
 			{
