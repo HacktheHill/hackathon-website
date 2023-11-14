@@ -107,23 +107,12 @@ export default {
 			},
 
 			{
-				title: "Cybersecurity Workshop",
-				month: "November",
-				day: "21",
-				time: "6:00 p.m. - 7:30 p.m. @ STM 117",
-				description:
-					"This workshop will demonstrate how to use OpenAI's GPT models and Python APIs to answer cyber security related questions! With a combination of presentation and demos, participants will gain a basic understanding of LLMs, OpenAI's GPT models and OpenAI's Python APIs. Bring your laptop and see how we can leverage AI to help with the day-to-day cyber security challenges that the Canadian Centre for Cyber Security is facing.",
-				status: "Register",
-				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
-			},
-
-			{
 				title: "Capture the Flag",
 				month: "November",
 				day: "25",
 				time: "12 p.m. - 4 p.m. @ CBY A03 & A04",
 				description:
-					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
+					"Join us for the ultimate cybersecurity challenge organized in collaboration with the uOttawa Cybersecurity Club. uOCTF is a thrilling Capture the Flag competition where you'll test your hacking and cybersecurity skills, requiring you to exploit vulnerabilities and solve puzzles.",
 				status: "Register",
 				link: "https://buytickets.at/hackthehill1/1063393",
 			},
