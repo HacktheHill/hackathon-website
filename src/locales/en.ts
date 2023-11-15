@@ -66,18 +66,21 @@ export default {
 			role: "CSE-CST",
 		},
 		t3: {
-			name: "Humayrah",
-			content: "Getting to meet awesome people! Loved the web dev workshop as well!",
-			role: "Hack the Hill I Experienced Hacker",
+			name: "Britt Hayman",
+			content:
+				"Hack the Hill offered a weekend of fun and innovation! As an industry partner, we loved the opportunity to interact with students who are hands-on, proactive problem-solvers and adaptable teammates -- all of which are skills honed during the hackathon. Great introduction to the top talent of tomorrow!",
+			role: "Ciena",
 		},
 		t4: {
-			name: "Patrick",
-			content: "Connecting with other people and talk about what they built and do.",
-			role: "Hack the Hill I Experienced Hacker",
+			name: "Nyah Wagner",
+			content:
+				"Lonehaven was honored to collaborate with Hack the Hill, an exceptional event that showcased the creative problem-solving skills of talented students. This experience highlighted the vibrant tech ecosystem in Canada and its potential for collaboration and growth.",
+			role: "Chief Partnerships Officer, Lonehaven",
 		},
 		t5: {
 			name: "Hasin Zaman",
-			content: "Just the people and chill environment and solving problems.",
+			content:
+				"I enjoyed the chill environment and I had the chance to new people and solve real-world problems.",
 			role: "Hack the Hill I Experienced Hacker",
 		},
 	},
