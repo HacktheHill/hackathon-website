@@ -114,7 +114,8 @@ export default {
 				month: "Novembre",
 				day: "25",
 				time: "12h00 - 16h00 @ CBY A03 & A04",
-				description: "Rejoignez-nous pour le défi ultime de cybersécurité organisé en collaboration avec le Club de cybersécurité de l'Université d'Ottawa. uOCTF est une compétition passionnante de Capture the Flag où vous testerez vos compétences en piratage et en cybersécurité, ce qui vous obligera à exploiter des vulnérabilités et à résoudre des énigmes.",
+				description:
+					"Rejoignez-nous pour le défi ultime de cybersécurité organisé en collaboration avec le Club de cybersécurité de l'Université d'Ottawa. uOCTF est une compétition passionnante de Capture the Flag où vous testerez vos compétences en piratage et en cybersécurité, ce qui vous obligera à exploiter des vulnérabilités et à résoudre des énigmes.",
 				status: "Plus d'info",
 				link: "https://buytickets.at/hackthehill1/1063393",
 			},
@@ -156,7 +157,7 @@ export default {
 		a7: "Articles d'hygiène personnelle (déodorant, brosse à dents, etc.), sac de couchage, chargeur d'ordinateur portable, et tout ce dont vous pourriez avoir besoin pour rester sur place pendant 36 heures. Nous fournirons des collations et de la nourriture pendant toute la durée de l'événement !",
 
 		q8: "Qui peut participer et comment postuler ?",
-		a8: "Tout lycéen, étudiant universitaire ou diplômé récent peut participer. Suivez-nous sur les médias sociaux pour rester à jour avec les nouveautés!",
+		a8: "Tous les étudiants universitaires ou nouveaux diplômés sont encouragés à postuler ! Les étudiants d'écoles secondaires sont également les bienvenus. Suivez-nous sur les réseaux sociaux pour rester informé des mises à jour du hackathon !",
 
 		q9: "Puis-je travailler en équipe ?",
 		a9: "Oui, chaque équipe peut contenir jusqu'à 4 personnes.",

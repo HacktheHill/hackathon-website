@@ -154,7 +154,7 @@ export default {
 		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 36 hours. We will provide snacks and food for the entire event!",
 
 		q8: "Who can participate and how do I apply?",
-		a8: "Any current high school, university, or recent graduate student can join. Follow us on social media to stay up-to-date with hackathon updates!",
+		a8: "Any university students or recent new grads are encouraged to apply! High-school students with experience are also welcomed. Follow us on social media to stay up-to-date with hackathon updates!",
 
 		q9: "Can I work in a team?",
 		a9: "Yes, teams of up to 4 can work together at Hack the Hill.",
