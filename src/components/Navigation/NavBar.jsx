@@ -55,9 +55,9 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				<img alt="Logo" src={logo}></img>
 			</Link>
 
-			<div className={style["language-selector"]}>
+			<div className={style["left-side-buttons"]}>
 				<button
-					className={style["language-button"]}
+					className={style["square-button"]}
 					type="submit"
 					onClick={() => {
 						setLanguage(!language);
@@ -65,6 +65,11 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 					}}
 				>
 					{language ? "FR" : "EN"}
+				</button>
+				<button className={style["square-button"]} type="submit">
+					<a className={style["anchor-2023"]} href="https://2023.hackthehill.com">
+						2023
+					</a>
 				</button>
 			</div>
 
