@@ -45,7 +45,7 @@
 	min-height: 16rem;
 	min-width: 16rem;
 	aspect-ratio: 1;
-	object-fit: scale-down;
+	object-fit: cover;
 	border-radius: 50%;
 	padding: 1rem;
 	background-color: var(--light-color);
