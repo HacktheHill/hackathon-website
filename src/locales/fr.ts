@@ -66,17 +66,18 @@ export default {
 			role: "CSE-CST",
 		},
 		t3: {
-			name: "Humayrah",
+			name: "Britt Hayman",
 			content:
-				"J'ai eu le chance de rencontrer des personnes incroyables! J'ai adoré l'atelier portant sur le développement web!",
-			role: "Hacker chevroné(e) de Hack the Hill I",
+				"Hack the Hill était un événement rempli de plaisir et d'innovation ! En tant que partenaire de l'industrie, nous avons apprécié l'opportunité d'interagir avec des étudiants qui savent résoudre des problèmes de manière proactive et concrète et qui demeurent adaptables en termes de compétences. C'était une excellente introduction aux meilleurs talents de demain!",
+			role: "Ciena",
 		},
 		t4: {
-			name: "Patrick",
+			name: "Nyah Wagner",
 			content:
-				"J'ai formé des connections avec d'autres participants et j'ai pu discuter de leurs projets ainsi que de leurs passions.",
-			role: "Hacker chevroné(e) de Hack the Hill I",
+				"À Lonehaven, nous avons eu l'honneur de collaborer avec Hack the Hill, un événement exceptionnel rassemblant de jeunes esprits brillants. Notre expérience en tant qu'entreprise a été incroyablement positive, et nous avons été témoins des solutions innovantes ainsi que des capacités créatives de résolution de problèmes de ces étudiants talentueux.",
+			role: "Directeur des Partenariats, Lonehaven",
 		},
+
 		t5: {
 			name: "Hasin Zaman",
 			content:
