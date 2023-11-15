@@ -20,7 +20,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 		},
 		{
 			to: "schedule",
-			offset: 0,
+			offset: -120,
 			text: t("navbar.links.hacker"),
 		},
 		{
