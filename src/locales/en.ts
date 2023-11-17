@@ -102,8 +102,8 @@ export default {
 				time: "6:30 p.m. - 8:30 p.m. @ Carleton Bell Theatre",
 				description:
 					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
-				status: "Register",
-				link: "https://buytickets.at/hackthehill1/1054404",
+				status: "More Info",
+				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF?utm_source=share&utm_medium=member_desktop",
 			},
 
 			{
