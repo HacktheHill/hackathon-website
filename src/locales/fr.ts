@@ -105,8 +105,8 @@ export default {
 				time: "18h30 - 20h30 @ Théâtre Bell Carleton",
 				description:
 					"Préparez-vous à une expérience enrichissante alors que Hack the Hill et IEEE Carleton unissent leurs forces pour présenter un panel composé de cinq stagiaires issus d'horizons professionnels divers. Ces stagiaires accomplis sont réunis pour partager leurs expériences et leurs idées aux multiples facettes, offrant ainsi une perspective unique sur les domaines de la technologie et de l'innovation. Attendez-vous à être à la fois informé et inspiré par la diversité et le talent exceptionnels que ces stagiaires représentent collectivement alors qu'ils vous guident dans une exploration approfondie de l'avenir de la technologie.",
-				status: "Rejoignez-nous",
-				link: "https://buytickets.at/hackthehill1/1054404",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF/?utm_source=share&utm_medium=member_desktop",
 			},
 
 			{
