@@ -34,15 +34,15 @@ svg .flag {
 	transform-origin: top left;
 }
 
-svg .cloud {
+svg #cloud {
 	animation: clouds 50s linear infinite alternate;
 }
 
-svg :is(.cloud-2, .cloud-3) {
+svg :is(#cloud-2, #cloud-3) {
 	animation: solo 80s linear infinite alternate;
 }
 
-svg .cloud-3 {
+svg #cloud-3 {
 	animation-duration: 80s;
 }
 
