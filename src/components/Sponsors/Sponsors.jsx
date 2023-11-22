@@ -3,7 +3,6 @@ import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
 import Blackberry from "/Logos/Blackberry.svg";
-import CSClub from "/Logos/CSClub.svg";
 import CSE from "/Logos/CSE.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";
@@ -21,7 +20,6 @@ import balsamiq from "/Logos/balsamiq.svg";
 import Ceed from "/Logos/ceed.svg";
 import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
-import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
@@ -60,9 +58,7 @@ function Sponsors() {
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
-			{ href: "https://uocsclub.ca/", src: CSClub },
 			{ href: "https://www.instagram.com/uogamedev/", src: uOGDC },
-			{ href: "https://www.uottawaesports.ca/", src: uOttawaEsports },
 		],
 	};
 
