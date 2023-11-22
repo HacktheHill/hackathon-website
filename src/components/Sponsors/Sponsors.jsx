@@ -54,7 +54,7 @@ function Sponsors() {
 				href: "https://www.uottawa.ca/faculty-law/common-law/centre-environmental-law-global-sustainability",
 				src: Law,
 			},
-			{ href: "https://www.eventbrite.ca/e/maker-jam-tickets-510317221547", src: MakerJam },
+			{ href: "https://www.uottawa.ca/faculty-engineering/events/maker-jam", src: MakerJam },
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://carleton.ca/", src: Carleton },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
