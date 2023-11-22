@@ -130,4 +130,7 @@
 	.icon-large {
 		width: 8rem;
 	}
+	.text {
+		font-size: 1rem;
+	}
 }

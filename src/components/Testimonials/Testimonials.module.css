@@ -170,3 +170,9 @@
 		display: none;
 	}
 }
+
+@media screen and (max-width: 370px) {
+	.testimonials h3 {
+		font-size: 1rem;
+	}
+}
