@@ -161,6 +161,12 @@ export default {
 
 		q10: "What are the themes for Hack the Hill?",
 		a10: "Full details about the hackathon themes will not be released until a few days before the event. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+
+		q11: "Are buses being sent to other universities?",
+		a11: "As of now, it has not been determined if there will be bus service for Hack the Hill. Stay in touch for updates!",
+
+		q12: "Will travel reimbursements be provided?",
+		a12: "Unfortunately, we are unable to provide travel reimbursements for in-person hackers at Hack the Hill this year.",
 	},
 	footer: {
 		title: "Canada's Capital Hackathon",
