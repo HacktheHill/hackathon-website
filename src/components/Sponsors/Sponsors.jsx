@@ -65,7 +65,7 @@ function Sponsors() {
 			{ href: "https://www.instagram.com/uogamedev/", src: uOGDC },
 			{ href: "https://www.cssa-aei.ca/", src: CSSA },
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
-			{ href: "https://www.instagram.com/uocybersec/", src: cybersec },
+			{ href: "https://uocybersec.com/", src: cybersec },
 			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 		],
 	};
