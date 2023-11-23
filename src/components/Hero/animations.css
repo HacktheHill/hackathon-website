@@ -68,8 +68,8 @@ svg :is(#bird-1, #bird-3) {
 svg #bird-2 {
 	animation: flying 5s ease-in forwards;
 }
-
-svg #bird-3 {
+/* bird-2_new was added by hand in svg to animate bird */
+svg #bird-2_new {
 	animation: coming 9s ease-in forwards;
 }
 
