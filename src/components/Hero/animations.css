@@ -1,12 +1,12 @@
-svg .leaf {
+svg :is(#leaf-2, #leaf-3_3, #leaf-11, #leaf-1_4,#leaf-2_4, #leaf-8){
 	animation: leaf 3s linear forwards;
 }
 
-svg .leaf-drop {
+svg #leaf-2 {
 	animation: leafDrop 2s linear forwards;
 }
 
-svg .leaf-drop-slower {
+svg #leaf-7 {
 	animation: leafDrop 4s linear forwards;
 }
 
@@ -18,17 +18,17 @@ svg .leaf-drop-slower-right {
 	animation: leafDrop 3s linear forwards;
 }
 
-svg .disappearleaf {
+svg :is(#leaf-2_4, #leaf-7) {
 	animation: disappearleaf 3s linear forwards;
 }
 
-svg .halo {
+svg #halo {
 	animation: halo 10s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: center;
 }
 
-svg .flag {
+svg #Vector_58.st13 {
 	animation: flag 1s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: top left;
@@ -46,17 +46,17 @@ svg #cloud-3 {
 	animation-duration: 80s;
 }
 
-svg :is(.clock-left, .clock-right) {
+svg :is( #Vector_64.st20, #Vector_65.st20) {
 	animation: clock linear infinite;
 	transform-box: fill-box;
 }
 
-svg .clock-left {
+svg #Vector_64.st20 {
 	animation-duration: 3600s;
 	transform-origin: top right;
 }
 
-svg .clock-right {
+svg #Vector_65.st20 {
 	animation-duration: 60s;
 	transform-origin: top left;
 }
@@ -78,15 +78,15 @@ svg #bird-4 {
 	animation-delay: 1s;
 }
 
-svg #bird-1 {
+svg #bird-3 {
 	animation-duration: 1s;
 }
 
-svg .light {
+svg #bird-1 {
 	animation: light 2s infinite alternate;
 }
 
-svg .s-light {
+svg :is(#Ellipse_2.st16, #Ellipse_3_x5F_2.st16, #Ellipse_3_x5F_3.st16 ) {
 	animation: s-light 1s infinite alternate;
 }
 
