@@ -3,6 +3,7 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
 // import hero from "../../assets/hero.svg?raw";
 import hero from "../../assets/hero1.svg?raw";
+// import hero from "../../assets/hero2.svg?raw";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -77,7 +78,7 @@ function Hero() {
 		const transformations = [
 			{ selector: "#Sun", x: 0, y: 3 },
 			{ selector: "#Hill3", x: 0, y: 1.6 },
-			{ selector: "#Hill1", x: -3, y: 0.2 },
+			{ selector: "#Hill-1", x: -3, y: 0.2 },
 			{ selector: "#Hill2", x: 2, y: 1.6 },
 			{ selector: "#Hill4", x: 0.6, y: 1.6 },
 
