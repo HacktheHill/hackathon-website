@@ -1,9 +1,7 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
-// import hero from "../../assets/hero.svg?raw";
-import hero from "../../assets/hero1.svg?raw";
-// import hero from "../../assets/hero2.svg?raw";
+import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -77,18 +75,17 @@ function Hero() {
 		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
 		const transformations = [
 			{ selector: "#Sun", x: 0, y: 3 },
-			{ selector: "#Hill3", x: 0, y: 1.6 },
 			{ selector: "#Hill-1", x: -3, y: 0.2 },
-			{ selector: "#Hill2", x: 2, y: 1.6 },
-			{ selector: "#Hill4", x: 0.6, y: 1.6 },
-
+			{ selector: "#Hill-2", x: 2, y: 1.6 },
+			{ selector: "#Hill-3", x: 0, y: 1.6 },
+			{ selector: "#Hill-4", x: 0.6, y: 1.6 },
 		];
 
 		// Select all elements with the same class name and apply the CSS transformation to each of them
 		const applyTransformation = ({ selector, x, y }) => {
 			const elements = heroRef.current.querySelectorAll(selector);
 			elements.forEach(element => {
-				const xValue = scrollY * x * 1.5;
+				const xValue = scrollY * x;
 				const yValue = scrollY * y;
 				element.style.transform = `translate(${xValue}px, ${yValue}px)`;
 			});
