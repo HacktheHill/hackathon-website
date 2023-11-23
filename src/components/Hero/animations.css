@@ -1,24 +1,24 @@
-svg :is(#leaf-2, #leaf-3_3, #leaf-11, #leaf-1_4,#leaf-2_4, #leaf-8){
+svg :is(#leaf-2, #leaf-3_3, #leaf-11, #leaf-1_4,#leaf-2_4, #leaf-8, #leaf-7){
 	animation: leaf 3s linear forwards;
 }
 
-svg #leaf-2 {
+/* svg #leaf-2 {
 	animation: leafDrop 2s linear forwards;
-}
+} */
 
-svg #leaf-7 {
+/* svg #leaf-7 {
 	animation: leafDrop 4s linear forwards;
-}
+} */
 
-svg .leaf-drop-faster {
+/* svg .leaf-drop-faster {
 	animation: leafDrop 1s linear forwards;
-}
+} */
 
-svg .leaf-drop-slower-right {
+/* svg .leaf-drop-slower-right {
 	animation: leafDrop 3s linear forwards;
-}
+} */
 
-svg :is(#leaf-2_4, #leaf-7) {
+svg :is(#leaf-2_4) {
 	animation: disappearleaf 3s linear forwards;
 }
 
