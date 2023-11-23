@@ -3,13 +3,16 @@ import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
 import Blackberry from "/Logos/Blackberry.svg";
-import CSClub from "/Logos/CSClub.svg";
 import CSE from "/Logos/CSE.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
 import Ciena from "/Logos/Ciena.svg";
 import DigitalOcean from "/Logos/DigitalOcean.svg";
+import cybersec from "/Logos/cybersec.svg";
+import CSSA from "/Logos/CSSA.svg";
+import uOttawaIEEE from "/Logos/uOttawaIEEE.svg";
+import WIE from "/Logos/WIE.svg";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
 import Law from "/Logos/Law.svg";
@@ -21,7 +24,6 @@ import balsamiq from "/Logos/balsamiq.svg";
 import Ceed from "/Logos/ceed.svg";
 import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
-import uOttawaEsports from "/Logos/uOttawaEsports.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
@@ -54,15 +56,17 @@ function Sponsors() {
 				href: "https://www.uottawa.ca/faculty-law/common-law/centre-environmental-law-global-sustainability",
 				src: Law,
 			},
-			{ href: "https://www.eventbrite.ca/e/maker-jam-tickets-510317221547", src: MakerJam },
+			{ href: "https://www.uottawa.ca/faculty-engineering/events/maker-jam", src: MakerJam },
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://carleton.ca/", src: Carleton },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
-			{ href: "https://uocsclub.ca/", src: CSClub },
 			{ href: "https://www.instagram.com/uogamedev/", src: uOGDC },
-			{ href: "https://www.uottawaesports.ca/", src: uOttawaEsports },
+			{ href: "https://www.cssa-aei.ca/", src: CSSA },
+			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
+			{ href: "https://www.instagram.com/uocybersec/", src: cybersec },
+			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 		],
 	};
 
