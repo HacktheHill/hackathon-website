@@ -9,7 +9,7 @@ import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
 import Ciena from "/Logos/Ciena.svg";
 import DigitalOcean from "/Logos/DigitalOcean.svg";
-import cybersec from "/Logos/cybersec.svg";
+import uOCyberSec from "/Logos/uOCyberSec.svg";
 import CSSA from "/Logos/CSSA.svg";
 import uOttawaIEEE from "/Logos/uOttawaIEEE.svg";
 import WIE from "/Logos/WIE.svg";
@@ -65,7 +65,7 @@ function Sponsors() {
 			{ href: "https://www.instagram.com/uogamedev/", src: uOGDC },
 			{ href: "https://www.cssa-aei.ca/", src: CSSA },
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
-			{ href: "https://uocybersec.com/", src: cybersec },
+			{ href: "https://uocybersec.com/", src: uOCyberSec },
 			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 		],
 	};
