@@ -34,7 +34,7 @@ svg .flag {
 	transform-origin: top left;
 }
 
-svg #cloud {
+svg #Clouds {
 	animation: clouds 50s linear infinite alternate;
 }
 
@@ -61,24 +61,24 @@ svg .clock-right {
 	transform-origin: top left;
 }
 
-svg :is(.left-bird, .right-bird) {
+svg :is(#bird-1, #bird-3) {
 	animation: flap 1s linear infinite alternate;
 }
 
-svg .awayBird {
+svg #bird-2 {
 	animation: flying 5s ease-in forwards;
 }
 
-svg .comingBird {
+svg #bird-3 {
 	animation: coming 9s ease-in forwards;
 }
 
-svg .left-bird {
+svg #bird-4 {
 	animation-duration: 2s;
 	animation-delay: 1s;
 }
 
-svg .right-bird {
+svg #bird-1 {
 	animation-duration: 1s;
 }
 
