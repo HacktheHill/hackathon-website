@@ -144,4 +144,9 @@
 	.sun {
 		display: none;
 	}
+
+	.cloud {
+		width: 50vw;
+		height: 50vh;
+	}
 }
