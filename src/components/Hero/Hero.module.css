@@ -187,7 +187,7 @@
 	font-weight: normal;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 730px) {
 	.countdown-dialog {
 		display: none;
 	}
