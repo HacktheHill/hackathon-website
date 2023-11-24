@@ -126,10 +126,12 @@
 	}
 }
 
-@media screen and (max-width: 370px) {
-	.icon-large {
-		width: 8rem;
+@media screen and (max-width: 400px) {
+	.icon-large,
+	.icon-medium {
+		width: 7rem;
 	}
+	
 	.text {
 		font-size: 1rem;
 	}
