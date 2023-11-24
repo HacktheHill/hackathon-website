@@ -25,7 +25,6 @@
 .cloud {
 	position: absolute;
 	z-index: -2;
-	overflow-x: hidden;
 }
 
 .event-card {
