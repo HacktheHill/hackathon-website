@@ -20,6 +20,7 @@
 	grid-template-columns: 10rem auto;
 	gap: 2rem;
 	position: relative;
+	overflow-x: "hidden",
 }
 
 .cloud {
