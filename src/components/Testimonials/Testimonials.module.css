@@ -171,7 +171,7 @@
 	}
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 510px) {
 	.testimonials h3 {
 		font-size: 1rem;
 	}

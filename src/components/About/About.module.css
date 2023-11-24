@@ -70,7 +70,7 @@
 
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 510px) {
 	.about-text p {
 		font-size: 1rem;
 	}

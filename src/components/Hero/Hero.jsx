@@ -44,6 +44,10 @@ function Hero() {
 	const minutes = Math.floor((date - time) / 1000 / 60) % 60;
 	const seconds = Math.floor((date - time) / 1000) % 60;
 
+	const formattedHours = hours.toLocaleString('en-US', { minimumIntegerDigits: 2 });
+	const formattedMinutes = minutes.toLocaleString('en-US', { minimumIntegerDigits: 2 });
+	const formattedSeconds = seconds.toLocaleString('en-US', { minimumIntegerDigits: 2 });
+
 	const popup = event => {
 		if (event.target.closest("#clock-tower")) {
 			setPopupOpen(true);
@@ -144,6 +148,7 @@ function Hero() {
 						{" "}
 						<strong>psst... Mark your calendar, Hackathon is in</strong>
 					</p>
+					
 					<div className={styles["countdown-items-container"]}>
 						<div className={styles["countdown-item"]}>
 							<h3>{days}</h3>
@@ -161,6 +166,30 @@ function Hero() {
 							<h3>{seconds}</h3>
 							<h4>second{seconds === 1 ? "" : "s"}</h4>
 						</div>
+					</div>
+				</dialog>
+			)}
+
+			{date && (
+				<dialog className={styles["countdown-dialog-small"]} open={popupOpen}>
+					<p className={styles["countdown-header-small"]}>
+						{" "}
+						<strong>psst... Hackathon is in</strong>
+					</p>
+
+					<div className={styles["countdown-items-container-small"]}>
+					<div className={styles["countdown-item"]}>
+						<h3>{days}:</h3>
+					</div>
+					<div className={styles["countdown-item"]}>
+						<h3>{formattedHours}:</h3>
+					</div>
+					<div className={styles["countdown-item"]}>
+						<h3>{formattedMinutes}:</h3>
+					</div>
+					<div className={styles["countdown-item"]}>
+						<h3>{formattedSeconds}</h3>
+					</div>
 					</div>
 				</dialog>
 			)}
