@@ -117,7 +117,7 @@ export default {
 				description:
 					"Rejoignez-nous pour le défi ultime de cybersécurité organisé en collaboration avec le Club de cybersécurité de l'Université d'Ottawa. uOCTF est une compétition passionnante de Capture the Flag où vous testerez vos compétences en piratage et en cybersécurité, ce qui vous obligera à exploiter des vulnérabilités et à résoudre des énigmes.",
 				status: "Plus d'info",
-				link: "https://buytickets.at/hackthehill1/1063393",
+				link: "https://www.linkedin.com/posts/hackthehill_hackthehill-uoctf-hackingcompetition-activity-7128839548289060864-FKsg/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
 				title: "Code, Café et Cram",
