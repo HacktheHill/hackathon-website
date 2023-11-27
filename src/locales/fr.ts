@@ -126,9 +126,8 @@ export default {
 				time: "18h30 - 20h30 @ STM 117",
 				description:
 					"Préparez-vous à enflammer votre parcours académique alors que 'Code, Café et Cram' vous emmène sur un chemin revigorant vers la réussite. En préparation des prochains examens d'hiver, cette session unique offre aux étudiants une opportunité de se détendre et de participer à des sessions d'études complètes. Rejoignez-nous dans un espace conçu pour vous aider à libérer votre potentiel académique, où vous pourrez vous connecter à vos cours et élever votre compréhension. Préparez-vous aux examens d'hiver comme jamais auparavant - avec le mélange idéal de code, de caféine et de concentration.",
-				status: "Plus d'info",
-				link: "https://l.hackthehill.com",
-				disabled: true,
+				status: "Rejoignez-nous",
+				link: "https://www.tickettailor.com/events/hackthehill1/1074825",
 			},
 		],
 	},
