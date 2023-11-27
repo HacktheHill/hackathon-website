@@ -113,8 +113,8 @@ export default {
 				time: "12 p.m. - 4 p.m. @ CBY A03 & A04",
 				description:
 					"Join us for the ultimate cybersecurity challenge organized in collaboration with the uOttawa Cybersecurity Club. uOCTF is a thrilling Capture the Flag competition where you'll test your hacking and cybersecurity skills, requiring you to exploit vulnerabilities and solve puzzles.",
-				status: "Register",
-				link: "https://buytickets.at/hackthehill1/1063393",
+				status: "More Info",
+				link: "https://www.linkedin.com/posts/hackthehill_hackthehill-uoctf-hackingcompetition-activity-7128839548289060864-FKsg/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
 				title: "Code, Coffee, and Cram",
