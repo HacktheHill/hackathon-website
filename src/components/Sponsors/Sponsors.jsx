@@ -62,7 +62,7 @@ function Sponsors() {
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
-			{ href: "https://www.instagram.com/uogamedev/", src: uOGDC },
+			{ href: "https://www.uogdc.com/", src: uOGDC },
 			{ href: "https://www.cssa-aei.ca/", src: CSSA },
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
 			{ href: "https://uocybersec.com/", src: uOCyberSec },
