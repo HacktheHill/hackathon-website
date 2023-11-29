@@ -1,29 +1,8 @@
 .team-carousel {
 	overflow: hidden;
 	position: relative;
-	width: 100%;
-	background-color: var(--dark-primary-color);
-}
-
-.team-carousel::before,
-.team-carousel::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	z-index: 1;
-	height: 100%;
-	width: 10%;
-	background: linear-gradient(to var(--direction), var(--dark-primary-color) 10%, var(--medium-secondary-color));
-}
-
-.team-carousel::after {
-	--direction: left;
-	right: 0;
-}
-
-.team-carousel::before {
-	--direction: right;
-	left: 0;
+	mask-image: linear-gradient(90deg, transparent 0%, black 10% 90%, transparent 100%);
+	-webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10% 90%, transparent 100%);
 }
 
 .team-carousel .carousel-track {
