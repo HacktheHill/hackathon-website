@@ -102,11 +102,6 @@
 	border: 3px solid var(--link-color);
 }
 
-.anchor-2023 {
-	text-decoration: none;
-	color: var(--link-color);
-}
-
 .sidebar-icon {
 	display: none;
 	height: 100%;
