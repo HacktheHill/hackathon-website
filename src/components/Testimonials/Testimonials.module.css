@@ -176,3 +176,21 @@
 		font-size: 1rem;
 	}
 }
+
+@media (min-width: 600px) {
+	.testimonial-content-container {
+		min-height: 400px;
+	}
+}
+
+@media (min-width: 800px) {
+	.testimonial-content-container {
+		min-height: 250px;
+	}
+}
+
+@media (max-width: 600px) {
+	.testimonial-content-container {
+		min-height: 150px;
+	}
+}
