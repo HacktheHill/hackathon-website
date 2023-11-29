@@ -3,6 +3,7 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { t } from "../../i18n";
 import styles from "./Footer.module.css";
+import TeamCarousel from "../Footer/TeamCarousel";
 
 function Footer() {
 	return (
