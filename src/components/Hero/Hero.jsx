@@ -1,12 +1,7 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
-// import hero from "../../assets/hero.svg?raw";
-// import hero from "../../assets/Hero-2 copy.svg?raw";
-// import hero from "../../assets/Hero3.svg?raw";
-// import hero from "../../assets/herowithhill.svg?raw";
 import hero from "../../assets/herowithbird.svg?raw";
-// import hero from "../../assets/Hero5.svg?raw";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -57,6 +52,7 @@ function Hero() {
 		}
 	};
 
+	
 	// For parallax scrolling effect
 	const [scrollY, setScrollY] = useState(0);
 	const heroRef = useRef(null);

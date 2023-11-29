@@ -1,34 +1,22 @@
-svg :is(#leaf-2, #leaf-3_3, #leaf-11, #leaf-1_4,#leaf-2_4, #leaf-8, #leaf-7){
+svg :is(#leaf-3_3, #leaf-2_2){
 	animation: leaf 3s linear forwards;
 }
 
-/* svg #leaf-2 {
-	animation: leafDrop 2s linear forwards;
-} */
+svg :is(#leaf-1_3, #leaf-2_3){
+	animation: leaf 8s linear forwards;
+}
 
-/* svg #leaf-7 {
-	animation: leafDrop 4s linear forwards;
-} */
-
-/* svg .leaf-drop-faster {
-	animation: leafDrop 1s linear forwards;
-} */
-
-/* svg .leaf-drop-slower-right {
-	animation: leafDrop 3s linear forwards;
-} */
-
-svg :is(#leaf-2_4) {
+svg :is(#leaf-2_4, #leaf-1_3) {
 	animation: disappearleaf 3s linear forwards;
 }
 
-svg #halo {
+svg #countdown{
 	animation: halo 10s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: center;
 }
 
-svg #Vector_58.st13 {
+svg #red-flag {
 	animation: flag 1s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: top left;
@@ -46,22 +34,22 @@ svg #cloud-3 {
 	animation-duration: 80s;
 }
 
-svg :is( #Vector_64.st20, #Vector_65.st20) {
+svg :is(#minute-arm, #hour-arm) {
 	animation: clock linear infinite;
 	transform-box: fill-box;
 }
 
-svg #Vector_64.st20 {
+svg #hour-arm {
 	animation-duration: 3600s;
 	transform-origin: top right;
 }
 
-svg #Vector_65.st20 {
+svg #minute-arm {
 	animation-duration: 60s;
 	transform-origin: top left;
 }
 
-svg :is(#bird-1, #bird-3, #bird-4) {
+svg :is(#bird-1, #bird-3, #bird-4, #bird2-new) {
 	animation: flap 1s linear infinite alternate;
 }
 
@@ -69,9 +57,10 @@ svg #bird-2 {
 	animation: flying 5s ease-in forwards;
 }
 /* bird-2_new was added by hand in svg to animate bird */
+
 svg #bird-2-new {
 	animation: coming 9s ease-in forwards, flap 1s linear infinite alternate;
-} */
+} 
 
 svg #bird-4 {
 	animation-duration: 2s;
@@ -86,7 +75,7 @@ svg #bird-1 {
 	animation: light 2s infinite alternate;
 }
 
-svg :is(#Ellipse_2.st16, #Ellipse_3_x5F_2.st16, #Ellipse_3_x5F_3.st16 ) {
+svg :is(#cathedral-light, #SupremeCourtLeftLight, #supremeCourtRightLight) {
 	animation: s-light 1s infinite alternate;
 }
 
@@ -169,6 +158,9 @@ svg :is(#Ellipse_2.st16, #Ellipse_3_x5F_2.st16, #Ellipse_3_x5F_3.st16 ) {
 }
 
 @keyframes clock {
+	0% {
+		transform: rotate(0deg);
+	}
 	100% {
 		transform: rotate(360deg);
 	}
