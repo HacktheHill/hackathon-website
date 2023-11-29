@@ -94,18 +94,18 @@
 }
 
 .icon-large {
-	max-height: 200px;
-	width: 300px;
+	max-height: 12.5rem;
+	width: 18rem;
 }
 
 .icon-medium {
-	max-height: 130px;
-	width: 250px;
+	max-height: 8rem;
+	width: 15rem;
 }
 
 .icon-small {
-	max-height: 50px;
-	width: 120px;
+	max-height: 3rem;
+	width: 7.5rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -123,5 +123,16 @@
 	.collaborators .icons-row {
 		margin-left: 1rem;
 		width: fit-content;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.icon-large,
+	.icon-medium {
+		width: 7rem;
+	}
+	
+	.text {
+		font-size: 1rem;
 	}
 }

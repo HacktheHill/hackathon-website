@@ -9,7 +9,7 @@
 }
 
 .about h1 {
-	margin-top: 4rem;
+	padding-bottom: 2rem;
 }
 
 .about-text p {
@@ -61,5 +61,17 @@
 @media screen and (max-width: 768px) {
 	.frame {
 		margin: 4rem 1rem;
+	}
+
+	.frame img.left-leaves,
+	.frame img.right-leaves {
+    	display: none;
+	}
+
+}
+
+@media screen and (max-width: 510px) {
+	.about-text p {
+		font-size: 1rem;
 	}
 }
