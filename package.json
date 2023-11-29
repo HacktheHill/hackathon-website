@@ -27,7 +27,7 @@
 		"astro": "^1.7.2",
 		"fs-extra": "^11.1.0",
 		"nanostores": "^0.7.3",
-		"package.json": "^2.0.1",
+		"package.json": "^0.0.0",
 		"react": "^18.2.0",
 		"react-burger-menu": "^3.0.8",
 		"react-dom": "^18.2.0",
