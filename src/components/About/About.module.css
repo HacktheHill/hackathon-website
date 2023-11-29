@@ -65,9 +65,8 @@
 
 	.frame img.left-leaves,
 	.frame img.right-leaves {
-    	display: none;
+		display: none;
 	}
-
 }
 
 @media screen and (max-width: 510px) {
