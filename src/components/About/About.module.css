@@ -8,10 +8,6 @@
 	flex: 1;
 }
 
-.about h1 {
-	padding-bottom: 2rem;
-}
-
 .about-text p {
 	color: var(--light-primary-color);
 	font-family: Rubik;
