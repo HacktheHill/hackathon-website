@@ -66,10 +66,12 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				>
 					{language ? "FR" : "EN"}
 				</button>
-				<button className={style["square-button"]} type="submit">
-					<a className={style["anchor-2023"]} href="https://2023.hackthehill.com">
-						2023
-					</a>
+				<button
+					className={style["square-button"]}
+					type="submit"
+					onClick={() => window.open("https://2023.hackthehill.com", "_blank")}
+				>
+					2023
 				</button>
 			</div>
 
