@@ -22,6 +22,7 @@ function Schedule() {
 									left: Math.random() * 150 - 50 + "%",
 									top: Math.random() * 75 - 25 + "%",
 									transform: `scale(${Math.random() * 0.75 + 0.25})`,
+									display: "block",
 								}}
 							></img>
 						))}
