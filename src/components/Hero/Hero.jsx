@@ -1,7 +1,7 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
-import hero from "../../assets/herowithbird.svg?raw";
+import hero from "../../assets/hero.svg?raw";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";

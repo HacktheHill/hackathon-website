@@ -55,6 +55,7 @@ svg :is(#bird-1, #bird-3, #bird-4, #bird2-new) {
 
 svg #bird-2 {
 	animation: flying 5s ease-in forwards;
+
 }
 /* bird-2_new was added by hand in svg to animate bird */
 
@@ -188,11 +189,11 @@ svg :is(#cathedral-light, #SupremeCourtLeftLight, #supremeCourtRightLight) {
 	}
 }
 
-@keyframes coming {
+@keyframes coming-flap {
 	0% {
-		transform: translate3d(200px, 100px, 0);
+		transform: translate3d(200px, 100px, 0) rotate(-5deg);
 		opacity: 0;
-		transform: rotate(-5deg);
+		
 	}
 	100% {
 		opacity: 0.9;
