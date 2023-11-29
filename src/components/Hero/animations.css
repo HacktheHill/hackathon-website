@@ -35,7 +35,7 @@ svg #Vector_58.st13 {
 }
 
 svg #Clouds {
-	animation: clouds 50s linear infinite alternate;
+	animation: clouds 100s linear infinite alternate;
 }
 
 svg :is(#cloud-2, #cloud-3) {
@@ -61,7 +61,7 @@ svg #Vector_65.st20 {
 	transform-origin: top left;
 }
 
-svg :is(#bird-1, #bird-3) {
+svg :is(#bird-1, #bird-3, #bird-4) {
 	animation: flap 1s linear infinite alternate;
 }
 
@@ -69,9 +69,9 @@ svg #bird-2 {
 	animation: flying 5s ease-in forwards;
 }
 /* bird-2_new was added by hand in svg to animate bird */
-svg #bird-2_new {
-	animation: coming 9s ease-in forwards;
-}
+svg #bird-2-new {
+	animation: coming 9s ease-in forwards, flap 1s linear infinite alternate;
+} */
 
 svg #bird-4 {
 	animation-duration: 2s;

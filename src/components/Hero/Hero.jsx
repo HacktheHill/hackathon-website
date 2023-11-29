@@ -1,7 +1,12 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
-import hero from "../../assets/hero.svg?raw";
+// import hero from "../../assets/hero.svg?raw";
+// import hero from "../../assets/Hero-2 copy.svg?raw";
+// import hero from "../../assets/Hero3.svg?raw";
+// import hero from "../../assets/herowithhill.svg?raw";
+import hero from "../../assets/herowithbird.svg?raw";
+// import hero from "../../assets/Hero5.svg?raw";
 import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -14,7 +19,7 @@ const EVENT_START_DATE = new Date("2024-09-20T19:00:00-05:00");
 const HACKING_END_DATE = new Date("2024-09-22T09:00:00-05:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
-// If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
+// If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
 // If the current time is after the hacking end date, the countdown will not show
 let date = null;
 switch (true) {
