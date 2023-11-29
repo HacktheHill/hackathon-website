@@ -6,6 +6,10 @@ svg :is(#leaf-1_3, #leaf-2_3){
 	animation: leaf 8s linear forwards;
 }
 
+svg #leaf-1_4 {
+	animation: leaf 5s linear forwards;
+}
+
 svg :is(#leaf-2_4, #leaf-1_3) {
 	animation: disappearleaf 3s linear forwards;
 }
@@ -60,7 +64,7 @@ svg #bird-2 {
 /* bird-2_new was added by hand in svg to animate bird */
 
 svg #bird-2-new {
-	animation: coming 9s ease-in forwards, flap 1s linear infinite alternate;
+	animation: coming 9s forwards, flap 1s linear infinite alternate;
 } 
 
 svg #bird-4 {
@@ -189,7 +193,7 @@ svg :is(#cathedral-light, #SupremeCourtLeftLight, #supremeCourtRightLight) {
 	}
 }
 
-@keyframes coming-flap {
+@keyframes coming {
 	0% {
 		transform: translate3d(200px, 100px, 0) rotate(-5deg);
 		opacity: 0;
