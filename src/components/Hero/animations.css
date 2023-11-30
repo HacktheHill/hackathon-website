@@ -63,9 +63,13 @@ svg #bird-2 {
 }
 /* bird-2_new was added by hand in svg to animate bird */
 
-svg #bird-2-new {
-	animation: coming 9s forwards, flap 1s linear infinite alternate;
+svg #Bird-Fly-Down{
+	animation: coming 9s forwards;
 } 
+
+svg #Bird-Hover{
+	animation: flap 1s linear infinite alternate
+}
 
 svg #bird-4 {
 	animation-duration: 2s;
@@ -195,12 +199,13 @@ svg :is(#cathedral-light, #SupremeCourtLeftLight, #supremeCourtRightLight) {
 
 @keyframes coming {
 	0% {
-		transform: translate3d(200px, 100px, 0) rotate(-5deg);
+		transform: translate3d(200px, 100px, 0);
 		opacity: 0;
+		transform: rotate(-5deg)
 		
 	}
 	100% {
-		opacity: 0.9;
+		opacity: 1;
 		transform: rotate(0deg);
 	}
 }
