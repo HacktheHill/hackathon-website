@@ -14,7 +14,7 @@ const EVENT_START_DATE = new Date("2024-09-20T19:00:00-05:00");
 const HACKING_END_DATE = new Date("2024-09-22T09:00:00-05:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
-// If the current time is between the event start date and the hacking end date, the countdown will show the time until the hacking ends
+// If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
 // If the current time is after the hacking end date, the countdown will not show
 let date = null;
 switch (true) {
@@ -56,6 +56,7 @@ function Hero() {
 		}
 	};
 
+	
 	// For parallax scrolling effect
 	const [scrollY, setScrollY] = useState(0);
 	const heroRef = useRef(null);
@@ -78,11 +79,11 @@ function Hero() {
 		// The selector is used to select all elements with the same class name
 		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
 		const transformations = [
-			{ selector: ".sun", x: 0, y: 3 },
-			{ selector: ".hill1", x: 0, y: 1.6 },
-			{ selector: ".hill2", x: -3, y: 0.2 },
-			{ selector: ".hill3", x: 2, y: 1.6 },
-			{ selector: ".hill4", x: 0.6, y: 1.6 },
+			{ selector: "#Sun", x: 0, y: 3 },
+			{ selector: "#Hill-1", x: -3, y: 0.2 },
+			{ selector: "#Hill-2", x: 2, y: 1.6 },
+			{ selector: "#Hill-3", x: 0, y: 1.6 },
+			{ selector: "#Hill-4", x: 0.6, y: 1.6 },
 		];
 
 		// Select all elements with the same class name and apply the CSS transformation to each of them
