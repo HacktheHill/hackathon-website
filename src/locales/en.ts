@@ -54,7 +54,7 @@ export default {
 	testimonials: {
 		title: "Making Moments Matter",
 		sub_heading:
-			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learing, and fun. These experiences are what shape our hackathon.",
+			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learning, and fun. These experiences are what shape our hackathon.",
 		t1: {
 			name: "Maddie Whibbs",
 			content: "Great and well organized event - career fair was my favorite part!",
