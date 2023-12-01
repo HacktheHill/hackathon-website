@@ -75,7 +75,7 @@ export default {
 			name: "Nyah Wagner",
 			content:
 				"Lonehaven was honored to collaborate with Hack the Hill, an exceptional event that showcased the creative problem-solving skills of talented students. This experience highlighted the vibrant tech ecosystem in Canada and its potential for collaboration and growth.",
-			role: "Chief Partnerships Officer, Lonehaven",
+			role: "Lonehaven",
 		},
 		t5: {
 			name: "Hasin Zaman",

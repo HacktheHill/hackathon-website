@@ -30,7 +30,7 @@ function Testimonials() {
 			name: t("testimonials.t4.name"),
 			content: t("testimonials.t4.content"),
 			role: t("testimonials.t4.role"),
-			img: "/headshots/marketing/nyah.webp",
+			img: "https://cdn.discordapp.com/attachments/1045803128869634088/1180289992568881182/nyah.png",
 		},
 		{
 			id: 5,

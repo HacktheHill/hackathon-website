@@ -75,7 +75,7 @@ export default {
 			name: "Nyah Wagner",
 			content:
 				"À Lonehaven, nous avons eu l'honneur de collaborer avec Hack the Hill, un événement exceptionnel rassemblant de jeunes esprits brillants. Notre expérience en tant qu'entreprise a été incroyablement positive, et nous avons été témoins des solutions innovantes ainsi que des capacités créatives de résolution de problèmes de ces étudiants talentueux.",
-			role: "Directeur des Partenariats, Lonehaven",
+			role: "Lonehaven",
 		},
 
 		t5: {
