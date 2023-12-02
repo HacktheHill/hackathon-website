@@ -58,6 +58,7 @@ function Sponsors() {
 			{ href: "https://uocybersec.com/", src: uOCyberSec },
 			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
+			{ href: "https://www.scesoc.ca/", src: SCESoc },
 			{ href: "https://ceed-uottawa.ca/", src: Ceed },
 			{
 				href: "https://www.uottawa.ca/faculty-law/common-law/centre-environmental-law-global-sustainability",
