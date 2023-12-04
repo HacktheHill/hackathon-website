@@ -1,6 +1,6 @@
 # Hack the Hill Website
 
-Welcome to the Hack the Hill Website repository. This static marketing website serves to procide information about the Hack the Hill hackathon.
+Welcome to the Hack the Hill Website repository. This static marketing website serves to provide information about the Hack the Hill hackathon.
 
 ## Getting Started
 
