@@ -27,6 +27,7 @@ export default {
 		p1: "Joignez-vous à plus de 1000 hackers de partout au pays pour créer quelque chose d'incroyable en seulement 36 heures.",
 		p2: "Hack the Hill II est la deuxième édition du Hackathon de la Capitale Canadienne, un événement de trois jours où des étudiants de différentes disciplines se réunissent pour créer des solutions innovantes à des problèmes du monde réel.",
 		p3: "Les participants auront l'occasion d'apprendre de nouvelles compétences, de réseauter avec leurs pairs et de mettre en valeur leurs talents et leurs idées. Que vous soyez débutant ou hacker chevronné, vous trouverez certainement quelque chose qui vous met au défi et vous inspire à Hack the Hill II.",
+		frame_alt: "Podcast de Hack the Hill",
 	},
 	stats: {
 		title: "Hack the Hill I avait...",
