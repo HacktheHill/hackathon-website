@@ -119,13 +119,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.schedule {
-		background-image: url(/SVGs/snowflake1.svg), url(/SVGs/snowflake2.svg), url(/SVGs/xGroup.svg);
-		background-repeat: no-repeat;
-		background-position: left 150px, right 750px, top 100px right 50px;
-		background-size: 18%, 18%, 7%;
-	}
-
 	.schedule-list-item {
 		grid-template-columns: 1fr;
 	}
