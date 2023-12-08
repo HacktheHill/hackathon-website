@@ -1,7 +1,7 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { t } from "../../i18n";
-import styles from "./Schedule.module.css";
 import Button from "../Button/Button";
+import styles from "./Schedule.module.css";
 
 function Schedule() {
 	const events = t("schedule.events");
@@ -12,20 +12,7 @@ function Schedule() {
 			<div className={styles["schedule-list"]}>
 				{events.map((event, index) => (
 					<div className={styles["schedule-list-item"]} key={index}>
-						{new Array(Math.floor(Math.random() * 3) + 1).fill(0).map((_, i) => (
-							<img
-								key={i}
-								className={styles["cloud"]}
-								src="/SVGs/Schedule/cloud.svg"
-								alt="cloud"
-								style={{
-									left: Math.random() * 150 - 50 + "%",
-									top: Math.random() * 75 - 25 + "%",
-									transform: `scale(${Math.random() * 0.75 + 0.25})`,
-									display: "block",
-								}}
-							></img>
-						))}
+						<Clouds />
 						<div className={styles["event-card"]}>
 							<div className={styles["event-month"]}>{event.month}</div>
 							<div className={styles["event-day"]}>{event.day}</div>
@@ -54,6 +41,26 @@ function Schedule() {
 			<img className={styles["sun"]} src="/SVGs/Schedule/sun.svg" alt="sun"></img>
 		</div>
 	);
+}
+
+function Clouds() {
+	const [count, setCount] = useState(0);
+	const [style, setStyle] = useState({});
+
+	useEffect(() => {
+		setCount(Math.floor(Math.random() * 3) + 1);
+		setStyle({
+			left: Math.random() * 150 - 50 + "%",
+			top: Math.random() * 75 - 25 + "%",
+			transform: `scale(${Math.random() * 0.75 + 0.25})`,
+		});
+	}, []);
+
+	return new Array(count)
+		.fill(0)
+		.map((_, i) => (
+			<img key={i} className={styles["cloud"]} src="/SVGs/Schedule/cloud.svg" alt="cloud" style={style}></img>
+		));
 }
 
 export default Schedule;
