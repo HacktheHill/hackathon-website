@@ -24,7 +24,6 @@ function About() {
 					src={podcastLink}
 					title={t("about.title")}
 					srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:3.5rem/1.5 sans-serif;color:#fff3b6;text-shadow:0 0 0.5em black}</style><a href=${podcastLink}><img src=${thumbnailLink} alt=${t("about.frame_alt")}><span>▶</span></a>`}
-					frameBorder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					allowFullScreen
 					loading="lazy"
