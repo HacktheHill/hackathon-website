@@ -98,7 +98,6 @@ export default {
 				status: "More Info",
 				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-",
 			},
-
 			{
 				title: "Intern Panel",
 				month: "November",
@@ -109,7 +108,27 @@ export default {
 				status: "More Info",
 				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF?utm_source=share&utm_medium=member_desktop",
 			},
-
+			{
+				title: "HtH x BTA: Nokia Info Session",
+				month: "November",
+				day: "21",
+				time: "1 p.m. - 3 p.m. @ CBY A707",
+				description:
+					"Delve into the realm of cutting-edge technology with our Nokia info session, held in collaboration of the Business Technology Association (BTA). Explore the latest innovations and insights that Nokia brings to the table, empowering participants with knowledge at the intersection of business and technology.",
+				status: "More Info",
+				link: "https://www.linkedin.com/posts/hackthehill_the-videos-dont-lie-we-had-an-awesome-activity-7132886003547082752-boIm/?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "HtH x CSSA: Cybersecurity Chatbot Workshop",
+				month: "November",
+				day: "21",
+				time: "6 p.m. - 7:30 p.m. @ STEM117",
+				description:
+					"Unleash the power of OpenAI GPT models and Python APIs in our workshop with the Computer Science Student Association (CSSA). Participants dove into the creation of their first cybersecurity chatbot, gaining valuable insights into artificial intelligence, natural language processing, and Python programming. Elevate your skills with this innovative fusion of cybersecurity and chatbot development.",
+				status: "More Info",
+				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
+				disabled: true,
+			},
 			{
 				title: "Capture the Flag",
 				month: "November",

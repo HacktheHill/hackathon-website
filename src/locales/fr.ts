@@ -99,7 +99,6 @@ export default {
 				status: "Plus d'info",
 				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-?utm_source=share&utm_medium=member_desktop",
 			},
-
 			{
 				title: "Panel de Stagiaires",
 				month: "Novembre",
@@ -110,7 +109,27 @@ export default {
 				status: "Plus d'info",
 				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF/?utm_source=share&utm_medium=member_desktop",
 			},
-
+			{
+				title: "HtH x BTA : Session d'information avec Nokia",
+				month: "Novembre",
+				day: "21",
+				time: "13h00 - 15h00 @ CBY A707",
+				description:
+					"Plongez dans le monde de la technologie avec notre session d'information Nokia, organisée en collaboration avec l'Association de la technologie des affaires (BTA). Explorez les dernières innovations et les idées que Nokia apporte à la table, permettant aux participants d'acquérir des connaissances concernant l'intersection des affaires et de la technologie.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_the-videos-dont-lie-we-had-an-awesome-activity-7132886003547082752-boIm/?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "HtH x AÉI : Atelier Chatbot sur la cybersécurité",
+				month: "Novembre",
+				day: "21",
+				time: "18h00 - 19h30 @ STEM117",
+				description:
+					"Découvrer le potentiel des modèles OpenAI GPT et des API Python lors de notre atelier avec l'Association des étudiants en informatique (AÉI). Les participants ont joué un rôle dans la création de leur premier chatbot de cybersécurité, en acquérant des connaissances précieuses sur l'intelligence artificielle, le traitement du langage naturel et la programmation Python. Améliorez vos compétences grâce à cette fusion innovante de cybersécurité et de développement de chatbot.",
+				status: "Plus d'info",
+				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
+				disabled: true,
+			},
 			{
 				title: "Capture le Drapeau",
 				month: "Novembre",
