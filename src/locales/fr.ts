@@ -110,7 +110,7 @@ export default {
 				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
-				title: "HtH x BTA : Session d'information avec Nokia",
+				title: "Session d'information avec Nokia",
 				month: "Novembre",
 				day: "21",
 				time: "13h00 - 15h00 @ CBY A707",
@@ -120,7 +120,7 @@ export default {
 				link: "https://www.linkedin.com/posts/hackthehill_the-videos-dont-lie-we-had-an-awesome-activity-7132886003547082752-boIm/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
-				title: "HtH x AÉI : Atelier Chatbot sur la cybersécurité",
+				title: "Atelier Chatbot sur la cybersécurité",
 				month: "Novembre",
 				day: "21",
 				time: "18h00 - 19h30 @ STEM117",
