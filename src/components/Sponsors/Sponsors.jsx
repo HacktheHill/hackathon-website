@@ -17,6 +17,7 @@ import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
 import Law from "/Logos/Law.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
+import telferBTA from "/Logos/bta-logo.svg";
 import MakerJam from "/Logos/MakerJam.svg";
 import SCESoc from "/Logos/SCESoc.svg";
 import Vercel from "/Logos/Vercel.svg";
@@ -65,6 +66,7 @@ function Sponsors() {
 				src: Law,
 			},
 			{ href: "https://carleton.ca/", src: Carleton },
+			{ href: "https://www.telferbta.com", src: telferBTA },
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 		],
 	};
