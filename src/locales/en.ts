@@ -89,6 +89,16 @@ export default {
 		title: "The Hacker Series",
 		events: [
 			{
+				title: "Game Dev Intro",
+				month: "September",
+				day: "29",
+				time: "7 p.m. - 9 p.m. @ STM 117",
+				description:
+					"Embark on an immersive journey into game development with LevelOne Labs on September 29th, 7pm, at STM 117, uOttawa. This hands-on session, presented by uO GDC x HtH, promises to demystify the intricacies of game design, making it accessible for enthusiasts and beginners alike.",
+				status: "More Info",
+				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
+			},
+			{
 				title: "Resume Rescue",
 				month: "October",
 				day: "10",
@@ -97,6 +107,26 @@ export default {
 					"Your resume deserves a makeover. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success. Let Hack the Hill guide you in rescuing your resume from the ordinary. Join Hack the Hill for a dynamic session dedicated to revitalizing your resumes!",
 				status: "More Info",
 				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-",
+			},
+			{
+				title: "Ciena Networking Event",
+				month: "October",
+				day: "17",
+				time: "6:30 p.m. - 8 p.m. @ Ollie’s Pub & Patio",
+				description:
+					"Immerse yourself in an evening of unparalleled networking at the Ciena Networking Event on October 17th, 6:30pm, hosted at Ollie’s Pub & Patio, Carleton University. Presented by SCESoc x HtH, this exclusive opportunity puts you in direct contact with Ciena professionals, providing a unique chance to forge connections, gain insights, and explore potential opportunities in the dynamic world of networking.",
+				status: "More Info",
+				link: "https://www.linkedin.com/posts/cuscesoc_cienanetworkingevent-networkingopportunities-ugcPost-7117633554410262528-tRz9?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Cryptid Game Night",
+				month: "November",
+				day: "8",
+				time: "7 p.m. - 8:30 p.m. @ STM117",
+				description:
+					"Dive into the world of gaming at Cryptid Game Night on November 8th, 7pm, located at STM 117, uOttawa. Hosted by uO GDC x HtH, this thrilling event promises an evening filled with exciting games, friendly competition, and a chance to bond with fellow gaming enthusiasts.",
+				status: "More Info",
+				link: "https://www.instagram.com/p/CzC8SiONBTs/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
 			},
 			{
 				title: "Intern Panel",

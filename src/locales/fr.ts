@@ -90,6 +90,16 @@ export default {
 		title: "La Série du Hacker",
 		events: [
 			{
+				title: "Intro sur le développement de jeux",
+				month: "Septembre",
+				day: "29",
+				time: "19h00 - 21h00 @ STM 117",
+				description:
+					"Participez à une aventure immersive dans le monde du développement de jeux avec 'Level One Labs' le 29 septembre à 19h00, à la salle STM 117 de l'Université d'Ottawa. Cette session pratique, orchestrée par uO GDC x HtH, s'engage à dévoiler les mystères de la conception de jeux, la rendant accessible aussi bien aux passionnés qu'aux novices.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
+			},
+			{
 				title: "Sauvetage de CV",
 				month: "Octobre",
 				day: "10",
@@ -98,6 +108,26 @@ export default {
 					"Votre CV mérite une refonte. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès. Laissez Hack the Hill vous guider pour sauver votre CV de l'ordinaire. Rejoignez Hack the Hill pour une session dynamique dédiée à la revitalisation de vos CV!",
 				status: "Plus d'info",
 				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Événement de réseautage avec Ciena",
+				month: "Octobre",
+				day: "17",
+				time: "18h30 - 20h00 @ Ollie’s Pub & Patio",
+				description:
+					"Immergez-vous dans une soirée de réseautage exceptionnelle lors de l'événement d'interconnexion de Ciena le 17 octobre à 18h30 au Ollie's Pub & Patio, à l'Université Carleton. Organisée par SCESoc x HtH, cette opportunité exclusive vous permettra d'établir des contacts directs avec les professionnels de Ciena, offrant ainsi une occasion unique de tisser des liens, d'acquérir des connaissances et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/cuscesoc_cienanetworkingevent-networkingopportunities-ugcPost-7117633554410262528-tRz9?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Soirée de Jeu Cryptée",
+				month: "Novembre",
+				day: "8",
+				time: "19h00 - 20h30 @ STM117",
+				description:
+					"Explorez l'univers du jeu lors de la Soirée de Jeu Cryptée le 8 novembre à 19h00 au STM 117 de l'Université d'Ottawa. Présenté par uO GDC x HtH, cet événement captivant vous réserve une soirée animée, riche en jeux passionnants, compétitions amicales et l'opportunité de créer des liens avec d'autres passionnés de jeux.",
+				status: "Plus d'info",
+				link: "https://www.instagram.com/p/CzC8SiONBTs/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
 			},
 			{
 				title: "Panel de Stagiaires",
