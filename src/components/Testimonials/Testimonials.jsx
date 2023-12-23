@@ -44,7 +44,7 @@ function Testimonials() {
 			name: t("testimonials.t6.name"),
 			content: t("testimonials.t6.content"),
 			role: t("testimonials.t6.role"),
-			img: "https://media.licdn.com/dms/image/C5603AQFm5P9rsCZ8vw/profile-displayphoto-shrink_800_800/0/1594058389892?e=1708560000&v=beta&t=5kBwFlhCXnJ0ayiKwqhxGcKiESR-G005rtdvi3Vl_sw",
+			img: "headshots/testimonials/greg.png",
 		},
 	];
 
