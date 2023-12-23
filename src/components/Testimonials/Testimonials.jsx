@@ -39,6 +39,13 @@ function Testimonials() {
 			role: t("testimonials.t5.role"),
 			img: "https://media.licdn.com/dms/image/D4E03AQH_j8ydFFqCDQ/profile-displayphoto-shrink_800_800/0/1680969580815?e=1705536000&v=beta&t=nmITo1calz345C1Uqh_-om8nDE-u28pxrIjKs3oUEWo",
 		},
+		{
+			id: 6,
+			name: t("testimonials.t6.name"),
+			content: t("testimonials.t6.content"),
+			role: t("testimonials.t6.role"),
+			img: "https://media.licdn.com/dms/image/C5603AQFm5P9rsCZ8vw/profile-displayphoto-shrink_800_800/0/1594058389892?e=1708560000&v=beta&t=5kBwFlhCXnJ0ayiKwqhxGcKiESR-G005rtdvi3Vl_sw",
+		},
 	];
 
 	const [activeIndex, setActiveIndex] = useState(0);

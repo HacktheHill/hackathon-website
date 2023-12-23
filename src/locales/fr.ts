@@ -85,6 +85,12 @@ export default {
 				"J'ai apprécié l'environment, la foule et les opportunités de résoudre toutes sortes de problèmes!",
 			role: "Hacker chevroné(e) de Hack the Hill I",
 		},
+		t6: {
+			name: "Greg Suignard",
+			content:
+				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs ! J'aimerais remercier tous ceux qui ont mis de l'effort vers l'évenement et particulièrement ceux qui se sont attaqués à notre défi !",
+			role: "Canadian Tire",
+		},
 	},
 	schedule: {
 		title: "La Série du Hacker",

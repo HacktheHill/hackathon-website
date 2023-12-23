@@ -84,6 +84,12 @@ export default {
 				"I enjoyed the chill environment and I had the chance to new people and solve real-world problems.",
 			role: "Hack the Hill I Experienced Hacker",
 		},
+		t6: {
+			name: "Greg Suignard",
+			content:
+				"Amazing event and incredible work by all of the organizers! Just want to thank everyone that put in effort towards the event, and especially those that tried to take on our challenge!",
+			role: "Canadian Tire",
+		},
 	},
 	schedule: {
 		title: "The Hacker Series",
