@@ -96,74 +96,14 @@ export default {
 		title: "La Série du Hacker",
 		events: [
 			{
-				title: "Intro sur le développement de jeux",
-				month: "Septembre",
-				day: "29",
-				time: "19h00 - 21h00 @ STM 117",
+				title: "Code, Café et Cram",
+				month: "Décembre",
+				day: "2",
+				time: "18h30 - 20h30 @ STM 117",
 				description:
-					"Participez à une aventure immersive dans le monde du développement de jeux avec 'Level One Labs' le 29 septembre à 19h00, à la salle STM 117 de l'Université d'Ottawa. Cette session pratique, orchestrée par uO GDC x HtH, s'engage à dévoiler les mystères de la conception de jeux, la rendant accessible aussi bien aux passionnés qu'aux novices.",
+					"Préparez-vous à enflammer votre parcours académique alors que 'Code, Café et Cram' vous emmène sur un chemin revigorant vers la réussite. En préparation des prochains examens d'hiver, cette session unique offre aux étudiants une opportunité de se détendre et de participer à des sessions d'études complètes. Rejoignez-nous dans un espace conçu pour vous aider à libérer votre potentiel académique, où vous pourrez vous connecter à vos cours et élever votre compréhension. Préparez-vous aux examens d'hiver comme jamais auparavant - avec le mélange idéal de code, de caféine et de concentration.",
 				status: "Plus d'info",
-				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
-			},
-			{
-				title: "Sauvetage de CV",
-				month: "Octobre",
-				day: "10",
-				time: "19h00 - 21h00 @ STM 117",
-				description:
-					"Votre CV mérite une refonte. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès. Laissez Hack the Hill vous guider pour sauver votre CV de l'ordinaire. Rejoignez Hack the Hill pour une session dynamique dédiée à la revitalisation de vos CV!",
-				status: "Plus d'info",
-				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-?utm_source=share&utm_medium=member_desktop",
-			},
-			{
-				title: "Événement de réseautage avec Ciena",
-				month: "Octobre",
-				day: "17",
-				time: "18h30 - 20h00 @ Ollie’s Pub & Patio",
-				description:
-					"Immergez-vous dans une soirée de réseautage exceptionnelle lors de l'événement d'interconnexion de Ciena le 17 octobre à 18h30 au Ollie's Pub & Patio, à l'Université Carleton. Organisée par SCESoc x HtH, cette opportunité exclusive vous permettra d'établir des contacts directs avec les professionnels de Ciena, offrant ainsi une occasion unique de tisser des liens, d'acquérir des connaissances et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
-				status: "Plus d'info",
-				link: "https://www.linkedin.com/posts/cuscesoc_cienanetworkingevent-networkingopportunities-ugcPost-7117633554410262528-tRz9?utm_source=share&utm_medium=member_desktop",
-			},
-			{
-				title: "Soirée de Jeu Cryptée",
-				month: "Novembre",
-				day: "8",
-				time: "19h00 - 20h30 @ STM117",
-				description:
-					"Explorez l'univers du jeu lors de la Soirée de Jeu Cryptée le 8 novembre à 19h00 au STM 117 de l'Université d'Ottawa. Présenté par uO GDC x HtH, cet événement captivant vous réserve une soirée animée, riche en jeux passionnants, compétitions amicales et l'opportunité de créer des liens avec d'autres passionnés de jeux.",
-				status: "Plus d'info",
-				link: "https://www.instagram.com/p/CzC8SiONBTs/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
-			},
-			{
-				title: "Panel de Stagiaires",
-				month: "Novembre",
-				day: "15",
-				time: "18h30 - 20h30 @ Théâtre Bell Carleton",
-				description:
-					"Préparez-vous à une expérience enrichissante alors que Hack the Hill et IEEE Carleton unissent leurs forces pour présenter un panel composé de cinq stagiaires issus d'horizons professionnels divers. Ces stagiaires accomplis sont réunis pour partager leurs expériences et leurs idées aux multiples facettes, offrant ainsi une perspective unique sur les domaines de la technologie et de l'innovation. Attendez-vous à être à la fois informé et inspiré par la diversité et le talent exceptionnels que ces stagiaires représentent collectivement alors qu'ils vous guident dans une exploration approfondie de l'avenir de la technologie.",
-				status: "Plus d'info",
-				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF/?utm_source=share&utm_medium=member_desktop",
-			},
-			{
-				title: "Session d'information avec Nokia",
-				month: "Novembre",
-				day: "21",
-				time: "13h00 - 15h00 @ CBY A707",
-				description:
-					"Plongez dans le monde de la technologie avec notre session d'information Nokia, organisée en collaboration avec l'Association de la technologie des affaires (BTA). Explorez les dernières innovations et les idées que Nokia apporte à la table, permettant aux participants d'acquérir des connaissances concernant l'intersection des affaires et de la technologie.",
-				status: "Plus d'info",
-				link: "https://www.linkedin.com/posts/hackthehill_the-videos-dont-lie-we-had-an-awesome-activity-7132886003547082752-boIm/?utm_source=share&utm_medium=member_desktop",
-			},
-			{
-				title: "Atelier Chatbot sur la cybersécurité",
-				month: "Novembre",
-				day: "21",
-				time: "18h00 - 19h30 @ STEM117",
-				description:
-					"Découvrer le potentiel des modèles OpenAI GPT et des API Python lors de notre atelier avec l'Association des étudiants en informatique (AÉI). Les participants ont joué un rôle dans la création de leur premier chatbot de cybersécurité, en acquérant des connaissances précieuses sur l'intelligence artificielle, le traitement du langage naturel et la programmation Python. Améliorez vos compétences grâce à cette fusion innovante de cybersécurité et de développement de chatbot.",
-				status: "Plus d'info",
-				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
+				link: "https://www.tickettailor.com/events/hackthehill1/1074825",
 				disabled: true,
 			},
 			{
@@ -177,15 +117,75 @@ export default {
 				link: "https://www.linkedin.com/posts/hackthehill_hackthehill-uoctf-hackingcompetition-activity-7128839548289060864-FKsg/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
-				title: "Code, Café et Cram",
-				month: "Décembre",
-				day: "2",
-				time: "18h30 - 20h30 @ STM 117",
+				title: "Atelier Chatbot sur la cybersécurité",
+				month: "Novembre",
+				day: "21",
+				time: "18h00 - 19h30 @ STEM117",
 				description:
-					"Préparez-vous à enflammer votre parcours académique alors que 'Code, Café et Cram' vous emmène sur un chemin revigorant vers la réussite. En préparation des prochains examens d'hiver, cette session unique offre aux étudiants une opportunité de se détendre et de participer à des sessions d'études complètes. Rejoignez-nous dans un espace conçu pour vous aider à libérer votre potentiel académique, où vous pourrez vous connecter à vos cours et élever votre compréhension. Préparez-vous aux examens d'hiver comme jamais auparavant - avec le mélange idéal de code, de caféine et de concentration.",
+					"Découvrer le potentiel des modèles OpenAI GPT et des API Python lors de notre atelier avec l'Association des étudiants en informatique (AÉI). Les participants ont joué un rôle dans la création de leur premier chatbot de cybersécurité, en acquérant des connaissances précieuses sur l'intelligence artificielle, le traitement du langage naturel et la programmation Python. Améliorez vos compétences grâce à cette fusion innovante de cybersécurité et de développement de chatbot.",
 				status: "Plus d'info",
-				link: "https://www.tickettailor.com/events/hackthehill1/1074825",
+				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
 				disabled: true,
+			},
+			{
+				title: "Session d'information avec Nokia",
+				month: "Novembre",
+				day: "21",
+				time: "13h00 - 15h00 @ CBY A707",
+				description:
+					"Plongez dans le monde de la technologie avec notre session d'information Nokia, organisée en collaboration avec l'Association de la technologie des affaires (BTA). Explorez les dernières innovations et les idées que Nokia apporte à la table, permettant aux participants d'acquérir des connaissances concernant l'intersection des affaires et de la technologie.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_the-videos-dont-lie-we-had-an-awesome-activity-7132886003547082752-boIm/?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Panel de Stagiaires",
+				month: "Novembre",
+				day: "15",
+				time: "18h30 - 20h30 @ Théâtre Bell Carleton",
+				description:
+					"Préparez-vous à une expérience enrichissante alors que Hack the Hill et IEEE Carleton unissent leurs forces pour présenter un panel composé de cinq stagiaires issus d'horizons professionnels divers. Ces stagiaires accomplis sont réunis pour partager leurs expériences et leurs idées aux multiples facettes, offrant ainsi une perspective unique sur les domaines de la technologie et de l'innovation. Attendez-vous à être à la fois informé et inspiré par la diversité et le talent exceptionnels que ces stagiaires représentent collectivement alors qu'ils vous guident dans une exploration approfondie de l'avenir de la technologie.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF/?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Soirée de Jeu Cryptée",
+				month: "Novembre",
+				day: "8",
+				time: "19h00 - 20h30 @ STM117",
+				description:
+					"Explorez l'univers du jeu lors de la Soirée de Jeu Cryptée le 8 novembre à 19h00 au STM 117 de l'Université d'Ottawa. Présenté par uO GDC x HtH, cet événement captivant vous réserve une soirée animée, riche en jeux passionnants, compétitions amicales et l'opportunité de créer des liens avec d'autres passionnés de jeux.",
+				status: "Plus d'info",
+				link: "https://www.instagram.com/p/CzC8SiONBTs/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
+			},
+			{
+				title: "Événement de réseautage avec Ciena",
+				month: "Octobre",
+				day: "17",
+				time: "18h30 - 20h00 @ Ollie’s Pub & Patio",
+				description:
+					"Immergez-vous dans une soirée de réseautage exceptionnelle lors de l'événement d'interconnexion de Ciena le 17 octobre à 18h30 au Ollie's Pub & Patio, à l'Université Carleton. Organisée par SCESoc x HtH, cette opportunité exclusive vous permettra d'établir des contacts directs avec les professionnels de Ciena, offrant ainsi une occasion unique de tisser des liens, d'acquérir des connaissances et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/cuscesoc_cienanetworkingevent-networkingopportunities-ugcPost-7117633554410262528-tRz9?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Sauvetage de CV",
+				month: "Octobre",
+				day: "10",
+				time: "19h00 - 21h00 @ STM 117",
+				description:
+					"Votre CV mérite une refonte. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès. Laissez Hack the Hill vous guider pour sauver votre CV de l'ordinaire. Rejoignez Hack the Hill pour une session dynamique dédiée à la revitalisation de vos CV!",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-?utm_source=share&utm_medium=member_desktop",
+			},
+			{
+				title: "Intro sur le développement de jeux",
+				month: "Septembre",
+				day: "29",
+				time: "19h00 - 21h00 @ STM 117",
+				description:
+					"Participez à une aventure immersive dans le monde du développement de jeux avec 'Level One Labs' le 29 septembre à 19h00, à la salle STM 117 de l'Université d'Ottawa. Cette session pratique, orchestrée par uO GDC x HtH, s'engage à dévoiler les mystères de la conception de jeux, la rendant accessible aussi bien aux passionnés qu'aux novices.",
+				status: "Plus d'info",
+				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
 			},
 		],
 	},
