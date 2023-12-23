@@ -12,7 +12,7 @@ function Footer() {
 			<div className={styles.footer}>
 				<div className={styles["footer-links"]}>
 					<a
-						href="./assets/Hack-the-Hill-Constitution.pdf"
+						href="https://cdn1.hackthehill.com/legal/constitution.pdf"
 						target="_blank"
 						rel="noreferrer"
 						aria-label="Constitution"
