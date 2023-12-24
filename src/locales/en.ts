@@ -81,7 +81,7 @@ export default {
 		t5: {
 			name: "Hasin Zaman",
 			content:
-				"I enjoyed the chill environment and I had the chance to new people and solve real-world problems.",
+				"I enjoyed the chill environment and I had the chance to meet new people and solve real-world problems.",
 			role: "Hack the Hill I Experienced Hacker",
 		},
 		t6: {
