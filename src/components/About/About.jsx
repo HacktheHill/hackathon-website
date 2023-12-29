@@ -8,7 +8,7 @@ import "../../global.css";
 function About() {
 	const podcastLink =
 		"https://www.youtube.com/embed/videoseries?si=ZobjNMvDAoBIorPw&controls=0&list=PLvXySQVib-mmNoOeoORHRGz2UyeSEgj7Q&autoplay=1&loop=1&mute=0";
-	const thumbnailLink = "https://img.youtube.com/vi/un8x-gcfQUw/hqdefault.jpg";
+	const thumbnailLink = "https://img.youtube.com/vi/IQSd2UsGvrU/hqdefault.jpg";
 
 	return (
 		<div className={styles.about} id="about">
