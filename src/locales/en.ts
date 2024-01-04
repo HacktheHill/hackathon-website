@@ -30,7 +30,7 @@ export default {
 		title: "Sponsors",
 		icon_alt: "Sponsor Icon",
 		p: "Hack the Hill is made possible by our generous sponsors. Interested in supporting the capital's hackathon?",
-		button: "Sponsorship Packages",
+		button: "Become a sponsor",
 	},
 	partners: {
 		title: "Community Partners",

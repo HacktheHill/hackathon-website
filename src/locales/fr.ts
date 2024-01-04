@@ -30,7 +30,7 @@ export default {
 		title: "Commanditaires",
 		icon_alt: "Icon de Commanditaire",
 		p: "Hack the Hill est rendu possible grâce à nos généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
-		button: "Forfaits de Parrainage",
+		button: "Devenir un Commanditaire",
 	},
 	partners: {
 		title: "Partenaires Communautaires",
