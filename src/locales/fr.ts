@@ -17,7 +17,10 @@ export default {
 		h2: "Le Hackathon de la Capitale Canadienne",
 		h3: "Le Plus Grand Hackathon d'Ottawa",
 		more: "Revisiter !",
+		btn2: "Plonger dans 2024",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
+		btn2_link: "https://2024.hackthehill.com",
+		
 	},
 	about: {
 		title: "À propos de nous",
