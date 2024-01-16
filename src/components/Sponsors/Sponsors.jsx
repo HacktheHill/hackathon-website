@@ -115,7 +115,7 @@ function Sponsors() {
 						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className={styles["icon-box"]}>
 							<img
 								className={`${styles["icon"]} ${styles["icon-medium"]}`}
-								alt={t("partners.icon_alt")}
+								alt={t("collaborators.icon_alt")}
 								src={sponsor.src}
 							></img>
 						</a>
