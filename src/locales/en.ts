@@ -101,7 +101,7 @@ export default {
 				time: "6:30 p.m. - 8:30 p.m. @ STM 117",
 				description:
 					"Get ready to ignite your academic journey as 'Code, Coffee, and Cram' takes you on an invigorating path to success. In preparation for the upcoming winter exams, this unique session offers students a tranquil haven to relax and immerse themselves in focused study. The aroma of freshly brewed coffee provides the perfect backdrop to sharpen your intellect. Join us in a space designed to help you unlock your academic potential, where you can connect with your coursework and elevate your understanding. Prepare for winter exams like never before - with the ideal blend of code, caffeine, and concentration.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.tickettailor.com/events/hackthehill1/1074825",
 				disabled: true,
 			},
@@ -112,7 +112,7 @@ export default {
 				time: "12 p.m. - 4 p.m. @ CBY A03 & A04",
 				description:
 					"Join us for the ultimate cybersecurity challenge organized in collaboration with the uOttawa Cybersecurity Club. uOCTF is a thrilling Capture the Flag competition where you'll test your hacking and cybersecurity skills, requiring you to exploit vulnerabilities and solve puzzles.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.linkedin.com/posts/hackthehill_hackthehill-uoctf-hackingcompetition-activity-7128839548289060864-FKsg/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
@@ -122,7 +122,7 @@ export default {
 				time: "6 p.m. - 7:30 p.m. @ STEM117",
 				description:
 					"Unleash the power of OpenAI GPT models and Python APIs in our workshop with the Computer Science Student Association (CSSA). Participants dove into the creation of their first cybersecurity chatbot, gaining valuable insights into artificial intelligence, natural language processing, and Python programming. Elevate your skills with this innovative fusion of cybersecurity and chatbot development.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.tickettailor.com/events/hackthehill1/1065666",
 				disabled: true,
 			},
@@ -133,7 +133,7 @@ export default {
 				time: "1 p.m. - 3 p.m. @ CBY A707",
 				description:
 					"Delve into the realm of cutting-edge technology with our Nokia info session, held in collaboration of the Business Technology Association (BTA). Explore the latest innovations and insights that Nokia brings to the table, empowering participants with knowledge at the intersection of business and technology.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.linkedin.com/posts/hackthehill_the-videos-dont-lie-we-had-an-awesome-activity-7132886003547082752-boIm/?utm_source=share&utm_medium=member_desktop",
 			},
 			{
@@ -143,7 +143,7 @@ export default {
 				time: "6:30 p.m. - 8:30 p.m. @ Carleton Bell Theatre",
 				description:
 					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF?utm_source=share&utm_medium=member_desktop",
 			},
 			{
@@ -153,17 +153,17 @@ export default {
 				time: "7 p.m. - 8:30 p.m. @ STM117",
 				description:
 					"Dive into the world of gaming at Cryptid Game Night on November 8th, 7pm, located at STM 117, uOttawa. Hosted by uO GDC x HtH, this thrilling event promises an evening filled with exciting games, friendly competition, and a chance to bond with fellow gaming enthusiasts.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.instagram.com/p/CzC8SiONBTs/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
 			},
 			{
 				title: "Ciena Networking Event",
 				month: "October",
 				day: "17",
-				time: "6:30 p.m. - 8 p.m. @ Ollie’s Pub & Patio",
+				time: "6:30 p.m. - 8 p.m. @ Ollie's Pub & Patio",
 				description:
-					"Immerse yourself in an evening of unparalleled networking at the Ciena Networking Event on October 17th, 6:30pm, hosted at Ollie’s Pub & Patio, Carleton University. Presented by SCESoc x HtH, this exclusive opportunity puts you in direct contact with Ciena professionals, providing a unique chance to forge connections, gain insights, and explore potential opportunities in the dynamic world of networking.",
-				status: "More Info",
+					"Immerse yourself in an evening of unparalleled networking at the Ciena Networking Event on October 17th, 6:30pm, hosted at Ollie's Pub & Patio, Carleton University. Presented by SCESoc x HtH, this exclusive opportunity puts you in direct contact with Ciena professionals, providing a unique chance to forge connections, gain insights, and explore potential opportunities in the dynamic world of networking.",
+				status: "Details",
 				link: "https://www.linkedin.com/posts/cuscesoc_cienanetworkingevent-networkingopportunities-ugcPost-7117633554410262528-tRz9?utm_source=share&utm_medium=member_desktop",
 			},
 			{
@@ -173,7 +173,7 @@ export default {
 				time: "7 p.m. - 9 p.m. @ STM 117",
 				description:
 					"Your resume deserves a makeover. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success. Let Hack the Hill guide you in rescuing your resume from the ordinary. Join Hack the Hill for a dynamic session dedicated to revitalizing your resumes!",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-",
 			},
 			{
@@ -183,7 +183,7 @@ export default {
 				time: "7 p.m. - 9 p.m. @ STM 117",
 				description:
 					"Embark on an immersive journey into game development with LevelOne Labs on September 29th, 7pm, at STM 117, uOttawa. This hands-on session, presented by uO GDC x HtH, promises to demystify the intricacies of game design, making it accessible for enthusiasts and beginners alike.",
-				status: "More Info",
+				status: "Details",
 				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
 			},
 		],
