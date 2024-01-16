@@ -93,7 +93,7 @@ function Testimonials() {
 		<div id="testimonials" className={styles["testimonials"]}>
 			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 			<h1>{t("testimonials.title")}</h1>
-			<h3>{t("testimonials.sub_heading")}</h3>
+			<h2>{t("testimonials.sub_heading")}</h2>
 			<div className={styles["testimonial-body"]} ref={ref}>
 				<img
 					className={styles["testimonial-img"]}
