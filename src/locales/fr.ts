@@ -161,7 +161,7 @@ export default {
 				title: "Événement de réseautage avec Ciena",
 				month: "Octobre",
 				day: "17",
-				time: "18h30 - 20h00 @ Ollie’s Pub & Patio",
+				time: "18h30 - 20h00 @ Ollie's Pub & Patio",
 				description:
 					"Immergez-vous dans une soirée de réseautage exceptionnelle lors de l'événement d'interconnexion de Ciena le 17 octobre à 18h30 au Ollie's Pub & Patio, à l'Université Carleton. Organisée par SCESoc x HtH, cette opportunité exclusive vous permettra d'établir des contacts directs avec les professionnels de Ciena, offrant ainsi une occasion unique de tisser des liens, d'acquérir des connaissances et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
 				status: "Plus d'info",
