@@ -96,6 +96,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 			<button
 				className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
 				onClick={() => setSidebarOpen(!sidebarOpen)}
+				aria-label="Sidebar Icon"
 			>
 				<div></div>
 				<div></div>
