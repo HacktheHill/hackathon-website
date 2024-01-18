@@ -100,7 +100,7 @@ export default {
 				month: "Février",
 				day: "7",
 				time: "17h30 - 20h30 @ uOttawa",
-				description: "Affinez vos compétences entrepreneuriales en participant au tout premier concours de pitch de Hack the Hill, en collaboration avec BTA. Rassemblez-vous en équipe, trouvez la prochaine grande idée et peaufinez votre présentation. Avec un conférencier invité, un atelier et un groupe de juges distingués, c'est un événement à ne pas manquer si vous voulez perfectionner l'art du pitch. Inscrivez-vous en équipe ou en tant qu'individu et mettez-vous au travail pour perfectionner votre présentation !",
+				description: "Affinez vos compétences entrepreneuriales en participant au tout premier concours de pitch de Hack the Hill, en collaboration avec BTA. Rassemblez-vous en équipe, trouvez la prochaine grande idée et peaufinez votre présentation. Avec un conférencier invité, un atelier et un groupe de juges distingués, c'est un événement à ne pas manquer si vous voulez perfectionner l'art du pitch. Inscrivez-vous en équipe ou en tant qu'individu et mettez-vous au travail pour perfectionner votre présentation!",
 				status: "Détails",
 				link: "https://2024.hackthehill.com/",
 				disabled: true
@@ -110,7 +110,7 @@ export default {
 				month: "Février",
 				day: "3",
 				time: "9h00 - 22h30 @ CRX",
-				description: "Profitez d'une journée de bien-être et de piratage alors que Hack the Hill s'associe à WiE uOttawa et Carleton pour offrir un hackathon conscient d'une journée. Vivez un hackathon comme aucun autre, où nous brisons les attentes traditionnelles et offrons une toute nouvelle expérience. Avec des boissons rafraîchissantes et de la nourriture, y compris du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes en tant qu'événement incontournable du trimestre.",
+				description: "Profitez d'une journée de bien-être et de piratage alors que Hack the Hill s'associe à WiE uOttawa et Carleton pour offrir un hackathon conscient d'une journée. Vivez un hackathon comme aucun autre, où nous analysons les attentes traditionnelles et offrons une toute nouvelle expérience. Avec des boissons rafraîchissantes et de la nourriture, y compris du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes en tant qu'événement incontournable du trimestre.",
 				status: "Détails",
 				link: "https://www.instagram.com/p/C2JBCXRxo9M/",
 				disabled: false
@@ -130,7 +130,7 @@ export default {
 				month: "Janvier",
 				day: "24",
 				time: "18h30 - 20h30 @ STM 117",
-				description: "Rassemblez-vous pour une soirée informative alors que Hack the Hill collabore avec Women@Ciena pour un panel passionnant mettant en vedette 5 panélistes distingués, représentant tous des rôles différents au sein de Ciena. Écoutez-les partager leur histoire, leurs expériences et leurs succès dans l'industrie technologique et fournir des connaissances pour ceux qui sont au début de leur carrière. La diversité des rôles et des expériences vous inspirera vraiment, et c'est un événement à ne pas manquer.",
+				description: "Rassemblez-vous pour une soirée informative alors que Hack the Hill collabore avec Women@Ciena pour un panel passionnant avec 5 panélistes distingués, représentant tous des rôles différents au sein de Ciena. Écoutez-les partager leur histoire, leurs expériences et leurs succès dans l'industrie technologique et fournir des connaissances pour ceux qui sont au début de leur carrière. La diversité des rôles et des expériences vous inspirera vraiment, et c'est un événement à ne pas manquer.",
 				status: "Détails",
 				link: "https://www.instagram.com/p/C18WYezNTGT",
 				disabled: false
@@ -162,7 +162,7 @@ export default {
 				day: "25",
 				time: "12h00 - 16h00 @ CBY A03 & A04",
 				description:
-					"Rejoignez-nous pour le défi ultime de cybersécurité organisé en collaboration avec le Club de cybersécurité de l'Université d'Ottawa. uOCTF est une compétition passionnante de Capture the Flag où vous testerez vos compétences en piratage et en cybersécurité, ce qui vous obligera à exploiter des vulnérabilités et à résoudre des énigmes.",
+					"Rejoignez-nous pour le défi ultime de cybersécurité organisé en collaboration avec le Club de cybersécurité de l'Université d'Ottawa. uOCTF est une compétition passionnante de Capture the Flag où vous testerez vos compétences en hacking et en cybersécurité, ce qui vous obligera à exploiter des vulnérabilités et à résoudre des énigmes.",
 				status: "Plus d'info",
 				link: "https://www.linkedin.com/posts/hackthehill_hackthehill-uoctf-hackingcompetition-activity-7128839548289060864-FKsg/?utm_source=share&utm_medium=member_desktop",
 			},
