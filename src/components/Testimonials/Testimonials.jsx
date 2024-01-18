@@ -9,21 +9,21 @@ function Testimonials() {
 			name: t("testimonials.t1.name"),
 			content: t("testimonials.t1.content"),
 			role: t("testimonials.t1.role"),
-			img: "https://media.licdn.com/dms/image/C5603AQFpgrXO0Lnvdw/profile-displayphoto-shrink_800_800/0/1575907293069?e=1705536000&v=beta&t=1K2Kd8p-TfaFfF6hUbarN9tFV-GMVwXZ-kljdEaKx_A",
+			img: "https://media.licdn.com/dms/image/C5603AQFpgrXO0Lnvdw/profile-displayphoto-shrink_800_800/0/1575907293069?e=1710979200&v=beta&t=WASkaJhAytMkAv2IvasoS4N7wrf2hIjym7RfSofckJY",
 		},
 		{
 			id: 2,
 			name: t("testimonials.t2.name"),
 			content: t("testimonials.t2.content"),
 			role: t("testimonials.t2.role"),
-			img: "https://media.licdn.com/dms/image/D4E03AQFmj_vlNBKr9g/profile-displayphoto-shrink_800_800/0/1678194204883?e=1705536000&v=beta&t=0S90XmZooLflJp7t8PNKX9Jz6Uo_E7zcth8zhuPEcSI",
+			img: "https://media.licdn.com/dms/image/D4E03AQFmj_vlNBKr9g/profile-displayphoto-shrink_800_800/0/1678194204883?e=1710979200&v=beta&t=-8_THT5DFd97CeXlJEluQo74uEr-Rjgq2XEi-gerw8k",
 		},
 		{
 			id: 3,
 			name: t("testimonials.t3.name"),
 			content: t("testimonials.t3.content"),
 			role: t("testimonials.t3.role"),
-			img: "https://media.licdn.com/dms/image/D4E03AQF5bPQP0O7QOw/profile-displayphoto-shrink_800_800/0/1683226303156?e=1705536000&v=beta&t=yF8-O_Ztk04r-fu2HwVs-SGbB9QoXC9IjRZKByvFqzI",
+			img: "https://media.licdn.com/dms/image/D4E03AQF5bPQP0O7QOw/profile-displayphoto-shrink_800_800/0/1683226303156?e=1710979200&v=beta&t=vnScv9JWtj90T32hAy2RCqJTloT1hzF9Pq_sMyiMZ1w",
 		},
 		{
 			id: 4,
@@ -37,7 +37,7 @@ function Testimonials() {
 			name: t("testimonials.t5.name"),
 			content: t("testimonials.t5.content"),
 			role: t("testimonials.t5.role"),
-			img: "https://media.licdn.com/dms/image/D4E03AQH_j8ydFFqCDQ/profile-displayphoto-shrink_800_800/0/1680969580815?e=1705536000&v=beta&t=nmITo1calz345C1Uqh_-om8nDE-u28pxrIjKs3oUEWo",
+			img: "https://media.licdn.com/dms/image/D4E03AQH_j8ydFFqCDQ/profile-displayphoto-shrink_800_800/0/1680969580815?e=1710979200&v=beta&t=vOXZS26XmwPPU2ZRG2n-JY-kYlemw9dhVLh80We2DA4",
 		},
 		{
 			id: 6,
