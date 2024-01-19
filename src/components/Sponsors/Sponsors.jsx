@@ -27,6 +27,7 @@ import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
 import voiceflow from "/Logos/voiceflow.svg";
+import StickerMule from "/Logos/StickerMule.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
 import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
 
@@ -49,6 +50,7 @@ function Sponsors() {
 				{ href: "https://www.echo3d.com/", src: echo3d, alt: "echo3D" },
 				{ href: "https://balsamiq.com/", src: balsamiq, alt: "balsamiq" },
 				{ href: "https://www.voiceflow.com/", src: voiceflow, alt: "Voiceflow" },
+				{ href: "https://mule.to/p5ni", src: StickerMule, alt: "StickerMule" },
 			],
 		},
 		collaborators: [
