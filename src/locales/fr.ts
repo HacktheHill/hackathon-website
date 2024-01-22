@@ -100,50 +100,55 @@ export default {
 				month: "Février",
 				day: "7",
 				time: "17h30 - 20h30 @ uOttawa",
-				description: "Affinez vos compétences entrepreneuriales en participant au tout premier concours de pitch de Hack the Hill, en collaboration avec BTA. Rassemblez-vous en équipe, trouvez la prochaine grande idée et peaufinez votre présentation. Avec un conférencier invité, un atelier et un groupe de juges distingués, c'est un événement à ne pas manquer si vous voulez perfectionner l'art du pitch. Inscrivez-vous en équipe ou en tant qu'individu et mettez-vous au travail pour perfectionner votre présentation!",
+				description:
+					"Affinez vos compétences entrepreneuriales en participant au tout premier concours de pitch de Hack the Hill, en collaboration avec BTA. Rassemblez-vous en équipe, trouvez la prochaine grande idée et peaufinez votre présentation. Avec un conférencier invité, un atelier et un groupe de juges distingués, c'est un événement à ne pas manquer si vous voulez perfectionner l'art du pitch. Inscrivez-vous en équipe ou en tant qu'individu et mettez-vous au travail pour perfectionner votre présentation!",
 				status: "Détails",
 				link: "https://2024.hackthehill.com/",
-				disabled: true
+				disabled: true,
 			},
 			{
 				title: "HackHers",
 				month: "Février",
 				day: "3",
 				time: "9h00 - 22h30 @ CRX",
-				description: "Profitez d'une journée de bien-être et de piratage alors que Hack the Hill s'associe à WiE uOttawa et Carleton pour offrir un hackathon conscient d'une journée. Vivez un hackathon comme aucun autre, où nous analysons les attentes traditionnelles et offrons une toute nouvelle expérience. Avec des boissons rafraîchissantes et de la nourriture, y compris du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes en tant qu'événement incontournable du trimestre.",
+				description:
+					"Profitez d'une journée de bien-être et de piratage alors que Hack the Hill s'associe à WiE uOttawa et Carleton pour offrir un hackathon conscient d'une journée. Vivez un hackathon comme aucun autre, où nous analysons les attentes traditionnelles et offrons une toute nouvelle expérience. Avec des boissons rafraîchissantes et de la nourriture, y compris du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes en tant qu'événement incontournable du trimestre.",
 				status: "Détails",
 				link: "https://www.instagram.com/p/C2JBCXRxo9M/",
-				disabled: false
+				disabled: false,
 			},
 			{
 				title: "Kinaxis x CCSS x HTH Événement de Réseautage",
 				month: "Janvier",
 				day: "30",
 				time: "18h30 - 20h30 @ Richcraft Hall 2200",
-				description: "Rejoignez-nous pour une expérience de réseautage exclusive organisée par Kinaxis, CCSS et Hack the Hill. Élevez votre carrière aux côtés de professionnels chevronnés et d'enthousiastes partageant les mêmes idées. Cet événement dynamique offre plus qu'un simple réseautage traditionnel - attendez-vous à des conversations engageantes, des informations précieuses et l'opportunité de créer des liens durables. Ne manquez pas cette soirée transformative où les connexions mènent à d'innombrables possibilités.",
+				description:
+					"Rejoignez-nous pour une expérience de réseautage exclusive organisée par Kinaxis, CCSS et Hack the Hill. Élevez votre carrière aux côtés de professionnels chevronnés et d'enthousiastes partageant les mêmes idées. Cet événement dynamique offre plus qu'un simple réseautage traditionnel - attendez-vous à des conversations engageantes, des informations précieuses et l'opportunité de créer des liens durables. Ne manquez pas cette soirée transformative où les connexions mènent à d'innombrables possibilités.",
 				status: "Détails",
 				link: "https://www.instagram.com/p/C2NX8P7x7B1/",
-				disabled: false
+				disabled: false,
 			},
 			{
 				title: "HTH x Women @ Ciena Panel",
 				month: "Janvier",
 				day: "24",
 				time: "18h30 - 20h30 @ STM 117",
-				description: "Rassemblez-vous pour une soirée informative alors que Hack the Hill collabore avec Women@Ciena pour un panel passionnant avec 5 panélistes distingués, représentant tous des rôles différents au sein de Ciena. Écoutez-les partager leur histoire, leurs expériences et leurs succès dans l'industrie technologique et fournir des connaissances pour ceux qui sont au début de leur carrière. La diversité des rôles et des expériences vous inspirera vraiment, et c'est un événement à ne pas manquer.",
+				description:
+					"Rassemblez-vous pour une soirée informative alors que Hack the Hill collabore avec Women@Ciena pour un panel passionnant avec 5 panélistes distingués, représentant tous des rôles différents au sein de Ciena. Écoutez-les partager leur histoire, leurs expériences et leurs succès dans l'industrie technologique et fournir des connaissances pour ceux qui sont au début de leur carrière. La diversité des rôles et des expériences vous inspirera vraiment, et c'est un événement à ne pas manquer.",
 				status: "Détails",
 				link: "https://www.instagram.com/p/C18WYezNTGT",
-				disabled: false
+				disabled: false,
 			},
 			{
 				title: "HTH x DESoc Atelier de Soudure",
 				month: "Janvier",
 				day: "18",
 				time: "18h00 - 20h00 @ Mackenzie Building 4377",
-				description: "Venez participer à un atelier excitant en collaboration avec DESoc Carleton. Apprenez l'une des bases du matériel informatique en développant vos compétences en soudure, avec l'aide de mentors expérimentés de Carleton.",
+				description:
+					"Venez participer à un atelier excitant en collaboration avec DESoc Carleton. Apprenez l'une des bases du matériel informatique en développant vos compétences en soudure, avec l'aide de mentors expérimentés de Carleton.",
 				status: "Détails",
 				link: "https://www.instagram.com/p/C1265ENRWhO/",
-				disabled: false
+				disabled: false,
 			},
 			{
 				title: "Code, Café et Cram",
@@ -238,6 +243,8 @@ export default {
 				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
 			},
 		],
+		less: "Afficher moins",
+		more: "Afficher plus",
 	},
 	faq: {
 		title: "Foire aux questions",

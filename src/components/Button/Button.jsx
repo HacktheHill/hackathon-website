@@ -15,11 +15,15 @@ export default function Button({ children, href, target, offset, ...rest }) {
 		);
 	} else if (href) {
 		return (
-			<a href={href} target={target} referrer={target === "_blank" ? "noreferrer" : ""} className={styles.button}>
+			<a href={href} target={target} rel={target === "_blank" ? "noreferrer" : ""} className={styles.button}>
 				<InnerButton {...rest}>{children}</InnerButton>
 			</a>
 		);
 	} else {
-		return <InnerButton {...rest}>{children}</InnerButton>;
+		return (
+			<InnerButton className={styles.button} {...rest}>
+				{children}
+			</InnerButton>
+		);
 	}
 }
