@@ -46,10 +46,11 @@
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
-.hero-heading h3 {
+.hero-heading h2 {
 	color: var(--hero-heading);
 	font-family: Coolvetica;
 	font-weight: 500;
+	font-size: clamp(1rem, 4vmin, 1.75rem);
 }
 
 .hero-heading h5 {

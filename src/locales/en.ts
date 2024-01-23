@@ -90,6 +90,9 @@ export default {
 				"Amazing event and incredible work by all of the organizers! Just want to thank everyone that put in effort towards the event, and especially those that tried to take on our challenge!",
 			role: "Canadian Tire",
 		},
+		aria_label_next: "Next Slide",
+		aria_label_prev: "Previous Slide",
+		aria_label_dot: "Testimonial Dot",
 	},
 	schedule: {
 		title: "The Hacker Series",
@@ -99,7 +102,8 @@ export default {
 				month: "February",
 				day: "7",
 				time: "5:30 p.m. - 8:30 p.m. @ uOttawa",
-				description: "Refine your entrepreneurial skills by participating in Hack the Hill’s first ever startup pitch competition, in collaboration with BTA. Gather in a team, come up with the next big idea and hone your pitch. With a guest speaker, a workshop and a distinguished group of judges, it’s an event you won’t want to miss if you want to perfect the art of the pitch. Sign up as a team, or individual and get to work perfecting!",
+				description:
+					"Refine your entrepreneurial skills by participating in Hack the Hill’s first ever startup pitch competition, in collaboration with BTA. Gather in a team, come up with the next big idea and hone your pitch. With a guest speaker, a workshop and a distinguished group of judges, it’s an event you won’t want to miss if you want to perfect the art of the pitch. Sign up as a team, or individual and get to work perfecting!",
 				status: "Details",
 				link: "https://www.instagram.com/p/C2Sti09Ra1n/",
 				disabled: false,
@@ -109,7 +113,8 @@ export default {
 				month: "February",
 				day: "3",
 				time: "9:00 a.m. - 10:30 p.m. @ CRX",
-				description: "Enjoy a day of wellness and hacking as Hack the Hill partners with WiE uOttawa and Carleton to provide a mindful, one day hackathon. Experience a hackathon like no other, as we breakdown traditional expectations and provide an all new experience. With refreshing beverages and food, which includes tea and iced coffee, a wellness room and a special workshop, this hackathon will defy expectations as the must go to event of the term. ",
+				description:
+					"Enjoy a day of wellness and hacking as Hack the Hill partners with WiE uOttawa and Carleton to provide a mindful, one day hackathon. Experience a hackathon like no other, as we breakdown traditional expectations and provide an all new experience. With refreshing beverages and food, which includes tea and iced coffee, a wellness room and a special workshop, this hackathon will defy expectations as the must go to event of the term. ",
 				status: "Details",
 				link: "https://www.instagram.com/p/C2JBCXRxo9M/",
 				disabled: false,
@@ -119,7 +124,8 @@ export default {
 				month: "January",
 				day: "30",
 				time: "6:30 p.m. - 8:30 p.m. @ Richcraft Hall 2200",
-				description: "Join us for an exclusive networking experience hosted by Kinaxis, CCSS, and Hack the Hill. Elevate your career alongside seasoned professionals and like-minded enthusiasts. This dynamic event offers more than traditional networking – expect engaging conversations, valuable insights, and the opportunity to form lasting connections. Don't miss this transformative evening where connections lead to endless possibilities.",
+				description:
+					"Join us for an exclusive networking experience hosted by Kinaxis, CCSS, and Hack the Hill. Elevate your career alongside seasoned professionals and like-minded enthusiasts. This dynamic event offers more than traditional networking – expect engaging conversations, valuable insights, and the opportunity to form lasting connections. Don't miss this transformative evening where connections lead to endless possibilities.",
 				status: "Details",
 				link: "https://www.instagram.com/p/C2NX8P7x7B1/",
 				disabled: false,
@@ -129,7 +135,8 @@ export default {
 				month: "January",
 				day: "24",
 				time: "6:30 p.m. - 8:30 p.m. @ STM 117",
-				description: "Gather around for an informative night as Hack the Hill collaborates with Women@Ciena for an exciting panel featuring 5 distinguished guest panelists, all representing different roles within Ciena. Listen in as they share their story, experiences and successes within the tech industry and provide knowledge for those in the early stages of their career. The diversity in roles and experience will truly inspire you, and it’s an event not worth missing.",
+				description:
+					"Gather around for an informative night as Hack the Hill collaborates with Women@Ciena for an exciting panel featuring 5 distinguished guest panelists, all representing different roles within Ciena. Listen in as they share their story, experiences and successes within the tech industry and provide knowledge for those in the early stages of their career. The diversity in roles and experience will truly inspire you, and it’s an event not worth missing.",
 				status: "Details",
 				link: "https://www.instagram.com/p/C18WYezNTGT",
 				disabled: false,
@@ -139,7 +146,8 @@ export default {
 				month: "January",
 				day: "18",
 				time: "6:00 p.m. - 8:00 p.m. @ Mackenzie Building 4377",
-				description: "Come out and get hands on with an exciting workshop in collaboration with DESoc Carleton. Learn one of the fundamentals of hardware as you develop your soldering skills, with the help of experienced mentors at Carleton.",
+				description:
+					"Come out and get hands on with an exciting workshop in collaboration with DESoc Carleton. Learn one of the fundamentals of hardware as you develop your soldering skills, with the help of experienced mentors at Carleton.",
 				status: "Details",
 				link: "https://www.instagram.com/p/C1265ENRWhO/",
 				disabled: false,

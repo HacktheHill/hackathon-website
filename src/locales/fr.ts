@@ -91,6 +91,9 @@ export default {
 				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs ! J'aimerais remercier tous ceux qui ont mis de l'effort vers l'évenement et particulièrement ceux qui se sont attaqués à notre défi !",
 			role: "Canadian Tire",
 		},
+		aria_label_next: "Prochain Témoignage",
+		aria_label_prev: "Témoignage Précédent",
+		aria_label_dot: "Point Témoignage",
 	},
 	schedule: {
 		title: "La Série du Hacker",

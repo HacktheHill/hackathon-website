@@ -117,7 +117,11 @@ function Testimonials() {
 				))}
 			</div>
 			<div className={styles["carousel-control"]}>
-				<button onClick={prevSlide} className={styles["prev-button"]}></button>
+				<button
+					onClick={prevSlide}
+					className={styles["prev-button"]}
+					aria-label={t("testimonials.aria_label_prev")}
+				></button>
 				<div className={styles["carousel-dots"]}>
 					{testimonialData.map((_, index) => (
 						<button
@@ -125,10 +129,15 @@ function Testimonials() {
 							className={index === activeIndex ? styles.active : ""}
 							onClick={() => setActiveIndex(index)}
 							onKeyDown={() => setActiveIndex(index)}
+							aria-label={t("testimonials.aria_label_dot")}
 						></button>
 					))}
 				</div>
-				<button onClick={nextSlide} className={styles["next-button"]}></button>
+				<button
+					onClick={nextSlide}
+					className={styles["next-button"]}
+					aria-label={t("testimonials.aria_label_next")}
+				></button>
 			</div>
 			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 		</div>

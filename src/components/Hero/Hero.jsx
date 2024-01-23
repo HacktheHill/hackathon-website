@@ -112,7 +112,7 @@ function Hero() {
 				<h1 id="Hero">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
-				<h3>{t("hero.h2")}</h3>
+				<h2>{t("hero.h2")}</h2>
 				<form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
