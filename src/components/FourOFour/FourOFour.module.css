@@ -42,7 +42,6 @@
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
-	font-size: 0.8rem;
 }
 
 .text-404 a:hover {

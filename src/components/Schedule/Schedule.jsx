@@ -6,11 +6,13 @@ import styles from "./Schedule.module.css";
 function Schedule() {
 	const events = t("schedule.events");
 
+	const [numberVisible, setNumberVisible] = useState(3);
+
 	return (
 		<div id="schedule" className={styles["schedule"]}>
 			<h1>{t("schedule.title")}</h1>
 			<div className={styles["schedule-list"]}>
-				{events.map((event, index) => (
+				{events.slice(0, numberVisible).map((event, index) => (
 					<div className={styles["schedule-list-item"]} key={index}>
 						<Clouds />
 						<div className={styles["event-card"]}>
@@ -20,8 +22,8 @@ function Schedule() {
 						<section className={styles["event-details"]}>
 							<div className={styles["event-header"]}>
 								<div className={styles["event-heading"]}>
-									<h1 className={styles["event-title"]}>{event.title}</h1>
-									<div className={styles["sub-title"]}>{event.time}</div>
+									<h2 className={styles["event-title"]}>{event.title}</h2>
+									<h4 className={styles["sub-title"]}>{event.time}</h4>
 								</div>
 								{event.disabled ? (
 									<Button disabled href={event.link}>
@@ -37,6 +39,15 @@ function Schedule() {
 						</section>
 					</div>
 				))}
+				<Button
+					onClick={() =>
+						setNumberVisible(
+							numberVisible >= events.length ? 3 : Math.min(numberVisible + 3, events.length),
+						)
+					}
+				>
+					{numberVisible >= events.length ? t("schedule.less") : t("schedule.more")}{" "}
+				</Button>
 			</div>
 			<img className={styles["sun"]} src="/SVGs/Schedule/sun.svg" alt="sun"></img>
 		</div>

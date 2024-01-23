@@ -237,6 +237,8 @@ export default {
 				link: "https://www.linkedin.com/posts/hackthehill_you-all-have-spoken-and-we-have-listened-activity-7113260301239627777-JTEZ?utm_source=share&utm_medium=member_desktop",
 			},
 		],
+		less: "Show Less",
+		more: "Show More",
 	},
 	faq: {
 		title: "Frequently Asked Questions",

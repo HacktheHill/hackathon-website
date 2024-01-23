@@ -46,16 +46,14 @@
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
 }
 
-.hero-heading h2 {
+.hero-heading h3 {
 	color: var(--hero-heading);
 	font-family: Coolvetica;
-	font-size: clamp(1rem, 3.5vmin, 5rem);
 	font-weight: 500;
 }
 
-.hero-heading h3 {
+.hero-heading h5 {
 	color: var(--hero-heading);
-	font-size: clamp(1rem, 2vmin, 5rem);
 	font-weight: normal;
 }
 
@@ -105,8 +103,8 @@
 	white-space: nowrap;
 	border: none;
 	font-family: Coolvetica;
-	font-size: 1.125rem;
 	border-radius: 1rem;
+	font-size: 1.125rem;
 	padding: 0.75rem;
 }
 
@@ -131,7 +129,6 @@
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 	border: 5px solid var(--dark-red);
 	background-color: var(--count-down-background-color);
-	font-size: 1.5rem;
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 1s ease-in-out;
@@ -177,7 +174,6 @@
 }
 
 .countdown-item h3 {
-	font-size: 1.5rem;
 	font-family: Rubik;
 	font-weight: normal;
 }
@@ -194,7 +190,6 @@
 
 	.countdown-dialog-small {
 		display: flex;
-		font-size: 1rem;
 		top: calc(30vmin + max(28rem, 20vmin));
 	}
 }

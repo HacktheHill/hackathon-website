@@ -1,7 +1,9 @@
-.button button {
+.button button, button.button {
+	box-sizing: border-box;
 	background: linear-gradient(180deg, var(--light-tertiary-color) 0%, var(--light-primary-color) 100%);
 	border: none;
 	border-radius: 2rem;
+	width: fit-content;
 	transition: all 0.3s ease-in-out;
 	color: var(--dark-primary-color);
 	font-size: 1.5rem;
@@ -30,4 +32,11 @@
 
 .button button:disabled:active {
 	transform: none;
+}
+
+@media screen and (max-width: 768px) {
+	.button button {
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+	}
 }

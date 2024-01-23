@@ -26,10 +26,9 @@
 	margin: 2rem 0;
 }
 
-.testimonials h2 {
+.testimonials h3 {
 	font-family: Rubik;
-	font-size: 1.5rem;
-	font-weight: 450;
+	font-weight: 400;
 	text-align: center;
 	width: 75%;
 }
@@ -43,14 +42,15 @@
 	padding: 2rem;
 	gap: 4rem;
 	font-family: Rubik;
-	font-size: 1.5rem;
 	overflow-x: hidden;
 }
 
-.testimonial-container {
-	width: 100%;
-	display: flex;
-	gap: 2rem;
+.testimonial-content {
+	font-weight: 400;
+}
+
+.testimonial-provider {
+	font-weight: 600;
 }
 
 .testimonial-img {
@@ -99,6 +99,21 @@
 
 .carousel-navigation:hover {
 	opacity: 1;
+}
+
+.testimonial-container {
+	flex: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+
+.testimonial-content-container {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .carousel-dots {
@@ -179,7 +194,18 @@
 
 @media screen and (max-width: 510px) {
 	.testimonials h3 {
-		font-size: 1rem;
+		width: 90%;
+	}
+	.testimonials h4 {
+		width: 100%;
+	}
+
+	.testimonial-img {
+		height: 11rem;
+		width: 11rem;
+		min-height: 11rem;
+		min-width: 11rem;
+		box-shadow: none;
 	}
 
 	.testimonial-img {
