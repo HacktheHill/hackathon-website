@@ -31,3 +31,10 @@
 .button button:disabled:active {
 	transform: none;
 }
+
+@media screen and (max-width: 768px) {
+	.button button {
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+	}
+}
