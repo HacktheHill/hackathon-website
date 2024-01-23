@@ -56,7 +56,6 @@ function Hero() {
 		}
 	};
 
-	
 	// For parallax scrolling effect
 	const [scrollY, setScrollY] = useState(0);
 	const heroRef = useRef(null);
@@ -104,16 +103,16 @@ function Hero() {
 			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]}>
-					<h3 className={styles["location"]}>
+					<h5 className={styles["location"]}>
 						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} />{" "}
 						{t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
-					</h3>
+					</h5>
 				</div>
 				<h1 id="Hero">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
-				<h2>{t("hero.h2")}</h2>
+				<h3>{t("hero.h2")}</h3>
 				<form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}

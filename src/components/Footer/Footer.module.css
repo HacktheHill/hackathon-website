@@ -76,5 +76,6 @@
 	.media-links,
 	.copyright {
 		justify-content: center;
+		text-align: center;
 	}
 }

@@ -14,7 +14,6 @@
 
 .header {
 	font-family: Coolvetica;
-	font-size: 3rem;
 	font-weight: normal;
 	position: relative;
 }
@@ -34,7 +33,7 @@
 .answer {
 	color: var(--text-color);
 	font-family: Rubik;
-	font-size: 1.25rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 }
 
@@ -45,6 +44,11 @@
 
 	.faq-columns {
 		flex-direction: column;
+	}
+
+	.question,
+	.answer {
+		font-size: 0.8rem;
 	}
 }
 

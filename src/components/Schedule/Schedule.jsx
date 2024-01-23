@@ -20,8 +20,8 @@ function Schedule() {
 						<section className={styles["event-details"]}>
 							<div className={styles["event-header"]}>
 								<div className={styles["event-heading"]}>
-									<h1 className={styles["event-title"]}>{event.title}</h1>
-									<div className={styles["sub-title"]}>{event.time}</div>
+									<h2 className={styles["event-title"]}>{event.title}</h2>
+									<h4 className={styles["sub-title"]}>{event.time}</h4>
 								</div>
 								{event.disabled ? (
 									<Button disabled href={event.link}>
