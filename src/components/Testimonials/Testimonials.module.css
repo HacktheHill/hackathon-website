@@ -171,7 +171,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-
 	.left-leaves,
 	.right-leaves {
 		display: none;
@@ -181,5 +180,13 @@
 @media screen and (max-width: 510px) {
 	.testimonials h3 {
 		font-size: 1rem;
+	}
+
+	.testimonial-img {
+		height: 11rem;
+		width: 11rem;
+		min-height: 11rem;
+		min-width: 11rem;
+		box-shadow: none;
 	}
 }
