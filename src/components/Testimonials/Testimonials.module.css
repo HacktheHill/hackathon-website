@@ -4,6 +4,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	isolation: isolate;
 }
 
 .left-leaves,
@@ -40,6 +42,7 @@
 	grid-auto-columns: 100%;
 	width: 70%;
 	padding: 2rem;
+	margin: 2rem 0;
 	gap: 4rem;
 	font-family: Rubik;
 	overflow-x: hidden;
@@ -104,10 +107,9 @@
 .testimonial-container {
 	flex: 100%;
 	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+	flex-direction: row;
+	gap: 2rem;
 }
-
 
 .testimonial-content-container {
 	margin-top: auto;
@@ -214,5 +216,8 @@
 		min-height: 11rem;
 		min-width: 11rem;
 		box-shadow: none;
+	}
+	.testimonial-body {
+		margin: 0;
 	}
 }
