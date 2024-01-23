@@ -106,8 +106,8 @@
 .sun {
 	position: absolute;
 	z-index: -1;
-	bottom: -10rem;
 	left: -10rem;
+	top: 25rem;
 }
 
 @media only screen and (max-width: 1100px) {
