@@ -93,7 +93,7 @@ function Testimonials() {
 		<div id="testimonials" className={styles["testimonials"]}>
 			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 			<h1>{t("testimonials.title")}</h1>
-			<h2>{t("testimonials.sub_heading")}</h2>
+			<h3>{t("testimonials.sub_heading")}</h3>
 			<div className={styles["testimonial-body"]} ref={ref}>
 				<img
 					className={styles["testimonial-img"]}
@@ -102,10 +102,10 @@ function Testimonials() {
 				/>
 				<div className={styles["testimonial-container"]}>
 					<div className={styles["testimonial-content-container"]}>
-						<p className={styles["testimonial-content"]}>{testimonialData[activeIndex].content}</p>
-						<p className={styles["testimonial-provider"]}>
+						<h4 className={styles["testimonial-content"]}>{testimonialData[activeIndex].content}</h4>
+						<h4 className={styles["testimonial-provider"]}>
 							{testimonialData[activeIndex].name}, {testimonialData[activeIndex].role}
-						</p>
+						</h4>
 					</div>
 					<div className={styles["carousel-control"]}>
 						<button
