@@ -28,11 +28,12 @@
 	margin: 2rem 0;
 }
 
-.testimonials h3 {
+.testimonials h2 {
 	font-family: Rubik;
 	font-weight: 400;
 	text-align: center;
 	width: 75%;
+	font-size: 1.5rem;
 }
 
 .testimonial-body {
@@ -69,10 +70,12 @@
 
 .testimonial-content {
 	font-weight: 400;
+	font-size: 1.25rem;
 }
 
 .testimonial-provider {
 	font-weight: 450;
+	font-size: 1.25rem;
 }
 
 .carousel-control {
@@ -166,11 +169,23 @@
 
 	.testimonial-img {
 		height: 12rem;
-
 	}
 
 	.left-leaves,
 	.right-leaves {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.testimonials h2 {
+		font-size: 1.25rem;
+	}
+
+	.testimonial-content {
+		font-size: 1rem;
+	}
+	.testimonial-provider {
+		font-size: 1rem;
 	}
 }

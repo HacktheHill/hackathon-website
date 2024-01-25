@@ -92,7 +92,7 @@ function Testimonials() {
 		<div id="testimonials" className={styles["testimonials"]}>
 			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 			<h1>{t("testimonials.title")}</h1>
-			<h3>{t("testimonials.sub_heading")}</h3>
+			<h2>{t("testimonials.sub_heading")}</h2>
 			<div className={styles["testimonial-body"]} ref={ref}>
 				{testimonialData.map((_, index) => (
 					<div
@@ -108,10 +108,10 @@ function Testimonials() {
 							alt={testimonialData[index].name}
 						/>
 						<div className={styles["testimonial-text"]}>
-							<h4 className={styles["testimonial-content"]}>{testimonialData[index].content}</h4>
-							<h4 className={styles["testimonial-provider"]}>
+							<p className={styles["testimonial-content"]}>{testimonialData[index].content}</p>
+							<p className={styles["testimonial-provider"]}>
 								{testimonialData[index].name}, {testimonialData[index].role}
-							</h4>
+							</p>
 						</div>
 					</div>
 				))}

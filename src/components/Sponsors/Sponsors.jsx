@@ -80,7 +80,7 @@ function Sponsors() {
 				<div className={styles.header}>
 					<img className={styles["maple-leaf"]} src={maple1} alt="maple leaf"></img>
 					<div className={styles["header-column"]}>
-						<h3 className={styles.text}>{t("sponsors.p")}</h3>
+						<p className={styles.text}>{t("sponsors.p")}</p>
 						<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
 					</div>
 					<img className={styles["maple-leaf"]} src={maple2} alt="maple leaf"></img>

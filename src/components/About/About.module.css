@@ -11,10 +11,11 @@
 	gap: 1rem;
 }
 
-.about-text h4 {
+.about-text p {
 	color: var(--light-primary-color);
 	font-family: Rubik;
 	font-weight: 400;
+	font-size: 1.25rem;
 }
 
 .frame {
@@ -71,5 +72,9 @@
 @media screen and (max-width: 510px) {
 	.frame {
 		margin: 2rem 1rem;
+	}
+
+	.about-text p {
+		font-size: 1rem;
 	}
 }

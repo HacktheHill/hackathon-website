@@ -95,6 +95,7 @@
 
 .sub-title {
 	font-weight: 450;
+	font-size: 1.25rem;
 	color: var(--light-primary-color);
 }
 
@@ -153,5 +154,9 @@
 
 	.schedule-list-item {
 		gap: 0.5rem;
+	}
+
+	.sub-title {
+		font-size: 1rem;
 	}
 }
