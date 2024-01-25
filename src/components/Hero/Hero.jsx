@@ -68,12 +68,10 @@ function Hero() {
 				</h1>
 				<h2>{t("hero.h2")}</h2>
 				<h3>{t("hero.h3")}</h3>
-				<Button href={t("hero.btn2_link")} target={"_blank"} offset={-160} style={{ marginBottom: '-3rem',marginTop: '-1rem',}}>
-				<h1>{t("hero.btn2")}</h1>
-				</Button>
-				<Button href={t("hero.link")} target={"_blank"} offset={-160} style={{ marginTop: '-5rem'}}>
-					{t("hero.more")}
-				</Button>			
+				<div className={styles["hero-buttons"]}>
+					<Button href={t("hero.2024_link")}>{t("hero.2024")}</Button>
+					<Button href={t("hero.link")}>{t("hero.more")}</Button>
+				</div>
 			</div>
 			<div
 				className={styles["hero-img"]}

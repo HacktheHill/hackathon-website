@@ -67,6 +67,11 @@
 	margin-bottom: -35%;
 }
 
+.hero-buttons {
+	display: flex;
+	gap: 1rem;
+}
+
 .countdown-dialog {
 	box-sizing: border-box;
 	position: absolute;

@@ -17,9 +17,9 @@ export default {
 		h2: "Canada's Capital Hackathon",
 		h3: "Ottawa's Largest Hackathon",
 		more: "Rewatch!",
-		btn2: "Dive into 2024",
+		"2024": "Visit 2024",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
-		btn2_link: "https://2024.hackthehill.com",
+		"2024_link": "https://2024.hackthehill.com",
 	},
 	about: {
 		title: "About Us",
