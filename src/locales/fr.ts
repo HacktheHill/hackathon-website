@@ -99,17 +99,6 @@ export default {
 		title: "La Série du Hacker",
 		events: [
 			{
-				title: "BTA x HTH: Concours de Pitch Technovate",
-				month: "Février",
-				day: "7",
-				time: "17h30 - 20h30 @ uOttawa",
-				description:
-					"Affinez vos compétences entrepreneuriales en participant au tout premier concours de pitch de Hack the Hill, en collaboration avec BTA. Rassemblez-vous en équipe, trouvez la prochaine grande idée et peaufinez votre présentation. Avec un conférencier invité, un atelier et un groupe de juges distingués, c'est un événement à ne pas manquer si vous voulez perfectionner l'art du pitch. Inscrivez-vous en équipe ou en tant qu'individu et mettez-vous au travail pour perfectionner votre présentation!",
-				status: "Détails",
-				link: "https://2024.hackthehill.com/",
-				disabled: true,
-			},
-			{
 				title: "HackHers",
 				month: "Février",
 				day: "3",
