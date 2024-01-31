@@ -98,17 +98,6 @@ export default {
 		title: "The Hacker Series",
 		events: [
 			{
-				title: "BTA x HTH: Technovate Pitch Competition",
-				month: "February",
-				day: "7",
-				time: "5:30 p.m. - 8:30 p.m. @ uOttawa",
-				description:
-					"Refine your entrepreneurial skills by participating in Hack the Hill’s first ever startup pitch competition, in collaboration with BTA. Gather in a team, come up with the next big idea and hone your pitch. With a guest speaker, a workshop and a distinguished group of judges, it’s an event you won’t want to miss if you want to perfect the art of the pitch. Sign up as a team, or individual and get to work perfecting!",
-				status: "Details",
-				link: "https://www.instagram.com/p/C2Sti09Ra1n/",
-				disabled: false,
-			},
-			{
 				title: "HackHers",
 				month: "February",
 				day: "3",
