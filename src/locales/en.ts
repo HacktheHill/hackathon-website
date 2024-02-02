@@ -90,6 +90,12 @@ export default {
 				"Amazing event and incredible work by all of the organizers! Just want to thank everyone that put in effort towards the event, and especially those that tried to take on our challenge!",
 			role: "Canadian Tire",
 		},
+		t7: {
+			name: "Elmira Khani",
+			content:
+				"Working with the Hack the Hill has been a fantastic experience. The team has been so organized, hard-working, and professional - they helped us host a wonderful event and we were blown away by the amount of support we received. Looking forward to future collaborations!",
+			role: "Kinaxis",
+		},
 		aria_label_next: "Next Slide",
 		aria_label_prev: "Previous Slide",
 		aria_label_dot: "Testimonial Dot",

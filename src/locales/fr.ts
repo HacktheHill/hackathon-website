@@ -91,6 +91,12 @@ export default {
 				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs ! J'aimerais remercier tous ceux qui ont mis de l'effort vers l'évenement et particulièrement ceux qui se sont attaqués à notre défi !",
 			role: "Canadian Tire",
 		},
+		t7: {
+			name: "Elmira Khani",
+			content:
+				"Travailler avec Hack the Hill a été une expérience fantastique. L'équipe est tellement organisée, dédiée et professionnelle - ils nous ont aidé à organiser un évenement incroyable, et nous avons été époustouflés par le montant de support reçu. Au plaisir de futures collaborations !",
+			role: "Kinaxis",
+		},
 		aria_label_next: "Prochain Témoignage",
 		aria_label_prev: "Témoignage Précédent",
 		aria_label_dot: "Point Témoignage",

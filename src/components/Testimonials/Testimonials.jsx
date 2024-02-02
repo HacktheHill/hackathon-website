@@ -19,6 +19,13 @@ function Testimonials() {
 			img: "https://cdn1.hackthehill.com/testimonials/greg-suignard.webp",
 		},
 		{
+			id: 7,
+			name: t("testimonials.t7.name"),
+			content: t("testimonials.t7.content"),
+			role: t("testimonials.t7.role"),
+			img: "https://cdn1.hackthehill.com/testimonials/elmira-khani.webp",
+		},
+		{
 			id: 1,
 			name: t("testimonials.t1.name"),
 			content: t("testimonials.t1.content"),
@@ -38,13 +45,6 @@ function Testimonials() {
 			content: t("testimonials.t4.content"),
 			role: t("testimonials.t4.role"),
 			img: "https://cdn1.hackthehill.com/testimonials/nyah-wagner.webp",
-		},
-		{
-			id: 5,
-			name: t("testimonials.t5.name"),
-			content: t("testimonials.t5.content"),
-			role: t("testimonials.t5.role"),
-			img: "https://cdn1.hackthehill.com/testimonials/hasin-zaman.webp",
 		},
 	];
 
