@@ -112,7 +112,7 @@ export default {
 				description:
 					"Profitez d'une journée de bien-être et de piratage alors que Hack the Hill s'associe à WiE uOttawa et Carleton pour offrir un hackathon conscient d'une journée. Vivez un hackathon comme aucun autre, où nous analysons les attentes traditionnelles et offrons une toute nouvelle expérience. Avec des boissons rafraîchissantes et de la nourriture, y compris du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes en tant qu'événement incontournable du trimestre.",
 				status: "Détails",
-				link: "https://www.instagram.com/p/C2JBCXRxo9M/",
+				link: "https://hack-hers.devpost.com/?ref_feature=challenge&ref_medium=discover",
 				disabled: false,
 			},
 			{
