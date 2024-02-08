@@ -105,14 +105,14 @@ export default {
 		title: "La Série du Hacker",
 		events: [
 			{
-				title: "HackHers",
+				title: "BTA x HTH: Concours de Pitch Technovate",
 				month: "Février",
-				day: "3",
-				time: "9h00 - 22h30 @ CRX",
+				day: "25",
+				time: "18h00 - 21h00 @ uOttawa",
 				description:
-					"Profitez d'une journée de bien-être et de piratage alors que Hack the Hill s'associe à WiE uOttawa et Carleton pour offrir un hackathon conscient d'une journée. Vivez un hackathon comme aucun autre, où nous analysons les attentes traditionnelles et offrons une toute nouvelle expérience. Avec des boissons rafraîchissantes et de la nourriture, y compris du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes en tant qu'événement incontournable du trimestre.",
+					"Affinez vos compétences entrepreneuriales en participant au tout premier concours de pitch de Hack the Hill, en collaboration avec BTA. Rassemblez-vous en équipe, trouvez la prochaine grande idée et peaufinez votre présentation. Avec un conférencier invité, un atelier et un groupe de juges distingués, c'est un événement à ne pas manquer si vous voulez perfectionner l'art du pitch. Inscrivez-vous en équipe ou en tant qu'individu et mettez-vous au travail pour perfectionner votre présentation!",
 				status: "Détails",
-				link: "https://hack-hers.devpost.com/?ref_feature=challenge&ref_medium=discover",
+				link: "https://www.instagram.com/p/C3D4HMxRT0m/?img_index=1",
 				disabled: false,
 			},
 			{
