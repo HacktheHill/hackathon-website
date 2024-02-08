@@ -126,12 +126,12 @@ const Headshots = () => {
 				/>
 
 				<Headshot
-					name="Emma"
+					name="Ethan"
 					team={t("headshot.team_design")}
-					image="/headshots/design/emma.webp"
+					image="/headshots/design/ethan.webp"
 					role={t("headshot.role_coord_f")}
 					instagram="et.tangg"
-					linkedin="emmatang-"
+					linkedin="etang-"
 				/>
 
 				<Headshot
