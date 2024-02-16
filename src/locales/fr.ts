@@ -116,6 +116,18 @@ export default {
 				disabled: false,
 			},
 			{
+				title: "HackHers",
+				month: "Février",
+				day: "3",
+				time: "9h00 - 22h30 @ CRX",
+				description:
+					"Profitez d'une journée de bien-être et de hacking à l'occasion du partenariat de Hack the Hill avec WIE uOttawa et Carleton pour offrir un hackathon d'une seule journée consciente. Expérimentez un hackathon comme aucun autre, en brisant les attentes traditionnelles et en offrant une toute nouvelle expérience. Avec des boissons et des aliments rafraîchissants, dont du thé et du café glacé, une salle de bien-être et un atelier spécial, ce hackathon défiera les attentes et deviendra l'événement incontournable du trimestre.",
+				status: "Détails",
+				link: "https://hack-hers.devpost.com/?ref_feature=challenge&ref_medium=discover",
+				disabled: false,
+				exception: true,
+			},
+			{
 				title: "Kinaxis x CCSS x HTH Événement de Réseautage",
 				month: "Janvier",
 				day: "30",

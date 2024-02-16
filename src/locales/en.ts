@@ -124,6 +124,7 @@ export default {
 				status: "Details",
 				link: "https://hack-hers.devpost.com/?ref_feature=challenge&ref_medium=discover",
 				disabled: false,
+				exception: true,
 			},
 			{
 				title: "Kinaxis x CCSS x HTH Networking Event",
