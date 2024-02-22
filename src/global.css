@@ -8,6 +8,9 @@
 	--medium-tertiary-color: #c11f25;
 	--dark-primary-color: #84010b;
 	--dark-secondary-color: #650014;
+	--hackhers-primary-color: #cb007d;
+	--hackhers-secondary-color: #eaeaea;
+	--hackhers-btn: #da389c;
 
 	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
 	--button-gradient: linear-gradient(90deg, var(--light-tertiary-color), transparent) var(--light-secondary-color);

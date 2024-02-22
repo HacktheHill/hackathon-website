@@ -17,11 +17,16 @@
 	margin: 0 auto;
 }
 
-.schedule-list-item {
+.schedule-list-item, .exception-event {
 	display: grid;
 	grid-template-columns: 10rem auto;
 	gap: 2rem;
 	position: relative;
+}
+
+.exception-event .event-card {
+	background-color: var(--hackhers-primary-color);
+	border-color: var(--hackhers-secondary-color);
 }
 
 .cloud {
@@ -56,11 +61,19 @@
 	color: var(--light-primary-color);
 }
 
+.exception-event .event-month {
+	color: var(--hackhers-secondary-color);
+}
+
 .event-day {
 	margin: auto;
 	font-size: 6rem;
 	font-weight: 500;
 	color: var(--light-primary-color);
+}
+
+.exception-event .event-day {
+	color: var(--hackhers-secondary-color);
 }
 
 .event-details {
@@ -93,15 +106,32 @@
 	font-family: Coolvetica;
 }
 
+.exception-event .event-title {
+	color: var(--hackhers-secondary-color);
+}
+
 .sub-title {
 	font-weight: 450;
 	font-size: 1.25rem;
 	color: var(--light-primary-color);
 }
 
+.exception-event .sub-title {
+	color: var(--hackhers-secondary-color);
+}
+
 .event-description {
 	margin: 0;
 	color: var(--light-primary-color);
+}
+
+.exception-event .event-description {
+	color: var(--hackhers-secondary-color);
+}
+
+.exception-btn {
+	background: var(--hackhers-btn) !important;
+	color: var(--hackhers-secondary-color) !important;
 }
 
 .sun {

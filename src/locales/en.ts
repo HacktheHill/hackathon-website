@@ -120,7 +120,7 @@ export default {
 				day: "3",
 				time: "9:00 a.m. - 10:30 p.m. @ CRX",
 				description:
-					"Enjoy a day of wellness and hacking as Hack the Hill partners with WiE uOttawa and Carleton to provide a mindful, one day hackathon. Experience a hackathon like no other, as we breakdown traditional expectations and provide an all new experience. With refreshing beverages and food, which includes tea and iced coffee, a wellness room and a special workshop, this hackathon will defy expectations as the must go to event of the term. ",
+					"Enjoy a day of wellness and hacking as Hack the Hill partners with WIE uOttawa and Carleton to provide a mindful, one day hackathon. Experience a hackathon like no other, as we breakdown traditional expectations and provide an all new experience. With refreshing beverages and food, which includes tea and iced coffee, a wellness room and a special workshop, this hackathon will defy expectations as the must go to event of the term. ",
 				status: "Details",
 				link: "https://hack-hers.devpost.com/?ref_feature=challenge&ref_medium=discover",
 				disabled: false,
