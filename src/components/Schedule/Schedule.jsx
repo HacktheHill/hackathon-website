@@ -13,36 +13,40 @@ function Schedule() {
 			<h1>{t("schedule.title")}</h1>
 			<div className={styles["schedule-list"]}>
 				{events.slice(0, numberVisible).map((event, index) => (
-					<div className={`${styles["schedule-list-item"]} ${event.exception ? styles["exception-event"] : ''}`} key={index}>	
+					<div
+						className={`${styles["schedule-list-item"]} ${
+							event.exception ? styles["exception-event"] : ""
+						}`}
+						key={index}
+					>
 						<Clouds />
-					<div className={styles["event-card"]}>
-						<div className={styles["event-month"]}>{event.month}</div>
-						<div className={styles["event-day"]}>{event.day}</div>
-					</div>
-					<section className={styles["event-details"]}>
-						<div className={styles["event-header"]}>
-							<div className={styles["event-heading"]}>
-								<h2 className={styles["event-title"]}>{event.title}</h2>
-								<h3 className={styles["sub-title"]}>{event.time}</h3>
-							</div>
-							{event.disabled ? (
-							    <Button disabled href={event.link}>
-							      {event.status}
-							    </Button>
-							  ) : event.exception ? (
-							    <Button className={styles["exception-btn"]}  href={event.link}>
-							      {event.status}
-							    </Button>
-							  ) : (
-							    <Button href={event.link} target="_blank">
-							      {event.status}
-							    </Button>
-							  )
-							}
+						<div className={styles["event-card"]}>
+							<div className={styles["event-month"]}>{event.month}</div>
+							<div className={styles["event-day"]}>{event.day}</div>
 						</div>
-						<p className={styles["event-description"]}>{event.description}</p>
-					</section>
-				</div>
+						<section className={styles["event-details"]}>
+							<div className={styles["event-header"]}>
+								<div className={styles["event-heading"]}>
+									<h2 className={styles["event-title"]}>{event.title}</h2>
+									<h3 className={styles["sub-title"]}>{event.time}</h3>
+								</div>
+								{event.disabled ? (
+									<Button disabled href={event.link}>
+										{event.status}
+									</Button>
+								) : event.exception ? (
+									<Button className={styles["exception-btn"]} href={event.link}>
+										{event.status}
+									</Button>
+								) : (
+									<Button href={event.link} target="_blank">
+										{event.status}
+									</Button>
+								)}
+							</div>
+							<p className={styles["event-description"]}>{event.description}</p>
+						</section>
+					</div>
 				))}
 				<Button
 					onClick={() =>

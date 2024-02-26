@@ -17,11 +17,21 @@
 	margin: 0 auto;
 }
 
-.schedule-list-item, .exception-event {
+.schedule-list-item {
 	display: grid;
 	grid-template-columns: 10rem auto;
 	gap: 2rem;
 	position: relative;
+}
+
+.exception-event {
+	border: 2px solid var(--hackhers-secondary-color);
+	border-radius: 10px;
+	padding: 2rem;
+	background: url(/SVGs/Schedule/hackhers-bg.webp);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .exception-event .event-card {
