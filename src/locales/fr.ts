@@ -5,7 +5,7 @@ export default {
 			sponsors: "Commanditaires",
 			hacker: "La Série du Hacker",
 			collaborators: "Collaborateurs",
-			faq: "FAQ",
+			faq: "FaQ",
 			testimonials: "Témoignages",
 		},
 		aria_label: "Barre de Navigation",
