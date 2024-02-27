@@ -104,6 +104,28 @@ export default {
 		title: "The Hacker Series",
 		events: [
 			{
+				title: "IEEE x HTH: ECAW (Embedded Code Architecture Workshop)",
+				month: "March",
+				day: "14",
+				time: "5:30 p.m. - 8:30 p.m. @ CBY A04",
+				description:
+					"Come out to an enriching hardware workshop, hosted by Eric Eaton of IEEE uOttawa. Delve into the intricacies of hardware design and master the art of crafting scalable projects in embedded environments. Gain invaluable insight into real-world use cases, overcome common challenges encountered in embedded systems, and explore the nuances of microcontrollers and threading. Broaden your expertise in hardware and code architecture through this hands-on learning experience.",
+				status: "Register",
+				link: "",
+				disabled: true,
+			},
+			{
+				title: "Print and Pride",
+				month: "March",
+				day: "6",
+				time: "6:30 p.m. - 8:30 p.m. @ MakerSpace uOttawa",
+				description:
+					"Welcome to Print & Pride, an event crafted just for 2SLGBTQIA+ students! Get ready for a chill night where we're all about creating a safe space to hang out and 3D print some queer crafts. Take your pick from four designs, tweak them to match your vibe, and let your creativity shine. It's not just about the crafts; it's about being you, connecting with awesome folks, and soaking up the good vibes. Join us for a night of fun, self-expression, and queer-friendly camaraderie at Print & Pride!",
+				status: "Register",
+				link: "https://www.tickettailor.com/events/hackthehill1/1154311",
+				disabled: false,
+			},
+			{
 				title: "BTA x HTH: Technovate Pitch Competition",
 				month: "February",
 				day: "25",

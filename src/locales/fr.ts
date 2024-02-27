@@ -105,6 +105,28 @@ export default {
 		title: "La Série du Hacker",
 		events: [
 			{
+				title: "IEEE x HTH Atelier sur l'architecture de code intégré",
+				month: "Mars",
+				day: "14",
+				time: "17h30 - 20h30 @ uOttawa",
+				description:
+					"Venez participer à un atelier enrichissant sur le matériel, animé par Eric Eaton de l'IEEE uOttawa. Plongez dans les subtilités de la conception matérielle et maîtrisez l'art de concevoir des projets évolutifs dans des environnements intégrés. Obtenez un aperçu inestimable des cas d'utilisation du monde réel, surmontez les défis courants rencontrés dans les systèmes intégrés et explorez les nuances des microcontrôleurs et du threading. Élargissez votre expertise en matière d'architecture matérielle et de code grâce à cette expérience d'apprentissage pratique.",
+				status: "S'inscrire",
+				link: "",
+				disabled: true,
+			},
+			{
+				title: "Print and Pride",
+				month: "Mars",
+				day: "6",
+				time: "18h30 - 20h30 @ MakerSpace uOttawa",
+				description:
+					"Bienvenue à Print & Pride, un événement conçu spécialement pour les étudiants 2SLGBTQIA+! Préparez-vous à une soirée relaxante où nous créerons un espace sécuritaire pour passer du temps ensemble et imprimer en 3D des objets d'artisanat queer. Choisis parmi quatre modèles, modifie-les pour qu'ils correspondent à ton style et laisse libre cours à ta créativité. Il ne s'agit pas seulement d'artisanat ; il s'agit d'être soi-même, de se connecter avec des gens géniaux et de s'imprégner des bonnes vibrations. Rejoignez-nous pour une nuit de plaisir, d'expression personnelle et de camaraderie queer-friendly à Print & Pride!",
+				status: "S'inscrire",
+				link: "https://www.tickettailor.com/events/hackthehill1/1154311",
+				disabled: false,
+			},
+			{
 				title: "BTA x HTH: Concours de Pitch Technovate",
 				month: "Février",
 				day: "25",
