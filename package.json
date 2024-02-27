@@ -22,6 +22,7 @@
 		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@mui/material": "^5.11.2",
 		"@nanostores/react": "^0.4.1",
+		"aos": "^2.3.4",
 		"astro": "^1.7.2",
 		"nanostores": "^0.7.3",
 		"package.json": "^0.0.0",

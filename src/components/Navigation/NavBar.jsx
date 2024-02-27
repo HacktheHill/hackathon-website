@@ -1,8 +1,12 @@
 import { Link } from "react-scroll";
 import { locale, t } from "../../i18n";
 import logo from "/Logos/hackthehill-logo.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./NavBar.module.css";
+
+//animations
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 	const [language, setLanguage] = useState(true);
@@ -40,6 +44,10 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 		},
 	];
 
+	useEffect(() => {
+		AOS.init({});
+	}, []);
+
 	return (
 		<nav className={style["navbar"]} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
 			<Link
@@ -52,10 +60,15 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				duration={500}
 				href="#hero"
 			>
-				<img alt="Logo" src={logo}></img>
+				<img alt="Logo" src={logo} data-aos="fade-down" data-aos-duration="1000"></img>
 			</Link>
 
-			<div className={style["left-side-buttons"]}>
+			<div
+				className={style["left-side-buttons"]}
+				data-aos="fade-down"
+				data-aos-duration="1000"
+				data-aos-delay="300"
+			>
 				<button
 					className={style["square-button"]}
 					type="submit"
@@ -76,8 +89,13 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 			</div>
 
 			<ul>
-				{links.map(link => (
-					<li key={link.text}>
+				{links.map((link, index) => (
+					<li
+						key={link.text}
+						data-aos="fade-down"
+						data-aos-duration="1000"
+						data-aos-delay={200 + index * 100}
+					>
 						<Link
 							className={style["link"]}
 							activeClass={style["active"]}

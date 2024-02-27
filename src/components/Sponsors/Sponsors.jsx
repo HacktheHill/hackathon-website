@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
@@ -30,6 +30,10 @@ import voiceflow from "/Logos/voiceflow.svg";
 import StickerMule from "/Logos/StickerMule.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
 import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
+
+//animations
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Sponsors() {
 	const data = {
@@ -73,17 +77,39 @@ function Sponsors() {
 		],
 	};
 
+	useEffect(() => {
+		AOS.init({});
+	}, []);
+
 	return (
 		<>
 			<div id="sponsors" className={`${styles["sponsors-collaborators"]} ${styles["sponsors"]}`}>
-				<h1>{t("sponsors.title")}</h1>
+				<h1 data-aos="fade-up" data-aos-duration="800">
+					{t("sponsors.title")}
+				</h1>
 				<div className={styles.header}>
-					<img className={styles["maple-leaf"]} src={maple1} alt="maple leaf"></img>
+					<img
+						className={styles["maple-leaf"]}
+						src={maple1}
+						alt="maple leaf"
+						data-aos="fade-right"
+						data-aos-duration="800"
+					></img>
 					<div className={styles["header-column"]}>
-						<p className={styles.text}>{t("sponsors.p")}</p>
-						<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
+						<p className={styles.text} data-aos="fade-up" data-aos-duration="800">
+							{t("sponsors.p")}
+						</p>
+						<Button href="mailto:sponsorship@hackthehill.com" data-aos="fade-up" data-aos-duration="800">
+							{t("sponsors.button")}
+						</Button>
 					</div>
-					<img className={styles["maple-leaf"]} src={maple2} alt="maple leaf"></img>
+					<img
+						className={styles["maple-leaf"]}
+						src={maple2}
+						alt="maple leaf"
+						data-aos="fade-left"
+						data-aos-duration="800"
+					></img>
 				</div>
 
 				<div className={styles["icons"]}>
@@ -96,6 +122,8 @@ function Sponsors() {
 									target="_blank"
 									rel="noreferrer"
 									className={styles["icon-box"]}
+									data-aos="fade-up"
+									data-aos-duration="800"
 								>
 									<img
 										className={`${styles["icon"]} ${
@@ -111,10 +139,20 @@ function Sponsors() {
 				</div>
 			</div>
 			<div id="collaborators" className={`${styles["sponsors-collaborators"]} ${styles["collaborators"]}`}>
-				<h1>{t("collaborators.title")}</h1>
+				<h1 data-aos="fade-up" data-aos-duration="800">
+					{t("collaborators.title")}
+				</h1>
 				<div className={styles["icons-row"]}>
 					{data.collaborators.map((sponsor, i) => (
-						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className={styles["icon-box"]}>
+						<a
+							key={i}
+							href={sponsor.href}
+							target="_blank"
+							rel="noreferrer"
+							className={styles["icon-box"]}
+							data-aos="fade-up"
+							data-aos-duration="800"
+						>
 							<img
 								className={`${styles["icon"]} ${styles["icon-medium"]}`}
 								alt={t("collaborators.icon_alt")}

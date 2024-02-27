@@ -1,8 +1,12 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import faq from "../../assets/faq-leaves.svg?raw";
 import { t } from "../../i18n";
 import styles from "./FAQ.module.css";
+
+//animations
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState([]);
@@ -78,10 +82,16 @@ export default function FAQ() {
 		},
 	];
 
+	useEffect(() => {
+		AOS.init({});
+	}, []);
+
 	return (
 		<div id="faq" className={styles.container}>
 			<div className={styles.header}>
-				<h1>{t("faq.title")}</h1>
+				<h1 data-aos="fade-right" data-aos-duration="800">
+					{t("faq.title")}
+				</h1>
 				<div
 					className={styles["faq-img"]}
 					dangerouslySetInnerHTML={{
@@ -90,7 +100,7 @@ export default function FAQ() {
 				></div>
 			</div>
 			<div className={styles["faq-columns"]}>
-				<div className={styles.column}>
+				<div className={styles.column} data-aos="fade-right" data-aos-duration="800">
 					{quesAns.slice(0, Math.ceil(quesAns.length / 2)).map((item, i) => (
 						<Accordion
 							key={i}
@@ -162,7 +172,7 @@ export default function FAQ() {
 						</Accordion>
 					))}
 				</div>
-				<div className={styles.column}>
+				<div className={styles.column} data-aos="fade-right" data-aos-duration="800">
 					{quesAns.slice(Math.ceil(quesAns.length / 2)).map((item, i) => (
 						<Accordion
 							key={i}

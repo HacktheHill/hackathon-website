@@ -8,6 +8,10 @@ import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
 import LocationPin from "/SVGs/location-pin.svg";
 
+//animations
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 // 7:00 PM EST on September 20th, 2024
 const EVENT_START_DATE = new Date("2024-09-20T19:00:00-05:00");
 // 9:00 AM EST on February 22nd, 2024
@@ -30,6 +34,10 @@ function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
 	const [email, setEmail] = useState("");
+
+	useEffect(() => {
+		AOS.init();
+	}, []);
 
 	useEffect(() => {
 		setTime(Date.now());
@@ -102,17 +110,19 @@ function Hero() {
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
 			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
-				<div className={styles["location-date-heading"]}>
+				<div className={styles["location-date-heading"]} data-aos="fade-up" data-aos-duration="800">
 					<h5 className={styles["location"]}>
 						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} />{" "}
 						{t("hero.hybrid")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h5>
 				</div>
-				<h1 id="Hero">
+				<h1 id="Hero" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
-				<h2>{t("hero.h2")}</h2>
+				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+					{t("hero.h2")}
+				</h2>
 				<form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
@@ -125,8 +135,18 @@ function Hero() {
 						required
 						placeholder={t("hero.email_placeholder")}
 						onChange={event => setEmail(event.target.value)}
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="400"
 					/>
-					<button type="submit" className={styles["hero-btn"]} target={"_blank"}>
+					<button
+						type="submit"
+						className={styles["hero-btn"]}
+						target={"_blank"}
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="500"
+					>
 						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</form>

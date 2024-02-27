@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { t } from "../../i18n";
 import styles from "./About.module.css";
 import leftLeaves from "/SVGs/About/left-leaves.svg";
 import rightLeaves from "/SVGs/About/right-leaves.svg";
 import "../../global.css";
 
+//animations
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function About() {
 	const podcastLink =
 		"https://www.youtube.com/embed/videoseries?si=ZobjNMvDAoBIorPw&controls=0&list=PLvXySQVib-mmNoOeoORHRGz2UyeSEgj7Q&autoplay=1&loop=1&mute=0";
 	const thumbnailLink = "https://img.youtube.com/vi/IQSd2UsGvrU/hqdefault.jpg";
 
+	useEffect(() => {
+		AOS.init({});
+	}, []);
+
 	return (
 		<div className={styles.about} id="about">
 			<div className={styles["about-text"]}>
-				<h1>{t("about.title")}</h1>
-				<p>{t("about.p1")}</p>
-				<p>{t("about.p2")}</p>
-				<p>{t("about.p3")}</p>
+				<h1 data-aos="fade-right" data-aos-duration="800">
+					{t("about.title")}
+				</h1>
+				<p data-aos="fade-right" data-aos-duration="800">
+					{t("about.p1")}
+				</p>
+				<p data-aos="fade-right" data-aos-duration="800">
+					{t("about.p2")}
+				</p>
+				<p data-aos="fade-right" data-aos-duration="800">
+					{t("about.p3")}
+				</p>
 			</div>
-			<div className={styles.frame}>
+			<div className={styles.frame} data-aos="fade-left" data-aos-duration="800">
 				<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 				<iframe
 					src={podcastLink}

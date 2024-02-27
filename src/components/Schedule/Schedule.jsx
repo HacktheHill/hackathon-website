@@ -3,14 +3,24 @@ import { t } from "../../i18n";
 import Button from "../Button/Button";
 import styles from "./Schedule.module.css";
 
+//animations
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function Schedule() {
 	const events = t("schedule.events");
 
 	const [numberVisible, setNumberVisible] = useState(3);
 
+	useEffect(() => {
+		AOS.init({});
+	}, []);
+
 	return (
 		<div id="schedule" className={styles["schedule"]}>
-			<h1>{t("schedule.title")}</h1>
+			<h1 data-aos="fade-right" data-aos-duration="800">
+				{t("schedule.title")}
+			</h1>
 			<div className={styles["schedule-list"]}>
 				{events.slice(0, numberVisible).map((event, index) => (
 					<div
@@ -24,7 +34,7 @@ function Schedule() {
 							<div className={styles["event-month"]}>{event.month}</div>
 							<div className={styles["event-day"]}>{event.day}</div>
 						</div>
-						<section className={styles["event-details"]}>
+						<section className={styles["event-details"]} data-aos="zoom-in" data-aos-duration="1000">
 							<div className={styles["event-header"]}>
 								<div className={styles["event-heading"]}>
 									<h2 className={styles["event-title"]}>{event.title}</h2>
@@ -54,6 +64,8 @@ function Schedule() {
 							numberVisible >= events.length ? 3 : Math.min(numberVisible + 3, events.length),
 						)
 					}
+					data-aos="zoom-in"
+					data-aos-duration="800"
 				>
 					{numberVisible >= events.length ? t("schedule.less") : t("schedule.more")}{" "}
 				</Button>
