@@ -138,7 +138,7 @@ export default {
 				disabled: false,
 			},
 			{
-				title: "HTH x Women @ Ciena Panel",
+				title: "Women @ Ciena Panel x HTH",
 				month: "January",
 				day: "24",
 				time: "6:30 p.m. - 8:30 p.m. @ STM 117",
@@ -149,7 +149,7 @@ export default {
 				disabled: false,
 			},
 			{
-				title: "HTH x DESoc Soldering Workshop",
+				title: "DESoc Soldering Workshop x HTH",
 				month: "January",
 				day: "18",
 				time: "6:00 p.m. - 8:00 p.m. @ Mackenzie Building 4377",

@@ -139,7 +139,7 @@ export default {
 				disabled: false,
 			},
 			{
-				title: "HTH x Women @ Ciena Panel",
+				title: "Panel Women @ Ciena x HTH",
 				month: "Janvier",
 				day: "24",
 				time: "18h30 - 20h30 @ STM 117",
