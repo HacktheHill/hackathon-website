@@ -1,8 +1,8 @@
-svg :is(#leaf-3_3, #leaf-2_2){
+svg :is(#leaf-3_3, #leaf-2_2) {
 	animation: leaf 3s linear forwards;
 }
 
-svg :is(#leaf-1_3, #leaf-2_3){
+svg :is(#leaf-1_3, #leaf-2_3) {
 	animation: leaf 8s linear forwards;
 }
 
@@ -14,11 +14,11 @@ svg :is(#leaf-2_4, #leaf-1_3) {
 	animation: disappearleaf 3s linear forwards;
 }
 
-svg :is(#leaf-1, #leaf-2, #leaf-3){
+svg :is(#leaf-1, #leaf-2, #leaf-3) {
 	animation: leafDrop 3s linear forwards;
 }
 
-svg #countdown{
+svg #countdown {
 	animation: halo 10s linear infinite alternate;
 	transform-box: fill-box;
 	transform-origin: center;
@@ -63,16 +63,15 @@ svg :is(#bird-1, #bird-3, #bird-4, #bird2-new) {
 
 svg #bird-2 {
 	animation: flying 5s ease-in forwards;
-
 }
 /* bird-2_new was added by hand in svg to animate bird */
 
-svg #Bird-Fly-Down{
+svg #Bird-Fly-Down {
 	animation: coming 9s forwards;
-} 
+}
 
-svg #Bird-Hover{
-	animation: flap 1s linear infinite alternate
+svg #Bird-Hover {
+	animation: flap 1s linear infinite alternate;
 }
 
 svg #bird-4 {
@@ -117,7 +116,7 @@ svg :is(#cathedral-light, #SupremeCourtLeftLight, #supremeCourtRightLight) {
 	0% {
 		transform: translate(-0.2vw, -1vh);
 	}
-	
+
 	100% {
 		transform: translate(0, 0);
 	}
@@ -205,11 +204,10 @@ svg :is(#cathedral-light, #SupremeCourtLeftLight, #supremeCourtRightLight) {
 	0% {
 		transform: translate3d(200px, 100px, 0);
 		opacity: 0;
-		transform: rotate(-5deg)
-		
+		transform: rotate(-5deg);
 	}
 	100% {
-		opacity: 1;
+		opacity: 0.3;
 		transform: rotate(0deg);
 	}
 }
