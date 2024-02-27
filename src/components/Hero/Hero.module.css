@@ -76,7 +76,6 @@
 	font-family: Rubik;
 	color: var(--dark-primary-color);
 	background-color: var(--light-tertiary-color);
-	transition: all 0.3s ease-in-out;
 }
 
 .hero-input:hover,
@@ -84,6 +83,7 @@
 	outline: none;
 	box-shadow: 0 0 0 3px var(--dark-primary-color);
 	background-color: var(--light-secondary-color);
+	transition: 0.1s ease;
 }
 
 .hero-input::placeholder {
