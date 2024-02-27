@@ -45,7 +45,7 @@
 	padding: 2rem;
 	gap: 4rem;
 	font-family: Rubik;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .testimonial-img {
