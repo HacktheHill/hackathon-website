@@ -130,7 +130,12 @@ function Testimonials() {
 					</div>
 				))}
 			</div>
-			<div className={styles["carousel-control"]} data-aos="fade-up" data-aos-duration="800">
+			<div
+				className={styles["carousel-control"]}
+				data-aos="fade-up"
+				data-aos-duration="800"
+				data-aos-offset="-100"
+			>
 				<button
 					onClick={prevSlide}
 					className={styles["prev-button"]}
