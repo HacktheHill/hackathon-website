@@ -34,12 +34,12 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 		},
 		{
 			to: "collaborators",
-			offset: -120,
+			offset: -150,
 			text: t("navbar.links.collaborators"),
 		},
 		{
 			to: "faq",
-			offset: -120,
+			offset: -275,
 			text: t("navbar.links.faq"),
 		},
 	];
