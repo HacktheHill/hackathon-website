@@ -45,7 +45,7 @@ function Sponsors() {
 			medium: [
 				{ href: "https://blackberry.com/", src: Blackberry, alt: "Blackberry" },
 				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
-				{ href: "https://www.lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
+				{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
 			],
 			small: [
 				{ href: "https://about.google", src: Google, alt: "Google" },
