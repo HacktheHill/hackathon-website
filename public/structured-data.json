@@ -78,7 +78,7 @@
 		"priceCurrency": "CAD",
 		"validFrom": "2023-03-03",
 		"validThrough": "2023-03-05",
-		"url": "https://hackthehill.com/"
+		"url": "https://2023.hackthehill.com/"
 	},
 	"organizer": {
 		"@type": "Organization",
@@ -101,7 +101,7 @@
 				"name": "French"
 			}
 		],
-		"logo": "https://hackthehill.com/Logos/hackthehill-logo.svg",
+		"logo": "https://2023.hackthehill.com/Logos/hackthehill-logo.svg",
 		"name": "Hack the Hill",
 		"sameAs": [
 			"https://www.facebook.com/canadascapitalhackathon",
@@ -111,7 +111,7 @@
 			"https://www.linkedin.com/company/hackthehill",
 			"https://www.youtube.com/@hackthehill"
 		],
-		"url": "https://hackthehill.com/"
+		"url": "https://2023.hackthehill.com/"
 	},
 	"performer": {
 		"@type": "PerformingGroup",
