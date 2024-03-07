@@ -111,8 +111,8 @@ export default {
 				description:
 					"Come out to an enriching hardware workshop, hosted by Eric Eaton of IEEE uOttawa. Delve into the intricacies of hardware design and master the art of crafting scalable projects in embedded environments. Gain invaluable insight into real-world use cases, overcome common challenges encountered in embedded systems, and explore the nuances of microcontrollers and threading. Broaden your expertise in hardware and code architecture through this hands-on learning experience.",
 				status: "Register",
-				link: "",
-				disabled: true,
+				link: "https://buytickets.at/hackthehill1/1173101",
+				disabled: false,
 			},
 			{
 				title: "Print and Pride",

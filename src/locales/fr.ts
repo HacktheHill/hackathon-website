@@ -112,8 +112,8 @@ export default {
 				description:
 					"Venez participer à un atelier enrichissant sur le matériel, animé par Eric Eaton de l'IEEE uOttawa. Plongez dans les subtilités de la conception matérielle et maîtrisez l'art de concevoir des projets évolutifs dans des environnements intégrés. Obtenez un aperçu inestimable des cas d'utilisation du monde réel, surmontez les défis courants rencontrés dans les systèmes intégrés et explorez les nuances des microcontrôleurs et du threading. Élargissez votre expertise en matière d'architecture matérielle et de code grâce à cette expérience d'apprentissage pratique.",
 				status: "S'inscrire",
-				link: "",
-				disabled: true,
+				link: "https://buytickets.at/hackthehill1/1173101",
+				disabled: false,
 			},
 			{
 				title: "Print and Pride",
