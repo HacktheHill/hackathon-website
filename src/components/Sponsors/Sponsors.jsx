@@ -5,7 +5,7 @@ import styles from "./Sponsors.module.css";
 import Blackberry from "/Logos/Blackberry.svg";
 import CSE from "/Logos/CSE.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
-import CCSS from "/Logos/CCSS.png";
+import CCSS from "/Logos/ccss.png";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
 import Ciena from "/Logos/Ciena.svg";
