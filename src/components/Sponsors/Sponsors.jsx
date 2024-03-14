@@ -5,6 +5,7 @@ import styles from "./Sponsors.module.css";
 import Blackberry from "/Logos/Blackberry.svg";
 import CSE from "/Logos/CSE.svg";
 import CanadianTire from "/Logos/CanadianTire.svg";
+import CCSS from "/Logos/CCSS.png";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
 import Ciena from "/Logos/Ciena.svg";
@@ -15,14 +16,11 @@ import uOttawaIEEE from "/Logos/uOttawaIEEE.svg";
 import WIE from "/Logos/WIE.svg";
 import EEF from "/Logos/EEF.svg";
 import Google from "/Logos/Google.svg";
-import Law from "/Logos/Law.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
 import telferBTA from "/Logos/bta-logo.svg";
-import MakerJam from "/Logos/MakerJam.svg";
 import SCESoc from "/Logos/SCESoc.svg";
 import Vercel from "/Logos/Vercel.svg";
 import balsamiq from "/Logos/balsamiq.svg";
-import Ceed from "/Logos/ceed.svg";
 import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
@@ -31,6 +29,10 @@ import StickerMule from "/Logos/StickerMule.svg";
 import OpenProject from "/Logos/OpenProject.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
 import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
+import uOEngiqueers from "/Logos/uOEngiqueers.webp";
+import CUHacking from "/Logos/CUHacking.svg";
+import AITinkerers from "/Logos/AITinkerers.avif";
+import DEsocCarleton from "/Logos/desocCarleton.webp";
 
 //animations
 import AOS from "aos";
@@ -68,14 +70,14 @@ function Sponsors() {
 			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
-			{ href: "https://ceed-uottawa.ca/", src: Ceed },
-			{
-				href: "https://www.uottawa.ca/faculty-law/common-law/centre-environmental-law-global-sustainability",
-				src: Law,
-			},
+			{ href: "https://ccss.carleton.ca/", src: CCSS},
 			{ href: "https://carleton.ca/", src: Carleton },
 			{ href: "https://www.telferbta.com", src: telferBTA },
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
+			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers },
+			{ href: "https://www.cuhacking.ca/", src: CUHacking},
+			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers},
+			{ href: "https://linktr.ee/desoc", src: DEsocCarleton }
 		],
 	};
 
