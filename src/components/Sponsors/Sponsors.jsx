@@ -67,6 +67,7 @@ function Sponsors() {
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
 			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
+			{ href: "https://ccss.carleton.ca/", src: CCSS},
 			{ href: "https://www.cssa-aei.ca/", src: CSSA },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
 			{ href: "https://www.telferbta.com/", src: telferBTA },
