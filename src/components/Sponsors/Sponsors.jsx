@@ -30,7 +30,6 @@ import OpenProject from "/Logos/OpenProject.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
 import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
 import uOEngiqueers from "/Logos/uOEngiqueers.webp";
-import CUHacking from "/Logos/CUHacking.svg";
 import AITinkerers from "/Logos/AITinkerers.avif";
 import DEsocCarleton from "/Logos/desocCarleton.webp";
 
@@ -62,20 +61,18 @@ function Sponsors() {
 			],
 		},
 		collaborators: [
+			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
+			{ href: "https://carleton.ca/", src: Carleton },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
+			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
+			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
+			{ href: "https://www.scesoc.ca/", src: SCESoc },
 			{ href: "https://www.cssa-aei.ca/", src: CSSA },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
+			{ href: "https://www.telferbta.com/", src: telferBTA },
 			{ href: "https://www.uogdc.com/", src: uOGDC },
 			{ href: "https://uocybersec.com/", src: uOCyberSec },
-			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
-			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
-			{ href: "https://www.scesoc.ca/", src: SCESoc },
-			{ href: "https://ccss.carleton.ca/", src: CCSS},
-			{ href: "https://carleton.ca/", src: Carleton },
-			{ href: "https://www.telferbta.com", src: telferBTA },
-			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
 			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers },
-			{ href: "https://www.cuhacking.ca/", src: CUHacking},
 			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers},
 			{ href: "https://linktr.ee/desoc", src: DEsocCarleton }
 		],
