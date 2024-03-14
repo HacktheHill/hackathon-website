@@ -3,6 +3,38 @@ import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 import { t } from "../../i18n";
 
+const marqueeGroup = (team, index, pauseAnimation, startAnimation) => {
+	return (
+		<div
+			id={`marquee${index}`}
+			className={styles["marquee-group"]}
+			onMouseEnter={pauseAnimation}
+			onMouseLeave={startAnimation}
+			onFocus={pauseAnimation}
+			onBlur={startAnimation}
+		>
+			{team.map(member => (
+				<div key={member.name}>
+					<Tooltip
+						title={
+							<div className={styles["tooltip-text"]}>
+								<strong>{member.name}</strong>
+								<br />
+								{member.role}
+							</div>
+						}
+						placement="top"
+					>
+						<div className={styles["team-member"]}>
+							<img src={member.image} alt={member.name} width="60px" />
+						</div>
+					</Tooltip>
+				</div>
+			))}
+		</div>
+	);
+};
+
 function Team() {
 	const team = [
 		{
@@ -347,45 +379,15 @@ function Team() {
 		},
 	];
 
-	function handleHoverStart() {
+	function pauseAnimation() {
 		document.getElementById("marquee1").style.animationPlayState = "paused";
 		document.getElementById("marquee2").style.animationPlayState = "paused";
 	}
 
-	function handleHoverEnd() {
+	function startAnimation() {
 		document.getElementById("marquee1").style.animationPlayState = "running";
 		document.getElementById("marquee2").style.animationPlayState = "running";
 	}
-
-	const marqueeGroup = (team, index) => {
-		return (
-			<div
-				id={`marquee${index}`}
-				className={styles["marquee-group"]}
-				onMouseEnter={handleHoverStart}
-				onMouseLeave={handleHoverEnd}
-			>
-				{team.map(member => (
-					<div key={member.name}>
-						<Tooltip
-							title={
-								<div className={styles["tooltip-text"]}>
-									<strong>{member.name}</strong>
-									<br />
-									{member.role}
-								</div>
-							}
-							placement="top"
-						>
-							<div className={styles["team-member"]}>
-								<img src={member.image} alt={member.name} width="60px" />
-							</div>
-						</Tooltip>
-					</div>
-				))}
-			</div>
-		);
-	};
 
 	return (
 		<div className={styles["team"]}>
@@ -393,8 +395,8 @@ function Team() {
 				<h3>{t("team.title")}</h3>
 			</div>
 			<div className={styles["carousel-track"]}>
-				{marqueeGroup(team, 1)}
-				{marqueeGroup(team, 2)}
+				{marqueeGroup(team, 1, pauseAnimation, startAnimation)}
+				{marqueeGroup(team, 2, pauseAnimation, startAnimation)}
 			</div>
 		</div>
 	);
