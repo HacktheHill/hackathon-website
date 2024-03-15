@@ -3,12 +3,12 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { t } from "../../i18n";
 import styles from "./Footer.module.css";
-import TeamCarousel from "../Footer/TeamCarousel";
+import Team from "../Team/Team";
 
 function Footer() {
 	return (
 		<>
-			{/* <TeamCarousel/> */}
+			<Team />
 			<div className={styles.footer}>
 				<div className={styles["footer-links"]}>
 					<a

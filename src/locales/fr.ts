@@ -317,6 +317,55 @@ export default {
 		q12: "Des remboursements de voyage seront-ils accordés ?",
 		a12: "Malheureusement, nous ne sommes pas en mesure d'offrir des remboursements de voyage aux hackers en personne à Hack the Hill cette année.",
 	},
+	team: {
+		title: "Notre équipe!",
+		president: "Président",
+		roles: {
+			president: "Président",
+			advisor: "Conseiller",
+			development: {
+				director: "Directeur du Développement",
+				manager: "Gestionnaire du Développement",
+				coordinator: "Coordinateur du Développement",
+			},
+			operations: {
+				director: "Directeur des Opérations",
+				manager: "Gestionnaire des Opérations",
+				coordinator: "Coordinateur des Opérations",
+			},
+			marketing: {
+				director: "Directeur du Marketing",
+				manager: "Gestionnaire du Marketing",
+				coordinator: "Coordinateur du Marketing",
+			},
+			sponsorship: {
+				director: "Directeur des Commandites",
+				manager: "Gestionnaire des Commandites",
+				coordinator: "Coordinateur des Commandites",
+			},
+			design: {
+				director: "Directeur du Design",
+				manager: "Gestionnaire du Design",
+				coordinator: "Coordinateur du Design",
+			},
+			community: {
+				director: "Directeur de la Communauté",
+				manager: "Gestionnaire de la Communauté",
+				coordinator: "Coordinateur de la Communauté",
+			},
+			competitions: {
+				director: "Directeur des Compétitions",
+				manager: "Gestionnaire des Compétitions",
+				coordinator: "Coordinateur des Compétitions",
+			},
+			logistics: {
+				director: "Directeur de la Logistique",
+				manager: "Gestionnaire de la Logistique",
+				coordinator: "Coordinateur de la Logistique",
+			},
+			mascot: "Mascotte Officielle",
+		},
+	},
 	footer: {
 		title: "Le Hackathon de la Capitale Canadienne",
 		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
@@ -329,24 +378,6 @@ export default {
 			'Avez vous entendu parlé de l\'article du Fulcrum sur Hack the Hill? UOTTA GO TO HACK THE HILL. Consultez la section "Science & Tech" du Fulcrum et cherchez "Ready, Set, Hack" pour en savoir plus sur ce que vous pouvez attendre de Hack the Hill de la part de certains de nos directeurs d\'événements. Merci au Fulcrum pour la publication!',
 		button_text: "Lire l'article",
 		close: "Fermer Notification",
-	},
-	headshot: {
-		imgAlt: "Image de ",
-
-		team_codir_f: "Co-Directrice",
-		team_codir_m: "Co-Directeur",
-		team_community: "Communauté",
-		team_design: "Conception",
-		team_development: "Développement",
-		team_finance: "Finance",
-		team_logistics: "Logistique",
-		team_marketing: "Commercialisation",
-		team_sponsorship: "Parrainage",
-
-		role_dir_f: "Directrice",
-		role_dir_m: "Directeur",
-		role_coord_f: "Coordinatrice",
-		role_coord_m: "Coordinateur",
 	},
 	"events-page": {
 		title: "Événements",

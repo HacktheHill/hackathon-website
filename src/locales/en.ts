@@ -316,6 +316,54 @@ export default {
 		q12: "Will travel reimbursements be provided?",
 		a12: "Unfortunately, we are unable to provide travel reimbursements for in-person hackers at Hack the Hill this year.",
 	},
+	team: {
+		title: "Meet the Team!",
+		roles: {
+			president: "President",
+			advisor: "Advisor",
+			development: {
+				director: "Development Director",
+				manager: "Development Manager",
+				coordinator: "Development Coordinator",
+			},
+			operations: {
+				director: "Operations Director",
+				manager: "Operations Manager",
+				coordinator: "Operations Coordinator",
+			},
+			marketing: {
+				director: "Marketing Director",
+				manager: "Marketing Manager",
+				coordinator: "Marketing Coordinator",
+			},
+			sponsorship: {
+				director: "Sponsorship Director",
+				manager: "Sponsorship Manager",
+				coordinator: "Sponsorship Coordinator",
+			},
+			design: {
+				director: "Design Director",
+				manager: "Design Manager",
+				coordinator: "Design Coordinator",
+			},
+			community: {
+				director: "Community Director",
+				manager: "Community Manager",
+				coordinator: "Community Coordinator",
+			},
+			competitions: {
+				director: "Competitions Director",
+				manager: "Competitions Manager",
+				coordinator: "Competitions Coordinator",
+			},
+			logistics: {
+				director: "Logistics Director",
+				manager: "Logistics Manager",
+				coordinator: "Logistics Coordinator",
+			},
+			mascot: "Official mascot",
+		},
+	},
 	footer: {
 		title: "Canada's Capital Hackathon",
 		description: "Control the Capital, Command the Cabinet, Build until you Hack the Hill",
@@ -328,24 +376,6 @@ export default {
 			'Did you hear about the Fulcrum Article about Hack the Hill? UOTTA GO TO HACK THE HILL. Check out the "Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you can expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!',
 		button_text: "Read Article",
 		close: "Close Notification",
-	},
-	headshot: {
-		imgAlt: "Image of ",
-
-		team_codir_f: "Co-Director",
-		team_codir_m: "Co-Director",
-		team_community: "Community",
-		team_design: "Design",
-		team_development: "Development",
-		team_finance: "Finance",
-		team_logistics: "Logistics",
-		team_marketing: "Marketing",
-		team_sponsorship: "Sponsorship",
-
-		role_dir_f: "Director",
-		role_dir_m: "Director",
-		role_coord_f: "Coordinator",
-		role_coord_m: "Coordinator",
 	},
 	"events-page": {
 		title: "Events",
