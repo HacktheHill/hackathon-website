@@ -371,7 +371,7 @@ export default {
 		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
 		privacy: "Politique de Confidentialité",
 		constitution: "Constitution",
-		copyright: "Copyright © 2023 Hack the Hill. Tous droits réservés.",
+		copyright: "Copyright © 2024 Hack the Hill. Tous droits réservés.",
 	},
 	notification: {
 		message:
