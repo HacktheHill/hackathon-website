@@ -16,6 +16,7 @@ const marqueeGroup = (team, index, pauseAnimation, startAnimation) => {
 			{team.map(member => (
 				<div key={member.name}>
 					<Tooltip
+						enterTouchDelay={0}
 						title={
 							<div className={styles["tooltip-text"]}>
 								<strong>{member.name}</strong>
