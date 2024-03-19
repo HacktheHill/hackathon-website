@@ -1,6 +1,6 @@
 {
-	"name": "Hack the Hill",
-	"short_name": "Hack the Hill",
+	"name": "Hack The Hill",
+	"short_name": "Hack The Hill",
 	"start_url": "/",
 	"icons": [
 		{
@@ -15,7 +15,7 @@
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
+	"theme_color": "#d70909",
+	"background_color": "#d70909",
 	"display": "standalone"
 }

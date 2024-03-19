@@ -1,57 +1,13 @@
 export default {
 	navbar: {
-		links: {
-			about: "About",
-			sponsors: "Sponsors",
-			hacker: "The Hacker Series",
-			collaborators: "Collaborators",
-			faq: "FAQ",
-			testimonials: "Testimonials",
-		},
+		links: { events: "Events", blog: "Blog", documents: "Documents", team: "Team" },
 		aria_label: "Navigation Bar",
 	},
-	hero: {
-		hybrid: "Hybrid",
-		at: "@",
-		pin_alt: "Location Pin",
-		h2: "Canada's Capital Hackathon",
-		h3: "Ottawa's Largest Hackathon",
-		more: "Follow us!",
-		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
-		empty_email_field: "Email is required",
-		invalid_email_field: "Invalid email format",
-		email_placeholder: "E-mail",
-	},
-	about: {
-		title: "Welcome to Canada's Capital Hackathon",
-		p1: "Join 1,000+ hackers from around the country to make something incredible in just 36 hours.",
-		p2: "Hack the Hill II is the second edition of Canada's Capital Hackathon, a three-day event where students from different disciplines come together to create innovative solutions for real-world problems.",
-		p3: "Participants will be provided with opportunities to learn new skills, network with peers, and showcase their talents and ideas. Whether you are a beginner or a seasoned hacker, you will definitely find something that challenges and inspires you at Hack the Hill II.",
-		frame_alt: "Hack the Hill Podcast",
-	},
-	stats: {
-		title: "Hack the Hill I had...",
-		p1: "600+",
-		p1tag: "Hackers",
-		p2: "1250+",
-		p2tag: "Applicants",
-		p3: "70+",
-		p3tag: "Organizers",
-		p4: "10+",
-		p4tag: "Sponsors",
-		p5: "$60k+",
-		p5tag: "Funding Raised",
-	},
-	sponsors: {
-		title: "Previous Sponsors",
-		icon_alt: "Sponsor Icon",
-		p: "The first edition of Hack the Hill was made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
-		button: "Become a Sponsor",
-	},
-	collaborators: {
-		title: "Collaborators",
-		icon_alt: "Collaborators Icon",
-	},
+	hero: {},
+	about: {},
+	stats: {},
+	sponsors: {},
+	collaborators: {},
 	testimonials: {
 		title: "Making Moments Matter",
 		sub_heading:
@@ -277,121 +233,5 @@ export default {
 		less: "Show Less",
 		more: "Show More",
 	},
-	faq: {
-		title: "Frequently Asked Questions",
-
-		q1: "What is a hackathon?",
-		a1: "A hackathon is a large-scale event where people design and build a project from scratch.",
-
-		q2: "How much does it cost to participate?",
-		a2: "It's completely free to attend! There is no cost to participate! We cover the cost of food at the event and provide swag for all participants.",
-
-		q3: "Do I need any experience?",
-		a3: "No experience is needed! There will be workshops to teach you everything you need to know to hack at Hack the Hill.",
-
-		q4: "This is my first hackathon, what should I expect?",
-		a4: "36 hours of networking with our sponsors, learning, and collaborating with other hackers. As a first-time hacker, you can participate in our workshops to learn the basics of web development, game development, and hardware development.",
-
-		q5: "Can I start on the project before the hackathon?",
-		a5: "No, all projects must be started after open ceremonies on the first day of the event. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
-
-		q6: "Is the hackathon online or in-person?",
-		a6: "Both online and in-person, we're hybrid this year!",
-
-		q7: "What should I bring to an in-person hackathon?",
-		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 36 hours. We will provide snacks and food for the entire event!",
-
-		q8: "Who can participate and how do I apply?",
-		a8: "Any university students or recent new grads are encouraged to apply! High-school students with experience are also welcomed. Follow us on social media to stay up-to-date with hackathon updates!",
-
-		q9: "Can I work in a team?",
-		a9: "Yes, teams of up to 4 can work together at Hack the Hill.",
-
-		q10: "What are the themes for Hack the Hill?",
-		a10: "Full details about the hackathon themes will not be released until a few days before the event. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
-
-		q11: "Are buses being sent to other universities?",
-		a11: "As of now, it has not been determined if there will be bus service for Hack the Hill. Stay in touch for updates!",
-
-		q12: "Will travel reimbursements be provided?",
-		a12: "Unfortunately, we are unable to provide travel reimbursements for in-person hackers at Hack the Hill this year.",
-	},
-	team: {
-		title: "Meet the Team!",
-		roles: {
-			president: "President",
-			advisor: "Advisor",
-			development: {
-				director: "Development Director",
-				manager: "Development Manager",
-				coordinator: "Development Coordinator",
-			},
-			operations: {
-				director: "Operations Director",
-				manager: "Operations Manager",
-				coordinator: "Operations Coordinator",
-			},
-			marketing: {
-				director: "Marketing Director",
-				manager: "Marketing Manager",
-				coordinator: "Marketing Coordinator",
-			},
-			sponsorship: {
-				director: "Sponsorship Director",
-				manager: "Sponsorship Manager",
-				coordinator: "Sponsorship Coordinator",
-			},
-			design: {
-				director: "Design Director",
-				manager: "Design Manager",
-				coordinator: "Design Coordinator",
-			},
-			community: {
-				director: "Community Director",
-				manager: "Community Manager",
-				coordinator: "Community Coordinator",
-			},
-			competitions: {
-				director: "Competitions Director",
-				manager: "Competitions Manager",
-				coordinator: "Competitions Coordinator",
-			},
-			logistics: {
-				director: "Logistics Director",
-				manager: "Logistics Manager",
-				coordinator: "Logistics Coordinator",
-			},
-			mascot: "Official mascot",
-		},
-	},
-	footer: {
-		title: "Canada's Capital Hackathon",
-		description: "Control the Capital, Command the Cabinet, Build until you Hack the Hill",
-		privacy: "Privacy Policy",
-		constitution: "Constitution",
-		copyright: "Copyright © 2024 Hack the Hill. All rights reserved.",
-	},
-	notification: {
-		message:
-			'Did you hear about the Fulcrum Article about Hack the Hill? UOTTA GO TO HACK THE HILL. Check out the "Science & Tech" Section of the Fulcrum and look for "Ready, Set, Hack" to learn more about what you can expect at Hack the Hill from some of our event directors. Thank you to Fulcrum for the post!',
-		button_text: "Read Article",
-		close: "Close Notification",
-	},
-	"events-page": {
-		title: "Events",
-		description: "Join us for a series of exhilarating events leading up to Hack the Hill 2024!",
-		description2:
-			"Whether you're a coding novice or a seasoned hacker, our events offer a platform to learn, network, and showcase your skills. Dive into the world of innovation and problem-solving, and be part of the hacker community that's making a real-world impact.",
-		description3:
-			"Don't miss out on this opportunity to challenge yourself and be inspired - sign up for the Hacker Series Events!",
-		button: {
-			start: "Learn more about us on the",
-			end: "website",
-		},
-	},
-	"four-o-four": {
-		title: "Uh Oh...",
-		description: "Bea.var thinks you got lost in the sauce.",
-		button: "Back Home",
-	},
+	footer: {},
 } as const;

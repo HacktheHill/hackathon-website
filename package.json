@@ -12,23 +12,23 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@astrojs/partytown": "^2.0.0",
+		"@astrojs/partytown": "^2.0.4",
 		"@astrojs/react": "^1.2.2",
-		"@astrojs/sitemap": "^1.0.0",
-		"@emotion/styled": "^11.10.5",
+		"@astrojs/sitemap": "^1.4.0",
+		"@astrojs/tailwind": "^5.1.0",
 		"@fortawesome/fontawesome-svg-core": "^6.2.1",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",
 		"@fortawesome/react-fontawesome": "^0.2.0",
-		"@mui/material": "^5.11.2",
 		"@nanostores/react": "^0.4.1",
 		"aos": "^2.3.4",
-		"astro": "^1.7.2",
+		"astro": "^4.5.6",
 		"nanostores": "^0.7.3",
-		"package.json": "^0.0.0",
+		"node": "^21.7.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-scroll": "^1.8.9"
+		"react-scroll": "^1.8.9",
+		"tailwindcss": "^3.4.1"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.26",

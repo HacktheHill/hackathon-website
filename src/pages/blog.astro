@@ -1,0 +1,9 @@
+---
+import BlogPage from "../components/Blog/BlogPage";
+import Layout from "../layouts/Layout.astro";
+const title = "Hack The Hill - Blog";
+---
+
+<Layout title={title}>
+	<BlogPage client:load />
+</Layout>

@@ -1,119 +1,81 @@
 import React, { useEffect } from "react";
 import { t } from "../../i18n";
-import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
-import Blackberry from "/Logos/Blackberry.svg";
-import CSE from "/Logos/CSE.svg";
-import CanadianTire from "/Logos/CanadianTire.svg";
-import CCSS from "/Logos/ccss.png";
-import Carleton from "/Logos/Carleton.svg";
-import CarletonIEEE from "/Logos/CarletonIEEE.svg";
-import Ciena from "/Logos/Ciena.svg";
-import DigitalOcean from "/Logos/DigitalOcean.svg";
-import uOCyberSec from "/Logos/uOCyberSec.svg";
-import CSSA from "/Logos/CSSA.svg";
-import uOttawaIEEE from "/Logos/uOttawaIEEE.svg";
-import WIE from "/Logos/WIE.svg";
-import EEF from "/Logos/EEF.svg";
-import Google from "/Logos/Google.svg";
-import lonehaven from "/Logos/Lonehaven.svg";
-import telferBTA from "/Logos/bta-logo.svg";
-import SCESoc from "/Logos/SCESoc.svg";
-import Vercel from "/Logos/Vercel.svg";
-import balsamiq from "/Logos/balsamiq.svg";
-import echo3d from "/Logos/echo3d.webp";
-import uOttawa from "/Logos/uOttawa.svg";
-import uOGDC from "/Logos/uOttawaGDC.svg";
-import voiceflow from "/Logos/voiceflow.svg";
-import StickerMule from "/Logos/StickerMule.svg";
-import OpenProject from "/Logos/OpenProject.svg";
-import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
-import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
-import uOEngiqueers from "/Logos/uOEngiqueers.webp";
-import AITinkerers from "/Logos/AITinkerers.avif";
-import DEsocCarleton from "/Logos/desocCarleton.webp";
+import Blackberry from "/src/assets/Logos/Partners/Blackberry.svg";
+import CSE from "/src/assets/Logos/Partners/CSE.svg";
+import CanadianTire from "/src/assets/Logos/Partners/CanadianTire.svg";
+import CCSS from "/src/assets/Logos/Partners/ccss.png";
+import Carleton from "/src/assets/Logos/Partners/Carleton.svg";
+import CarletonIEEE from "/src/assets/Logos/Partners/CarletonIEEE.svg";
+import Ciena from "/src/assets/Logos/Partners/Ciena.svg";
+import DigitalOcean from "/src/assets/Logos/Partners/DigitalOcean.svg";
+import uOCyberSec from "/src/assets/Logos/Partners/uOCyberSec.svg";
+import CSSA from "/src/assets/Logos/Partners/CSSA.svg";
+import uOttawaIEEE from "/src/assets/Logos/Partners/uOttawaIEEE.svg";
+import WIE from "/src/assets/Logos/Partners/WIE.svg";
+import EEF from "/src/assets/Logos/Partners/EEF.svg";
+import Google from "/src/assets/Logos/Partners/Google.svg";
+import lonehaven from "/src/assets/Logos/Partners/Lonehaven.svg";
+import telferBTA from "/src/assets/Logos/Partners/bta-logo.svg";
+import SCESoc from "/src/assets/Logos/Partners/SCESoc.svg";
+import Vercel from "/src/assets/Logos/Partners/Vercel.svg";
+import balsamiq from "/src/assets/Logos/Partners/balsamiq.svg";
+import echo3d from "/src/assets/Logos/Partners/echo3d.webp";
+import uOttawa from "/src/assets/Logos/Partners/uOttawa.svg";
+import uOGDC from "/src/assets/Logos/Partners/uOttawaGDC.svg";
+import voiceflow from "/src/assets/Logos/Partners/voiceflow.svg";
+import StickerMule from "/src/assets/Logos/Partners/StickerMule.svg";
+import OpenProject from "/src/assets/Logos/Partners/OpenProject.svg";
+import uOEngiqueers from "/src/assets/Logos/Partners/uOEngiqueers.webp";
+import AITinkerers from "/src/assets/Logos/Partners/AITinkerers.avif";
+import DEsocCarleton from "/src/assets/Logos/Partners/desocCarleton.webp";
 
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-function Sponsors() {
+export default function Sponsors() {
 	const data = {
 		sponsors: {
 			large: [
-				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
-				{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
+				{ href: "https://ciena.ca/", ...Ciena, alt: "Ciena" },
+				{ href: "https://canadiantire.ca/", ...CanadianTire, alt: "Canadian Tire" },
 			],
 			medium: [
-				{ href: "https://blackberry.com/", src: Blackberry, alt: "Blackberry" },
-				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
-				{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
+				{ href: "https://blackberry.com/", ...Blackberry, alt: "Blackberry" },
+				{ href: "https://www.cse-cst.gc.ca/", ...CSE, alt: "CSE / CST" },
+				{ href: "https://lonehaven.com/", ...lonehaven, alt: "Lonehaven" },
 			],
 			small: [
-				{ href: "https://about.google", src: Google, alt: "Google" },
-				{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
-				{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
-				{ href: "https://www.echo3d.com/", src: echo3d, alt: "echo3D" },
-				{ href: "https://balsamiq.com/", src: balsamiq, alt: "balsamiq" },
-				{ href: "https://www.voiceflow.com/", src: voiceflow, alt: "Voiceflow" },
-				{ href: "https://mule.to/p5ni", src: StickerMule, alt: "StickerMule" },
-				{ href: "https://www.openproject.org/", src: OpenProject, alt: "OpenProject" }
+				{ href: "https://about.google", ...Google, alt: "Google" },
+				{ href: "https://vercel.com/", ...Vercel, alt: "Vercel" },
+				{ href: "https://www.digitalocean.com/", ...DigitalOcean, alt: "DigitalOcean" },
+				{ href: "https://www.echo3d.com/", ...echo3d, alt: "echo3D" },
+				{ href: "https://balsamiq.com/", ...balsamiq, alt: "balsamiq" },
+				{ href: "https://www.voiceflow.com/", ...voiceflow, alt: "Voiceflow" },
+				{ href: "https://mule.to/p5ni", ...StickerMule, alt: "StickerMule" },
+				{ href: "https://www.openproject.org/", ...OpenProject, alt: "OpenProject" },
 			],
 		},
 		collaborators: [
-			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
-			{ href: "https://carleton.ca/", src: Carleton },
-			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
-			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
-			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
-			{ href: "https://www.scesoc.ca/", src: SCESoc },
-			{ href: "https://ccss.carleton.ca/", src: CCSS},
-			{ href: "https://www.cssa-aei.ca/", src: CSSA },
-			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
-			{ href: "https://www.telferbta.com/", src: telferBTA },
-			{ href: "https://www.uogdc.com/", src: uOGDC },
-			{ href: "https://uocybersec.com/", src: uOCyberSec },
-			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers },
-			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers},
-			{ href: "https://linktr.ee/desoc", src: DEsocCarleton }
+			{ href: "https://www2.uottawa.ca/en", ...uOttawa },
+			{ href: "https://carleton.ca/", ...Carleton },
+			{ href: "https://www.facebook.com/uottawaeeffdg/", ...EEF },
+			{ href: "https://ieeeuottawa.ca/", ...uOttawaIEEE },
+			{ href: "https://wie.ieeeottawa.ca/", ...WIE },
+			{ href: "https://www.scesoc.ca/", ...SCESoc },
+			{ href: "https://ccss.carleton.ca/", ...CCSS },
+			{ href: "https://www.cssa-aei.ca/", ...CSSA },
+			{ href: "https://ieeecarleton.ca/", ...CarletonIEEE },
+			{ href: "https://www.telferbta.com/", ...telferBTA },
+			{ href: "https://www.uogdc.com/", ...uOGDC },
+			{ href: "https://uocybersec.com/", ...uOCyberSec },
+			{ href: "https://linktr.ee/uoengiqueers", ...uOEngiqueers },
+			{ href: "https://aitinkerers.org/p/welcome", ...AITinkerers },
+			{ href: "https://linktr.ee/desoc", ...DEsocCarleton },
 		],
 	};
-
-	useEffect(() => {
-		AOS.init({});
-	}, []);
 
 	return (
 		<>
 			<div id="sponsors" className={`${styles["sponsors-collaborators"]} ${styles["sponsors"]}`}>
-				<h1 data-aos="fade-up" data-aos-duration="800">
-					{t("sponsors.title")}
-				</h1>
-				<div className={styles.header}>
-					<img
-						className={styles["maple-leaf"]}
-						src={maple1}
-						alt="maple leaf"
-						data-aos="fade-right"
-						data-aos-duration="800"
-					></img>
-					<div className={styles["header-column"]}>
-						<p className={styles.text} data-aos="fade-up" data-aos-duration="800">
-							{t("sponsors.p")}
-						</p>
-						<Button href="mailto:sponsorship@hackthehill.com" data-aos="fade-up" data-aos-duration="800">
-							{t("sponsors.button")}
-						</Button>
-					</div>
-					<img
-						className={styles["maple-leaf"]}
-						src={maple2}
-						alt="maple leaf"
-						data-aos="fade-left"
-						data-aos-duration="800"
-					></img>
-				</div>
-
+				<h1>{t("sponsors.title")}</h1>
 				<div className={styles["icons"]}>
 					{Object.values(data.sponsors).map((tier, i) => (
 						<div key={i} className={styles["icons-row"]}>
@@ -124,8 +86,6 @@ function Sponsors() {
 									target="_blank"
 									rel="noreferrer"
 									className={styles["icon-box"]}
-									data-aos="fade-up"
-									data-aos-duration="800"
 								>
 									<img
 										className={`${styles["icon"]} ${
@@ -141,20 +101,10 @@ function Sponsors() {
 				</div>
 			</div>
 			<div id="collaborators" className={`${styles["sponsors-collaborators"]} ${styles["collaborators"]}`}>
-				<h1 data-aos="fade-up" data-aos-duration="800">
-					{t("collaborators.title")}
-				</h1>
+				<h1>{t("collaborators.title")}</h1>
 				<div className={styles["icons-row"]}>
 					{data.collaborators.map((sponsor, i) => (
-						<a
-							key={i}
-							href={sponsor.href}
-							target="_blank"
-							rel="noreferrer"
-							className={styles["icon-box"]}
-							data-aos="fade-up"
-							data-aos-duration="800"
-						>
+						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className={styles["icon-box"]}>
 							<img
 								className={`${styles["icon"]} ${styles["icon-medium"]}`}
 								alt={t("collaborators.icon_alt")}
@@ -167,5 +117,3 @@ function Sponsors() {
 		</>
 	);
 }
-
-export default Sponsors;

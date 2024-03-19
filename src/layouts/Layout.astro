@@ -1,16 +1,18 @@
 ---
 import fs from "fs/promises";
 import path from "path";
+import Navigation from "../components/Navigation/Navigation.jsx";
+import Footer from "../components/Footer/Footer.jsx";
 
 const { title } = Astro.props;
 
 const description =
-	"Hack the Hill, Canada's Capital's premier flagship hackathon event, is presented by the University of Ottawa and Carleton University STEM Student Organizations. From March 3rd to 5th, 2023, come prepared to network and compete with the best!";
+	"Hack the Hill, the organization behind Canada's Capital's premier flagship hackathon event & more. This Fall 2024, come prepared to network and compete with the best at Canada's Capital's largest hackathon!";
 
 const keywords =
-	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2023, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University";
+	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2024, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University";
 
-const color = "#ea885f";
+const color = "#d70909";
 
 let structuredData = {} as any;
 try {
@@ -34,7 +36,6 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content={color} />
 		<meta name="msapplication-TileColor" content={color} />
-		<link rel="mask-icon" href={`${url}/safari-pinned-tab.svg`} color={color} />
 		<link rel="manifest" href={`${url}/site.webmanifest`} />
 		<title>{title}</title>
 
@@ -55,7 +56,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:url" content={url} />
-		<meta property="og:image" content={`${url}/favicon-196x196.svg`} />
+		<meta property="og:image" content={`${url}/favicon.ico`} />
 		<meta property="og:site_name" content="Hack the Hill" />
 		<meta property="og:locale" content="en_US" />
 
@@ -65,7 +66,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="twitter:creator" content="@hackthehill_" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={`${url}/favicon-196x196.svg`} />
+		<meta name="twitter:image" content={`${url}/favicon.ico`} />
 		<meta name="twitter:image:alt" content="Hack the Hill logo" />
 
 		<!-- KEYWORDS -->
@@ -84,73 +85,75 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<link rel="robots" type="text/plain" title="Robots" href={`${url}/robots.txt`} />
 
 		<!-- favicons for all devices -->
-		<link rel="icon shortcut" type="image/svg+xml" href={`${url}/icons/favicon.svg`} />
-		<link rel="apple-touch-icon" sizes="180x180" href={`${url}/icons/apple-touch-icon.png`} />
-		<link rel="icon" type="image/png" sizes="32x32" href={`${url}/icons/favicon-32x32.png`} />
-		<link rel="icon" type="image/png" sizes="16x16" href={`${url}/icons/favicon-16x16.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="57x57" href={`${url}/icons/apple-touch-icon-57x57.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href={`${url}/icons/apple-touch-icon-114x114.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href={`${url}/icons/apple-touch-icon-72x72.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href={`${url}/icons/apple-touch-icon-144x144.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="60x60" href={`${url}/icons/apple-touch-icon-60x60.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href={`${url}/icons/apple-touch-icon-120x120.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="76x76" href={`${url}/icons/apple-touch-icon-76x76.png`} />
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href={`${url}/icons/apple-touch-icon-152x152.png`} />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-196x196.svg`} sizes="196x196" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-96x96.svg`} sizes="96x96" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-32x32.svg`} sizes="32x32" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-16x16.svg`} sizes="16x16" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-128.svg`} sizes="128x128" />
-		<meta name="application-name" content="Hack the Hill" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+		<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color={color} />
+		<link rel="shortcut icon" href="/favicon.ico" />
 		<meta name="msapplication-TileColor" content={color} />
-		<meta name="msapplication-TileImage" content={`${url}/icons/mstile-144x144.png`} />
-		<meta name="msapplication-square70x70logo" content={`${url}/icons/mstile-70x70.png`} />
-		<meta name="msapplication-square150x150logo" content={`${url}/icons/mstile-150x150.png`} />
-		<meta name="msapplication-wide310x150logo" content={`${url}/icons/mstile-310x150.png`} />
-		<meta name="msapplication-square310x310logo" content={`${url}/icons/mstile-310x310.png`} />
+		<meta name="msapplication-config" content="/browserconfig.xml" />
+		<meta name="theme-color" content={color} />
 
 		<script type="application/ld+json" set:html={structuredDataString}></script>
 	</head>
 	<body>
+		<Navigation client:load />
 		<slot />
+		<Footer client:load />
 		<style is:global>
 			@font-face {
-				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-Medium.ttf) format("truetype");
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-Thin.ttf) format("truetype");
+				font-weight: 100;
+				font-weight: thin;
+			}
+			@font-face {
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-ExtraLight.ttf) format("truetype");
+				font-weight: 200;
+				font-weight: extra-light;
+			}
+			@font-face {
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-Light.ttf) format("truetype");
+				font-weight: 300;
+				font-weight: light;
+			}
+			@font-face {
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+				font-weight: 400;
+				font-weight: normal;
+			}
+			@font-face {
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-Medium.ttf) format("truetype");
 				font-weight: 500;
 				font-weight: medium;
-				font-display: swap;
 			}
-
 			@font-face {
-				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-Regular.ttf) format("truetype");
-				font-weight: 400;
-				font-weight: normal;
-				font-display: swap;
-			}
-
-			@font-face {
-				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-SemiBold.ttf) format("truetype");
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
 				font-weight: 600;
 				font-weight: semi-bold;
-				font-display: swap;
 			}
-
 			@font-face {
-				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-VariableFont_wght.ttf) format("truetype-variations");
-				font-weight: 300 400 500 600 700 800 900;
-				font-display: swap;
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-Bold.ttf) format("truetype");
+				font-weight: 700;
+				font-weight: bold;
 			}
-
 			@font-face {
-				font-family: Coolvetica;
-				src: url(/fonts/coolvetica/coolvetica.otf) format("opentype");
-				font-weight: 400;
-				font-weight: normal;
-				font-display: swap;
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-ExtraBold.ttf) format("truetype");
+				font-weight: 800;
+				font-weight: extra-bold;
+			}
+			@font-face {
+				font-family: Poppins;
+				src: url(/fonts/Poppins/Poppins-Black.ttf) format("truetype");
+				font-weight: 900;
+				font-weight: black;
 			}
 
 			html,

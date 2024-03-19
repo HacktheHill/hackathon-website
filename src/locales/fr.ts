@@ -1,57 +1,13 @@
 export default {
 	navbar: {
-		links: {
-			about: "À Propos",
-			sponsors: "Commanditaires",
-			hacker: "La Série du Hacker",
-			collaborators: "Collaborateurs",
-			faq: "FaQ",
-			testimonials: "Témoignages",
-		},
+		links: { events: "Événements", blog: "Blog", documents: "Documents", team: "Équipe" },
 		aria_label: "Barre de Navigation",
 	},
-	hero: {
-		hybrid: "Hybride",
-		at: "à",
-		pin_alt: "Punaise de localisation",
-		h2: "Le Hackathon de la Capitale Canadienne",
-		h3: "Le Plus Grand Hackathon d'Ottawa",
-		more: "Suivez-nous!",
-		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
-		empty_email_field: "L'adresse électronique est obligatoire",
-		invalid_email_field: "Format de courriel invalide",
-		email_placeholder: "Courriel",
-	},
-	about: {
-		title: "Bienvenue au Hackathon de la Capitale Canadienne",
-		p1: "Joignez-vous à plus de 1000 hackers de partout au pays pour créer quelque chose d'incroyable en seulement 36 heures.",
-		p2: "Hack the Hill II est la deuxième édition du Hackathon de la Capitale Canadienne, un événement de trois jours où des étudiants de différentes disciplines se réunissent pour créer des solutions innovantes à des problèmes du monde réel.",
-		p3: "Les participants auront l'occasion d'apprendre de nouvelles compétences, de réseauter avec leurs pairs et de mettre en valeur leurs talents et leurs idées. Que vous soyez débutant ou hacker chevronné, vous trouverez certainement quelque chose qui vous met au défi et vous inspire à Hack the Hill II.",
-		frame_alt: "Podcast de Hack the Hill",
-	},
-	stats: {
-		title: "Hack the Hill I avait...",
-		p1: "600+",
-		p1tag: "Hackers",
-		p2: "1250+",
-		p2tag: "Candidats",
-		p3: "70+",
-		p3tag: "Organisateurs",
-		p4: "10+",
-		p4tag: "Commanditaires",
-		p5: "$60k+",
-		p5tag: "Financement Levé",
-	},
-	sponsors: {
-		title: "Commanditaires Précédents",
-		icon_alt: "Icon de Commanditaire",
-		p: "La première édition de Hack the Hill a été rendue possible grâce à de généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
-		button: "Devenir un Commanditaire",
-	},
-	collaborators: {
-		title: "Collaborateurs",
-		icon_alt: "Icon de Collaborateurs",
-	},
+	hero: {},
+	about: {},
+	stats: {},
+	sponsors: {},
+	collaborators: {},
 	testimonials: {
 		title: "Créons des Moments Marquants",
 		sub_heading:
@@ -278,122 +234,5 @@ export default {
 		less: "Afficher moins",
 		more: "Afficher plus",
 	},
-	faq: {
-		title: "Foire aux questions",
-
-		q1: "C'est quoi un hackathon ?",
-		a1: "Un hackathon est un événement à grande échelle où les participants conçoivent et construisent un projet à partir de zéro.",
-
-		q2: "Combien ça coûte pour participer ?",
-		a2: "La participation est entièrement gratuite ! Nous couvrons le coût de la nourriture lors de l'événement et fournissons des cadeaux à tous les participants.",
-
-		q3: "Dois-je avoir de l'expérience ?",
-		a3: "Aucune expérience n'est nécessaire ! Des ateliers vous enseignerons tout ce que vous devez savoir pour bien réussir à Hack the Hill.",
-
-		q4: "C'est mon premier hackathon, à quoi dois-je m'attendre ?",
-		a4: "36 heures de réseautage avec nos commanditaires, d'apprentissage et de collaboration. En tant que hacker débutant, vous pouvez participer à nos ateliers pour apprendre les bases du développement web, du développement de jeux, et du développement embarqué.",
-
-		q5: "Puis-je commencer à travailler sur mon projet avant le hackathon ?",
-		a5: "Non, tous les projets doivent être commencés après les cérémonies d'ouverture. Aucun code ne doit être écrit pour le projet avant le hackathon, cependant, vous pouvez commencer à réfléchir à un projet une fois que les thèmes ont été publiés.",
-
-		q6: "Le hackathon est-il en ligne ou en personne ?",
-		a6: "Le hackathon sera en ligne ou en personne, nous opérons de façon hybride cette année !",
-
-		q7: "Que devrais-je apporter ?",
-		a7: "Articles d'hygiène personnelle (déodorant, brosse à dents, etc.), sac de couchage, chargeur d'ordinateur portable, et tout ce dont vous pourriez avoir besoin pour rester sur place pendant 36 heures. Nous fournirons des collations et de la nourriture pendant toute la durée de l'événement !",
-
-		q8: "Qui peut participer et comment postuler ?",
-		a8: "Tous les étudiants universitaires ou nouveaux diplômés sont encouragés à postuler ! Les étudiants d'écoles secondaires sont également les bienvenus. Suivez-nous sur les réseaux sociaux pour rester informé des mises à jour du hackathon !",
-
-		q9: "Puis-je travailler en équipe ?",
-		a9: "Oui, chaque équipe peut contenir jusqu'à 4 personnes.",
-
-		q10: "Quels sont les thèmes de Hack the Hill ?",
-		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement de jeux vidéos, développement matériel/embarqué et développement web !",
-
-		q11: "Des autobus serons-t-ils envoyés à d'autres universités ?",
-		a11: "Pour l'instant, il n'a pas été déterminé s'il y aura un service d'autobus pour se rendre à Hack the Hill. Restez en contact pour les mises à jour !",
-
-		q12: "Des remboursements de voyage seront-ils accordés ?",
-		a12: "Malheureusement, nous ne sommes pas en mesure d'offrir des remboursements de voyage aux hackers en personne à Hack the Hill cette année.",
-	},
-	team: {
-		title: "Notre équipe!",
-		president: "Président",
-		roles: {
-			president: "Président",
-			advisor: "Conseiller",
-			development: {
-				director: "Directeur du Développement",
-				manager: "Gestionnaire du Développement",
-				coordinator: "Coordinateur du Développement",
-			},
-			operations: {
-				director: "Directeur des Opérations",
-				manager: "Gestionnaire des Opérations",
-				coordinator: "Coordinateur des Opérations",
-			},
-			marketing: {
-				director: "Directeur du Marketing",
-				manager: "Gestionnaire du Marketing",
-				coordinator: "Coordinateur du Marketing",
-			},
-			sponsorship: {
-				director: "Directeur des Commandites",
-				manager: "Gestionnaire des Commandites",
-				coordinator: "Coordinateur des Commandites",
-			},
-			design: {
-				director: "Directeur du Design",
-				manager: "Gestionnaire du Design",
-				coordinator: "Coordinateur du Design",
-			},
-			community: {
-				director: "Directeur de la Communauté",
-				manager: "Gestionnaire de la Communauté",
-				coordinator: "Coordinateur de la Communauté",
-			},
-			competitions: {
-				director: "Directeur des Compétitions",
-				manager: "Gestionnaire des Compétitions",
-				coordinator: "Coordinateur des Compétitions",
-			},
-			logistics: {
-				director: "Directeur de la Logistique",
-				manager: "Gestionnaire de la Logistique",
-				coordinator: "Coordinateur de la Logistique",
-			},
-			mascot: "Mascotte Officielle",
-		},
-	},
-	footer: {
-		title: "Le Hackathon de la Capitale Canadienne",
-		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
-		privacy: "Politique de Confidentialité",
-		constitution: "Constitution",
-		copyright: "Copyright © 2024 Hack the Hill. Tous droits réservés.",
-	},
-	notification: {
-		message:
-			'Avez vous entendu parlé de l\'article du Fulcrum sur Hack the Hill? UOTTA GO TO HACK THE HILL. Consultez la section "Science & Tech" du Fulcrum et cherchez "Ready, Set, Hack" pour en savoir plus sur ce que vous pouvez attendre de Hack the Hill de la part de certains de nos directeurs d\'événements. Merci au Fulcrum pour la publication!',
-		button_text: "Lire l'article",
-		close: "Fermer Notification",
-	},
-	"events-page": {
-		title: "Événements",
-		description: "Joignez-nous pour une série d'événements exaltants menant à Hack the Hill 2024!",
-		description2:
-			"Que vous soyez un novice en codage ou un hacker chevroné, nos événements offrent une plateforme pour apprendre, réseauter et mettre en valeur vos compétences. Plongez dans le monde de l'innovation et de la résolution de problèmes, et faites partie de la communauté des hackers qui cherchent à faire un vrai impact.",
-		description3:
-			"Ne manquez pas cette occasion de vous mettre au défi et de vous inspirer - inscrivez-vous aux événements de la Série du Hacker!",
-		button: {
-			start: "Apprenez-en plus sur notre",
-			end: "site web",
-		},
-	},
-	"four-o-four": {
-		title: "Oh non!",
-		description: "Bea.var pense que vous êtes perdus...",
-		button: "Retourner",
-	},
+	footer: {},
 } as const;

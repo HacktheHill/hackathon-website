@@ -1,55 +1,70 @@
 :root {
-	--light-color: white;
-	--light-primary-color: #fff3b6;
-	--light-secondary-color: #f8cc8d;
-	--light-tertiary-color: #f6bf70;
-	--medium-primary-color: #ea885f;
-	--medium-secondary-color: #dd484d;
-	--medium-tertiary-color: #c11f25;
-	--dark-primary-color: #84010b;
-	--dark-secondary-color: #650014;
-	--hackhers-primary-color: #ac1d73;
-	--hackhers-secondary-color: #eaeaea;
-	--hackhers-btn: #c82988;
+	--shade-1: #ebebeb;
+	--shade-2: #e0e0e0;
+	--shade-3: #bdbdbd;
+	--shade-4: #9e9e9e;
+	--shade-5: #757575;
+	--shade-6: #616161;
+	--shade-7: #424242;
+	--shade-8: #212121;
+	--shade-9: #171717;
+	--shade-10: #090909;
 
-	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
-	--button-gradient: linear-gradient(90deg, var(--light-tertiary-color), transparent) var(--light-secondary-color);
+	--primary: #ff3535;
+	--light-accent: #ff7979;
+	--dark-accent: #551a1a;
 
-	color-scheme: light;
+	--theme-gradient: linear-gradient(90deg, #750d0d 0%, #550505 50%, #3d0505 100%);
+
 	scrollbar-gutter: stable;
-	background-color: var(--dark-primary-color);
+	background-color: var(--shade-9);
+	color: var(--shade-3);
 }
 
 h1 {
-	font-family: Rubik;
+	font-family: "Poppins", sans-serif;
 	font-size: min(3rem, 12vw);
-	font-weight: 500;
+	font-weight: medium;
 	letter-spacing: 0.125rem;
-	color: var(--light-primary-color);
+	color: var(--shade-2);
 }
 
 h2 {
+	font-family: "Poppins", sans-serif;
 	font-size: 2rem;
+	font-weight: 300;
+	line-height: 1.2;
 }
 
 h3 {
+	font-family: "Poppins", sans-serif;
 	font-size: 1.5rem;
+	font-weight: 300;
 }
 
 h4 {
+	font-family: "Poppins", sans-serif;
 	font-size: 1.25rem;
+	font-weight: 300;
 }
 
 h5 {
+	font-family: "Poppins", sans-serif;
 	font-size: 1rem;
+	font-weight: 300;
 }
 
 h6 {
+	font-family: "Poppins", sans-serif;
 	font-size: 0.75rem;
+	font-weight: 300;
 }
 
 p {
+	font-family: "Poppins", sans-serif;
 	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.2;
 }
 
 @media screen and (max-width: 510px) {

@@ -4,8 +4,8 @@
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
 		"GitHub.copilot",
-		"mhutchie.git-graph",
-		"lokalise.i18n-ally"
+		"bradlc.vscode-tailwindcss",
+		"stivo.tailwind-fold"
 	],
 	"unwantedRecommendations": []
 }

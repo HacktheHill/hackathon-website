@@ -1,0 +1,9 @@
+---
+import EventsPage from "../components/Events/EventsPage";
+import Layout from "../layouts/Layout.astro";
+const title = "Hack The Hill - Events";
+---
+
+<Layout title={title}>
+	<EventsPage client:load />
+</Layout>

@@ -1,12 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t } from "../../i18n";
 import styles from "./Testimonials.module.css";
 
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-function Testimonials() {
+export default function Testimonials() {
 	const testimonialData = [
 		{
 			id: 3,
@@ -92,19 +88,10 @@ function Testimonials() {
 		};
 	}, []);
 
-	useEffect(() => {
-		AOS.init({});
-	}, []);
-
 	return (
 		<div id="testimonials" className={styles["testimonials"]}>
-			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
-			<h1 data-aos="fade-up" data-aos-duration="800">
-				{t("testimonials.title")}
-			</h1>
-			<h2 data-aos="fade-up" data-aos-duration="800">
-				{t("testimonials.sub_heading")}
-			</h2>
+			<h1>{t("testimonials.title")}</h1>
+			<h2>{t("testimonials.sub_heading")}</h2>
 			<div className={styles["testimonial-body"]} ref={ref}>
 				{testimonialData.map((_, index) => (
 					<div
@@ -118,10 +105,8 @@ function Testimonials() {
 							className={styles["testimonial-img"]}
 							src={testimonialData[index].img}
 							alt={testimonialData[index].name}
-							data-aos="fade-up"
-							data-aos-duration="800"
 						/>
-						<div className={styles["testimonial-text"]} data-aos="fade-up" data-aos-duration="800">
+						<div className={styles["testimonial-text"]}>
 							<p className={styles["testimonial-content"]}>{testimonialData[index].content}</p>
 							<p className={styles["testimonial-provider"]}>
 								{testimonialData[index].name}, {testimonialData[index].role}
@@ -130,12 +115,7 @@ function Testimonials() {
 					</div>
 				))}
 			</div>
-			<div
-				className={styles["carousel-control"]}
-				data-aos="fade-up"
-				data-aos-duration="800"
-				data-aos-offset="-100"
-			>
+			<div className={styles["carousel-control"]}>
 				<button
 					onClick={prevSlide}
 					className={styles["prev-button"]}
@@ -157,10 +137,10 @@ function Testimonials() {
 					className={styles["next-button"]}
 					aria-label={t("testimonials.aria_label_next")}
 				></button>
+				<button onClick={nextSlide} className="bg-primary font-bold text-white px-4 py-2 rounded-md">
+					yo
+				</button>
 			</div>
-			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 		</div>
 	);
 }
-
-export default Testimonials;
