@@ -88,7 +88,7 @@ export default function Navigation() {
 						id="sidebar"
 						className={
 							sidebarOpen
-								? "absolute flex flex-col top-16 right-0 z-50 border border-shade-7  transition-all duration-500 md:rounded-bl-xl md:border-t-0 md:border-r-0 md:shadow-md"
+								? "absolute flex flex-col top-16 right-0 z-50 border border-shade-7  transition-all duration-500 md:rounded-bl-xl md:border-t-0 md:border-r-0 md:shadow-md md:bg-shade-9"
 								: "flex flex-row gap-4 items-center md:hidden"
 						}
 					>

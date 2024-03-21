@@ -15,7 +15,7 @@ export default function HomePage() {
 			{/*<About />*/}
 			{/*<Stats />*/}
 			{/*<Gallery />*/}
-			{/*<Sponsors />*/}
+			{<Sponsors />}
 			{/*<Testimonials />*/}
 			{/*<ContactUs />*/}
 		</>

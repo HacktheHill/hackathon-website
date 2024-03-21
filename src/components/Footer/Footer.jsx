@@ -5,12 +5,12 @@ import { t } from "../../i18n";
 
 export default function Footer() {
 	return (
-		<div className="absolute bottom-0 h-auto w-full bg-shade-10 flex flex-col gap-1 p-4 md:gap-4 lg:flex-row justify-between items-center md:p-5 lg:px-16">
-			<div className="grid grid-flow-row grid-cols-2 gap-2 gap-x-5 md:gap-x-0 md:grid-cols-4 place-items-center lg:flex lg:items-center w-full lg:w-auto justify-between lg:gap-16">
-				<p className="text-white text-sm whitespace-nowrap col-span-2 md:col-span-1 order-last md:order-first">
+		<div className="h-auto w-full bg-shade-10 flex lg:flex-col md:gap-1 md:p-4 gap-4 flex-row justify-between items-center p-5 px-16">
+			<div className="md:grid-cols-2 md:gap-x-5 lg:grid lg:grid-flow-row lg:gap-x-0 lg:grid-cols-4 lg:gap-2 lg:w-full place-items-center flex items-center w-auto justify-between gap-16">
+				<p className="text-white text-sm whitespace-nowrap md:col-span-2 col-span-1 md:order-last">
 					(C) Hack the Hill 2024
 				</p>
-				<div className="flex gap-4 col-span-2 md:col-span-1 text-xl">
+				<div className="flex gap-4 md:col-span-2 col-span-1 text-xl">
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
@@ -47,7 +47,7 @@ export default function Footer() {
 						<Icon icon={faTiktok} />
 					</a>
 				</div>
-				<div className="col-span-2 flex justify-center gap-5 w-full md:gap-0 md:grid md:grid-cols-2 md:justify-items-center lg:gap-11">
+				<div className="md:flex lg:col-span-2 flex justify-center md:gap-5 w-full lg:gap-0 lg:grid lg:grid-cols-2 lg:justify-items-center gap-16">
 					<a
 						href="https://cdn1.hackthehill.com/legal/constitution.pdf"
 						target="_blank"
