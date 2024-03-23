@@ -5,7 +5,7 @@ import { t } from "../../i18n";
 
 export default function Footer() {
 	return (
-		<div className="absolute bottom-0 h-24 w-full bg-shade-10 flex justify-center items-center">
+		<div className="">
 			<div> {/* Content */}</div>
 		</div>
 	);
