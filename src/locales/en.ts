@@ -3,7 +3,7 @@ export default {
 		links: { events: "Events", blog: "Blog", documents: "Documents", team: "Team" },
 		aria_label: "Navigation Bar",
 	},
-	hero: {},
+	hero: {title: "Canada's Capital Hackathon"},
 	about: {},
 	stats: {},
 	sponsors: {},

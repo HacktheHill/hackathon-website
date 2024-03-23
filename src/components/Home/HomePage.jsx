@@ -11,11 +11,11 @@ import "../../global.css";
 export default function HomePage() {
 	return (
 		<>
-			{/*<Hero />*/}
+			<Hero />
 			{/*<About />*/}
 			{/*<Stats />*/}
 			{/*<Gallery />*/}
-			{/*<Sponsors />*/}
+			<Sponsors />
 			{/*<Testimonials />*/}
 			{/*<ContactUs />*/}
 		</>

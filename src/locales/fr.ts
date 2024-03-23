@@ -3,7 +3,7 @@ export default {
 		links: { events: "Événements", blog: "Blog", documents: "Documents", team: "Équipe" },
 		aria_label: "Barre de Navigation",
 	},
-	hero: {},
+	hero: { title: "Le Hackathon de la Capitale Canadienne" },
 	about: {},
 	stats: {},
 	sponsors: {},
