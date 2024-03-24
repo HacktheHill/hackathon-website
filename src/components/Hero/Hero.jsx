@@ -35,7 +35,7 @@ export default function Hero() {
 					/>
 					<img id="hth-logo-solid" {...HtHSolid} alt="Hack the Hill Logo" className="relative w-3/4" />
 				</div>
-				<div id="content" className="flex flex-col w-full justify-center items-center gap-8 md:gap-0">
+				<div id="content" className="flex flex-col w-full justify-center items-center gap-8 px-4 md:gap-0">
 					<h2 className="font-medium text-center">{t("hero.title")}</h2>
 					<button
 						className="bg-transparent border-none p-4 cursor-pointer font-bold transition-all duration-100 hover:text-shade-1 underline"

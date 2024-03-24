@@ -49,12 +49,12 @@ export default function Navigation() {
 				<div className="flex flex-row gap-4 items-center xs:gap-0">
 					<a
 						href="/"
-						className="flex h-full items-center bg-transparent border-none p-4 cursor-pointer transition-all duration-100 opacity-80 hover:opacity-100"
+						className="flex h-full items-center bg-transparent border-none p-4 cursor-pointer transition-all duration-100 opacity-85 hover:opacity-100"
 					>
 						<img {...logo} alt="Logo" width="75px" />
 					</a>
 					<button
-						className="flex h-full items-center bg-transparent border-none p-4 cursor-pointer font-bold transition-all duration-100 hover:text-shade-1"
+						className="flex h-full w-16 items-center bg-transparent border-none p-4 cursor-pointer font-bold transition-all duration-100 hover:text-shade-1"
 						type="submit"
 						onClick={() => {
 							setLanguage(!language);
@@ -64,7 +64,7 @@ export default function Navigation() {
 						{language ? "FR" : "EN"}
 					</button>
 					<div
-						className="flex h-8 w-24 justify-center items-center bg-2024-bg bg-cover bg-top border-none rounded-xl p-4 text-bg-2024 cursor-pointer font-bold transition-all duration-100 opacity-80 hover:opacity-100"
+						className="flex h-8 w-24 justify-center items-center bg-2024-bg bg-cover bg-top border-none rounded-xl p-4 text-bg-2024 cursor-pointer font-bold transition-all duration-100 opacity-85 hover:opacity-100"
 						onClick={() => window.open("https://2024.hackthehill.com", "_blank")}
 					>
 						2024
