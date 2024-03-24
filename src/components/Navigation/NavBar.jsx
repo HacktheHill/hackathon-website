@@ -60,15 +60,10 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				duration={500}
 				href="#hero"
 			>
-				<img alt="Logo" src={logo} data-aos="fade-down" data-aos-duration="1000"></img>
+				<img alt="Logo" src={logo}></img>
 			</Link>
 
-			<div
-				className={style["left-side-buttons"]}
-				data-aos="fade-down"
-				data-aos-duration="1000"
-				data-aos-delay="300"
-			>
+			<div className={style["left-side-buttons"]}>
 				<button
 					className={style["square-button"]}
 					type="submit"
@@ -90,12 +85,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 
 			<ul>
 				{links.map((link, index) => (
-					<li
-						key={link.text}
-						data-aos="fade-down"
-						data-aos-duration="1000"
-						data-aos-delay={200 + index * 100}
-					>
+					<li key={link.text}>
 						<Link
 							className={style["link"]}
 							activeClass={style["active"]}

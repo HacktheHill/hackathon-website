@@ -393,7 +393,7 @@ function Team() {
 	return (
 		<div className={styles["team"]}>
 			<div className={styles["header-container"]}>
-				<h3>{t("team.title")}</h3>
+				<p className={styles["team-title"]}>{t("team.title")}</p>
 			</div>
 			<div className={styles["carousel-track"]}>
 				{marqueeGroup(team, 1, pauseAnimation, startAnimation)}

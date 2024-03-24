@@ -13,10 +13,10 @@
 
 .header-container {
 	display: flex;
-	padding-right: 2rem;
 	justify-content: center;
 	align-items: center;
 	z-index: 1;
+	text-align: center;
 }
 
 .carousel-track {
@@ -58,6 +58,11 @@
 
 .tooltip-text {
 	text-align: center;
+}
+
+.team-title {
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 
 @media (max-width: 768px) {
