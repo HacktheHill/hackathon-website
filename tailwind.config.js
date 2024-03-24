@@ -6,7 +6,19 @@ module.exports = {
 				"square-svg": 'url("/src/assets/SVGs/square_bg.svg")',
 				"2024-bg": 'url("/src/assets/SVGs/2024.svg")',
 			},
-		},
+			keyframes: {
+				"shake-rotate": {
+					"0%, 100%": { transform: "rotate(0deg)" , scale: "1.25" },
+					"25%": { transform: "rotate(5deg)" , scale: "1.25" },
+					"50%": { transform: "rotate(-5deg)" , scale: "1.25" },
+					"75%": { transform: "rotate(5deg)" , scale: "1.25" },
+				},
+			},
+			animation: {
+				"shake-rotate": "shake-rotate 1.0s ease-in-out infinite",
+				},
+			},
+		
 		colors: {
 			primary: "#FF3535",
 			light_accent: "#ff7979",

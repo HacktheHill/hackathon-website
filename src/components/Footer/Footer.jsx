@@ -15,7 +15,7 @@ export default function Footer() {
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:scale-125  ease-out duration-300 text-white"
+						className="hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
 					>
 						<Icon icon={faFacebook} />
 					</a>
@@ -23,7 +23,7 @@ export default function Footer() {
 						href="https://www.linkedin.com/company/hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:scale-125 ease-out duration-300 text-white"
+						className="hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
 					>
 						<Icon icon={faLinkedin} />
 					</a>
@@ -31,7 +31,7 @@ export default function Footer() {
 						href="https://www.instagram.com/hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:scale-125 ease-out duration-300 text-white"
+						className="hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
 					>
 						<Icon icon={faInstagram} />
 					</a>
@@ -39,7 +39,7 @@ export default function Footer() {
 						href="https://twitter.com/hackthehill_"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:scale-125 ease-out duration-300 text-white"
+						className="hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
 					>
 						<Icon icon={faTwitter} />
 					</a>
@@ -47,7 +47,7 @@ export default function Footer() {
 						href="https://www.tiktok.com/@hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:scale-125 ease-out duration-300 text-white"
+						className="hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
 					>
 						<Icon icon={faTiktok} />
 					</a>
@@ -57,7 +57,7 @@ export default function Footer() {
 						href="https://cdn1.hackthehill.com/legal/constitution.pdf"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:opacity-75 ease-out duration-300 text-white text-sm underline whitespace-nowrap"
+						className="ease-out duration-300 text-white text-sm underline whitespace-nowrap hover:opacity-100 opacity-85"
 					>
 						Code of Conduct
 					</a>
@@ -65,7 +65,7 @@ export default function Footer() {
 						href="https://cdn1.hackthehill.com/legal/privacy-policy.pdf"
 						target="_blank"
 						rel="noreferrer"
-						className="hover:opacity-75 ease-out duration-300 text-white text-sm underline whitespace-nowrap"
+						className="ease-out duration-300 text-white text-sm underline whitespace-nowrap hover:opacity-100 opacity-85"
 					>
 						Privacy Policy
 					</a>
