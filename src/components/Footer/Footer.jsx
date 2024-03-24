@@ -10,12 +10,12 @@ export default function Footer() {
 				<p className="text-white text-sm whitespace-nowrap md:col-span-2 md:p-1.5 col-span-1 md:order-last italic">
 					(C) Hack the Hill 2024
 				</p>
-				<div className="flex gap-4 md:col-span-2 col-span-1 text-xl">
+				<div className="transition-all flex gap-4 md:col-span-2 col-span-1 text-xl">
 					<a
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
 						rel="noreferrer"
-						className="text-white"
+						className="hover:scale-125  ease-out duration-300 text-white"
 					>
 						<Icon icon={faFacebook} />
 					</a>
@@ -23,7 +23,7 @@ export default function Footer() {
 						href="https://www.linkedin.com/company/hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="text-white"
+						className="hover:scale-125 ease-out duration-300 text-white"
 					>
 						<Icon icon={faLinkedin} />
 					</a>
@@ -31,28 +31,33 @@ export default function Footer() {
 						href="https://www.instagram.com/hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="text-white"
+						className="hover:scale-125 ease-out duration-300 text-white"
 					>
 						<Icon icon={faInstagram} />
 					</a>
-					<a href="https://twitter.com/hackthehill_" target="_blank" rel="noreferrer" className="text-white">
+					<a
+						href="https://twitter.com/hackthehill_"
+						target="_blank"
+						rel="noreferrer"
+						className="hover:scale-125 ease-out duration-300 text-white"
+					>
 						<Icon icon={faTwitter} />
 					</a>
 					<a
 						href="https://www.tiktok.com/@hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="text-white"
+						className="hover:scale-125 ease-out duration-300 text-white"
 					>
 						<Icon icon={faTiktok} />
 					</a>
 				</div>
-				<div className="md:flex lg:col-span-2 flex justify-center md:gap-4 w-full lg:gap-0 lg:grid lg:grid-cols-2 lg:justify-items-center gap-16">
+				<div className="transition-all md:flex lg:col-span-2 flex justify-center md:gap-4 w-full lg:gap-0 lg:grid lg:grid-cols-2 lg:justify-items-center gap-16">
 					<a
 						href="https://cdn1.hackthehill.com/legal/constitution.pdf"
 						target="_blank"
 						rel="noreferrer"
-						className="text-white text-sm underline whitespace-nowrap"
+						className="hover:opacity-75 ease-out duration-300 text-white text-sm underline whitespace-nowrap"
 					>
 						Code of Conduct
 					</a>
@@ -60,7 +65,7 @@ export default function Footer() {
 						href="https://cdn1.hackthehill.com/legal/privacy-policy.pdf"
 						target="_blank"
 						rel="noreferrer"
-						className="text-white text-sm underline whitespace-nowrap"
+						className="hover:opacity-75 ease-out duration-300 text-white text-sm underline whitespace-nowrap"
 					>
 						Privacy Policy
 					</a>
