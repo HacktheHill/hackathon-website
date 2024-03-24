@@ -5,6 +5,7 @@ import Stats from "../Stats/Stats";
 import Gallery from "../Gallery/Gallery";
 import Sponsors from "../Sponsors/Sponsors";
 import Testimonials from "../Testimonials/Testimonials";
+import Contact from "../Contact/Contact";
 import "../../global.css";
 
 export default function HomePage() {
@@ -14,9 +15,9 @@ export default function HomePage() {
 			{/*<About />*/}
 			{/*<Stats />*/}
 			{/*<Gallery />*/}
-			<Sponsors />
+			{/*<Sponsors />*/}
 			{/*<Testimonials />*/}
-			{/*<ContactUs />*/}
+			{/*<Contact />*/}
 		</>
 	);
 }
