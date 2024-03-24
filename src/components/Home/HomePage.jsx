@@ -5,19 +5,19 @@ import Stats from "../Stats/Stats";
 import Gallery from "../Gallery/Gallery";
 import Sponsors from "../Sponsors/Sponsors";
 import Testimonials from "../Testimonials/Testimonials";
-import ContactUs from "../ContactUs/ContactUs";
+import Contact from "../Contact/Contact";
 import "../../global.css";
 
 export default function HomePage() {
 	return (
 		<>
-			{/*<Hero />*/}
+			<Hero />
 			{/*<About />*/}
 			{/*<Stats />*/}
 			{/*<Gallery />*/}
 			{/*<Sponsors />*/}
 			{/*<Testimonials />*/}
-			{/*<ContactUs />*/}
+			{/*<Contact />*/}
 		</>
 	);
 }

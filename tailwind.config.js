@@ -1,7 +1,12 @@
 module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			backgroundImage: {
+				"square-svg": 'url("/src/assets/SVGs/square_bg.svg")',
+				"2024-bg": 'url("/src/assets/SVGs/2024.svg")',
+			},
+		},
 		colors: {
 			primary: "#FF3535",
 			light_accent: "#ff7979",
@@ -17,6 +22,7 @@ module.exports = {
 			"shade-9": "#171717",
 			"shade-10": "#090909",
 			navbar: "#212121a9",
+			"bg-2024": "#84010b",
 		},
 		screens: {
 			xs: { max: "480px" },

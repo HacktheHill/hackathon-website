@@ -69,7 +69,7 @@ p {
 	line-height: 1.2;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 768px) {
 	h1 {
 		font-size: 2rem;
 	}
@@ -90,5 +90,29 @@ p {
 	}
 	p {
 		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+	h2 {
+		font-size: 1.25rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+	h4 {
+		font-size: 0.75rem;
+	}
+	h5 {
+		font-size: 0.5rem;
+	}
+	h6 {
+		font-size: 0.25rem;
+	}
+	p {
+		font-size: 0.5rem;
 	}
 }
