@@ -6,19 +6,29 @@ module.exports = {
 				"square-svg": 'url("/src/assets/SVGs/square_bg.svg")',
 				"2024-bg": 'url("/src/assets/SVGs/2024.svg")',
 			},
+			height: {
+                section: "90vh",
+            },
 			keyframes: {
-				"shake-rotate": {
+				"shake-repeat": {
 					"0%, 100%": { transform: "rotate(0deg)" , scale: "1.25" },
 					"25%": { transform: "rotate(5deg)" , scale: "1.25" },
 					"50%": { transform: "rotate(-5deg)" , scale: "1.25" },
 					"75%": { transform: "rotate(5deg)" , scale: "1.25" },
 				},
-			},
-			animation: {
-				"shake-rotate": "shake-rotate 1.0s ease-in-out infinite",
+				"shake-start": {
+					"0%": { transform: "rotate(0deg)" , scale: "1.00" },
+					"25%": { transform: "rotate(5deg)" , scale: "1.125" },
+					"50%": { transform: "rotate(-5deg)" , scale: "1.25" },
+					"75%": { transform: "rotate(5deg)" , scale: "1.25" },
+					"100%": { transform: "rotate(0deg)" , scale: "1.25" },
 				},
 			},
-		
+			animation: {
+				"shake-rotate": "shake-start 1.0s ease-in-out 0s forwards, shake-repeat 1.0s ease-in-out 1.0s infinite",
+			},
+		},
+
 		colors: {
 			primary: "#FF3535",
 			light_accent: "#ff7979",

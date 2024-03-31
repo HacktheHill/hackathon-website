@@ -15,7 +15,7 @@ export default function Footer() {
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
 						rel="noreferrer"
-						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
+						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 forwards"
 					>
 						<Icon icon={faFacebook} />
 					</a>
