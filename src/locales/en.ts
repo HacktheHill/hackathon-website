@@ -9,19 +9,25 @@ export default {
 	gallery: {
 		title: "Where Memories are Made",
 		subtitle: "Check out our favourite moments from some of our past events!",
-		link: "Learn More",
-		hackhers: {
-			tag: "HackHers",
-			title: "HackHers",
-			description:
-				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.Lorem impsum dolor sit amet, consectetur adipiscing elit.",
-		},
-		main_2023: {
-			tag: "2023",
-			title: "2023 Main Event",
-			description:
-				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.",
-		},
+		button_text: "Learn More",
+		albums: [
+			{
+				tag: "2023",
+				title: "2023 Main Event",
+				description: "Check out some of the amazing moments from our 2023 Main Event!",
+				img1: "/src/assets/gallery/Gradient.webp",
+				img2: "/src/assets/gallery/Gradient.webp",
+				link: "https://hackthehill.com",
+			},
+			{
+				tag: "HackHers",
+				title: "HackHers",
+				description: "Check out some of the amazing moments from our HackHers event in 2023!",
+				img1: "/src/assets/gallery/Gradient.webp",
+				img2: "/src/assets/gallery/Gradient.webp",
+				link: "https://hackthehill.com",
+			},
+		],
 	},
 	sponsors: {},
 	collaborators: {},
