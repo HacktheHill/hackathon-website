@@ -6,6 +6,23 @@ export default {
 	hero: { title: "Le Hackathon de la Capitale Canadienne" },
 	about: {},
 	stats: {},
+	gallery: {
+		title: "Où les Moments sont Créés",
+		subtitle: "Revoyez certains des moments les plus mémorables de Hack the Hill !",
+		link: "Plus d'info",
+		hackhers: {
+			tag: "HackHers",
+			title: "HackHers",
+			description:
+				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.",
+		},
+		main_2023: {
+			tag: "2023",
+			title: "Évenement principal 2023",
+			description:
+				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.",
+		},
+	},
 	sponsors: {},
 	collaborators: {},
 	testimonials: {

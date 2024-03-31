@@ -3,9 +3,26 @@ export default {
 		links: { events: "Events", blog: "Blog", documents: "Documents", team: "Team" },
 		aria_label: "Navigation Bar",
 	},
-	hero: {title: "Canada's Capital Hackathon"},
+	hero: { title: "Canada's Capital Hackathon" },
 	about: {},
 	stats: {},
+	gallery: {
+		title: "Where Memories are Made",
+		subtitle: "Check out our favourite moments from some of our past events!",
+		link: "Learn More",
+		hackhers: {
+			tag: "HackHers",
+			title: "HackHers",
+			description:
+				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.",
+		},
+		main_2023: {
+			tag: "2023",
+			title: "2023 Main Event",
+			description:
+				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.",
+		},
+	},
 	sponsors: {},
 	collaborators: {},
 	testimonials: {
