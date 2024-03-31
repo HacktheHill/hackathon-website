@@ -13,8 +13,8 @@ export default {
 		albums: [
 			{
 				tag: "2023",
-				title: "2023 Main Event",
-				description: "Check out some of the amazing moments from our 2023 Main Event!",
+				title: "Événement Principal 2023",
+				description: "Revivez les moments les plus mémorables de notre événement principal de 2023!",
 				img1: "/src/assets/gallery/Gradient.webp",
 				img2: "/src/assets/gallery/Gradient.webp",
 				link: "https://hackthehill.com",
@@ -22,7 +22,31 @@ export default {
 			{
 				tag: "HackHers",
 				title: "HackHers",
-				description: "Check out some of the amazing moments from our HackHers event in 2023!",
+				description: "Découvrez les moments les plus mémorables de notre événement HackHers!",
+				img1: "/src/assets/gallery/Gradient.webp",
+				img2: "/src/assets/gallery/Gradient.webp",
+				link: "https://hackthehill.com",
+			},
+			{
+				tag: "Panel de Stagiaires",
+				title: "Panel de Stagiaires",
+				description: "Revivez les moments les plus mémorables de notre panel de stagiaires!",
+				img1: "/src/assets/gallery/Gradient.webp",
+				img2: "/src/assets/gallery/Gradient.webp",
+				link: "https://hackthehill.com",
+			},
+			{
+				tag: "Évaluation de CV",
+				title: "Évaluation de CV",
+				description: "Revivez les moments les plus mémorables de notre événement d'évaluation de CV!",
+				img1: "/src/assets/gallery/Gradient.webp",
+				img2: "/src/assets/gallery/Gradient.webp",
+				link: "https://hackthehill.com",
+			},
+			{
+				tag: "Réseautage Ciena",
+				title: "Réseautage Ciena",
+				description: "Revivez les moments les plus mémorables de notre événement de réseautage avec Ciena!",
 				img1: "/src/assets/gallery/Gradient.webp",
 				img2: "/src/assets/gallery/Gradient.webp",
 				link: "https://hackthehill.com",

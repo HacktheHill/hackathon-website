@@ -37,14 +37,14 @@ export default function Gallery() {
 					<h2>{t("gallery.subtitle")}</h2>
 				</div>
 				<div className="flex w-9/12 h-4/6 flex-row justify-between items-center flex-wrap xl:gap-16 xl:w-11/12">
-					<div className="flex basis-3/12 justify-start items-center flex-wrap gap-6 xl:basis-full xl:justify-center">
+					<div className="flex basis-3/12 justify-start items-center flex-wrap gap-8 xl:basis-full xl:justify-center">
 						{albums.map(album => (
 							<div
 								key={album.tag}
 								onClick={() => {
 									handleCardClick(album.tag);
 								}}
-								className="flex flex-col justify-center items-center gap-2 w-24 h-24 cursor-pointer"
+								className="flex flex-col justify-start items-center gap-2 w-24 h-24 cursor-pointer"
 							>
 								<div>
 									<div
