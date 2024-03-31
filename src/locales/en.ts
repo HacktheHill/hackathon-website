@@ -14,7 +14,7 @@ export default {
 			tag: "HackHers",
 			title: "HackHers",
 			description:
-				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.",
+				"Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum. Nulla nec purus feugiat, molestie ipsum id, tincidunt ipsum.Lorem impsum dolor sit amet, consectetur adipiscing elit.",
 		},
 		main_2023: {
 			tag: "2023",

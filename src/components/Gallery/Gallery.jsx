@@ -56,8 +56,8 @@ export default function Gallery() {
 					<h1>{t("gallery.title")}</h1>
 					<h2>{t("gallery.subtitle")}</h2>
 				</div>
-				<div className="flex w-9/12 h-4/6 flex-row justify-between items-center flex-wrap lg:gap-16 lg:w-11/12">
-					<div className="flex basis-3/12 justify-center items-center flex-wrap gap-6 lg:basis-full">
+				<div className="flex w-9/12 h-4/6 flex-row justify-between items-center flex-wrap xl:gap-16 xl:w-11/12">
+					<div className="flex basis-3/12 justify-start items-center flex-wrap gap-6 xl:basis-full xl:justify-center">
 						{Object.keys(albums).map(album => (
 							<div
 								key={album}
@@ -85,28 +85,26 @@ export default function Gallery() {
 							</div>
 						))}
 					</div>
-					<div className="basis-8/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 lg:basis-full">
-						<div className="border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 col-start-1 col-end-6 row-start-4 row-end-12 z-10 px-4 py-8 flex flex-col justify-between">
+					<div className="basis-8/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col">
+						<div className="border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-10 gap-4 px-4 py-8 flex flex-col justify-between col-start-1 col-end-6 row-start-3 row-end-12">
 							<div className="flex flex-col justify-start items-start gap-4">
 								<h3 className="font-bold">{albums[selectedAlbum].title}</h3>
-								<p className="text-start">{albums[selectedAlbum].description}</p>
+								<p className="text-start text-sm md:text-xs">{albums[selectedAlbum].description}</p>
 							</div>
-							<div>
-								<div className="flex justify-end">
-									<Button onClick={() => window.open(albums[selectedAlbum].link, "_blank")}>
-										{t("gallery.link")}
-									</Button>
-								</div>
+							<div className="flex justify-end">
+								<Button onClick={() => window.open(albums[selectedAlbum].link, "_blank")}>
+									{t("gallery.link")}
+								</Button>
 							</div>
 						</div>
-						<div className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-12 row-start-1 row-end-7">
+						<div className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-12 row-start-1 row-end-7 xs:h-36">
 							<img
 								src={albums[selectedAlbum].img1}
 								alt="gallery"
 								className="w-full h-full object-cover"
 							/>
 						</div>
-						<div className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-13 row-start-7 row-end-13">
+						<div className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-13 row-start-7 row-end-13 xs:h-36">
 							<img
 								src={albums[selectedAlbum].img2}
 								alt="gallery"
