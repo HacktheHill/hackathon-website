@@ -1,9 +1,25 @@
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { t } from "../../i18n";
 
 export default function Footer() {
+	const [isMouseLeaving, setIsMouseLeaving] = useState(null);
+
+	const handleMouseLeave = iconName => {
+		setIsMouseLeaving(iconName);
+		setTimeout(() => setIsMouseLeaving(null), 500); // Change to the duration you want in milliseconds
+	};
+
+	const [isHeartActive, setIsHeartActive] = useState(false);
+
+	const toggleHeart = () => {
+		if (!isHeartActive) {
+			setIsHeartActive(true);
+			setTimeout(() => setIsHeartActive(false), 3000); // Change to the duration you want in milliseconds
+		}
+	};
+
 	return (
 		<div className="h-auto w-full bg-shade-10 flex lg:flex-col md:gap-1 md:p-6 gap-4 flex-row justify-between items-center p-5 lg:px-8 px-16">
 			<div className="md:grid-cols-2 md:gap-x-5 md:gap-2 lg:grid lg:grid-flow-row lg:gap-x-0 lg:grid-cols-4 lg:gap-2 lg:w-full place-items-center flex items-center w-auto justify-between gap-16">
@@ -15,7 +31,10 @@ export default function Footer() {
 						href="https://www.facebook.com/canadascapitalhackathon"
 						target="_blank"
 						rel="noreferrer"
-						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 forwards"
+						className={`transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 ${
+							isMouseLeaving === "facebook" ? "animate-shake-end" : ""
+						}`}
+						onMouseLeave={() => handleMouseLeave("facebook")}
 					>
 						<Icon icon={faFacebook} />
 					</a>
@@ -23,7 +42,10 @@ export default function Footer() {
 						href="https://www.linkedin.com/company/hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
+						className={`transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 ${
+							isMouseLeaving === "linkedin" ? "animate-shake-end" : ""
+						}`}
+						onMouseLeave={() => handleMouseLeave("linkedin")}
 					>
 						<Icon icon={faLinkedin} />
 					</a>
@@ -31,7 +53,10 @@ export default function Footer() {
 						href="https://www.instagram.com/hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
+						className={`transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 ${
+							isMouseLeaving === "instagram" ? "animate-shake-end" : ""
+						}`}
+						onMouseLeave={() => handleMouseLeave("instagram")}
 					>
 						<Icon icon={faInstagram} />
 					</a>
@@ -39,7 +64,10 @@ export default function Footer() {
 						href="https://twitter.com/hackthehill_"
 						target="_blank"
 						rel="noreferrer"
-						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
+						className={`transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 ${
+							isMouseLeaving === "twitter" ? "animate-shake-end" : ""
+						}`}
+						onMouseLeave={() => handleMouseLeave("twitter")}
 					>
 						<Icon icon={faTwitter} />
 					</a>
@@ -47,7 +75,10 @@ export default function Footer() {
 						href="https://www.tiktok.com/@hackthehill"
 						target="_blank"
 						rel="noreferrer"
-						className="transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85"
+						className={`transition-all duration-300 hover:animate-shake-rotate text-white hover:opacity-100 opacity-85 ${
+							isMouseLeaving === "tiktok" ? "animate-shake-end" : ""
+						}`}
+						onMouseLeave={() => handleMouseLeave("tiktok")}
 					>
 						<Icon icon={faTiktok} />
 					</a>
@@ -71,9 +102,14 @@ export default function Footer() {
 					</a>
 				</div>
 			</div>
-			<div className="flex items-center">
-				<p className="text-white text-sm whitespace-nowrap font-bold">
-					by HtH Dev team{" "}
+			<div className="flex items-center gap-0.5">
+				<p className="text-white text-sm whitespace-nowrap font-bold">by HtH Dev team</p>
+				<p
+					className={`self-center text-white text-sm whitespace-nowrap font-bold ${
+						isHeartActive ? "animate-heart" : ""
+					}`}
+					onClick={toggleHeart}
+				>
 					<span role="img" aria-label="heart">
 						❤️
 					</span>

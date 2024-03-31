@@ -23,9 +23,24 @@ module.exports = {
 					"75%": { transform: "rotate(5deg)" , scale: "1.25" },
 					"100%": { transform: "rotate(0deg)" , scale: "1.25" },
 				},
+				"shake-end": {
+					"0%": { transform: "rotate(0deg)" , scale: "1.25" },
+					"50%": { transform: "rotate(5deg)" , scale: "1.125" },
+					"100%": { transform: "rotate(0deg)" , scale: "1.00" },
+				},
+				"heart": {
+					"0%": { transform: "translate(0, 0) scale(1)" , scale: "1.00" , opacity: "1.00"},
+					"20%": { transform: "translate(0, -75%)" , scale: "7.50" , opacity: "1.00"},
+					"40%": { transform: "translate(0, -50%)" , scale: "5.00" , opacity: "1.00"},
+					"60%": { transform: "translate(-50px, -50px) rotate(-60deg)" , scale: "5.00" , opacity: "0.00"},
+					"80%": { transform: "translate(200%, 0)", scale: "2.50" , opacity: "0.00"},
+					"100%": { transform: "translate(0, 0)" , scale: "1.00" , opacity: "1.00"},
+				},
 			},
 			animation: {
-				"shake-rotate": "shake-start 1.0s ease-in-out 0s forwards, shake-repeat 1.0s ease-in-out 1.0s infinite",
+				"shake-rotate": "shake-start 1.0s ease-in-out 0s, shake-repeat 1.0s ease-in-out 1.0s infinite",
+				"shake-end": "shake-end 0.5s ease-in-out",
+				"heart": "heart 3.0s ease-in-out forwards"
 			},
 		},
 
