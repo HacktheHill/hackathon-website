@@ -234,5 +234,9 @@ export default {
 		less: "Afficher moins",
 		more: "Afficher plus",
 	},
-	footer: {},
+	footer: {
+		constitution: "Constitution",
+		privacy: "Politique de Confidentialité",
+		message: "par l'Équipe Web de HtH",
+	},
 } as const;
