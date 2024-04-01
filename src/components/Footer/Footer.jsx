@@ -1,17 +1,18 @@
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { t } from "../../i18n";
+import { locale, t } from "../../i18n";
+import { useStore } from "@nanostores/react";
 
 export default function Footer() {
+	const currentLocale = useStore(locale);
 	const [isMouseLeaving, setIsMouseLeaving] = useState(null);
+	const [isHeartActive, setIsHeartActive] = useState(false);
 
 	const handleMouseLeave = iconName => {
 		setIsMouseLeaving(iconName);
-		setTimeout(() => setIsMouseLeaving(null), 500); // Change to the duration you want in milliseconds
+		setTimeout(() => setIsMouseLeaving(null), 250); // Change to the duration you want in milliseconds
 	};
-
-	const [isHeartActive, setIsHeartActive] = useState(false);
 
 	const toggleHeart = () => {
 		if (!isHeartActive) {
@@ -22,7 +23,11 @@ export default function Footer() {
 
 	return (
 		<div className="h-auto w-full bg-shade-10 flex lg:flex-col md:gap-1 md:p-6 gap-4 flex-row justify-between items-center p-5 lg:px-8 px-16">
-			<div className="md:grid-cols-2 md:gap-x-5 md:gap-2 lg:grid lg:grid-flow-row lg:gap-x-0 lg:grid-cols-4 lg:gap-2 lg:w-full place-items-center flex items-center w-auto justify-between gap-16">
+			<div
+				className={`md:grid-cols-2 md:gap-x-5 md:gap-2 lg:grid lg:grid-flow-row lg:gap-x-0 lg:grid-cols-4 lg:gap-2 lg:w-full place-items-center flex items-center w-auto justify-between ${
+					currentLocale === "en" ? "gap-16" : "gap-[2.75rem]"
+				}`}
+			>
 				<p className="text-white text-xs whitespace-nowrap md:col-span-2 md:p-1.5 col-span-1 md:order-last">
 					(C) Hack the Hill 2024
 				</p>
@@ -83,14 +88,18 @@ export default function Footer() {
 						<Icon icon={faTiktok} />
 					</a>
 				</div>
-				<div className="md:flex lg:col-span-2 flex justify-center md:gap-4 w-full lg:gap-0 lg:grid lg:grid-cols-2 lg:justify-items-center gap-16">
+				<div
+					className={`md:flex lg:col-span-2 flex justify-center md:gap-4 w-full lg:gap-0 lg:grid lg:grid-cols-2 lg:justify-items-center ${
+						currentLocale === "en" ? "gap-16" : "gap-[2.75rem]"
+					}`}
+				>
 					<a
 						href="https://cdn1.hackthehill.com/legal/constitution.pdf"
 						target="_blank"
 						rel="noreferrer"
 						className="transition-all ease-out duration-300 text-white text-sm underline whitespace-nowrap hover:opacity-100 opacity-85"
 					>
-						Code of Conduct
+						{t("footer.constitution")}
 					</a>
 					<a
 						href="https://cdn1.hackthehill.com/legal/privacy-policy.pdf"
@@ -98,12 +107,12 @@ export default function Footer() {
 						rel="noreferrer"
 						className="transition-all ease-out duration-300 text-white text-sm underline whitespace-nowrap hover:opacity-100 opacity-85"
 					>
-						Privacy Policy
+						{t("footer.privacy")}
 					</a>
 				</div>
 			</div>
 			<div className="flex items-center gap-0.5">
-				<p className="text-white text-sm whitespace-nowrap font-bold">by HtH Dev team</p>
+				<p className="text-white text-sm whitespace-nowrap font-bold">{t("footer.message")}</p>
 				<p
 					className={`self-center text-white text-sm whitespace-nowrap font-bold ${
 						isHeartActive ? "animate-heart" : ""

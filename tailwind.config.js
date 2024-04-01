@@ -6,9 +6,6 @@ module.exports = {
 				"square-svg": 'url("/src/assets/SVGs/square_bg.svg")',
 				"2024-bg": 'url("/src/assets/SVGs/2024.svg")',
 			},
-			height: {
-				section: "90vh",
-			},
 			keyframes: {
 				"shake-repeat": {
 					"0%, 100%": { transform: "rotate(0deg)", scale: "1.25" },
@@ -39,7 +36,7 @@ module.exports = {
 			},
 			animation: {
 				"shake-rotate": "shake-start 0.5s ease-in-out 0s, shake-repeat 0.5s ease-in-out 0.5s infinite",
-				"shake-end": "shake-end 0.5s ease-in-out",
+				"shake-end": "shake-end 0.25s ease-in-out",
 				heart: "heart 3.0s ease-in-out forwards",
 			},
 		},
