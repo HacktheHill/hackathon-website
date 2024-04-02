@@ -4,14 +4,14 @@ import { t } from "../../i18n";
 export default function About() {
 	return (
 		<>
-			<div className="flex w-full px-20 py-12 mt-10 ">
-				<div className="flex-grow p-10">
-					<div className="ml-12">
-						<p className="w-2/3 text-2xl mb-12 px-6 py-2 font-bold">It's more than just a hackathon</p>
-						<div className="w-6/7 text-pretty p-3 ">
-							<p className="">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-							</p>
+			<div className="flex w-full px-8 py-12 md:py-20 items-center justify-center p-5 bg-square-svg bg-center bg-cover bg-no-repeat bg-fixed outline-4 outline-dashed">
+				<div className="w-4/5 max-w-screen-xl flex flex-wrap gap-4 mx-auto p-10">
+					<div className="w-full p-3 outline-dashed">
+						<p className="w-2/3 text-2xl font-bold mb-6 px-4 py-2 outline outline-dashed">
+							It's more than just a hackathon
+						</p>
+						<div className="text-pretty outline outline-dashed">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,</p>
 							<p className="mb-5">molestiae quas vel sint commodi repudiandae.</p>
 							<p className="mb-5">
 								numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
@@ -20,8 +20,8 @@ export default function About() {
 						</div>
 					</div>
 				</div>
-				<div className="flex-grow">
-					<div className=" relative w-full" style={{ height: "400px", width: "600px" }}>
+				<div className="flex-grow outline outline-dashed">
+					<div className=" relative w-full h-auto md:h-100 outline outline-dashed">
 						{/* Top-Left box */}
 						<img
 							src="src/components/About/Rectangle 15.png"
