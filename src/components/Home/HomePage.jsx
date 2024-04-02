@@ -14,7 +14,7 @@ export default function HomePage() {
 			<Hero />
 			<About />
 			{/*<Stats />*/}
-			{/*<Gallery />*/}
+			<Gallery />
 			{/*<Sponsors />*/}
 			{/*<Testimonials />*/}
 			{/*<Contact />*/}
