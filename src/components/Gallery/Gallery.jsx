@@ -71,7 +71,7 @@ export default function Gallery() {
 						className="basis-8/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col aos-frame aos-animate"
 						data-aos="zoom-in"
 					>
-						<div className="border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-10 gap-4 px-4 py-8 flex flex-col justify-between col-start-1 col-end-6 row-start-3 row-end-12">
+						<div className="border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-20 gap-4 px-4 py-8 flex flex-col justify-between col-start-1 col-end-6 row-start-3 row-end-12">
 							<div className="flex flex-col justify-start items-start gap-4">
 								<h3 className="font-bold">{albums.find(album => album.tag === selectedAlbum).title}</h3>
 								<p className="text-start text-sm md:text-xs">
@@ -89,7 +89,7 @@ export default function Gallery() {
 							</div>
 						</div>
 						<div
-							className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-12 row-start-1 row-end-7 xs:h-36 aos-frame aos-animate"
+							className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-12 row-start-1 row-end-7 xs:h-36 aos-frame aos-animate shadow-grid-card"
 							data-aos="zoom-in"
 						>
 							<img
@@ -99,7 +99,8 @@ export default function Gallery() {
 							/>
 						</div>
 						<div
-							className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-13 row-start-7 row-end-13 xs:h-36 aos-frame aos-animate"
+							className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-5 col-end-13 row-start-7 row-end-13 xs:h-36 z-10 aos-frame aos-animate shadow-grid-card
+							"
 							data-aos="zoom-in"
 						>
 							<img

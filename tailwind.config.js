@@ -48,6 +48,9 @@ module.exports = {
 				"shake-end": "shake-end 0.25s ease-in-out",
 				heart: "heart 3.0s ease-in-out forwards",
 			},
+			boxShadow: {
+				"grid-card": "0px 0px 0px 1px #FF3535, 15px 15px 0px 4px rgba(255, 53, 53, 0.5)",
+			},
 		},
 
 		colors: {

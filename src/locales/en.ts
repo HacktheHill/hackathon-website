@@ -14,17 +14,19 @@ export default {
 			{
 				tag: "2023",
 				title: "2023 Main Event",
-				description: "Check out some of the amazing moments from our 2023 Main Event!",
-				img1: "/src/assets/gallery/Gradient.webp",
+				description:
+					"The spotlight of 2023, our main hackathon event was a blast! 600+ hackers, 10+ sponsors and 36 hours of hacking combined to create an unforgettable experience. For a first edition, it was a huge success!",
+				img1: "/src/assets/gallery/hth1.webp",
 				img2: "/src/assets/gallery/Gradient.webp",
 				link: "https://hackthehill.com",
 			},
 			{
 				tag: "HackHers",
 				title: "HackHers",
-				description: "Check out some of the amazing moments from our HackHers event in 2023!",
-				img1: "/src/assets/gallery/Gradient.webp",
-				img2: "/src/assets/gallery/Gradient.webp",
+				description:
+					"A one-day hackathon in partnership with IEEE uOttawa and WIE uOttawa, HackHers was a unique experience that defied traditional hackathon expectations. With a wellness room, special workshop, and refreshing beverages, it was a must-attend event!",
+				img1: "/src/assets/gallery/hackhers1.webp",
+				img2: "/src/assets/gallery/hackhers2.webp",
 				link: "https://hackthehill.com",
 			},
 			{
