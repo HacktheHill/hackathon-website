@@ -6,6 +6,43 @@ export default {
 	hero: { title: "Le Hackathon de la Capitale Canadienne" },
 	about: {},
 	stats: {},
+	gallery: {
+		title: "Où les Moments sont Créés",
+		subtitle: "Revoyez certains des moments les plus mémorables de Hack the Hill !",
+		button_text: "Plus d'info",
+		albums: {
+			twentytwentythree: {
+				card_title: "2023",
+				title: "Événement Principal 2023",
+				description:
+					"Le point culminant de 2023, notre hackathon principal était un succès ! 600+ hackers, 10+ sponsors et 36 heures de hacking combinées pour créer une expérience inoubliable. Pour une première édition, c'était un énorme exploit !",
+			},
+			hackhers: {
+				card_title: "HackHers",
+				title: "HackHers",
+				description:
+					"Un hackathon d'une journée en partenariat avec IEEE uOttawa et WIE uOttawa, une expérience unique qui défiait les attentes traditionnelles. Avec une salle de bien-être, un atelier spécial et des boissons rafraîchissantes, c'était un événement incontournable !",
+			},
+			panel: {
+				card_title: "Panel de Stagiaires",
+				title: "Panel de Stagiaires",
+				description:
+					"Une nuit d'inspiration et d'apprentissage, le Panel de Stagiaires était une collaboration entre Hack the Hill et IEEE CU. Cinq stagiaires ont partagé leurs expériences et leurs idées, offrant une perspective unique sur l'avenir de la technologie.",
+			},
+			roast: {
+				card_title: "Évaluation de CV",
+				title: "Évaluation de CV",
+				description:
+					"Cette session dynamique était dédiée à la revitalisation des CV. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès.",
+			},
+			ciena: {
+				card_title: "Réseautage Ciena",
+				title: "Réseautage Ciena",
+				description:
+					"Une soirée de réseautage exceptionnelle, l'événement de réseautage Ciena était une opportunité unique de se connecter avec les professionnels de Ciena et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
+			},
+		},
+	},
 	sponsors: {},
 	collaborators: {},
 	testimonials: {

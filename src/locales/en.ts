@@ -3,9 +3,46 @@ export default {
 		links: { events: "Events", blog: "Blog", documents: "Documents", team: "Team" },
 		aria_label: "Navigation Bar",
 	},
-	hero: {title: "Canada's Capital Hackathon"},
+	hero: { title: "Canada's Capital Hackathon" },
 	about: {},
 	stats: {},
+	gallery: {
+		title: "Where Memories are Made",
+		subtitle: "Check out our favourite moments from some of our past events!",
+		button_text: "Learn More",
+		albums: {
+			twentytwentythree: {
+				card_title: "2023 Main Event",
+				title: "2023 Main Event",
+				description:
+					"The spotlight of 2023, our main hackathon event was a blast! 600+ hackers, 10+ sponsors and 36 hours of hacking combined to create an unforgettable experience. For a first edition, it was a huge success!",
+			},
+			hackhers: {
+				card_title: "HackHers",
+				title: "HackHers",
+				description:
+					"A one-day hackathon in partnership with IEEE uOttawa and WIE uOttawa, HackHers was a unique experience that defied traditional hackathon expectations. With a wellness room, special workshop, and refreshing beverages, it was a must-attend event!",
+			},
+			panel: {
+				card_title: "Intern Panel",
+				title: "Intern Panel",
+				description:
+					"A night of inspiration and learning, the Intern Panel was a collaboration between Hack the Hill and IEEE CU. Five interns shared their experiences and insights, providing a unique perspective on the future of technology.",
+			},
+			roast: {
+				card_title: "Resume Rescue",
+				title: "Resume Rescue",
+				description:
+					"Hack the Hill's Resume Rescue was a dynamic session dedicated to revitalizing resumes. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success.",
+			},
+			ciena: {
+				card_title: "Ciena Networking",
+				title: "Ciena Networking",
+				description:
+					"An evening of unparalleled networking, the Ciena Networking Event was a unique opportunity to connect with Ciena professionals and explore potential opportunities in the dynamic world of networking.",
+			},
+		},
+	},
 	sponsors: {},
 	collaborators: {},
 	testimonials: {

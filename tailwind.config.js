@@ -4,7 +4,16 @@ module.exports = {
 		extend: {
 			backgroundImage: {
 				"square-svg": 'url("/src/assets/SVGs/square_bg.svg")',
+				"pentagon-svg": 'url("/src/assets/SVGs/pentagon_bg.svg")',
 				"2024-bg": 'url("/src/assets/SVGs/2024.svg")',
+				"theme-gradient": `linear-gradient(45deg,
+					rgba(255, 53, 53, 0.8) 0%,
+					rgba(214, 26, 26, 0.8) 20%,
+					rgba(169, 18, 18, 0.8) 80%,
+					rgba(143, 5, 5, 0.8) 100%)`,
+			},
+			height: {
+				gallery: "30rem",
 			},
 			keyframes: {
 				"shake-repeat": {
@@ -38,6 +47,9 @@ module.exports = {
 				"shake-rotate": "shake-start 0.5s ease-in-out 0s, shake-repeat 0.5s ease-in-out 0.5s infinite",
 				"shake-end": "shake-end 0.25s ease-in-out",
 				heart: "heart 3.0s ease-in-out forwards",
+			},
+			boxShadow: {
+				"grid-card": "0px 0px 0px 1px #FF3535, 15px 15px 0px 4px rgba(255, 53, 53, 0.5)",
 			},
 		},
 
