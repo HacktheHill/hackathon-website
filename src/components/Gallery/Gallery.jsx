@@ -20,7 +20,7 @@ export default function Gallery() {
 	const [activeFolder, setActiveFolder] = useState("hackhers");
 	const [selectedAlbum, setSelectedAlbum] = useState("hackhers");
 	useEffect(() => {
-		AOS.init({ once: true, duration: 650 });
+		AOS.init({ once: true, duration: 700 });
 	}, []);
 
 	const albums = [
@@ -82,7 +82,7 @@ export default function Gallery() {
 				frame.classList.add("aos-animate");
 			});
 			setSelectedAlbum(tag);
-		}, 500);
+		}, 750);
 	};
 
 	return (
