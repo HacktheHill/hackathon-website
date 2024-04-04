@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { t } from "../../i18n";
-import hth1 from "/src/assets/gallery/panel1.webp"
+
 
 export default function About() {
 	const [activeImage, setActiveImage] = useState(0);
@@ -41,10 +41,9 @@ export default function About() {
 						</div>
 
 						<div
-							className="basis-6/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col aos-frame aos-animate w-1/2"
-							data-aos="zoom-in"
+							className="basis-6/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col w-1/2"
 						>
-							<div className="border-2 col-start-1 col-end-9 row-start-9 row-end-13 aos-frame aos-animate">
+							<div className="border-2 col-start-1 col-end-9 row-start-9 row-end-13 xs:h-36">
 								<img
 									src="/src/assets/gallery/panel1.webp"
 									alt="Description"
@@ -53,7 +52,7 @@ export default function About() {
 								/>
 							</div>
 							<div
-								className="border-2 col-start-1 col-end-6 row-start-1 row-end-6 xs:h-36 aos-frame aos-animate"
+								className="border-2 col-start-1 col-end-6 row-start-1 row-end-6 xs:h-36"
 							>
 								<img
 									src="/src/assets/gallery/hth1.webp"
@@ -63,8 +62,8 @@ export default function About() {
 								/>
 							</div>
 							<div
-								className="border-2 border-shade-3  col-start-5 col-end-13 row-start-4 row-end-10 xs:h-36 aos-frame aos-animate"
-								data-aos="zoom-in"
+								className="border-2 border-shade-3 col-start-5 col-end-13 row-start-4 row-end-10 xs:h-36"
+								
 							>
 								<img
 									src="/src/assets/gallery/hth2.webp"
