@@ -10,58 +10,38 @@ export default {
 		title: "Where Memories are Made",
 		subtitle: "Check out our favourite moments from some of our past events!",
 		button_text: "Learn More",
-		albums: [
-			{
-				tag: "2023",
+		albums: {
+			twentytwentythree: {
 				card_title: "2023 Main Event",
 				title: "2023 Main Event",
 				description:
 					"The spotlight of 2023, our main hackathon event was a blast! 600+ hackers, 10+ sponsors and 36 hours of hacking combined to create an unforgettable experience. For a first edition, it was a huge success!",
-				img1: "/src/assets/gallery/hth1.webp",
-				img2: "/src/assets/gallery/hth2.webp",
-				link: "https://hackthehill.com",
 			},
-			{
-				tag: "hackhers",
+			hackhers: {
 				card_title: "HackHers",
 				title: "HackHers",
 				description:
 					"A one-day hackathon in partnership with IEEE uOttawa and WIE uOttawa, HackHers was a unique experience that defied traditional hackathon expectations. With a wellness room, special workshop, and refreshing beverages, it was a must-attend event!",
-				img1: "/src/assets/gallery/hackhers1.webp",
-				img2: "/src/assets/gallery/hackhers2.webp",
-				link: "https://hackthehill.com",
 			},
-			{
-				tag: "panel",
+			panel: {
 				card_title: "Intern Panel",
 				title: "Intern Panel",
 				description:
 					"A night of inspiration and learning, the Intern Panel was a collaboration between Hack the Hill and IEEE CU. Five interns shared their experiences and insights, providing a unique perspective on the future of technology.",
-				img1: "/src/assets/gallery/panel1.webp",
-				img2: "/src/assets/gallery/panel2.webp",
-				link: "https://hackthehill.com",
 			},
-			{
-				tag: "roast",
-				card_title: "Resume Roast",
-				title: "Resume Roast",
+			roast: {
+				card_title: "Resume Rescue",
+				title: "Resume Rescue",
 				description:
-					"Hack the Hill's Resume Roast was a dynamic session dedicated to revitalizing resumes. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success.",
-				img1: "/src/assets/gallery/roast1.webp",
-				img2: "/src/assets/gallery/roast2.webp",
-				link: "https://hackthehill.com",
+					"Hack the Hill's Resume Rescue was a dynamic session dedicated to revitalizing resumes. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success.",
 			},
-			{
-				tag: "ciena",
+			ciena: {
 				card_title: "Ciena Networking",
 				title: "Ciena Networking",
 				description:
 					"An evening of unparalleled networking, the Ciena Networking Event was a unique opportunity to connect with Ciena professionals and explore potential opportunities in the dynamic world of networking.",
-				img1: "/src/assets/gallery/ciena1.webp",
-				img2: "/src/assets/gallery/ciena2.webp",
-				link: "https://hackthehill.com",
 			},
-		],
+		},
 	},
 	sponsors: {},
 	collaborators: {},

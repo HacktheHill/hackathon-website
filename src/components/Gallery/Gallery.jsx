@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import { t } from "../../i18n";
+import hth1 from "/src/assets/gallery/hth1.webp";
+import hth2 from "/src/assets/gallery/hth2.webp";
+import hackhers1 from "/src/assets/gallery/hackhers1.webp";
+import hackhers2 from "/src/assets/gallery/hackhers2.webp";
+import panel1 from "/src/assets/gallery/panel1.webp";
+import panel2 from "/src/assets/gallery/panel2.webp";
+import roast1 from "/src/assets/gallery/roast1.webp";
+import roast2 from "/src/assets/gallery/roast2.webp";
+import ciena1 from "/src/assets/gallery/ciena1.webp";
+import ciena2 from "/src/assets/gallery/ciena2.webp";
 import "../../global.css";
 
 import AOS from "aos";
@@ -13,7 +23,53 @@ export default function Gallery() {
 		AOS.init({ once: true, duration: 650 });
 	}, []);
 
-	const albums = t("gallery.albums");
+	const albums = [
+		{
+			tag: "2023",
+			card_title: t("gallery.albums.twentytwentythree.card_title"),
+			title: t("gallery.albums.twentytwentythree.title"),
+			description: t("gallery.albums.twentytwentythree.description"),
+			img1: hth1,
+			img2: hth2,
+			link: "https://2023.hackthehill.com",
+		},
+		{
+			tag: "hackhers",
+			card_title: t("gallery.albums.hackhers.card_title"),
+			title: t("gallery.albums.hackhers.title"),
+			description: t("gallery.albums.hackhers.description"),
+			img1: hackhers1,
+			img2: hackhers2,
+			link: "https://hackhers24.hackthehill.com",
+		},
+		{
+			tag: "panel",
+			card_title: t("gallery.albums.panel.card_title"),
+			title: t("gallery.albums.panel.title"),
+			description: t("gallery.albums.panel.description"),
+			img1: panel1,
+			img2: panel2,
+			link: "https://www.linkedin.com/posts/hackthehill_step-into-the-tech-world-mark-your-calendars-activity-7125703991358836738-cpfF/?utm_source=share&utm_medium=member_desktop",
+		},
+		{
+			tag: "roast",
+			card_title: t("gallery.albums.roast.card_title"),
+			title: t("gallery.albums.roast.title"),
+			description: t("gallery.albums.roast.description"),
+			img1: roast1,
+			img2: roast2,
+			link: "https://www.linkedin.com/posts/hackthehill_ignite-your-career-potential-at-resume-activity-7115750458224189440-7U2-/",
+		},
+		{
+			tag: "ciena",
+			card_title: t("gallery.albums.ciena.card_title"),
+			title: t("gallery.albums.ciena.title"),
+			description: t("gallery.albums.ciena.description"),
+			img1: ciena1,
+			img2: ciena2,
+			link: "https://www.linkedin.com/posts/cuscesoc_cienanetworkingevent-networkingopportunities-ugcPost-7117633554410262528-tRz9/?utm_source=share&utm_medium=member_desktop",
+		},
+	];
 
 	const handleCardClick = async tag => {
 		setActiveFolder(tag);
@@ -95,7 +151,7 @@ export default function Gallery() {
 							data-aos="zoom-in"
 						>
 							<img
-								src={albums?.find(album => album.tag === selectedAlbum)?.img1}
+								src={albums?.find(album => album.tag === selectedAlbum)?.img1.src}
 								alt="gallery"
 								className="w-full h-full object-cover object-left"
 							/>
@@ -105,7 +161,7 @@ export default function Gallery() {
 							data-aos="zoom-in"
 						>
 							<img
-								src={albums?.find(album => album.tag === selectedAlbum)?.img2}
+								src={albums?.find(album => album.tag === selectedAlbum)?.img2.src}
 								alt="gallery"
 								className="w-full h-full object-cover object-left"
 							/>
