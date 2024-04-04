@@ -13,6 +13,7 @@ export default {
 		albums: [
 			{
 				tag: "2023",
+				card_title: "2023 Main Event",
 				title: "2023 Main Event",
 				description:
 					"The spotlight of 2023, our main hackathon event was a blast! 600+ hackers, 10+ sponsors and 36 hours of hacking combined to create an unforgettable experience. For a first edition, it was a huge success!",
@@ -21,7 +22,8 @@ export default {
 				link: "https://hackthehill.com",
 			},
 			{
-				tag: "HackHers",
+				tag: "hackhers",
+				card_title: "HackHers",
 				title: "HackHers",
 				description:
 					"A one-day hackathon in partnership with IEEE uOttawa and WIE uOttawa, HackHers was a unique experience that defied traditional hackathon expectations. With a wellness room, special workshop, and refreshing beverages, it was a must-attend event!",
@@ -30,25 +32,31 @@ export default {
 				link: "https://hackthehill.com",
 			},
 			{
-				tag: "Intern Panel",
+				tag: "panel",
+				card_title: "Intern Panel",
 				title: "Intern Panel",
-				description: "Check out some of the amazing moments from our Intern Panel event in 2023!",
+				description:
+					"A night of inspiration and learning, the Intern Panel was a collaboration between Hack the Hill and IEEE CU. Five interns shared their experiences and insights, providing a unique perspective on the future of technology.",
 				img1: "/src/assets/gallery/panel1.webp",
 				img2: "/src/assets/gallery/panel2.webp",
 				link: "https://hackthehill.com",
 			},
 			{
-				tag: "Resume Roast",
+				tag: "roast",
+				card_title: "Resume Roast",
 				title: "Resume Roast",
-				description: "Check out some of the amazing moments from our Resume Roast event in 2023!",
+				description:
+					"Hack the Hill's Resume Roast was a dynamic session dedicated to revitalizing resumes. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success.",
 				img1: "/src/assets/gallery/roast1.webp",
 				img2: "/src/assets/gallery/roast2.webp",
 				link: "https://hackthehill.com",
 			},
 			{
-				tag: "Ciena Networking",
+				tag: "ciena",
+				card_title: "Ciena Networking",
 				title: "Ciena Networking",
-				description: "Check out some of the amazing moments from our Ciena Networking event in 2023!",
+				description:
+					"An evening of unparalleled networking, the Ciena Networking Event was a unique opportunity to connect with Ciena professionals and explore potential opportunities in the dynamic world of networking.",
 				img1: "/src/assets/gallery/ciena1.webp",
 				img2: "/src/assets/gallery/ciena2.webp",
 				link: "https://hackthehill.com",

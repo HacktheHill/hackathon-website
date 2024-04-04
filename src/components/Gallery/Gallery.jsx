@@ -7,8 +7,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Gallery() {
-	const [activeFolder, setActiveFolder] = useState("HackHers");
-	const [selectedAlbum, setSelectedAlbum] = useState("HackHers");
+	const [activeFolder, setActiveFolder] = useState("hackhers");
+	const [selectedAlbum, setSelectedAlbum] = useState("hackhers");
 	useEffect(() => {
 		AOS.init({ once: true, duration: 650 });
 	}, []);
@@ -63,7 +63,7 @@ export default function Gallery() {
 										></div>
 									</div>
 								</div>
-								<p className="cursor-pointer">{album.tag}</p>
+								<p className="cursor-pointer">{album.card_title}</p>
 							</div>
 						))}
 					</div>
@@ -73,15 +73,17 @@ export default function Gallery() {
 					>
 						<div className="border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-20 gap-4 px-4 py-8 flex flex-col justify-between col-start-1 col-end-6 row-start-3 row-end-12">
 							<div className="flex flex-col justify-start items-start gap-4">
-								<h3 className="font-bold">{albums.find(album => album.tag === selectedAlbum).title}</h3>
+								<h3 className="font-bold">
+									{albums?.find(album => album.tag === selectedAlbum)?.title}
+								</h3>
 								<p className="text-start text-sm md:text-xs">
-									{albums.find(album => album.tag === selectedAlbum).description}
+									{albums?.find(album => album.tag === selectedAlbum)?.description}
 								</p>
 							</div>
 							<div className="flex justify-end">
 								<Button
 									onClick={() =>
-										window.open(albums.find(album => album.tag === selectedAlbum).link, "_blank")
+										window.open(albums?.find(album => album.tag === selectedAlbum)?.link, "_blank")
 									}
 								>
 									{t("gallery.button_text")}
@@ -93,7 +95,7 @@ export default function Gallery() {
 							data-aos="zoom-in"
 						>
 							<img
-								src={albums.find(album => album.tag === selectedAlbum).img1}
+								src={albums?.find(album => album.tag === selectedAlbum)?.img1}
 								alt="gallery"
 								className="w-full h-full object-cover object-left"
 							/>
@@ -103,7 +105,7 @@ export default function Gallery() {
 							data-aos="zoom-in"
 						>
 							<img
-								src={albums.find(album => album.tag === selectedAlbum).img2}
+								src={albums?.find(album => album.tag === selectedAlbum)?.img2}
 								alt="gallery"
 								className="w-full h-full object-cover object-left"
 							/>
