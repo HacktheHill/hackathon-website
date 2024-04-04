@@ -82,7 +82,7 @@ export default function Gallery() {
 				frame.classList.add("aos-animate");
 			});
 			setSelectedAlbum(tag);
-		}, 750);
+		}, 500);
 	};
 
 	return (
