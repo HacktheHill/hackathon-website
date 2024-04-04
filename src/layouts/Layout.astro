@@ -94,6 +94,18 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="msapplication-config" content="/browserconfig.xml" />
 		<meta name="theme-color" content={color} />
 
+		<!-- preloading images -->
+		<link rel="preload" href="/src/assets/gallery/hth1.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/hth2.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/hackhers1.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/hackhers2.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/panel1.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/panel2.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/roast1.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/roast2.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/ciena1.webp" as="image" />
+		<link rel="preload" href="/src/assets/gallery/ciena2.webp" as="image" />
+
 		<script type="application/ld+json" set:html={structuredDataString}></script>
 	</head>
 	<body>
