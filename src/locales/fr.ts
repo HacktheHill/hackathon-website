@@ -4,7 +4,13 @@ export default {
 		aria_label: "Barre de Navigation",
 	},
 	hero: { title: "Le Hackathon de la Capitale Canadienne" },
-	about: {},
+	about: {
+		title: "C'est plus qu'un seul hackathon",
+		subtitle: "C'est une communauté d'étudiants passionnés qui sont dédiés à apprendre, grandir et créer.",
+		p1: "Hack the Hill est une organisation étudiante qui vise à favoriser une culture d'innovation et de créativité dans la communauté d'Ottawa. Nous organisons une variété d'événements tout au long de l'année, y compris des hackathons, des ateliers et des événements de réseautage.",
+		p2: "Notre objectif est de fournir aux étudiants les ressources et les opportunités dont ils ont besoin pour réussir dans l'industrie de la technologie. Nous croyons que tout le monde devrait avoir la chance d'apprendre, de grandir et de se connecter avec des personnes partageant les mêmes idées.",
+		p3: "Que vous soyez débutant ou hacker expérimenté, il y a une place pour vous à Hack the Hill. Rejoignez-nous et faites partie de quelque chose d'incroyable!",
+	},
 	stats: {},
 	gallery: {
 		title: "Où les Moments sont Créés",

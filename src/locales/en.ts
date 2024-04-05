@@ -4,7 +4,13 @@ export default {
 		aria_label: "Navigation Bar",
 	},
 	hero: { title: "Canada's Capital Hackathon" },
-	about: {},
+	about: {
+		title: "It's more than just a hackathon",
+		subtitle: "It's a community of passionate students who are dedicated to learning, growing, and creating.",
+		p1: "Hack the Hill is a student-run organization that aims to foster a culture of innovation and creativity in the Ottawa community. We host a variety of events throughout the year, including hackathons, workshops, and networking events.",
+		p2: "Our goal is to provide students with the resources and opportunities they need to succeed in the tech industry. We believe that everyone should have the chance to learn, grow, and connect with like-minded individuals.",
+		p3: "Whether you're a beginner or an experienced hacker, there's a place for you at Hack the Hill. Join us and be a part of something amazing!",
+	},
 	stats: {},
 	gallery: {
 		title: "Where Memories are Made",
