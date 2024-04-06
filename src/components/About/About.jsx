@@ -1,92 +1,65 @@
 import React, { useState } from "react";
 import { t } from "../../i18n";
 import about1 from "../../assets/about/about1.webp";
-import about2 from "../../assets/about/about2.webp";
-
 
 export default function About() {
-
 	const podcastLink =
 		"https://www.youtube.com/embed/videoseries?si=ZobjNMvDAoBIorPw&controls=0&list=PLvXySQVib-mmNoOeoORHRGz2UyeSEgj7Q&autoplay=1&loop=1&mute=0";
 	const thumbnailLink = "https://img.youtube.com/vi/IQSd2UsGvrU/hqdefault.jpg";
 
-	const [activeImage, setActiveImage] = useState(2);
-
-	const getImageClassName = index => {
-		return `relative w-full h-full object-cover  border-2 transition-all duration-300 hover:translate-x-[-5px] hover:translate-y-[-5px]  ${
-			activeImage === index
-				? "z-10 bg-opacity-50 border-shade-3 active:translate-x-[0px] active:translate-y-[0px] active:shadow-none"
-				: "z-0 cursor-pointer"
-		}`;
-	};
-
-	const images = {
-		about1: { src: about1, alt: t("about.images.about1.alt"), className: getImageClassName(0), onClick: () => setActiveImage(0) },
-		about2: { src: about2, alt: t("about.images.about2.alt"), className: getImageClassName(1), onClick: () => setActiveImage(1)},
-	  };
-
 	return (
 		<>
-			<div className="w-full bg-shade-9 justify-center items-center bg-flat-mountains-svg bg-center bg-cover bg-no-repeat bg-fixed ">
+			<div className="w-full bg-shade-9 justify-center items-center bg-flat-mountains-svg bg-center bg-cover bg-no-repeat bg-filt ">
 				<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center">
-				<div className="flex flex-col px-8 gap-4">
-					<h1>{t("about.title")}</h1>
-					<h2>{t("about.subtitle")}
-					</h2>
-				</div>
-					<div className="flex w-9/12 h-4/6 flex-row justify-between items-center flex-wrap xl:gap-16 xl:w-11/12">
-						<div className="flex basis-5/12 justify-start items-center flex-wrap gap-8 xl:basis-full xl:justify-center">
-							<div className=" text-left ">
-								<div className="w-6/7 text-pretty p-3 ">
-									
-									<p className="mb-5">
-									{t("about.p1")}
-									</p>
-									<p className="mb-5">{t("about.p2")}</p>
-									<p >
-									{t("about.p3")}
-									</p>
-								</div>
+					<div className="flex flex-col px-8 gap-4">
+						<h1>{t("about.title")}</h1>
+						<h2>{t("about.subtitle")}</h2>
+					</div>
+					<div className="flex w-9/12 h-4/6 flex-row justify-between items-center flex-wrap lg:gap-8 lg:w-11/12">
+						<div className="flex basis-5/12 justify-start items-center flex-wrap gap-8 lg:basis-full lg:justify-center">
+							<div
+								className="flex flex-col gap-4 w-6/7 text-pretty text-left border-2 border-shade-3 rounded-sm bg-shade-8 px-4 py-8"
+								data-aos="zoom-in"
+								data-aos-duration="800"
+							>
+								<p className="font-bold">About us</p>
+								<p>{t("about.p1")}</p>
+								<p>
+									<span>
+										<span className="font-bold">{t("about.goal")}</span> {t("about.p2")}
+									</span>
+								</p>
+								<p>{t("about.p3")}</p>
+								<p className="font-bold">{t("about.joinus")}</p>
 							</div>
 						</div>
-
-						<div
-							className="basis-6/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col w-1/2"
-							data-aos="fade-in" data-aos-duration="800"
-						>
-							<div className="border-shade-3 shadow-grid-card rounded-sm col-start-1 col-end-9 row-start-9 row-end-13 xs:h-36"
+						<div className="basis-6/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 lg:basis-full xs:flex xs:flex-col xs:gap-8 w-1/2">
+							<div
+								className="border-2 border-shade-3 rounded-sm col-start-1 col-end-10 row-start-1 row-end-6 shadow-grid-card"
+								data-aos="zoom-in"
+								data-aos-duration="800"
 							>
-								
 								<img
-									src={about1.src}
-									alt={images.about1.alt}
-									className={images.about1.className}
-									onClick={images.about1.onClick}
+									{...about1}
+									className="w-full h-full object-cover "
+									alt={t("about.images.about1.alt")}
 								/>
 							</div>
 							<div
-								className=" border-shade-3 shadow-grid-card rounded-sm col-start-1 col-end-6 row-start-1 row-end-6 xs:h-36"
-							>
-								<img
-									src={about2.src}
-									alt={images.about2.alt}
-									className={images.about2.className}
-									onClick={images.about2.onClick}
-								/>
-							</div>
-							<div
-								className=" border-shade-3 shadow-grid-card rounded-sm  col-start-5 col-end-13 row-start-4 row-end-10 xs:h-36"
+								className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-4 col-end-13 row-start-7 row-end-13 shadow-grid-card sm:h-56"
+								data-aos="zoom-in"
+								data-aos-duration="800"
 							>
 								<iframe
-                                src={podcastLink}
-								className={getImageClassName(2)}
-								onClick={() => setActiveImage(2)}
-								srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;height:140%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:56px/1.5 sans-serif;color:#FF3535;text-shadow:0 0 0.5em black}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t("about.frame_alt")}'><span>▶</span></a>`}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                                loading="lazy"
-								
-                            ></iframe>
+									src={podcastLink}
+									className="w-full h-full object-cover"
+									srcDoc={`<style>*{padding:0;margin:0;overflow:hidden;width:100%;height:100%;object-fit:cover}img,span{position:absolute;width:100%;height:140%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:56px/1.5 sans-serif;color:#FFFFFF;text-shadow:0 0 0.5em red}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t(
+										"about.frame_alt",
+									)}'><span>▶</span></a>`}
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowFullScreen
+									loading="lazy"
+								></iframe>
 							</div>
 						</div>
 					</div>
