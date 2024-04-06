@@ -56,15 +56,22 @@ export default function About() {
 						>
 							<div className="border-shade-3 shadow-grid-card rounded-sm col-start-1 col-end-9 row-start-9 row-end-13 xs:h-36"
 							>
+								
 								<img
-									{...images.about1}
+									src={about1.src}
+									alt={images.about1.alt}
+									className={images.about1.className}
+									onClick={images.about1.onClick}
 								/>
 							</div>
 							<div
 								className=" border-shade-3 shadow-grid-card rounded-sm col-start-1 col-end-6 row-start-1 row-end-6 xs:h-36"
 							>
 								<img
-									{...images.about2}
+									src={about2.src}
+									alt={images.about2.alt}
+									className={images.about2.className}
+									onClick={images.about2.onClick}
 								/>
 							</div>
 							<div
