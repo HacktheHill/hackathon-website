@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { t } from "../../i18n";
-//import about1 from "src/assets/about/about1.webp";
-// import about2 from "src/assets/about/about2.webp";
+import about1 from "../../assets/about/about1.webp";
+import about2 from "../../assets/about/about2.webp";
 
 
 export default function About() {
@@ -21,8 +21,8 @@ export default function About() {
 	};
 
 	const images = {
-		about1: { src: "src/assets/about/about1.webp", alt: "Description for about1", className: getImageClassName(0), onClick: () => setActiveImage(0) },
-		about2: { src: "src/assets/about/about2.webp", alt: "Description for about2", className: getImageClassName(1), onClick: () => setActiveImage(1)},
+		about1: { src: about1, alt: "Hack the Hill About Image 1", className: getImageClassName(0), onClick: () => setActiveImage(0) },
+		about2: { src: about2, alt: "Hack the Hill About Image 2", className: getImageClassName(1), onClick: () => setActiveImage(1)},
 	  };
 
 	return (
@@ -46,7 +46,6 @@ export default function About() {
 									<p >
 									{t("about.p3")}
 									</p>
-									
 								</div>
 							</div>
 						</div>
