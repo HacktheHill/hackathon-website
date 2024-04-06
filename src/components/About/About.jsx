@@ -21,8 +21,8 @@ export default function About() {
 	};
 
 	const images = {
-		about1: { src: about1, alt: "Hack the Hill About Image 1", className: getImageClassName(0), onClick: () => setActiveImage(0) },
-		about2: { src: about2, alt: "Hack the Hill About Image 2", className: getImageClassName(1), onClick: () => setActiveImage(1)},
+		about1: { src: about1, alt: t("about.images.about1.alt"), className: getImageClassName(0), onClick: () => setActiveImage(0) },
+		about2: { src: about2, alt: t("about.images.about2.alt"), className: getImageClassName(1), onClick: () => setActiveImage(1)},
 	  };
 
 	return (

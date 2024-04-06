@@ -10,6 +10,10 @@ export default {
 		p1: "Hack the Hill is a student-run organization that aims to foster a culture of innovation and creativity in the Ottawa community. We host a variety of events throughout the year, including hackathons, workshops, and networking events.",
 		p2: "Our goal is to provide students with the resources and opportunities they need to succeed in the tech industry. We believe that everyone should have the chance to learn, grow, and connect with like-minded individuals.",
 		p3: "Whether you're a beginner or an experienced hacker, there's a place for you at Hack the Hill. Join us and be a part of something amazing!",
+		images: {
+			about1: { alt: "Hack the Hill About Image 1"},
+			about2: { alt: "Hack the Hill About Image 2"},
+		},
 	},
 	stats: {},
 	gallery: {

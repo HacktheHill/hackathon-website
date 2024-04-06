@@ -10,6 +10,10 @@ export default {
 		p1: "Hack the Hill est une organisation étudiante qui vise à favoriser une culture d'innovation et de créativité dans la communauté d'Ottawa. Nous organisons une variété d'événements tout au long de l'année, y compris des hackathons, des ateliers et des événements de réseautage.",
 		p2: "Notre objectif est de fournir aux étudiants les ressources et les opportunités dont ils ont besoin pour réussir dans l'industrie de la technologie. Nous croyons que tout le monde devrait avoir la chance d'apprendre, de grandir et de se connecter avec des personnes partageant les mêmes idées.",
 		p3: "Que vous soyez débutant ou hacker expérimenté, il y a une place pour vous à Hack the Hill. Rejoignez-nous et faites partie de quelque chose d'incroyable!",
+		images: {
+			about1: { alt: "Hack the Hill Image 1 À Propos"},
+			about2: { alt: "Hack the Hill Image 2 À Propos"},
+		},
 	},
 	stats: {},
 	gallery: {
