@@ -13,9 +13,9 @@ export default function About() {
 	const [activeImage, setActiveImage] = useState(2);
 
 	const getImageClassName = index => {
-		return `relative w-full h-full object-cover border-2 border-red-500 transition-all duration-300 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:shadow-[4px_4px_0px_black] ${
+		return `relative w-full h-full object-cover  border-2 transition-all duration-300 hover:translate-x-[-5px] hover:translate-y-[-5px]  ${
 			activeImage === index
-				? "z-10 bg-opacity-50 border-shade-3 bg-light_accent active:translate-x-[0px] active:translate-y-[0px] active:shadow-none"
+				? "z-10 bg-opacity-50 border-shade-3 active:translate-x-[0px] active:translate-y-[0px] active:shadow-none"
 				: "z-0 cursor-pointer"
 		}`;
 	};
@@ -55,21 +55,21 @@ export default function About() {
 							className="basis-6/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col w-1/2"
 							data-aos="fade-in" data-aos-duration="800"
 						>
-							<div className="border-2 border-shade-3 rounded-sm bg-light_accent shadow-grid-card col-start-1 col-end-9 row-start-9 row-end-13 xs:h-36"
+							<div className="border-shade-3 shadow-grid-card rounded-sm col-start-1 col-end-9 row-start-9 row-end-13 xs:h-36"
 							>
 								<img
 									{...images.about1}
 								/>
 							</div>
 							<div
-								className="border-2 border-shade-3 rounded-sm bg-light_accent shadow-grid-card col-start-1 col-end-6 row-start-1 row-end-6 xs:h-36"
+								className=" border-shade-3 shadow-grid-card rounded-sm col-start-1 col-end-6 row-start-1 row-end-6 xs:h-36"
 							>
 								<img
 									{...images.about2}
 								/>
 							</div>
 							<div
-								className="border-2 border-shade-3 rounded-sm bg-light_accent shadow-grid-card col-start-5 col-end-13 row-start-4 row-end-10 xs:h-36"
+								className=" border-shade-3 shadow-grid-card rounded-sm  col-start-5 col-end-13 row-start-4 row-end-10 xs:h-36"
 							>
 								<iframe
                                 src={podcastLink}
