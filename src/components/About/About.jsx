@@ -9,7 +9,7 @@ export default function About() {
 
 	return (
 		<>
-			<div className="w-full bg-shade-9 justify-center items-center bg-flat-mountains-svg bg-center bg-cover bg-no-repeat bg-filt ">
+			<div className="w-full bg-shade-9 justify-center items-center bg-mountains-svg bg-center bg-cover bg-no-repeat">
 				<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center">
 					<div className="flex flex-col px-8 gap-4">
 						<h1>{t("about.title")}</h1>
