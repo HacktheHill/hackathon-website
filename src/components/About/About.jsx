@@ -75,7 +75,7 @@ export default function About() {
                                 src={podcastLink}
 								className={getImageClassName(2)}
 								onClick={() => setActiveImage(2)}
-								srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:56px/1.5 sans-serif;color:#FF3535;text-shadow:0 0 0.5em black}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t("about.frame_alt")}'><span>▶</span></a>`}
+								srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;height:140%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:56px/1.5 sans-serif;color:#FF3535;text-shadow:0 0 0.5em black}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t("about.frame_alt")}'><span>▶</span></a>`}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen
                                 loading="lazy"
