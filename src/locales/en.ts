@@ -16,6 +16,7 @@ export default {
 			about1: { alt: "Hack the Hill About Image 1" },
 			about2: { alt: "Hack the Hill About Image 2" },
 		},
+		frame_alt: "Hack the Hill Podcast",
 	},
 	stats: {},
 	gallery: {

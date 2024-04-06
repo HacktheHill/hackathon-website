@@ -52,8 +52,9 @@ export default function About() {
 							>
 								<iframe
 									src={podcastLink}
+									title="Podcast"
 									className="w-full h-full object-cover"
-									srcDoc={`<style>*{padding:0;margin:0;overflow:hidden;width:100%;height:100%;object-fit:cover}img,span{position:absolute;width:100%;height:140%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:56px/1.5 sans-serif;color:#FFFFFF;text-shadow:0 0 0.5em red}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t(
+									srcDoc={`<style>*{padding:0;margin:0;overflow:hidden;width:100%;height:100%;object-fit:cover}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:3.5rem/1.5 sans-serif;color:#FFFFFF;text-shadow:0 0 0.5em red}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t(
 										"about.frame_alt",
 									)}'><span>▶</span></a>`}
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

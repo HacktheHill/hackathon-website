@@ -16,6 +16,7 @@ export default {
 			about1: { alt: "Hack the Hill Image 1 À Propos" },
 			about2: { alt: "Hack the Hill Image 2 À Propos" },
 		},
+		frame_alt: "Ballado Hack the Hill",
 	},
 	stats: {},
 	gallery: {
