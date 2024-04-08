@@ -17,7 +17,7 @@ export default function HomePage() {
 			<Gallery />
 			{/*<Sponsors />*/}
 			{/*<Testimonials />*/}
-			{/*<Contact />*/}
+			{<Contact />}
 		</>
 	);
 }

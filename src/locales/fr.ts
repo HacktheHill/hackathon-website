@@ -289,4 +289,13 @@ export default {
 		privacy: "Politique de Confidentialité",
 		message: "par l'Équipe Web de HtH",
 	},
+	contact: {
+		title: "Contactez-Nous",
+		description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.\nMaxime mollitia, molestiae quas vel sint commodi repudiandae.\n\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumç",
+		name: "Nom",
+		email: "Courriel",
+		subject: "Sujet",
+		message: "Message",
+		submit: "Soumettre",
+	}
 } as const;
