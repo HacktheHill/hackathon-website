@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { t } from "../../i18n";
-import styles from "./Sponsors.module.css";
+import "./Sponsors.css";
 import Blackberry from "/src/assets/Logos/Partners/Blackberry.svg";
 import CSE from "/src/assets/Logos/Partners/CSE.svg";
 import CanadianTire from "/src/assets/Logos/Partners/CanadianTire.svg";
@@ -32,86 +32,153 @@ import DEsocCarleton from "/src/assets/Logos/Partners/desocCarleton.webp";
 
 export default function Sponsors() {
 	const data = {
-		sponsors: {
-			large: [
-				{ href: "https://ciena.ca/", ...Ciena, alt: "Ciena" },
-				{ href: "https://canadiantire.ca/", ...CanadianTire, alt: "Canadian Tire" },
-			],
-			medium: [
-				{ href: "https://blackberry.com/", ...Blackberry, alt: "Blackberry" },
-				{ href: "https://www.cse-cst.gc.ca/", ...CSE, alt: "CSE / CST" },
-				{ href: "https://lonehaven.com/", ...lonehaven, alt: "Lonehaven" },
-			],
-			small: [
-				{ href: "https://about.google", ...Google, alt: "Google" },
-				{ href: "https://vercel.com/", ...Vercel, alt: "Vercel" },
-				{ href: "https://www.digitalocean.com/", ...DigitalOcean, alt: "DigitalOcean" },
-				{ href: "https://www.echo3d.com/", ...echo3d, alt: "echo3D" },
-				{ href: "https://balsamiq.com/", ...balsamiq, alt: "balsamiq" },
-				{ href: "https://www.voiceflow.com/", ...voiceflow, alt: "Voiceflow" },
-				{ href: "https://mule.to/p5ni", ...StickerMule, alt: "StickerMule" },
-				{ href: "https://www.openproject.org/", ...OpenProject, alt: "OpenProject" },
-			],
-		},
+		sponsors: [
+			{ href: "https://ciena.ca/", ...Ciena, alt: "Ciena", darkBg: true, needsShadow: false },
+			{ href: "https://blackberry.com/", ...Blackberry, alt: "Blackberry", darkBg: false, needsShadow: true },
+			{
+				href: "https://canadiantire.ca/",
+				...CanadianTire,
+				alt: "Canadian Tire",
+				darkBg: true,
+				needsShadow: false,
+			},
+			{ href: "https://lonehaven.com/", ...lonehaven, alt: "Lonehaven", darkBg: false, needsShadow: false },
+			{ href: "https://www.cse-cst.gc.ca/", ...CSE, alt: "CSE / CST", darkBg: true, needsShadow: true },
+
+			{ href: "https://vercel.com/", ...Vercel, alt: "Vercel", darkBg: false, needsShadow: false },
+			{
+				href: "https://www.digitalocean.com/",
+				...DigitalOcean,
+				alt: "DigitalOcean",
+				darkBg: true,
+				needsShadow: false,
+			},
+			{ href: "https://www.echo3d.com/", ...echo3d, alt: "echo3D", darkBg: false, needsShadow: false },
+			{ href: "https://balsamiq.com/", ...balsamiq, alt: "balsamiq", darkBg: true, needsShadow: false },
+			{ href: "https://www.voiceflow.com/", ...voiceflow, alt: "Voiceflow", darkBg: false, needsShadow: false },
+			{ href: "https://about.google", ...Google, alt: "Google", darkBg: true, needsShadow: false },
+
+			{
+				href: "https://www.openproject.org/",
+				...OpenProject,
+				alt: "OpenProject",
+				darkBg: false,
+				needsShadow: false,
+			},
+			{ href: "https://mule.to/p5ni", ...StickerMule, alt: "StickerMule", darkBg: true, needsShadow: true },
+		],
 		collaborators: [
-			{ href: "https://www2.uottawa.ca/en", ...uOttawa },
-			{ href: "https://carleton.ca/", ...Carleton },
-			{ href: "https://www.facebook.com/uottawaeeffdg/", ...EEF },
-			{ href: "https://ieeeuottawa.ca/", ...uOttawaIEEE },
-			{ href: "https://wie.ieeeottawa.ca/", ...WIE },
-			{ href: "https://www.scesoc.ca/", ...SCESoc },
-			{ href: "https://ccss.carleton.ca/", ...CCSS },
-			{ href: "https://www.cssa-aei.ca/", ...CSSA },
-			{ href: "https://ieeecarleton.ca/", ...CarletonIEEE },
-			{ href: "https://www.telferbta.com/", ...telferBTA },
-			{ href: "https://www.uogdc.com/", ...uOGDC },
-			{ href: "https://uocybersec.com/", ...uOCyberSec },
-			{ href: "https://linktr.ee/uoengiqueers", ...uOEngiqueers },
-			{ href: "https://aitinkerers.org/p/welcome", ...AITinkerers },
-			{ href: "https://linktr.ee/desoc", ...DEsocCarleton },
+			{ href: "https://www2.uottawa.ca/en", ...uOttawa, alt: "uOttawa", darkBg: true, needsShadow: false },
+			{ href: "https://carleton.ca/", ...Carleton, alt: "Carleton", darkBg: false, needsShadow: false },
+			{ href: "https://www.facebook.com/uottawaeeffdg/", ...EEF, alt: "EEF", darkBg: true, needsShadow: true },
+			{ href: "https://ieeeuottawa.ca/", ...uOttawaIEEE, alt: "uOttawa IEEE", darkBg: false, needsShadow: false },
+			{ href: "https://wie.ieeeottawa.ca/", ...WIE, alt: "WIE", darkBg: true, needsShadow: true },
+			{ href: "https://www.scesoc.ca/", ...SCESoc, alt: "SCESoc", darkBg: false, needsShadow: false },
+			{ href: "https://ccss.carleton.ca/", ...CCSS, alt: "CCSS", darkBg: true, needsShadow: true },
+			{ href: "https://www.cssa-aei.ca/", ...CSSA, alt: "CSSA", darkBg: false, needsShadow: true },
+			{
+				href: "https://ieeecarleton.ca/",
+				...CarletonIEEE,
+				alt: "Carleton IEEE",
+				darkBg: true,
+				needsShadow: false,
+			},
+			{ href: "https://www.telferbta.com/", ...telferBTA, alt: "Telfer BTA", darkBg: false, needsShadow: true },
+			{ href: "https://www.uogdc.com/", ...uOGDC, alt: "uOttawa GDC", darkBg: true, needsShadow: true },
+			{ href: "https://uocybersec.com/", ...uOCyberSec, alt: "uOCyberSec", darkBg: false, needsShadow: true },
+			{
+				href: "https://linktr.ee/uoengiqueers",
+				...uOEngiqueers,
+				alt: "uOEngiqueers",
+				darkBg: true,
+				needsShadow: false,
+			},
+			{
+				href: "https://aitinkerers.org/p/welcome",
+				...AITinkerers,
+				alt: "AITinker",
+				darkBg: false,
+				needsShadow: false,
+			},
+			{
+				href: "https://linktr.ee/desoc",
+				...DEsocCarleton,
+				alt: "DEsoc Carleton",
+				darkBg: true,
+				needsShadow: false,
+			},
 		],
 	};
 
+	const [hovered, setHovered] = useState(-1);
+	const [hovered2, setHovered2] = useState(-1);
+
 	return (
 		<>
-			<div id="sponsors" className={`${styles["sponsors-collaborators"]} ${styles["sponsors"]}`}>
-				<h1>{t("sponsors.title")}</h1>
-				<div className={styles["icons"]}>
-					{Object.values(data.sponsors).map((tier, i) => (
-						<div key={i} className={styles["icons-row"]}>
-							{tier.map((sponsor, j) => (
-								<a
-									key={j}
-									href={sponsor.href}
-									target="_blank"
-									rel="noreferrer"
-									className={styles["icon-box"]}
-								>
-									<img
-										className={`${styles["icon"]} ${
-											styles[`icon-${Object.keys(data.sponsors)[i]}`]
-										}`}
-										alt={`${sponsor.alt} logo`}
-										src={sponsor.src}
-									></img>
-								</a>
-							))}
-						</div>
-					))}
-				</div>
-			</div>
-			<div id="collaborators" className={`${styles["sponsors-collaborators"]} ${styles["collaborators"]}`}>
-				<h1>{t("collaborators.title")}</h1>
-				<div className={styles["icons-row"]}>
-					{data.collaborators.map((sponsor, i) => (
-						<a key={i} href={sponsor.href} target="_blank" rel="noreferrer" className={styles["icon-box"]}>
-							<img
-								className={`${styles["icon"]} ${styles["icon-medium"]}`}
-								alt={t("collaborators.icon_alt")}
-								src={sponsor.src}
-							></img>
-						</a>
-					))}
+			<div className="w-full bg-shade-9 justify-center items-center bg-parabol-svg bg-center bg-cover bg-no-repeat bg-fixed">
+				<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center">
+					<div className="flex flex-col px-8 gap-4">
+						<h1>{t("sponsors.title")}</h1>
+						<h2>{t("sponsors.subtitle")}</h2>
+					</div>
+					<div className="grid grid-cols-3 gap-12 w-9/12 lg:grid-cols-2 lg:gap-8">
+						{data.sponsors.map((sponsor, i) => (
+							<a
+								key={i}
+								href={sponsor.href}
+								target="_blank"
+								rel="noreferrer"
+								className={`flex justify-center items-center border-primary rounded-lg h-[12.5vw] md:h-32 p-8 md:p-4 shadow-grid-card transition-all duration-200
+								 ${sponsor.darkBg ? "bg-dark_accent" : "bg-[#FF0000]"}
+								 ${
+										hovered !== -1 && hovered !== i
+											? "opacity-25 translate-x-1 translate-y-1"
+											: "bg-opacity-35 translate-x-0 translate-y-0"
+									}`}
+								onMouseEnter={() => setHovered(i)}
+								onMouseLeave={() => setHovered(-1)}
+								onBlur={() => setHovered(-1)}
+							>
+								<img
+									alt={`${sponsor.alt} logo`}
+									src={sponsor.src}
+									className={`max-w-full max-h-full 
+									${sponsor.needsShadow && "img-shadow"}`}
+								></img>
+							</a>
+						))}
+					</div>
+					<div className="flex flex-col px-8 gap-4 mt-16">
+						<h1>{t("collaborators.title")}</h1>
+						<h2>{t("collaborators.subtitle")}</h2>
+					</div>
+					<div className="grid grid-cols-3 gap-12 w-9/12 lg:grid-cols-2 lg:gap-8">
+						{data.collaborators.map((sponsor, i) => (
+							<a
+								key={i}
+								href={sponsor.href}
+								target="_blank"
+								rel="noreferrer"
+								className={`flex justify-center items-center border-primary rounded-lg h-[12.5vw] md:h-32 p-8 md:p-4 shadow-grid-card transition-all duration-200
+								 ${sponsor.darkBg ? "bg-dark_accent" : "bg-[#FF0000]"}
+								 ${
+										hovered2 !== -1 && hovered2 !== i
+											? "opacity-25 translate-x-1 translate-y-1"
+											: "bg-opacity-35 translate-x-0 translate-y-0"
+									}`}
+								onMouseEnter={() => setHovered2(i)}
+								onMouseLeave={() => setHovered2(-1)}
+								onBlur={() => setHovered2(-1)}
+							>
+								<img
+									alt={`${sponsor.alt} logo`}
+									src={sponsor.src}
+									className={`max-w-full max-h-full 
+									${sponsor.needsShadow && "img-shadow"}`}
+								></img>
+							</a>
+						))}
+					</div>
 				</div>
 			</div>
 		</>

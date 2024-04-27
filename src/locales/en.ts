@@ -56,8 +56,14 @@ export default {
 			},
 		},
 	},
-	sponsors: {},
-	collaborators: {},
+	sponsors: {
+		title: "A look at our past sponsors",
+		subtitle: "These are the companies that make Hack the Hill possible year after year.",
+	},
+	collaborators: {
+		title: "and some of our collaborators",
+		subtitle: "We couldn't do it without the help of these amazing organizations.",
+	},
 	testimonials: {
 		title: "Making Moments Matter",
 		sub_heading:

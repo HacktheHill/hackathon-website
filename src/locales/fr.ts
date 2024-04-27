@@ -56,8 +56,14 @@ export default {
 			},
 		},
 	},
-	sponsors: {},
-	collaborators: {},
+	sponsors: {
+		title: "Nos commanditaires précédents",
+		subtitle: "Ce sont les entreprises qui rendent Hack the Hill possible année après année.",
+	},
+	collaborators: {
+		title: "et nos partenaires communautaires",
+		subtitle: "Nous ne pourrions pas le faire sans l'aide de ces organisations incroyables.",
+	},
 	testimonials: {
 		title: "Créons des Moments Marquants",
 		sub_heading:
