@@ -18,7 +18,10 @@ export default {
 		},
 		frame_alt: "Ballado Hack the Hill",
 	},
-	stats: {},
+	stats: {
+		title: "Notre impact",
+		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes.",
+	},
 	gallery: {
 		title: "Où les Moments sont Créés",
 		subtitle: "Revoyez certains des moments les plus mémorables de Hack the Hill !",
