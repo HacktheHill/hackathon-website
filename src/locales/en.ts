@@ -20,7 +20,7 @@ export default {
 	},
 	stats: {
 		title: "Our Impact",
-		subtitle: "Here's a look at some of the numbers that define who we are.",
+		subtitle: "Here's a look at some of the numbers that define who we are. Every year, we have:",
 	},
 	gallery: {
 		title: "Where Memories are Made",

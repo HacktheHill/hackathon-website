@@ -20,7 +20,7 @@ export default {
 	},
 	stats: {
 		title: "Notre impact",
-		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes.",
+		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes. Chaque année, nous avons:",
 	},
 	gallery: {
 		title: "Où les Moments sont Créés",
