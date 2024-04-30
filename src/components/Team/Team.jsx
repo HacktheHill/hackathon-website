@@ -156,7 +156,7 @@ function Team() {
 		{
 			name: "Jo Gurvantamir",
 			role: t("team.roles.design.coordinator"),
-			image: "/headshots/Template.webp",
+			image: "/headshots/Jo.webp",
 		},
 		{
 			name: "Ethan Tang",
@@ -191,7 +191,7 @@ function Team() {
 		{
 			name: "Erik Ang",
 			role: t("team.roles.development.coordinator"),
-			image: "/headshots/Template.webp",
+			image: "/headshots/Erik.webp",
 		},
 		{
 			name: "Ahmed Nasr",
@@ -251,7 +251,7 @@ function Team() {
 		{
 			name: "Lehem Temesgen",
 			role: t("team.roles.logistics.coordinator"),
-			image: "/headshots/Template.webp",
+			image: "/headshots/Lehem.webp",
 		},
 		{
 			name: "Madison Moran",
@@ -261,7 +261,7 @@ function Team() {
 		{
 			name: "Rafael Arif",
 			role: t("team.roles.marketing.manager"),
-			image: "/headshots/Raf.webp",
+			image: "/headshots/Rafael.webp",
 		},
 		{
 			name: "Stefan Todorovic",
@@ -316,7 +316,7 @@ function Team() {
 		{
 			name: "Elodie Abdo",
 			role: t("team.roles.operations.coordinator"),
-			image: "/headshots/Template.webp",
+			image: "/headshots/Elodie.webp",
 		},
 		{
 			name: "Qasim Sadeed",
@@ -361,7 +361,7 @@ function Team() {
 		{
 			name: "Raaed Mirza",
 			role: t("team.roles.sponsorship.coordinator"),
-			image: "/headshots/Template.webp",
+			image: "/headshots/Raaed.webp",
 		},
 		{
 			name: "Ansh Kakkar",
