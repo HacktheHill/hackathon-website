@@ -105,7 +105,7 @@ export default function Testimonials() {
 									src={testimonialData[index].img}
 									alt={testimonialData[index].name}
 								/>
-								<div className="basis-2/3 flex flex-col justify-center gap-4 text-left border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-20 px-8 py-12">
+								<div className="basis-2/3 flex flex-col justify-center gap-4 text-left border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-20 px-8 py-12 sm:basis-full">
 									<p className="">{testimonialData[index].content}</p>
 									<p className="font-bold">
 										{testimonialData[index].name}, {testimonialData[index].role}
