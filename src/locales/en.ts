@@ -18,7 +18,10 @@ export default {
 		},
 		frame_alt: "Hack the Hill Podcast",
 	},
-	stats: {},
+	stats: {
+		title: "Our Impact",
+		subtitle: "Here's a look at some of the numbers that define who we are. Every year, we have:",
+	},
 	gallery: {
 		title: "Where Memories are Made",
 		subtitle: "Check out our favourite moments from some of our past events!",
