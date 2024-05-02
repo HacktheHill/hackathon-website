@@ -19,22 +19,17 @@
 }
 
 .tower-img {
-	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+	height: 30rem;
+	width: 30rem;
 }
 
 .tower-img svg {
 	transform: translateY(-5%);
-	width: 30rem;
-}
-
-@media screen and (max-width: 514px) {
-	.tower-img svg {
-		width: 18rem;
-	}
+	height: 150%;
 }
 
 .shade {

@@ -42,20 +42,20 @@ export default function Stats() {
 	}, []);
 
 	return (
-		<div className="w-full bg-shade-9 bg-square-svg bg-center bg-cover bg-no-repeat">
-			<div className="flex justify-center items-center mx-32 lg:flex-wrap gap-16 lg:mx-8">
+		<div className="w-full flex justify-center items-center">
+			<div className="flex justify-center items-center mx-32 lg:flex-wrap gap-16 lg:mx-8 max-w-2xl">
 				<div className="flex flex-col px-8 gap-4 lg:text-center basis-1/2 lg:mt-16">
 					<h1>{t("stats.title")}</h1>
 					<h2>{t("stats.subtitle")}</h2>
 				</div>
-				<div className="relative flex justify-end h-[95vh]">
+				<div className="relative flex justify-end ">
 					<div
-						className="tower-img"
+						className="tower-img border"
 						dangerouslySetInnerHTML={{
 							__html: tower,
 						}}
 					></div>
-					<div className="shade absolute top-0 left-0 w-full h-full"></div>
+					{/*<div className="shade absolute top-0 left-0 w-full h-full"></div>*/}
 				</div>
 			</div>
 		</div>

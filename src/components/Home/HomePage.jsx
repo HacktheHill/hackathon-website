@@ -10,7 +10,7 @@ import "../../global.css";
 
 export default function HomePage() {
 	return (
-		<>
+		<div className="w-full flex flex-col items-center jusitfy-center">
 			<Hero />
 			<About />
 			<Stats />
@@ -18,6 +18,6 @@ export default function HomePage() {
 			<Sponsors />
 			<Testimonials />
 			{/*<Contact />*/}
-		</>
+		</div>
 	);
 }

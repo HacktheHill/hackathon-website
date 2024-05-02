@@ -115,8 +115,8 @@ export default function Sponsors() {
 
 	return (
 		<>
-			<div className="w-full bg-shade-9 justify-center items-center bg-parabol-svg bg-center bg-cover bg-no-repeat bg-fixed">
-				<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center">
+			<div className="w-full flex justify-center items-center">
+				<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center max-w-2xl">
 					<div className="flex flex-col px-8 gap-4">
 						<h1>{t("sponsors.title")}</h1>
 						<h2>{t("sponsors.subtitle")}</h2>
@@ -128,7 +128,7 @@ export default function Sponsors() {
 								href={sponsor.href}
 								target="_blank"
 								rel="noreferrer"
-								className={`flex justify-center items-center border-primary rounded-lg h-[12.5vw] md:h-32 p-8 md:p-4 shadow-grid-card transition-all duration-200
+								className={`flex justify-center items-center border-primary rounded-lg h-52 md:h-32 p-8 md:p-4 shadow-grid-card transition-all duration-200
 								 ${sponsor.darkBg ? "bg-dark_accent" : "bg-[#FF0000]"}
 								 ${
 										hovered !== -1 && hovered !== i
@@ -159,7 +159,7 @@ export default function Sponsors() {
 								href={sponsor.href}
 								target="_blank"
 								rel="noreferrer"
-								className={`flex justify-center items-center border-primary rounded-lg h-[12.5vw] md:h-32 p-8 md:p-4 shadow-grid-card transition-all duration-200
+								className={`flex justify-center items-center border-primary rounded-lg h-52 md:h-32 p-8 md:p-4 shadow-grid-card transition-all duration-200
 								 ${sponsor.darkBg ? "bg-dark_accent" : "bg-[#FF0000]"}
 								 ${
 										hovered2 !== -1 && hovered2 !== i

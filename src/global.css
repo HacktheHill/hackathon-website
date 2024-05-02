@@ -10,6 +10,8 @@
 	--shade-9: #171717;
 	--shade-10: #090909;
 
+	--background: #161b22;
+
 	--navbar: #212121a9;
 
 	--primary: #ff3535;
@@ -19,59 +21,62 @@
 	--theme-gradient: linear-gradient(90deg, #750d0d 0%, #550505 50%, #3d0505 100%);
 
 	scrollbar-gutter: stable;
-	background-color: var(--shade-9);
+	background-color: var(--background);
 	color: var(--shade-3);
 }
 
 h1 {
-	font-family: "Poppins", sans-serif;
-	font-size: min(3rem, 12vw);
+	font-family: "MonaSans", sans-serif;
+	font-size: 3.5rem;
 	font-weight: 700;
-	letter-spacing: 0.125rem;
-	color: var(--shade-2);
+	letter-spacing: -2.75px;
+	color: #ffffff;
 }
 
 h2 {
-	font-family: "Poppins", sans-serif;
+	font-family: "MonaSans", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 300;
 	line-height: 1.2;
 }
 
 h3 {
-	font-family: "Poppins", sans-serif;
+	font-family: "MonaSans", sans-serif;
 	font-size: 1rem;
 	font-weight: 300;
 }
 
 h4 {
-	font-family: "Poppins", sans-serif;
+	font-family: "MonaSans", sans-serif;
 	font-size: 0.75rem;
 	font-weight: 300;
 }
 
 h5 {
-	font-family: "Poppins", sans-serif;
+	font-family: "MonaSans", sans-serif;
 	font-size: 0.5rem;
 	font-weight: 300;
 }
 
 h6 {
-	font-family: "Poppins", sans-serif;
+	font-family: "MonaSans", sans-serif;
 	font-size: 0.25rem;
 	font-weight: 300;
 }
 
 p {
-	font-family: "Poppins", sans-serif;
+	font-family: "MonaSans", sans-serif;
 	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.2;
+	letter-spacing: 0.5px;
+	vertical-align: baseline;
 }
 
 @media screen and (max-width: 768px) {
 	h1 {
 		font-size: 2rem;
+		letter-spacing: -1px;
 	}
 	h2 {
 		font-size: 1rem;

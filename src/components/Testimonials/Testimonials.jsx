@@ -81,8 +81,8 @@ export default function Testimonials() {
 	}, []);
 
 	return (
-		<div className="w-full bg-shade-9 justify-center items-center bg-pentagon-svg bg-center bg-cover bg-no-repeat">
-			<div className="flex flex-col w-full h-full justify-center items-center gap-20 py-36 text-center lg:gap-8">
+		<div className="w-full flex justify-center items-center">
+			<div className="flex flex-col w-full h-full justify-center items-center gap-20 py-36 text-center lg:gap-8 max-w-2xl">
 				<div className="flex flex-col w-[70%] px-8 gap-4 md:w-full">
 					<h1>{t("testimonials.title")}</h1>
 					<h2>{t("testimonials.sub_heading")}</h2>

@@ -17,6 +17,9 @@ module.exports = {
 			height: {
 				gallery: "30rem",
 			},
+			maxWidth: {
+				"2xl": "1536px",
+			},
 			keyframes: {
 				"shake-repeat": {
 					"0%, 100%": { transform: "rotate(0deg)", scale: "1.25" },
@@ -53,7 +56,7 @@ module.exports = {
 				"sponsor-card-2": "sponsor-card 5.0s ease-in-out 1.5s infinite",
 			},
 			boxShadow: {
-				"grid-card": "0px 0px 0px 1px #FF3535, 15px 15px 0px 4px rgba(255, 53, 53, 0.5)",
+				"grid-card": "0 0 1.5rem 0.5rem rgba(255, 53, 53, 0.5), 0 0 1.5rem 0.5rem rgba(255, 53, 53, 0.5) inset",
 			},
 		},
 
@@ -62,6 +65,7 @@ module.exports = {
 			light_accent: "#ff7979",
 			dark_accent: "#551a1a",
 			white: "#ffffff",
+			black: "#000000",
 			"shade-1": "#ebebeb",
 			"shade-2": "#e0e0e0",
 			"shade-3": "#bdbdbd",
@@ -74,6 +78,8 @@ module.exports = {
 			"shade-10": "#090909",
 			navbar: "#212121a9",
 			"bg-2024": "#84010b",
+			background: "#161b22",
+			button_hover: "#f0f6fc",
 		},
 		screens: {
 			"2xl": { max: "1536px" },
