@@ -119,7 +119,7 @@ export default function Gallery() {
 										></div>
 									</div>
 								</div>
-								<p className="cursor-pointer">{album.card_title}</p>
+								<p className="cursor-pointer text-sm">{album.card_title}</p>
 							</div>
 						))}
 					</div>
@@ -129,9 +129,7 @@ export default function Gallery() {
 					>
 						<div className="border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-20 gap-4 px-4 py-8 flex flex-col justify-between col-start-1 col-end-6 row-start-3 row-end-12">
 							<div className="flex flex-col justify-start items-start gap-4">
-								<h3 className="font-bold">
-									{albums?.find(album => album.tag === selectedAlbum)?.title}
-								</h3>
+								<p className="font-bold">{albums?.find(album => album.tag === selectedAlbum)?.title}</p>
 								<p className="text-start text-sm md:text-xs">
 									{albums?.find(album => album.tag === selectedAlbum)?.description}
 								</p>
