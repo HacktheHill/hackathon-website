@@ -31,16 +31,3 @@
 	transform: translateY(-5%);
 	height: 150%;
 }
-
-.shade {
-	pointer-events: none;
-	background: linear-gradient(
-		180deg,
-		rgba(16, 16, 16, 1) 0%,
-		rgba(16, 16, 16, 0.4) 10%,
-		rgba(16, 16, 16, 0.2) 30%,
-		rgba(16, 16, 16, 0.2) 70%,
-		rgba(16, 16, 16, 0.6) 90%,
-		rgba(16, 16, 16, 1) 100%
-	);
-}

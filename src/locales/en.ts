@@ -20,7 +20,13 @@ export default {
 	},
 	stats: {
 		title: "Our Impact",
-		subtitle: "Here's a look at some of the numbers that define who we are. Every year, we have:",
+		subtitle: "Here's a look at some of the numbers that define who we are.",
+		description: "Every year, we have:",
+		sponsors: "Sponsors",
+		volunteers: "Volunteers",
+		prizes: "In Prizes",
+		workshops: "Workshops",
+		redbulls: "Energy Drinks Consumed",
 	},
 	gallery: {
 		title: "Where Memories are Made",

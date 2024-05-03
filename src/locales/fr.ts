@@ -20,7 +20,13 @@ export default {
 	},
 	stats: {
 		title: "Notre impact",
-		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes. Chaque année, nous avons:",
+		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes.",
+		description: "À chaque année, nous voyons:",
+		sponsors: "Commanditaires",
+		volunteers: "Bénévoles",
+		prizes: "En Prix",
+		workshops: "Ateliers",
+		redbulls: "Boissons Énergisantes Consommées",
 	},
 	gallery: {
 		title: "Où les Moments sont Créés",
