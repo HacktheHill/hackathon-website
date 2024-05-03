@@ -60,7 +60,7 @@ export default {
 		},
 	},
 	sponsors: {
-		title: "Nos commanditaires précédents",
+		title: "Nos commanditaires",
 		subtitle: "Ce sont les entreprises qui rendent Hack the Hill possible année après année.",
 	},
 	collaborators: {

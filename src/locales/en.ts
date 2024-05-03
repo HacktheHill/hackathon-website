@@ -60,7 +60,7 @@ export default {
 		},
 	},
 	sponsors: {
-		title: "A look at our past sponsors",
+		title: "A look at our sponsors",
 		subtitle: "These are the companies that make Hack the Hill possible year after year.",
 	},
 	collaborators: {

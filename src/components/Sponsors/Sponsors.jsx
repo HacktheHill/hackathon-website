@@ -52,7 +52,7 @@ export default function Sponsors() {
 						href={sponsor.href}
 						target="_blank"
 						rel="noreferrer"
-						className={`sponsor flex aspect-square justify-center items-center rounded-lg h-52 md:h-36 p-8 md:p-4 transition-all duration-200
+						className={`sponsor flex aspect-[3/2] justify-center items-center rounded-lg h-52 md:h-36 p-8 md:p-4 transition-all duration-200
 					 ${
 							hovered !== -1 && hovered !== i
 								? "opacity-25 translate-x-1 translate-y-1"

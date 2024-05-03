@@ -8,6 +8,7 @@ module.exports = {
 				"2024-bg": 'url("/src/assets/SVGs/2024.svg")',
 				"mountains-svg": 'url("/src/assets/SVGs/mountains_bg.svg")',
 				"parabol-svg": 'url("/src/assets/SVGs/parabol_bg.svg")',
+				"blur-svg": 'url("/src/assets/patterns/ffflux.svg")',
 				"theme-gradient": `linear-gradient(45deg,
 					rgba(255, 53, 53, 0.8) 0%,
 					rgba(214, 26, 26, 0.8) 20%,
