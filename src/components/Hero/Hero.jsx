@@ -31,7 +31,7 @@ export default function Hero() {
 					<img id="hth-logo-outline" {...HtHoutline} alt="Hack the Hill Logo" className="absolute w-3/4" />
 					<img id="hth-logo-solid" {...HtHSolid} alt="Hack the Hill Logo" className="relative w-3/4" />
 				</div>
-				<div id="content" className="flex flex-col w-full justify-center items-center gap-8 px-4 md:gap-0">
+				<div id="content" className="flex flex-col w-full justify-center items-center gap-8 px-4 md:gap-4">
 					<h2 className="font-medium text-3xl text-center md:text-lg">{t("hero.title")}</h2>
 					<Button onClick={() => window.open("https://2024.hackthehill.com", "_blank")}>2024</Button>
 				</div>
