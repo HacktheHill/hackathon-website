@@ -27,7 +27,7 @@
 
 h1 {
 	font-family: "MonaSans", sans-serif;
-	font-size: 3.5rem;
+	font-size: 3.75rem;
 	font-weight: 700;
 	letter-spacing: -2.75px;
 	color: #ffffff;
@@ -42,14 +42,18 @@ h2 {
 
 h3 {
 	font-family: "MonaSans", sans-serif;
-	font-size: 1rem;
-	font-weight: 300;
+	font-size: 2.5rem;
+	font-weight: 600;
+	letter-spacing: -2px;
+	line-height: 1.2;
+	color: #ffffff;
 }
 
 h4 {
 	font-family: "MonaSans", sans-serif;
-	font-size: 0.75rem;
-	font-weight: 300;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #ffffff;
 }
 
 h5 {
@@ -66,11 +70,37 @@ h6 {
 
 p {
 	font-family: "MonaSans", sans-serif;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 300;
 	line-height: 1.2;
 	letter-spacing: 0.5px;
 	vertical-align: baseline;
+}
+
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 3rem;
+		letter-spacing: -2.5px;
+	}
+	h2 {
+		font-size: 1.125rem;
+	}
+	h3 {
+		font-size: 2.25rem;
+		letter-spacing: -1.75px;
+	}
+	h4 {
+		font-size: 1rem;
+	}
+	h5 {
+		font-size: 0.375rem;
+	}
+	h6 {
+		font-size: 0.125rem;
+	}
+	p {
+		font-size: 1rem;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -82,10 +112,11 @@ p {
 		font-size: 1rem;
 	}
 	h3 {
-		font-size: 0.75rem;
+		font-size: 2rem;
+		letter-spacing: -1.5px;
 	}
 	h4 {
-		font-size: 0.5rem;
+		font-size: 0.85rem;
 	}
 	h5 {
 		font-size: 0.25rem;
@@ -94,6 +125,6 @@ p {
 		font-size: 0.125rem;
 	}
 	p {
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 }

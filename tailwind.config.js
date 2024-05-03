@@ -58,6 +58,7 @@ module.exports = {
 			},
 			boxShadow: {
 				"grid-card": "0 0 1.5rem 0.5rem rgba(255, 53, 53, 0.5), 0 0 1.5rem 0.5rem rgba(255, 53, 53, 0.5) inset",
+				glow: "rgba(255, 0, 0, 0.15) 0 0 200px 150px, rgba(255, 0, 0, 0.5) 0 0 20px 5px",
 			},
 		},
 

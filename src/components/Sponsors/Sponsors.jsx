@@ -82,7 +82,7 @@ export default function Sponsors() {
 	return (
 		<>
 			<div className="w-full flex justify-center items-center">
-				<div className="flex flex-col w-full h-full justify-center items-center gap-16 text-center max-w-2xl">
+				<div className="flex flex-col w-full h-full justify-center items-center py-36 gap-16 text-center max-w-2xl">
 					<div className="flex flex-col px-8 gap-4">
 						<h1>{t("sponsors.title")}</h1>
 						<h2>{t("sponsors.subtitle")}</h2>
