@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../../i18n";
 import quote from "../../assets/icons/quote.svg";
+import Button from "../Button/Button";
 
 export default function Testimonials() {
 	const testimonialData = [
@@ -88,7 +89,14 @@ export default function Testimonials() {
 					</div>
 				</div>
 				<div className="flex flex-col justify-start items-between text-end bg-blur-svg rounded-3xl p-8 row-start-11 col-start-8 row-end-13 col-end-13">
-					<h4>Let us know what you think</h4>
+					<div className="self-end">
+						<Button
+							onClick={() => window.open("https://www.instagram.com/hackthehill", "_blank")}
+							fill={false}
+						>
+							<h4>{t("testimonials.button_text")}</h4>
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>

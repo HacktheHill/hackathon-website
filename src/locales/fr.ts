@@ -72,6 +72,7 @@ export default {
 		sub_heading:
 			"À Hack the Hill, des étudiants de disciplines et d'horizons différents donnent vie à leurs idées en créant une communauté de collaboration, d'apprentissage et de plaisir. Ces expériences façonnent notre hackathon.",
 		description: "Voici ce que certains de nos partenaires communautaires ont à partager.",
+		button_text: "Laissez nous un témoignage",
 		t1: {
 			name: "Maddie Whibbs",
 			content: "Événement spectaculaire et bien organisé - j'ai adoré la foire des carrières!",
