@@ -25,7 +25,7 @@ export default function Hero() {
 	}, []);
 
 	return (
-		<div className="flex justify-center items-center h-screen border w-full bg-square-svg bg-center bg-cover bg-no-repeat bg-fixed">
+		<div className="flex justify-center items-center h-screen w-full bg-square-svg bg-center bg-cover bg-no-repeat bg-fixed">
 			<div className="flex flex-col justify-center items-center gap-12 translate-y-8 z-10 md:gap-6 max-w-2xl">
 				<div id="title" className="flex items-center justify-center">
 					<img id="hth-logo-outline" {...HtHoutline} alt="Hack the Hill Logo" className="absolute w-3/4" />
