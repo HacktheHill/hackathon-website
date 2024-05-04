@@ -8,12 +8,15 @@ import { t } from "../../i18n";
 
 export default function Stats() {
 	return (
-		<div className="w-full flex flex-col gap-16 justify-center items-center">
+		<div className="w-full flex flex-col gap-16 justify-center items-center mt-32">
 			<div className="flex flex-col px-8 gap-4 text-center basis-1/2 lg:mt-16">
 				<h1>{t("stats.title")}</h1>
 				<h2>{t("stats.subtitle")}</h2>
 			</div>
-			<div className="grid gap-4 grid-rows-12 grid-cols-12 w-full px-32 max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
+			<div className="grid gap-4 grid-rows-12 grid-cols-12 w-10/12 max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
+				<div className="flex flex-col md:flex-row justify-start items-between bg-blur-svg rounded-3xl p-8 row-start-1 col-start-6 row-end-5 col-end-13">
+					<h3>{t("stats.description")}</h3>
+				</div>
 				<div className="flex flex-col md:flex-row justify-between items-start gap-8 bg-[#020106] overflow-hidden rounded-3xl p-8 row-start-1 col-start-1 row-end-6 col-end-6">
 					<img
 						className="box-border h-20 w-20 aspect-square object-cover rounded-[50%] shadow-glow"
@@ -25,10 +28,7 @@ export default function Stats() {
 						<p>Hackers</p>
 					</div>
 				</div>
-				<div className="flex flex-col md:flex-row justify-start items-between bg-blur-svg rounded-3xl p-8 row-start-1 col-start-6 row-end-5 col-end-13">
-					<h3>{t("stats.description")}</h3>
-				</div>
-				<div className="flex flex-col md:flex-row justify-between items-start gap-8 bg-blur-svg  overflow-hidden rounded-3xl p-8 row-start-6 col-start-1 row-end-11 col-end-6">
+				<div className="flex flex-col md:flex-row justify-between items-start gap-8 bg-blur-svg md:bg-none md:bg-[#020106] overflow-hidden rounded-3xl p-8 row-start-6 col-start-1 row-end-11 col-end-6">
 					<img
 						className="box-border h-20 w-20 aspect-square object-cover rounded-[50%] shadow-glow"
 						src={team.src}

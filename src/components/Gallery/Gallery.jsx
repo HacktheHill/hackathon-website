@@ -86,8 +86,8 @@ export default function Gallery() {
 	};
 
 	return (
-		<div className="w-full flex justify-center items-center max-w-2xl">
-			<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center max-w-2xl">
+		<div className="w-full flex justify-center items-center">
+			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-16 py-36 text-center max-w-2xl">
 				<div className="flex flex-col px-8 gap-4">
 					<h1>{t("gallery.title")}</h1>
 					<h2>{t("gallery.subtitle")}</h2>

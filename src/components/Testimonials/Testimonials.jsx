@@ -48,7 +48,7 @@ export default function Testimonials() {
 				<h1>{t("testimonials.title")}</h1>
 				<h2>{t("testimonials.sub_heading")}</h2>
 			</div>
-			<div className="grid gap-4 grid-rows-12 grid-cols-12 w-full px-32 max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
+			<div className="grid gap-4 grid-rows-12 grid-cols-12 w-10/12 max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
 				<div className="flex flex-col justify-start items-between bg-blur-svg rounded-3xl p-8 row-start-1 col-start-1 row-end-6 col-end-8">
 					<h3>{t("testimonials.description")}</h3>
 				</div>

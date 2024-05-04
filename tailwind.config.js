@@ -67,6 +67,7 @@ module.exports = {
 			light_accent: "#ff7979",
 			dark_accent: "#551a1a",
 			white: "#ffffff",
+			shadow_text: "#6e7681",
 			black: "#000000",
 			"shade-1": "#ebebeb",
 			"shade-2": "#e0e0e0",

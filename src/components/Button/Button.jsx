@@ -16,7 +16,7 @@ export default function Button({ children, onClick, fill = true }) {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<div className="flex justify-center items-center gap-1.5 pl-6 pr-4">
+			<div className={`flex justify-center items-center gap-1.5 ${fill && "pl-6 pr-4"}`}>
 				<span className={`font-medium text-sm h-full ${!fill && "translate-y-[0.2rem]"}`}>
 					<div>
 						{children}

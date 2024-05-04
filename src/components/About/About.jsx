@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { t } from "../../i18n";
-import about1 from "../../assets/about/about1.webp";
+import team1 from "../../assets/about/team1.webp";
+import team3 from "../../assets/about/team3.webp";
+import Button from "../Button/Button";
+import hackhers2 from "../../assets/gallery/hackhers2.webp";
 
 export default function About() {
 	const podcastLink =
@@ -9,58 +12,71 @@ export default function About() {
 
 	return (
 		<>
-			<div className="w-full flex justify-center items-center max-w-2xl">
-				<div className="flex flex-col w-full h-full justify-center items-center gap-16 py-36 text-center">
-					<div className="flex flex-col px-8 gap-4">
+			<div className="w-full bg-[#0d1117] flex justify-center items-center">
+				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-36 py-36 text-center max-w-2xl">
+					<div className="flex flex-col text-start w-full">
 						<h1>{t("about.title")}</h1>
-						<h2>{t("about.subtitle")}</h2>
+						<h3 className="text-shadow_text">{t("about.subtitle")}</h3>
 					</div>
-					<div className="flex w-9/12 h-4/6 flex-row justify-between items-center flex-wrap lg:gap-8 lg:w-11/12">
-						<div className="flex basis-5/12 justify-start items-center flex-wrap gap-8 lg:basis-full lg:justify-center">
-							<div
-								className="flex flex-col gap-4 w-6/7 text-pretty text-left border-2 border-shade-3 rounded-sm bg-shade-8 px-4 py-8"
-								data-aos="zoom-in"
-								data-aos-duration="800"
-							>
-								<p className="font-bold">About us</p>
-								<p>{t("about.p1")}</p>
-								<p>
-									<span>
-										<span className="font-bold">{t("about.goal")}</span> {t("about.p2")}
-									</span>
-								</p>
-								<p>{t("about.p3")}</p>
-								<p className="font-bold">{t("about.joinus")}</p>
-							</div>
-						</div>
-						<div className="basis-6/12 h-gallery grid grid-rows-12 grid-cols-12 gap-2 lg:basis-full xs:flex xs:flex-col xs:gap-8 w-1/2">
-							<div
-								className="border-2 border-shade-3 rounded-sm col-start-1 col-end-10 row-start-1 row-end-6 shadow-grid-card"
-								data-aos="zoom-in"
-								data-aos-duration="800"
-							>
-								<img
-									{...about1}
-									className="w-full h-full object-cover "
-									alt={t("about.images.about1.alt")}
-								/>
-							</div>
-							<div
-								className="border-2 bg-opacity-50 border-shade-3 rounded-sm bg-light_accent col-start-4 col-end-13 row-start-7 row-end-13 shadow-grid-card sm:h-56"
-								data-aos="zoom-in"
-								data-aos-duration="800"
-							>
-								<iframe
-									src={podcastLink}
-									title="Podcast"
-									className="w-full h-full object-cover"
-									srcDoc={`<style>*{padding:0;margin:0;overflow:hidden;width:100%;height:100%;object-fit:cover}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:3.5rem/1.5 sans-serif;color:#FFFFFF;text-shadow:0 0 0.5em red}</style><a href=${podcastLink} noreferrer"><img src=${thumbnailLink} alt='${t(
-										"about.frame_alt",
-									)}'><span>▶</span></a>`}
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-									allowFullScreen
-									loading="lazy"
-								></iframe>
+					<div className="flex h-4/6 flex-row justify-between items-center flex-wrap lg:gap-8 px-8">
+						<div className="flex flex-col gap-32 w-6/7 text-pretty text-left">
+							<div className="grid grid-rows-3 grid-cols-2 gap-y-36 gap-x-20 md:flex md:flex-col md:gap-y-20">
+								<div className="row-start-1 col-start-1 row-end-1 col-end-1 self-center flex flex-col gap-8">
+									<h3>
+										<span>{t("about.p1_prefix")}</span>
+										<span className="text-shadow_text"> {t("about.p1")}</span>
+									</h3>
+									<div className="self-start">
+										<Button
+											onClick={() =>
+												window.open("https://www.instagram.com/hackthehill", "_blank")
+											}
+											fill={false}
+										>
+											<h4>{t("about.p1_btn")}</h4>
+										</Button>
+									</div>
+								</div>
+								<div className="row-start-1 col-start-2 row-end-1 col-end-2 bg-blur-svg overflow-hidden rounded-3xl p-4">
+									<img {...team1} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
+								</div>
+								<div className="row-start-2 col-start-2 row-end-2 col-end-2 self-center flex flex-col gap-8">
+									<h3>
+										<span>{t("about.p2_prefix")}</span>
+										<span className="text-shadow_text"> {t("about.p2")}</span>
+									</h3>
+									<div className="self-start">
+										<Button fill={false}>
+											<a href={"/events"} target="_blank" rel="noreferrer">
+												<h4>{t("about.p2_btn")}</h4>
+											</a>
+										</Button>
+									</div>
+								</div>
+								<div className="row-start-2 col-start-1 row-end-2 col-end-1 bg-blur-svg overflow-hidden rounded-3xl p-4">
+									<img {...team3} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
+								</div>
+								<div className="row-start-3 col-start-1 row-end-3 col-end-1 self-center flex flex-col gap-8">
+									<h3>
+										<span>{t("about.p3_prefix")}</span>
+										<span className="text-shadow_text"> {t("about.p3")}</span>
+									</h3>
+									<div className="self-start">
+										<Button
+											onClick={() => window.open("https://linktr.ee/hackthehill", "_blank")}
+											fill={false}
+										>
+											<h4>{t("about.p3_btn")}</h4>
+										</Button>
+									</div>
+								</div>
+								<div className="row-start-3 col-start-2 row-end-3 col-end-2 bg-blur-svg overflow-hidden rounded-3xl p-4">
+									<img
+										{...hackhers2}
+										className="w-full h-full object-cover rounded-2xl"
+										alt="HackHers"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
