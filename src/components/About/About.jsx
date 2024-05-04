@@ -21,7 +21,7 @@ export default function About() {
 					<div className="flex h-4/6 flex-row justify-between items-center flex-wrap lg:gap-8 px-8">
 						<div className="flex flex-col gap-32 w-6/7 text-pretty text-left">
 							<div className="grid grid-rows-3 grid-cols-2 gap-y-36 gap-x-20 md:flex md:flex-col md:gap-y-20">
-								<div className="row-start-1 col-start-1 row-end-1 col-end-1 self-center flex flex-col gap-8">
+								<div className="row-start-1 col-start-2 row-end-1 col-end-2 self-center flex flex-col gap-8">
 									<h3>
 										<span>{t("about.p1_prefix")}</span>
 										<span className="text-shadow_text"> {t("about.p1")}</span>
@@ -37,10 +37,10 @@ export default function About() {
 										</Button>
 									</div>
 								</div>
-								<div className="row-start-1 col-start-2 row-end-1 col-end-2 bg-blur-svg overflow-hidden rounded-3xl p-4">
+								<div className="row-start-1 col-start-1 row-end-1 col-end-1 bg-blur-svg overflow-hidden rounded-3xl p-4">
 									<img {...team1} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
 								</div>
-								<div className="row-start-2 col-start-2 row-end-2 col-end-2 self-center flex flex-col gap-8">
+								<div className="row-start-2 col-start-1 row-end-2 col-end-1 self-center flex flex-col gap-8">
 									<h3>
 										<span>{t("about.p2_prefix")}</span>
 										<span className="text-shadow_text"> {t("about.p2")}</span>
@@ -53,10 +53,10 @@ export default function About() {
 										</Button>
 									</div>
 								</div>
-								<div className="row-start-2 col-start-1 row-end-2 col-end-1 bg-blur-svg overflow-hidden rounded-3xl p-4">
+								<div className="row-start-2 col-start-2 row-end-2 col-end-2  bg-blur-svg overflow-hidden rounded-3xl p-4">
 									<img {...team3} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
 								</div>
-								<div className="row-start-3 col-start-1 row-end-3 col-end-1 self-center flex flex-col gap-8">
+								<div className=" row-start-3 col-start-2 row-end-3 col-end-2 self-center flex flex-col gap-8">
 									<h3>
 										<span>{t("about.p3_prefix")}</span>
 										<span className="text-shadow_text"> {t("about.p3")}</span>
@@ -70,7 +70,7 @@ export default function About() {
 										</Button>
 									</div>
 								</div>
-								<div className="row-start-3 col-start-2 row-end-3 col-end-2 bg-blur-svg overflow-hidden rounded-3xl p-4">
+								<div className="row-start-3 col-start-1 row-end-3 col-end-1 bg-blur-svg overflow-hidden rounded-3xl p-4">
 									<img
 										{...hackhers2}
 										className="w-full h-full object-cover rounded-2xl"
