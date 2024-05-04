@@ -37,30 +37,35 @@ export default {
 				title: "Événement Principal 2023",
 				description:
 					"Le point culminant de 2023, notre hackathon principal était un succès ! 600+ hackers, 10+ sponsors et 36 heures de hacking combinées pour créer une expérience inoubliable. Pour une première édition, c'était un énorme exploit !",
+				stat: "Hackers",
 			},
 			hackhers: {
 				card_title: "HackHers",
 				title: "HackHers",
 				description:
 					"Un hackathon d'une journée en partenariat avec IEEE uOttawa et WIE uOttawa, une expérience unique qui défiait les attentes traditionnelles. Avec une salle de bien-être, un atelier spécial et des boissons rafraîchissantes, c'était un événement incontournable !",
+				stat: "Projets soumis",
 			},
 			panel: {
 				card_title: "Panel de Stagiaires",
 				title: "Panel de Stagiaires",
 				description:
 					"Une nuit d'inspiration et d'apprentissage, le Panel de Stagiaires était une collaboration entre Hack the Hill et IEEE CU. Cinq stagiaires ont partagé leurs expériences et leurs idées, offrant une perspective unique sur l'avenir de la technologie.",
+				stat: "Invités",
 			},
 			roast: {
 				card_title: "Évaluation de CV",
 				title: "Évaluation de CV",
 				description:
 					"Cette session dynamique était dédiée à la revitalisation des CV. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès.",
+				stat: "CV évalués",
 			},
 			ciena: {
 				card_title: "Réseautage Ciena",
 				title: "Réseautage Ciena",
 				description:
 					"Une soirée de réseautage exceptionnelle, l'événement de réseautage Ciena était une opportunité unique de se connecter avec les professionnels de Ciena et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
+				stat: "Connexions formées",
 			},
 		},
 	},
@@ -74,9 +79,7 @@ export default {
 	},
 	testimonials: {
 		title: "Créons des Moments Marquants",
-		sub_heading:
-			"À Hack the Hill, des étudiants de disciplines et d'horizons différents donnent vie à leurs idées en créant une communauté de collaboration, d'apprentissage et de plaisir. Ces expériences façonnent notre hackathon.",
-		description: "Voici ce que certains de nos partenaires communautaires ont à partager.",
+		subtitle: "Voici ce que certains de nos partenaires communautaires ont à partager.",
 		button_text: "Laissez nous un témoignage",
 		t1: {
 			name: "Maddie Whibbs",

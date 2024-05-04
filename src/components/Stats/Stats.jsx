@@ -8,12 +8,12 @@ import { t } from "../../i18n";
 
 export default function Stats() {
 	return (
-		<div className="w-full flex flex-col gap-16 justify-center items-center mt-32">
-			<div className="flex flex-col px-8 gap-4 text-center basis-1/2 lg:mt-16">
+		<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl">
+			<div className="flex flex-col text-start w-full">
 				<h1>{t("stats.title")}</h1>
-				<h2>{t("stats.subtitle")}</h2>
+				<h3 className="text-shadow_text">{t("stats.subtitle")}</h3>
 			</div>
-			<div className="grid gap-4 grid-rows-12 grid-cols-12 w-10/12 max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
+			<div className="grid gap-4 grid-rows-12 grid-cols-12 w-full max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
 				<div className="flex flex-col md:flex-row justify-start items-between bg-blur-svg rounded-3xl p-8 row-start-1 col-start-6 row-end-5 col-end-13">
 					<h3>{t("stats.description")}</h3>
 				</div>

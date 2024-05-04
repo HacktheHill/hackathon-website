@@ -20,7 +20,7 @@ export default function Footer() {
 	};
 
 	return (
-		<div className="h-auto w-full flex lg:flex-col md:gap-1 md:p-6 gap-4 flex-row justify-between items-center p-5 lg:px-8 px-16">
+		<div className="h-auto w-full flex lg:flex-col md:gap-1 md:p-6 gap-4 flex-row justify-between items-center p-5 lg:px-8 px-16 bg-[#0d1117]">
 			<div className="md:grid-cols-2 md:gap-x-5 md:gap-2 lg:grid lg:grid-flow-row lg:gap-x-0 lg:grid-cols-4 lg:gap-2 lg:w-full place-items-center flex items-center w-auto justify-between gap-10">
 				<p className="text-white text-xs whitespace-nowrap md:col-span-2 md:p-1.5 col-span-1 md:order-last">
 					(C) Hack the Hill 2024

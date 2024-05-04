@@ -33,34 +33,39 @@ export default {
 		button_text: "Learn More",
 		albums: {
 			twentytwentythree: {
-				card_title: "2023 Main Event",
+				card_title: "2023",
 				title: "2023 Main Event",
 				description:
 					"The spotlight of 2023, our main hackathon event was a blast! 600+ hackers, 10+ sponsors and 36 hours of hacking combined to create an unforgettable experience. For a first edition, it was a huge success!",
+				stat: "Hackers",
 			},
 			hackhers: {
 				card_title: "HackHers",
 				title: "HackHers",
 				description:
 					"A one-day hackathon in partnership with IEEE uOttawa and WIE uOttawa, HackHers was a unique experience that defied traditional hackathon expectations. With a wellness room, special workshop, and refreshing beverages, it was a must-attend event!",
+				stat: "Projects Submitted",
 			},
 			panel: {
 				card_title: "Intern Panel",
 				title: "Intern Panel",
 				description:
 					"A night of inspiration and learning, the Intern Panel was a collaboration between Hack the Hill and IEEE CU. Five interns shared their experiences and insights, providing a unique perspective on the future of technology.",
+				stat: "Speakers",
 			},
 			roast: {
 				card_title: "Resume Rescue",
 				title: "Resume Rescue",
 				description:
 					"Hack the Hill's Resume Rescue was a dynamic session dedicated to revitalizing resumes. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success.",
+				stat: "Resumes Roasted",
 			},
 			ciena: {
 				card_title: "Ciena Networking",
 				title: "Ciena Networking",
 				description:
 					"An evening of unparalleled networking, the Ciena Networking Event was a unique opportunity to connect with Ciena professionals and explore potential opportunities in the dynamic world of networking.",
+				stat: "Connections Made",
 			},
 		},
 	},
@@ -74,9 +79,7 @@ export default {
 	},
 	testimonials: {
 		title: "Making Moments Matter",
-		sub_heading:
-			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learning, and fun. These experiences are what shape our hackathon.",
-		description: "Here's what some of our community partners have to share.",
+		subtitle: "Here's what some of our community partners have to share.",
 		button_text: "Let us know what you think",
 		t1: {
 			name: "Maddie Whibbs",

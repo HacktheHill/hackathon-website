@@ -85,6 +85,7 @@ module.exports = {
 			button_hover: "#f0f6fc",
 		},
 		screens: {
+			"3xl": { max: "1920px" },
 			"2xl": { max: "1536px" },
 			xl: { max: "1280px" },
 			lg: { max: "1024px" },

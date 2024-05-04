@@ -79,7 +79,7 @@ p {
 
 @media screen and (max-width: 1024px) {
 	h1 {
-		font-size: 3rem;
+		font-size: 3.5rem;
 		letter-spacing: -2.5px;
 	}
 	h2 {
@@ -105,7 +105,7 @@ p {
 
 @media screen and (max-width: 768px) {
 	h1 {
-		font-size: 2rem;
+		font-size: 3rem;
 		letter-spacing: -1px;
 	}
 	h2 {

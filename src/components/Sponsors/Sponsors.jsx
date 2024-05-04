@@ -81,11 +81,11 @@ export default function Sponsors() {
 
 	return (
 		<>
-			<div className="w-full flex justify-center items-center">
-				<div className="flex flex-col w-10/12 h-full justify-center items-center py-36 gap-16 text-center max-w-2xl">
-					<div className="flex flex-col px-8 gap-4">
+			<div className="w-full flex justify-center items-center bg-[#0d1117]">
+				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl">
+					<div className="flex flex-col text-center w-full">
 						<h1>{t("sponsors.title")}</h1>
-						<h2>{t("sponsors.subtitle")}</h2>
+						<h3 className="text-shadow_text">{t("sponsors.subtitle")}</h3>
 					</div>
 					<div className="carousel-track">
 						{marqueeGroup(data, 1, pauseAnimation, startAnimation)}
