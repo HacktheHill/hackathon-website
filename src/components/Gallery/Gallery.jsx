@@ -140,7 +140,7 @@ export default function Gallery() {
 									</div>
 								</div>
 								<p
-									className={`cursor-pointer text-sm ${
+									className={`cursor-pointer text-sm text-center ${
 										album.tag === activeFolder && "text-white font-bold"
 									}`}
 								>
