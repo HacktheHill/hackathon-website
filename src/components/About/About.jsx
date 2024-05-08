@@ -20,10 +20,10 @@ export default function About() {
 						<h3 className="text-shadow_text">{t("about.subtitle")}</h3>
 					</div>
 					<div className="flex h-4/6 flex-row justify-between items-center flex-wrap lg:gap-8 px-8">
-						<div className="flex flex-col gap-32 w-6/7 text-pretty text-left z-[1]">
-							<div className="grid grid-rows-3 grid-cols-2 gap-y-44 gap-x-20 md:flex md:flex-col md:gap-y-20">
+						<div className="flex flex-col w-6/7 text-pretty text-left z-[1]">
+							<div className="grid grid-rows-1 grid-cols-2 gap-x-20 md:flex md:flex-col md:gap-y-20">
 								<div
-									className="row-start-1 col-start-2 row-end-1 col-end-2 self-center flex flex-col gap-8"
+									className="row-start-1 col-start-2 row-end-1 col-end-3 self-center flex flex-col gap-8"
 									data-aos="fade-up"
 									data-aos-duration="1000"
 									data-aos-once="false"
@@ -44,16 +44,55 @@ export default function About() {
 									</div>
 								</div>
 								<div
-									className="row-start-1 col-start-1 row-end-1 col-end-1 bg-blur-svg overflow-visible rounded-3xl p-4"
+									className="row-start-1 col-start-1 row-end-1 col-end-2 bg-blur-svg overflow-visible rounded-3xl p-4"
 									data-aos="fade-right"
 									data-aos-once="false"
 								>
 									<img {...team1} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
-									<div className="absolute bottom-0 left-1/2 h-20 transform translate-y-20 bg-shade-7 w-4"></div>
-									<div className="absolute bottom-0 left-1/2 h-4 transform translate-y-24 bg-shade-7 w-2/3"></div>
 								</div>
+							</div>
+
+							<div
+								className="row-start-3 col-start-1 row-end-4 col-end-3 grid grid-cols-6 justify-center overflow-visible"
+								data-aos="fade-up-right"
+								data-aos-once="false"
+							>
+								<svg className="col-start-2 col-end-6 opacity-25" viewBox="0 0 200 50">
+									<line
+										x1="20"
+										y1="4"
+										x2="20"
+										y2="29"
+										stroke="#ffffff"
+										stroke-dasharray="7,7"
+										stroke-width="1.5"
+										strokeLinecap="round"
+									/>
+									<line
+										x1="20"
+										y1="25"
+										x2="180"
+										y2="25"
+										stroke="#ffffff"
+										stroke-dasharray="7,7"
+										stroke-width="1.5"
+										strokeLinecap="round"
+									/>
+									<line
+										x1="180"
+										y1="25"
+										x2="180"
+										y2="50"
+										stroke="#ffffff"
+										stroke-dasharray="7,7"
+										stroke-width="1.5"
+										strokeLinecap="round"
+									/>
+								</svg>
+							</div>
+							<div className="grid grid-cols-2 gap-x-20 md:flex md:flex-col md:gap-y-20">
 								<div
-									className="row-start-2 col-start-1 row-end-2 col-end-1 self-center flex flex-col gap-8"
+									className="col-start-1 col-end-2 self-center flex flex-col gap-8"
 									data-aos="fade-up"
 									data-aos-duration="1000"
 									data-aos-once="false"
@@ -71,18 +110,54 @@ export default function About() {
 									</div>
 								</div>
 								<div
-									className="row-start-2 col-start-2 row-end-2 col-end-2  bg-blur-svg overflow-visible rounded-3xl p-4"
+									className="col-start-2 col-end-3  bg-blur-svg overflow-visible rounded-3xl p-4"
 									data-aos="fade-left"
 									data-aos-once="false"
 								>
 									<img {...team3} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
-									<div className="absolute top-0 left 1/2 h-4 transform -translate-y-24 bg-shade-7 w-1/2"></div>
-									<div className="absolute top-0 left-1/2 h-20 transform -translate-y-20 bg-shade-7 w-4"></div>
-									<div className="absolute bottom-0 left-1/2 h-20 transform translate-y-20 bg-shade-7 w-4"></div>
-									<div className="absolute bottom-0 left 1/2 h-4 transform translate-y-24 bg-shade-7 w-1/2"></div>
 								</div>
+							</div>
+							<div
+								className="row-start-3 col-start-1 row-end-4 col-end-3 grid grid-cols-6 justify-center overflow-visible"
+								data-aos="fade-up-left"
+								data-aos-once="false"
+							>
+								<svg className="col-start-2 col-end-6 opacity-25" viewBox="0 0 200 50">
+									<line
+										x1="20"
+										y1="25"
+										x2="20"
+										y2="50"
+										stroke="#ffffff"
+										stroke-dasharray="7,7"
+										stroke-width="1.5"
+										strokeLinecap="round"
+									/>
+									<line
+										x1="20"
+										y1="25"
+										x2="180"
+										y2="25"
+										stroke="#ffffff"
+										stroke-dasharray="7,7"
+										stroke-width="1.5"
+										strokeLinecap="round"
+									/>
+									<line
+										x1="180"
+										y1="4"
+										x2="180"
+										y2="29"
+										stroke="#ffffff"
+										stroke-dasharray="7,7"
+										stroke-width="1.5"
+										strokeLinecap="round"
+									/>
+								</svg>
+							</div>
+							<div className="grid grid-cols-2 gap-x-20 md:flex md:flex-col md:gap-y-20">
 								<div
-									className=" row-start-3 col-start-2 row-end-3 col-end-2 self-center flex flex-col gap-8"
+									className=" row-start-7 col-start-2 row-end-9 col-end-3 self-center flex flex-col gap-8"
 									data-aos="fade-up"
 									data-aos-duration="1000"
 									data-aos-once="false"
@@ -101,7 +176,7 @@ export default function About() {
 									</div>
 								</div>
 								<div
-									className="row-start-3 col-start-1 row-end-3 col-end-1 bg-blur-svg overflow-visible rounded-3xl p-4"
+									className="row-start-7 col-start-1 row-end-9 col-end-2 bg-blur-svg overflow-visible rounded-3xl p-4"
 									data-aos="fade-right"
 									data-aos-once="false"
 								>
@@ -110,8 +185,6 @@ export default function About() {
 										className="w-full h-full object-cover rounded-2xl"
 										alt="HackHers"
 									/>
-									<div className="absolute top-0 left-1/2 h-4 transform -translate-y-24 bg-shade-7 w-2/3"></div>
-									<div className="absolute top-0 left-1/2 h-20 transform -translate-y-20 bg-shade-7 w-4"></div>
 								</div>
 							</div>
 						</div>
