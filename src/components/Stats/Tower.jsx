@@ -4,7 +4,6 @@ import { t } from "../../i18n";
 import "./Tower.css";
 
 export default function Tower() {
-	
 	useEffect(() => {
 		//get groups with id containing the string `panel`, darken the children of the group, on hover lighten the children of the group
 		const groups = document.querySelectorAll("g[id*='panel']");
@@ -40,7 +39,7 @@ export default function Tower() {
 				});
 			});
 		}
-	}, []);*/
+	}, []);
 
 	return (
 		<div className="w-full flex flex-col gap-16 justify-center items-center">
@@ -48,14 +47,14 @@ export default function Tower() {
 				<h1>{t("stats.title")}</h1>
 				<h2>{t("stats.subtitle")}</h2>
 			</div>
-				<div className="relative flex justify-end ">
-					<div
-						className="tower-img border"
-						dangerouslySetInnerHTML={{
-							__html: tower,
-						}}
-					></div>
-				</div>	
+			<div className="relative flex justify-end ">
+				<div
+					className="tower-img border"
+					dangerouslySetInnerHTML={{
+						__html: tower,
+					}}
+				></div>
+			</div>
 		</div>
 	);
 }

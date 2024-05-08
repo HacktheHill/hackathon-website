@@ -4,6 +4,7 @@ import team1 from "../../assets/about/team1.webp";
 import team3 from "../../assets/about/team3.webp";
 import Button from "../Button/Button";
 import hackhers2 from "../../assets/gallery/hackhers2.webp";
+import shape from "../../assets/patterns/ssshape.svg";
 
 export default function About() {
 	const podcastLink =
@@ -19,7 +20,7 @@ export default function About() {
 						<h3 className="text-shadow_text">{t("about.subtitle")}</h3>
 					</div>
 					<div className="flex h-4/6 flex-row justify-between items-center flex-wrap lg:gap-8 px-8">
-						<div className="flex flex-col gap-32 w-6/7 text-pretty text-left">
+						<div className="flex flex-col gap-32 w-6/7 text-pretty text-left z-[1]">
 							<div className="grid grid-rows-3 grid-cols-2 gap-y-36 gap-x-20 md:flex md:flex-col md:gap-y-20">
 								<div className="row-start-1 col-start-2 row-end-1 col-end-2 self-center flex flex-col gap-8">
 									<h3>
@@ -80,6 +81,21 @@ export default function About() {
 							</div>
 						</div>
 					</div>
+					<img
+						src={shape.src}
+						alt="shape"
+						className="w-full max-w-bg-deco opacity-35 absolute z-[0] translate-x-1/2 translate-y-24"
+					/>
+					<img
+						src={shape.src}
+						alt="shape"
+						className="w-full max-w-bg-deco opacity-35 absolute z-[0] -translate-x-1/2 -translate-y-1/4"
+					/>
+					<img
+						src={shape.src}
+						alt="shape"
+						className="w-full max-w-bg-deco opacity-35 absolute z-[0] -translate-x-1/2 translate-y-3/4 -scale-y-100"
+					/>
 				</div>
 			</div>
 		</>

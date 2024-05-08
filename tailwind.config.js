@@ -20,6 +20,7 @@ module.exports = {
 			},
 			maxWidth: {
 				"2xl": "1536px",
+				"bg-deco": "2000px",
 			},
 			keyframes: {
 				"shake-repeat": {
