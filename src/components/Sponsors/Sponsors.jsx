@@ -6,6 +6,7 @@ import CanadianTire from "/src/assets/Logos/Partners/CanadianTire.svg";
 import Ciena from "/src/assets/Logos/Partners/Ciena.svg";
 import DigitalOcean from "/src/assets/Logos/Partners/DigitalOcean.svg";
 import Google from "/src/assets/Logos/Partners/Google.svg";
+import GitHub from "/src/assets/Logos/Partners/GitHub.svg";
 import lonehaven from "/src/assets/Logos/Partners/Lonehaven.svg";
 import Vercel from "/src/assets/Logos/Partners/Vercel.svg";
 import balsamiq from "/src/assets/Logos/Partners/Balsamiq.svg";
@@ -24,6 +25,7 @@ export default function Sponsors() {
 			{ href: "https://lonehaven.com/", ...lonehaven, alt: "Lonehaven" },
 			{ href: "https://www.cse-cst.gc.ca/", ...CSE, alt: "CSE / CST" },
 			{ href: "https://vercel.com/", ...Vercel, alt: "Vercel" },
+			{ href: "https://github.com/", ...GitHub, alt: "GitHub" },
 			{ href: "https://www.digitalocean.com/", ...DigitalOcean, alt: "DigitalOcean" },
 			{ href: "https://www.echo3d.com/", ...echo3d, alt: "echo3D" },
 			{ href: "https://balsamiq.com/", ...balsamiq, alt: "balsamiq" },
