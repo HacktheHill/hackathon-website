@@ -64,8 +64,8 @@ export default function About() {
 										x2="20"
 										y2="29"
 										stroke="#ffffff"
-										stroke-dasharray="7,7"
-										stroke-width="1.5"
+										strokeDasharray="7,7"
+										strokeWidth="1.5"
 										strokeLinecap="round"
 									/>
 									<line
@@ -74,8 +74,8 @@ export default function About() {
 										x2="180"
 										y2="25"
 										stroke="#ffffff"
-										stroke-dasharray="7,7"
-										stroke-width="1.5"
+										strokeDasharray="7,7"
+										strokeWidth="1.5"
 										strokeLinecap="round"
 									/>
 									<line
@@ -84,8 +84,8 @@ export default function About() {
 										x2="180"
 										y2="50"
 										stroke="#ffffff"
-										stroke-dasharray="7,7"
-										stroke-width="1.5"
+										strokeDasharray="7,7"
+										strokeWidth="1.5"
 										strokeLinecap="round"
 									/>
 								</svg>
@@ -129,8 +129,8 @@ export default function About() {
 										x2="20"
 										y2="50"
 										stroke="#ffffff"
-										stroke-dasharray="7,7"
-										stroke-width="1.5"
+										strokeDasharray="7,7"
+										strokeWidth="1.5"
 										strokeLinecap="round"
 									/>
 									<line
@@ -139,8 +139,8 @@ export default function About() {
 										x2="180"
 										y2="25"
 										stroke="#ffffff"
-										stroke-dasharray="7,7"
-										stroke-width="1.5"
+										strokeDasharray="7,7"
+										strokeWidth="1.5"
 										strokeLinecap="round"
 									/>
 									<line
@@ -149,8 +149,8 @@ export default function About() {
 										x2="180"
 										y2="29"
 										stroke="#ffffff"
-										stroke-dasharray="7,7"
-										stroke-width="1.5"
+										strokeDasharray="7,7"
+										strokeWidth="1.5"
 										strokeLinecap="round"
 									/>
 								</svg>
