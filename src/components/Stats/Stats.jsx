@@ -5,8 +5,7 @@ import cash from "../../assets/icons/cash.svg";
 import drink from "../../assets/icons/drink.svg";
 import tool from "../../assets/icons/tool.svg";
 import { t } from "../../i18n";
-import quad from "../../assets/patterns/qqquad.svg";
-import oscillate from "../../assets/patterns/oooscillate.svg";
+import whirl from "../../assets/patterns/wwwhirl.svg";
 
 export default function Stats() {
 	return (
@@ -88,10 +87,9 @@ export default function Stats() {
 					</div>
 				</div>
 			</div>
-
 			<img
-				src={oscillate.src}
-				className="absolute z-[3] left-0 top-0 h-full object-cover opacity-15 "
+				src={whirl.src}
+				className="absolute z-[3] h-full w-full object-cover opacity-35 -scale-y-100 max-w-bg-deco translate-y-[10%]"
 				alt="Quad"
 			/>
 		</div>
