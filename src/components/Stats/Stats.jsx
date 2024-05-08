@@ -5,11 +5,13 @@ import cash from "../../assets/icons/cash.svg";
 import drink from "../../assets/icons/drink.svg";
 import tool from "../../assets/icons/tool.svg";
 import { t } from "../../i18n";
+import quad from "../../assets/patterns/qqquad.svg";
+import oscillate from "../../assets/patterns/oooscillate.svg";
 
 export default function Stats() {
 	return (
-		<div className="w-full flex justify-center items-center bg-background z-[2]">
-			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl  ">
+		<div className="w-full flex justify-center items-center bg-background z-[2] relative">
+			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl z-[4] ">
 				<div className="flex flex-col text-start w-full">
 					<h1>{t("stats.title")}</h1>
 					<h3 className="text-shadow_text">{t("stats.subtitle")}</h3>
@@ -86,6 +88,12 @@ export default function Stats() {
 					</div>
 				</div>
 			</div>
+
+			<img
+				src={oscillate.src}
+				className="absolute z-[3] left-0 top-0 h-full object-cover opacity-15 "
+				alt="Quad"
+			/>
 		</div>
 	);
 }
