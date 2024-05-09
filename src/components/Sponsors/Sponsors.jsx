@@ -56,7 +56,7 @@ export default function Sponsors() {
 						href={sponsor.href}
 						target="_blank"
 						rel="noreferrer"
-						className={`sponsor flex aspect-[3/2] justify-center items-center rounded-lg h-52 md:h-36 p-8 md:p-4 transition-all duration-200
+						className={`sponsor flex aspect-[3/2] justify-center items-center rounded-lg h-40 md:h-24 p-8 md:p-4 transition-all duration-200
 					 ${
 							hovered !== -1 && hovered !== i
 								? "opacity-25 translate-x-1 translate-y-1"
@@ -86,16 +86,16 @@ export default function Sponsors() {
 	return (
 		<>
 			<div className="w-full flex justify-center items-center relative bg-theme-gradient">
-				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl z-[2]">
+				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-28 text-left max-w-2xl z-[2]">
 					<div className="carousel-track  z-[2]">
 						{marqueeGroup(data, 1, pauseAnimation, startAnimation)}
 						{marqueeGroup(data, 2, pauseAnimation, startAnimation)}
 					</div>
 				</div>
-				<img src={waves.src} className="absolute top-0 w-full h-24 z-[1]  -translate-y-[1px]"></img>
+				<img src={waves.src} className="absolute top-0 w-full h-20 z-[1]  -translate-y-[1px]"></img>
 				<img
 					src={waves.src}
-					className="absolute bottom-0 w-full h-24 z-[1] -scale-y-100 -scale-x-100 translate-y-[1px]"
+					className="absolute bottom-0 w-full h-20 z-[1] -scale-y-100 -scale-x-100 translate-y-[1px]"
 				></img>
 			</div>
 		</>
