@@ -13,7 +13,7 @@ export default function About() {
 
 	return (
 		<>
-			<div className="w-full bg-[#0d1117] flex justify-center items-center">
+			<div className="w-full bg-background-dark flex justify-center items-center">
 				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-36 py-36 text-center max-w-2xl">
 					<div className="flex flex-col text-start w-full" data-aos="fade-up" data-aos-once="false">
 						<h1>{t("about.title")}</h1>

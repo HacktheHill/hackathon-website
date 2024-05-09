@@ -15,6 +15,8 @@ import voiceflow from "/src/assets/Logos/Partners/Voiceflow.svg";
 import StickerMule from "/src/assets/Logos/Partners/StickerMule.svg";
 import OpenProject from "/src/assets/Logos/Partners/OpenProject.svg";
 import "./Sponsors.css";
+import waves from "../../assets/patterns/wavesOpacity.svg";
+import union from "../../assets/patterns/uuunion.svg";
 
 export default function Sponsors() {
 	const data = {
@@ -83,17 +85,18 @@ export default function Sponsors() {
 
 	return (
 		<>
-			<div className="w-full flex justify-center items-center bg-[#0d1117]">
-				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl">
-					<div className="flex flex-col text-left w-full">
-						<h1>{t("sponsors.title")}</h1>
-						<h3 className="text-shadow_text">{t("sponsors.subtitle")}</h3>
-					</div>
-					<div className="carousel-track bg-blur-svg bg-top bg-no-repeat bg-cover">
+			<div className="w-full flex justify-center items-center relative bg-theme-gradient">
+				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl z-[2]">
+					<div className="carousel-track  z-[2]">
 						{marqueeGroup(data, 1, pauseAnimation, startAnimation)}
 						{marqueeGroup(data, 2, pauseAnimation, startAnimation)}
 					</div>
 				</div>
+				<img src={waves.src} className="absolute top-0 w-full h-24 z-[1]  -translate-y-[1px]"></img>
+				<img
+					src={waves.src}
+					className="absolute bottom-0 w-full h-24 z-[1] -scale-y-100 -scale-x-100 translate-y-[1px]"
+				></img>
 			</div>
 		</>
 	);

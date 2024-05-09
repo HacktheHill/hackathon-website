@@ -9,7 +9,7 @@ import whirl from "../../assets/patterns/wwwhirl.svg";
 
 export default function Stats() {
 	return (
-		<div className="w-full flex justify-center items-center bg-background z-[2] relative">
+		<div className="w-full flex justify-center items-center bg-background-light z-[2] relative">
 			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl z-[4] ">
 				<div className="flex flex-col text-start w-full">
 					<h1>{t("stats.title")}</h1>
@@ -89,7 +89,7 @@ export default function Stats() {
 			</div>
 			<img
 				src={whirl.src}
-				className="absolute z-[3] h-full w-full object-cover opacity-35 -scale-y-100 max-w-bg-deco translate-y-[10%]"
+				className="absolute z-[3] h-full w-full object-cover opacity-35 -scale-y-100 max-w-[3500px] translate-y-[15%]"
 				alt="Quad"
 			/>
 		</div>

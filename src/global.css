@@ -10,7 +10,8 @@
 	--shade-9: #171717;
 	--shade-10: #090909;
 
-	--background: #161b22;
+	--background-light: #161b22;
+	--background-dark: #0d1117;
 
 	--navbar: #212121a9;
 
@@ -21,7 +22,7 @@
 	--theme-gradient: linear-gradient(90deg, #750d0d 0%, #550505 50%, #3d0505 100%);
 
 	scrollbar-gutter: stable;
-	background-color: var(--background);
+	background-color: var(--background-light);
 	color: var(--shade-3);
 }
 

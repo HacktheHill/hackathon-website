@@ -106,14 +106,14 @@ export default function Gallery() {
 	};
 
 	return (
-		<div className="w-full flex justify-center items-center">
+		<div className="w-full flex bg-background justify-center items-center bg-">
 			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl">
 				<div className="flex flex-col text-left w-full">
 					<h1>{t("gallery.title")}</h1>
 					<h3 className="text-shadow_text">{t("gallery.subtitle")}</h3>
 				</div>
-				<div className="flex h-4/6 flex-row justify-between items-center gap-16 2xl:flex-wrap">
-					<div className="flex px-16 justify-start items-center flex-wrap gap-8 2xl:justify-center 2xl:w-full">
+				<div className="flex h-4/6 flex-row justify-between items-center gap-16 xl:flex-wrap">
+					<div className="flex px-16 justify-start items-center flex-wrap gap-8 xl:justify-center xl:w-full">
 						{albums.map(album => (
 							<div
 								key={album.tag}
