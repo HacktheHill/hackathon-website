@@ -106,9 +106,9 @@ export default function Gallery() {
 	};
 
 	return (
-		<div className="w-full flex bg-background justify-center items-center bg-">
+		<div className="w-full flex bg-background justify-center items-cente">
 			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl">
-				<div className="flex flex-col text-left w-full">
+				<div className="flex flex-col text-left w-full" data-aos="fade-up">
 					<h1>{t("gallery.title")}</h1>
 					<h3 className="text-shadow_text">{t("gallery.subtitle")}</h3>
 				</div>
@@ -199,7 +199,7 @@ export default function Gallery() {
 								src={albums?.find(album => album.tag === selectedAlbum)?.icon.src}
 								alt={"Hacker"}
 							/>
-							<div className="md:text-end ">
+							<div className="md:text-end md:self-center ">
 								<h3>{albums?.find(album => album.tag === selectedAlbum)?.statNumber}</h3>
 								<h4>{albums?.find(album => album.tag === selectedAlbum)?.statDescription}</h4>
 							</div>
