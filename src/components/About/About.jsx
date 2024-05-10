@@ -15,7 +15,7 @@ export default function About() {
 		<>
 			<div className="w-full bg-background-dark flex justify-center items-center">
 				<div className="flex flex-col w-10/12 h-full justify-center items-center gap-36 py-36 text-center max-w-2xl">
-					<div className="flex flex-col text-start w-full" data-aos="fade-up" data-aos-once="false">
+					<div className="flex flex-col text-start w-full" data-aos="fade-up">
 						<h1>{t("about.title")}</h1>
 						<h3 className="text-shadow_text">{t("about.subtitle")}</h3>
 					</div>
@@ -26,7 +26,6 @@ export default function About() {
 									className="row-start-1 col-start-2 row-end-1 col-end-3 self-center flex flex-col gap-8"
 									data-aos="fade-up"
 									data-aos-duration="1000"
-									data-aos-once="false"
 								>
 									<h3>
 										<span>{t("about.p1_prefix")}</span>
@@ -46,7 +45,6 @@ export default function About() {
 								<div
 									className="row-start-1 col-start-1 row-end-1 col-end-2 bg-blur-svg overflow-visible rounded-3xl p-4"
 									data-aos="fade-right"
-									data-aos-once="false"
 								>
 									<img {...team1} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
 								</div>
@@ -55,7 +53,6 @@ export default function About() {
 							<div
 								className="row-start-3 col-start-1 row-end-4 col-end-3 grid grid-cols-6 justify-center overflow-visible"
 								data-aos="fade-up-right"
-								data-aos-once="false"
 							>
 								<svg className="col-start-2 col-end-6 opacity-25" viewBox="0 0 200 50">
 									<line
@@ -95,7 +92,6 @@ export default function About() {
 									className="col-start-1 col-end-2 self-center flex flex-col gap-8"
 									data-aos="fade-up"
 									data-aos-duration="1000"
-									data-aos-once="false"
 								>
 									<h3>
 										<span>{t("about.p2_prefix")}</span>
@@ -112,7 +108,6 @@ export default function About() {
 								<div
 									className="col-start-2 col-end-3  bg-blur-svg overflow-visible rounded-3xl p-4"
 									data-aos="fade-left"
-									data-aos-once="false"
 								>
 									<img {...team3} className="w-full h-full object-cover rounded-2xl" alt="HackHers" />
 								</div>
@@ -120,7 +115,6 @@ export default function About() {
 							<div
 								className="row-start-3 col-start-1 row-end-4 col-end-3 grid grid-cols-6 justify-center overflow-visible"
 								data-aos="fade-up-left"
-								data-aos-once="false"
 							>
 								<svg className="col-start-2 col-end-6 opacity-25" viewBox="0 0 200 50">
 									<line
@@ -160,7 +154,6 @@ export default function About() {
 									className=" row-start-7 col-start-2 row-end-9 col-end-3 self-center flex flex-col gap-8"
 									data-aos="fade-up"
 									data-aos-duration="1000"
-									data-aos-once="false"
 								>
 									<h3>
 										<span>{t("about.p3_prefix")}</span>
@@ -178,7 +171,6 @@ export default function About() {
 								<div
 									className="row-start-7 col-start-1 row-end-9 col-end-2 bg-blur-svg overflow-visible rounded-3xl p-4"
 									data-aos="fade-right"
-									data-aos-once="false"
 								>
 									<img
 										{...hackhers2}

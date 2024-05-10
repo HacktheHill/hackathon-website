@@ -26,7 +26,7 @@ export default function Gallery() {
 	const [activeFolder, setActiveFolder] = useState("hackhers");
 	const [selectedAlbum, setSelectedAlbum] = useState("hackhers");
 	useEffect(() => {
-		AOS.init({ once: true, duration: 700 });
+		AOS.init({ once: false, duration: 700 });
 	}, []);
 
 	const albums = [
