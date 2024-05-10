@@ -6,6 +6,7 @@ import drink from "../../assets/icons/drink.svg";
 import tool from "../../assets/icons/tool.svg";
 import { t } from "../../i18n";
 import whirl from "../../assets/patterns/wwwhirl.svg";
+import beaver2 from "../../assets/Beaver2.svg";
 
 export default function Stats() {
 	return (
@@ -17,10 +18,13 @@ export default function Stats() {
 				</div>
 				<div className="grid gap-4 grid-rows-12 grid-cols-12 w-full max-w-2xl md:flex md:flex-col xl:px-4 md:gap-2">
 					<div
-						className="flex flex-col md:flex-row justify-start items-between bg-blur-svg rounded-3xl p-8 row-start-1 col-start-6 row-end-5 col-end-13"
+						className="flex flex-col md:flex-row justify-start items-between bg-blur-svg rounded-3xl p-8 row-start-1 col-start-6 row-end-5 col-end-13 relative"
 						data-aos="fade-left"
 					>
 						<h3>{t("stats.description")}</h3>
+						<div className="absolute -top-16 right-0 h-24">
+							<img src={beaver2.src} alt="Beaver" className="h-full" />
+						</div>
 					</div>
 					<div
 						className="flex flex-col md:flex-row justify-between items-start gap-8 bg-[#020106] overflow-hidden rounded-3xl p-8 row-start-1 col-start-1 row-end-6 col-end-6"

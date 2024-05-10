@@ -17,6 +17,7 @@ import team from "/src/assets/icons/team.svg";
 import cv from "/src/assets/icons/cv.svg";
 import cube from "/src/assets/icons/cube.svg";
 import handshake from "/src/assets/icons/handshake.svg";
+import beaver3 from "/src/assets/Beaver3.svg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -171,6 +172,9 @@ export default function Gallery() {
 								>
 									{t("gallery.button_text")}
 								</Button>
+							</div>
+							<div className="absolute -top-16 left-0 h-24">
+								<img src={beaver3.src} alt="Beaver" className="h-full -scale-x-100" />
 							</div>
 						</div>
 						<div
