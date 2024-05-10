@@ -54,8 +54,8 @@ module.exports = {
 					"0%": { transform: "translate(0, 0)" },
 
 					"20%": { transform: "translate(0, 25%)", rotate: "0deg" },
-					"30%": { transform: "translate(0, 25%)", rotate: "5deg", scale: "1.25" },
-					"40%": { transform: "translate(0, 25%)", rotate: "-5deg", scale: "1.25" },
+					"30%": { transform: "translate(0, 25%)", rotate: "5deg", scale: "1.1" },
+					"40%": { transform: "translate(0, 25%)", rotate: "-5deg", scale: "1.1" },
 					"50%": { transform: "translate(0, 25%)", rotate: "0deg", scale: "1.00" },
 
 					"60%": { transform: "translate(0, 100%)" },
