@@ -49,6 +49,21 @@ module.exports = {
 					"80%": { transform: "translate(200%, 0)", scale: "2.50", opacity: "0.00" },
 					"100%": { transform: "translate(0, 0)", scale: "1.00", opacity: "1.00" },
 				},
+				beaver: {
+					//sneak out from the bottom
+					"0%": { transform: "translate(0, 0)" },
+
+					"20%": { transform: "translate(0, 25%)", rotate: "0deg" },
+					"30%": { transform: "translate(0, 25%)", rotate: "5deg", scale: "1.25" },
+					"40%": { transform: "translate(0, 25%)", rotate: "-5deg", scale: "1.25" },
+					"50%": { transform: "translate(0, 25%)", rotate: "0deg", scale: "1.00" },
+
+					"60%": { transform: "translate(0, 100%)" },
+
+					"80%": { transform: "translate(0, 100%)" },
+
+					"100%": { transform: "translate(0, 0)" },
+				},
 			},
 			animation: {
 				"shake-rotate": "shake-start 0.5s ease-in-out 0s, shake-repeat 0.5s ease-in-out 0.5s infinite",
@@ -56,6 +71,7 @@ module.exports = {
 				heart: "heart 3.0s ease-in-out forwards",
 				"sponsor-card": "sponsor-card 5.0s ease-in-out infinite",
 				"sponsor-card-2": "sponsor-card 5.0s ease-in-out 1.5s infinite",
+				beaver: "beaver 6.0s ease forwards",
 			},
 			boxShadow: {
 				"grid-card": "0 0 1.5rem 0.5rem rgba(255, 53, 53, 0.5), 0 0 1.5rem 0.5rem rgba(255, 53, 53, 0.5) inset",
