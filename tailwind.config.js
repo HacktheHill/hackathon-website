@@ -43,9 +43,9 @@ module.exports = {
 				},
 				heart: {
 					"0%": { transform: "translate(0, 0) scale(1)", scale: "1.00", opacity: "1.00" },
-					"20%": { transform: "translate(0, -75%)", scale: "7.50", opacity: "1.00" },
-					"40%": { transform: "translate(0, -50%)", scale: "5.00", opacity: "1.00" },
-					"60%": { transform: "translate(-50px, -50px) rotate(-60deg)", scale: "5.00", opacity: "0.00" },
+					"20%": { transform: "translate(0, -35%)", scale: "5.00", opacity: "1.00" },
+					"40%": { transform: "translate(0, -20%)", scale: "2.50", opacity: "1.00" },
+					"60%": { transform: "translate(-25px, -10px) rotate(-60deg)", scale: "5.00", opacity: "0.00" },
 					"80%": { transform: "translate(200%, 0)", scale: "2.50", opacity: "0.00" },
 					"100%": { transform: "translate(0, 0)", scale: "1.00", opacity: "1.00" },
 				},
