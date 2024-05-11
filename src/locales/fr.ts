@@ -308,4 +308,15 @@ export default {
 		privacy: "Politique de Confidentialité",
 		message: "par l'Équipe Web de HtH",
 	},
+	documents: {
+		title: "Documents",
+		subtitle: "Découvrez nos documents officiels.",
+		constitution: "Constitution",
+		constitution_desc: "Notre constitution définit les règles et les procédures qui régissent notre organisation.",
+		constitution_btn: "Lire la Constitution",
+		privacy: "Politique de Confidentialité",
+		privacy_desc:
+			"Notre politique de confidentialité explique comment nous collectons, utilisons et partageons vos informations.",
+		privacy_btn: "Lire la Politique de Confidentialité",
+	},
 } as const;

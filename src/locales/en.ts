@@ -307,4 +307,15 @@ export default {
 		privacy: "Privacy Policy",
 		message: "by HtH Dev team",
 	},
+	documents: {
+		title: "Documents",
+		subtitle: "Discover the official documents of Hack the Hill.",
+		constitution: "Constitution",
+		constitution_desc:
+			"The official constitution of Hack the Hill, outlining the organization's structure and purpose.",
+		constitution_btn: "Read the Constitution",
+		privacy: "Privacy Policy",
+		privacy_desc: "Our privacy policy outlines how we collect, use, and store your personal information.",
+		privacy_btn: "Read the Privacy Policy",
+	},
 } as const;

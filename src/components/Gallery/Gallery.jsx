@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import { t } from "../../i18n";
 import hth1 from "/src/assets/gallery/hth1.webp";
@@ -17,17 +17,11 @@ import team from "/src/assets/icons/team.svg";
 import cv from "/src/assets/icons/cv.svg";
 import cube from "/src/assets/icons/cube.svg";
 import handshake from "/src/assets/icons/handshake.svg";
-import beaver3 from "/src/assets/Beaver3.svg";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
+import beaver3 from "/src/assets/beavar/Beaver3.svg";
 
 export default function Gallery() {
 	const [activeFolder, setActiveFolder] = useState("hackhers");
 	const [selectedAlbum, setSelectedAlbum] = useState("hackhers");
-	useEffect(() => {
-		AOS.init({ once: false, duration: 700 });
-	}, []);
 
 	const albums = [
 		{

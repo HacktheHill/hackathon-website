@@ -4,7 +4,7 @@ import path from "path";
 import Navigation from "../components/Navigation/Navigation.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
-const { title } = Astro.props;
+const { title, pathName } = Astro.props;
 
 const description =
 	"Hack the Hill, the organization behind Canada's Capital's premier flagship hackathon event & more. This Fall 2024, come prepared to network and compete with the best at Canada's Capital's largest hackathon!";
@@ -97,7 +97,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<script type="application/ld+json" set:html={structuredDataString}></script>
 	</head>
 	<body>
-		<Navigation client:load />
+		<Navigation pathName={pathName} client:load />
 		<slot />
 		<Footer client:load />
 		<style is:global>

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import logo from "/src/assets/Logos/HTH/Hth_red_glow.svg";
 import bg_2024 from "/src/assets/SVGs/2024.svg";
 
-export default function Navigation() {
+export default function Navigation(props) {
 	const [language, setLanguage] = useState(true);
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -97,7 +97,9 @@ export default function Navigation() {
 						{["events", "blog", "team", "documents"].map(link => (
 							<a
 								href={link ? `/${link}` : "#"}
-								className="flex h-full items-center border-none p-4 cursor-pointer font-bold transition-all duration-100 md:border md:rounded-xl hover:text-shade-1"
+								className={`flex h-full items-center border-none p-4 cursor-pointer font-bold transition-all duration-100 md:border md:rounded-xl hover:text-shade-1 ${
+									props.pathName === `/${link}` ? "text-shade-1" : "text-shade-3"
+								}`}
 								key={link}
 							>
 								{t(`navbar.links.${link}`)}

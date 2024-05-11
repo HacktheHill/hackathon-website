@@ -2,8 +2,9 @@
 import BlogPage from "../components/Blog/BlogPage";
 import Layout from "../layouts/Layout.astro";
 const title = "Hack The Hill - Blog";
+const pathName = "/blog";
 ---
 
-<Layout title={title}>
+<Layout title={title} pathName={pathName}>
 	<BlogPage client:load />
 </Layout>

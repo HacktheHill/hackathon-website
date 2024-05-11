@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { t } from "../../i18n";
 import quote from "../../assets/icons/quote.svg";
 import Button from "../Button/Button";
-import beaver4 from "../../assets/Beaver4.svg";
+import beaver4 from "../../assets/beavar/Beaver4.svg";
 
 export default function Testimonials() {
 	const testimonialData = [

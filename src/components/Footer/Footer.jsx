@@ -2,7 +2,7 @@ import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@forta
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import React, { useState, useRef, useEffect } from "react";
 import { t } from "../../i18n";
-import beaver from "../../assets/Beaver.svg";
+import beaver from "../../assets/beavar/Beaver.svg";
 
 export default function Footer() {
 	const [isMouseLeaving, setIsMouseLeaving] = useState(null);

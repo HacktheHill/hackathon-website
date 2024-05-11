@@ -6,7 +6,7 @@ import drink from "../../assets/icons/drink.svg";
 import tool from "../../assets/icons/tool.svg";
 import { t } from "../../i18n";
 import whirl from "../../assets/patterns/wwwhirl.svg";
-import beaver2 from "../../assets/Beaver2.svg";
+import beaver2 from "../../assets/beavar/Beaver2.svg";
 
 export default function Stats() {
 	return (
