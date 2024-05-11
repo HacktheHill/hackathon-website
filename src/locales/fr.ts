@@ -7,20 +7,25 @@ export default {
 	about: {
 		title: "C'est plus qu'un seul hackathon",
 		subtitle: "C'est une communauté d'étudiants passionnés qui sont dédiés à apprendre, grandir et créer.",
-		p1: "Hack the Hill est une organisation étudiante qui vise à favoriser une culture d'innovation et de créativité dans la communauté d'Ottawa. Nous organisons une variété d'événements tout au long de l'année, y compris des hackathons, des ateliers et des événements de réseautage.",
-		goal: "Notre objectif",
-		p2: "est de fournir aux étudiants les ressources et les opportunités dont ils ont besoin pour réussir dans l'industrie de la technologie. Nous croyons que tout le monde devrait avoir la chance d'apprendre, de grandir et de se connecter avec des personnes partageant les mêmes idées.",
-		p3: "Que vous soyez débutant ou hacker expérimenté, il y a une place pour vous à Hack the Hill.",
-		joinus: " Rejoignez-nous et faites partie de quelque chose d'incroyable!",
-		images: {
-			about1: { alt: "Hack the Hill Image 1 À Propos" },
-			about2: { alt: "Hack the Hill Image 2 À Propos" },
-		},
-		frame_alt: "Ballado Hack the Hill",
+		p1_prefix: "Hack the Hill",
+		p1: "est une organisation étudiante qui vise à favoriser une culture d'innovation et de créativité dans la communauté d'Ottawa.",
+		p1_btn: "En savoir plus notre parcours",
+		p2_prefix: "Notre objectif",
+		p2: "est de fournir aux étudiants les ressources et les opportunités dont ils ont besoin pour réussir dans l'industrie de la technologie.",
+		p2_btn: "Découvrez nos événements à venir",
+		p3_prefix: "Il y a une place pour vous",
+		p3: "; peu importe votre niveau d'expérience, votre domaine d'étude ou vos intérêts, tout le monde est le bienvenu.",
+		p3_btn: "Rejoignez nous et faites parti de quelque chose d'incroyable",
 	},
 	stats: {
 		title: "Notre impact",
-		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes. Chaque année, nous avons:",
+		subtitle: "Voici un aperçu de quelques chiffres qui définissent qui nous sommes.",
+		description: "À chaque année, nous voyons:",
+		sponsors: "Commanditaires",
+		volunteers: "Bénévoles",
+		prizes: "En Prix",
+		workshops: "Ateliers",
+		redbulls: "Boissons Énergisantes Consommées",
 	},
 	gallery: {
 		title: "Où les Moments sont Créés",
@@ -32,35 +37,40 @@ export default {
 				title: "Événement Principal 2023",
 				description:
 					"Le point culminant de 2023, notre hackathon principal était un succès ! 600+ hackers, 10+ sponsors et 36 heures de hacking combinées pour créer une expérience inoubliable. Pour une première édition, c'était un énorme exploit !",
+				stat: "Hackers",
 			},
 			hackhers: {
 				card_title: "HackHers",
 				title: "HackHers",
 				description:
 					"Un hackathon d'une journée en partenariat avec IEEE uOttawa et WIE uOttawa, une expérience unique qui défiait les attentes traditionnelles. Avec une salle de bien-être, un atelier spécial et des boissons rafraîchissantes, c'était un événement incontournable !",
+				stat: "Projets soumis",
 			},
 			panel: {
 				card_title: "Panel de Stagiaires",
 				title: "Panel de Stagiaires",
 				description:
 					"Une nuit d'inspiration et d'apprentissage, le Panel de Stagiaires était une collaboration entre Hack the Hill et IEEE CU. Cinq stagiaires ont partagé leurs expériences et leurs idées, offrant une perspective unique sur l'avenir de la technologie.",
+				stat: "Invités",
 			},
 			roast: {
 				card_title: "Évaluation de CV",
 				title: "Évaluation de CV",
 				description:
 					"Cette session dynamique était dédiée à la revitalisation des CV. Que vous soyez étudiant, diplômé récent ou professionnel, un CV bien conçu peut être votre billet pour le succès.",
+				stat: "CV évalués",
 			},
 			ciena: {
 				card_title: "Réseautage Ciena",
 				title: "Réseautage Ciena",
 				description:
 					"Une soirée de réseautage exceptionnelle, l'événement de réseautage Ciena était une opportunité unique de se connecter avec les professionnels de Ciena et d'explorer des opportunités prometteuses dans le monde dynamique du réseautage.",
+				stat: "Connexions formées",
 			},
 		},
 	},
 	sponsors: {
-		title: "Nos commanditaires précédents",
+		title: "Nos commanditaires",
 		subtitle: "Ce sont les entreprises qui rendent Hack the Hill possible année après année.",
 	},
 	collaborators: {
@@ -69,8 +79,8 @@ export default {
 	},
 	testimonials: {
 		title: "Créons des Moments Marquants",
-		sub_heading:
-			"À Hack the Hill, des étudiants de disciplines et d'horizons différents donnent vie à leurs idées en créant une communauté de collaboration, d'apprentissage et de plaisir. Ces expériences façonnent notre hackathon.",
+		subtitle: "Voici ce que certains de nos partenaires communautaires ont à partager.",
+		button_text: "Laissez nous un témoignage",
 		t1: {
 			name: "Maddie Whibbs",
 			content: "Événement spectaculaire et bien organisé - j'ai adoré la foire des carrières!",

@@ -1,0 +1,40 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_354_14" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1220" height="400">
+<polyline points="25 0 25 25 50 25"
+										stroke="#b80000"
+										stroke-dasharray="5,5,5"
+										stroke-width="2"
+										strokeLinecap="round"
+										fill="none"
+										stroke-linejoin="round"
+									/>
+									<line
+										x1="50"
+										y1="25"
+										x2="150"
+										y2="25"
+										stroke="#b80000"
+										stroke-dasharray="5,0,5"
+										stroke-width="2"
+										strokeLinecap="round"
+									/>
+									<polyline
+										points="150 25 175 25 175 50"
+										stroke="#b80000"
+										stroke-dasharray="5,0,5"
+										stroke-width="2"
+										strokeLinecap="round"
+										fill="none"
+										stroke-linejoin="round"
+									/>
+</mask>
+<g mask="url(#mask0_354_14)">
+<rect x="-13.1169" y="-15" width="200" height="50" fill="url(#paint0_linear_354_14)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_354_14" x1="-19.7212" y1="-15" x2="377" y2="107.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B80000"/>
+<stop offset="1" stop-color="#8B0000"/>
+</linearGradient>
+</defs>
+</svg>

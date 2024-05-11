@@ -7,20 +7,25 @@ export default {
 	about: {
 		title: "It's more than just a hackathon",
 		subtitle: "It's a community of passionate students who are dedicated to learning, growing, and creating.",
-		p1: "Hack the Hill is a student-run organization that aims to foster a culture of innovation and creativity in the Ottawa community. We host a variety of events throughout the year, including hackathons, workshops, and networking events.",
-		goal: "Our goal",
-		p2: "is to provide students with the resources and opportunities they need to succeed in the tech industry. We believe that everyone should have the chance to learn, grow, and connect with like-minded individuals.",
-		p3: "Whether you're a beginner or an experienced hacker, there's a place for you at Hack the Hill.",
-		joinus: " Join us and be a part of something amazing!",
-		images: {
-			about1: { alt: "Hack the Hill About Image 1" },
-			about2: { alt: "Hack the Hill About Image 2" },
-		},
-		frame_alt: "Hack the Hill Podcast",
+		p1_prefix: "Hack the Hill",
+		p1: "is a student-run organization that aims to foster a culture of innovation and creativity in the Ottawa community.",
+		p1_btn: "Learn more about our story",
+		p2_prefix: "Our goal",
+		p2: "is to provide students with the resources and opportunities they need to succeed in the tech industry.",
+		p2_btn: "Take a look at some of our upcoming events",
+		p3_prefix: "There's a place for you",
+		p3: "; wether you're a beginner or an experienced hacker, there's something for everyone",
+		p3_btn: "Join us and be a part of something amazing",
 	},
 	stats: {
 		title: "Our Impact",
-		subtitle: "Here's a look at some of the numbers that define who we are. Every year, we have:",
+		subtitle: "Here's a look at some of the numbers that define who we are.",
+		description: "Every year, we have:",
+		sponsors: "Sponsors",
+		volunteers: "Volunteers",
+		prizes: "In Prizes",
+		workshops: "Workshops",
+		redbulls: "Energy Drinks Consumed",
 	},
 	gallery: {
 		title: "Where Memories are Made",
@@ -28,39 +33,44 @@ export default {
 		button_text: "Learn More",
 		albums: {
 			twentytwentythree: {
-				card_title: "2023 Main Event",
+				card_title: "2023",
 				title: "2023 Main Event",
 				description:
 					"The spotlight of 2023, our main hackathon event was a blast! 600+ hackers, 10+ sponsors and 36 hours of hacking combined to create an unforgettable experience. For a first edition, it was a huge success!",
+				stat: "Hackers",
 			},
 			hackhers: {
 				card_title: "HackHers",
 				title: "HackHers",
 				description:
 					"A one-day hackathon in partnership with IEEE uOttawa and WIE uOttawa, HackHers was a unique experience that defied traditional hackathon expectations. With a wellness room, special workshop, and refreshing beverages, it was a must-attend event!",
+				stat: "Projects Submitted",
 			},
 			panel: {
 				card_title: "Intern Panel",
 				title: "Intern Panel",
 				description:
 					"A night of inspiration and learning, the Intern Panel was a collaboration between Hack the Hill and IEEE CU. Five interns shared their experiences and insights, providing a unique perspective on the future of technology.",
+				stat: "Speakers",
 			},
 			roast: {
 				card_title: "Resume Rescue",
 				title: "Resume Rescue",
 				description:
 					"Hack the Hill's Resume Rescue was a dynamic session dedicated to revitalizing resumes. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success.",
+				stat: "Resumes Roasted",
 			},
 			ciena: {
 				card_title: "Ciena Networking",
 				title: "Ciena Networking",
 				description:
 					"An evening of unparalleled networking, the Ciena Networking Event was a unique opportunity to connect with Ciena professionals and explore potential opportunities in the dynamic world of networking.",
+				stat: "Connections Made",
 			},
 		},
 	},
 	sponsors: {
-		title: "A look at our past sponsors",
+		title: "A look at our sponsors",
 		subtitle: "These are the companies that make Hack the Hill possible year after year.",
 	},
 	collaborators: {
@@ -69,8 +79,8 @@ export default {
 	},
 	testimonials: {
 		title: "Making Moments Matter",
-		sub_heading:
-			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learning, and fun. These experiences are what shape our hackathon.",
+		subtitle: "Here's what some of our community partners have to share.",
+		button_text: "Let us know what you think",
 		t1: {
 			name: "Maddie Whibbs",
 			content: "Great and well organized event - career fair was my favorite part!",

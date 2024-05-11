@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../../i18n";
+import quote from "../../assets/icons/quote.svg";
+import Button from "../Button/Button";
+import beaver4 from "../../assets/Beaver4.svg";
 
 export default function Testimonials() {
 	const testimonialData = [
@@ -40,104 +43,93 @@ export default function Testimonials() {
 		},
 	];
 
-	const [activeIndex, setActiveIndex] = useState(0);
-	const ref = useRef(null);
-
-	const nextSlide = () => {
-		setActiveIndex(prevIndex => (prevIndex + 1) % testimonialData.length);
-	};
-
-	const prevSlide = () => {
-		setActiveIndex(prevIndex => (prevIndex - 1 + testimonialData.length) % testimonialData.length);
-	};
-
-	// Enable swiping on mobile devices
-	useEffect(() => {
-		const carousel = ref.current;
-		let touchstartX = 0;
-		let touchendX = 0;
-
-		const handleGesture = () => {
-			if (touchendX < touchstartX) nextSlide();
-			if (touchendX > touchstartX) prevSlide();
-		};
-
-		const handleTouchStart = event => {
-			touchstartX = event.changedTouches[0].screenX;
-		};
-
-		const handleTouchEnd = event => {
-			touchendX = event.changedTouches[0].screenX;
-			handleGesture();
-		};
-
-		carousel.addEventListener("touchstart", handleTouchStart, false);
-		carousel.addEventListener("touchend", handleTouchEnd, false);
-
-		return () => {
-			carousel.removeEventListener("touchstart", handleTouchStart, false);
-			carousel.removeEventListener("touchend", handleTouchEnd, false);
-		};
-	}, []);
-
 	return (
-		<div className="w-full bg-shade-9 justify-center items-center bg-pentagon-svg bg-center bg-cover bg-no-repeat">
-			<div className="flex flex-col w-full h-full justify-center items-center gap-20 py-36 text-center lg:gap-8">
-				<div className="flex flex-col w-[70%] px-8 gap-4 md:w-full">
+		<div className="flex justify-center items-center w-full bg-background-dark">
+			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl">
+				<div className="flex flex-col text-left w-full" data-aos="fade-up">
 					<h1>{t("testimonials.title")}</h1>
-					<h2>{t("testimonials.sub_heading")}</h2>
+					<h3 className="text-shadow_text">{t("testimonials.subtitle")}</h3>
 				</div>
-				<div
-					ref={ref}
-					className="flex w-9/12 h-4/6 flex-row justify-center items-center flex-wrap xl:gap-16 xl:w-11/12"
-				>
-					<div className="grid grid-flow-col auto-cols-[100%] w-[70%] gap-16 overflow-hidden md:w-[90%]">
-						{testimonialData.map((_, index) => (
-							<div
-								key={index}
-								className="flex flex-row items-center justify-center gap-[5vw] lg:flex lg:flex-wrap lg:items-start lg:gap-8"
-								style={{
-									transform: `translateX(calc(${-activeIndex * 100}% - ${activeIndex * 4}rem))`,
-								}}
-							>
-								<img
-									className="box-border h-64 w-64 aspect-square object-cover rounded-[50%] p-4 border-4 border-primary bg-light_accent bg-opacity-50 md:h-48 md:w-48"
-									src={testimonialData[index].img}
-									alt={testimonialData[index].name}
-								/>
-								<div className="basis-2/3 flex flex-col justify-center gap-4 text-left border-2 bg-opacity-100 border-shade-3 rounded-sm bg-shade-8 z-20 px-8 py-12 sm:basis-full">
-									<p className="">{testimonialData[index].content}</p>
-									<p className="font-bold">
-										{testimonialData[index].name}, {testimonialData[index].role}
-									</p>
-								</div>
+				<div className="grid gap-4 grid-rows-12 grid-cols-12 w-full max-w-2xl xl:flex xl:flex-col xl:px-4 xl:gap-2">
+					<div
+						className="flex flex-col justify-between items-start gap-8 bg-blur-svg rounded-3xl p-8 row-start-1 col-start-8 row-end-10 col-end-13"
+						data-aos="fade-left"
+					>
+						<div className="flex flex-row items-center gap-4">
+							<img
+								className="box-border h-20 w-20 aspect-square object-cover rounded-[50%]"
+								src={testimonialData[2].img}
+								alt={testimonialData[2].name}
+							/>
+							<div>
+								<h4>{testimonialData[2].name}</h4>
+								<p>{testimonialData[2].role}</p>
 							</div>
-						))}
+						</div>
+						<div className="flex flex-row gap-6">
+							<img {...quote} alt="quote" className="w-6 aspect-square self-start opacity-85" />
+							<p>{testimonialData[2].content}</p>
+							<img {...quote} alt="quote" className="-scale-100 w-6 aspect-square self-end opacity-85" />
+						</div>
+						<div className="absolute -top-16 right-0 h-24">
+							<img src={beaver4.src} alt="Beaver" className="h-full" />
+						</div>
 					</div>
-				</div>
-				<div className="flex gap-8">
-					<button
-						onClick={prevSlide}
-						className="border-r-[0.375rem] border-b-[0.375rem] border-primary rounded-[20%] inline-block p-[0.375rem] bg-none cursor-pointer transition-all duration-300 rotate-[135deg] opacity-80 hover:opacity-100"
-						aria-label={t("testimonials.aria_label_prev")}
-					></button>
-					<div className="flex justify-evenly items-center gap-3">
-						{testimonialData.map((_, index) => (
-							<button
-								key={index}
-								className={`block h-4 w-4 border-none bg-light_accent rounded-md cursor-pointer transition-all duration-300 hover:opacity-100
-								${index === activeIndex ? "opacity-100" : "opacity-50"}`}
-								onClick={() => setActiveIndex(index)}
-								onKeyDown={() => setActiveIndex(index)}
-								aria-label={t("testimonials.aria_label_dot")}
-							></button>
-						))}
+					<div
+						className="flex flex-col justify-between items-start gap-8 bg-[#020106] overflow-hidden rounded-3xl p-8 row-start-1 col-start-1 row-end-8 col-end-8"
+						data-aos="fade-right"
+					>
+						<div className="flex flex-row items-center gap-4">
+							<img
+								className="box-border h-20 w-20 aspect-square object-cover rounded-[50%] shadow-glow"
+								src={testimonialData[0].img}
+								alt={testimonialData[0].name}
+							/>
+							<div>
+								<h4>{testimonialData[0].name}</h4>
+								<p>{testimonialData[0].role}</p>
+							</div>
+						</div>
+						<div className="flex flex-row gap-6">
+							<img {...quote} alt="quote" className="w-6 aspect-square self-start opacity-85" />
+							<p>{testimonialData[0].content}</p>
+							<img {...quote} alt="quote" className="-scale-100 w-6 aspect-square self-end opacity-85" />
+						</div>
 					</div>
-					<button
-						onClick={nextSlide}
-						className="border-r-[0.375rem] border-b-[0.375rem] border-primary rounded-[20%] inline-block p-[0.375rem] bg-none cursor-pointer transition-all duration-300 rotate-[-45deg] opacity-80 hover:opacity-100"
-						aria-label={t("testimonials.aria_label_next")}
-					></button>
+					<div
+						className="flex flex-col justify-between items-start gap-8 bg-blur-svg overflow-hidden rounded-3xl p-8 row-start-8 col-start-1 row-end-13 col-end-8"
+						data-aos="fade-up"
+					>
+						<div className="flex flex-row items-center gap-4">
+							<img
+								className="box-border h-20 w-20 aspect-square object-cover rounded-[50%]"
+								src={testimonialData[1].img}
+								alt={testimonialData[1].name}
+							/>
+							<div>
+								<h4>{testimonialData[1].name}</h4>
+								<p>{testimonialData[1].role}</p>
+							</div>
+						</div>
+						<div className="flex flex-row gap-6">
+							<img {...quote} alt="quote" className="w-6 aspect-square self-start opacity-85" />
+							<p>{testimonialData[1].content}</p>
+							<img {...quote} alt="quote" className="-scale-100 w-6 aspect-square self-end opacity-85" />
+						</div>
+					</div>
+					<div
+						className="flex flex-col justify-center items-between text-end bg-[#020106] rounded-3xl p-8 row-start-10 col-start-8 row-end-13 col-end-13"
+						data-aos="fade-up"
+					>
+						<div className="self-end">
+							<Button
+								onClick={() => window.open("https://www.instagram.com/hackthehill", "_blank")}
+								fill={false}
+							>
+								<h4>{t("testimonials.button_text")}</h4>
+							</Button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

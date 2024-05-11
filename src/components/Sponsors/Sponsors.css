@@ -1,4 +1,38 @@
-.img-shadow {
-	-webkit-filter: drop-shadow(0.5px 0.5px 0 rgba(255, 255, 255, 0.5));
-	filter: drop-shadow(0.5px 0.5px 0 rgba(255, 255, 255, 0.5));
+.carousel-track {
+	overflow: hidden;
+	mask-image: linear-gradient(90deg, transparent 0%, black 5% 95%, transparent 100%);
+	-webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5% 95%, transparent 100%);
+	display: flex;
+	width: 100%;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.marquee-group {
+	animation: marquee 60s linear infinite;
+	display: flex;
+	gap: 1rem;
+	padding: 0.5rem 0.5rem;
+}
+
+.sponsor {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	transition: 0.2s ease;
+}
+
+@media (max-width: 768px) {
+	.marquee-group {
+		animation: marquee 90s linear infinite;
+	}
 }

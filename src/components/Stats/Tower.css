@@ -1,0 +1,33 @@
+:is(#panel1, #panel2, #panel3):hover {
+	transform: translateX(-5px);
+	transition: 0.3s all;
+}
+
+:is(#panel1, #panel2, #panel3):not(:hover) {
+	transform: translateX(0);
+	transition: 0.3s all;
+}
+
+:is(#panel4, #panel5, #panel6):hover {
+	transform: translateX(5px);
+	transition: 0.3s all;
+}
+
+:is(#panel4, #panel5, #panel6):not(:hover) {
+	transform: translateX(0);
+	transition: 0.3s all;
+}
+
+.tower-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height: 30rem;
+	width: 30rem;
+}
+
+.tower-img svg {
+	transform: translateY(-5%);
+	height: 150%;
+}
