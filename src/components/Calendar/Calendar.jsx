@@ -250,7 +250,7 @@ function Event({ event, index }) {
 					<span className="text-normal">{event?.location}</span>
 				</p>
 				<p className="text-sm">{event?.description}</p>
-				<div className="flex justify-end mt-1">
+				<div className="flex justify-end mt-4">
 					<Button disabled={event?.disabled} onClick={() => window.open(event?.link, "_blank")} fill={true}>
 						{event?.status}
 					</Button>
