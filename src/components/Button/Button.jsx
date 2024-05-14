@@ -5,14 +5,16 @@ import chevron_white from "../../assets/icons/chevron_white.svg";
 import "../../global.css";
 import "./Button.css";
 
-export default function Button({ children, onClick, fill = true }) {
+export default function Button({ children, onClick, disabled = false, fill = true }) {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
 		<button
 			className={`backface flex flex-col items-center justify-center border-none no-underline text-center cursor-pointer rounded-md transition-all duration-200 py-2
-			${fill ? "text-black bg-white hover:bg-button_hover" : "text-white bg-none"}`}
+			${fill ? "text-black bg-white hover:bg-button_hover" : "text-white bg-none"}
+			${fill && disabled && "opacity-50 cursor-default hover:bg-white"}`}
 			onClick={onClick}
+			disabled={disabled}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>

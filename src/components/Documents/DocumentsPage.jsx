@@ -17,7 +17,7 @@ export default function DocumentsPage() {
 		<div className="flex justify-center items-center w-full bg-background-dark relative overflow-hidden">
 			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl z-[1]">
 				<div className="flex flex-col text-left w-full" data-aos="fade-up">
-					<h1>{t("documents.title")}</h1>
+					<h1 data-aos="fade-up">{t("documents.title")}</h1>
 				</div>
 				<div className="grid grid-rows-1 grid-cols-2 gap-8 w-10/12 max-w-2xl xl:flex xl:flex-wrap">
 					<div

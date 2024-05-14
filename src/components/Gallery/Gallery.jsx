@@ -145,7 +145,7 @@ export default function Gallery() {
 						))}
 					</div>
 					<div
-						className="aspect-[5/3] grid grid-rows-12 grid-cols-12 gap-2 xl:basis-full xs:flex xs:flex-col aos-frame xl:flex xl:flex-col"
+						className="aspect-[5/3] grid grid-rows-12 grid-cols-12 gap-4 xl:basis-full xs:flex xs:flex-col aos-frame xl:flex xl:flex-col"
 						data-aos="zoom-in"
 					>
 						<div className="rounded-3xl bg-blur-svg gap-4 flex flex-col justify-between col-start-1 col-end-7 row-start-1 row-end-8 p-8">
