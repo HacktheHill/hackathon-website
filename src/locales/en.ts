@@ -129,8 +129,8 @@ export default {
 		events: [
 			{
 				title: "IEEE x HTH: Embedded Code Architecture Workshop",
-				startDateTime: "2024-03-14T17:30",
-				endDateTime: "2024-03-14T20:30",
+				startDatetime: "2024-03-14T17:30",
+				endDatetime: "2024-03-14T20:30",
 				location: "STEM 117",
 				description:
 					"Come out to an enriching hardware workshop, hosted by Eric Eaton of IEEE uOttawa. Delve into the intricacies of hardware design and master the art of crafting scalable projects in embedded environments. Gain invaluable insight into real-world use cases, overcome common challenges encountered in embedded systems, and explore the nuances of microcontrollers and threading. Broaden your expertise in hardware and code architecture through this hands-on learning experience.",
@@ -140,8 +140,8 @@ export default {
 			},
 			{
 				title: "uOttawa Engiqueers x HtH: Print and Pride",
-				startDateTime: "2024-03-06T18:30",
-				endDateTime: "2024-03-06T20:30",
+				startDatetime: "2024-03-06T18:30",
+				endDatetime: "2024-03-06T20:30",
 				location: "MakerSpace uOttawa",
 				description:
 					"Welcome to Print & Pride, an event crafted just for 2SLGBTQIA+ students! Get ready for a chill night where we're all about creating a safe space to hang out and 3D print some queer crafts. Take your pick from four designs, tweak them to match your vibe, and let your creativity shine. It's not just about the crafts; it's about being you, connecting with awesome folks, and soaking up the good vibes. Join us for a night of fun, self-expression, and queer-friendly camaraderie at Print & Pride!",
@@ -151,8 +151,8 @@ export default {
 			},
 			{
 				title: "BTA x HTH: Technovate Pitch Competition",
-				startDateTime: "2024-02-25T18:00",
-				endDateTime: "2024-02-25T21:00",
+				startDatetime: "2024-02-25T18:00",
+				endDatetime: "2024-02-25T21:00",
 				location: "uOttawa",
 				description:
 					"Refine your entrepreneurial skills by participating in Hack the Hill's first ever startup pitch competition, in collaboration with BTA. Gather in a team, come up with the next big idea and hone your pitch. With a guest speaker, a workshop and a distinguished group of judges, it's an event you won't want to miss if you want to perfect the art of the pitch. Sign up as a team, or individual and get to work perfecting!",
@@ -162,8 +162,8 @@ export default {
 			},
 			{
 				title: "HackHers",
-				startDateTime: "2024-02-03T09:00",
-				endDateTime: "2024-02-03T22:30",
+				startDatetime: "2024-02-03T09:00",
+				endDatetime: "2024-02-03T22:30",
 				location: "CRX",
 				description:
 					"Enjoy a day of wellness and hacking as Hack the Hill partners with IEEE uOttawa and WIE uOttawa to provide a mindful, one day hackathon. Experience a hackathon like no other, as we breakdown traditional expectations and provide an all new experience. With refreshing beverages and food, which includes tea and iced coffee, a wellness room and a special workshop, this hackathon will defy expectations as the must go to event of the term.",
@@ -173,8 +173,8 @@ export default {
 			},
 			{
 				title: "Kinaxis x CCSS x HTH Networking Event",
-				startDateTime: "2024-01-30T18:30",
-				endDateTime: "2024-01-30T20:30",
+				startDatetime: "2024-01-30T18:30",
+				endDatetime: "2024-01-30T20:30",
 				location: "Richcraft Hall 2200",
 				description:
 					"Join us for an exclusive networking experience hosted by Kinaxis, CCSS, and Hack the Hill. Elevate your career alongside seasoned professionals and like-minded enthusiasts. This dynamic event offers more than traditional networking – expect engaging conversations, valuable insights, and the opportunity to form lasting connections. Don't miss this transformative evening where connections lead to endless possibilities.",
@@ -184,8 +184,8 @@ export default {
 			},
 			{
 				title: "Women @ Ciena Panel x HTH",
-				startDateTime: "2024-01-24T18:30",
-				endDateTime: "2024-01-24T20:30",
+				startDatetime: "2024-01-24T18:30",
+				endDatetime: "2024-01-24T20:30",
 				location: "STEM 117",
 				description:
 					"Gather around for an informative night as Hack the Hill collaborates with Women@Ciena for an exciting panel featuring 5 distinguished guest panelists, all representing different roles within Ciena. Listen in as they share their story, experiences and successes within the tech industry and provide knowledge for those in the early stages of their career. The diversity in roles and experience will truly inspire you, and it’s an event not worth missing.",
@@ -195,8 +195,8 @@ export default {
 			},
 			{
 				title: "DESoc Soldering Workshop x HTH",
-				startDateTime: "2024-01-18T18:00",
-				endDateTime: "2024-01-18T20:00",
+				startDatetime: "2024-01-18T18:00",
+				endDatetime: "2024-01-18T20:00",
 				location: "Mackenzie Building 4377",
 				description:
 					"Come out and get hands on with an exciting workshop in collaboration with DESoc Carleton. Learn one of the fundamentals of hardware as you develop your soldering skills, with the help of experienced mentors at Carleton.",
@@ -206,8 +206,8 @@ export default {
 			},
 			{
 				title: "Code, Coffee, and Cram",
-				startDateTime: "2023-12-02T18:30",
-				endDateTime: "2023-12-02T20:30",
+				startDatetime: "2023-12-02T18:30",
+				endDatetime: "2023-12-02T20:30",
 				location: "STEM 117",
 				description:
 					"Get ready to ignite your academic journey as 'Code, Coffee, and Cram' takes you on an invigorating path to success. In preparation for the upcoming winter exams, this unique session offers students a tranquil haven to relax and immerse themselves in focused study. The aroma of freshly brewed coffee provides the perfect backdrop to sharpen your intellect. Join us in a space designed to help you unlock your academic potential, where you can connect with your coursework and elevate your understanding. Prepare for winter exams like never before - with the ideal blend of code, caffeine, and concentration.",
@@ -217,8 +217,8 @@ export default {
 			},
 			{
 				title: "Capture the Flag",
-				startDateTime: "2023-11-25T12:00",
-				endDateTime: "2023-11-25T16:00",
+				startDatetime: "2023-11-25T12:00",
+				endDatetime: "2023-11-25T16:00",
 				location: "CBY A03 & A04",
 				description:
 					"Join us for the ultimate cybersecurity challenge organized in collaboration with the uOttawa Cybersecurity Club. uOCTF is a thrilling Capture the Flag competition where you'll test your hacking and cybersecurity skills, requiring you to exploit vulnerabilities and solve puzzles.",
@@ -228,8 +228,8 @@ export default {
 			},
 			{
 				title: "Cybersecurity Chatbot Workshop",
-				startDateTime: "2023-11-21T18:00",
-				endDateTime: "2023-11-21T19:30",
+				startDatetime: "2023-11-21T18:00",
+				endDatetime: "2023-11-21T19:30",
 				location: "STEM 117",
 				description:
 					"Unleash the power of OpenAI GPT models and Python APIs in our workshop with the Computer Science Student Association (CSSA). Participants dove into the creation of their first cybersecurity chatbot, gaining valuable insights into artificial intelligence, natural language processing, and Python programming. Elevate your skills with this innovative fusion of cybersecurity and chatbot development.",
@@ -239,8 +239,8 @@ export default {
 			},
 			{
 				title: "Nokia Info Session",
-				startDateTime: "2023-11-21T13:00",
-				endDateTime: "2023-11-21T15:00",
+				startDatetime: "2023-11-21T13:00",
+				endDatetime: "2023-11-21T15:00",
 				location: "CBY A707",
 				description:
 					"Delve into the realm of cutting-edge technology with our Nokia info session, held in collaboration of the Business Technology Association (BTA). Explore the latest innovations and insights that Nokia brings to the table, empowering participants with knowledge at the intersection of business and technology.",
@@ -250,8 +250,8 @@ export default {
 			},
 			{
 				title: "Intern Panel",
-				startDateTime: "2023-11-15T18:30",
-				endDateTime: "2023-11-15T20:30",
+				startDatetime: "2023-11-15T18:30",
+				endDatetime: "2023-11-15T20:30",
 				location: "Carleton Bell Theatre",
 				description:
 					"Prepare for an enlightening experience as Hack the Hill and IEEE CU join forces to present a distinguished panel comprising five interns from diverse professional backgrounds. These accomplished interns are gathered to share their multifaceted experiences and insights, providing a unique perspective on the domains of technology and innovation. Expect to be both informed and inspired by the exceptional diversity and talent these interns collectively represent as they guide you through an in-depth exploration of the future of technology. This is a notable event of considerable significance that you will not want to miss.",
@@ -261,8 +261,8 @@ export default {
 			},
 			{
 				title: "Cryptid Game Night",
-				startDateTime: "2023-11-08T19:00",
-				endDateTime: "2023-11-08T20:30",
+				startDatetime: "2023-11-08T19:00",
+				endDatetime: "2023-11-08T20:30",
 				location: "STEM 117",
 				description:
 					"Dive into the world of gaming at Cryptid Game Night on November 8th, 7pm, located at STM 117, uOttawa. Hosted by uO GDC x HtH, this thrilling event promises an evening filled with exciting games, friendly competition, and a chance to bond with fellow gaming enthusiasts.",
@@ -272,8 +272,8 @@ export default {
 			},
 			{
 				title: "Ciena Networking Event",
-				startDateTime: "2023-10-17T18:30",
-				endDateTime: "2023-10-17T20:00",
+				startDatetime: "2023-10-17T18:30",
+				endDatetime: "2023-10-17T20:00",
 				location: "Ollie's Pub & Patio",
 				description:
 					"Immerse yourself in an evening of unparalleled networking at the Ciena Networking Event on October 17th, 6:30pm, hosted at Ollie's Pub & Patio, Carleton University. Presented by SCESoc x HtH, this exclusive opportunity puts you in direct contact with Ciena professionals, providing a unique chance to forge connections, gain insights, and explore potential opportunities in the dynamic world of networking.",
@@ -283,8 +283,8 @@ export default {
 			},
 			{
 				title: "Resume Rescue",
-				startDateTime: "2023-10-10T19:00",
-				endDateTime: "2023-10-10T21:00",
+				startDatetime: "2023-10-10T19:00",
+				endDatetime: "2023-10-10T21:00",
 				location: "STEM 117",
 				description:
 					"Your resume deserves a makeover. Whether you're a student, recent graduate, or professional, a well-crafted resume can be your ticket to success. Let Hack the Hill guide you in rescuing your resume from the ordinary. Join Hack the Hill for a dynamic session dedicated to revitalizing your resumes!",
@@ -294,8 +294,8 @@ export default {
 			},
 			{
 				title: "Game Dev Intro",
-				startDateTime: "2023-09-29T19:00",
-				endDateTime: "2023-09-29T21:00",
+				startDatetime: "2023-09-29T19:00",
+				endDatetime: "2023-09-29T21:00",
 				location: "STEM 117",
 				description:
 					"Embark on an immersive journey into game development with LevelOne Labs on September 29th, 7pm, at STM 117, uOttawa. This hands-on session, presented by uO GDC x HtH, promises to demystify the intricacies of game design, making it accessible for enthusiasts and beginners alike.",

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { t } from "../../i18n";
 import Calendar from "../Calendar/Calendar";
 import "../../global.css";
@@ -7,9 +7,11 @@ import "aos/dist/aos.css";
 import shape from "../../assets/patterns/ssshape.svg";
 
 export default function EventsPage() {
+	const events = t("schedule.events");
 	useEffect(() => {
 		AOS.init({ once: false, duration: 700 });
 	}, []);
+
 	return (
 		<div className="flex justify-center items-center w-full bg-background-dark relative overflow-hidden">
 			<div className="flex flex-col w-10/12 h-full justify-center items-center gap-20 py-36 text-left max-w-2xl z-[1]">
