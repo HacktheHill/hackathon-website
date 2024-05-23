@@ -39,9 +39,9 @@ const marqueeGroup = (team, index, pauseAnimation, startAnimation) => {
 function Team() {
 	const team = [
 		{
-			name: "Mumtahin Farabi",
+			name: "Disala de Silva",
 			role: t("team.roles.president"),
-			image: "/headshots/Farabi.webp",
+			image: "/headshots/Disala.webp",
 		},
 		{
 			name: "Justin Wang",
@@ -64,14 +64,14 @@ function Team() {
 			image: "/headshots/Andrea.webp",
 		},
 		{
-			name: "Pavly Saleh",
+			name: "Thinula de Silva",
 			role: t("team.roles.logistics.director"),
-			image: "/headshots/Pav.webp",
+			image: "/headshots/Thinula.webp",
 		},
 		{
-			name: "Disala de Silva",
+			name: "Kheswari Gukhool",
 			role: t("team.roles.marketing.director"),
-			image: "/headshots/Disala.webp",
+			image: "/headshots/Khes.webp",
 		},
 		{
 			name: "Daniel Thorp",
@@ -79,14 +79,19 @@ function Team() {
 			image: "/headshots/Daniel.webp",
 		},
 		{
+			name: "Sanil Srivastava",
+			role: t("team.roles.operations.director"),
+			image: "/headshots/Sanil.webp",
+		},
+		{
 			name: "Manaal Mujeebuddin",
 			role: t("team.roles.sponsorship.director"),
 			image: "/headshots/Manaal.webp",
 		},
 		{
-			name: "Kheswari Gukhool",
+			name: "Hasith De Alwis",
 			role: t("team.roles.community.manager"),
-			image: "/headshots/Khes.webp",
+			image: "/headshots/Hasith.webp",
 		},
 		{
 			name: "Tim Mao",
@@ -99,34 +104,14 @@ function Team() {
 			image: "/headshots/Mustafa.webp",
 		},
 		{
-			name: "Hasith De Alwis",
-			role: t("team.roles.community.coordinator"),
-			image: "/headshots/Hasith.webp",
-		},
-		{
 			name: "Cece Ma",
 			role: t("team.roles.community.coordinator"),
 			image: "/headshots/Cece.webp",
 		},
 		{
-			name: "Mingye Chen",
-			role: t("team.roles.competitions.coordinator"),
-			image: "/headshots/Template.webp",
-		},
-		{
-			name: "Tahmeed Khan",
-			role: t("team.roles.competitions.coordinator"),
-			image: "/headshots/Tahmeed.webp",
-		},
-		{
 			name: "Siva Senthilkumaran",
-			role: t("team.roles.competitions.coordinator"),
+			role: t("team.roles.community.coordinator"),
 			image: "/headshots/Siva.webp",
-		},
-		{
-			name: "Thomas Nolasque",
-			role: t("team.roles.competitions.coordinator"),
-			image: "/headshots/Thomas.webp",
 		},
 		{
 			name: "Humayrah Jhumka",
@@ -137,11 +122,6 @@ function Team() {
 			name: "Christmas Pranommit",
 			role: t("team.roles.design.coordinator"),
 			image: "/headshots/Christmas.webp",
-		},
-		{
-			name: "Amy Bradbrook",
-			role: t("team.roles.design.coordinator"),
-			image: "/headshots/Amy.webp",
 		},
 		{
 			name: "Aashna Verma",
@@ -160,13 +140,8 @@ function Team() {
 		},
 		{
 			name: "Ethan Tang",
-			role: t("team.roles.logistics.coordinator"),
+			role: t("team.roles.design.coordinator"),
 			image: "/headshots/Ethan.webp",
-		},
-		{
-			name: "Saheen Jeyarajah",
-			role: t("team.roles.development.manager"),
-			image: "/headshots/Template.webp",
 		},
 		{
 			name: "Sacha Arseneault",
@@ -194,6 +169,16 @@ function Team() {
 			image: "/headshots/Erik.webp",
 		},
 		{
+			name: "Saheen Jeyarajah",
+			role: t("team.roles.development.coordinator"),
+			image: "/headshots/Erik.webp",
+		},
+		{
+			name: "Saheen Jeyarajah",
+			role: t("team.roles.development.coordinator"),
+			image: "/headshots/Template.webp",
+		},
+		{
 			name: "Ahmed Nasr",
 			role: t("team.roles.development.coordinator"),
 			image: "/headshots/Template.webp",
@@ -219,13 +204,13 @@ function Team() {
 			image: "/headshots/Martin.webp",
 		},
 		{
-			name: "Thinula de Silva",
-			role: t("team.roles.logistics.coordinator"),
-			image: "/headshots/Thinula.webp",
+			name: "Patrick Igiraneza",
+			role: t("team.roles.development.coordinator"),
+			image: "/headshots/Template.webp",
 		},
 		{
 			name: "Saima Mujeebuddin",
-			role: t("team.roles.logistics.coordinator"),
+			role: t("team.roles.logistics.manager"),
 			image: "/headshots/Saima.webp",
 		},
 		{
@@ -254,24 +239,24 @@ function Team() {
 			image: "/headshots/Lehem.webp",
 		},
 		{
-			name: "Madison Moran",
-			role: t("team.roles.marketing.manager"),
-			image: "/headshots/Maddy.webp",
-		},
-		{
-			name: "Rafael Arif",
-			role: t("team.roles.marketing.manager"),
-			image: "/headshots/Rafael.webp",
-		},
-		{
-			name: "Stefan Todorovic",
-			role: t("team.roles.marketing.coordinator"),
+			name: "Mingye Chen",
+			role: t("team.roles.logistics.coordinator"),
 			image: "/headshots/Template.webp",
 		},
 		{
-			name: "Nyah Wagner",
-			role: t("team.roles.marketing.coordinator"),
-			image: "/headshots/Nyah.webp",
+			name: "Tahmeed Khan",
+			role: t("team.roles.logistics.coordinator"),
+			image: "/headshots/Tahmeed.webp",
+		},
+		{
+			name: "Thomas Nolasque",
+			role: t("team.roles.logistics.coordinator"),
+			image: "/headshots/Thomas.webp",
+		},
+		{
+			name: "Madison Moran",
+			role: t("team.roles.marketing.manager"),
+			image: "/headshots/Maddy.webp",
 		},
 		{
 			name: "Eliana Schartner",
@@ -300,16 +285,6 @@ function Team() {
 		},
 		{
 			name: "Yazan Khasawneh",
-			role: t("team.roles.operations.manager"),
-			image: "/headshots/Template.webp",
-		},
-		{
-			name: "Sanil Srivastava",
-			role: t("team.roles.operations.coordinator"),
-			image: "/headshots/Sanil.webp",
-		},
-		{
-			name: "Sakshit Sharma",
 			role: t("team.roles.operations.coordinator"),
 			image: "/headshots/Template.webp",
 		},
@@ -370,6 +345,16 @@ function Team() {
 		},
 		{
 			name: "Zahra Suleymanova",
+			role: t("team.roles.sponsorship.coordinator"),
+			image: "/headshots/Template.webp",
+		},
+		{
+			name: "Kemal Kilic",
+			role: t("team.roles.sponsorship.coordinator"),
+			image: "/headshots/Template.webp",
+		},
+		{
+			name: "Eric Eaton",
 			role: t("team.roles.sponsorship.coordinator"),
 			image: "/headshots/Template.webp",
 		},
