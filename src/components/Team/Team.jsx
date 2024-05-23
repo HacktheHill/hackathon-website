@@ -334,11 +334,6 @@ function Team() {
 			image: "/headshots/Shrikar.webp",
 		},
 		{
-			name: "Raaed Mirza",
-			role: t("team.roles.sponsorship.coordinator"),
-			image: "/headshots/Raaed.webp",
-		},
-		{
 			name: "Ansh Kakkar",
 			role: t("team.roles.sponsorship.coordinator"),
 			image: "/headshots/Ansh.webp",
