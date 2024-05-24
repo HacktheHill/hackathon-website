@@ -171,11 +171,6 @@ function Team() {
 		{
 			name: "Saheen Jeyarajah",
 			role: t("team.roles.development.coordinator"),
-			image: "/headshots/Erik.webp",
-		},
-		{
-			name: "Saheen Jeyarajah",
-			role: t("team.roles.development.coordinator"),
 			image: "/headshots/Template.webp",
 		},
 		{
