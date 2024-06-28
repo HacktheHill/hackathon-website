@@ -50,7 +50,7 @@ function ProjectGallery() {
 							data-aos="fade-up"
 							data-aos-delay={project.delay}
 						>
-							<a href={project.href}>
+							<a href={project.href} target="_blank">
 								<img className={styles.projectImage} src={project.imgSrc} alt={project.altText} />
 							</a>
 						</div>
