@@ -100,6 +100,7 @@ export default {
 		aria_label_prev: "Previous Slide",
 		aria_label_dot: "Testimonial Dot",
 	},
+	gallery: { title: "Highlighting Last Year's Top Achievements", button_label: "Explore more innovative projects" },
 	schedule: {
 		title: "The Hacker Series",
 		events: [
