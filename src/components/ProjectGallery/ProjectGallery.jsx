@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./ProjectGallery.module.css";
 import Button from "../Button/Button.jsx";
+import { t } from "../../i18n";
 
 // animations
 import AOS from "aos";
@@ -35,12 +36,11 @@ function ProjectGallery() {
 		AOS.init();
 	}, []);
 
-	console.log("ProjectGallery rendered");
 	return (
 		<section id="gallery" className={styles.gallery}>
 			<div className={styles.container}>
 				<div className={styles.heading}>
-					<p className={styles.subtitle}>Highlighting Last Year's Top Achievements</p>
+					<h1 className={styles.subtitle}>{t("gallery.title")}</h1>
 				</div>
 				<div className={styles.projects}>
 					{projects.map((project, index) => (
@@ -62,7 +62,7 @@ function ProjectGallery() {
 						data-aos="fade-up"
 						data-aos-duration="800"
 					>
-						Explore more innovative projects
+						{t("gallery.button_label")}
 					</Button>
 				</p>
 			</div>

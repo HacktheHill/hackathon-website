@@ -101,6 +101,10 @@ export default {
 		aria_label_prev: "Témoignage Précédent",
 		aria_label_dot: "Point Témoignage",
 	},
+	gallery: {
+		title: "Soulignant les principales réalisations de l'année dernière",
+		button_label: "Explorez des projets plus innovants",
+	},
 	schedule: {
 		title: "La Série du Hacker",
 		events: [
