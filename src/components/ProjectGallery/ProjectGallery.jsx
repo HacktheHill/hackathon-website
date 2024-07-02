@@ -16,10 +16,10 @@ const projects = [
 		delay: 200,
 	},
 	{
-		id: "oiligarchy",
-		href: "https://devpost.com/software/oiligarchy-the-game-about-how-profit-turns-to-pain",
-		imgSrc: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/408/722/datas/original.png",
-		altText: "oiligarchy Banner",
+		id: "hackthefeed",
+		href: "https://devpost.com/software/hackthefeed",
+		imgSrc: "https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/406/986/datas/medium.png",
+		altText: "hackthefeed Banner",
 		delay: 300,
 	},
 	{
