@@ -11,7 +11,7 @@ export default {
 		aria_label: "Navigation Bar",
 	},
 	hero: {
-		hybrid: "Hybrid",
+		format: "In person",
 		at: "@",
 		pin_alt: "Location Pin",
 		h2: "Canada's Capital Hackathon",
@@ -296,7 +296,7 @@ export default {
 		a5: "No, all projects must be started after open ceremonies on the first day of the event. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
 
 		q6: "Is the hackathon online or in-person?",
-		a6: "Both online and in-person, we're hybrid this year!",
+		a6: "We're only happening in-person this year!",
 
 		q7: "What should I bring to an in-person hackathon?",
 		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 36 hours. We will provide snacks and food for the entire event!",

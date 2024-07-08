@@ -11,7 +11,7 @@ export default {
 		aria_label: "Barre de Navigation",
 	},
 	hero: {
-		hybrid: "Hybride",
+		format: "En personne",
 		at: "à",
 		pin_alt: "Punaise de localisation",
 		h2: "Le Hackathon de la Capitale Canadienne",
@@ -297,7 +297,7 @@ export default {
 		a5: "Non, tous les projets doivent être commencés après les cérémonies d'ouverture. Aucun code ne doit être écrit pour le projet avant le hackathon, cependant, vous pouvez commencer à réfléchir à un projet une fois que les thèmes ont été publiés.",
 
 		q6: "Le hackathon est-il en ligne ou en personne ?",
-		a6: "Le hackathon sera en ligne ou en personne, nous opérons de façon hybride cette année !",
+		a6: "Le hackathon sera seulement en personne cette année!",
 
 		q7: "Que devrais-je apporter ?",
 		a7: "Articles d'hygiène personnelle (déodorant, brosse à dents, etc.), sac de couchage, chargeur d'ordinateur portable, et tout ce dont vous pourriez avoir besoin pour rester sur place pendant 36 heures. Nous fournirons des collations et de la nourriture pendant toute la durée de l'événement !",
