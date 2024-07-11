@@ -5,7 +5,7 @@ import path from "path";
 const { title } = Astro.props;
 
 const description =
-	"Hack the Hill, Canada's Capital's premier flagship hackathon event, is presented by the University of Ottawa and Carleton University STEM Student Organizations. This Fall 2024, come prepared to network and compete with the best at Canada's Capital's largest hackathon!";
+	"Hack the Hill, Canada's Capital's premier flagship hackathon event. This Fall 2024, come prepared to network and compete with the best at Canada's Capital's largest hackathon!";
 
 const keywords =
 	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2024, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University";
@@ -55,7 +55,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:url" content={url} />
-		<meta property="og:image" content={`${url}/favicon-196x196.svg`} />
+		<meta property="og:image" content={`${url}/icons/favicon-196x196.png`} />
 		<meta property="og:site_name" content="Hack the Hill" />
 		<meta property="og:locale" content="en_US" />
 
@@ -65,7 +65,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="twitter:creator" content="@hackthehill_" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={`${url}/favicon-196x196.svg`} />
+		<meta name="twitter:image" content={`${url}/icons/favicon-196x196.png`} />
 		<meta name="twitter:image:alt" content="Hack the Hill logo" />
 
 		<!-- KEYWORDS -->
