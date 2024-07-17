@@ -10,9 +10,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function About() {
-	const podcastLink =
-		"https://www.youtube.com/embed/videoseries?si=ZobjNMvDAoBIorPw&controls=0&list=PLvXySQVib-mmNoOeoORHRGz2UyeSEgj7Q&autoplay=1&loop=1&mute=0";
-	const thumbnailLink = "https://img.youtube.com/vi/IQSd2UsGvrU/hqdefault.jpg";
+	const podcastLink = "https://www.youtube.com/embed/QdK9NHXWV7A?si=GTcer8Al3GI8RLiY";
+	const thumbnailLink = "http://i3.ytimg.com/vi/QdK9NHXWV7A/hqdefault.jpg";
 
 	useEffect(() => {
 		AOS.init({});
