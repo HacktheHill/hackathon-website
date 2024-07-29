@@ -110,6 +110,7 @@ function Hero() {
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]} data-aos="fade-up" data-aos-duration="800">
 					<h5 className={styles["location"]}>
+						<strong>{t("hero.date")} </strong>
 						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} />{" "}
 						{t("hero.format")}
 						<strong> {t("hero.at")} uOttawa</strong>
