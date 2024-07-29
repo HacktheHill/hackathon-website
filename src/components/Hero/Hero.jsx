@@ -150,7 +150,7 @@ function Hero() {
 						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</form>*/}
-				<a href="https://tracker.hackthehill.com/follow" target="_blank" rel="noreferrer">
+				<a href="https://tracker.hackthehill.com/" target="_blank" rel="noreferrer">
 					<button
 						className={styles["hero-btn"]}
 						data-aos="fade-up"
