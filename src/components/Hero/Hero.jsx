@@ -121,6 +121,7 @@ function Hero() {
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
 				</h2>
+				{/*
 				<form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
@@ -147,7 +148,17 @@ function Hero() {
 					>
 						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
-				</form>
+				</form>*/}
+				<a href="https://tracker.hackthehill.com/follow" target="_blank" rel="noreferrer">
+					<button
+						className={styles["hero-btn"]}
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="500"
+					>
+						{t("hero.apply")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
+					</button>
+				</a>
 			</div>
 
 			{/* Parallax, background, clouds, birds, trees, hills, buildings, etc. */}

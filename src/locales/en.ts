@@ -21,6 +21,7 @@ export default {
 		empty_email_field: "Email is required",
 		invalid_email_field: "Invalid email format",
 		email_placeholder: "E-mail",
+		apply: "Apply Now",
 	},
 	about: {
 		title: "Welcome to Canada's Capital Hackathon",

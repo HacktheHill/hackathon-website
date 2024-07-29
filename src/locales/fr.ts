@@ -21,6 +21,7 @@ export default {
 		empty_email_field: "L'adresse électronique est obligatoire",
 		invalid_email_field: "Format de courriel invalide",
 		email_placeholder: "Courriel",
+		apply: "Appliquez Maintenant",
 	},
 	about: {
 		title: "Bienvenue au Hackathon de la Capitale Canadienne",
