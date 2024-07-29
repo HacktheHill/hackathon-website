@@ -284,7 +284,7 @@ export default {
 		title: "Foire aux questions",
 
 		q1: "C'est quoi un hackathon ?",
-		a1: "Un hackathon est un événement à grande échelle où les participants conçoivent et construisent un projet à partir de zéro.",
+		a1: "Un hackathon est un événement de programmation où les gens se réunissent pour collaborer sur des projets de programmation. Les participants travaillent en équipe pour créer des projets innovants en un temps limité.",
 
 		q2: "Combien ça coûte pour participer ?",
 		a2: "La participation est entièrement gratuite ! Nous couvrons le coût de la nourriture lors de l'événement et fournissons des cadeaux à tous les participants.",

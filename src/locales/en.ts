@@ -283,7 +283,7 @@ export default {
 		title: "Frequently Asked Questions",
 
 		q1: "What is a hackathon?",
-		a1: "A hackathon is a large-scale event where people design and build a project from scratch.",
+		a1: "A hackathon is a multi-day event where programmers, designers, and tech enthusiasts collaborate intensively on software projects. The goal is to create a prototype by the end. Participants can win prizes, network with industry reps for job opportunities, connect with peers, and enjoy free food, swag, and social events.",
 
 		q2: "How much does it cost to participate?",
 		a2: "It's completely free to attend! There is no cost to participate! We cover the cost of food at the event and provide swag for all participants.",

@@ -72,6 +72,9 @@
 @media screen and (max-width: 510px) {
 	.frame {
 		margin: 2rem 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.about-text p {
