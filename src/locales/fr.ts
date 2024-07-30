@@ -305,16 +305,16 @@ export default {
 		a7: "Articles d'hygiène personnelle (déodorant, brosse à dents, etc.), sac de couchage, chargeur d'ordinateur portable, et tout ce dont vous pourriez avoir besoin pour rester sur place pendant 36 heures. Nous fournirons des collations et de la nourriture pendant toute la durée de l'événement !",
 
 		q8: "Qui peut participer et comment postuler ?",
-		a8: "Tous les étudiants universitaires ou nouveaux diplômés sont encouragés à postuler ! Les étudiants d'écoles secondaires sont également les bienvenus. Suivez-nous sur les réseaux sociaux pour rester informé des mises à jour du hackathon !",
+		a8: "Tous les étudiants universitaires ou nouveaux diplômés sont encouragés à postuler ! Les étudiants d'écoles secondaires en 11ième année ou plus sont également les bienvenus. Suivez-nous sur les réseaux sociaux pour rester informé des mises à jour du hackathon !",
 
 		q9: "Puis-je travailler en équipe ?",
 		a9: "Oui, chaque équipe peut contenir jusqu'à 4 personnes.",
 
 		q10: "Quels sont les thèmes de Hack the Hill ?",
-		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement de jeux vidéos, développement matériel/embarqué et développement web !",
+		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement matériel/embarqué et développement web !",
 
 		q11: "Des autobus serons-t-ils envoyés à d'autres universités ?",
-		a11: "Pour l'instant, il n'a pas été déterminé s'il y aura un service d'autobus pour se rendre à Hack the Hill. Restez en contact pour les mises à jour !",
+		a11: "Cette année, nous planifions envoyer des autobus à Montréal, Waterloo, et Toronto. Plus de détails à venir.",
 
 		q12: "Des remboursements de voyage seront-ils accordés ?",
 		a12: "Malheureusement, nous ne sommes pas en mesure d'offrir des remboursements de voyage aux hackers en personne à Hack the Hill cette année.",

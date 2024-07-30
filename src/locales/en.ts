@@ -304,16 +304,16 @@ export default {
 		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 36 hours. We will provide snacks and food for the entire event!",
 
 		q8: "Who can participate and how do I apply?",
-		a8: "Any university students or recent new grads are encouraged to apply! High-school students with experience are also welcomed. Follow us on social media to stay up-to-date with hackathon updates!",
+		a8: "Any university students or recent new grads are encouraged to apply! High-school students in grade 11 or higher are also welcomed. Follow us on social media to stay up-to-date with hackathon updates!",
 
 		q9: "Can I work in a team?",
 		a9: "Yes, teams of up to 4 can work together at Hack the Hill.",
 
 		q10: "What are the themes for Hack the Hill?",
-		a10: "Full details about the hackathon themes will not be released until a few days before the event. But here's a sneak peek about what they might involve: game development, hardware/embedded development, and web development!",
+		a10: "Full details about the hackathon themes will not be released until a few days before the event. But here's a sneak peek about what they might involve: hardware/embedded development and web development!",
 
 		q11: "Are buses being sent to other universities?",
-		a11: "As of now, it has not been determined if there will be bus service for Hack the Hill. Stay in touch for updates!",
+		a11: "This year, we're planning on sending buses to Montreal, Waterloo, and the GTA. More details to come.",
 
 		q12: "Will travel reimbursements be provided?",
 		a12: "Unfortunately, we are unable to provide travel reimbursements for in-person hackers at Hack the Hill this year.",
