@@ -5,10 +5,10 @@ import path from "path";
 const { title } = Astro.props;
 
 const description =
-	"Hack the Hill, Canada's Capital's premier flagship hackathon event. This Fall 2024, come prepared to network and compete with the best at Canada's Capital's largest hackathon!";
+	"Join us for Hack the Hill II, a hackathon in heart of Canada's capital from September 27th to 29th, 2024! Joignez nous pour Hack the Hill II, un hackathon au cœur de la capitale du Canada du 27 au 29 septembre 2024!";
 
 const keywords =
-	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2024, University of Ottawa, uOttawa, CSSA, IEEE uOttawa, SESA, ESS, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Hybrid Hackathon, Carleton, Carleton University";
+	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2024, University of Ottawa, uOttawa, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Carleton, Carleton University, Université d'Ottawa, Université Carleton";
 
 const color = "#ea885f";
 
@@ -38,8 +38,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<link rel="manifest" href={`${url}/site.webmanifest`} />
 		<title>{title}</title>
 
-		<!--- Google analytics tags  -->
-
+		<!-- Google Analytics tags -->
 		<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-7SJDSSNG3P"></script>
 		<script type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
@@ -55,36 +54,36 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:url" content={url} />
-		<meta property="og:image" content={`${url}/icons/favicon-196x196.png`} />
+		<meta property="og:image" content={`${url}/Logos/hackthehill-banner.svg`} />
 		<meta property="og:site_name" content="Hack the Hill" />
 		<meta property="og:locale" content="en_US" />
 
-		<!-- TWITTER SEO -->
+		<!-- Twitter SEO -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@hackthehill_" />
 		<meta name="twitter:creator" content="@hackthehill_" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={`${url}/icons/favicon-196x196.png`} />
+		<meta name="twitter:image" content={`${url}/Logos/hackthehill-banner.svg`} />
 		<meta name="twitter:image:alt" content="Hack the Hill logo" />
 
-		<!-- KEYWORDS -->
+		<!-- Keywords -->
 		<meta name="keywords" content={keywords} />
 
 		<!-- humans.txt -->
 		<link type="text/plain" rel="author" href={`${url}/humans.md`} />
 
-		<!-- canonical -->
+		<!-- Canonical -->
 		<link rel="canonical" href={url} />
 
-		<!-- sitemap -->
+		<!-- Sitemap -->
 		<link rel="sitemap" type="application/xml" title="Sitemap" href={`${url}/sitemap-index.xml`} />
 
 		<!-- robots.txt -->
 		<link rel="robots" type="text/plain" title="Robots" href={`${url}/robots.txt`} />
 
-		<!-- favicons for all devices -->
-		<link rel="icon shortcut" type="image/svg+xml" href={`${url}/icons/favicon.svg`} />
+		<!-- Favicons for all devices -->
+		<link rel="icon" type="image/svg+xml" href={`${url}/icons/favicon.svg`} />
 		<link rel="apple-touch-icon" sizes="180x180" href={`${url}/icons/apple-touch-icon.png`} />
 		<link rel="icon" type="image/png" sizes="32x32" href={`${url}/icons/favicon-32x32.png`} />
 		<link rel="icon" type="image/png" sizes="16x16" href={`${url}/icons/favicon-16x16.png`} />
@@ -96,11 +95,11 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<link rel="apple-touch-icon-precomposed" sizes="120x120" href={`${url}/icons/apple-touch-icon-120x120.png`} />
 		<link rel="apple-touch-icon-precomposed" sizes="76x76" href={`${url}/icons/apple-touch-icon-76x76.png`} />
 		<link rel="apple-touch-icon-precomposed" sizes="152x152" href={`${url}/icons/apple-touch-icon-152x152.png`} />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-196x196.svg`} sizes="196x196" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-96x96.svg`} sizes="96x96" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-32x32.svg`} sizes="32x32" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-16x16.svg`} sizes="16x16" />
-		<link rel="icon" type="image/png" href={`${url}/icons/favicon-128.svg`} sizes="128x128" />
+		<link rel="icon" type="image/png" sizes="196x196" href={`${url}/icons/favicon-196x196.png`} />
+		<link rel="icon" type="image/png" sizes="96x96" href={`${url}/icons/favicon-96x96.png`} />
+		<link rel="icon" type="image/png" sizes="32x32" href={`${url}/icons/favicon-32x32.png`} />
+		<link rel="icon" type="image/png" sizes="16x16" href={`${url}/icons/favicon-16x16.png`} />
+		<link rel="icon" type="image/png" sizes="128x128" href={`${url}/icons/favicon-128.png`} />
 		<meta name="application-name" content="Hack the Hill" />
 		<meta name="msapplication-TileColor" content={color} />
 		<meta name="msapplication-TileImage" content={`${url}/icons/mstile-144x144.png`} />

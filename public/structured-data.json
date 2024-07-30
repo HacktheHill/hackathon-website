@@ -6,22 +6,32 @@
 		"audienceType": "University Students",
 		"geographicArea": "Ottawa"
 	},
-	"doorTime": "2024-02-02T18:00",
+	"doorTime": "2024-09-27T17:00",
 	"duration": "PT36H",
-	"endDate": "2024-02-04",
+	"endDate": "2024-09-29",
 	"eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
 	"eventSchedule": {
 		"@type": "Schedule",
-		"endDate": "2024-02-04",
-		"endTime": "2024-02-04T17:00",
+		"endDate": "2024-09-29",
+		"endTime": "2024-09-29T18:30",
 		"repeatCount": 1,
 		"scheduleTimezone": "America/Toronto",
-		"startDate": "2024-02-02",
-		"startTime": "2024-02-02T18:00"
+		"startDate": "2024-09-27",
+		"startTime": "2024-09-27T17:00"
 	},
 	"eventStatus": "https://schema.org/EventScheduled",
 	"funder": [],
 	"inLanguage": "English",
+	"availableLanguage": [
+		{
+			"@type": "Language",
+			"name": "English"
+		},
+		{
+			"@type": "Language",
+			"name": "French"
+		}
+	],
 	"isAccessibleForFree": true,
 	"location": [
 		{
@@ -34,25 +44,21 @@
 				"postalCode": "K1N 9N3",
 				"streetAddress": "100 Louis-Pasteur Private"
 			},
-			"name": "uOttawa"
-		},
-		{
-			"@type": "VirtualLocation",
-			"url": "https://twitch.tv/hackthehill"
+			"name": "Learning Crossroads building, University of Ottawa"
 		}
 	],
-	"maximumPhysicalAttendeeCapacity": 350,
+	"maximumPhysicalAttendeeCapacity": 750,
 	"name": "Hack the Hill",
 	"offers": {
 		"@type": "Offer",
 		"availability": "https://schema.org/LimitedAvailability",
-		"availabilityEnds": "2024-02-04",
-		"availabilityStarts": "2024-02-02",
+		"availabilityEnds": "2024-09-27",
+		"availabilityStarts": "2024-07-29",
 		"price": "0",
 		"priceCurrency": "CAD",
-		"validFrom": "2024-02-02",
-		"validThrough": "2024-02-04",
-		"url": "https://hackthehill.com/"
+		"validFrom": "2024-07-29",
+		"validThrough": "2024-09-27",
+		"url": "https://tracker.hackthehill.com/"
 	},
 	"organizer": {
 		"@type": "Organization",
@@ -63,7 +69,7 @@
 		"contactPoint": {
 			"@type": "ContactPoint",
 			"contactType": "Customer Service",
-			"email": "logistics@hackthehill.com"
+			"email": "info@hackthehill.com"
 		},
 		"knowsLanguage": [
 			{
@@ -92,6 +98,6 @@
 		"genre": "Hackathon",
 		"name": "Hack the Hill"
 	},
-	"startDate": "2024-02-02",
-	"typicalAgeRange": "18-25"
+	"startDate": "2024-09-27",
+	"typicalAgeRange": "16-30"
 }
