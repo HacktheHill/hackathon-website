@@ -57,7 +57,7 @@ function Sponsors() {
 				{ href: "https://balsamiq.com/", src: balsamiq, alt: "balsamiq" },
 				{ href: "https://www.voiceflow.com/", src: voiceflow, alt: "Voiceflow" },
 				{ href: "https://mule.to/p5ni", src: StickerMule, alt: "StickerMule" },
-				{ href: "https://www.openproject.org/", src: OpenProject, alt: "OpenProject" }
+				{ href: "https://www.openproject.org/", src: OpenProject, alt: "OpenProject" },
 			],
 		},
 		collaborators: [
@@ -67,15 +67,15 @@ function Sponsors() {
 			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
 			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
 			{ href: "https://www.scesoc.ca/", src: SCESoc },
-			{ href: "https://ccss.carleton.ca/", src: CCSS},
+			{ href: "https://ccss.carleton.ca/", src: CCSS },
 			{ href: "https://www.cssa-aei.ca/", src: CSSA },
 			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
 			{ href: "https://www.telferbta.com/", src: telferBTA },
 			{ href: "https://www.uogdc.com/", src: uOGDC },
 			{ href: "https://uocybersec.com/", src: uOCyberSec },
 			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers },
-			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers},
-			{ href: "https://linktr.ee/desoc", src: DEsocCarleton }
+			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers },
+			{ href: "https://linktr.ee/desoc", src: DEsocCarleton },
 		],
 	};
 
