@@ -313,10 +313,10 @@ export default {
 		a10: "Full details about the hackathon themes will not be released until a few days before the event. But here's a sneak peek about what they might involve: hardware/embedded development and web development!",
 
 		q11: "Are buses being sent to other universities?",
-		a11: "This year, we're planning on sending buses to Montreal, Waterloo, and the GTA. More details to come.",
+		a11: "Although we won't be sending buses this year, we'll be providing travel reimbursements for hackers who are coming from out of town.",
 
 		q12: "Will travel reimbursements be provided?",
-		a12: "Unfortunately, we are unable to provide travel reimbursements for in-person hackers at Hack the Hill this year.",
+		a12: "Yes, we will be providing travel reimbursements. Details will be provided after you are accepted to the event.",
 	},
 	team: {
 		title: "Meet the Team!",

@@ -314,10 +314,10 @@ export default {
 		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement matériel/embarqué et développement web !",
 
 		q11: "Des autobus serons-t-ils envoyés à d'autres universités ?",
-		a11: "Cette année, nous planifions envoyer des autobus à Montréal, Waterloo, et Toronto. Plus de détails à venir.",
+		a11: "Nous ne sommes pas en mesure d'envoyer des autobus cette année, mais nous offrons des remboursements de voyage aux hackers provenant de l'extérieur de la ville.",
 
 		q12: "Des remboursements de voyage seront-ils accordés ?",
-		a12: "Malheureusement, nous ne sommes pas en mesure d'offrir des remboursements de voyage aux hackers en personne à Hack the Hill cette année.",
+		a12: "Oui, nous offrons des remboursements de voyage. Les détails sur la façon de demander un remboursement seront publiés après l'acceptation de votre candidature.",
 	},
 	team: {
 		title: "Notre équipe!",
