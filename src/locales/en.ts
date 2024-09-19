@@ -26,7 +26,7 @@ export default {
 	},
 	about: {
 		title: "Welcome to Canada's Capital Hackathon",
-		p1: "Join 1,000+ hackers from around the country to make something incredible in just 36 hours.",
+		p1: "Join 600+ hackers from around the country to make something incredible in just 36 hours.",
 		p2: "Hack the Hill II is the second edition of Canada's Capital Hackathon, a three-day event where students from different disciplines come together to create innovative solutions for real-world problems.",
 		p3: "Participants will be provided with opportunities to learn new skills, network with peers, and showcase their talents and ideas. Whether you are a beginner or a seasoned hacker, you will definitely find something that challenges and inspires you at Hack the Hill II.",
 		frame_alt: "Hack the Hill Podcast",
@@ -45,9 +45,9 @@ export default {
 		p5tag: "Funding Raised",
 	},
 	sponsors: {
-		title: "Previous Sponsors",
+		title: "Sponsors",
 		icon_alt: "Sponsor Icon",
-		p: "The first edition of Hack the Hill was made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
+		p: "Hack the Hill is made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
 		button: "Become a Sponsor",
 	},
 	collaborators: {

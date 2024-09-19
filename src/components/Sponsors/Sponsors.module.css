@@ -92,11 +92,12 @@
 
 .icon-large {
 	max-height: 12.5rem;
+	min-height: 10rem;
 	width: 18rem;
 }
 
 .icon-medium {
-	max-height: 8rem;
+	max-height: 5rem;
 	width: 15rem;
 }
 

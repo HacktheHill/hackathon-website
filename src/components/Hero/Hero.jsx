@@ -12,8 +12,8 @@ import LocationPin from "/SVGs/location-pin.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EVENT_START_DATE = new Date("2000-01-01T00:00:00-00:00");
-const HACKING_END_DATE = new Date("2000-01-01T00:00:00-00:00");
+const EVENT_START_DATE = new Date("2024-09-27T00:00:00-00:00");
+const HACKING_END_DATE = new Date("2024-09-29T00:00:00-00:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
@@ -122,7 +122,6 @@ function Hero() {
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
 				</h2>
-				{/*
 				<form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
@@ -149,7 +148,8 @@ function Hero() {
 					>
 						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
-				</form>*/}
+				</form>
+				{/*
 				<a href="https://tracker.hackthehill.com/" target="_blank" rel="noreferrer">
 					<button
 						className={styles["hero-btn"]}
@@ -160,6 +160,7 @@ function Hero() {
 						{t("hero.apply")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</a>
+				 */}
 			</div>
 
 			{/* Parallax, background, clouds, birds, trees, hills, buildings, etc. */}
