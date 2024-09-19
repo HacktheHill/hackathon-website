@@ -5,6 +5,7 @@ import styles from "./Sponsors.module.css";
 import Ross from "/Logos/Ross.svg";
 import Ciena from "/Logos/Ciena.svg";
 import CSE from "/Logos/CSE.svg";
+import PG from "/Logos/P&G.svg";
 import LiquidIV from "/Logos/LiquidIV.png";
 import Redbull from "/Logos/Redbull.svg";
 import Fantuan from "/Logos/Fantuan.jpg";
@@ -38,13 +39,14 @@ function Sponsors() {
 			large: [
 				{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
 				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
+				{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
 			],
 			medium: [
 				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
-				{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
+				{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
 			],
 			small: [
-				{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
+				{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
 				{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
 				{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
 			],
