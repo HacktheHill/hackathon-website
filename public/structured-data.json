@@ -1,13 +1,13 @@
 {
 	"@context": "http://schema.org",
 	"@type": "Event",
-	"about": "36-hour hackathon in Canada's capital",
+	"about": "48-hour hackathon in Canada's capital",
 	"audience": {
 		"audienceType": "University Students",
 		"geographicArea": "Ottawa"
 	},
 	"doorTime": "2024-09-27T17:00",
-	"duration": "PT36H",
+	"duration": "PT48H",
 	"endDate": "2024-09-29",
 	"eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
 	"eventSchedule": {
