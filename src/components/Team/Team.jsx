@@ -271,7 +271,7 @@ function Team() {
         {
             name: "Steven Li",
             role: t("team.roles.marketing.advisor"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Steven.webp",
         },
         {
             name: "Manaal Mujeebuddin",
@@ -301,7 +301,7 @@ function Team() {
         {
             name: "Eric Eaton",
             role: t("team.roles.partnerships.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Eric.webp",
         },
         {
             name: "Kemal Kilic",
