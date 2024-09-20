@@ -26,7 +26,7 @@ export default {
 	},
 	about: {
 		title: "Welcome to Canada's Capital Hackathon",
-		p1: "Join 1,000+ hackers from around the country to make something incredible in just 36 hours.",
+		p1: "Join 1,000+ hackers from around the country to make something incredible in just 48 hours.",
 		p2: "Hack the Hill II is the second edition of Canada's Capital Hackathon, a three-day event where students from different disciplines come together to create innovative solutions for real-world problems.",
 		p3: "Participants will be provided with opportunities to learn new skills, network with peers, and showcase their talents and ideas. Whether you are a beginner or a seasoned hacker, you will definitely find something that challenges and inspires you at Hack the Hill II.",
 		frame_alt: "Hack the Hill Podcast",
@@ -292,7 +292,7 @@ export default {
 		a3: "No experience is needed! There will be workshops to teach you everything you need to know to hack at Hack the Hill.",
 
 		q4: "This is my first hackathon, what should I expect?",
-		a4: "36 hours of networking with our sponsors, learning, and collaborating with other hackers. As a first-time hacker, you can participate in our workshops to learn the basics of web development, game development, and hardware development.",
+		a4: "48 hours of networking with our sponsors, learning, and collaborating with other hackers. As a first-time hacker, you can participate in our workshops to learn the basics of web development, game development, and hardware development.",
 
 		q5: "Can I start on the project before the hackathon?",
 		a5: "No, all projects must be started after open ceremonies on the first day of the event. No code should be written for the project prior to the hackathon, however, you can start thinking about potential hackathon ideas once the themes have been released.",
@@ -301,7 +301,7 @@ export default {
 		a6: "We're only happening in-person this year!",
 
 		q7: "What should I bring to an in-person hackathon?",
-		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 36 hours. We will provide snacks and food for the entire event!",
+		a7: "Personal hygiene items (deodorant, toothbrush, etc), sleeping bag, laptop charger, and anything else you might need to stay at the venue for 48 hours. We will provide snacks and food for the entire event!",
 
 		q8: "Who can participate and how do I apply?",
 		a8: "Any university students or recent new grads are encouraged to apply! High-school students in grade 11 or higher are also welcomed. Follow us on social media to stay up-to-date with hackathon updates!",
