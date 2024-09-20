@@ -319,53 +319,56 @@ export default {
 		a12: "Yes, we will be providing travel reimbursements. Details will be provided after you are accepted to the event.",
 	},
 	team: {
-		title: "Meet the Team!",
-		roles: {
-			president: "President",
-			advisor: "Advisor",
-			development: {
-				director: "Development Director",
-				manager: "Development Manager",
-				coordinator: "Development Coordinator",
-			},
-			operations: {
-				director: "Operations Director",
-				manager: "Operations Manager",
-				coordinator: "Operations Coordinator",
-			},
-			marketing: {
-				director: "Marketing Director",
-				manager: "Marketing Manager",
-				coordinator: "Marketing Coordinator",
-			},
-			sponsorship: {
-				director: "Sponsorship Director",
-				manager: "Sponsorship Manager",
-				coordinator: "Sponsorship Coordinator",
-			},
-			design: {
-				director: "Design Director",
-				manager: "Design Manager",
-				coordinator: "Design Coordinator",
-			},
-			community: {
-				director: "Community Director",
-				manager: "Community Manager",
-				coordinator: "Community Coordinator",
-			},
-			competitions: {
-				director: "Competitions Director",
-				manager: "Competitions Manager",
-				coordinator: "Competitions Coordinator",
-			},
-			logistics: {
-				director: "Logistics Director",
-				manager: "Logistics Manager",
-				coordinator: "Logistics Coordinator",
-			},
-			mascot: "Official mascot",
-		},
-	},
+        title: "Meet the Team!",
+        roles: {
+            president: "President",
+            exec_vp: "Executive VP",
+            at_large: "Director At-Large",
+            community: {
+                vp: "VP Community",
+                manager: "Community Manager",
+                coordinator: "Community Coordinator",
+                advisor: "Community Advisor",
+            },
+            design: {
+                vp: "VP Design",
+                manager: "Design Manager",
+                coordinator: "Design Coordinator",
+                advisor: "Design Advisor",
+            },
+            development: {
+                vp: "VP Development",
+                manager: "Development Manager",
+                coordinator: "Development Coordinator",
+                advisor: "Development Advisor",
+            },
+            finance: {
+                vp: "VP Finance",
+                manager: "Finance Manager",
+                coordinator: "Finance Coordinator",
+                advisor: "Finance Advisor",
+            },
+            logistics: {
+                vp: "VP Logistics",
+                manager: "Logistics Manager",
+                coordinator: "Logistics Coordinator",
+                advisor: "Logistics Advisor",
+            },
+            marketing: {
+                vp: "VP Marketing",
+                manager: "Marketing Manager",
+                coordinator: "Marketing Coordinator",
+                advisor: "Marketing Advisor",
+            },
+            partnerships: {
+                vp: "VP Partnerships",
+                manager: "Partnerships Manager",
+                coordinator: "Partnerships Coordinator",
+                advisor: "Partnerships Advisor",
+            },
+            mascot: "Official mascot",
+        },
+    },
 	footer: {
 		title: "Canada's Capital Hackathon",
 		description: "Control the Capital, Command the Cabinet, Build until you Hack the Hill",
