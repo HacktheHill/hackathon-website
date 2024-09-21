@@ -26,7 +26,7 @@ export default {
 	},
 	about: {
 		title: "Bienvenue au Hackathon de la Capitale Canadienne",
-		p1: "Joignez-vous à plus de 700 hackers de partout au pays pour créer quelque chose d'incroyable en seulement 36 heures.",
+		p1: "Joignez-vous à plus de 700 hackers de partout au pays pour créer quelque chose d'incroyable en seulement 48 heures.",
 		p2: "Hack the Hill II est la deuxième édition du Hackathon de la Capitale Canadienne, un événement de trois jours où des étudiants de différentes disciplines se réunissent pour créer des solutions innovantes à des problèmes du monde réel.",
 		p3: "Les participants auront l'occasion d'apprendre de nouvelles compétences, de réseauter avec leurs pairs et de mettre en valeur leurs talents et leurs idées. Que vous soyez débutant ou hacker chevronné, vous trouverez certainement quelque chose qui vous met au défi et vous inspire à Hack the Hill II.",
 		frame_alt: "Podcast de Hack the Hill",
@@ -71,7 +71,7 @@ export default {
 		t3: {
 			name: "Britt Hayman",
 			content:
-				"Hack the Hill était un événement rempli de plaisir et d'innovation ! En tant que partenaire de l'industrie, nous avons apprécié l'opportunité d'interagir avec des étudiants qui savent résoudre des problèmes de manière proactive et concrète et qui demeurent adaptables en termes de compétences. C'était une excellente introduction aux meilleurs talents de demain!",
+				"Hack the Hill était un événement rempli de plaisir et d'innovation! En tant que partenaire de l'industrie, nous avons apprécié l'opportunité d'interagir avec des étudiants qui savent résoudre des problèmes de manière proactive et concrète et qui demeurent adaptables en termes de compétences. C'était une excellente introduction aux meilleurs talents de demain!",
 			role: "Ciena",
 		},
 		t4: {
@@ -90,13 +90,13 @@ export default {
 		t6: {
 			name: "Greg Suignard",
 			content:
-				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs ! J'aimerais remercier tous ceux qui ont mis de l'effort vers l'évenement et particulièrement ceux qui se sont attaqués à notre défi !",
+				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs! J'aimerais remercier tous ceux qui ont mis de l'effort vers l'évenement et particulièrement ceux qui se sont attaqués à notre défi!",
 			role: "Canadian Tire",
 		},
 		t7: {
 			name: "Elmira Khani",
 			content:
-				"Travailler avec Hack the Hill a été une expérience fantastique. L'équipe est tellement organisée, dédiée et professionnelle - ils nous ont aidé à organiser un évenement incroyable, et nous avons été époustouflés par le montant de support reçu. Au plaisir de futures collaborations !",
+				"Travailler avec Hack the Hill a été une expérience fantastique. L'équipe est tellement organisée, dédiée et professionnelle - ils nous ont aidé à organiser un évenement incroyable, et nous avons été époustouflés par le montant de support reçu. Au plaisir de futures collaborations!",
 			role: "Kinaxis",
 		},
 		aria_label_next: "Prochain Témoignage",
@@ -283,91 +283,94 @@ export default {
 	faq: {
 		title: "Foire aux questions",
 
-		q1: "C'est quoi un hackathon ?",
+		q1: "C'est quoi un hackathon?",
 		a1: "Un hackathon est un événement de programmation où les gens se réunissent pour collaborer sur des projets de programmation. Les participants travaillent en équipe pour créer des projets innovants en un temps limité.",
 
-		q2: "Combien ça coûte pour participer ?",
-		a2: "La participation est entièrement gratuite ! Nous couvrons le coût de la nourriture lors de l'événement et fournissons des cadeaux à tous les participants.",
+		q2: "Combien ça coûte pour participer?",
+		a2: "La participation est entièrement gratuite! Nous couvrons le coût de la nourriture lors de l'événement et fournissons des cadeaux à tous les participants.",
 
-		q3: "Dois-je avoir de l'expérience ?",
-		a3: "Aucune expérience n'est nécessaire ! Des ateliers vous enseignerons tout ce que vous devez savoir pour bien réussir à Hack the Hill.",
+		q3: "Dois-je avoir de l'expérience?",
+		a3: "Aucune expérience n'est nécessaire! Des ateliers vous enseignerons tout ce que vous devez savoir pour bien réussir à Hack the Hill.",
 
-		q4: "C'est mon premier hackathon, à quoi dois-je m'attendre ?",
-		a4: "36 heures de réseautage avec nos commanditaires, d'apprentissage et de collaboration. En tant que hacker débutant, vous pouvez participer à nos ateliers pour apprendre les bases du développement web, du développement de jeux, et du développement embarqué.",
+		q4: "C'est mon premier hackathon, à quoi dois-je m'attendre?",
+		a4: "48 heures de réseautage avec nos commanditaires, d'apprentissage et de collaboration. En tant que hacker débutant, vous pouvez participer à nos ateliers pour apprendre les bases du développement web, du développement de jeux, et du développement embarqué.",
 
-		q5: "Puis-je commencer à travailler sur mon projet avant le hackathon ?",
+		q5: "Puis-je commencer à travailler sur mon projet avant le hackathon?",
 		a5: "Non, tous les projets doivent être commencés après les cérémonies d'ouverture. Aucun code ne doit être écrit pour le projet avant le hackathon, cependant, vous pouvez commencer à réfléchir à un projet une fois que les thèmes ont été publiés.",
 
-		q6: "Le hackathon est-il en ligne ou en personne ?",
+		q6: "Le hackathon est-il en ligne ou en personne?",
 		a6: "Le hackathon sera seulement en personne cette année!",
 
-		q7: "Que devrais-je apporter ?",
-		a7: "Articles d'hygiène personnelle (déodorant, brosse à dents, etc.), sac de couchage, chargeur d'ordinateur portable, et tout ce dont vous pourriez avoir besoin pour rester sur place pendant 36 heures. Nous fournirons des collations et de la nourriture pendant toute la durée de l'événement !",
+		q7: "Que devrais-je apporter?",
+		a7: "Articles d'hygiène personnelle (déodorant, brosse à dents, etc.), sac de couchage, chargeur d'ordinateur portable, et tout ce dont vous pourriez avoir besoin pour rester sur place pendant 48 heures. Nous fournirons des collations et de la nourriture pendant toute la durée de l'événement!",
 
-		q8: "Qui peut participer et comment postuler ?",
-		a8: "Tous les étudiants universitaires ou nouveaux diplômés sont encouragés à postuler ! Les étudiants d'écoles secondaires en 11ième année ou plus sont également les bienvenus. Suivez-nous sur les réseaux sociaux pour rester informé des mises à jour du hackathon !",
+		q8: "Qui peut participer et comment postuler?",
+		a8: "Tous les étudiants universitaires ou nouveaux diplômés sont encouragés à postuler! Les étudiants d'écoles secondaires en 11ième année ou plus sont également les bienvenus. Suivez-nous sur les réseaux sociaux pour rester informé des mises à jour du hackathon!",
 
-		q9: "Puis-je travailler en équipe ?",
+		q9: "Puis-je travailler en équipe?",
 		a9: "Oui, chaque équipe peut contenir jusqu'à 4 personnes.",
 
-		q10: "Quels sont les thèmes de Hack the Hill ?",
-		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement matériel/embarqué et développement web !",
+		q10: "Quels sont les thèmes de Hack the Hill?",
+		a10: "Les détails complets sur les thèmes du hackathon ne seront publiés que quelques jours avant le début de l'évenement, mais voici un aperçu : développement matériel/embarqué et développement web!",
 
-		q11: "Des autobus serons-t-ils envoyés à d'autres universités ?",
+		q11: "Des autobus serons-t-ils envoyés à d'autres universités?",
 		a11: "Nous ne sommes pas en mesure d'envoyer des autobus cette année, mais nous offrons des remboursements de voyage aux hackers provenant de l'extérieur de la ville.",
 
-		q12: "Des remboursements de voyage seront-ils accordés ?",
+		q12: "Des remboursements de voyage seront-ils accordés?",
 		a12: "Oui, nous offrons des remboursements de voyage. Les détails sur la façon de demander un remboursement seront publiés après l'acceptation de votre candidature.",
 	},
 	team: {
-		title: "Notre équipe!",
-		president: "Président",
-		roles: {
-			president: "Président",
-			advisor: "Conseiller",
-			development: {
-				director: "Directeur du Développement",
-				manager: "Gestionnaire du Développement",
-				coordinator: "Coordinateur du Développement",
-			},
-			operations: {
-				director: "Directeur des Opérations",
-				manager: "Gestionnaire des Opérations",
-				coordinator: "Coordinateur des Opérations",
-			},
-			marketing: {
-				director: "Directeur du Marketing",
-				manager: "Gestionnaire du Marketing",
-				coordinator: "Coordinateur du Marketing",
-			},
-			sponsorship: {
-				director: "Directeur des Commandites",
-				manager: "Gestionnaire des Commandites",
-				coordinator: "Coordinateur des Commandites",
-			},
-			design: {
-				director: "Directeur du Design",
-				manager: "Gestionnaire du Design",
-				coordinator: "Coordinateur du Design",
-			},
-			community: {
-				director: "Directeur de la Communauté",
-				manager: "Gestionnaire de la Communauté",
-				coordinator: "Coordinateur de la Communauté",
-			},
-			competitions: {
-				director: "Directeur des Compétitions",
-				manager: "Gestionnaire des Compétitions",
-				coordinator: "Coordinateur des Compétitions",
-			},
-			logistics: {
-				director: "Directeur de la Logistique",
-				manager: "Gestionnaire de la Logistique",
-				coordinator: "Coordinateur de la Logistique",
-			},
-			mascot: "Mascotte Officielle",
-		},
-	},
+        title: "Notre équipe!",
+        president: "Président",
+        roles: {
+            president: "Président",
+            exec_vp: "VP Exécutif",
+            at_large: "Directeur Général",
+            community: {
+                vp: "Directeur de la Communauté",
+                manager: "Gestionnaire de la Communauté",
+                coordinator: "Coordinateur de la Communauté",
+                advisor: "Conseiller de la Communauté",
+            },
+            design: {
+                vp: "Directeur du Design",
+                manager: "Gestionnaire du Design",
+                coordinator: "Coordinateur du Design",
+                advisor: "Conseiller du Design",
+            },
+            development: {
+                vp: "Directeur du Développement",
+                manager: "Gestionnaire du Développement",
+                coordinator: "Coordinateur du Développement",
+                advisor: "Conseiller du Développement",
+            },
+            finance: {
+                vp: "VP des Finances",
+                manager: "Gestionnaire des Financier",
+                coordinator: "Coordinateur des Financier",
+                advisor: "Conseiller des Financier",
+            },
+            logistics: {
+                vp: "Directeur de la Logistique",
+                manager: "Gestionnaire de la Logistique",
+                coordinator: "Coordinateur de la Logistique",
+                advisor: "Conseiller de la Logistique",
+            },
+            marketing: {
+                vp: "Directeur du Marketing",
+                manager: "Gestionnaire du Marketing",
+                coordinator: "Coordinateur du Marketing",
+                advisor: "Conseiller du Marketing",
+            },
+            partnerships: {
+                vp: "Directeur des Partenariats",
+                manager: "Gestionnaire des Partenariats",
+                coordinator: "Coordinateur des Partenariats",
+                advisor: "Conseiller des Partenariats",
+            },
+            mascot: "Mascotte Officielle",
+        },
+    },
 	footer: {
 		title: "Le Hackathon de la Capitale Canadienne",
 		description: "Contrôle la Capitale, Commande le Cabinet, Construit le Future",
