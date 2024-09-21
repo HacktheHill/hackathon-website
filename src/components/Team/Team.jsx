@@ -221,7 +221,7 @@ function Team() {
         {
             name: "Ming Chen",
             role: t("team.roles.logistics.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Ming.webp",
         },  
         {
             name: "Thomas Nolasque",
@@ -331,7 +331,7 @@ function Team() {
         {
             name: "Zahra Suleymanova",
             role: t("team.roles.partnerships.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Zahra.webp",
         },
         {
             name: "Bea.var",
