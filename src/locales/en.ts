@@ -366,7 +366,7 @@ export default {
                 coordinator: "Partnerships Coordinator",
                 advisor: "Partnerships Advisor",
             },
-            mascot: "Official mascot",
+            mascot: "Official Mascot",
         },
     },
 	footer: {

@@ -269,6 +269,11 @@ function Team() {
             image: "/headshots/Raiyan.webp",
         },
         {
+            name: "Stefan Todorovic",
+            role: t("team.roles.marketing.advisor"),
+            image: "/headshots/Stefan.webp",
+        },
+        {
             name: "Steven Li",
             role: t("team.roles.marketing.advisor"),
             image: "/headshots/Steven.webp",
