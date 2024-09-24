@@ -2,31 +2,27 @@ import React, { useEffect } from "react";
 import { t } from "../../i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
-import Blackberry from "/Logos/Blackberry.svg";
+import Ross from "/Logos/Ross.svg";
+import Ciena from "/Logos/Ciena.svg";
 import CSE from "/Logos/CSE.svg";
-import CanadianTire from "/Logos/CanadianTire.svg";
+import PG from "/Logos/P&G.svg";
+import LiquidIV from "/Logos/LiquidIV.png";
+import Redbull from "/Logos/Redbull.svg";
+import Fantuan from "/Logos/Fantuan.jpg";
+
 import CCSS from "/Logos/ccss.png";
 import Carleton from "/Logos/Carleton.svg";
 import CarletonIEEE from "/Logos/CarletonIEEE.svg";
-import Ciena from "/Logos/Ciena.svg";
-import DigitalOcean from "/Logos/DigitalOcean.svg";
 import uOCyberSec from "/Logos/uOCyberSec.svg";
 import CSSA from "/Logos/CSSA.svg";
 import uOttawaIEEE from "/Logos/uOttawaIEEE.svg";
 import WIE from "/Logos/WIE.svg";
 import EEF from "/Logos/EEF.svg";
-import Google from "/Logos/Google.svg";
 import lonehaven from "/Logos/Lonehaven.svg";
 import telferBTA from "/Logos/bta-logo.svg";
 import SCESoc from "/Logos/SCESoc.svg";
-import Vercel from "/Logos/Vercel.svg";
-import balsamiq from "/Logos/balsamiq.svg";
-import echo3d from "/Logos/echo3d.webp";
 import uOttawa from "/Logos/uOttawa.svg";
 import uOGDC from "/Logos/uOttawaGDC.svg";
-import voiceflow from "/Logos/voiceflow.svg";
-import StickerMule from "/Logos/StickerMule.svg";
-import OpenProject from "/Logos/OpenProject.svg";
 import maple1 from "/SVGs/Sponsors/mapleleaf-1.svg";
 import maple2 from "/SVGs/Sponsors/mapleleaf-2.svg";
 import uOEngiqueers from "/Logos/uOEngiqueers.webp";
@@ -41,23 +37,18 @@ function Sponsors() {
 	const data = {
 		sponsors: {
 			large: [
+				{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
 				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
-				{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
-			],
-			medium: [
-				{ href: "https://blackberry.com/", src: Blackberry, alt: "Blackberry" },
-				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
 				{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
 			],
+			medium: [
+				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
+				{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
+			],
 			small: [
-				{ href: "https://about.google", src: Google, alt: "Google" },
-				{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
-				{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
-				{ href: "https://www.echo3d.com/", src: echo3d, alt: "echo3D" },
-				{ href: "https://balsamiq.com/", src: balsamiq, alt: "balsamiq" },
-				{ href: "https://www.voiceflow.com/", src: voiceflow, alt: "Voiceflow" },
-				{ href: "https://mule.to/p5ni", src: StickerMule, alt: "StickerMule" },
-				{ href: "https://www.openproject.org/", src: OpenProject, alt: "OpenProject" },
+				{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
+				{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
+				{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
 			],
 		},
 		collaborators: [
