@@ -3,6 +3,7 @@ import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Stats from "../Stats/Stats";
 import Testimonials from "../Testimonials/Testimonials";
+import ProjectGallery from "../ProjectGallery/ProjectGallery";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
@@ -20,6 +21,7 @@ function App() {
 				<About />
 				<Stats />
 				<Testimonials />
+				<ProjectGallery/>
 				<Schedule />
 				<Sponsors />
 				<FAQ />
