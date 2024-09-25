@@ -51,7 +51,7 @@ function Team() {
         {
             name: "Yazan Khasawneh",
             role: t("team.roles.at_large"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Yazan.webp",
         },
         {
             name: "Justin Wang",
@@ -104,11 +104,6 @@ function Team() {
             image: "/headshots/Humayrah.webp",
         },
         {
-            name: "Jo Gurvantamir",
-            role: t("team.roles.design.coordinator"),
-            image: "/headshots/Jo.webp",
-        },
-        {
             name: "Jordan Lau",
             role: t("team.roles.design.coordinator"),
             image: "/headshots/Template.webp",
@@ -117,6 +112,11 @@ function Team() {
             name: "Rafael Arif",
             role: t("team.roles.design.coordinator"),
             image: "/headshots/Rafael.webp",
+        },
+        {
+            name: "Jo Gurvantamir",
+            role: t("team.roles.design.advisor"),
+            image: "/headshots/Jo.webp",
         },
         {
             name: "Sacha Arseneault",
@@ -132,11 +132,6 @@ function Team() {
             name: "Martin Patrouchev",
             role: t("team.roles.development.coordinator"),
             image: "/headshots/Martin.webp",
-        },
-        {
-            name: "Mattia Vergnat",
-            role: t("team.roles.development.coordinator"),
-            image: "/headshots/Mattia.webp",
         },
         {
             name: "Osa Ikhinmwin",
@@ -176,7 +171,7 @@ function Team() {
         {
             name: "Qasim Sadeed",
             role: t("team.roles.finance.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Qasim.webp",
         },
         {
             name: "Zach Fagnou",
@@ -189,19 +184,19 @@ function Team() {
             image: "/headshots/Saima.webp",
         },
         {
+            name: "Thinula de Silva",
+            role: t("team.roles.logistics.vp"),
+            image: "/headshots/Thinula.webp",
+        },
+        {
             name: "Tahmeed Khan",
             role: t("team.roles.logistics.manager"),
             image: "/headshots/Tahmeed.webp",
         },
         {
-            name: "Thinula de Silva",
-            role: t("team.roles.logistics.manager"),
-            image: "/headshots/Thinula.webp",
-        },
-        {
             name: "Divya Vithiyatharan",
             role: t("team.roles.logistics.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Divya.webp",
         },
         {
             name: "Jaden Fielding",
@@ -311,7 +306,7 @@ function Team() {
         {
             name: "Kemal Kilic",
             role: t("team.roles.partnerships.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Kemal.webp",
         },
         {
             name: "Ouyi Xu",
