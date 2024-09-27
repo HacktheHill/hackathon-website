@@ -106,7 +106,7 @@ function Team() {
         {
             name: "Jordan Lau",
             role: t("team.roles.design.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Jordan.webp",
         },
         {
             name: "Rafael Arif",
@@ -141,7 +141,7 @@ function Team() {
         {
             name: "Patrick Igiraneza",
             role: t("team.roles.development.coordinator"),
-            image: "/headshots/Template.webp",
+            image: "/headshots/Patrick.webp",
         },
         {
             name: "Emilien Breton",
