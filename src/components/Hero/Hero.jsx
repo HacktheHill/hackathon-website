@@ -12,8 +12,8 @@ import LocationPin from "/SVGs/location-pin.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EVENT_START_DATE = new Date("2024-09-27T00:00:00-00:00");
-const HACKING_END_DATE = new Date("2024-09-29T00:00:00-00:00");
+const EVENT_START_DATE = new Date("2024-09-27T13:00:00-00:00");
+const HACKING_END_DATE = new Date("2024-09-29T15:00:00-00:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
