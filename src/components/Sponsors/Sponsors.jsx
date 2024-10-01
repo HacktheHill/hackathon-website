@@ -8,7 +8,7 @@ import CSE from "/Logos/CSE.svg";
 import PG from "/Logos/P&G.svg";
 import LiquidIV from "/Logos/LiquidIV.png";
 import Redbull from "/Logos/Redbull.svg";
-import Fantuan from "/Logos/Fantuan.jpg";
+import Fantuan from "/Logos/Fantuan.png";
 
 import CCSS from "/Logos/ccss.png";
 import Carleton from "/Logos/Carleton.svg";
