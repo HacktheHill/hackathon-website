@@ -10,8 +10,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function About() {
-	const podcastLink = "https://www.youtube.com/embed/QdK9NHXWV7A?si=GTcer8Al3GI8RLiY";
-	const thumbnailLink = "http://i3.ytimg.com/vi/QdK9NHXWV7A/hqdefault.jpg";
+	const videoLink = "https://www.youtube.com/embed/yDNJC2-lUWE?si=VAD1Na8xGVwE9i5W";
+	const thumbnailLink = "https://i.ytimg.com/vi/yDNJC2-lUWE/hqdefault.jpg";
 
 	useEffect(() => {
 		AOS.init({});
@@ -36,9 +36,9 @@ function About() {
 			<div className={styles.frame} data-aos="fade-left" data-aos-duration="800">
 				<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 				<iframe
-					src={podcastLink}
+					src={videoLink}
 					title={t("about.title")}
-					srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:3.5rem/1.5 sans-serif;color:#fff3b6;text-shadow:0 0 0.5em black}</style><a href=${podcastLink}><img src=${thumbnailLink} alt=${t(
+					srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:3.5rem/1.5 sans-serif;color:#fff3b6;text-shadow:0 0 0.5em black}</style><a href=${videoLink}><img src=${thumbnailLink} alt=${t(
 						"about.frame_alt",
 					)}><span>▶</span></a>`}
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
