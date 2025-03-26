@@ -48,10 +48,6 @@ export default {
 	winners: {
 		title: "Winners",
 		subtitle: "Celebrating the brilliant minds and projects that made Hack the Hill II an unforgettable journey!",
-		categories: {
-			general_challenge: "General Challenge"
-		},
-		no_data: "No winners data available for this category.",
 		general_challenge: [
 			{ place: "1st", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{
@@ -106,7 +102,7 @@ export default {
 		},
 		mini_challenges: {
 			"Best UI/UX Implementation": [
-				{ place: "1st", project: "CapyCare", team: ["Chi McIsaac", "Karam"] },
+				{ place: "1st", project: "Capycare", team: ["Chi McIsaac", "Karam"] },
 				{ place: "2nd", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
 			],
 			"Best Use of AI": [

@@ -49,10 +49,6 @@ export default {
 		title: "Gagnants",
 		subtitle:
 			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II un voyage inoubliable !",
-		categories: {
-			general_challenge: "Défi Général",
-		},
-		no_data: "Aucune donnée sur les gagnants disponible pour cette catégorie.",
 		general_challenge: [
 			{ place: "1re", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{
@@ -67,7 +63,7 @@ export default {
 			},
 		],
 		sponsor_challenges: {
-			"Défi Ciena": [
+			"Defi Ciena": [
 				{
 					place: "1re",
 					project: "Mound",
@@ -84,7 +80,7 @@ export default {
 					team: ["Miller Ding", "Antoine Lavigne", "Aditya", "Matias S"],
 				},
 			],
-			"Défi Ross": [
+			"Defi Ross": [
 				{
 					place: "1re",
 					project: "Frame Out",
@@ -107,7 +103,7 @@ export default {
 		},
 		mini_challenges: {
 			"Meilleure implementation UI/UX": [
-				{ place: "1re", project: "CapyCare", team: ["Chi McIsaac", "Karam"] },
+				{ place: "1re", project: "Capycare", team: ["Chi McIsaac", "Karam"] },
 				{ place: "2e", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
 			],
 			"Meilleure utilisation de l'IA": [
