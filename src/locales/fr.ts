@@ -2,6 +2,7 @@ export default {
 	navbar: {
 		links: {
 			about: "À Propos",
+			winners: "Gagnants",
 			sponsors: "Commanditaires",
 			hacker: "La Série du Hacker",
 			collaborators: "Collaborateurs",
@@ -43,6 +44,129 @@ export default {
 		p4tag: "Commanditaires",
 		p5: "$60k+",
 		p5tag: "Financement Levé",
+	},
+	winners: {
+		title: "Gagnants",
+		subtitle:
+			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II un voyage inoubliable !",
+		general_challenge: [
+			{ place: "1re", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
+			{
+				place: "2e",
+				project: "Duo Move",
+				team: ["Carcidev Carciente", "Vinisha Manek", "Keshan Kathiripilay", "Mahutt"],
+			},
+			{
+				place: "3e",
+				project: "Timetable Sweetie",
+				team: ["Jason Shao", "Kaushik Tumu", "Jeff Lu", "Anas Abushaikha"],
+			},
+		],
+		sponsor_challenges: {
+			"Defi Ciena": [
+				{
+					place: "1re",
+					project: "Mound",
+					team: ["Robert Zuchniak", "Raef Sarofiem", "Matthew Polak", "Vasil Topalovik"],
+				},
+				{
+					place: "2e",
+					project: "PeerPressure",
+					team: ["James Liang", "Callum Curtis", "Krins Vaghasia", "David Pietrocola"],
+				},
+				{
+					place: "3e",
+					project: "Distributed Encrypted Peer-to-Peer File Management Platform",
+					team: ["Miller Ding", "Antoine Lavigne", "Aditya", "Matias S"],
+				},
+			],
+			"Defi Ross": [
+				{
+					place: "1re",
+					project: "Frame Out",
+					team: [
+						"Neel Patel",
+						"Nathaniel Lays",
+						"Darrell Nyakaana",
+						"Samuel Marchetti",
+						"Lana Othman",
+						"Integer-Conversion-Error Kaya",
+					],
+				},
+				{
+					place: "2e",
+					project: "Bouncing ROSS",
+					team: ["Kyle Mendes", "Ines Mansouri", "Mike Katsnelson", "Vilmos Feher", "Paul Chukwu"],
+				},
+				{ place: "3e", project: "Ping Pong", team: ["Sami Tahi", "Anas Bourfia"] },
+			],
+		},
+		mini_challenges: {
+			"Meilleure implementation UI/UX": [
+				{ place: "1re", project: "Capycare", team: ["Chi McIsaac", "Karam"] },
+				{ place: "2e", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
+			],
+			"Meilleure utilisation de l'IA": [
+				{
+					place: "1re",
+					project: "BrainUp",
+					team: ["Edmund Ye", "Karanveer Panesar", "Hasin Zaman", "Jawad Mohammed"],
+				},
+				{
+					place: "2e",
+					project: "Grype",
+					team: ["Joey Issa", "Twoadave Gayowsky", "Batleram Scaffindi", "Jacob T"],
+				},
+			],
+			"Meilleure collaboration uOttawa x Carleton": [
+				{
+					place: "1re",
+					project: "The Heart Stopper",
+					team: ["Bradley Nguyen", "Sabateesh Sivakumar", "Daniel B. Solomon", "Shane S"],
+				},
+				{
+					place: "2e",
+					project: "InsuWell",
+					team: ["Imane A.", "Aisha Jama", "Maryam Belkebir", "Saja Elkurtehi"],
+				},
+			],
+			"Meilleure utilisation de la technologie en nuage": [
+				{ place: "1re", project: "snhack-rover", team: ["Mumtahin Farabi", "Rohan Sreelesh", "Hiba Tantawi"] },
+				{
+					place: "2e",
+					project: "JustVent",
+					team: ["Noah do Rego", "Nodshley Marcelin", "Colby Todd", "Andrew Pham"],
+				},
+			],
+			"Meilleur projet de materiel": [
+				{ place: "1re", project: "AnyPen", team: ["Emilee Chen", "Ethan Sue", "Fahmi O", "Ivana Du"] },
+				{
+					place: "2e",
+					project: "RelaxED AI",
+					team: ["Aneesh Ereddy", "Shawn How", "Marc Vidal", "Benjamin Gavieres"],
+				},
+			],
+			"Défi Geoguessr": [
+				{
+					place: "1re",
+					project: "Équipe 1",
+					team: ["Alex Smith", "Jamie Wong", "Chris Johnson", "Taylor Park"],
+				},
+				{
+					place: "2e",
+					project: "Équipe 2",
+					team: ["Jordan Lee", "Casey Zhang", "Morgan Taylor", "Riley Chen"],
+				},
+				{ place: "3e", project: "Équipe 3", team: ["Sam Patel", "Jesse Kim", "Avery Garcia", "Quinn Murphy"] },
+			],
+			"Défi Chasse au Trésor": [
+				{
+					place: "1re",
+					project: "Chasse au Trésor",
+					team: ["Robin Blake", "Cameron Lane", "Drew Rivera", "Skyler Reed", "Jordan Ellis"],
+				},
+			],
+		},
 	},
 	sponsors: {
 		title: "Commanditaires",

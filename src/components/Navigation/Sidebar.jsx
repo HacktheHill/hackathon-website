@@ -13,6 +13,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 			text: t("navbar.links.about"),
 		},
 		{
+			to: "winners",
+			offset: -120,
+			text: t("navbar.links.winners"),
+		},
+		{
 			to: "testimonials",
 			offset: -120,
 			text: t("navbar.links.testimonials"),

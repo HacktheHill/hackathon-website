@@ -1,0 +1,445 @@
+.winners {
+	color: var(--light-primary-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	isolation: isolate;
+	padding: 2rem 0;
+	width: 100%;
+	min-height: auto;
+	font-family: Rubik;
+}
+
+.left-leaves,
+.right-leaves {
+	position: absolute;
+	height: 100%;
+	z-index: -1;
+	transition: opacity 0.3s ease;
+}
+
+.left-leaves {
+	left: 0;
+}
+
+.right-leaves {
+	right: 0;
+}
+
+.winners h1 {
+	text-align: center;
+	margin: 2rem 0 1rem;
+	transition: transform 0.3s ease;
+	font-size: 2.5rem;
+	font-family: Rubik;
+}
+
+.winners h1:not(.titleContainer h1):hover {
+	transform: scale(1.05);
+}
+
+.winners h2 {
+	font-family: Rubik;
+	font-weight: 400;
+	text-align: center;
+	width: 75%;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	color: var(--light-primary-color);
+}
+
+.loadingContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px;
+	gap: 1rem;
+}
+
+.loadingSpinner {
+	width: 50px;
+	height: 50px;
+	border: 3px solid var(--light-secondary-color);
+	border-top: 3px solid transparent;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+.loadingText {
+	color: var(--light-primary-color);
+	font-family: Rubik;
+	font-size: 1.25rem;
+	text-align: center;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.error {
+	color: var(--light-primary-color);
+	font-family: Rubik;
+	font-size: 1.25rem;
+	text-align: center;
+	margin: 2rem 0;
+	padding: 1rem;
+	border: 2px solid var(--light-secondary-color);
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.noWinners {
+	color: var(--light-primary-color);
+	font-family: Rubik;
+	font-size: 1.25rem;
+	text-align: center;
+	margin: 2rem 0;
+	padding: 1rem;
+}
+
+.categories {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	width: 90%;
+	max-width: 1200px;
+	margin: 2rem 0;
+	transition: all 0.3s ease;
+}
+
+.categoryButton {
+	background-color: transparent;
+	border: 2px solid var(--light-secondary-color);
+	border-radius: 2rem;
+	padding: 0.75rem 1.5rem;
+	font-size: 1rem;
+	font-family: Rubik;
+	color: var(--light-primary-color);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.categoryButton::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	transition: 0.5s;
+}
+
+.categoryButton:hover::before {
+	left: 100%;
+}
+
+.categoryButton:hover {
+	background-color: var(--light-secondary-color);
+	color: var(--dark-secondary-color);
+	transform: translateY(-2px);
+}
+
+.categoryButton.active {
+	background-color: var(--light-secondary-color);
+	color: var(--dark-secondary-color);
+	transform: translateY(-2px);
+}
+
+.winnersSection {
+	width: 90%;
+	max-width: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2rem;
+	min-height: 400px;
+	transition: all 0.3s ease;
+}
+
+.categoryTitle {
+	font-size: 2rem;
+	color: var(--light-tertiary-color);
+	margin-bottom: 2rem;
+	text-align: center;
+	transition: transform 0.3s ease;
+	font-family: Rubik;
+}
+
+.categoryTitle:hover {
+	transform: scale(1.05);
+}
+
+.winnersList {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 2rem;
+	width: 100%;
+	transition: all 0.3s ease;
+	font-family: Rubik;
+}
+
+.winnerCard {
+	background: linear-gradient(145deg, transparent, rgba(0, 0, 0, 0.1));
+	border: 2px solid var(--light-tertiary-color);
+	border-radius: 1rem;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.winnerCard::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: 0.5s;
+}
+
+.winnerCard:hover::before {
+	left: 100%;
+}
+
+.winnerCard:hover {
+	transform: translateY(-0.5rem) scale(1.02);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.placement {
+	background-color: var(--light-tertiary-color);
+	color: var(--dark-secondary-color);
+	font-family: Rubik;
+	font-weight: 700;
+	font-size: 1.5rem;
+	padding: 0.5rem 1.5rem;
+	border-radius: 2rem;
+	margin-bottom: 1.5rem;
+	transition: transform 0.3s ease;
+}
+
+.placement:hover {
+	transform: scale(1.1);
+}
+
+.projectName {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 1rem 0;
+	color: var(--light-primary-color);
+	text-align: center;
+	font-family: Rubik;
+}
+
+.projectName:hover {
+	color: var(--light-tertiary-color);
+}
+
+.teamMembers {
+	font-size: 1rem;
+	color: var(--light-primary-color);
+	text-align: center;
+	font-family: Rubik;
+}
+
+.teamMembers:hover {
+	color: var(--light-primary-color);
+}
+
+.subtitle {
+	font-family: Rubik;
+	font-size: 1.5rem;
+	color: var(--light-primary-color);
+	text-align: center;
+	width: 75%;
+	margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.winners h2 {
+		width: 90%;
+	}
+
+	.left-leaves,
+	.right-leaves {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.winnersList {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.winners h2 {
+		font-size: 1.25rem;
+	}
+
+	.categoryButton {
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+	}
+
+	.categoryTitle {
+		font-size: 1.5rem;
+	}
+
+	.projectName {
+		font-size: 1.5rem;
+	}
+
+	.teamMembers {
+		font-size: 0.875rem;
+	}
+}
+
+.titleContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 2rem 0 1rem;
+}
+
+.laurel-left,
+.laurel-right {
+	height: 100px; /* Adjust based on your image size */
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.laurel-left {
+	right: 100%; /* Position to the left of the title */
+	margin-right: 10px;
+}
+
+.laurel-right {
+	left: 100%; /* Position to the right of the title */
+	margin-left: 8.75px;
+}
+
+.titleContainer h1 {
+	font-family: Rubik;
+	text-align: center;
+	margin: 0 0 0 6px;
+	transition: transform 0.3s ease;
+	font-size: 2.8rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--light-primary-color);
+}
+
+.titleContainer h1:hover {
+	transform: scale(1.05);
+}
+
+.teamPhotoContainer {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	z-index: 5;
+	border-radius: 0.9rem;
+	backdrop-filter: blur(3px);
+}
+
+.winnerCard:hover .teamPhotoContainer {
+	opacity: 1;
+}
+
+.teamPhoto {
+	max-width: 90%;
+	max-height: 85%;
+	object-fit: contain;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+	filter: blur(2px) brightness(0.9);
+	transition: all 0.5s ease;
+}
+
+.winnerCard:hover .teamPhoto {
+	filter: blur(0.5px) brightness(1);
+}
+
+/* Specific container styling for Geoguessr and Scavenger Hunt photos */
+.specialPhotoContainer {
+	padding: 0 !important;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.85);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Remove border radius from special container to allow photos to fill completely */
+.specialPhotoContainer img {
+	border-radius: 0.85rem;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Special styling for Team 1, 2, 3 photos - fit to fill the frame */
+[alt^="Team "][alt$=" photo"] {
+	object-position: center;
+	box-shadow: none;
+	filter: blur(1px) brightness(0.95);
+}
+
+/* Special styling for Scavenger Hunt photo - fit to fill the frame */
+[alt="Scavenger Hunt team photo"] {
+	object-position: center top;
+	box-shadow: none;
+	filter: blur(1px) brightness(0.95);
+}
+
+.winnerCard:hover [alt^="Team "][alt$=" photo"],
+.winnerCard:hover [alt="Scavenger Hunt team photo"] {
+	filter: none;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.winnerCard .placement,
+.winnerCard .projectName,
+.winnerCard .teamMembers {
+	position: relative;
+	z-index: 2;
+}
+
+@media (hover: none) {
+	.teamPhotoContainer {
+		display: none;
+	}
+}
+
+.winnerCard:hover {
+	transform: translateY(-0.5rem) scale(1.02);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}

@@ -2,6 +2,7 @@ import Navigation from "../Navigation/Navigation";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Stats from "../Stats/Stats";
+import Winners from "../Winners/Winners";
 import Testimonials from "../Testimonials/Testimonials";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
@@ -19,6 +20,7 @@ function App() {
 			<div className={styles.wrapper}>
 				<About />
 				<Stats />
+				<Winners />
 				<Testimonials />
 				<Schedule />
 				<Sponsors />
