@@ -28,7 +28,7 @@ const teamPhotos = {
 	BrainUp: "/teams_photos/BrainUp_1st.webp",
 	Grype: "/teams_photos/Grype_2nd.webp",
 	"The Heart Stopper": "/teams_photos/The_Heart_Stopper_1st.webp",
-	InsuWell: "/teams_photos/InsuWell_2nd.webp",
+	InsuWell: "/teams_photos/insuWell_2nd.webp",
 	"snhack-rover": "/teams_photos/snhack-rover_1st.webp",
 	AnyPen: "/teams_photos/AnyPen_1st.webp",
 	"RelaxED AI": "/teams_photos/RelaxED_AI_2nd.webp",
