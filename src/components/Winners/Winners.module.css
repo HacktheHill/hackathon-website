@@ -36,10 +36,6 @@
 	font-family: Rubik;
 }
 
-.winners h1:not(.titleContainer h1):hover {
-	transform: scale(1.05);
-}
-
 .winners h2 {
 	font-family: Rubik;
 	font-weight: 400;
@@ -110,51 +106,32 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 1rem;
-	width: 90%;
-	max-width: 1200px;
-	margin: 2rem 0;
-	transition: all 0.3s ease;
+	margin: 1rem 0;
 }
 
-.categoryButton {
-	background-color: transparent;
-	border: 2px solid var(--light-secondary-color);
+.winners .categories .categoryButton {
+	background: linear-gradient(180deg, var(--light-tertiary-color) 0%, var(--light-primary-color) 100%);
+	border: none;
 	border-radius: 2rem;
+	width: fit-content;
+	transition: all 0.3s ease-in-out;
+	color: var(--dark-primary-color);
+	font-size: 1.25rem;
+	white-space: nowrap;
 	padding: 0.75rem 1.5rem;
-	font-size: 1rem;
-	font-family: Rubik;
-	color: var(--light-primary-color);
 	cursor: pointer;
-	transition: all 0.3s ease;
-	position: relative;
-	overflow: hidden;
+	font-family: Coolvetica;
+	opacity: 0.8;
 }
 
-.categoryButton::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-	transition: 0.5s;
+.winners .categories .categoryButton:hover {
+	transform: scale(1.05);
+	opacity: 1;
 }
 
-.categoryButton:hover::before {
-	left: 100%;
-}
-
-.categoryButton:hover {
-	background-color: var(--light-secondary-color);
-	color: var(--dark-secondary-color);
-	transform: translateY(-2px);
-}
-
-.categoryButton.active {
-	background-color: var(--light-secondary-color);
-	color: var(--dark-secondary-color);
-	transform: translateY(-2px);
+.winners .categories .categoryButton.active {
+	opacity: 1;
+	transform: scale(1.05);
 }
 
 .winnersSection {
@@ -168,7 +145,7 @@
 	transition: all 0.3s ease;
 }
 
-.categoryTitle {
+.winners .categoryTitle {
 	font-size: 2rem;
 	color: var(--light-tertiary-color);
 	margin-bottom: 2rem;
@@ -177,17 +154,29 @@
 	font-family: Rubik;
 }
 
-.categoryTitle:hover {
-	transform: scale(1.05);
-}
-
 .winnersList {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-auto-rows: 1fr;
 	gap: 2rem;
 	width: 100%;
 	transition: all 0.3s ease;
 	font-family: Rubik;
+}
+
+.winnerCardLink {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	height: 100%;
+}
+
+.winnerCardContainer {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	height: 100%;
 }
 
 .winnerCard {
@@ -203,21 +192,7 @@
 	transition: all 0.3s ease;
 	position: relative;
 	overflow: hidden;
-}
-
-.winnerCard::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
 	height: 100%;
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-	transition: 0.5s;
-}
-
-.winnerCard:hover::before {
-	left: 100%;
 }
 
 .winnerCard:hover {
@@ -225,7 +200,7 @@
 	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.placement {
+.winners .placement {
 	background-color: var(--light-tertiary-color);
 	color: var(--dark-secondary-color);
 	font-family: Rubik;
@@ -237,11 +212,11 @@
 	transition: transform 0.3s ease;
 }
 
-.placement:hover {
+.winners .placement:hover {
 	transform: scale(1.1);
 }
 
-.projectName {
+.winners .projectName {
 	font-size: 1.5rem;
 	font-weight: 600;
 	margin: 1rem 0;
@@ -250,19 +225,15 @@
 	font-family: Rubik;
 }
 
-.projectName:hover {
+.winners .projectName:hover {
 	color: var(--light-tertiary-color);
 }
 
-.teamMembers {
+.winners .teamMembers {
 	font-size: 1rem;
 	color: var(--light-primary-color);
 	text-align: center;
 	font-family: Rubik;
-}
-
-.teamMembers:hover {
-	color: var(--light-primary-color);
 }
 
 .subtitle {
@@ -289,6 +260,11 @@
 	.winnersList {
 		grid-template-columns: 1fr;
 	}
+
+	.winners .categories .categoryButton {
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+	}
 }
 
 @media screen and (max-width: 510px) {
@@ -296,20 +272,20 @@
 		font-size: 1.25rem;
 	}
 
-	.categoryButton {
+	.winners .categories .categoryButton {
 		padding: 0.5rem 1rem;
 		font-size: 0.875rem;
 	}
 
-	.categoryTitle {
+	.winners .categoryTitle {
 		font-size: 1.5rem;
 	}
 
-	.projectName {
+	.winners .projectName {
 		font-size: 1.5rem;
 	}
 
-	.teamMembers {
+	.winners .teamMembers {
 		font-size: 0.875rem;
 	}
 }
@@ -324,7 +300,7 @@
 
 .laurel-left,
 .laurel-right {
-	height: 100px; /* Adjust based on your image size */
+	height: 100px;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -337,7 +313,7 @@
 
 .laurel-right {
 	left: 100%; /* Position to the right of the title */
-	margin-left: 8.75px;
+	margin-left: 10px;
 }
 
 .titleContainer h1 {
@@ -350,10 +326,6 @@
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: var(--light-primary-color);
-}
-
-.titleContainer h1:hover {
-	transform: scale(1.05);
 }
 
 .teamPhotoContainer {
@@ -390,7 +362,7 @@
 
 /* Specific container styling for Geoguessr and Scavenger Hunt photos */
 .specialPhotoContainer {
-	padding: 0 !important;
+	padding: 0;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.85);
 	display: flex;
@@ -437,9 +409,4 @@
 	.teamPhotoContainer {
 		display: none;
 	}
-}
-
-.winnerCard:hover {
-	transform: translateY(-0.5rem) scale(1.02);
-	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
