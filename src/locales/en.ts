@@ -51,6 +51,7 @@ export default {
 		categories: {
 			general_challenge: "General Challenge"
 		},
+		no_data: "No winners data available for this category.",
 		general_challenge: [
 			{ place: "1st", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{
