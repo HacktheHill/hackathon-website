@@ -49,8 +49,7 @@ const projectLinks = {
 	Mound: "https://devpost.com/software/mound",
 	"Distributed Encrypted Peer-to-Peer File Management Platform":
 		"https://devpost.com/software/Distributed-Encrypted-Peer-to-Peer-File-Management-Platform",
-	"Distributed Encrypted":
-		"https://devpost.com/software/Distributed-Encrypted-Peer-to-Peer-File-Management-Platform", 
+	"Distributed Encrypted": "https://devpost.com/software/Distributed-Encrypted-Peer-to-Peer-File-Management-Platform",
 	"Frame Out": "https://devpost.com/software/frame-out",
 	"Ping Pong": "https://devpost.com/software/interactive-pong",
 	CapyCare: "https://devpost.com/software/capycare-odeah6",
@@ -156,49 +155,49 @@ function Winners() {
 
 					// For Geoguessr and Scavenger Hunt cards, don't create a link
 					const cardContent = (
-							<div
-								className={styles.winnerCard}
-								data-aos="fade-up"
-								data-aos-duration="800"
-								data-aos-delay={100 * index}
-							>
-								<div className={styles.placement}>{winner.place}</div>
-								<h3 className={styles.projectName}>{winner.project}</h3>
-								<div className={styles.teamMembers}>
-									{winner.team &&
-										winner.team.map((member, i) => (
-											<span key={i}>
-												{member}
-												{i < winner.team.length - 1 ? ", " : ""}
-											</span>
-										))}
-								</div>
-								{teamPhotos[winner.project] && (
-									<div
-										className={`${styles.teamPhotoContainer} ${
-										isSpecialProject ? styles.specialPhotoContainer : ""
-										}`}
-									>
-										<img
-											src={teamPhotos[winner.project]}
-											alt={
-												winner.project === "Team 1" || winner.project === "Équipe 1"
-													? "Team 1 photo"
-													: winner.project === "Team 2" || winner.project === "Équipe 2"
-													? "Team 2 photo"
-													: winner.project === "Team 3" || winner.project === "Équipe 3"
-													? "Team 3 photo"
-													: winner.project === "Scavenger Hunt" ||
-													  winner.project === "Chasse au Trésor"
-													? "Scavenger Hunt team photo"
-													: `${winner.project} team`
-											}
-											className={styles.teamPhoto}
-											loading="lazy"
-										/>
-									</div>
-								)}
+						<div
+							className={styles.winnerCard}
+							data-aos="fade-up"
+							data-aos-duration="800"
+							data-aos-delay={100 * index}
+						>
+							<div className={styles.placement}>{winner.place}</div>
+							<h3 className={styles.projectName}>{winner.project}</h3>
+							<div className={styles.teamMembers}>
+								{winner.team &&
+									winner.team.map((member, i) => (
+										<span key={i}>
+											{member}
+											{i < winner.team.length - 1 ? ", " : ""}
+										</span>
+									))}
 							</div>
+							{teamPhotos[winner.project] && (
+								<div
+									className={`${styles.teamPhotoContainer} ${
+										isSpecialProject ? styles.specialPhotoContainer : ""
+									}`}
+								>
+									<img
+										src={teamPhotos[winner.project]}
+										alt={
+											winner.project === "Team 1" || winner.project === "Équipe 1"
+												? "Team 1 photo"
+												: winner.project === "Team 2" || winner.project === "Équipe 2"
+												? "Team 2 photo"
+												: winner.project === "Team 3" || winner.project === "Équipe 3"
+												? "Team 3 photo"
+												: winner.project === "Scavenger Hunt" ||
+												  winner.project === "Chasse au Trésor"
+												? "Scavenger Hunt team photo"
+												: `${winner.project} team`
+										}
+										className={styles.teamPhoto}
+										loading="lazy"
+									/>
+								</div>
+							)}
+						</div>
 					);
 
 					// Conditionally wrap in link
