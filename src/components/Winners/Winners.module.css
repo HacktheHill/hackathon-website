@@ -46,40 +46,6 @@
 	color: var(--light-primary-color);
 }
 
-.loadingContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 300px;
-	gap: 1rem;
-}
-
-.loadingSpinner {
-	width: 50px;
-	height: 50px;
-	border: 3px solid var(--light-secondary-color);
-	border-top: 3px solid transparent;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-}
-
-.loadingText {
-	color: var(--light-primary-color);
-	font-family: Rubik;
-	font-size: 1.25rem;
-	text-align: center;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
 .error {
 	color: var(--light-primary-color);
 	font-family: Rubik;
@@ -212,10 +178,6 @@
 	transition: transform 0.3s ease;
 }
 
-.winners .placement:hover {
-	transform: scale(1.1);
-}
-
 .winners .projectName {
 	font-size: 1.5rem;
 	font-weight: 600;
@@ -250,6 +212,21 @@
 		width: 90%;
 	}
 
+	.winnersSection {
+		box-sizing: border-box;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.winnersList {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5rem;
+	}
+
+	.winnerCard {
+		box-sizing: border-box;
+	}
+
 	.left-leaves,
 	.right-leaves {
 		display: none;
@@ -259,11 +236,39 @@
 @media screen and (max-width: 768px) {
 	.winnersList {
 		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.winnersSection {
+		box-sizing: border-box;
 	}
 
 	.winners .categories .categoryButton {
 		font-size: 1rem;
 		padding: 0.5rem 1rem;
+	}
+
+	.winnerCard {
+		padding: 1.5rem;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.winnerCardLink,
+	.winnerCardContainer {
+		width: 100%;
+		box-sizing: border-box;
+		margin-bottom: 1rem;
+	}
+
+	.winnerCardLink:last-child,
+	.winnerCardContainer:last-child {
+		margin-bottom: 0;
+	}
+
+	.winnerCard:hover {
+		transform: none;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 	}
 }
 
@@ -307,12 +312,12 @@
 }
 
 .laurel-left {
-	right: 100%; /* Position to the left of the title */
+	right: 100%;
 	margin-right: 10px;
 }
 
 .laurel-right {
-	left: 100%; /* Position to the right of the title */
+	left: 100%;
 	margin-left: 10px;
 }
 

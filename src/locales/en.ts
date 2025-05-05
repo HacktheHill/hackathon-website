@@ -51,7 +51,6 @@ export default {
 		categories: {
 			general_challenge: "General Challenge"
 		},
-		loading_text: "Loading winners data...",
 		general_challenge: [
 			{ place: "1st", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{

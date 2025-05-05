@@ -52,7 +52,6 @@ export default {
 		categories: {
 			general_challenge: "Défi Général"
 		},
-		loading_text: "Chargement des données des gagnants...",
 		general_challenge: [
 			{ place: "1re", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{
