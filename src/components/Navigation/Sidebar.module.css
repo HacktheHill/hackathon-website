@@ -39,6 +39,7 @@
 .sidebar .links a {
 	font-weight: 500;
 	transition: 0.5s;
+	font-family: "Rubik";
 }
 
 .sidebar .links a:hover {

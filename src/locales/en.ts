@@ -2,6 +2,7 @@ export default {
 	navbar: {
 		links: {
 			about: "About",
+			winners: "Winners",
 			sponsors: "Sponsors",
 			hacker: "The Hacker Series",
 			collaborators: "Collaborators",
@@ -43,6 +44,124 @@ export default {
 		p4tag: "Sponsors",
 		p5: "$60k+",
 		p5tag: "Funding Raised",
+	},
+	winners: {
+		title: "Winners",
+		subtitle: "Celebrating the brilliant minds and projects that made Hack the Hill II an unforgettable journey!",
+		categories: {
+			general_challenge: "General Challenge"
+		},
+		no_data: "No winners data available for this category.",
+		general_challenge: [
+			{ place: "1st", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
+			{
+				place: "2nd",
+				project: "Duo Move",
+				team: ["Carcidev Carciente", "Vinisha Manek", "Keshan Kathiripilay", "Mahutt"],
+			},
+			{
+				place: "3rd",
+				project: "Timetable Sweetie",
+				team: ["Jason Shao", "Kaushik Tumu", "Jeff Lu", "Anas Abushaikha"],
+			},
+		],
+		sponsor_challenges: {
+			"Ciena Challenge": [
+				{
+					place: "1st",
+					project: "Mound",
+					team: ["Robert Zuchniak", "Raef Sarofiem", "Matthew Polak", "Vasil Topalovik"],
+				},
+				{
+					place: "2nd",
+					project: "PeerPressure",
+					team: ["James Liang", "Callum Curtis", "Krins Vaghasia", "David Pietrocola"],
+				},
+				{
+					place: "3rd",
+					project: "Distributed Encrypted Peer-to-Peer File Management Platform",
+					team: ["Miller Ding", "Antoine Lavigne", "Aditya", "Matias S"],
+				},
+			],
+			"Ross Challenge": [
+				{
+					place: "1st",
+					project: "Frame Out",
+					team: [
+						"Neel Patel",
+						"Nathaniel Lays",
+						"Darrell Nyakaana",
+						"Samuel Marchetti",
+						"Lana Othman",
+						"Integer-Conversion-Error Kaya",
+					],
+				},
+				{
+					place: "2nd",
+					project: "Bouncing ROSS",
+					team: ["Kyle Mendes", "Ines Mansouri", "Mike Katsnelson", "Vilmos Feher", "Paul Chukwu"],
+				},
+				{ place: "3rd", project: "Ping Pong", team: ["Sami Tahi", "Anas Bourfia"] },
+			],
+		},
+		mini_challenges: {
+			"Best UI/UX Implementation": [
+				{ place: "1st", project: "CapyCare", team: ["Chi McIsaac", "Karam"] },
+				{ place: "2nd", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
+			],
+			"Best Use of AI": [
+				{
+					place: "1st",
+					project: "BrainUp",
+					team: ["Edmund Ye", "Karanveer Panesar", "Hasin Zaman", "Jawad Mohammed"],
+				},
+				{
+					place: "2nd",
+					project: "Grype",
+					team: ["Joey Issa", "Twoadave Gayowsky", "Batleram Scaffindi", "Jacob T"],
+				},
+			],
+			"Best uOttawa x Carleton Collaboration": [
+				{
+					place: "1st",
+					project: "The Heart Stopper",
+					team: ["Bradley Nguyen", "Sabateesh Sivakumar", "Daniel B. Solomon", "Shane S"],
+				},
+				{
+					place: "2nd",
+					project: "InsuWell",
+					team: ["Imane A.", "Aisha Jama", "Maryam Belkebir", "Saja Elkurtehi"],
+				},
+			],
+			"Best Use of Cloud Technology": [
+				{ place: "1st", project: "snhack-rover", team: ["Mumtahin Farabi", "Rohan Sreelesh", "Hiba Tantawi"] },
+				{
+					place: "2nd",
+					project: "JustVent",
+					team: ["Noah do Rego", "Nodshley Marcelin", "Colby Todd", "Andrew Pham"],
+				},
+			],
+			"Best Hardware Hack": [
+				{ place: "1st", project: "AnyPen", team: ["Emilee Chen", "Ethan Sue", "Fahmi O", "Ivana Du"] },
+				{
+					place: "2nd",
+					project: "RelaxED AI",
+					team: ["Aneesh Ereddy", "Shawn How", "Marc Vidal", "Benjamin Gavieres"],
+				},
+			],
+			"Geoguessr Challenge": [
+				{ place: "1st", project: "Team 1", team: ["Alex Smith", "Jamie Wong", "Chris Johnson", "Taylor Park"] },
+				{ place: "2nd", project: "Team 2", team: ["Jordan Lee", "Casey Zhang", "Morgan Taylor", "Riley Chen"] },
+				{ place: "3rd", project: "Team 3", team: ["Sam Patel", "Jesse Kim", "Avery Garcia", "Quinn Murphy"] },
+			],
+			"Scavenger Hunt Challenge": [
+				{
+					place: "1st",
+					project: "Scavenger Hunt",
+					team: ["Robin Blake", "Cameron Lane", "Drew Rivera", "Skyler Reed", "Jordan Ellis"],
+				},
+			],
+		},
 	},
 	sponsors: {
 		title: "Sponsors",
@@ -167,7 +286,7 @@ export default {
 				day: "24",
 				time: "6:30 p.m. - 8:30 p.m. @ STM 117",
 				description:
-					"Gather around for an informative night as Hack the Hill collaborates with Women@Ciena for an exciting panel featuring 5 distinguished guest panelists, all representing different roles within Ciena. Listen in as they share their story, experiences and successes within the tech industry and provide knowledge for those in the early stages of their career. The diversity in roles and experience will truly inspire you, and it’s an event not worth missing.",
+					"Gather around for an informative night as Hack the Hill collaborates with Women@Ciena for an exciting panel featuring 5 distinguished guest panelists, all representing different roles within Ciena. Listen in as they share their story, experiences and successes within the tech industry and provide knowledge for those in the early stages of their career. The diversity in roles and experience will truly inspire you, and it's an event not worth missing.",
 				status: "Details",
 				link: "https://www.instagram.com/p/C18WYezNTGT",
 				disabled: false,
