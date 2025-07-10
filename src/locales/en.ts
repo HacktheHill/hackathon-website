@@ -12,10 +12,10 @@ export default {
 		aria_label: "Navigation Bar",
 	},
 	hero: {
-		format: "",
+		format: "In person",
 		at: "@",
 		pin_alt: "Location Pin",
-		h2: "",
+		h2: "Canada's Capital Hackathon",
 		h3: "Ottawa's Largest Hackathon",
 		more: "Follow us!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
@@ -23,7 +23,7 @@ export default {
 		invalid_email_field: "Invalid email format",
 		email_placeholder: "E-mail",
 		apply: "Apply Now",
-		date: "TBD",
+		date: "Sept. 27-29, 2024",
 	},
 	about: {
 		title: "Welcome to Canada's Capital Hackathon",

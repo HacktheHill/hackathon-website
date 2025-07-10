@@ -6,6 +6,7 @@ import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
+import LocationPin from "/SVGs/location-pin.svg";
 
 //animations
 import AOS from "aos";
@@ -110,6 +111,7 @@ function Hero() {
 				<div className={styles["location-date-heading"]} data-aos="fade-up" data-aos-duration="800">
 					<h5 className={styles["location"]}>
 						<strong>{t("hero.date")} </strong>
+						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} />{" "}
 						{t("hero.format")}
 						<strong> {t("hero.at")} uOttawa</strong>
 					</h5>
@@ -117,12 +119,9 @@ function Hero() {
 				<h1 id="Hero" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
 					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
 				</h1>
-				{/* H2 subtitle conditionally rendered - can be added in future pages, temporarily removed based on design */}
-				{t("hero.h2") && (
-					<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-						{t("hero.h2")}
-					</h2>
-				)}
+				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+					{t("hero.h2")}
+				</h2>
 				<form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
