@@ -4,6 +4,7 @@ import About from "../About/About";
 import Stats from "../Stats/Stats";
 import Winners from "../Winners/Winners";
 import Testimonials from "../Testimonials/Testimonials";
+import ProjectGallery from "../ProjectGallery/ProjectGallery";
 import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
@@ -22,6 +23,7 @@ function App() {
 				<Stats />
 				<Winners />
 				<Testimonials />
+				<ProjectGallery/>
 				<Schedule />
 				<Sponsors />
 				<FAQ />
