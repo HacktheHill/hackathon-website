@@ -50,9 +50,8 @@ export default {
 		subtitle:
 			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II un voyage inoubliable !",
 		categories: {
-			general_challenge: "Défi Général",
+			general_challenge: "Défi Général"
 		},
-		no_data: "Aucune donnée sur les gagnants disponible pour cette catégorie.",
 		general_challenge: [
 			{ place: "1re", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{

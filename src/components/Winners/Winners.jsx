@@ -136,7 +136,7 @@ function Winners() {
 
 		// If currentWinners is undefined or not an array, return a message
 		if (!currentWinners || !Array.isArray(currentWinners)) {
-			return <div className={styles.noWinners}>{t("winners.no_data")}</div>;
+			return <div className={styles.noWinners}>No winners data available for this category.</div>;
 		}
 
 		return (
