@@ -4,7 +4,9 @@
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
 		"strict": true,
-		"verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true,
+		"allowJs": true,
+		"checkJs": false
 	},
 	"include": [
 		"src/**/*",
@@ -12,6 +14,7 @@
 	],
 	"exclude": [
 		"node_modules",
-		"dist"
+		"dist",
+		"build"
 	]
 }
