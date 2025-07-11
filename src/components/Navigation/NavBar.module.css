@@ -1,24 +1,23 @@
 .navbar {
-	--background-on-scroll: var(--light-tertiary-color);
-	--link-color: var(--dark-primary-color);
-	--link-underline-color: var(--dark-primary-color);
+	--background-color: #320369;
+	--link-color: white;
+	--link-underline-color: white;
 	--box-shadow-color: rgba(0, 0, 0, 0.1);
 
 	box-sizing: border-box;
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	height: 4.5rem;
-	width: 100%;
-	padding-right: 1rem;
+	width: calc(100% - 4rem);
+	padding: 1rem;
 	gap: 1rem;
+	margin: 2rem;
+	border-radius: 10px;
+	background-color: var(--background-color);
 	transition: background-color 0.5s ease;
 	pointer-events: auto;
-}
-
-.navbar[data-scrolled="true"] {
-	background-color: var(--background-on-scroll);
-	box-shadow: 0 0 10px var(--box-shadow-color);
 }
 
 .navbar ul {
@@ -34,6 +33,20 @@
 
 .logo {
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 2.5rem;
+	width: auto;
+	max-width: 100%;
+}
+
+.logo svg {
+	height: 2.5rem;
+	width: auto;
+	max-width: 100%;
 }
 
 .navbar li {
@@ -45,7 +58,7 @@
 	position: relative;
 	color: var(--link-color);
 	font-weight: bolder;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	text-decoration: none;
 	font-family: Rubik;
 	cursor: pointer;
@@ -131,7 +144,21 @@
 	transform: translate(0, -1.2ch) rotate(45deg);
 }
 
+@media (max-width: 1200px) {
+	.navbar {
+		margin: 2rem 2rem;
+		width: calc(100% - 4rem);
+	}
+}
+
 @media (max-width: 940px) {
+	.navbar {
+		margin: 1rem;
+		width: calc(100% - 2rem);
+		padding: 0.8rem;
+		height: 4rem;
+	}
+
 	.navbar ul:not(.left-side-buttons) {
 		display: none;
 	}
@@ -141,7 +168,30 @@
 	}
 }
 
+@media (max-width: 768px) {
+	.navbar {
+		margin: 0.5rem;
+		width: calc(100% - 1rem);
+		padding: 0.6rem;
+		height: 3.5rem;
+	}
+
+	.logo img {
+		height: 2rem;
+	}
+
+	.logo svg {
+		height: 2rem;
+	}
+}
+
 @media (max-width: 375px) {
+	.navbar {
+		margin: 0.5rem 0.25rem;
+		width: calc(100% - 0.5rem);
+		padding: 0.5rem;
+	}
+
 	.navbar ul.left-side-buttons {
 		margin: 0;
 		margin-right: auto;
@@ -154,5 +204,14 @@
 
 	.square-button {
 		padding: 0.3rem;
+		font-size: 0.9rem;
+	}
+
+	.logo img {
+		height: 1.8rem;
+	}
+
+	.logo svg {
+		height: 1.8rem;
 	}
 }

@@ -15,7 +15,7 @@ export default {
 		format: "En personne",
 		at: "à",
 		pin_alt: "Punaise de localisation",
-		h2: "Le Hackathon de la Capitale Canadienne",
+		h2: "",
 		h3: "Le Plus Grand Hackathon d'Ottawa",
 		more: "Suivez-nous!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
