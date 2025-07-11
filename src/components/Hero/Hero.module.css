@@ -1,5 +1,5 @@
 .hero {
-	--hero-heading: white;
+	--hero-heading: var(--dark-primary-color);
 	--hero-btn-background-color: var(--dark-primary-color);
 
 	/* countdown colours */
@@ -17,7 +17,7 @@
 	position: absolute;
 	display: grid;
 	place-items: center;
-	inset: max(calc(22rem - 10vw), 8vmax) 0 auto 0;
+	inset: max(calc(17.5rem - 10vw), 5vmax) 0 auto 0;
 	text-align: center;
 	width: fit-content;
 	margin: auto;

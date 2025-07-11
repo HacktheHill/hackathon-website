@@ -15,7 +15,7 @@ export default {
 		format: "En personne",
 		at: "à",
 		pin_alt: "Punaise de localisation",
-		h2: "",
+		h2: "Le Hackathon de la Capitale Canadienne",
 		h3: "Le Plus Grand Hackathon d'Ottawa",
 		more: "Suivez-nous!",
 		link: "https://www.youtube.com/watch?v=MXwlAdZL3t0&ab_channel=Lonehaven",
@@ -50,8 +50,9 @@ export default {
 		subtitle:
 			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II un voyage inoubliable !",
 		categories: {
-			general_challenge: "Défi Général"
+			general_challenge: "Défi Général",
 		},
+		no_data: "Aucune donnée sur les gagnants disponible pour cette catégorie.",
 		general_challenge: [
 			{ place: "1re", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{

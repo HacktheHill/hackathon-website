@@ -1,7 +1,6 @@
 import { Link } from "react-scroll";
 import { locale, t } from "../../i18n";
 import logo from "/Logos/hackthehill-logo.svg";
-import logoMobile from "/Logos/hackthehill-logo-mobile.svg";
 import { useState, useEffect } from "react";
 import style from "./NavBar.module.css";
 
@@ -11,18 +10,6 @@ import "aos/dist/aos.css";
 
 function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 	const [language, setLanguage] = useState(true);
-	const [isMobile, setIsMobile] = useState(false);
-
-	useEffect(() => {
-		const checkScreenSize = () => {
-			setIsMobile(window.innerWidth <= 768);
-		};
-
-		checkScreenSize();
-		window.addEventListener('resize', checkScreenSize);
-
-		return () => window.removeEventListener('resize', checkScreenSize);
-	}, []);
 
 	const links = [
 		{
@@ -78,7 +65,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				duration={500}
 				href="#hero"
 			>
-				<img alt="Logo" src={isMobile ? logoMobile : logo}></img>
+				<img alt="Logo" src={logo}></img>
 			</Link>
 
 			<div className={style["left-side-buttons"]}>
@@ -95,9 +82,9 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				<button
 					className={style["square-button"]}
 					type="submit"
-					onClick={() => window.open("https://2024.hackthehill.com", "_blank")}
+					onClick={() => window.open("https://2023.hackthehill.com", "_blank")}
 				>
-					2024
+					2023
 				</button>
 			</div>
 
