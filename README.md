@@ -6,8 +6,9 @@ Welcome to the Hack the Hill Website repository. This static marketing website s
 
 1. Clone this repository and navigate to the project directory.
 2. Install the required dependencies by running `npm install`.
-3. Start the development server using `npm run dev`.
-4. Access the website through your web browser at `http://localhost:3000`.
+3. Verify all `dependencies` such as `astro`, `react`, `sitemap`, `partytown`and `Nanostores` are installed if not installed yet
+4. Start the development server using `npm run dev`.
+5. Access the website through your web browser at `http://localhost:3000`.
 
 ## Contributing
 
