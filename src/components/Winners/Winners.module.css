@@ -12,17 +12,6 @@
 	font-family: Rubik;
 }
 
-.right-leaves {
-	position: absolute;
-	height: 100%;
-	z-index: -1;
-	transition: opacity 0.3s ease;
-}
-
-.right-leaves {
-	right: 0;
-}
-
 .winners h1 {
 	text-align: center;
 	margin: 2rem 0 1rem;
@@ -269,11 +258,6 @@
 	padding: 0.5rem;
 }
 
-@media screen and (max-width: 1024px) {
-	.right-leaves {
-		display: none;
-	}
-}
 
 @media (max-width: 768px) {
 	.carousel {

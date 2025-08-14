@@ -22,8 +22,9 @@ For questions or inquiries, please reach out to [development@hackthehill.com](ma
 Copyright © 2025 Hack the Hill. All Rights Reserved.
 
 ## todo:
-1. update nav bar shape
-2. update french text
-3. update landing page (buildings)
-4. replace leaves with stars
-5. update faqs
+1. update french text - JON WILL DO
+2. replace leaves with stars ON HOLD - I ONLY ADDED TO HERO PAGE, LAZY TO ADD IT ACROSS APP
+3. update faqs - MIGHT JUST KEEP IT AS IS
+4. need approval on page from design
+5. need to add shocked beaver
+6. sun moving down on scroll is a little stuttery but i dont think its a big problem

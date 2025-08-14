@@ -11,12 +11,6 @@
 	text-align: center;
 }
 
-.right-leaves {
-	position: absolute;
-	height: 100%;
-	z-index: -1;
-	right: 0;
-}
 
 .testimonials h1 {
 	text-align: center;
@@ -198,11 +192,6 @@
 .prev-button,
 .next-button,
 .carousel-navigation { display: none !important; }
-
-/* Responsive tweaks */
-@media (max-width: 1024px) {
-	.right-leaves { display: none; }
-}
 
 @media (max-width: 900px) {
 	.prev, .next, .ghost { display: none !important; }

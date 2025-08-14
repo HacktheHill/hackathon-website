@@ -56,11 +56,11 @@ function Testimonials() {
 	const ref = useRef(null);
 
 	const nextSlide = useCallback(() => {
-		setActiveIndex((prevIndex) => (prevIndex + 1) % testimonialData.length);
+		setActiveIndex(prevIndex => (prevIndex + 1) % testimonialData.length);
 	}, [testimonialData.length]);
 
 	const prevSlide = useCallback(() => {
-		setActiveIndex((prevIndex) => (prevIndex - 1 + testimonialData.length) % testimonialData.length);
+		setActiveIndex(prevIndex => (prevIndex - 1 + testimonialData.length) % testimonialData.length);
 	}, [testimonialData.length]);
 
 	// Enable swiping on mobile devices
@@ -75,11 +75,11 @@ function Testimonials() {
 			if (touchendX > touchstartX) prevSlide();
 		};
 
-		const handleTouchStart = (event) => {
+		const handleTouchStart = event => {
 			touchstartX = event.changedTouches[0].screenX;
 		};
 
-		const handleTouchEnd = (event) => {
+		const handleTouchEnd = event => {
 			touchendX = event.changedTouches[0].screenX;
 			handleGesture();
 		};
@@ -95,7 +95,7 @@ function Testimonials() {
 
 	// Keyboard arrows for accessibility
 	useEffect(() => {
-		const keyHandler = (e) => {
+		const keyHandler = e => {
 			if (e.key === "ArrowLeft") prevSlide();
 			if (e.key === "ArrowRight") nextSlide();
 		};
@@ -115,7 +115,7 @@ function Testimonials() {
 	}, []);
 
 	const getPositionClass = useCallback(
-		(index) => {
+		index => {
 			if (index === activeIndex) return styles.active;
 			const prev = (activeIndex - 1 + testimonialData.length) % testimonialData.length;
 			const next = (activeIndex + 1) % testimonialData.length;
@@ -123,13 +123,17 @@ function Testimonials() {
 			if (index === next) return styles.next;
 			return styles.ghost;
 		},
-		[activeIndex, testimonialData.length]
+		[activeIndex, testimonialData.length],
 	);
 
 	return (
 		<div id="testimonials" className={styles["testimonials"]}>
-			<h1 data-aos="fade-up" data-aos-duration="800">{t("testimonials.title")}</h1>
-			<h2 data-aos="fade-up" data-aos-duration="800">{t("testimonials.sub_heading")}</h2>
+			<h1 data-aos="fade-up" data-aos-duration="800">
+				{t("testimonials.title")}
+			</h1>
+			<h2 data-aos="fade-up" data-aos-duration="800">
+				{t("testimonials.sub_heading")}
+			</h2>
 
 			<div className={styles.viewport} ref={ref} aria-live="polite">
 				{testimonialData.map((item, index) => (
@@ -150,7 +154,11 @@ function Testimonials() {
 				))}
 
 				<div className={styles.controls}>
-					<button onClick={prevSlide} className={`${styles.navBtn} ${styles.prevBtn}`} aria-label={t("testimonials.aria_label_prev")}>
+					<button
+						onClick={prevSlide}
+						className={`${styles.navBtn} ${styles.prevBtn}`}
+						aria-label={t("testimonials.aria_label_prev")}
+					>
 						<span aria-hidden>‹</span>
 					</button>
 					<div className={styles.dots}>
@@ -163,13 +171,15 @@ function Testimonials() {
 							/>
 						))}
 					</div>
-					<button onClick={nextSlide} className={`${styles.navBtn} ${styles.nextBtn}`} aria-label={t("testimonials.aria_label_next")}>
+					<button
+						onClick={nextSlide}
+						className={`${styles.navBtn} ${styles.nextBtn}`}
+						aria-label={t("testimonials.aria_label_next")}
+					>
 						<span aria-hidden>›</span>
 					</button>
 				</div>
 			</div>
-
-			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 		</div>
 	);
 }

@@ -13,9 +13,9 @@
 	height: 4.5rem;
 	padding: 0.1rem 2rem; /* symmetric padding to keep content inset */
 	border-radius: 15px; /* curved sides */
-	background: var(--dark-primary-color);
+	background: #320369;
 	border: 2px solid color-mix(in srgb, var(--medium-secondary-color) 10%, transparent);
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.04);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.01);
 	backdrop-filter: saturate(140%) blur(6px);
 	-webkit-backdrop-filter: saturate(140%) blur(6px);
 	z-index: 100; /* stay above page content */

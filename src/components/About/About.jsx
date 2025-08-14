@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { t } from "../../i18n";
 import styles from "./About.module.css";
-import rightLeaves from "/SVGs/About/right-leaves.svg";
 import "../../global.css";
 
 //animations
@@ -43,7 +42,6 @@ function About() {
 					allowFullScreen
 					loading="lazy"
 				></iframe>
-				<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
 			</div>
 		</div>
 	);

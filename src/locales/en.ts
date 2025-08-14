@@ -483,7 +483,7 @@ export default {
 		description: "Control the Capital, Command the Cabinet, Build until you Hack the Hill",
 		privacy: "Privacy Policy",
 		constitution: "Constitution",
-		copyright: "Copyright © 2024 Hack the Hill. All rights reserved.",
+		copyright: "Copyright © 2025 Hack the Hill. All rights reserved.",
 	},
 	notification: {
 		message:
@@ -493,7 +493,7 @@ export default {
 	},
 	"events-page": {
 		title: "Events",
-		description: "Join us for a series of exhilarating events leading up to Hack the Hill 2024!",
+		description: "Join us for a series of exhilarating events leading up to Hack the Hill 2025!",
 		description2:
 			"Whether you're a coding novice or a seasoned hacker, our events offer a platform to learn, network, and showcase your skills. Dive into the world of innovation and problem-solving, and be part of the hacker community that's making a real-world impact.",
 		description3:

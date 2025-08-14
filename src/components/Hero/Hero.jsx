@@ -6,18 +6,18 @@ import { t } from "../../i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
 import BannerLogo from "/Logos/hackthehill-banner.svg";
-import LocationPin from "/SVGs/location-pin.svg";
 
 //animations
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EVENT_START_DATE = new Date("2024-09-27T13:00:00-00:00");
-const HACKING_END_DATE = new Date("2024-09-29T15:00:00-00:00");
+const EVENT_START_DATE = new Date("2025-10-24T13:00:00-00:00");
+const HACKING_END_DATE = new Date("2025-10-27T15:00:00-00:00");
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
 // If the current time is after the hacking end date, the countdown will not show
+
 let date = null;
 switch (true) {
 	case Date.now() < EVENT_START_DATE:
@@ -83,12 +83,17 @@ function Hero() {
 	useEffect(() => {
 		// The selector is used to select all elements with the same class name
 		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
+
+		heroRef.current.style.transform = "translateY(8px)";
+
+		// Move the entire hero SVG to the background by setting its z-index.
+		heroRef.current.style.zIndex = "0";
+
 		const transformations = [
-			{ selector: "#Sun", x: 0, y: 3 },
-			{ selector: "#Hill-1", x: -3, y: 0.2 },
-			{ selector: "#Hill-2", x: 2, y: 1.6 },
-			{ selector: "#Hill-3", x: 0, y: 1.6 },
-			{ selector: "#Hill-4", x: 0.6, y: 1.6 },
+			{ selector: "#Sun", x: 0, y: 0.2 },
+			{ selector: "#Hill1", x: 0, y: 0.05 },
+			{ selector: "#Hill2", x: 0, y: 0.07 },
+			{ selector: "#Hill3", x: 0, y: 0.1 },
 		];
 
 		// Select all elements with the same class name and apply the CSS transformation to each of them
@@ -114,7 +119,7 @@ function Hero() {
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
 				</h2>
-				<form
+				{/* <form
 					className={styles["hero-form"]}
 					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
 				>
@@ -140,8 +145,8 @@ function Hero() {
 					>
 						{t("hero.apply")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
-				</form>
-				{/*
+				</form> */}
+				
 				<a href="https://tracker.hackthehill.com/" target="_blank" rel="noreferrer">
 					<button
 						className={styles["hero-btn"]}
@@ -152,7 +157,7 @@ function Hero() {
 						{t("hero.apply")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</a>
-				 */}
+				
 			</div>
 
 			{/* Parallax, background, clouds, birds, trees, hills, buildings, etc. */}

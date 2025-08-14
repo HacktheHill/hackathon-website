@@ -6,18 +6,20 @@
 	--medium-primary-color: #6d4998;
 	--medium-secondary-color: #7500ff;
 	--medium-tertiary-color: #482c69;
-	--dark-primary-color: #320369;
+	--dark-tertiary-color: #482c69;
+	--dark-tertiary-color-2: #48029a;
 	--dark-secondary-color: #482c69;
 	--hackhers-primary-color: #ac1d73;
 	--hackhers-secondary-color: #eaeaea;
 	--hackhers-btn: #c82988;
+	--apply-btn: #3a027b;
 
-	--color-gradient: linear-gradient(180deg, #48029a 0%, #511793 10%, #482C69 100%);
+	--color-gradient: linear-gradient(180deg, var(--dark-tertiary-color-2) 0%, #511793 10%, #482C69 100%);
 	--button-gradient: linear-gradient(90deg, var(--medium-secondary-color), transparent) var(--light-secondary-color);
 	/* Purple island gradient for stats */
 	--color-gradient-2: linear-gradient(180deg, #6005CB 0%, #440095 100%);
 	--color-gradient-dark: linear-gradient(180deg, #6005CB 10%, #320369 120%);
-	--color-gradient-light: linear-gradient(180deg, var(--medium-secondary-color) 0%, #ae93ce 100%);
+	--color-gradient-light: linear-gradient(180deg, var(--medium-secondary-color) 0%, #b7a8ca 80%, var(--dark-tertiary-color-2) 95%);
 	color-scheme: light;
 	scrollbar-gutter: stable;
 	background-color: var(--dark-primary-color);

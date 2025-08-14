@@ -54,16 +54,6 @@
 	position: absolute;
 }
 
-.frame img.right-leaves {
-	height: 100%;
-	width: auto;
-	top: 0%;
-	transform: translateY(-50%);
-	right: -3rem;
-	pointer-events: none; /* keep video clickable */
-	z-index: 0; /* behind the video */
-}
-
 @media screen and (max-width: 1200px) {
 	.about {
 		flex-direction: column;
@@ -77,10 +67,6 @@
 @media screen and (max-width: 768px) {
 	.frame {
 		margin: 4rem 1rem;
-	}
-
-	.frame img.right-leaves {
-		display: none;
 	}
 
 	.about-text {
