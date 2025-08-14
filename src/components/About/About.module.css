@@ -2,50 +2,66 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
+	align-items: center;
 }
 
 .about-text {
-	flex: 1;
+	flex: 1.3;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 1.5rem;
+	padding: 1.5rem 2rem;
+}
+
+.about-text h1 {
+	font-size: clamp(2.5rem, 4.5vw, 4rem);
+	line-height: 1.1;
 }
 
 .about-text p {
 	color: var(--light-primary-color);
 	font-family: Rubik;
 	font-weight: 400;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 .frame {
 	flex: 1;
 	aspect-ratio: 16/9;
 	position: relative;
-	margin: auto 4rem;
+	margin: auto 2rem;
 }
 
 .frame iframe {
-	width: 100%;
-	height: 100%;
+	width: 75%;
+	height: 75%;
 	color: var(--light-primary-color);
 	border: 5px solid var(--light-primary-color);
-	/* No small gap on both sides of the iframe */
 	box-sizing: content-box;
+	border-radius: 1rem;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 0 6px rgba(255, 255, 255, 0.06) inset;
+	display: block;
+	margin: 1rem auto 0; /* move down and keep centered */
+	position: relative;
+	z-index: 1; /* place video above decorative leaves */
+	transform: translateY(20%);
 }
 
 .frame img {
 	position: absolute;
 }
 
-.frame img.left-leaves {
-	bottom: -5rem;
-	left: -4rem;
-}
-
 .frame img.right-leaves {
-	top: -5rem;
-	right: -4rem;
+	height: 100%;
+	width: auto;
+	top: 0%;
+	transform: translateY(-50%);
+	right: -3rem;
+	pointer-events: none; /* keep video clickable */
+	z-index: 0; /* behind the video */
 }
 
 @media screen and (max-width: 1200px) {
@@ -54,7 +70,7 @@
 	}
 
 	.frame {
-		margin: 5rem;
+		margin: 3rem 2rem;
 	}
 }
 
@@ -63,9 +79,12 @@
 		margin: 4rem 1rem;
 	}
 
-	.frame img.left-leaves,
 	.frame img.right-leaves {
 		display: none;
+	}
+
+	.about-text {
+		padding: 1rem 1.25rem;
 	}
 }
 

@@ -40,24 +40,6 @@ function Stats() {
 						<h2>{t("stats.p3")}</h2>
 						<p>{t("stats.p3tag")}</p>
 					</div>
-					<div
-						className={styles["stats-item"]}
-						data-aos="zoom-in"
-						data-aos-duration="800"
-						data-aos-delay="300"
-					>
-						<h2>{t("stats.p4")}</h2>
-						<p>{t("stats.p4tag")}</p>
-					</div>
-					<div
-						className={styles["stats-item"]}
-						data-aos="zoom-in"
-						data-aos-duration="800"
-						data-aos-delay="400"
-					>
-						<h2>{t("stats.p5")}</h2>
-						<p>{t("stats.p5tag")}</p>
-					</div>
 				</div>
 			</div>
 		</div>

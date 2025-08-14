@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { t } from "../../i18n";
 import styles from "./Winners.module.css";
 import Button from "../Button/Button.jsx";
@@ -67,6 +67,7 @@ const projectLinks = {
 function Winners() {
 	const [error] = useState(null);
 	const [activeCategory, setActiveCategory] = useState("general_challenge");
+	const [currentIndex, setCurrentIndex] = useState(0);
 
 	// Get translations directly in the render function
 	const title = t("winners.title");
@@ -86,6 +87,7 @@ function Winners() {
 	// Reset to general_challenge when language changes (detected by title changing)
 	useEffect(() => {
 		setActiveCategory("general_challenge");
+		setCurrentIndex(0);
 	}, [title]);
 
 	// Calculate categories
@@ -95,10 +97,59 @@ function Winners() {
 		...Object.keys(miniChallenges).reduce((acc, key) => ({ ...acc, [key]: key }), {}),
 	};
 
+	// Build current winners list based on active category
+	const currentWinners = useMemo(() => {
+		if (activeCategory === "general_challenge") return Array.isArray(generalChallenge) ? generalChallenge : [];
+		const isSponsor = Object.keys(sponsorChallenges).includes(activeCategory);
+		const list = isSponsor ? sponsorChallenges[activeCategory] : miniChallenges[activeCategory];
+		return Array.isArray(list) ? list : [];
+	}, [activeCategory, generalChallenge, sponsorChallenges, miniChallenges]);
+
+	// Ensure index stays valid when category changes
+	useEffect(() => {
+		setCurrentIndex(0);
+		AOS.refreshHard();
+	}, [activeCategory]);
+
+	const isSpecialProject = useCallback((project) => {
+		return (
+			project === "Team 1" ||
+			project === "Team 2" ||
+			project === "Team 3" ||
+			project === "Équipe 1" ||
+			project === "Équipe 2" ||
+			project === "Équipe 3" ||
+			project === "Scavenger Hunt" ||
+			project === "Chasse au Trésor"
+		);
+	}, []);
+
+	const goPrev = useCallback(() => {
+		if (!currentWinners.length) return;
+		setCurrentIndex((i) => (i - 1 + currentWinners.length) % currentWinners.length);
+	}, [currentWinners.length]);
+
+	const goNext = useCallback(() => {
+		if (!currentWinners.length) return;
+		setCurrentIndex((i) => (i + 1) % currentWinners.length);
+	}, [currentWinners.length]);
+
+	const keyHandler = useCallback(
+		(e) => {
+			if (e.key === "ArrowLeft") goPrev();
+			if (e.key === "ArrowRight") goNext();
+		},
+		[goPrev, goNext]
+	);
+
+	useEffect(() => {
+		window.addEventListener("keydown", keyHandler);
+		return () => window.removeEventListener("keydown", keyHandler);
+	}, [keyHandler]);
+
 	if (error) {
 		return (
 			<div className={styles.winners}>
-				<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
 				<div className={styles.titleContainer} data-aos="fade-up" data-aos-duration="800">
 					<img
 						className={styles["laurel-left"]}
@@ -121,110 +172,60 @@ function Winners() {
 		);
 	}
 
-	const renderWinners = () => {
-		let currentWinners = [];
-
-		if (activeCategory === "general_challenge") {
-			currentWinners = generalChallenge;
-		} else {
-			// Check if it's a sponsor challenge or mini challenge
-			const isSponsorChallenge = Object.keys(sponsorChallenges).includes(activeCategory);
-			currentWinners = isSponsorChallenge
-				? sponsorChallenges[activeCategory] || []
-				: miniChallenges[activeCategory] || [];
-		}
-
-		// If currentWinners is undefined or not an array, return a message
-		if (!currentWinners || !Array.isArray(currentWinners)) {
+	const renderCard = () => {
+		if (!currentWinners || !currentWinners.length)
 			return <div className={styles.noWinners}>No winners data available for this category.</div>;
-		}
 
-		return (
-			<div className={styles.winnersList}>
-				{currentWinners.map((winner, index) => {
-					const projectUrl = projectLinks[winner.project] || "#";
-					const isSpecialProject =
-						winner.project === "Team 1" ||
-						winner.project === "Team 2" ||
-						winner.project === "Team 3" ||
-						winner.project === "Équipe 1" ||
-						winner.project === "Équipe 2" ||
-						winner.project === "Équipe 3" ||
-						winner.project === "Scavenger Hunt" ||
-						winner.project === "Chasse au Trésor";
+		const winner = currentWinners[currentIndex];
+		const projectUrl = projectLinks[winner.project] || "#";
+		const special = isSpecialProject(winner.project);
+		const imageSrc = teamPhotos[winner.project];
+		const imgAlt =
+			winner.project === "Team 1" || winner.project === "Équipe 1"
+				? "Team 1 photo"
+				: winner.project === "Team 2" || winner.project === "Équipe 2"
+				? "Team 2 photo"
+				: winner.project === "Team 3" || winner.project === "Équipe 3"
+				? "Team 3 photo"
+				: winner.project === "Scavenger Hunt" || winner.project === "Chasse au Trésor"
+				? "Scavenger Hunt team photo"
+				: `${winner.project} team`;
 
-					// For Geoguessr and Scavenger Hunt cards, don't create a link
-					const cardContent = (
-						<div
-							className={styles.winnerCard}
-							data-aos="fade-up"
-							data-aos-duration="800"
-							data-aos-delay={100 * index}
-						>
-							<div className={styles.placement}>{winner.place}</div>
-							<h3 className={styles.projectName}>{winner.project}</h3>
-							<div className={styles.teamMembers}>
-								{winner.team &&
-									winner.team.map((member, i) => (
-										<span key={i}>
-											{member}
-											{i < winner.team.length - 1 ? ", " : ""}
-										</span>
-									))}
-							</div>
-							{teamPhotos[winner.project] && (
-								<div
-									className={`${styles.teamPhotoContainer} ${
-										isSpecialProject ? styles.specialPhotoContainer : ""
-									}`}
-								>
-									<img
-										src={teamPhotos[winner.project]}
-										alt={
-											winner.project === "Team 1" || winner.project === "Équipe 1"
-												? "Team 1 photo"
-												: winner.project === "Team 2" || winner.project === "Équipe 2"
-												? "Team 2 photo"
-												: winner.project === "Team 3" || winner.project === "Équipe 3"
-												? "Team 3 photo"
-												: winner.project === "Scavenger Hunt" ||
-												  winner.project === "Chasse au Trésor"
-												? "Scavenger Hunt team photo"
-												: `${winner.project} team`
-										}
-										className={styles.teamPhoto}
-										loading="lazy"
-									/>
-								</div>
-							)}
-						</div>
-					);
-
-					// Conditionally wrap in link
-					return isSpecialProject ? (
-						<div key={index} className={styles.winnerCardContainer}>
-							{cardContent}
-						</div>
-					) : (
-						<a
-							href={projectUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							key={index}
-							className={styles.winnerCardLink}
-						>
-							{cardContent}
-						</a>
-					);
-				})}
+		const CardInner = (
+			<div className={styles.card} data-aos="zoom-in" data-aos-duration="700">
+				{imageSrc && (
+					<div className={styles.cardImageWrap}>
+						<img className={styles.cardImage} src={imageSrc} alt={imgAlt} loading="lazy" />
+					</div>
+				)}
+				<div className={styles.cardBody}>
+					<div className={styles.placementBadge}>{winner.place}</div>
+					<h3 className={styles.cardTitle}>{winner.project}</h3>
+					{winner.team && (
+						<p className={styles.cardTeam}>
+							{winner.team.map((m, i) => (
+								<span key={i}>
+									{m}
+									{i < winner.team.length - 1 ? ", " : ""}
+								</span>
+							))}
+						</p>
+					)}
+				</div>
 			</div>
+		);
+
+		return special ? (
+			<div className={styles.cardWrap}>{CardInner}</div>
+		) : (
+			<a href={projectUrl} target="_blank" rel="noopener noreferrer" className={styles.cardWrap}>
+				{CardInner}
+			</a>
 		);
 	};
 
 	return (
 		<div id="winners" className={styles.winners}>
-			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
-
 			<div className={styles.titleContainer} data-aos="fade-up" data-aos-duration="800">
 				<img
 					className={styles["laurel-left"]}
@@ -250,7 +251,7 @@ function Winners() {
 						className={`${styles.categoryButton} ${activeCategory === key ? styles.active : ""}`}
 						onClick={() => {
 							setActiveCategory(key);
-							// Refresh AOS animations when changing categories
+							setCurrentIndex(0);
 							AOS.refresh();
 						}}
 					>
@@ -263,7 +264,30 @@ function Winners() {
 				<h3 className={styles.categoryTitle} data-aos="fade-up" data-aos-duration="800">
 					{categories[activeCategory]}
 				</h3>
-				{renderWinners()}
+
+				<div className={styles.carousel} aria-live="polite">
+					<button className={`${styles.navButton} ${styles.navLeft}`} aria-label="Previous" onClick={goPrev}>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+						</svg>
+					</button>
+
+					{renderCard()}
+
+					<button className={`${styles.navButton} ${styles.navRight}`} aria-label="Next" onClick={goNext}>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+						</svg>
+					</button>
+				</div>
+
+				{currentWinners && currentWinners.length > 0 && (
+					<div className={styles.counter}>
+						<span>
+							{currentIndex + 1} / {currentWinners.length}
+						</span>
+					</div>
+				)}
 			</div>
 			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 		</div>

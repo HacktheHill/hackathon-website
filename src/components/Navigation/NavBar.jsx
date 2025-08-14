@@ -82,9 +82,9 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 				<button
 					className={style["square-button"]}
 					type="submit"
-					onClick={() => window.open("https://2023.hackthehill.com", "_blank")}
+					onClick={() => window.open("https://2024.hackthehill.com", "_blank")}
 				>
-					2023
+					2024
 				</button>
 			</div>
 

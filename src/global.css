@@ -1,20 +1,21 @@
 :root {
-	--light-color: white;
-	--light-primary-color: #fff3b6;
-	--light-secondary-color: #f8cc8d;
-	--light-tertiary-color: #f6bf70;
-	--medium-primary-color: #ea885f;
-	--medium-secondary-color: #dd484d;
-	--medium-tertiary-color: #c11f25;
-	--dark-primary-color: #84010b;
-	--dark-secondary-color: #650014;
+	--light-color: #ffffff;
+	--light-primary-color: #ffffff;
+	--light-secondary-color: #b9afc5;
+	--light-tertiary-color: #ffffff;
+	--medium-primary-color: #6d4998;
+	--medium-secondary-color: #7500ff;
+	--medium-tertiary-color: #482c69;
+	--dark-primary-color: #320369;
+	--dark-secondary-color: #482c69;
 	--hackhers-primary-color: #ac1d73;
 	--hackhers-secondary-color: #eaeaea;
 	--hackhers-btn: #c82988;
 
-	--color-gradient: linear-gradient(359deg, #fff3b6 50.49%, #ee9e6f 128.48%, #ea885e 178.51%, #ea8a60 188.81%);
-	--button-gradient: linear-gradient(90deg, var(--light-tertiary-color), transparent) var(--light-secondary-color);
-
+	--color-gradient: linear-gradient(180deg, #48029a 0%, #511793 10%, #482C69 100%);
+	--button-gradient: linear-gradient(90deg, var(--medium-secondary-color), transparent) var(--light-secondary-color);
+	/* Purple island gradient for stats */
+	--color-gradient-2: linear-gradient(180deg, #6005CB 0%, #440095 100%);
 	color-scheme: light;
 	scrollbar-gutter: stable;
 	background-color: var(--dark-primary-color);
@@ -56,21 +57,27 @@ p {
 	h1 {
 		font-size: 2rem;
 	}
+
 	h2 {
 		font-size: 1.5rem;
 	}
+
 	h3 {
 		font-size: 1.25rem;
 	}
+
 	h4 {
 		font-size: 1rem;
 	}
+
 	h5 {
 		font-size: 0.75rem;
 	}
+
 	h6 {
 		font-size: 0.5rem;
 	}
+
 	p {
 		font-size: 0.8rem;
 	}

@@ -71,7 +71,7 @@
 }
 
 .icon-box::after {
-	background: var(--light-color);
+	background: var(--color-gradient-2);
 	inset: 0;
 }
 

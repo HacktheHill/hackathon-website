@@ -128,7 +128,7 @@
 	text-align: center;
 	border-radius: 50px;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
-	border: 5px solid var(--dark-red);
+	border: 5px solid var(--count-down-border);
 	background-color: var(--count-down-background-color);
 	opacity: 0;
 	pointer-events: none;
@@ -156,7 +156,7 @@
 
 .countdown-header,
 .countdown-header-small {
-	color: var(--dark-red);
+	color: var(--countdown-item-color);
 	margin: 0;
 	font-family: Rubik;
 }
@@ -180,7 +180,7 @@
 }
 
 .countdown-item h4 {
-	color: var(--dark-red);
+	color: var(--countdown-item-color);
 	font-weight: normal;
 }
 

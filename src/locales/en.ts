@@ -28,22 +28,20 @@ export default {
 	about: {
 		title: "Welcome to Canada's Capital Hackathon",
 		p1: "Join 700+ hackers from around the country to make something incredible in just 48 hours.",
-		p2: "Hack the Hill II is the second edition of Canada's Capital Hackathon, a three-day event where students from different disciplines come together to create innovative solutions for real-world problems.",
+
+		p2: "Hack the Hill III is the second edition of Canada's Capital Hackathon, a three-day event where students from different disciplines come together to create innovative solutions for real-world problems.",
+
 		p3: "Participants will be provided with opportunities to learn new skills, network with peers, and showcase their talents and ideas. Whether you are a beginner or a seasoned hacker, you will definitely find something that challenges and inspires you at Hack the Hill II.",
 		frame_alt: "Hack the Hill II After Movie",
 	},
 	stats: {
-		title: "Hack the Hill I had...",
-		p1: "600+",
-		p1tag: "Hackers",
-		p2: "1250+",
+		title: "Hack the Hill II had...",
+		p1: "827",
+		p1tag: "Participants",
+		p2: "1.2k",
 		p2tag: "Applicants",
-		p3: "70+",
+		p3: "60",
 		p3tag: "Organizers",
-		p4: "10+",
-		p4tag: "Sponsors",
-		p5: "$60k+",
-		p5tag: "Funding Raised",
 	},
 	winners: {
 		title: "Winners",
@@ -174,9 +172,7 @@ export default {
 		icon_alt: "Collaborators Icon",
 	},
 	testimonials: {
-		title: "Making Moments Matter",
-		sub_heading:
-			"At Hack the Hill, students from different disciplines and backgrounds bring their ideas to life by creating a commmunity of collaboration, learning, and fun. These experiences are what shape our hackathon.",
+		title: "Testimonials",
 		t1: {
 			name: "Maddie Whibbs",
 			content: "Great and well organized event - career fair was my favorite part!",

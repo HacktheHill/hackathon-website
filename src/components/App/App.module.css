@@ -4,17 +4,15 @@
 	flex-direction: column;
 	gap: 3rem;
 	padding: 5rem 1rem 0;
-	background: linear-gradient(
-		180deg,
-		#640718 0%,
-		#800a1f 2.76%,
-		#8e0b23 5.53%,
-		#84010b 19.33%,
-		#8e0b23 24.35%,
-		#9c0e1f 29.97%,
-		#a91723 90.5%,
-		#5e0911 100%
-	);
+	/* Replace single gradient with layered backgrounds: road svg over gradient */
+	background-image: url("/SVGs/Full Road.svg"), var(--color-gradient);
+	background-repeat: no-repeat, no-repeat;
+	/* Center the road SVG and keep gradient from wrapper top */
+	background-position: right 200px, center top, center top;
+	background-origin: border-box, border-box;
+	background-clip: border-box, border-box;
+	/* Road stays reasonably narrow and centered; gradient covers wrapper */
+	background-size: 95vw auto, cover;
 }
 
 @media screen and (min-width: 768px) {

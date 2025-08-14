@@ -19,4 +19,4 @@ If you're part of the Hack the Hill team, refer to our [Contribution guidelines]
 
 For questions or inquiries, please reach out to [development@hackthehill.com](mailto:development@hackthehill.com).
 
-Copyright © 2023 Hack the Hill. All Rights Reserved.
+Copyright © 2025 Hack the Hill. All Rights Reserved.

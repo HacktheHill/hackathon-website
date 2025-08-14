@@ -1,6 +1,6 @@
 .stats {
-	--stats-gradient: linear-gradient(180deg, #fff3b6 0%, rgba(255, 243, 182, 0.75) 100%);
-	--stats-shadow: 0.5px 5px 7.5px 0px #fff3b633, 2px 4px 5px 0px #00000033 inset;
+	--stats-gradient: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.75) 100%);
+	--stats-shadow: 0.5px 5px 7.5px 0px #b9afc533, 2px 4px 5px 0px #00000033 inset;
 	margin: 0;
 }
 
@@ -16,31 +16,96 @@
 }
 
 .stats-container {
-	width: 100%;
-	background: var(--stats-gradient);
-	border-radius: 2rem;
+	width: fit-content;
+	max-width: 100%;
+	margin: 0 auto;
+	background: var(--color-gradient-2);
+	border-radius: 9999px;
+	padding: 1rem 1.5rem;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	box-shadow: var(--stats-shadow);
+	justify-content: center; /* center three entries */
+	align-items: center;
+	gap: 1rem 3rem; /* even spacing between items */
+	border: 2px solid #7500ff;
+	box-shadow: 0 0 12px var(--medium-secondary-color);
 }
 
 .stats-item {
 	padding: 1rem;
+	min-width: 140px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* center text within item */
 }
 
 .stats-item h2 {
 	font-family: Rubik;
 	font-weight: 500;
-	font-size: 3rem;
-	color: var(--dark-secondary-color);
+	font-size: 2.75rem;
+	color: var(--light-color);
 	text-align: center;
+	margin: 0;
 }
 
 .stats-item p {
 	font-family: Rubik;
-	font-weight: 500;
-	font-size: 1.5rem;
+	font-weight: 250;
+	font-size: 1.7rem;
+	color: var(--light-primary-color);
 	text-align: center;
 	margin: 0;
+}
+
+@media (min-width: 768px) {
+	/* enforce exactly three centered columns on desktop */
+	.stats-container {
+		display: grid;
+		grid-auto-rows: auto;
+		grid-template-columns: repeat(3, auto);
+		justify-content: center;
+		align-items: center;
+		gap: 0 3rem;
+	}
+
+	.stats-item {
+		width: 180px; /* fixed width for symmetry */
+		min-width: 180px;
+	}
+
+	/* reset previous generic separator */
+	.stats-item::after { display: none; }
+
+	/* separators only between first and second, and second and third items in a row */
+	.stats-item:nth-child(1)::after,
+	.stats-item:nth-child(2)::after {
+		content: "";
+		position: absolute;
+		right: -1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1px;
+		height: 60%;
+		background: rgba(255, 255, 255, 0.25);
+		display: block;
+	}
+}
+
+@media (max-width: 640px) {
+	.stats-container {
+		width: 100%;
+		border-radius: 2rem;
+		padding: 0.75rem 1rem;
+		gap: 0.5rem 1rem;
+	}
+	.stats-item h2 {
+		font-size: 1.5rem;
+	}
+	.stats-item p {
+		font-size: 0.85rem;
+	}
+	.stats-item::after {
+		display: none;
+	}
 }
