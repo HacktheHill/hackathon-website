@@ -92,8 +92,8 @@ function Hero() {
 		const transformations = [
 			{ selector: "#Sun", x: 0, y: 0.2 },
 			{ selector: "#Hill1", x: 0, y: 0.05 },
-			{ selector: "#Hill2", x: 0, y: 0.07 },
-			{ selector: "#Hill3", x: 0, y: 0.1 },
+			{ selector: "#Hill2", x: 0, y: 0.1 },
+			{ selector: "#Hill3", x: 0, y: 0.3 },
 		];
 
 		// Select all elements with the same class name and apply the CSS transformation to each of them

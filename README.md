@@ -28,3 +28,16 @@ Copyright © 2025 Hack the Hill. All Rights Reserved.
 4. need approval on page from design
 5. need to add shocked beaver
 6. sun moving down on scroll is a little stuttery but i dont think its a big problem
+
+add / edit:
+textboxes on faq
+side boxes -> smaller and follow figma
+put past winners pic box to fit
+collaborator animations + lights animation on road (blinky)
+neon on clock on building at hero needs to moveo with the hour and minute needle
+
+
+agam:
+will ask abt past sponsor box
+leaves on past sponsor will be changed
+laurels color change on previous winners
