@@ -108,16 +108,8 @@ function Hero() {
 		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
 			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
-				<div className={styles["location-date-heading"]} data-aos="fade-up" data-aos-duration="800">
-					<h5 className={styles["location"]}>
-						<strong>{t("hero.date")} </strong>
-						<img className={styles["location-pin"]} src={LocationPin} alt={t("hero.pin_alt")} />{" "}
-						{t("hero.format")}
-						<strong> {t("hero.at")} uOttawa</strong>
-					</h5>
-				</div>
 				<h1 id="Hero" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill"></img>
+					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill III"></img>
 				</h1>
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
@@ -146,7 +138,7 @@ function Hero() {
 						data-aos-duration="1000"
 						data-aos-delay="500"
 					>
-						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
+						{t("hero.apply")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</form>
 				{/*

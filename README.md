@@ -20,3 +20,10 @@ If you're part of the Hack the Hill team, refer to our [Contribution guidelines]
 For questions or inquiries, please reach out to [development@hackthehill.com](mailto:development@hackthehill.com).
 
 Copyright © 2025 Hack the Hill. All Rights Reserved.
+
+## todo:
+1. update nav bar shape
+2. update french text
+3. update landing page (buildings)
+4. replace leaves with stars
+5. update faqs

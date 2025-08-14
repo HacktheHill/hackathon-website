@@ -1,24 +1,38 @@
 .navbar {
-	--background-on-scroll: var(--light-tertiary-color);
-	--link-color: var(--dark-primary-color);
+	--background-on-scroll: rgba(0,0,0,0.5);
+	--link-color: var(--light-color);
 	--link-underline-color: var(--dark-primary-color);
 	--box-shadow-color: rgba(0, 0, 0, 0.1);
 
-	box-sizing: border-box;
+	/* Floating pill layout */
 	position: fixed;
-	display: flex;
-	justify-content: space-between;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: min(1200px, calc(100% - 2rem));
 	height: 4.5rem;
-	width: 100%;
-	padding-right: 1rem;
+	padding: 0.1rem 2rem; /* symmetric padding to keep content inset */
+	border-radius: 15px; /* curved sides */
+	background: var(--dark-primary-color);
+	border: 2px solid color-mix(in srgb, var(--medium-secondary-color) 10%, transparent);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.04);
+	backdrop-filter: saturate(140%) blur(6px);
+	-webkit-backdrop-filter: saturate(140%) blur(6px);
+	z-index: 100; /* stay above page content */
+
+	/* layout */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	gap: 1rem;
-	transition: background-color 0.5s ease;
 	pointer-events: auto;
+	transition: box-shadow 0.3s ease, background-color 0.5s ease;
 }
 
 .navbar[data-scrolled="true"] {
 	background-color: var(--background-on-scroll);
-	box-shadow: 0 0 10px var(--box-shadow-color);
+	/* Slightly stronger shadow when scrolled */
+	box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .navbar ul {
@@ -146,6 +160,10 @@
 .active { color: inherit; }
 
 @media (max-width: 940px) {
+	.navbar {
+		width: calc(100% - 1.5rem);
+		top: 0.75rem;
+	}
 	.navbar ul:not(.left-side-buttons) {
 		display: none;
 	}
@@ -156,6 +174,10 @@
 }
 
 @media (max-width: 375px) {
+	.navbar {
+		width: calc(100% - 1rem);
+		top: 0.5rem;
+	}
 	.navbar ul.left-side-buttons {
 		margin: 0;
 		margin-right: auto;

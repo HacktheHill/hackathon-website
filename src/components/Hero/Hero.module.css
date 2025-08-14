@@ -8,7 +8,7 @@
 	--countdown-item-color: var(--medium-secondary-color);
 
 	/* background gradient */
-	background: var(--color-gradient);
+	background: var(--color-gradient-light);
 
 	background-repeat: no-repeat;
 }
@@ -43,13 +43,13 @@
 }
 
 .banner-logo {
-	width: calc(10 * clamp(1rem, 5vmin, 10rem));
+	width: calc(15 * clamp(1rem, 5vmin, 10rem));
 }
 
 .hero-heading h2 {
-	color: var(--hero-heading);
+	color: var(--light-color);
 	font-family: Coolvetica;
-	font-weight: 500;
+	font-weight: 300;
 	font-size: clamp(1rem, 4vmin, 1.75rem);
 }
 

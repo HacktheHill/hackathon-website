@@ -27,11 +27,11 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 			offset: -120,
 			text: t("navbar.links.testimonials"),
 		},
-		{
-			to: "schedule",
-			offset: -120,
-			text: t("navbar.links.hacker"),
-		},
+		// {
+		// 	to: "schedule",
+		// 	offset: -120,
+		// 	text: t("navbar.links.schedule"),
+		// },
 		{
 			to: "sponsors",
 			offset: -120,
