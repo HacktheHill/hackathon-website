@@ -16,6 +16,7 @@
 	--button-gradient: linear-gradient(90deg, var(--medium-secondary-color), transparent) var(--light-secondary-color);
 	/* Purple island gradient for stats */
 	--color-gradient-2: linear-gradient(180deg, #6005CB 0%, #440095 100%);
+	--color-gradient-dark: linear-gradient(180deg, #6005CB 10%, #320369 120%);
 	color-scheme: light;
 	scrollbar-gutter: stable;
 	background-color: var(--dark-primary-color);

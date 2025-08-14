@@ -22,7 +22,7 @@ function App() {
 				<Stats />
 				<Winners />
 				<Testimonials />
-				<Schedule />
+				{/* <Schedule /> */}
 				<Sponsors />
 				<FAQ />
 				<Footer />

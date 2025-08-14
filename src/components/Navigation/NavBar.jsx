@@ -56,7 +56,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 	return (
 		<nav className={style["navbar"]} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
 			<Link
-				className="link logo"
+				className={style["logo"]}
 				activeClass="active"
 				to="hero"
 				spy={true}

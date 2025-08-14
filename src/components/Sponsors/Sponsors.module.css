@@ -67,11 +67,11 @@
 	background: var(--light-primary-color);
 	bottom: -1rem;
 	left: -1rem;
-	filter: drop-shadow(0 0 1rem var(--light-secondary-color));
+	filter: drop-shadow(0 0 1rem #fff3b6);
 }
 
 .icon-box::after {
-	background: var(--color-gradient-2);
+	background: var(--color-gradient-dark);
 	inset: 0;
 }
 

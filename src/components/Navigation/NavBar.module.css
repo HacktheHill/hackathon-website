@@ -34,6 +34,17 @@
 
 .logo {
 	cursor: pointer;
+	/* Ensure the logo link fills the navbar height */
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+/* Make the logo image fill the navbar height while preserving aspect ratio */
+.logo img {
+	height: 100%;
+	width: auto;
+	display: block;
 }
 
 .navbar li {
@@ -130,6 +141,9 @@
 .sidebar-open :nth-child(3) {
 	transform: translate(0, -1.2ch) rotate(45deg);
 }
+
+/* Active state class applied by react-scroll; visuals handled below via :is(.active, :hover) */
+.active { color: inherit; }
 
 @media (max-width: 940px) {
 	.navbar ul:not(.left-side-buttons) {

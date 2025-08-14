@@ -104,6 +104,13 @@ function Testimonials() {
 	}, [nextSlide, prevSlide]);
 
 	useEffect(() => {
+		const id = setInterval(() => {
+			nextSlide();
+		}, 7000);
+		return () => clearInterval(id);
+	}, [nextSlide]);
+
+	useEffect(() => {
 		AOS.init({});
 	}, []);
 

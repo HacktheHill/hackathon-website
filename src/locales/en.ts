@@ -44,8 +44,8 @@ export default {
 		p3tag: "Organizers",
 	},
 	winners: {
-		title: "Winners",
-		subtitle: "Celebrating the brilliant minds and projects that made Hack the Hill II an unforgettable journey!",
+		title: "Previous winners",
+		// subtitle: "Celebrating the brilliant minds and projects that made Hack the Hill II an unforgettable journey!",
 		categories: {
 			general_challenge: "General Challenge"
 		},
@@ -162,10 +162,10 @@ export default {
 		},
 	},
 	sponsors: {
-		title: "Sponsors",
+		title: "Past Sponsors",
 		icon_alt: "Sponsor Icon",
 		p: "Hack the Hill is made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
-		button: "Become a Sponsor",
+		button: "Become a Sponsor!",
 	},
 	collaborators: {
 		title: "Collaborators",

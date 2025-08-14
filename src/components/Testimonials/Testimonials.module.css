@@ -31,7 +31,7 @@
 	width: min(1100px, 92%);
 	font-size: clamp(1rem, 2.4vw, 1.4rem);
 	color: var(--light-secondary-color);
-	margin-bottom: 1.5rem;
+	margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 /* Viewport holding cards */
@@ -40,6 +40,8 @@
 	width: min(1000px, 92%);
 	min-height: 360px;
 	margin: 0 auto;
+	/* add extra space between headings and cards */
+	margin-top: clamp(0.75rem, 2.5vw, 2rem);
 	/* control card width globally for layout math */
 	--cardW: clamp(520px, 70vw, 640px);
 }
