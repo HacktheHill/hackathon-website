@@ -167,7 +167,6 @@ function Winners() {
 					{subtitle}
 				</p>
 				<div className={styles.error}>Error loading winners: {error}</div>
-				<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 			</div>
 		);
 	}
@@ -289,7 +288,6 @@ function Winners() {
 					</div>
 				)}
 			</div>
-			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
 		</div>
 	);
 }

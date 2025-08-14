@@ -61,9 +61,9 @@
 	background: none; /* Ensure no background override */
 }
 
-.prev { transform: translate(calc(-50% - (var(--cardW) / 2 + 36px)), 16px) scale(0.92); opacity: 0.5; filter: blur(1px); z-index: 1; }
-.next { transform: translate(calc(-50% + (var(--cardW) / 2 + 36px)), 16px) scale(0.92); opacity: 0.5; filter: blur(1px); z-index: 1; }
-.active { transform: translateX(-50%) scale(1); opacity: 1; filter: none; pointer-events: auto; z-index: 3; }
+.prev { transform: translate(calc(-50% - (var(--cardW) * 0.9 + 24px)), 24px) scale(0.6); opacity: 0.5; filter: blur(1px); z-index: 1; }
+.next { transform: translate(calc(-50% + (var(--cardW) * 0.9 + 24px)), 24px) scale(0.6); opacity: 0.5; filter: blur(1px); z-index: 1; }
+.active { transform: translateX(-50%) scale(1); }
 .ghost { opacity: 0; pointer-events: none; z-index: 0; }
 
 /* Card inner (purple island) */
@@ -78,7 +78,8 @@
 
 /* Active card should be fully opaque */
 .active .cardInner {
-	background: var(--dark-primary-color);
+	background: #320369;
+	opacity: 1;
 }
 
 /* Avatar overlapping the card */

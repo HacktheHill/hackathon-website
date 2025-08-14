@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { t } from "../../i18n";
 import styles from "./About.module.css";
 import "../../global.css";
+import ufo from "/SVGs/About/ufo.svg";
 
 //animations
 import AOS from "aos";
@@ -42,6 +43,7 @@ function About() {
 					allowFullScreen
 					loading="lazy"
 				></iframe>
+				<img className={styles["ufo"]} src={ufo} alt="ufo" />
 			</div>
 		</div>
 	);

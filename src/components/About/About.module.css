@@ -35,6 +35,18 @@
 	margin: auto 2rem;
 }
 
+.frame img.ufo {
+	height: 140%;
+	width: auto;
+	top: -75%;
+	right: 0rem;
+	pointer-events: none;
+	/* keep video clickable */
+	z-index: 0;
+	/* behind the video */
+	animation: ufo-bob 2.5s infinite ease-in-out;
+}
+
 .frame iframe {
 	width: 75%;
 	height: 75%;
@@ -44,14 +56,28 @@
 	border-radius: 1rem;
 	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 0 6px rgba(255, 255, 255, 0.06) inset;
 	display: block;
-	margin: 1rem auto 0; /* move down and keep centered */
+	margin: 1rem auto 0;
+	/* move down and keep centered */
 	position: relative;
-	z-index: 1; /* place video above decorative leaves */
+	z-index: 1;
+	/* place video above decorative leaves */
 	transform: translateY(20%);
 }
 
 .frame img {
 	position: absolute;
+}
+
+@keyframes ufo-bob {
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-4px);
+	}
 }
 
 @media screen and (max-width: 1200px) {
@@ -69,6 +95,10 @@
 		margin: 4rem 1rem;
 	}
 
+	.frame img.ufo {
+		display: none
+	}
+
 	.about-text {
 		padding: 1rem 1.25rem;
 	}
@@ -84,6 +114,10 @@
 
 	.about-text p {
 		font-size: 1rem;
+	}
+
+	.frame img.ufo {
+		display: none
 	}
 }
 

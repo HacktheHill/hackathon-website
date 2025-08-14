@@ -20,7 +20,7 @@
 	--color-gradient-2: linear-gradient(180deg, #6005CB 0%, #440095 100%);
 	--color-gradient-dark: linear-gradient(180deg, #6005CB 10%, #320369 120%);
 	--color-gradient-light: linear-gradient(180deg, var(--medium-secondary-color) 0%, #b7a8ca 80%, var(--dark-tertiary-color-2) 95%);
-	color-scheme: light;
+	color-scheme: dark;
 	scrollbar-gutter: stable;
 	background-color: var(--dark-primary-color);
 }

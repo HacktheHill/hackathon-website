@@ -25,15 +25,13 @@ Copyright © 2025 Hack the Hill. All Rights Reserved.
 1. update french text - JON WILL DO
 2. replace leaves with stars ON HOLD - I ONLY ADDED TO HERO PAGE, LAZY TO ADD IT ACROSS APP
 3. update faqs - MIGHT JUST KEEP IT AS IS
-4. need approval on page from design
-5. need to add shocked beaver
-6. sun moving down on scroll is a little stuttery but i dont think its a big problem
+4. need to add shocked beaver
+5. sun moving down on scroll is a little stuttery but i dont think its a big problem
 
 add / edit:
 textboxes on faq
-side boxes -> smaller and follow figma
 put past winners pic box to fit
-collaborator animations + lights animation on road (blinky)
+lights animation on road (blinky)
 neon on clock on building at hero needs to moveo with the hour and minute needle
 
 
@@ -41,3 +39,4 @@ agam:
 will ask abt past sponsor box
 leaves on past sponsor will be changed
 laurels color change on previous winners
+should testimonial side boxes be blurred or not
