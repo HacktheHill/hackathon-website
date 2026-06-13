@@ -1,24 +1,25 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
-import hero from "../../assets/hero.svg?raw";
-import { t } from "../../i18n";
+import type { PointerEvent, TouchEvent } from "react";
+import hero from "@/assets/hero.svg?raw";
+import { t } from "@/i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
-import BannerLogo from "/Logos/hackthehill-banner.svg";
-import LocationPin from "/SVGs/location-pin.svg";
+import BannerLogo from "@/assets/Logos/hackthehill-banner.svg?url";
+import LocationPin from "@/assets/SVGs/location-pin.svg?url";
 
 //animations
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EVENT_START_DATE = new Date("2024-09-27T13:00:00-00:00");
-const HACKING_END_DATE = new Date("2024-09-29T15:00:00-00:00");
+const EVENT_START_DATE = new Date("2024-09-27T13:00:00-00:00").getTime();
+const HACKING_END_DATE = new Date("2024-09-29T15:00:00-00:00").getTime();
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
 // If the current time is after the hacking end date, the countdown will not show
-let date = null;
+let date: number | null = null;
 switch (true) {
 	case Date.now() < EVENT_START_DATE:
 		date = EVENT_START_DATE;
@@ -40,22 +41,25 @@ function Hero() {
 	useEffect(() => {
 		setTime(Date.now());
 		const interval = setInterval(() => setTime(Date.now()), 1000);
-		setEmail();
+		setEmail("");
 
 		return () => clearInterval(interval);
 	}, []);
 
-	const days = Math.floor((date - time) / 1000 / 60 / 60 / 24);
-	const hours = Math.floor((date - time) / 1000 / 60 / 60) % 24;
-	const minutes = Math.floor((date - time) / 1000 / 60) % 60;
-	const seconds = Math.floor((date - time) / 1000) % 60;
+	const remainingTime = date === null ? 0 : date - time;
+	const days = Math.floor(remainingTime / 1000 / 60 / 60 / 24);
+	const hours = Math.floor(remainingTime / 1000 / 60 / 60) % 24;
+	const minutes = Math.floor(remainingTime / 1000 / 60) % 60;
+	const seconds = Math.floor(remainingTime / 1000) % 60;
 
 	const formattedHours = hours.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedMinutes = minutes.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedSeconds = seconds.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 
-	const popup = event => {
-		if (event.target.closest("#clock-tower")) {
+	const popup = (event: PointerEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>) => {
+		const target = event.target;
+
+		if (target instanceof Element && target.closest("#clock-tower")) {
 			setPopupOpen(true);
 		} else {
 			setPopupOpen(false);
@@ -64,7 +68,7 @@ function Hero() {
 
 	// For parallax scrolling effect
 	const [scrollY, setScrollY] = useState(0);
-	const heroRef = useRef(null);
+	const heroRef = useRef<HTMLDivElement>(null);
 
 	// Detect if the user is scrolling and update the scrollY state variable accordingly
 	useEffect(() => {
@@ -83,7 +87,7 @@ function Hero() {
 	useEffect(() => {
 		// The selector is used to select all elements with the same class name
 		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
-		const transformations = [
+		const transformations: { selector: string; x: number; y: number }[] = [
 			{ selector: "#Sun", x: 0, y: 3 },
 			{ selector: "#Hill-1", x: -3, y: 0.2 },
 			{ selector: "#Hill-2", x: 2, y: 1.6 },
@@ -92,8 +96,12 @@ function Hero() {
 		];
 
 		// Select all elements with the same class name and apply the CSS transformation to each of them
-		const applyTransformation = ({ selector, x, y }) => {
-			const elements = heroRef.current.querySelectorAll(selector);
+		const applyTransformation = ({ selector, x, y }: { selector: string; x: number; y: number }) => {
+			if (!heroRef.current) {
+				return;
+			}
+
+			const elements = heroRef.current.querySelectorAll<HTMLElement>(selector);
 			elements.forEach(element => {
 				const xValue = scrollY * x;
 				const yValue = scrollY * y;
@@ -141,7 +149,6 @@ function Hero() {
 					<button
 						type="submit"
 						className={styles["hero-btn"]}
-						target={"_blank"}
 						data-aos="fade-up"
 						data-aos-duration="1000"
 						data-aos-delay="500"

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { t } from "../../i18n";
+import { t } from "@/i18n";
 import styles from "./Testimonials.module.css";
+import leftLeaves from "@/assets/SVGs/Testimonials/left-leaves.svg?url";
+import rightLeaves from "@/assets/SVGs/Testimonials/right-leaves.svg?url";
 
 //animations
 import AOS from "aos";
@@ -53,7 +55,7 @@ function Testimonials() {
 	];
 
 	const [activeIndex, setActiveIndex] = useState(0);
-	const ref = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 
 	const nextSlide = () => {
 		setActiveIndex(prevIndex => (prevIndex + 1) % testimonialData.length);
@@ -66,6 +68,10 @@ function Testimonials() {
 	// Enable swiping on mobile devices
 	useEffect(() => {
 		const carousel = ref.current;
+		if (!carousel) {
+			return;
+		}
+
 		let touchstartX = 0;
 		let touchendX = 0;
 
@@ -74,11 +80,11 @@ function Testimonials() {
 			if (touchendX > touchstartX) prevSlide();
 		};
 
-		const handleTouchStart = event => {
+		const handleTouchStart = (event: TouchEvent) => {
 			touchstartX = event.changedTouches[0].screenX;
 		};
 
-		const handleTouchEnd = event => {
+		const handleTouchEnd = (event: TouchEvent) => {
 			touchendX = event.changedTouches[0].screenX;
 			handleGesture();
 		};
@@ -98,7 +104,7 @@ function Testimonials() {
 
 	return (
 		<div id="testimonials" className={styles["testimonials"]}>
-			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
+			<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 			<h1 data-aos="fade-up" data-aos-duration="800">
 				{t("testimonials.title")}
 			</h1>
@@ -158,7 +164,7 @@ function Testimonials() {
 					aria-label={t("testimonials.aria_label_next")}
 				></button>
 			</div>
-			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
+			<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
 		</div>
 	);
 }

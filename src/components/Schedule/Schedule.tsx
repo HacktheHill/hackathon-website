@@ -1,14 +1,29 @@
 import { useEffect, useState } from "react";
-import { t } from "../../i18n";
+import type { CSSProperties } from "react";
+import { t } from "@/i18n";
 import Button from "../Button/Button";
 import styles from "./Schedule.module.css";
+import sunImg from "@/assets/SVGs/Schedule/sun.svg?url";
+import cloudImg from "@/assets/SVGs/Schedule/cloud.svg?url";
 
 //animations
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+type ScheduleEvent = {
+	title: string;
+	month: string;
+	day: string;
+	time: string;
+	description: string;
+	status: string;
+	link: string;
+	disabled?: boolean;
+	exception?: boolean;
+};
+
 function Schedule() {
-	const events = t("schedule.events");
+	const events: readonly ScheduleEvent[] = t("schedule.events");
 
 	const [numberVisible, setNumberVisible] = useState(3);
 
@@ -70,14 +85,14 @@ function Schedule() {
 					{numberVisible >= events.length ? t("schedule.less") : t("schedule.more")}{" "}
 				</Button>
 			</div>
-			<img className={styles["sun"]} src="/SVGs/Schedule/sun.svg" alt="sun"></img>
+			<img className={styles["sun"]} src={sunImg} alt="sun"></img>
 		</div>
 	);
 }
 
 function Clouds() {
 	const [count, setCount] = useState(0);
-	const [style, setStyle] = useState({});
+	const [style, setStyle] = useState<CSSProperties>({});
 
 	useEffect(() => {
 		setCount(Math.floor(Math.random() * 3) + 1);
@@ -88,11 +103,13 @@ function Clouds() {
 		});
 	}, []);
 
-	return new Array(count)
-		.fill(0)
-		.map((_, i) => (
-			<img key={i} className={styles["cloud"]} src="/SVGs/Schedule/cloud.svg" alt="cloud" style={style}></img>
-		));
+	return (
+		<>
+			{new Array(count).fill(0).map((_, i) => (
+			<img key={i} className={styles["cloud"]} src={cloudImg} alt="cloud" style={style}></img>
+			))}
+		</>
+	);
 }
 
 export default Schedule;

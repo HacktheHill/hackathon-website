@@ -1,9 +1,20 @@
 import styles from "./Team.module.css";
 import React from "react";
-import Tooltip from "@mui/material/Tooltip";
-import { t } from "../../i18n";
+import { Tooltip } from "@mui/material";
+import { t } from "@/i18n";
 
-const marqueeGroup = (team, index, pauseAnimation, startAnimation) => {
+type TeamMember = {
+	name: string;
+	role: string;
+	image: string;
+};
+
+const marqueeGroup = (
+	team: TeamMember[],
+	index: number,
+	pauseAnimation: () => void,
+	startAnimation: () => void,
+) => {
 	return (
 		<div
 			id={`marquee${index}`}
@@ -341,13 +352,13 @@ function Team() {
 	];
 
 	function pauseAnimation() {
-		document.getElementById("marquee1").style.animationPlayState = "paused";
-		document.getElementById("marquee2").style.animationPlayState = "paused";
+		document.getElementById("marquee1")?.style.setProperty("animation-play-state", "paused");
+		document.getElementById("marquee2")?.style.setProperty("animation-play-state", "paused");
 	}
 
 	function startAnimation() {
-		document.getElementById("marquee1").style.animationPlayState = "running";
-		document.getElementById("marquee2").style.animationPlayState = "running";
+		document.getElementById("marquee1")?.style.setProperty("animation-play-state", "running");
+		document.getElementById("marquee2")?.style.setProperty("animation-play-state", "running");
 	}
 
 	return (

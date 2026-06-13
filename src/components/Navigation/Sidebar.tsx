@@ -1,11 +1,17 @@
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import type { Dispatch, SetStateAction } from "react";
 import React, { useEffect } from "react";
 import { Link } from "react-scroll";
-import { t } from "../../i18n";
+import { t } from "@/i18n";
 import styles from "./Sidebar.module.css";
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+type SidebarProps = {
+	sidebarOpen: boolean;
+	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 	const links = [
 		{
 			to: "about",
@@ -73,16 +79,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 	];
 
 	useEffect(() => {
-		const listener = window.addEventListener("resize", () => {
+		const listener = () => {
 			if (window.innerWidth > 940) {
 				setSidebarOpen(false);
 			}
-		});
+		};
+
+		window.addEventListener("resize", listener);
 
 		return () => {
 			window.removeEventListener("resize", listener);
 		};
-	});
+	}, [setSidebarOpen]);
 
 	useEffect(() => {
 		document.documentElement.style.overflow = sidebarOpen ? "hidden" : "auto";

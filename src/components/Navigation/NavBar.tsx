@@ -1,6 +1,7 @@
 import { Link } from "react-scroll";
-import { locale, t } from "../../i18n";
-import logo from "/Logos/hackthehill-logo.svg";
+import type { Dispatch, SetStateAction } from "react";
+import { locale, t } from "@/i18n";
+import logo from "@/assets/Logos/hackthehill-logo.svg?url";
 import { useState, useEffect } from "react";
 import style from "./NavBar.module.css";
 
@@ -8,7 +9,13 @@ import style from "./NavBar.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
+type NavbarProps = {
+	pageScroll: number;
+	sidebarOpen: boolean;
+	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: NavbarProps) {
 	const [language, setLanguage] = useState(true);
 
 	const links = [
@@ -89,7 +96,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }) {
 			</div>
 
 			<ul>
-				{links.map((link, index) => (
+				{links.map(link => (
 					<li key={link.text}>
 						<Link
 							className={style["link"]}

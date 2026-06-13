@@ -1,7 +1,7 @@
-import { t } from "../../i18n";
+import { t } from "@/i18n";
 import styles from "./FourOFour.module.css";
-import beaver from "../../../public/assets/beaver404.png";
-import "../../global.css";
+import beaver from "@/assets/assets/beaver404.png?url";
+import "@/global.css";
 
 function FourOFour() {
 	return (
