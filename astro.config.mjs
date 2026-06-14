@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import { fileURLToPath } from "node:url";
 
-const DEV = process.argv[2] === "build" ? false : true;
+const DEV = process.argv[2] !== "build";
 
 // https://astro.build/config
 export default defineConfig({
