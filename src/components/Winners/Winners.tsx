@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { t } from "../../i18n";
+import { t } from "@/i18n";
 import styles from "./Winners.module.css";
 import Button from "../Button/Button.jsx";
+import leftLeaves from "@/assets/SVGs/Testimonials/left-leaves.svg?url";
+import rightLeaves from "@/assets/SVGs/Testimonials/right-leaves.svg?url";
+import laurelLeft from "@/assets/SVGs/Winners/gold-laurel-left.svg?url";
+import laurelRight from "@/assets/SVGs/Winners/gold-laurel-right.svg?url";
 
 // animations
 import AOS from "aos";
@@ -64,6 +68,16 @@ const projectLinks = {
 	JustVent: "https://devpost.com/software/justvent",
 };
 
+type Winner = {
+	readonly place: string;
+	readonly project: string;
+	readonly team: readonly string[];
+};
+
+function hasKey<T extends object>(object: T, key: PropertyKey): key is keyof T {
+	return key in object;
+}
+
 function Winners() {
 	const [error] = useState(null);
 	const [activeCategory, setActiveCategory] = useState("general_challenge");
@@ -98,17 +112,17 @@ function Winners() {
 	if (error) {
 		return (
 			<div className={styles.winners}>
-				<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
+				<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 				<div className={styles.titleContainer} data-aos="fade-up" data-aos-duration="800">
 					<img
 						className={styles["laurel-left"]}
-						src="/SVGs/Winners/gold-laurel-left.svg"
+						src={laurelLeft}
 						alt="gold laurel left"
 					/>
 					<h1>{title}</h1>
 					<img
 						className={styles["laurel-right"]}
-						src="/SVGs/Winners/gold-laurel-right.svg"
+						src={laurelRight}
 						alt="gold laurel right"
 					/>
 				</div>
@@ -116,33 +130,31 @@ function Winners() {
 					{subtitle}
 				</p>
 				<div className={styles.error}>Error loading winners: {error}</div>
-				<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
+				<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
 			</div>
 		);
 	}
 
 	const renderWinners = () => {
-		let currentWinners = [];
+		let currentWinners: readonly Winner[] = [];
 
 		if (activeCategory === "general_challenge") {
 			currentWinners = generalChallenge;
-		} else {
-			// Check if it's a sponsor challenge or mini challenge
-			const isSponsorChallenge = Object.keys(sponsorChallenges).includes(activeCategory);
-			currentWinners = isSponsorChallenge
-				? sponsorChallenges[activeCategory] || []
-				: miniChallenges[activeCategory] || [];
+		} else if (hasKey(sponsorChallenges, activeCategory)) {
+			currentWinners = sponsorChallenges[activeCategory];
+		} else if (hasKey(miniChallenges, activeCategory)) {
+			currentWinners = miniChallenges[activeCategory];
 		}
 
-		// If currentWinners is undefined or not an array, return a message
-		if (!currentWinners || !Array.isArray(currentWinners)) {
+		if (currentWinners.length === 0) {
 			return <div className={styles.noWinners}>{t("winners.no_data")}</div>;
 		}
 
 		return (
 			<div className={styles.winnersList}>
 				{currentWinners.map((winner, index) => {
-					const projectUrl = projectLinks[winner.project] || "#";
+					const projectUrl = hasKey(projectLinks, winner.project) ? projectLinks[winner.project] : "#";
+					const teamPhoto = hasKey(teamPhotos, winner.project) ? teamPhotos[winner.project] : undefined;
 					const isSpecialProject =
 						winner.project === "Team 1" ||
 						winner.project === "Team 2" ||
@@ -164,22 +176,21 @@ function Winners() {
 							<div className={styles.placement}>{winner.place}</div>
 							<h3 className={styles.projectName}>{winner.project}</h3>
 							<div className={styles.teamMembers}>
-								{winner.team &&
-									winner.team.map((member, i) => (
+								{winner.team?.map((member, i) => (
 										<span key={i}>
 											{member}
 											{i < winner.team.length - 1 ? ", " : ""}
 										</span>
 									))}
 							</div>
-							{teamPhotos[winner.project] && (
+							{teamPhoto && (
 								<div
 									className={`${styles.teamPhotoContainer} ${
 										isSpecialProject ? styles.specialPhotoContainer : ""
 									}`}
 								>
 									<img
-										src={teamPhotos[winner.project]}
+										src={teamPhoto}
 										alt={
 											winner.project === "Team 1" || winner.project === "Équipe 1"
 												? "Team 1 photo"
@@ -216,25 +227,27 @@ function Winners() {
 							{cardContent}
 						</a>
 					);
-				})}
+					})}
 			</div>
 		);
 	};
 
+	const activeCategoryLabel = hasKey(categories, activeCategory) ? categories[activeCategory] : activeCategory;
+
 	return (
 		<div id="winners" className={styles.winners}>
-			<img className={styles["left-leaves"]} src="/SVGs/Testimonials/left-leaves.svg" alt="left-leaves" />
+			<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 
 			<div className={styles.titleContainer} data-aos="fade-up" data-aos-duration="800">
 				<img
 					className={styles["laurel-left"]}
-					src="/SVGs/Winners/gold-laurel-left.svg"
+					src={laurelLeft}
 					alt="gold laurel left"
 				/>
 				<h1>{title}</h1>
 				<img
 					className={styles["laurel-right"]}
-					src="/SVGs/Winners/gold-laurel-right.svg"
+					src={laurelRight}
 					alt="gold laurel right"
 				/>
 			</div>
@@ -261,11 +274,11 @@ function Winners() {
 
 			<div className={styles.winnersSection}>
 				<h3 className={styles.categoryTitle} data-aos="fade-up" data-aos-duration="800">
-					{categories[activeCategory]}
+					{activeCategoryLabel}
 				</h3>
 				{renderWinners()}
 			</div>
-			<img className={styles["right-leaves"]} src="/SVGs/Testimonials/right-leaves.svg" alt="right-leaves" />
+			<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
 		</div>
 	);
 }

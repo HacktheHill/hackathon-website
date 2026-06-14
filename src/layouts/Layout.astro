@@ -1,8 +1,9 @@
 ---
-import fs from "fs/promises";
-import path from "path";
+export interface Props {
+	title?: string;
+}
 
-const { title } = Astro.props;
+const { title } = (Astro.props as Props) || {};
 
 const description =
 	"Join us for Hack the Hill II, a hackathon in heart of Canada's capital from September 27th to 29th, 2024! Joignez nous pour Hack the Hill II, un hackathon au cœur de la capitale du Canada du 27 au 29 septembre 2024!";
@@ -12,19 +13,14 @@ const keywords =
 
 const color = "#ea885f";
 
-let structuredData = {} as any;
-try {
-	structuredData = JSON.parse(await fs.readFile(path.resolve("./public/structured-data.json"), "utf-8"));
+const url = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const structuredData = await (await fetch(`${url}/structured-data.json`)).json();
+
 	structuredData.description = description;
 	structuredData.keywords = keywords;
-	structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
-	structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
-} catch (error) {
-	console.error(error);
-}
+structuredData.url = url;
+structuredData.image = `${url}/Logos/hackthehill-logo.svg`;
 const structuredDataString = JSON.stringify(structuredData);
-
-const url = import.meta.env.SITE.replace(/\/$/, "");
 ---
 
 <!DOCTYPE html>

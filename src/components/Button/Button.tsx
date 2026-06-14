@@ -1,12 +1,22 @@
-import React from "react";
+import type { ButtonHTMLAttributes, HTMLAttributeAnchorTarget, ReactNode } from "react";
 import { Link } from "react-scroll";
 import styles from "./Button.module.css";
 
-function InnerButton({ children, ...rest }) {
+type InnerButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+	children: ReactNode;
+};
+
+type ButtonProps = InnerButtonProps & {
+	href?: string;
+	target?: HTMLAttributeAnchorTarget;
+	offset?: number;
+};
+
+function InnerButton({ children, ...rest }: InnerButtonProps) {
 	return <button {...rest}>{children}</button>;
 }
 
-export default function Button({ children, href, target, offset, ...rest }) {
+export default function Button({ children, href, target, offset = 0, ...rest }: ButtonProps) {
 	if (href?.startsWith("#")) {
 		return (
 			<Link className={styles.button} to={href.slice(1)} smooth={true} offset={offset} duration={500} href={href}>

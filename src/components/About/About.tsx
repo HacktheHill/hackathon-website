@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { t } from "../../i18n";
+import { t } from "@/i18n";
 import styles from "./About.module.css";
-import leftLeaves from "/SVGs/About/left-leaves.svg";
-import rightLeaves from "/SVGs/About/right-leaves.svg";
-import "../../global.css";
+
+import leftLeaves from "@/assets/SVGs/About/left-leaves.svg?url";
+import rightLeaves from "@/assets/SVGs/About/right-leaves.svg?url";
+import "@/global.css";
 
 //animations
 import AOS from "aos";

@@ -12,14 +12,17 @@ type I18n = ReturnType<typeof i18n.get>;
 type Locale = keyof I18n;
 
 const defaultLocale: Locale = "en" as const;
-export const locale = atom(defaultLocale);
+export const locale = atom<Locale>(defaultLocale);
 
 /**
  * Get a translation from the i18n store
  * @param path A dot notation path to the value
  * @returns The value at the path
  */
-export const t = <P extends Path<I18n[typeof defaultLocale]>>(path: P) => get(useStore(i18n)[useStore(locale)], path);
+export function t<P extends Path<I18n[typeof defaultLocale]>>(path: P): PathValue<I18n[typeof defaultLocale], P>;
+export function t(path: Path<I18n[typeof defaultLocale]>): any {
+	return get(useStore(i18n)[useStore(locale)], path);
+}
 
 // https://stackoverflow.com/questions/68411508/typescript-type-safe-string-with-dot-notation-for-query-nested-object
 type PathImpl<T, K extends keyof T> = K extends string
@@ -46,8 +49,16 @@ type PathValue<T, P extends Path<T>> = P extends `${infer K}.${infer Rest}`
  * @param path A dot notation path to the value
  * @returns The value at the path
  */
-const get = <T, P extends Path<T>>(obj: T, path: P): PathValue<T, P> => {
-	const keys = path.toString().split(".") as (keyof T)[];
-	// @ts-expect-error
-	return keys.reduce((o, k) => o && o[k], obj);
+const get = (obj: unknown, path: string): any => {
+	let value = obj;
+
+	for (const key of path.split(".")) {
+		if (value === null || (typeof value !== "object" && typeof value !== "function")) {
+			return undefined;
+		}
+
+		value = Reflect.get(value, key);
+	}
+
+	return value;
 };

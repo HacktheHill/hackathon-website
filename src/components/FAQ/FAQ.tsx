@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
-import faq from "../../assets/faq-leaves.svg?raw";
-import { t } from "../../i18n";
+import faq from "@/assets/faq-leaves.svg?raw";
+import { t } from "@/i18n";
 import styles from "./FAQ.module.css";
 
 //animations
@@ -9,9 +9,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function FAQ() {
-	const [expandedList, setExpandedList] = useState([]);
+	const [expandedList, setExpandedList] = useState<string[]>([]);
 
-	const handleKeyList = (event, e) => {
+	const handleKeyList = (e: { key: string }) => {
 		if (expandedList.includes(e.key)) {
 			setExpandedList(prev => prev.filter(keys => keys !== e.key));
 		} else {
@@ -118,7 +118,7 @@ export default function FAQ() {
 						>
 							<AccordionSummary
 								className={styles.question}
-								onClick={event => handleKeyList(event, item)}
+								onClick={() => handleKeyList(item)}
 								sx={{
 									color: "var(--text-color)",
 									"&:hover": {
@@ -145,7 +145,6 @@ export default function FAQ() {
 										stroke="currentColor"
 										fill="var(--text-color)"
 										strokeWidth="0"
-										t="1551322312294"
 										viewBox="0 0 1024 1024"
 										version="1.1"
 										height="1em"
@@ -190,7 +189,7 @@ export default function FAQ() {
 						>
 							<AccordionSummary
 								className={styles.question}
-								onClick={event => handleKeyList(event, item)}
+								onClick={() => handleKeyList(item)}
 								sx={{
 									color: "var(--text-color)",
 									"&:hover": {
@@ -217,7 +216,6 @@ export default function FAQ() {
 										stroke="currentColor"
 										fill="var(--text-color)"
 										strokeWidth="0"
-										t="1551322312294"
 										viewBox="0 0 1024 1024"
 										version="1.1"
 										height="1em"

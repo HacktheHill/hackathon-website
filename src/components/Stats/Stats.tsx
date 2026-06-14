@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { t } from "../../i18n";
+import { t } from "@/i18n";
 import styles from "./Stats.module.css";
 
 //animations
