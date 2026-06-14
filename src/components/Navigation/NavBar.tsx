@@ -15,7 +15,7 @@ type NavbarProps = {
 	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: NavbarProps) {
+function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProps>) {
 	const [language, setLanguage] = useState(true);
 
 	const links = [

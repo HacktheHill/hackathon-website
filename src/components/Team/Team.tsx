@@ -1,5 +1,4 @@
 import styles from "./Team.module.css";
-import React from "react";
 import { Tooltip } from "@mui/material";
 import { t } from "@/i18n";
 
@@ -9,20 +8,16 @@ type TeamMember = {
 	image: string;
 };
 
-const marqueeGroup = (
-	team: TeamMember[],
-	index: number,
-	pauseAnimation: () => void,
-	startAnimation: () => void,
-) => {
+const marqueeGroup = (team: TeamMember[], index: number, pauseAnimation: () => void, startAnimation: () => void) => {
 	return (
-		<div
+		<section
 			id={`marquee${index}`}
 			className={styles["marquee-group"]}
+			aria-label={`Team members marquee ${index}`}
 			onMouseEnter={pauseAnimation}
 			onMouseLeave={startAnimation}
-			onFocus={pauseAnimation}
-			onBlur={startAnimation}
+			onTouchStart={pauseAnimation}
+			onTouchEnd={startAnimation}
 		>
 			{team.map(member => (
 				<div key={member.name}>
@@ -43,9 +38,19 @@ const marqueeGroup = (
 					</Tooltip>
 				</div>
 			))}
-		</div>
+		</section>
 	);
 };
+
+function pauseAnimation() {
+	document.getElementById("marquee1")?.style.setProperty("animation-play-state", "paused");
+	document.getElementById("marquee2")?.style.setProperty("animation-play-state", "paused");
+}
+
+function startAnimation() {
+	document.getElementById("marquee1")?.style.setProperty("animation-play-state", "running");
+	document.getElementById("marquee2")?.style.setProperty("animation-play-state", "running");
+}
 
 function Team() {
 	const team = [
@@ -350,16 +355,6 @@ function Team() {
 			image: "/headshots/Beavar.webp",
 		},
 	];
-
-	function pauseAnimation() {
-		document.getElementById("marquee1")?.style.setProperty("animation-play-state", "paused");
-		document.getElementById("marquee2")?.style.setProperty("animation-play-state", "paused");
-	}
-
-	function startAnimation() {
-		document.getElementById("marquee1")?.style.setProperty("animation-play-state", "running");
-		document.getElementById("marquee2")?.style.setProperty("animation-play-state", "running");
-	}
 
 	return (
 		<div className={styles["team"]}>

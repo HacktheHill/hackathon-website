@@ -140,16 +140,13 @@ function Winners() {
 
 		if (activeCategory === "general_challenge") {
 			currentWinners = generalChallenge;
-		} else {
-			if (hasKey(sponsorChallenges, activeCategory)) {
-				currentWinners = sponsorChallenges[activeCategory];
-			} else if (hasKey(miniChallenges, activeCategory)) {
-				currentWinners = miniChallenges[activeCategory];
-			}
+		} else if (hasKey(sponsorChallenges, activeCategory)) {
+			currentWinners = sponsorChallenges[activeCategory];
+		} else if (hasKey(miniChallenges, activeCategory)) {
+			currentWinners = miniChallenges[activeCategory];
 		}
 
-		// If currentWinners is undefined or not an array, return a message
-		if (!currentWinners || !Array.isArray(currentWinners)) {
+		if (currentWinners.length === 0) {
 			return <div className={styles.noWinners}>{t("winners.no_data")}</div>;
 		}
 
@@ -179,8 +176,7 @@ function Winners() {
 							<div className={styles.placement}>{winner.place}</div>
 							<h3 className={styles.projectName}>{winner.project}</h3>
 							<div className={styles.teamMembers}>
-								{winner.team &&
-									winner.team.map((member, i) => (
+								{winner.team?.map((member, i) => (
 										<span key={i}>
 											{member}
 											{i < winner.team.length - 1 ? ", " : ""}
