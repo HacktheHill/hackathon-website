@@ -124,7 +124,7 @@ function Hero() {
 				</h2>
 				<form
 					className={styles["hero-form"]}
-					action={"https://tracker.hackthehill.com/follow?email=" + { email }}
+					action={"https://tracker.hackthehill.com/follow?email=" + email}
 				>
 					<input
 						id="email"
