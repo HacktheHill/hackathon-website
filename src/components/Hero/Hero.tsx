@@ -2,7 +2,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
 import type { PointerEvent, TouchEvent } from "react";
-import hero from "@/assets/hero.svg?raw";
 import { t } from "@/i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -13,8 +12,8 @@ import LocationPin from "@/assets/SVGs/location-pin.svg?url";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EVENT_START_DATE = new Date("2024-09-27T13:00:00-00:00").getTime();
-const HACKING_END_DATE = new Date("2024-09-29T15:00:00-00:00").getTime();
+const EVENT_START_DATE = new Date("2026-09-27T13:00:00-00:00").getTime();
+const HACKING_END_DATE = new Date("2026-09-29T15:00:00-00:00").getTime();
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
@@ -28,6 +27,18 @@ switch (true) {
 		date = HACKING_END_DATE;
 		break;
 }
+
+// `parallax` is the scroll depth of each cloud: negative = nearer (rises faster
+// than the scroll), positive = farther (lags behind it). Roughly ordered by the
+// cloud's apparent size/closeness.
+const clouds = [
+	{ cls: styles["cloud-1"], parallax: -0.45 },
+	{ cls: styles["cloud-2"], parallax: 0.3 },
+	{ cls: styles["cloud-3"], parallax: 0.2 },
+	{ cls: styles["cloud-4"], parallax: -0.05 },
+	{ cls: styles["cloud-5"], parallax: 0.08 },
+	{ cls: styles["cloud-6"], parallax: -0.25 },
+];
 
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
@@ -67,53 +78,90 @@ function Hero() {
 	};
 
 	// For parallax scrolling effect
-	const [scrollY, setScrollY] = useState(0);
 	const heroRef = useRef<HTMLDivElement>(null);
 
-	// Detect if the user is scrolling and update the scrollY state variable accordingly
+	// Detect if the user is scrolling and apply layered parallax transforms.
+	// Each layer moves at a different rate to create a sense of depth.
 	useEffect(() => {
+		const heroEl = heroRef.current;
+		if (!heroEl) return;
+
+		const layers: { selector: string; speed: number; fade?: boolean }[] = [
+			{ selector: `.${styles["hero-bg"]}`, speed: 0.25 },
+			{ selector: `.${styles["hero-heading"]}`, speed: 0.5, fade: true },
+		];
+
+		// Skip all parallax work + pause the cloud drift while the hero is off-screen
+		// so scrolling the rest of the page stays cheap.
+		let visible = true;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				visible = entry.isIntersecting;
+				heroEl.classList.toggle("hero-offscreen", !visible);
+			},
+			{ threshold: 0 }
+		);
+		observer.observe(heroEl);
+
+		let frame = 0;
+		const update = () => {
+			frame = 0;
+			if (!visible) return;
+			const scrollY = window.scrollY;
+			if (!heroRef.current) return;
+
+			layers.forEach(({ selector, speed, fade }) => {
+				const element = heroRef.current?.querySelector<HTMLElement>(selector);
+				if (!element) return;
+				element.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
+				if (fade) {
+					element.style.opacity = `${Math.max(0, 1 - scrollY / 500)}`;
+				}
+			});
+
+			// Each cloud gets its own depth so the nearer ones move noticeably faster.
+			const cloudEls = heroRef.current.querySelectorAll<HTMLElement>(".hero-cloud");
+			cloudEls.forEach((el, i) => {
+				el.style.transform = `translate3d(0, ${scrollY * (clouds[i]?.parallax ?? 0)}px, 0)`;
+			});
+		};
+
 		const handleScroll = () => {
-			setScrollY(window.scrollY);
+			if (frame) return;
+			frame = window.requestAnimationFrame(update);
 		};
 
 		window.addEventListener("scroll", handleScroll, { passive: true });
 
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
+			observer.disconnect();
+			if (frame) window.cancelAnimationFrame(frame);
 		};
 	}, []);
 
-	// API for the parallax scrolling effect
-	useEffect(() => {
-		// The selector is used to select all elements with the same class name
-		// The x and y values for each element are multiplied by the scrollY value to create the parallax effect
-		const transformations: { selector: string; x: number; y: number }[] = [
-			{ selector: "#Sun", x: 0, y: 3 },
-			{ selector: "#Hill-1", x: -3, y: 0.2 },
-			{ selector: "#Hill-2", x: 2, y: 1.6 },
-			{ selector: "#Hill-3", x: 0, y: 1.6 },
-			{ selector: "#Hill-4", x: 0.6, y: 1.6 },
-		];
-
-		// Select all elements with the same class name and apply the CSS transformation to each of them
-		const applyTransformation = ({ selector, x, y }: { selector: string; x: number; y: number }) => {
-			if (!heroRef.current) {
-				return;
-			}
-
-			const elements = heroRef.current.querySelectorAll<HTMLElement>(selector);
-			elements.forEach(element => {
-				const xValue = scrollY * x;
-				const yValue = scrollY * y;
-				element.style.transform = `translate(${xValue}px, ${yValue}px)`;
-			});
-		};
-
-		transformations.forEach(transformation => applyTransformation(transformation));
-	}, [scrollY]);
-
 	return (
-		<div id="hero" className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+		<div id="hero" ref={heroRef} className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+			{/* Sky + distant hills */}
+			<div className={styles["hero-bg"]}></div>
+
+			{/* Drifting watercolour clouds */}
+			<div className={styles["hero-clouds"]}>
+				{clouds.map((cloud, i) => (
+					<div
+						key={cloud.cls}
+						className={`${styles["cloud"]} ${cloud.cls} hero-cloud hero-cloud-${i + 1}`}
+						aria-hidden="true"
+					></div>
+				))}
+			</div>
+
+			{/* Foreground: Parliament clock-tower silhouette */}
+			<div className={styles["hero-foreground"]} aria-hidden="true"></div>
+
+			{/* Invisible hotspot over the clock tower for the countdown popup */}
+			<div id="clock-tower" className={styles["clock-tower-hotspot"]} aria-hidden="true"></div>
+
 			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>
 				<div className={styles["location-date-heading"]} data-aos="fade-up" data-aos-duration="800">
@@ -156,28 +204,7 @@ function Hero() {
 						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
 					</button>
 				</form>
-				{/*
-				<a href="https://tracker.hackthehill.com/" target="_blank" rel="noreferrer">
-					<button
-						className={styles["hero-btn"]}
-						data-aos="fade-up"
-						data-aos-duration="1000"
-						data-aos-delay="500"
-					>
-						{t("hero.apply")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
-					</button>
-				</a>
-				 */}
 			</div>
-
-			{/* Parallax, background, clouds, birds, trees, hills, buildings, etc. */}
-			<div
-				ref={heroRef}
-				className={styles["hero-img"]}
-				dangerouslySetInnerHTML={{
-					__html: hero,
-				}}
-			></div>
 
 			{/* Popup for countdown when hovering over clock tower */}
 			{date && (

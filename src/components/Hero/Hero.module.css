@@ -3,25 +3,150 @@
 	--hero-btn-background-color: var(--dark-primary-color);
 
 	/* countdown colours */
+	--dark-red: var(--dark-primary-color);
 	--count-down-border: var(--medium-secondary-color);
 	--count-down-background-color: var(--medium-primary-color);
 	--countdown-item-color: var(--medium-secondary-color);
 
-	/* background gradient */
-	background: var(--color-gradient);
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	height: 100svh;
+	overflow: hidden;
+	isolation: isolate;
 
+	/* Warm sunrise sky that matches the painted background asset, so any
+	   transparent edges blend seamlessly on tall/narrow viewports. */
+	background: linear-gradient(180deg, #f2ba83 0%, #f8cb93 24%, #fbe6ac 58%, #fbecb7 100%);
+}
+
+/* ---------- Layers ---------- */
+
+.hero-bg {
+	position: absolute;
+	inset: -2% 0 0 0;
+	z-index: 0;
+	background-image: url("../../assets/Hero/background.webp");
+	background-size: cover;
+	background-position: center bottom;
 	background-repeat: no-repeat;
 }
 
+.hero-clouds {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.cloud {
+	position: absolute;
+	pointer-events: none;
+	user-select: none;
+	will-change: transform, translate;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/* Sizes/positions are tuned so clouds sit in the open sky band above the hill.
+   The drift animation itself lives in animations.css (see .hero-cloud). */
+.cloud-1 {
+	top: 8%;
+	left: -6%;
+	width: clamp(180px, 26vw, 460px);
+	aspect-ratio: 2.04;
+	opacity: 0.9;
+	background-image: url("../../assets/Hero/cloud1.webp");
+}
+
+.cloud-2 {
+	top: 22%;
+	left: 60%;
+	width: clamp(120px, 16vw, 280px);
+	aspect-ratio: 1.5;
+	opacity: 0.85;
+	background-image: url("../../assets/Hero/cloud2.webp");
+}
+
+.cloud-3 {
+	top: 4%;
+	left: 48%;
+	width: clamp(160px, 22vw, 380px);
+	aspect-ratio: 1.99;
+	opacity: 0.8;
+	background-image: url("../../assets/Hero/cloud3.webp");
+}
+
+.cloud-4 {
+	top: 30%;
+	left: 4%;
+	width: clamp(150px, 20vw, 340px);
+	aspect-ratio: 2.98;
+	opacity: 0.85;
+	background-image: url("../../assets/Hero/cloud4.webp");
+}
+
+.cloud-5 {
+	top: 14%;
+	left: 78%;
+	width: clamp(140px, 18vw, 320px);
+	aspect-ratio: 1.78;
+	opacity: 0.9;
+	background-image: url("../../assets/Hero/cloud5.webp");
+}
+
+.cloud-6 {
+	top: 36%;
+	left: 34%;
+	width: clamp(130px, 17vw, 300px);
+	aspect-ratio: 1.77;
+	opacity: 0.7;
+	background-image: url("../../assets/Hero/cloud6.webp");
+}
+
+.hero-foreground {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 72vh;
+	background-image: url("../../assets/Hero/foreground.webp");
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	z-index: 2;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* Invisible hover target over the clock tower to reveal the countdown. */
+.clock-tower-hotspot {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: clamp(120px, 16vw, 300px);
+	height: 62vh;
+	z-index: 3;
+	cursor: pointer;
+}
+
+/* ---------- Heading ---------- */
+
 .hero-heading {
 	position: absolute;
+	z-index: 4;
+	inset: clamp(4.5rem, 9vh, 7rem) 0 auto 0;
 	display: grid;
 	place-items: center;
-	inset: max(calc(17.5rem - 10vw), 5vmax) 0 auto 0;
 	text-align: center;
 	width: fit-content;
+	max-width: min(92vw, 720px);
 	margin: auto;
-	gap: 1.5vh;
+	gap: 1.2vh;
+	will-change: transform, opacity;
 }
 
 .location-date-heading {
@@ -44,6 +169,8 @@
 
 .banner-logo {
 	width: calc(10 * clamp(1rem, 5vmin, 10rem));
+	max-width: 90vw;
+	filter: drop-shadow(0 2px 10px rgba(251, 236, 183, 0.65));
 }
 
 .hero-heading h2 {
@@ -51,23 +178,16 @@
 	font-family: Coolvetica;
 	font-weight: 500;
 	font-size: clamp(1rem, 4vmin, 1.75rem);
+	text-shadow: 0 1px 8px rgba(251, 236, 183, 0.7);
 }
 
 .hero-heading h5 {
 	color: var(--hero-heading);
 	font-weight: normal;
+	text-shadow: 0 1px 6px rgba(251, 236, 183, 0.7);
 }
 
-.hero-img {
-	height: 100vh;
-	height: 100svh;
-	display: flex;
-	align-items: flex-end;
-}
-
-.hero-img svg {
-	width: 100%;
-}
+/* ---------- Form ---------- */
 
 .hero-input {
 	padding: 1rem;
@@ -76,6 +196,7 @@
 	font-family: Rubik;
 	color: var(--dark-primary-color);
 	background-color: var(--light-tertiary-color);
+	box-shadow: 0 6px 18px rgba(132, 1, 11, 0.12);
 }
 
 .hero-input:hover,
@@ -107,6 +228,13 @@
 	border-radius: 1rem;
 	font-size: 1.125rem;
 	padding: 0.75rem;
+	box-shadow: 0 6px 18px rgba(132, 1, 11, 0.2);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(132, 1, 11, 0.28);
 }
 
 .hero-btn-icon {
@@ -115,13 +243,15 @@
 	vertical-align: middle;
 }
 
+/* ---------- Countdown popup ---------- */
+
 .countdown-dialog,
 .countdown-dialog-small {
 	box-sizing: border-box;
 	position: absolute;
-	top: calc(30vmin + max(20rem, 20vmin));
-	left: 48.5vw;
-	z-index: 99;
+	top: 28vh;
+	left: 50%;
+	z-index: 5;
 	transform: translateX(-50%);
 	margin: 0;
 	padding: max(1rem, 2vmin) max(2rem, 4vmin);
@@ -165,6 +295,7 @@
 .countdown-items-container-small {
 	display: flex;
 	justify-content: space-between;
+	gap: 1rem;
 }
 
 .countdown-item {
@@ -184,13 +315,23 @@
 	font-weight: normal;
 }
 
+/* ---------- Responsive ---------- */
+
 @media only screen and (max-width: 730px) {
+	.hero-foreground {
+		height: 48vh;
+	}
+
+	.clock-tower-hotspot {
+		height: 44vh;
+	}
+
 	.countdown-dialog {
 		display: none;
 	}
 
 	.countdown-dialog-small {
 		display: flex;
-		top: calc(30vmin + max(28rem, 20vmin));
+		top: 24vh;
 	}
 }

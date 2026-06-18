@@ -23,7 +23,7 @@ export default {
 		invalid_email_field: "Invalid email format",
 		email_placeholder: "E-mail",
 		apply: "Apply Now",
-		date: "Sept. 27-29, 2024",
+		date: "Sept. 27-29, 2026",
 	},
 	about: {
 		title: "Welcome to Canada's Capital Hackathon",
