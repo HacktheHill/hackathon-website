@@ -1,6 +1,8 @@
 .hero {
 	--hero-heading: var(--dark-primary-color);
 	--hero-btn-background-color: var(--dark-primary-color);
+	/* Brand bright red, used for the date eyebrow and the "III" edition mark. */
+	--hero-bright-red: #c11f25;
 
 	/* countdown colours */
 	--dark-red: var(--dark-primary-color);
@@ -133,58 +135,79 @@
 	cursor: pointer;
 }
 
-/* ---------- Heading ---------- */
+/* ---------- Heading (right-side column, beside the tower) ---------- */
 
 .hero-heading {
 	position: absolute;
 	z-index: 4;
-	inset: clamp(4.5rem, 9vh, 7rem) 0 auto 0;
+	top: 0;
+	bottom: 0;
+	/* Anchor just to the right of the tower so the column stays beside it on
+	   every width instead of hugging the far edge on ultra-wide screens. */
+	left: 47%;
+	right: auto;
+	width: min(50vw, 600px);
 	display: grid;
-	place-items: center;
-	text-align: center;
-	width: fit-content;
-	max-width: min(92vw, 720px);
-	margin: auto;
-	gap: 1.2vh;
+	align-content: center;
+	justify-items: start;
+	text-align: left;
+	gap: clamp(0.5rem, 1.5vh, 1.1rem);
 	will-change: transform, opacity;
+	/* Drives both the wordmark and the "III" edition mark so they stay in
+	   proportion; the bars are derived from this (see .edition). */
+	--logo-w: clamp(200px, 30vw, 430px);
 }
 
-.location-date-heading {
+.hero-eyebrow {
+	margin: 0;
+	color: var(--hero-bright-red);
+	font-family: Coolvetica, Rubik, sans-serif;
+	font-weight: 700;
+	font-size: clamp(0.95rem, 2.1vmin, 1.45rem);
+	letter-spacing: 0.01em;
+	text-shadow: 0 1px 6px rgba(251, 236, 183, 0.7);
+}
+
+.hero-wordmark {
 	display: flex;
-	width: 100%;
-	justify-content: space-around;
-	align-items: center;
-	gap: 1ch;
-}
-
-.location-date-heading .location {
-	display: flex;
-	gap: 0.5ch;
-	align-items: center;
-}
-
-.location-pin {
-	height: 1.2rem;
+	align-items: flex-end;
+	gap: clamp(0.5rem, 1.4vw, 1rem);
+	margin: 0;
 }
 
 .banner-logo {
-	width: calc(10 * clamp(1rem, 5vmin, 10rem));
-	max-width: 90vw;
-	filter: drop-shadow(0 2px 10px rgba(251, 236, 183, 0.65));
+	width: var(--logo-w);
+	max-width: 100%;
+	height: auto;
+	filter: drop-shadow(0 2px 10px rgba(251, 236, 183, 0.6));
+}
+
+/* "III" edition mark — three bars matched to the "l" glyphs of the wordmark.
+   Measured from the banner SVG (viewBox 635×96): each "l" is 16.8 wide × 83.8
+   tall, set ~7.3 apart, sitting ~2 above the image bottom, with a flat terminal.
+   1 viewBox unit = var(--logo-w) / 635, so the bars stay locked to the type. */
+.edition {
+	display: flex;
+	align-items: stretch;
+	gap: calc(var(--logo-w) * 0.0115); /* 7.3 / 635 */
+	height: calc(var(--logo-w) * 0.132); /* 83.8 / 635 */
+	margin-bottom: calc(var(--logo-w) * 0.0031); /* l sits ~2 above baseline */
+}
+
+.edition i {
+	display: block;
+	width: calc(var(--logo-w) * 0.0265); /* 16.8 / 635 */
+	border-radius: calc(var(--logo-w) * 0.004); /* near-square terminal */
+	background: var(--hero-bright-red);
 }
 
 .hero-heading h2 {
+	margin: 0;
 	color: var(--hero-heading);
 	font-family: Coolvetica;
 	font-weight: 500;
-	font-size: clamp(1rem, 4vmin, 1.75rem);
+	font-size: clamp(1rem, 3.2vmin, 1.6rem);
 	text-shadow: 0 1px 8px rgba(251, 236, 183, 0.7);
-}
-
-.hero-heading h5 {
-	color: var(--hero-heading);
-	font-weight: normal;
-	text-shadow: 0 1px 6px rgba(251, 236, 183, 0.7);
 }
 
 /* ---------- Form ---------- */
@@ -213,9 +236,10 @@
 
 .hero-form {
 	display: flex;
-	gap: 1rem;
+	gap: 0.75rem;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
+	margin-top: clamp(0.4rem, 1.2vh, 1rem);
 }
 
 .hero-btn {
@@ -320,6 +344,19 @@
 @media only screen and (max-width: 730px) {
 	.hero-foreground {
 		height: 48vh;
+	}
+
+	/* Stack the text in the upper sky band; the tower sits below-left. The
+	   edition bars track --logo-w, so retuning it here resizes them too. */
+	.hero-heading {
+		top: clamp(4.5rem, 13vh, 7rem);
+		bottom: auto;
+		right: auto;
+		left: clamp(1.25rem, 6vw, 2rem);
+		width: min(84vw, 460px);
+		align-content: start;
+		gap: clamp(0.45rem, 1.2vh, 0.9rem);
+		--logo-w: clamp(180px, 56vw, 300px);
 	}
 
 	.countdown-dialog {
