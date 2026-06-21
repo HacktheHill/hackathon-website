@@ -1,6 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useLayoutEffect, useState, useRef } from "react";
 import type { PointerEvent, TouchEvent } from "react";
 import { t } from "@/i18n";
 import styles from "./Hero.module.css";
@@ -12,8 +12,8 @@ import LocationPin from "@/assets/SVGs/location-pin.svg?url";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const EVENT_START_DATE = new Date("2026-09-27T13:00:00-00:00").getTime();
-const HACKING_END_DATE = new Date("2026-09-29T15:00:00-00:00").getTime();
+const EVENT_START_DATE = new Date("2026-09-25T13:00:00-00:00").getTime();
+const HACKING_END_DATE = new Date("2026-09-27T15:00:00-00:00").getTime();
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
 // If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
@@ -27,6 +27,15 @@ switch (true) {
 		date = HACKING_END_DATE;
 		break;
 }
+
+// foreground.webp is 1920×1070, painted with `background-size: cover;
+// background-position: center top`. The Peace Tower clock sits at this centre
+// (in the asset's own pixels) and spans roughly this box. We map it through the
+// same cover transform the browser uses so the hotspot tracks the clock on every
+// viewport — a fixed left/top can't, because `cover` crops differently per shape.
+const FOREGROUND_W = 1920;
+const FOREGROUND_H = 1070;
+const CLOCK_HOTSPOT = { cx: 690, cy: 290, w: 170, h: 170 };
 
 // `parallax` is the scroll depth of each cloud: negative = nearer (rises faster
 // than the scroll), positive = farther (lags behind it). Roughly ordered by the
@@ -79,6 +88,40 @@ function Hero() {
 
 	// For parallax scrolling effect
 	const heroRef = useRef<HTMLDivElement>(null);
+
+	// Keep the invisible countdown hotspot pinned to the painted clock. Because
+	// the foreground uses `background-size: cover`, the clock slides around as the
+	// viewport changes shape, so we recompute the hotspot from the cover geometry
+	// whenever the foreground box resizes (vh changes, mobile URL bar, rotation).
+	const foregroundRef = useRef<HTMLDivElement>(null);
+	const hotspotRef = useRef<HTMLDivElement>(null);
+
+	useLayoutEffect(() => {
+		const fg = foregroundRef.current;
+		const hotspot = hotspotRef.current;
+		if (!fg || !hotspot) return;
+
+		const place = () => {
+			const cw = fg.clientWidth;
+			const ch = fg.clientHeight;
+			if (!cw || !ch) return;
+
+			// Replicate `background-size: cover; background-position: center top`.
+			const scale = Math.max(cw / FOREGROUND_W, ch / FOREGROUND_H);
+			const offsetX = (cw - FOREGROUND_W * scale) / 2; // centred horizontally
+			const offsetY = 0; // top-aligned
+
+			hotspot.style.left = `${offsetX + CLOCK_HOTSPOT.cx * scale}px`;
+			hotspot.style.top = `${offsetY + CLOCK_HOTSPOT.cy * scale}px`;
+			hotspot.style.width = `${CLOCK_HOTSPOT.w * scale}px`;
+			hotspot.style.height = `${CLOCK_HOTSPOT.h * scale}px`;
+		};
+
+		place();
+		const observer = new ResizeObserver(place);
+		observer.observe(fg);
+		return () => observer.disconnect();
+	}, []);
 
 	// Detect if the user is scrolling and apply layered parallax transforms.
 	// Each layer moves at a different rate to create a sense of depth.
@@ -156,11 +199,17 @@ function Hero() {
 				))}
 			</div>
 
-			{/* Foreground: Parliament clock-tower silhouette */}
-			<div className={styles["hero-foreground"]} aria-hidden="true"></div>
-
-			{/* Invisible hotspot over the clock tower for the countdown popup */}
-			<div id="clock-tower" className={styles["clock-tower-hotspot"]} aria-hidden="true"></div>
+			{/* Foreground: Parliament clock-tower silhouette. The countdown hotspot
+			    lives inside it so its position is relative to the painted image box. */}
+			<div className={styles["hero-foreground"]} ref={foregroundRef} aria-hidden="true">
+				{/* Invisible hotspot over the clock; positioned via JS (see useLayoutEffect) */}
+				<div
+					id="clock-tower"
+					className={styles["clock-tower-hotspot"]}
+					ref={hotspotRef}
+					aria-hidden="true"
+				></div>
+			</div>
 
 			{/* Heading with logo, form, and button */}
 			<div className={styles["hero-heading"]}>

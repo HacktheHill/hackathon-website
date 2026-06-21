@@ -23,7 +23,7 @@ export default {
 		invalid_email_field: "Format de courriel invalide",
 		email_placeholder: "Courriel",
 		apply: "Appliquez Maintenant",
-		date: "27-29 Sept. 2026",
+		date: "25-27 Sept. 2026",
 	},
 	about: {
 		title: "Bienvenue au Hackathon de la Capitale Canadienne",
