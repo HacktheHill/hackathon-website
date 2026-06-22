@@ -5,11 +5,12 @@ import type { PointerEvent, TouchEvent } from "react";
 import { t } from "@/i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
-import BannerLogo from "@/assets/Logos/hackthehill-banner.svg?url";
 
 //animations
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+const BannerLogo = "/Logos/hackthehill-banner.svg";
 
 const EVENT_START_DATE = new Date("2026-09-25T13:00:00-00:00").getTime();
 const HACKING_END_DATE = new Date("2026-09-27T15:00:00-00:00").getTime();

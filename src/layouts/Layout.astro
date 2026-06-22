@@ -1,4 +1,8 @@
 ---
+import fs from 'fs';
+import path from 'path';
+
+
 export interface Props {
 	title?: string;
 }
@@ -13,14 +17,21 @@ const keywords =
 
 const color = "#ea885f";
 
-const url = Astro.site?.toString().replace(/\/$/, "") ?? "";
-const structuredData = await (await fetch(`${url}/structured-data.json`)).json();
 
+let structuredData = {} as any;
+try {
+	structuredData = JSON.parse(fs.readFileSync(path.resolve("./public/structured-data.json"), "utf-8"));
 	structuredData.description = description;
 	structuredData.keywords = keywords;
-structuredData.url = url;
-structuredData.image = `${url}/Logos/hackthehill-logo.svg`;
+	structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
+	structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
+} catch (error) {
+	console.error(error);
+}
 const structuredDataString = JSON.stringify(structuredData);
+
+const url = import.meta.env.SITE.replace(/\/$/, "");
+
 ---
 
 <!DOCTYPE html>

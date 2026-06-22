@@ -1,7 +1,6 @@
 import { Link } from "react-scroll";
 import type { Dispatch, SetStateAction } from "react";
 import { locale, t } from "@/i18n";
-import logo from "@/assets/Logos/hackthehill-logo.svg?url";
 import { useState, useEffect } from "react";
 import style from "./NavBar.module.css";
 
@@ -14,6 +13,8 @@ type NavbarProps = {
 	sidebarOpen: boolean;
 	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 };
+
+const logo = "/Logos/hackthehill-logo.svg";
 
 function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProps>) {
 	const [language, setLanguage] = useState(true);
