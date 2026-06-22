@@ -242,6 +242,21 @@
 	margin-top: clamp(0.4rem, 1.2vh, 1rem);
 }
 
+/* Optimistic confirmation shown in place of the form after submit. */
+.hero-form-thanks {
+	margin: clamp(0.4rem, 1.2vh, 1rem) 0 0;
+	color: var(--dark-primary-color);
+	font-family: Coolvetica;
+	font-weight: 500;
+	font-size: clamp(1rem, 2.6vmin, 1.4rem);
+	text-shadow: 0 1px 8px rgba(251, 236, 183, 0.7);
+}
+
+/* Off-screen iframe that receives the signup GET so the page doesn't navigate. */
+.tracker-sink {
+	display: none;
+}
+
 .hero-btn {
 	background-color: var(--hero-btn-background-color);
 	color: var(--light-color);

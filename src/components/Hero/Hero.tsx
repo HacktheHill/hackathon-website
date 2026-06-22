@@ -51,7 +51,7 @@ const clouds = [
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
-	const [email, setEmail] = useState("");
+	const [submitted, setSubmitted] = useState(false);
 
 	useEffect(() => {
 		AOS.init();
@@ -60,7 +60,6 @@ function Hero() {
 	useEffect(() => {
 		setTime(Date.now());
 		const interval = setInterval(() => setTime(Date.now()), 1000);
-		setEmail("");
 
 		return () => clearInterval(interval);
 	}, []);
@@ -74,6 +73,13 @@ function Hero() {
 	const formattedHours = hours.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedMinutes = minutes.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedSeconds = seconds.toLocaleString("en-US", { minimumIntegerDigits: 2 });
+
+	// `t()` calls React hooks internally, so the number of t() calls must stay
+	// constant across renders. The form/thanks branch below would otherwise vary
+	// the count, so resolve those strings up front (always called, every render).
+	const emailPlaceholder = t("hero.email_placeholder");
+	const followLabel = t("hero.more");
+	const thanksLabel = t("hero.thanks");
 
 	const popup = (event: PointerEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>) => {
 		const target = event.target;
@@ -233,32 +239,51 @@ function Hero() {
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
 				</h2>
-				<form
-					className={styles["hero-form"]}
-					action={"https://tracker.hackthehill.com/follow?email=" + email}
-				>
-					<input
-						id="email"
-						name="email"
-						className={styles["hero-input"]}
-						type="email"
-						required
-						placeholder={t("hero.email_placeholder")}
-						onChange={event => setEmail(event.target.value)}
-						data-aos="fade-up"
-						data-aos-duration="1000"
-						data-aos-delay="400"
-					/>
-					<button
-						type="submit"
-						className={styles["hero-btn"]}
-						data-aos="fade-up"
-						data-aos-duration="1000"
-						data-aos-delay="500"
+				{/* The form submits a GET into the hidden iframe below, so the tracker
+				    records the follow without navigating the page away. It's a
+				    cross-origin navigation (not a fetch), so CORS doesn't apply — but
+				    we also can't read the result, hence the optimistic message. */}
+				{submitted ? (
+					<p className={styles["hero-form-thanks"]} role="status" data-aos="fade-up">
+						{thanksLabel}
+					</p>
+				) : (
+					<form
+						className={styles["hero-form"]}
+						action="https://tracker.hackthehill.com/follow"
+						target="tracker-sink"
+						onSubmit={() => setSubmitted(true)}
 					>
-						{t("hero.more")} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
-					</button>
-				</form>
+						<input
+							id="email"
+							name="email"
+							className={styles["hero-input"]}
+							type="email"
+							required
+							placeholder={emailPlaceholder}
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="400"
+						/>
+						<button
+							type="submit"
+							className={styles["hero-btn"]}
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="500"
+						>
+							{followLabel} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
+						</button>
+					</form>
+				)}
+				{/* Hidden submit target — keeps the follow request on this page. */}
+				<iframe
+					className={styles["tracker-sink"]}
+					name="tracker-sink"
+					title="Newsletter signup"
+					tabIndex={-1}
+					aria-hidden="true"
+				/>
 			</div>
 
 			{/* Popup for countdown when hovering over clock tower */}

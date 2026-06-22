@@ -24,6 +24,7 @@ export default {
 		email_placeholder: "Courriel",
 		apply: "Appliquez Maintenant",
 		date: "25-27 Sept. 2026",
+		thanks: "Merci! Surveillez votre boîte de réception.",
 	},
 	about: {
 		title: "Bienvenue au Hackathon de la Capitale Canadienne",
