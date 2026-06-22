@@ -41,7 +41,7 @@
 				"addressCountry": "Canada",
 				"addressLocality": "Ottawa",
 				"addressRegion": "ON",
-				"postalCode": "K1N 9N3",
+				"postalCode": "K1N 6N5",
 				"streetAddress": "100 Louis-Pasteur Private"
 			},
 			"name": "Learning Crossroads building, University of Ottawa"
@@ -69,7 +69,7 @@
 		"contactPoint": {
 			"@type": "ContactPoint",
 			"contactType": "Customer Service",
-			"email": "info@hackthehill.com"
+			"email": "info@ctn-rtc.org"
 		},
 		"knowsLanguage": [
 			{
@@ -82,7 +82,7 @@
 			}
 		],
 		"logo": "https://hackthehill.com/Logos/hackthehill-logo.svg",
-		"name": "Hack the Hill",
+		"name": "Capital Technology Network",
 		"sameAs": [
 			"https://www.facebook.com/canadascapitalhackathon",
 			"https://twitter.com/hackthehill",
