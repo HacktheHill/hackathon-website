@@ -17,7 +17,8 @@ function App() {
 		<>
 			<Navigation />
 			<Hero />
-			<div className={styles.wrapper}>
+			{/* TODO: Uncomment when website is done. */}
+			{/* <div className={styles.wrapper}>
 				<About />
 				<Stats />
 				<Winners />
@@ -26,7 +27,7 @@ function App() {
 				<Sponsors />
 				<FAQ />
 				<Footer />
-			</div>
+			</div> */}
 			{/* <Notification /> */}
 		</>
 	);

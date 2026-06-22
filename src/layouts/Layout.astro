@@ -173,7 +173,13 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
 				width: 100%;
-				overflow-x: hidden;
+				/* TODO: Remove this once the website is built */
+				/* Landing is a single, non-scrolling hero (100svh, self-clipping).
+				   Locking the viewport stops a transient scrollbar from flashing
+				   during load (e.g. the Partytown iframe briefly defaulting to 150px
+				   or web-font reflow), which otherwise causes a horizontal jitter.
+				   TODO: restore to `overflow-x: hidden` when the full page returns. */
+				overflow: hidden;
 			}
 
 			h1,

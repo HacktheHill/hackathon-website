@@ -92,11 +92,19 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 					type="submit"
 					onClick={() => window.open("https://2023.hackthehill.com", "_blank", "noopener,noreferrer")}
 				>
-					2023
+					HtH I
+				</button>
+								<button
+					className={style["square-button"]}
+					type="submit"
+					onClick={() => window.open("https://2024.hackthehill.com", "_blank", "noopener,noreferrer")}
+				>
+					HtH II
 				</button>
 			</div>
 
-			<ul>
+			{/* TODO: Uncomment when website is done. */}
+			{/* <ul>
 				{links.map(link => (
 					<li key={link.text}>
 						<Link
@@ -113,7 +121,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 						</Link>
 					</li>
 				))}
-			</ul>
+			</ul> */}
 			<button
 				className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
 				onClick={() => setSidebarOpen(!sidebarOpen)}
