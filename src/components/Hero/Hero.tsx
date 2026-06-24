@@ -28,14 +28,20 @@ switch (true) {
 		break;
 }
 
-// foreground.webp is 1920×1070, painted with `background-size: cover;
-// background-position: center top`. The Peace Tower clock sits at this centre
-// (in the asset's own pixels) and spans roughly this box. We map it through the
-// same cover transform the browser uses so the hotspot tracks the clock on every
-// viewport — a fixed left/top can't, because `cover` crops differently per shape.
+// foreground.webp is 1920×1070. The Peace Tower clock sits at this centre (in the
+// asset's own pixels) and spans roughly this box. We replicate the exact transform
+// the browser paints the background with so the hotspot tracks the clock on every
+// viewport — a fixed left/top can't, because the image scales/shifts per shape.
+// There are two paint modes (see Hero.module.css):
+//   • desktop: background-size: min(100%, 197vh) auto; position: center bottom
+//   • mobile/portrait: background-size: cover; position: center bottom
 const FOREGROUND_W = 1920;
 const FOREGROUND_H = 1070;
 const CLOCK_HOTSPOT = { cx: 690, cy: 290, w: 170, h: 170 };
+// Desktop width cap (vh) — mirrors `min(100%, 197vh)` in Hero.module.css.
+const FOREGROUND_MAX_W_VH = 197;
+// Mobile/portrait paints with `cover`; must match the CSS media condition.
+const FOREGROUND_COVER_MEDIA = "(max-width: 730px), (orientation: portrait)";
 
 // `parallax` is the scroll depth of each cloud: negative = nearer (rises faster
 // than the scroll), positive = farther (lags behind it). Roughly ordered by the
@@ -96,8 +102,8 @@ function Hero() {
 	const heroRef = useRef<HTMLDivElement>(null);
 
 	// Keep the invisible countdown hotspot pinned to the painted clock. Because
-	// the foreground uses `background-size: cover`, the clock slides around as the
-	// viewport changes shape, so we recompute the hotspot from the cover geometry
+	// the foreground is width-scaled and bottom-pinned, the clock slides around as
+	// the viewport changes shape, so we recompute the hotspot from that geometry
 	// whenever the foreground box resizes (vh changes, mobile URL bar, rotation).
 	const foregroundRef = useRef<HTMLDivElement>(null);
 	const hotspotRef = useRef<HTMLDivElement>(null);
@@ -112,10 +118,21 @@ function Hero() {
 			const ch = fg.clientHeight;
 			if (!cw || !ch) return;
 
-			// Replicate `background-size: cover; background-position: center top`.
-			const scale = Math.max(cw / FOREGROUND_W, ch / FOREGROUND_H);
-			const offsetX = (cw - FOREGROUND_W * scale) / 2; // centred horizontally
-			const offsetY = 0; // top-aligned
+			// Replicate the painted background's geometry inside this box (the box's
+			// own offset/drop is inherited by the hotspot as a child). Both modes pin
+			// to the bottom (offsetY); they differ only in the rendered width.
+			let renderedW: number;
+			if (window.matchMedia(FOREGROUND_COVER_MEDIA).matches) {
+				// mobile/portrait: `cover` — fills whichever axis is tighter
+				const coverScale = Math.max(cw / FOREGROUND_W, ch / FOREGROUND_H);
+				renderedW = FOREGROUND_W * coverScale;
+			} else {
+				// desktop: `min(100%, 197vh) auto`
+				renderedW = Math.min(cw, (FOREGROUND_MAX_W_VH / 100) * window.innerHeight);
+			}
+			const scale = renderedW / FOREGROUND_W;
+			const offsetX = (cw - renderedW) / 2; // centred (matters when capped/cover-cropped)
+			const offsetY = ch - FOREGROUND_H * scale; // bottom-aligned
 
 			hotspot.style.left = `${offsetX + CLOCK_HOTSPOT.cx * scale}px`;
 			hotspot.style.top = `${offsetY + CLOCK_HOTSPOT.cy * scale}px`;
@@ -136,7 +153,9 @@ function Hero() {
 		if (!heroEl) return;
 
 		const layers: { selector: string; speed: number; fade?: boolean }[] = [
-			{ selector: `.${styles["hero-bg"]}`, speed: 0.25 },
+			{ selector: `.${styles["hero-sky"]}`, speed: 0.15 },
+			{ selector: `.${styles["hero-hill-far"]}`, speed: 0.3 },
+			{ selector: `.${styles["hero-hill-near"]}`, speed: 0.45 },
 			{ selector: `.${styles["hero-heading"]}`, speed: 0.5, fade: true },
 		];
 
@@ -191,8 +210,8 @@ function Hero() {
 
 	return (
 		<div id="hero" ref={heroRef} className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
-			{/* Sky + distant hills */}
-			<div className={styles["hero-bg"]}></div>
+			{/* Sky */}
+			<div className={styles["hero-sky"]}></div>
 
 			{/* Drifting watercolour clouds */}
 			<div className={styles["hero-clouds"]}>
@@ -204,6 +223,10 @@ function Hero() {
 					></div>
 				))}
 			</div>
+
+			{/* Layered hills behind the red foreground: far (yellow) then near (orange) */}
+			<div className={styles["hero-hill-far"]} aria-hidden="true"></div>
+			<div className={styles["hero-hill-near"]} aria-hidden="true"></div>
 
 			{/* Foreground: Parliament clock-tower silhouette. The countdown hotspot
 			    lives inside it so its position is relative to the painted image box. */}

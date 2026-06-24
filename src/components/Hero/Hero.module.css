@@ -24,14 +24,54 @@
 
 /* ---------- Layers ---------- */
 
-.hero-bg {
+.hero-sky {
 	position: absolute;
 	inset: -2% 0 0 0;
 	z-index: 0;
-	background-image: url("../../assets/Hero/background.webp");
+	background-image: url("../../assets/Hero/sky.webp");
 	background-size: cover;
-	background-position: center bottom;
+	background-position: center top;
 	background-repeat: no-repeat;
+	/* Decorative backdrop — must not intercept pointers. The foreground parliament
+	   is pointer-events:none, so without this the sky (a full-bleed layer) would
+	   receive every hit over the tower instead of letting it pass through. */
+	pointer-events: none;
+}
+
+/* Distant + mid hills, layered behind the red foreground (far/yellow behind
+   near/orange). Sized by HEIGHT (vh) and dropped below the fold by a vh amount,
+   so each hill's ridge lands at the SAME share of the viewport on every form
+   factor — portrait, landscape, desktop, ultrawide — with nothing to recalibrate
+   per device:  ridge ≈ 100 + drop − height  (all in vh).
+   --hill-h is kept tall enough that the wide hill still spans the width up to
+   ~2.2:1; --hill-x picks which slice shows when it's cropped (near behind the
+   tower, far to the right). */
+.hero-hill-far,
+.hero-hill-near {
+	position: absolute;
+	inset: 0;
+	background-repeat: no-repeat;
+	background-size: auto var(--hill-h);
+	background-position: var(--hill-x, center) calc(100% + var(--hill-drop));
+	pointer-events: none;
+	user-select: none;
+	will-change: transform;
+}
+
+.hero-hill-far {
+	z-index: 2;
+	--hill-h: 72vh; /* tall enough to span the width up to ~2.4:1 */
+	--hill-drop: 44vh; /* ridge ≈ 72vh */
+	--hill-x: 78%;
+	background-image: url("../../assets/Hero/hill2.webp");
+}
+
+.hero-hill-near {
+	z-index: 3;
+	--hill-h: 72vh;
+	--hill-drop: 38vh; /* ridge ≈ 66vh */
+	--hill-x: 42%;
+	background-image: url("../../assets/Hero/hill1.webp");
 }
 
 .hero-clouds {
@@ -46,79 +86,132 @@
 	position: absolute;
 	pointer-events: none;
 	user-select: none;
+	/* Placement / size / depth are data-driven so they're easy to tweak and to
+	   override per breakpoint (see the mobile block). Depth tiers: FAR clouds are
+	   smaller, fainter, softly blurred and drift the least; NEAR clouds are larger,
+	   sharper, more opaque and drift the most — giving the sky parallax-like depth.
+	   The drift animation itself lives in animations.css (reads --drift-x). */
+	top: var(--cloud-top);
+	left: var(--cloud-left);
+	width: var(--cloud-w);
+	opacity: var(--cloud-opacity, 0.85);
+	filter: blur(var(--cloud-blur, 0px));
 	will-change: transform, translate;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
 
-/* Sizes/positions are tuned so clouds sit in the open sky band above the hill.
-   The drift animation itself lives in animations.css (see .hero-cloud). */
+/* --- Top cloud bank ---------------------------------------------------------
+   Four big, overlapping clouds merge into one soft mass spanning the top of the
+   sky; the tower's spire/flag rises into it (the tower is z-index 4, in front).
+   They drift only a little (small --drift-x, slow durations) so the bank stays
+   cohesive while still breathing. */
 .cloud-1 {
-	top: 8%;
-	left: -6%;
-	width: clamp(180px, 26vw, 460px);
+	--cloud-top: -10%;
+	--cloud-left: -12%;
+	--cloud-w: clamp(460px, 54vw, 960px);
+	--cloud-opacity: 0.95;
+	--drift-x: 5vw;
 	aspect-ratio: 2.04;
-	opacity: 0.9;
 	background-image: url("../../assets/Hero/cloud1.webp");
 }
 
-.cloud-2 {
-	top: 22%;
-	left: 60%;
-	width: clamp(120px, 16vw, 280px);
-	aspect-ratio: 1.5;
-	opacity: 0.85;
-	background-image: url("../../assets/Hero/cloud2.webp");
-}
-
-.cloud-3 {
-	top: 4%;
-	left: 48%;
-	width: clamp(160px, 22vw, 380px);
-	aspect-ratio: 1.99;
-	opacity: 0.8;
-	background-image: url("../../assets/Hero/cloud3.webp");
-}
-
 .cloud-4 {
-	top: 30%;
-	left: 4%;
-	width: clamp(150px, 20vw, 340px);
+	--cloud-top: -2%;
+	--cloud-left: 20%;
+	--cloud-w: clamp(420px, 50vw, 880px);
+	--cloud-opacity: 0.9;
+	--drift-x: 4vw;
 	aspect-ratio: 2.98;
-	opacity: 0.85;
 	background-image: url("../../assets/Hero/cloud4.webp");
 }
 
+.cloud-3 {
+	--cloud-top: -12%;
+	--cloud-left: 44%;
+	--cloud-w: clamp(380px, 44vw, 820px);
+	--cloud-opacity: 0.88;
+	--drift-x: 5vw;
+	aspect-ratio: 1.99;
+	background-image: url("../../assets/Hero/cloud3.webp");
+}
+
 .cloud-5 {
-	top: 14%;
-	left: 78%;
-	width: clamp(140px, 18vw, 320px);
+	--cloud-top: -4%;
+	--cloud-left: 66%;
+	--cloud-w: clamp(360px, 42vw, 760px);
+	--cloud-opacity: 0.9;
+	--drift-x: 5vw;
 	aspect-ratio: 1.78;
-	opacity: 0.9;
 	background-image: url("../../assets/Hero/cloud5.webp");
 }
 
+/* --- Right-hand cluster, drifting in lower down ----------------------------- */
+.cloud-2 {
+	--cloud-top: 30%;
+	--cloud-left: 74%;
+	--cloud-w: clamp(340px, 36vw, 620px);
+	--cloud-opacity: 0.93;
+	--drift-x: 9vw;
+	aspect-ratio: 1.5;
+	background-image: url("../../assets/Hero/cloud2.webp");
+}
+
 .cloud-6 {
-	top: 36%;
-	left: 34%;
-	width: clamp(130px, 17vw, 300px);
+	--cloud-top: 50%;
+	--cloud-left: 82%;
+	--cloud-w: clamp(220px, 24vw, 440px);
+	--cloud-opacity: 0.8;
+	--cloud-blur: 0.8px;
+	--drift-x: 7vw;
 	aspect-ratio: 1.77;
-	opacity: 0.7;
 	background-image: url("../../assets/Hero/cloud6.webp");
+}
+
+/* Cloud count scales with the canvas: big screens (desktop, iPad) get the full
+   bank; mid screens drop one; phones thin to three so the sky isn't cramped. */
+@media (max-width: 1000px) {
+	.cloud-4 {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.cloud-2,
+	.cloud-3 {
+		display: none;
+	}
 }
 
 .hero-foreground {
 	position: absolute;
-	bottom: 0;
+	/* Pin the foreground at full viewport width (so the rampart wall spans edge to
+	   edge and hides the foot of the clock tower — the wall is painted in front of
+	   the tower base in the asset), then drop it ~10vh below the fold so the tower
+	   doesn't reach the top on wide 16:9 screens. The wall is far taller than the
+	   drop, so the base stays hidden; the bottom scallops just run off the bottom
+	   edge, exactly as in the reference art. */
+	bottom: -10vh;
 	left: 0;
-	width: 100%;
-	height: 72vh;
+	right: 0;
+	/* Span from the very top of the viewport down past the fold (top:0 + the
+	   negative bottom), instead of a fixed 100% height. On viewports wider than
+	   ~16:9 the bottom-pinned image is taller than the screen, and a 100% height
+	   box would clip the tower's top at the box edge (right around the navbar,
+	   making the transparent navbar look like it's hiding the tower). Letting the
+	   box reach top:0 lets the spire render up behind the transparent navbar. */
+	top: 0;
 	background-image: url("../../assets/Hero/foreground.webp");
-	background-size: cover;
-	background-position: center top;
+	/* Full width normally, but cap the width on ultra-wide (>~1.97:1) screens so
+	   the bottom-pinned image never grows taller than the box and clips the spire.
+	   197vh ≈ box-height(110vh) × image-aspect(1.794); past that the wall stops at
+	   the edges and the full-width orange hill shows in the bottom corners.
+	   Keep 197 in sync with FOREGROUND_MAX_W_VH in Hero.tsx (hotspot). */
+	background-size: min(100%, 197vh) auto;
+	background-position: center bottom;
 	background-repeat: no-repeat;
-	z-index: 2;
+	z-index: 4;
 	pointer-events: none;
 	user-select: none;
 }
@@ -130,7 +223,7 @@
 .clock-tower-hotspot {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	z-index: 3;
+	z-index: 5;
 	pointer-events: auto;
 	cursor: pointer;
 }
@@ -139,9 +232,12 @@
 
 .hero-heading {
 	position: absolute;
-	z-index: 4;
+	z-index: 6;
 	top: 0;
-	bottom: 0;
+	/* Raise the centred column ~6vh: the foreground building grew taller, so the
+	   open sky band is no longer symmetric — lifting the bottom edge re-centres
+	   the text in the visible sky and keeps the form clear of the rooftops. */
+	bottom: 12vh;
 	/* Anchor just to the right of the tower so the column stays beside it on
 	   every width instead of hugging the far edge on ultra-wide screens. */
 	left: 47%;
@@ -153,6 +249,10 @@
 	text-align: left;
 	gap: clamp(0.5rem, 1.5vh, 1.1rem);
 	will-change: transform, opacity;
+	/* The column is a tall, mostly-empty box that overlaps the parliament. Keep
+	   it transparent to clicks/hover so it doesn't sit "in front of" the tower
+	   (blocking the clock-tower hotspot); only the form below re-enables hits. */
+	pointer-events: none;
 	/* Drives both the wordmark and the "III" edition mark so they stay in
 	   proportion; the bars are derived from this (see .edition). */
 	--logo-w: clamp(200px, 30vw, 430px);
@@ -240,6 +340,8 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	margin-top: clamp(0.4rem, 1.2vh, 1rem);
+	/* Re-enable hits for the interactive controls (parent is pointer-events:none). */
+	pointer-events: auto;
 }
 
 /* Optimistic confirmation shown in place of the form after submit. */
@@ -290,7 +392,7 @@
 	position: absolute;
 	top: 28vh;
 	left: 50%;
-	z-index: 5;
+	z-index: 7;
 	transform: translateX(-50%);
 	margin: 0;
 	padding: max(1rem, 2vmin) max(2rem, 4vmin);
@@ -356,9 +458,19 @@
 
 /* ---------- Responsive ---------- */
 
-@media only screen and (max-width: 730px) {
+/* Phones and any portrait viewport (incl. portrait tablets): stack the text and
+   show a zoomed tower at the bottom, instead of the wide desktop scene. Keep this
+   condition in sync with the `isCover` matchMedia check in Hero.tsx (hotspot). */
+@media only screen and (max-width: 730px), (orientation: portrait) {
 	.hero-foreground {
-		height: 48vh;
+		/* Cancel the desktop top:0 / -10vh drop and sit a zoomed tower flush at the
+		   bottom. `cover` fills this box (height-driven on portrait), so the wall
+		   stays at the base and hides the tower foot — no detached/floating gap. */
+		top: auto;
+		bottom: 0;
+		height: 52vh;
+		background-size: cover;
+		background-position: center bottom;
 	}
 
 	/* Stack the text in the upper sky band; the tower sits below-left. The
@@ -381,5 +493,35 @@
 	.countdown-dialog-small {
 		display: flex;
 		top: 24vh;
+	}
+
+	/* Same idea on mobile: a big top bank (1,4,3,5) spanning the width, plus two
+	   clouds (2,6) lower in the sky band above the tower. Only placement changes;
+	   the base sizes (clamp mins) are already large enough to overlap into a mass. */
+	.cloud-1 {
+		--cloud-top: 4%;
+		--cloud-left: -20%;
+	}
+	.cloud-4 {
+		--cloud-top: -2%;
+		--cloud-left: 14%;
+	}
+	.cloud-3 {
+		--cloud-top: -4%;
+		--cloud-left: 44%;
+	}
+	.cloud-5 {
+		--cloud-top: 2%;
+		--cloud-left: 66%;
+	}
+	/* dips lower so the tower's flag/spire rises into the underside of the bank */
+	.cloud-6 {
+		--cloud-top: 34%;
+		--cloud-left: -2%;
+		--cloud-w: clamp(240px, 64vw, 360px);
+	}
+	.cloud-2 {
+		--cloud-top: 24%;
+		--cloud-left: 54%;
 	}
 }

@@ -1,3 +1,5 @@
+import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-scroll";
 import type { Dispatch, SetStateAction } from "react";
 import { locale, t } from "@/i18n";
@@ -57,6 +59,36 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 		},
 	];
 
+	// Same socials as the sidebar (see Sidebar.tsx) — shown in the bar on desktop,
+	// and hidden under 940px where the hamburger + sidebar take over.
+	const media = [
+		{
+			link: "https://www.facebook.com/canadascapitalhackathon",
+			icon: faFacebook,
+			label: "Facebook",
+		},
+		{
+			link: "https://twitter.com/hackthehill_",
+			icon: faTwitter,
+			label: "Twitter",
+		},
+		{
+			link: "https://www.instagram.com/hackthehill/",
+			icon: faInstagram,
+			label: "Instagram",
+		},
+		{
+			link: "https://www.tiktok.com/@hackthehill",
+			icon: faTiktok,
+			label: "TikTok",
+		},
+		{
+			link: "https://www.linkedin.com/company/hackthehill/",
+			icon: faLinkedin,
+			label: "LinkedIn",
+		},
+	];
+
 	useEffect(() => {
 		AOS.init({});
 	}, []);
@@ -90,13 +122,6 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 				<button
 					className={style["square-button"]}
 					type="submit"
-					onClick={() => window.open("https://2023.hackthehill.com", "_blank", "noopener,noreferrer")}
-				>
-					HtH I
-				</button>
-								<button
-					className={style["square-button"]}
-					type="submit"
 					onClick={() => window.open("https://2024.hackthehill.com", "_blank", "noopener,noreferrer")}
 				>
 					HtH II
@@ -122,6 +147,15 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 					</li>
 				))}
 			</ul> */}
+			<ul className={style["media"]}>
+				{media.map(link => (
+					<li key={link.link}>
+						<a href={link.link} target="_blank" rel="noreferrer" aria-label={link.label}>
+							<Icon icon={link.icon} />
+						</a>
+					</li>
+				))}
+			</ul>
 			<button
 				className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
 				onClick={() => setSidebarOpen(!sidebarOpen)}

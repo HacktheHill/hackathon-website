@@ -8,49 +8,52 @@
 /* Drift animates the dedicated `translate` property (not `transform`) so it
    composes with the per-cloud parallax transform set in Hero.tsx instead of
    overwriting it. */
+/* Horizontal sweep is scaled by each cloud's --drift-x (set per cloud in
+   Hero.module.css) so near clouds travel further than far ones — parallax-like
+   depth from a single shared keyframe. The slight vertical bob adds life. */
 @keyframes drift {
 	0% {
-		translate: -14vw 0;
+		translate: calc(var(--drift-x, 12vw) * -1) 0;
 	}
 	50% {
-		translate: 0 -1.6vh;
+		translate: 0 -1.4vh;
 	}
 	100% {
-		translate: 14vw 0.6vh;
+		translate: var(--drift-x, 12vw) 0.6vh;
 	}
 }
 
 .hero-cloud {
-	/* base = cloud-1 (82s) */
-	animation: drift 82s ease-in-out infinite alternate;
+	/* base = cloud-1 */
+	animation: drift 26s ease-in-out infinite alternate;
 }
 
-/* Per-cloud timing/direction so they never move in lock-step.
-   Durations ascend so cloud-3 stays the slowest, just less sluggish than before. */
+/* The top-bank clouds (1,3,4,5) drift in the same direction so the mass stays
+   roughly cohesive; the right-hand cluster (2,6) is reversed for contrast.
+   Staggered durations/delays keep nothing in lock-step. */
 .hero-cloud-2 {
-	animation-duration: 70s;
+	animation-duration: 20s;
 	animation-direction: alternate-reverse;
 	animation-delay: -10s;
 }
 
 .hero-cloud-3 {
-	animation-duration: 88s;
+	animation-duration: 30s;
 	animation-delay: -30s;
 }
 
 .hero-cloud-4 {
-	animation-duration: 80s;
-	animation-direction: alternate-reverse;
-	animation-delay: -20s;
+	animation-duration: 27s;
+	animation-delay: -22s;
 }
 
 .hero-cloud-5 {
-	animation-duration: 86s;
+	animation-duration: 23s;
 	animation-delay: -45s;
 }
 
 .hero-cloud-6 {
-	animation-duration: 84s;
+	animation-duration: 22s;
 	animation-direction: alternate-reverse;
 	animation-delay: -60s;
 }

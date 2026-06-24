@@ -98,7 +98,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
 	return (
 		<nav className={`${styles.sidebar} ${sidebarOpen ? styles["sidebar-open"] : ""}`}>
-				<ul className={styles.links}>
+			{/* TODO: Revert comment after website is done. */}
+				{/* <ul className={styles.links}>
 					{links.map(link => (
 						<li key={link.text}>
 							<Link
@@ -114,7 +115,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 							</Link>
 						</li>
 					))}
-				</ul>
+				</ul> */}
 				<ul className={styles.media}>
 					{media.map(link => (
 						<li key={link.link}>
