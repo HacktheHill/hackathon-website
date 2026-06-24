@@ -1,4 +1,8 @@
 ---
+import fs from 'fs';
+import path from 'path';
+
+
 export interface Props {
 	title?: string;
 }
@@ -6,21 +10,28 @@ export interface Props {
 const { title } = (Astro.props as Props) || {};
 
 const description =
-	"Join us for Hack the Hill II, a hackathon in heart of Canada's capital from September 27th to 29th, 2024! Joignez nous pour Hack the Hill II, un hackathon au cœur de la capitale du Canada du 27 au 29 septembre 2024!";
+	"Join us for Hack the Hill II, a hackathon in heart of Canada's capital from September 25th to 27th, 2026! Joignez nous pour Hack the Hill II, un hackathon au cœur de la capitale du Canada du 25 au 27 septembre 2026!";
 
 const keywords =
-	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2024, University of Ottawa, uOttawa, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Carleton, Carleton University, Université d'Ottawa, Université Carleton";
+	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2026, University of Ottawa, uOttawa, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Carleton, Carleton University, Université d'Ottawa, Université Carleton, Capital Technology Network, CTN, Réseau technologique de la capitale, RTC";
 
 const color = "#ea885f";
 
-const url = Astro.site?.toString().replace(/\/$/, "") ?? "";
-const structuredData = await (await fetch(`${url}/structured-data.json`)).json();
 
+let structuredData = {} as any;
+try {
+	structuredData = JSON.parse(fs.readFileSync(path.resolve("./public/structured-data.json"), "utf-8"));
 	structuredData.description = description;
 	structuredData.keywords = keywords;
-structuredData.url = url;
-structuredData.image = `${url}/Logos/hackthehill-logo.svg`;
+	structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
+	structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
+} catch (error) {
+	console.error(error);
+}
 const structuredDataString = JSON.stringify(structuredData);
+
+const url = import.meta.env.SITE.replace(/\/$/, "");
+
 ---
 
 <!DOCTYPE html>
@@ -162,7 +173,13 @@ const structuredDataString = JSON.stringify(structuredData);
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
 				width: 100%;
-				overflow-x: hidden;
+				/* TODO: Remove this once the website is built */
+				/* Landing is a single, non-scrolling hero (100svh, self-clipping).
+				   Locking the viewport stops a transient scrollbar from flashing
+				   during load (e.g. the Partytown iframe briefly defaulting to 150px
+				   or web-font reflow), which otherwise causes a horizontal jitter.
+				   TODO: restore to `overflow-x: hidden` when the full page returns. */
+				overflow: hidden;
 			}
 
 			h1,

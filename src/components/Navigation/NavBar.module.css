@@ -102,6 +102,29 @@
 	border: 3px solid var(--link-color);
 }
 
+.navbar .media {
+	gap: 1.25rem;
+	font-size: 1.4rem;
+}
+
+.navbar .media li {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .media a {
+	display: flex;
+	align-items: center;
+	color: var(--link-color);
+	text-decoration: none;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar .media a:hover {
+	transform: translateY(-2px);
+	opacity: 0.75;
+}
+
 .sidebar-icon {
 	display: none;
 	height: 100%;

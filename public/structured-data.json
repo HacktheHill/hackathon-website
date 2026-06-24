@@ -6,18 +6,18 @@
 		"audienceType": "University Students",
 		"geographicArea": "Ottawa"
 	},
-	"doorTime": "2024-09-27T17:00",
+	"doorTime": "2026-09-25T17:00",
 	"duration": "PT48H",
-	"endDate": "2024-09-29",
+	"endDate": "2026-09-27",
 	"eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
 	"eventSchedule": {
 		"@type": "Schedule",
-		"endDate": "2024-09-29",
-		"endTime": "2024-09-29T18:30",
+		"endDate": "2026-09-27",
+		"endTime": "2026-09-27T18:30",
 		"repeatCount": 1,
 		"scheduleTimezone": "America/Toronto",
-		"startDate": "2024-09-27",
-		"startTime": "2024-09-27T17:00"
+		"startDate": "2026-09-25",
+		"startTime": "2026-09-25T17:00"
 	},
 	"eventStatus": "https://schema.org/EventScheduled",
 	"funder": [],
@@ -41,7 +41,7 @@
 				"addressCountry": "Canada",
 				"addressLocality": "Ottawa",
 				"addressRegion": "ON",
-				"postalCode": "K1N 9N3",
+				"postalCode": "K1N 6N5",
 				"streetAddress": "100 Louis-Pasteur Private"
 			},
 			"name": "Learning Crossroads building, University of Ottawa"
@@ -52,12 +52,12 @@
 	"offers": {
 		"@type": "Offer",
 		"availability": "https://schema.org/LimitedAvailability",
-		"availabilityEnds": "2024-09-27",
-		"availabilityStarts": "2024-07-29",
+		"availabilityEnds": "2026-09-25",
+		"availabilityStarts": "2026-07-29",
 		"price": "0",
 		"priceCurrency": "CAD",
-		"validFrom": "2024-07-29",
-		"validThrough": "2024-09-27",
+		"validFrom": "2026-07-29",
+		"validThrough": "2026-09-25",
 		"url": "https://tracker.hackthehill.com/"
 	},
 	"organizer": {
@@ -69,7 +69,7 @@
 		"contactPoint": {
 			"@type": "ContactPoint",
 			"contactType": "Customer Service",
-			"email": "info@hackthehill.com"
+			"email": "info@ctn-rtc.org"
 		},
 		"knowsLanguage": [
 			{
@@ -82,7 +82,7 @@
 			}
 		],
 		"logo": "https://hackthehill.com/Logos/hackthehill-logo.svg",
-		"name": "Hack the Hill",
+		"name": "Capital Technology Network",
 		"sameAs": [
 			"https://www.facebook.com/canadascapitalhackathon",
 			"https://twitter.com/hackthehill",
@@ -98,6 +98,6 @@
 		"genre": "Hackathon",
 		"name": "Hack the Hill"
 	},
-	"startDate": "2024-09-27",
+	"startDate": "2026-09-25",
 	"typicalAgeRange": "16-30"
 }

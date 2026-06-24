@@ -16,7 +16,8 @@
 	--button-gradient: linear-gradient(90deg, var(--light-tertiary-color), transparent) var(--light-secondary-color);
 
 	color-scheme: light;
-	scrollbar-gutter: stable;
+	/* TODO: restore this when the website is done /*
+	/* scrollbar-gutter: stable; */
 	background-color: var(--dark-primary-color);
 }
 

@@ -1,3 +1,6 @@
+// Must run before any FontAwesome icon renders — disables the runtime CSS
+// injection that causes the giant icon flash on load.
+import "@/fontawesome";
 import Navigation from "../Navigation/Navigation";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
@@ -17,7 +20,8 @@ function App() {
 		<>
 			<Navigation />
 			<Hero />
-			<div className={styles.wrapper}>
+			{/* TODO: Uncomment when website is done. */}
+			{/* <div className={styles.wrapper}>
 				<About />
 				<Stats />
 				<Winners />
@@ -26,7 +30,7 @@ function App() {
 				<Sponsors />
 				<FAQ />
 				<Footer />
-			</div>
+			</div> */}
 			{/* <Notification /> */}
 		</>
 	);
