@@ -300,9 +300,12 @@ function Hero() {
 						</button>
 					</form>
 				)}
-				{/* Hidden submit target — keeps the follow request on this page. */}
+				{/* Hidden submit target — keeps the follow request on this page.
+				    Hide inline (not just via the CSS class) so the iframe never flashes
+				    at its default 300×150 bordered box before the stylesheet loads. */}
 				<iframe
 					className={styles["tracker-sink"]}
+					style={{ display: "none" }}
 					name="tracker-sink"
 					title="Newsletter signup"
 					tabIndex={-1}
