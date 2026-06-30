@@ -229,7 +229,7 @@
 	user-select: none;
 }
 
-/* Invisible hover target over the clock tower to reveal the countdown. Its
+/* Invisible button over the clock tower to reveal the countdown. Its
    left/top/width/height are set in JS (Hero.tsx) so it tracks the painted clock
    through the foreground's `cover` scaling; transform centres it on that point.
    The foreground is pointer-events:none, so re-enable hits on the hotspot. */
@@ -237,8 +237,16 @@
 	position: absolute;
 	transform: translate(-50%, -50%);
 	z-index: 5;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	appearance: none;
+	-webkit-appearance: none;
 	pointer-events: auto;
 	cursor: pointer;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
 }
 
 /* ---------- Heading (right-side column, beside the tower) ---------- */

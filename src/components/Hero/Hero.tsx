@@ -1,7 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { useEffect, useLayoutEffect, useState, useRef } from "react";
-import type { PointerEvent, TouchEvent } from "react";
+import { useEffect, useState, useRef } from "react";
 import { t } from "@/i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -12,16 +11,21 @@ import "aos/dist/aos.css";
 
 const BannerLogo = "/Logos/hackthehill-banner.svg";
 
-const EVENT_START_DATE = new Date("2026-09-25T13:00:00-00:00").getTime();
-const HACKING_END_DATE = new Date("2026-09-27T15:00:00-00:00").getTime();
+const EVENT_START_DATE = new Date("2026-09-25T17:00:00-04:00").getTime();
+const HACKING_START_DATE = new Date("2026-09-25T23:00:00-04:00").getTime();
+const HACKING_END_DATE = new Date("2026-09-27T11:00:00-04:00").getTime();
 
 // If the current time is before the event start date, the countdown will show the time until the event starts
-// If the current time is between the event start date and the hacking end	 date, the countdown will show the time until the hacking ends
+// If the current time is between the event start date and the hacking start date, the countdown will show the time until hacking starts
+// If the current time is between the hacking start date and the hacking end date, the countdown will show the time until hacking ends
 // If the current time is after the hacking end date, the countdown will not show
 let date: number | null = null;
 switch (true) {
 	case Date.now() < EVENT_START_DATE:
 		date = EVENT_START_DATE;
+		break;
+	case Date.now() < HACKING_START_DATE:
+		date = HACKING_START_DATE;
 		break;
 	case Date.now() < HACKING_END_DATE:
 		date = HACKING_END_DATE;
@@ -89,16 +93,6 @@ function Hero() {
 	const followLabel = t("hero.more");
 	const thanksLabel = t("hero.thanks");
 
-	const popup = (event: PointerEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>) => {
-		const target = event.target;
-
-		if (target instanceof Element && target.closest("#clock-tower")) {
-			setPopupOpen(true);
-		} else {
-			setPopupOpen(false);
-		}
-	};
-
 	// For parallax scrolling effect
 	const heroRef = useRef<HTMLDivElement>(null);
 
@@ -107,9 +101,9 @@ function Hero() {
 	// the viewport changes shape, so we recompute the hotspot from that geometry
 	// whenever the foreground box resizes (vh changes, mobile URL bar, rotation).
 	const foregroundRef = useRef<HTMLDivElement>(null);
-	const hotspotRef = useRef<HTMLDivElement>(null);
+	const hotspotRef = useRef<HTMLButtonElement>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const fg = foregroundRef.current;
 		const hotspot = hotspotRef.current;
 		if (!fg || !hotspot) return;
@@ -217,7 +211,7 @@ function Hero() {
 	}, []);
 
 	return (
-		<div id="hero" ref={heroRef} className={styles["hero"]} onPointerMove={popup} onTouchStart={popup}>
+		<div id="hero" ref={heroRef} className={styles["hero"]} onPointerDown={() => setPopupOpen(false)}>
 			{/* Sky */}
 			<div className={styles["hero-sky"]}></div>
 
@@ -238,14 +232,32 @@ function Hero() {
 
 			{/* Foreground: Parliament clock-tower silhouette. The countdown hotspot
 			    lives inside it so its position is relative to the painted image box. */}
-			<div className={styles["hero-foreground"]} ref={foregroundRef} aria-hidden="true">
-				{/* Invisible hotspot over the clock; positioned via JS (see useLayoutEffect) */}
-				<div
+			<div className={styles["hero-foreground"]} ref={foregroundRef}>
+				{/* Invisible hotspot over the clock; positioned via JS (see useEffect) */}
+				<button
+					type="button"
 					id="clock-tower"
 					className={styles["clock-tower-hotspot"]}
 					ref={hotspotRef}
-					aria-hidden="true"
-				></div>
+					aria-label="Show Hack the Hill countdown"
+					aria-haspopup="dialog"
+					aria-expanded={popupOpen}
+					aria-controls="countdown-dialog countdown-dialog-small"
+					onPointerEnter={(event) => {
+						if (event.pointerType !== "touch") setPopupOpen(true);
+					}}
+					onPointerLeave={(event) => {
+						if (event.pointerType !== "touch") setPopupOpen(false);
+					}}
+					onPointerDown={(event) => {
+						event.stopPropagation();
+						setPopupOpen(true);
+					}}
+					onClick={(event) => {
+						event.stopPropagation();
+						setPopupOpen(true);
+					}}
+				/>
 			</div>
 
 			{/* Date · wordmark · tagline · signup — right-side column over the open sky */}
@@ -321,9 +333,14 @@ function Hero() {
 				/>
 			</div>
 
-			{/* Popup for countdown when hovering over clock tower */}
+			{/* Popup for countdown when opening the clock-tower hotspot */}
 			{date && (
-				<dialog className={styles["countdown-dialog"]} open={popupOpen}>
+				<dialog
+					id="countdown-dialog"
+					className={styles["countdown-dialog"]}
+					open={popupOpen}
+					onPointerDown={(event) => event.stopPropagation()}
+				>
 					<p className={styles["countdown-header"]}>
 						{" "}
 						<strong>psst... Mark your calendar, Hackathon is in</strong>
@@ -351,7 +368,12 @@ function Hero() {
 			)}
 
 			{date && (
-				<dialog className={styles["countdown-dialog-small"]} open={popupOpen}>
+				<dialog
+					id="countdown-dialog-small"
+					className={styles["countdown-dialog-small"]}
+					open={popupOpen}
+					onPointerDown={(event) => event.stopPropagation()}
+				>
 					<p className={styles["countdown-header-small"]}>
 						{" "}
 						<strong>psst... Hackathon is in</strong>
