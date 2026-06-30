@@ -276,9 +276,9 @@ function Hero() {
 				    cross-origin navigation (not a fetch), so CORS doesn't apply — but
 				    we also can't read the result, hence the optimistic message. */}
 				{submitted ? (
-					<p className={styles["hero-form-thanks"]} role="status" data-aos="fade-up">
+					<output className={styles["hero-form-thanks"]} data-aos="fade-up" aria-live="polite">
 						{thanksLabel}
-					</p>
+					</output>
 				) : (
 					<form
 						className={styles["hero-form"]}
