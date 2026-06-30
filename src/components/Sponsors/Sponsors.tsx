@@ -52,21 +52,21 @@ function Sponsors() {
 			],
 		},
 		collaborators: [
-			{ href: "https://www2.uottawa.ca/en", src: uOttawa },
-			{ href: "https://carleton.ca/", src: Carleton },
-			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF },
-			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE },
-			{ href: "https://wie.ieeeottawa.ca/", src: WIE },
-			{ href: "https://www.scesoc.ca/", src: SCESoc },
-			{ href: "https://ccss.carleton.ca/", src: CCSS },
-			{ href: "https://www.cssa-aei.ca/", src: CSSA },
-			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE },
-			{ href: "https://www.telferbta.com/", src: telferBTA },
-			{ href: "https://www.uogdc.com/", src: uOGDC },
-			{ href: "https://uocybersec.com/", src: uOCyberSec },
-			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers },
-			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers },
-			{ href: "https://linktr.ee/desoc", src: DEsocCarleton },
+			{ href: "https://www2.uottawa.ca/en", src: uOttawa, alt: "University of Ottawa" },
+			{ href: "https://carleton.ca/", src: Carleton, alt: "Carleton University" },
+			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF, alt: "Engineering Endowment Fund" },
+			{ href: "https://ieeeuottawa.ca/", src: uOttawaIEEE, alt: "IEEE uOttawa Student Branch" },
+			{ href: "https://wie.ieeeottawa.ca/", src: WIE, alt: "Women in Engineering uOttawa" },
+			{ href: "https://www.scesoc.ca/", src: SCESoc, alt: "Carleton Systems and Computer Engineering Society" },
+			{ href: "https://ccss.carleton.ca/", src: CCSS, alt: "Carleton Computer Science Society" },
+			{ href: "https://www.cssa-aei.ca/", src: CSSA, alt: "Computer Science Students' Association" },
+			{ href: "https://ieeecarleton.ca/", src: CarletonIEEE, alt: "IEEE Carleton University" },
+			{ href: "https://www.telferbta.com/", src: telferBTA, alt: "Telfer Business Technology Association" },
+			{ href: "https://www.uogdc.com/", src: uOGDC, alt: "uOttawa Game Development Club" },
+			{ href: "https://uocybersec.com/", src: uOCyberSec, alt: "uOttawa Cybersecurity Club" },
+			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers, alt: "uOttawa EngiQueers" },
+			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers, alt: "AI Tinkerers Ottawa" },
+			{ href: "https://linktr.ee/desoc", src: DEsocCarleton, alt: "Carleton Department of Electronics Society" },
 		],
 	};
 
@@ -148,7 +148,7 @@ function Sponsors() {
 						>
 							<img
 								className={`${styles["icon"]} ${styles["icon-medium"]}`}
-								alt={t("collaborators.icon_alt")}
+								alt={`${sponsor.alt} logo`}
 								src={sponsor.src}
 							></img>
 						</a>
