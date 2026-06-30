@@ -51,6 +51,15 @@ export default {
 			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II un voyage inoubliable !",
 		categories: {
 			general_challenge: "Défi Général",
+			ciena: "Défi Ciena",
+			ross: "Défi Ross",
+			best_ui_ux: "Meilleure implémentation UI/UX",
+			best_ai: "Meilleure utilisation de l'IA",
+			best_uottawa_carleton: "Meilleure collaboration uOttawa x Carleton",
+			best_cloud: "Meilleure utilisation de la technologie infonuagique",
+			best_hardware: "Meilleur projet matériel",
+			geoguessr: "Défi Geoguessr",
+			scavenger_hunt: "Défi chasse au trésor",
 		},
 		no_data: "Aucune donnée sur les gagnants disponible pour cette catégorie.",
 		general_challenge: [
@@ -67,7 +76,7 @@ export default {
 			},
 		],
 		sponsor_challenges: {
-			"Défi Ciena": [
+			ciena: [
 				{
 					place: "1re",
 					project: "Mound",
@@ -84,7 +93,7 @@ export default {
 					team: ["Miller Ding", "Antoine Lavigne", "Aditya", "Matias S"],
 				},
 			],
-			"Défi Ross": [
+			ross: [
 				{
 					place: "1re",
 					project: "Frame Out",
@@ -106,11 +115,11 @@ export default {
 			],
 		},
 		mini_challenges: {
-			"Meilleure implementation UI/UX": [
+			best_ui_ux: [
 				{ place: "1re", project: "CapyCare", team: ["Chi McIsaac", "Karam"] },
 				{ place: "2e", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
 			],
-			"Meilleure utilisation de l'IA": [
+			best_ai: [
 				{
 					place: "1re",
 					project: "BrainUp",
@@ -122,7 +131,7 @@ export default {
 					team: ["Joey Issa", "Twoadave Gayowsky", "Batleram Scaffindi", "Jacob T"],
 				},
 			],
-			"Meilleure collaboration uOttawa x Carleton": [
+			best_uottawa_carleton: [
 				{
 					place: "1re",
 					project: "The Heart Stopper",
@@ -134,7 +143,7 @@ export default {
 					team: ["Imane A.", "Aisha Jama", "Maryam Belkebir", "Saja Elkurtehi"],
 				},
 			],
-			"Meilleure utilisation de la technologie en nuage": [
+			best_cloud: [
 				{ place: "1re", project: "snhack-rover", team: ["Mumtahin Farabi", "Rohan Sreelesh", "Hiba Tantawi"] },
 				{
 					place: "2e",
@@ -142,7 +151,7 @@ export default {
 					team: ["Noah do Rego", "Nodshley Marcelin", "Colby Todd", "Andrew Pham"],
 				},
 			],
-			"Meilleur projet de materiel": [
+			best_hardware: [
 				{ place: "1re", project: "AnyPen", team: ["Emilee Chen", "Ethan Sue", "Fahmi O", "Ivana Du"] },
 				{
 					place: "2e",
@@ -150,7 +159,7 @@ export default {
 					team: ["Aneesh Ereddy", "Shawn How", "Marc Vidal", "Benjamin Gavieres"],
 				},
 			],
-			"Défi Geoguessr": [
+			geoguessr: [
 				{
 					place: "1re",
 					project: "Équipe 1",
@@ -163,7 +172,7 @@ export default {
 				},
 				{ place: "3e", project: "Équipe 3", team: ["Sam Patel", "Jesse Kim", "Avery Garcia", "Quinn Murphy"] },
 			],
-			"Défi Chasse au Trésor": [
+			scavenger_hunt: [
 				{
 					place: "1re",
 					project: "Chasse au Trésor",

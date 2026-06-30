@@ -88,6 +88,7 @@ function Winners() {
 	const generalChallenge = t("winners.general_challenge") || [];
 	const sponsorChallenges = t("winners.sponsor_challenges") || {};
 	const miniChallenges = t("winners.mini_challenges") || {};
+	const categoryLabels = t("winners.categories");
 
 	useEffect(() => {
 		AOS.init({
@@ -104,9 +105,15 @@ function Winners() {
 
 	// Calculate categories
 	const categories = {
-		general_challenge: t("winners.categories.general_challenge"),
-		...Object.keys(sponsorChallenges).reduce((acc, key) => ({ ...acc, [key]: key }), {}),
-		...Object.keys(miniChallenges).reduce((acc, key) => ({ ...acc, [key]: key }), {}),
+		general_challenge: categoryLabels.general_challenge,
+		...Object.keys(sponsorChallenges).reduce(
+			(acc, key) => ({ ...acc, [key]: hasKey(categoryLabels, key) ? categoryLabels[key] : key }),
+			{} as Record<string, string>,
+		),
+		...Object.keys(miniChallenges).reduce(
+			(acc, key) => ({ ...acc, [key]: hasKey(categoryLabels, key) ? categoryLabels[key] : key }),
+			{} as Record<string, string>,
+		),
 	};
 
 	if (error) {
