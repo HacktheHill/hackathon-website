@@ -50,7 +50,16 @@ export default {
 		title: "Winners",
 		subtitle: "Celebrating the brilliant minds and projects that made Hack the Hill II an unforgettable journey!",
 		categories: {
-			general_challenge: "General Challenge"
+			general_challenge: "General Challenge",
+			ciena: "Ciena Challenge",
+			ross: "Ross Challenge",
+			best_ui_ux: "Best UI/UX Implementation",
+			best_ai: "Best Use of AI",
+			best_uottawa_carleton: "Best uOttawa x Carleton Collaboration",
+			best_cloud: "Best Use of Cloud Technology",
+			best_hardware: "Best Hardware Hack",
+			geoguessr: "Geoguessr Challenge",
+			scavenger_hunt: "Scavenger Hunt Challenge",
 		},
 		no_data: "No winners data available for this category.",
 		general_challenge: [
@@ -67,7 +76,7 @@ export default {
 			},
 		],
 		sponsor_challenges: {
-			"Ciena Challenge": [
+			ciena: [
 				{
 					place: "1st",
 					project: "Mound",
@@ -84,7 +93,7 @@ export default {
 					team: ["Miller Ding", "Antoine Lavigne", "Aditya", "Matias S"],
 				},
 			],
-			"Ross Challenge": [
+			ross: [
 				{
 					place: "1st",
 					project: "Frame Out",
@@ -106,11 +115,11 @@ export default {
 			],
 		},
 		mini_challenges: {
-			"Best UI/UX Implementation": [
+			best_ui_ux: [
 				{ place: "1st", project: "CapyCare", team: ["Chi McIsaac", "Karam"] },
 				{ place: "2nd", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
 			],
-			"Best Use of AI": [
+			best_ai: [
 				{
 					place: "1st",
 					project: "BrainUp",
@@ -122,7 +131,7 @@ export default {
 					team: ["Joey Issa", "Twoadave Gayowsky", "Batleram Scaffindi", "Jacob T"],
 				},
 			],
-			"Best uOttawa x Carleton Collaboration": [
+			best_uottawa_carleton: [
 				{
 					place: "1st",
 					project: "The Heart Stopper",
@@ -134,7 +143,7 @@ export default {
 					team: ["Imane A.", "Aisha Jama", "Maryam Belkebir", "Saja Elkurtehi"],
 				},
 			],
-			"Best Use of Cloud Technology": [
+			best_cloud: [
 				{ place: "1st", project: "snhack-rover", team: ["Mumtahin Farabi", "Rohan Sreelesh", "Hiba Tantawi"] },
 				{
 					place: "2nd",
@@ -142,7 +151,7 @@ export default {
 					team: ["Noah do Rego", "Nodshley Marcelin", "Colby Todd", "Andrew Pham"],
 				},
 			],
-			"Best Hardware Hack": [
+			best_hardware: [
 				{ place: "1st", project: "AnyPen", team: ["Emilee Chen", "Ethan Sue", "Fahmi O", "Ivana Du"] },
 				{
 					place: "2nd",
@@ -150,12 +159,12 @@ export default {
 					team: ["Aneesh Ereddy", "Shawn How", "Marc Vidal", "Benjamin Gavieres"],
 				},
 			],
-			"Geoguessr Challenge": [
+			geoguessr: [
 				{ place: "1st", project: "Team 1", team: ["Alex Smith", "Jamie Wong", "Chris Johnson", "Taylor Park"] },
 				{ place: "2nd", project: "Team 2", team: ["Jordan Lee", "Casey Zhang", "Morgan Taylor", "Riley Chen"] },
 				{ place: "3rd", project: "Team 3", team: ["Sam Patel", "Jesse Kim", "Avery Garcia", "Quinn Murphy"] },
 			],
-			"Scavenger Hunt Challenge": [
+			scavenger_hunt: [
 				{
 					place: "1st",
 					project: "Scavenger Hunt",
