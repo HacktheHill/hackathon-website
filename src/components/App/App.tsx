@@ -7,7 +7,6 @@ import About from "../About/About";
 import Stats from "../Stats/Stats";
 import Winners from "../Winners/Winners";
 import Testimonials from "../Testimonials/Testimonials";
-import Schedule from "../Schedule/Schedule";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
@@ -26,7 +25,6 @@ function App() {
 				<Stats />
 				<Winners />
 				<Testimonials />
-				<Schedule />
 				<Sponsors />
 				<FAQ />
 				<Footer />

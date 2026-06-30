@@ -38,11 +38,6 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 			text: t("navbar.links.testimonials"),
 		},
 		{
-			to: "schedule",
-			offset: -120,
-			text: t("navbar.links.hacker"),
-		},
-		{
 			to: "sponsors",
 			offset: -120,
 			text: t("navbar.links.sponsors"),
