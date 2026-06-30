@@ -33,15 +33,16 @@ switch (true) {
 // the browser paints the background with so the hotspot tracks the clock on every
 // viewport — a fixed left/top can't, because the image scales/shifts per shape.
 // There are two paint modes (see Hero.module.css):
-//   • desktop: background-size: min(100%, 197vh) auto; position: center bottom
-//   • mobile/portrait: background-size: cover; position: center bottom
+//   • desktop: background-size: 100% auto; bottom-pinned, but the top is clamped
+//     by --foreground-min-top so the spire clears the navbar
+//   • portrait: background-size: cover; position: center bottom
 const FOREGROUND_W = 1920;
 const FOREGROUND_H = 1070;
 const CLOCK_HOTSPOT = { cx: 690, cy: 290, w: 170, h: 170 };
-// Desktop width cap (vh) — mirrors `min(100%, 197vh)` in Hero.module.css.
-const FOREGROUND_MAX_W_VH = 197;
-// Mobile/portrait paints with `cover`; must match the CSS media condition.
-const FOREGROUND_COVER_MEDIA = "(max-width: 730px), (orientation: portrait)";
+// Fallback for --foreground-min-top if the custom property cannot be read.
+const DEFAULT_FOREGROUND_MIN_TOP = 80;
+// Portrait paints with `cover`; must match the CSS media condition.
+const FOREGROUND_COVER_MEDIA = "(orientation: portrait)";
 
 // `parallax` is the scroll depth of each cloud: negative = nearer (rises faster
 // than the scroll), positive = farther (lags behind it). Roughly ordered by the
@@ -119,20 +120,27 @@ function Hero() {
 			if (!cw || !ch) return;
 
 			// Replicate the painted background's geometry inside this box (the box's
-			// own offset/drop is inherited by the hotspot as a child). Both modes pin
-			// to the bottom (offsetY); they differ only in the rendered width.
+			// own offset/drop is inherited by the hotspot as a child).
 			let renderedW: number;
+			let offsetY: number;
 			if (window.matchMedia(FOREGROUND_COVER_MEDIA).matches) {
-				// mobile/portrait: `cover` — fills whichever axis is tighter
+				// portrait: `cover` — fills whichever axis is tighter, bottom-pinned
 				const coverScale = Math.max(cw / FOREGROUND_W, ch / FOREGROUND_H);
 				renderedW = FOREGROUND_W * coverScale;
+				offsetY = ch - FOREGROUND_H * coverScale;
 			} else {
-				// desktop: `min(100%, 197vh) auto`
-				renderedW = Math.min(cw, (FOREGROUND_MAX_W_VH / 100) * window.innerHeight);
+				// desktop: `100% auto`, bottom-pinned but floored at the navbar clearance
+				renderedW = cw;
+				const configuredMinTop = Number.parseFloat(
+					window.getComputedStyle(fg).getPropertyValue("--foreground-min-top")
+				);
+				const minTop = Number.isFinite(configuredMinTop)
+					? configuredMinTop
+					: DEFAULT_FOREGROUND_MIN_TOP;
+				offsetY = Math.max(minTop, ch - FOREGROUND_H * (renderedW / FOREGROUND_W));
 			}
 			const scale = renderedW / FOREGROUND_W;
-			const offsetX = (cw - renderedW) / 2; // centred (matters when capped/cover-cropped)
-			const offsetY = ch - FOREGROUND_H * scale; // bottom-aligned
+			const offsetX = (cw - renderedW) / 2; // centred (matters only when cover-cropped)
 
 			hotspot.style.left = `${offsetX + CLOCK_HOTSPOT.cx * scale}px`;
 			hotspot.style.top = `${offsetY + CLOCK_HOTSPOT.cy * scale}px`;

@@ -43,8 +43,9 @@
    so each hill's ridge lands at the SAME share of the viewport on every form
    factor — portrait, landscape, desktop, ultrawide — with nothing to recalibrate
    per device:  ridge ≈ 100 + drop − height  (all in vh).
-   --hill-h is kept tall enough that the wide hill still spans the width up to
-   ~2.2:1; --hill-x picks which slice shows when it's cropped (near behind the
+   --hill-h is 72vh normally; on ultra-wide it grows with the width (see each hill)
+   so the hill always spans edge to edge, while the coupled drop keeps the ridge
+   fixed. --hill-x picks which slice shows when it's cropped (near behind the
    tower, far to the right). */
 .hero-hill-far,
 .hero-hill-near {
@@ -60,16 +61,20 @@
 
 .hero-hill-far {
 	z-index: 2;
-	--hill-h: 72vh; /* tall enough to span the width up to ~2.4:1 */
-	--hill-drop: 44vh; /* ridge ≈ 72vh */
+	/* 72vh on normal screens; on ultra-wide (past ~2.3:1) grow with the width so the
+	   hill keeps spanning edge to edge — 31vw ≈ 100vw / image-aspect(3.27). The drop
+	   tracks the height (drop = height − 28vh) so the ridge holds at ≈72vh regardless
+	   of how wide the hill gets. */
+	--hill-h: max(72vh, 31vw);
+	--hill-drop: calc(var(--hill-h) - 28vh); /* ridge ≈ 72vh */
 	--hill-x: 78%;
 	background-image: url("../../assets/Hero/hill2.webp");
 }
 
 .hero-hill-near {
 	z-index: 3;
-	--hill-h: 72vh;
-	--hill-drop: 38vh; /* ridge ≈ 66vh */
+	--hill-h: max(72vh, 31vw);
+	--hill-drop: calc(var(--hill-h) - 34vh); /* ridge ≈ 66vh */
 	--hill-x: 42%;
 	background-image: url("../../assets/Hero/hill1.webp");
 }
@@ -185,6 +190,8 @@
 }
 
 .hero-foreground {
+	--foreground-min-top: 80px;
+
 	position: absolute;
 	/* Pin the foreground at full viewport width (so the rampart wall spans edge to
 	   edge and hides the foot of the clock tower — the wall is painted in front of
@@ -196,20 +203,26 @@
 	left: 0;
 	right: 0;
 	/* Span from the very top of the viewport down past the fold (top:0 + the
-	   negative bottom), instead of a fixed 100% height. On viewports wider than
-	   ~16:9 the bottom-pinned image is taller than the screen, and a 100% height
-	   box would clip the tower's top at the box edge (right around the navbar,
-	   making the transparent navbar look like it's hiding the tower). Letting the
-	   box reach top:0 lets the spire render up behind the transparent navbar. */
+	   negative bottom), instead of a fixed 100% height. The background's vertical
+	   position is measured from this box's top edge, so keeping it at top:0 makes
+	   that origin the viewport top — which is what lets the spire clamp below
+	   (`max(var(--foreground-min-top), …)`) read as an absolute clearance from
+	   the navbar. */
 	top: 0;
 	background-image: url("../../assets/Hero/foreground.webp");
-	/* Full width normally, but cap the width on ultra-wide (>~1.97:1) screens so
-	   the bottom-pinned image never grows taller than the box and clips the spire.
-	   197vh ≈ box-height(110vh) × image-aspect(1.794); past that the wall stops at
-	   the edges and the full-width orange hill shows in the bottom corners.
-	   Keep 197 in sync with FOREGROUND_MAX_W_VH in Hero.tsx (hotspot). */
-	background-size: min(100%, 197vh) auto;
-	background-position: center bottom;
+	/* Always span the full viewport width so the rampart wall reaches both edges on
+	   every aspect ratio. (A width cap used to kick in past ~1.97:1, leaving the
+	   wall short of the edges and exposing bare gradient in the bottom corners on
+	   ultra-wide screens — the bug this patch fixes.)
+	   Bottom-pin the image as before, but never let its top rise above 80px (the
+	   72px navbar + a small margin): at full width the image grows taller than the box on
+	   wide screens, so without this clamp the spire would slide up behind the
+	   navbar. 55.73vw = the image's own height at full width (1070/1920); 110vh =
+	   the box height (top:0 → bottom:-10vh). So `110vh - 55.73vw` is the
+	   bottom-pinned top, and max() floors it at the navbar clearance.
+	   Keep this math in sync with the hotspot placement in Hero.tsx. */
+	background-size: 100% auto;
+	background-position: center max(var(--foreground-min-top), calc(110vh - 55.73vw));
 	background-repeat: no-repeat;
 	z-index: 4;
 	pointer-events: none;
@@ -458,10 +471,12 @@
 
 /* ---------- Responsive ---------- */
 
-/* Phones and any portrait viewport (incl. portrait tablets): stack the text and
-   show a zoomed tower at the bottom, instead of the wide desktop scene. Keep this
-   condition in sync with the `isCover` matchMedia check in Hero.tsx (hotspot). */
-@media only screen and (max-width: 730px), (orientation: portrait) {
+/* Portrait viewports: stack the text and show a zoomed tower at the bottom,
+   instead of the wide scene. Width alone must not select this layout: landscape
+   phones are short but wide enough for the tower/text split, and stacking both
+   into 320–430px of height makes every element collide. Keep this condition in
+   sync with the matchMedia check in Hero.tsx (hotspot). */
+@media only screen and (orientation: portrait) {
 	.hero-foreground {
 		/* Cancel the desktop top:0 / -10vh drop and sit a zoomed tower flush at the
 		   bottom. `cover` fills this box (height-driven on portrait), so the wall
@@ -523,5 +538,101 @@
 	.cloud-2 {
 		--cloud-top: 24%;
 		--cloud-left: 54%;
+	}
+}
+
+/* Short landscape phones need the wide composition, but with a denser type/form
+   scale. This keeps the tower on the left and all primary content on the right
+   without pushing the form into the foreground buildings. */
+@media only screen and (orientation: landscape) and (max-height: 500px) {
+	.hero-foreground {
+		/* Keep the tower just below the standard 72px navbar. */
+		--foreground-min-top: 80px;
+	}
+
+	.hero-heading {
+		top: 0;
+		bottom: 4vh;
+		left: 46%;
+		width: 52%;
+		gap: clamp(0.2rem, 1vh, 0.45rem);
+		--logo-w: clamp(145px, 26vw, 245px);
+	}
+
+	.hero-eyebrow {
+		font-size: clamp(0.68rem, 2.7vh, 0.95rem);
+	}
+
+	.hero-heading h2 {
+		font-size: clamp(0.72rem, 2.8vh, 1rem);
+	}
+
+	.hero-form {
+		flex-wrap: nowrap;
+		gap: 0.4rem;
+		margin-top: 0.2rem;
+		width: 100%;
+		min-width: 0;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.hero-input {
+		box-sizing: border-box;
+		min-width: 0;
+		width: auto;
+		max-width: 190px;
+		flex: 1 1 clamp(80px, 25vw, 190px);
+		padding: 0.6rem 0.7rem;
+		border-radius: 0.75rem;
+		font-size: 0.78rem;
+	}
+
+	.hero-btn {
+		flex: 0 0 auto;
+		padding: 0.55rem 0.65rem;
+		border-radius: 0.75rem;
+		font-size: clamp(0.78rem, 2.8vh, 0.95rem);
+	}
+
+	.hero-btn-icon {
+		width: 0.8rem;
+		height: 0.8rem;
+	}
+
+	.countdown-dialog {
+		top: 20vh;
+	}
+}
+
+/* Very short portrait previews (for example legacy 320×480) need the same
+   content, but with a smaller vertical footprint so the form clears the tower. */
+@media only screen and (orientation: portrait) and (max-height: 540px) {
+	.hero-heading {
+		top: 4rem;
+		gap: 0.3rem;
+		--logo-w: clamp(165px, 52vw, 240px);
+	}
+
+	.hero-eyebrow {
+		font-size: 0.8rem;
+	}
+
+	.hero-heading h2 {
+		font-size: 0.9rem;
+	}
+
+	.hero-form {
+		gap: 0.4rem;
+		margin-top: 0.2rem;
+	}
+
+	.hero-input {
+		padding: 0.75rem;
+	}
+
+	.hero-btn {
+		padding: 0.65rem;
+		font-size: 1rem;
 	}
 }
