@@ -1,6 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState, useRef } from "react";
+import { type FormEvent, useEffect, useState, useRef } from "react";
 import { t } from "@/i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -10,6 +10,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const BannerLogo = "/Logos/hackthehill-banner.svg";
+const SUBSCRIBE_ENDPOINT = "https://emails.hackthehill.com/subscribe";
+
+type SubscriptionState = "idle" | "submitting" | "accepted" | "invalid" | "rate-limited" | "failed";
 
 const EVENT_START_DATE = new Date("2026-09-25T17:00:00-04:00").getTime();
 const HACKING_START_DATE = new Date("2026-09-25T23:00:00-04:00").getTime();
@@ -63,7 +66,9 @@ const clouds = [
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
-	const [submitted, setSubmitted] = useState(false);
+	const [email, setEmail] = useState("");
+	const [subscriptionState, setSubscriptionState] = useState<SubscriptionState>("idle");
+	const submittingRef = useRef(false);
 
 	useEffect(() => {
 		AOS.init();
@@ -86,12 +91,65 @@ function Hero() {
 	const formattedMinutes = minutes.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedSeconds = seconds.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 
-	// `t()` calls React hooks internally, so the number of t() calls must stay
-	// constant across renders. The form/thanks branch below would otherwise vary
-	// the count, so resolve those strings up front (always called, every render).
+	// `t()` calls React hooks internally, so resolve all form strings up front and
+	// keep the number of calls constant across renders.
 	const emailPlaceholder = t("hero.email_placeholder");
+	const emailLabel = t("hero.email_label");
 	const followLabel = t("hero.more");
+	const sendingLabel = t("hero.sending");
 	const thanksLabel = t("hero.thanks");
+	const invalidEmailLabel = t("hero.invalid_email");
+	const rateLimitedLabel = t("hero.rate_limited");
+	const sendErrorLabel = t("hero.send_error");
+
+	const isSubmitting = subscriptionState === "submitting";
+	const errorLabel =
+		subscriptionState === "invalid"
+			? invalidEmailLabel
+			: subscriptionState === "rate-limited"
+				? rateLimitedLabel
+				: subscriptionState === "failed"
+					? sendErrorLabel
+					: null;
+
+	const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		if (submittingRef.current) return;
+
+		submittingRef.current = true;
+		setSubscriptionState("submitting");
+		try {
+			const response = await fetch(SUBSCRIBE_ENDPOINT, {
+				method: "POST",
+				headers: {
+					Accept: "application/json",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email: email.trim(), consent: true }),
+			});
+
+			if (response.status === 202) {
+				setSubscriptionState("accepted");
+				return;
+			}
+
+			if (response.status === 400) {
+				setSubscriptionState("invalid");
+				return;
+			}
+
+			if (response.status === 429) {
+				setSubscriptionState("rate-limited");
+				return;
+			}
+
+			setSubscriptionState("failed");
+		} catch {
+			setSubscriptionState("failed");
+		} finally {
+			submittingRef.current = false;
+		}
+	};
 
 	// For parallax scrolling effect
 	const heroRef = useRef<HTMLDivElement>(null);
@@ -283,54 +341,62 @@ function Hero() {
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
 				</h2>
-				{/* The form submits a GET into the hidden iframe below, so the tracker
-				    records the follow without navigating the page away. It's a
-				    cross-origin navigation (not a fetch), so CORS doesn't apply — but
-				    we also can't read the result, hence the optimistic message. */}
-				{submitted ? (
-					<output className={styles["hero-form-thanks"]} data-aos="fade-up" aria-live="polite">
+				{subscriptionState === "accepted" ? (
+					<output className={styles["hero-form-thanks"]} data-aos="fade-up" aria-live="polite" role="status">
 						{thanksLabel}
 					</output>
 				) : (
 					<form
 						className={styles["hero-form"]}
-						action="https://tracker.hackthehill.com/follow"
-						target="tracker-sink"
-						onSubmit={() => setSubmitted(true)}
+						onSubmit={handleSubscribe}
+						aria-busy={isSubmitting}
 					>
-						<input
-							id="email"
-							name="email"
-							className={styles["hero-input"]}
-							type="email"
-							required
-							placeholder={emailPlaceholder}
-							data-aos="fade-up"
-							data-aos-duration="1000"
-							data-aos-delay="400"
-						/>
-						<button
-							type="submit"
-							className={styles["hero-btn"]}
-							data-aos="fade-up"
-							data-aos-duration="1000"
-							data-aos-delay="500"
-						>
-							{followLabel} <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />
-						</button>
+						<div className={styles["hero-form-controls"]}>
+							<label className={styles["hero-visually-hidden"]} htmlFor="email">
+								{emailLabel}
+							</label>
+							<input
+								id="email"
+								name="email"
+								className={styles["hero-input"]}
+								type="email"
+								required
+								maxLength={254}
+								autoComplete="email"
+								inputMode="email"
+								spellCheck={false}
+								value={email}
+								onChange={(event) => {
+									setEmail(event.target.value);
+									if (subscriptionState !== "idle") setSubscriptionState("idle");
+								}}
+								placeholder={emailPlaceholder}
+								disabled={isSubmitting}
+								aria-invalid={subscriptionState === "invalid"}
+								aria-describedby={errorLabel ? "email-error" : undefined}
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="400"
+							/>
+							<button
+								type="submit"
+								className={styles["hero-btn"]}
+								disabled={isSubmitting}
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="500"
+							>
+								{isSubmitting ? sendingLabel : followLabel}
+								{!isSubmitting && <Icon icon={faArrowRight} className={styles["hero-btn-icon"]} />}
+							</button>
+						</div>
+						{errorLabel && (
+							<p id="email-error" className={styles["hero-form-error"]} role="alert">
+								{errorLabel}
+							</p>
+						)}
 					</form>
 				)}
-				{/* Hidden submit target — keeps the follow request on this page.
-				    Hide inline (not just via the CSS class) so the iframe never flashes
-				    at its default 300×150 bordered box before the stylesheet loads. */}
-				<iframe
-					className={styles["tracker-sink"]}
-					style={{ display: "none" }}
-					name="tracker-sink"
-					title="Newsletter signup"
-					tabIndex={-1}
-					aria-hidden="true"
-				/>
 			</div>
 
 			{/* Popup for countdown when opening the clock-tower hotspot */}
