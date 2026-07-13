@@ -13,11 +13,16 @@ export default {
 	hero: {
 		at: "@",
 		h2: "Canada's Capital Hackathon",
-		more: "Follow us!",
+		more: "Get updates",
 		email_placeholder: "E-mail",
+		email_label: "Email address",
+		sending: "Sending…",
 		apply: "Apply Now",
 		date: "Sept. 25-27, 2026",
-		thanks: "Thanks! Keep an eye on your inbox.",
+		thanks: "Check your inbox for a confirmation link.",
+		invalid_email: "Enter a valid email.",
+		rate_limited: "Try again shortly.",
+		send_error: "Couldn’t subscribe. Try again.",
 	},
 	about: {
 		title: "Welcome to Hack the Hill III",

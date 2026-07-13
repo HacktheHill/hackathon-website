@@ -13,11 +13,16 @@ export default {
 	hero: {
 		at: "à",
 		h2: "Le Hackathon de la Capitale Canadienne",
-		more: "Suivez-nous!",
+		more: "Recevoir les nouvelles",
 		email_placeholder: "Courriel",
+		email_label: "Adresse courriel",
+		sending: "Envoi…",
 		apply: "Appliquez Maintenant",
 		date: "25-27 Sept. 2026",
-		thanks: "Merci! Surveillez votre boîte de réception.",
+		thanks: "Vérifiez vos courriels pour confirmer.",
+		invalid_email: "Saisissez un courriel valide.",
+		rate_limited: "Réessayez dans un instant.",
+		send_error: "Inscription impossible. Réessayez.",
 	},
 	about: {
 		title: "Bienvenue à Hack the Hill III",
