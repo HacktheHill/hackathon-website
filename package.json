@@ -26,7 +26,7 @@
 		"@mui/material": "^5.11.2",
 		"@nanostores/react": "^0.4.1",
 		"aos": "^2.3.4",
-		"astro": "^6.4.6",
+		"astro": "^7.1.0",
 		"nanostores": "^0.7.3",
 		"package.json": "^0.0.0",
 		"react": "^18.2.0",
