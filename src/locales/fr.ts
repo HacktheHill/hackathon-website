@@ -119,15 +119,7 @@ export default {
 		sponsors: {
 			title: "Commanditaires",
 			introduction:
-				"Les commanditaires de 2026 seront annoncés ici. Ces espaces temporaires seront remplacés lorsque les partenariats seront confirmés.",
-			logoPlaceholders: [
-				"Espace réservé au logo 1",
-				"Espace réservé au logo 2",
-				"Espace réservé au logo 3",
-				"Espace réservé au logo 4",
-				"Espace réservé au logo 5",
-				"Espace réservé au logo 6",
-			],
+				"Nous sommes fiers de reconnaître les organisations dont le soutien a contribué à donner vie à Hack the Hill II.",
 		},
 		faq: {
 			title: "Foire aux questions",

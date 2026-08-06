@@ -232,17 +232,45 @@
 	gap: 1rem;
 }
 
-.logoPlaceholder {
+.sponsorCard {
 	display: grid;
-	min-height: 8rem;
+	min-height: 11rem;
 	align-items: center;
 	justify-items: center;
-	padding: 1rem;
-	border: 2px dashed rgba(101, 0, 20, 0.38);
-	border-radius: 0.75rem;
+	padding: clamp(1rem, 2vw, 1.5rem);
+	border: 1px solid rgba(101, 0, 20, 0.2);
+	border-radius: 1rem;
 	background-color: var(--light-primary-color);
-	color: var(--dark-secondary-color);
-	text-align: center;
+	text-decoration: none;
+	transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.sponsorCard:hover,
+.sponsorCard:focus-visible {
+	border-color: rgba(101, 0, 20, 0.48);
+	background-color: var(--light-secondary-color);
+}
+
+.sponsorCard:focus-visible {
+	outline: 3px solid var(--light-primary-color);
+	outline-offset: 4px;
+}
+
+.sponsorLogo {
+	display: block;
+	width: min(100%, 15rem);
+	height: 7.25rem;
+	object-fit: contain;
+}
+
+.sponsorLogo[data-logo-shape="wide"] {
+	width: min(100%, 17rem);
+	height: 6.75rem;
+}
+
+.sponsorLogo[data-logo-shape="compact"] {
+	width: min(100%, 9rem);
+	height: 8.25rem;
 }
 
 .faqList {
@@ -329,6 +357,10 @@
 	.motionReady [data-scroll-reveal] {
 		opacity: 1;
 		transform: none;
+		transition: none;
+	}
+
+	.sponsorCard {
 		transition: none;
 	}
 }

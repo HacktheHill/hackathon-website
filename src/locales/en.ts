@@ -119,15 +119,7 @@ export default {
 		sponsors: {
 			title: "Sponsors",
 			introduction:
-				"The 2026 sponsor lineup will be announced here. These temporary spaces will be replaced when partnerships are confirmed.",
-			logoPlaceholders: [
-				"Sponsor logo placeholder 1",
-				"Sponsor logo placeholder 2",
-				"Sponsor logo placeholder 3",
-				"Sponsor logo placeholder 4",
-				"Sponsor logo placeholder 5",
-				"Sponsor logo placeholder 6",
-			],
+				"We are proud to recognize the organizations whose support helped bring Hack the Hill II to life.",
 		},
 		faq: {
 			title: "Frequently Asked Questions",
