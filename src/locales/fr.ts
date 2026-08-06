@@ -24,6 +24,133 @@ export default {
 		rate_limited: "Réessayez dans un instant.",
 		send_error: "Inscription impossible. Réessayez.",
 	},
+	landing2026: {
+		eyebrow: "Aperçu du site 2026",
+		navigation: {
+			ariaLabel: "Navigation du site 2026",
+			mobileAriaLabel: "Navigation mobile du site 2026",
+			languageSwitch: "Show the site in English",
+			editionArchive: "Ouvrir le site de Hack the Hill II",
+			menuOpen: "Ouvrir le menu de navigation",
+			menuClose: "Fermer le menu de navigation",
+			links: {
+				about: "À propos",
+				winners: "Anciens gagnants",
+				sponsors: "Commanditaires",
+				faq: "FAQ",
+			},
+		},
+		about: {
+			title: "À propos de Hack the Hill III",
+			paragraphs: [
+				"Cet espace présentera l’événement 2026, sa raison d’être et la communauté qu’il rassemble. Le texte définitif sera ajouté lorsque les détails seront confirmés.",
+				"Un deuxième paragraphe expliquera ce que les participants peuvent attendre de la fin de semaine. La programmation, les activités et les occasions seront décrites ici plus tard.",
+				"Un dernier paragraphe mettra en valeur les personnes et les idées au cœur de l’événement. Ce texte temporaire prépare la nouvelle page pour son contenu futur.",
+			],
+			mediaPlaceholder: "Espace réservé au média de l’événement en format 16:9",
+		},
+		winners: {
+			title: "Anciens gagnants",
+			introduction:
+				"Découvrez les équipes qui ont atteint le podium des défis général, Ciena et Ross de Hack the Hill II.",
+			categoryLabel: "Catégories des anciens gagnants",
+			categories: [
+				{
+					id: "general",
+					label: "Défi général",
+					entries: [
+						{
+							place: "1re place",
+							project: "Pawgress",
+							team: "Aditya Kandel, Chenhao Wei, Selin Kararmaz, Jun Ye",
+						},
+						{
+							place: "2e place",
+							project: "Duo Move",
+							team: "Carcidev Carciente, Vinisha Manek, Keshan Kathiripilay, Mahutt",
+						},
+						{
+							place: "3e place",
+							project: "Timetable Sweetie",
+							team: "Jason Shao, Kaushik Tumu, Jeff Lu, Anas Abushaikha",
+						},
+					],
+				},
+				{
+					id: "ciena",
+					label: "Défi Ciena",
+					entries: [
+						{
+							place: "1re place",
+							project: "Mound",
+							team: "Robert Zuchniak, Raef Sarofiem, Matthew Polak, Vasil Topalovik",
+						},
+						{
+							place: "2e place",
+							project: "PeerPressure",
+							team: "James Liang, Callum Curtis, Krins Vaghasia, David Pietrocola",
+						},
+						{
+							place: "3e place",
+							project: "Distributed Encrypted Peer-to-Peer File Management Platform",
+							team: "Miller Ding, Antoine Lavigne, Aditya, Matias S",
+						},
+					],
+				},
+				{
+					id: "ross",
+					label: "Défi Ross",
+					entries: [
+						{
+							place: "1re place",
+							project: "Frame Out",
+							team: "Neel Patel, Nathaniel Lays, Darrell Nyakaana, Samuel Marchetti, Lana Othman, Integer-Conversion-Error Kaya",
+						},
+						{
+							place: "2e place",
+							project: "Bouncing ROSS",
+							team: "Kyle Mendes, Ines Mansouri, Mike Katsnelson, Vilmos Feher, Paul Chukwu",
+						},
+						{ place: "3e place", project: "Ping Pong", team: "Sami Tahi, Anas Bourfia" },
+					],
+				},
+			],
+		},
+		sponsors: {
+			title: "Commanditaires",
+			introduction:
+				"Les commanditaires de 2026 seront annoncés ici. Ces espaces temporaires seront remplacés lorsque les partenariats seront confirmés.",
+			logoPlaceholders: [
+				"Espace réservé au logo 1",
+				"Espace réservé au logo 2",
+				"Espace réservé au logo 3",
+				"Espace réservé au logo 4",
+				"Espace réservé au logo 5",
+				"Espace réservé au logo 6",
+			],
+		},
+		faq: {
+			title: "Foire aux questions",
+			items: [
+				{
+					question: "Quand les renseignements complets sur l’événement seront-ils disponibles?",
+					answer: "Les renseignements confirmés pour 2026 seront ajoutés ici à mesure que la planification avance.",
+				},
+				{
+					question: "Quand les renseignements pour les participants seront-ils publiés?",
+					answer: "Les détails sur les candidatures et l’admissibilité seront partagés ici lorsqu’ils seront prêts.",
+				},
+				{
+					question: "Où l’horaire sera-t-il publié?",
+					answer: "L’horaire complet sera accessible depuis cette page dès qu’il sera confirmé.",
+				},
+				{
+					question: "Comment puis-je recevoir les prochaines nouvelles?",
+					answer: "Utilisez le formulaire dans la bannière et suivez Hack the Hill pour les prochaines annonces.",
+				},
+			],
+		},
+	},
 	about: {
 		title: "Bienvenue à Hack the Hill III",
 		p1: "Joignez-vous à des étudiants de différentes disciplines pour une fin de semaine consacrée à la création de solutions innovantes et porteuses d'impact à des enjeux civiques concrets.",

@@ -24,6 +24,133 @@ export default {
 		rate_limited: "Try again shortly.",
 		send_error: "Couldn’t subscribe. Try again.",
 	},
+	landing2026: {
+		eyebrow: "2026 landing preview",
+		navigation: {
+			ariaLabel: "2026 landing navigation",
+			mobileAriaLabel: "2026 mobile landing navigation",
+			languageSwitch: "Afficher le site en français",
+			editionArchive: "Open the Hack the Hill II website",
+			menuOpen: "Open navigation menu",
+			menuClose: "Close navigation menu",
+			links: {
+				about: "About",
+				winners: "Previous Winners",
+				sponsors: "Sponsors",
+				faq: "FAQ",
+			},
+		},
+		about: {
+			title: "About Hack the Hill III",
+			paragraphs: [
+				"This space will introduce the 2026 event, its purpose, and the community it brings together. Final event copy will be added as details are confirmed.",
+				"A second paragraph will share what participants can expect from the weekend. Programming, activities, and opportunities will be described here later.",
+				"A final paragraph will highlight the people and ideas at the heart of the event. This temporary copy keeps the new page structure ready for future content.",
+			],
+			mediaPlaceholder: "16:9 event media placeholder",
+		},
+		winners: {
+			title: "Previous Winners",
+			introduction:
+				"Meet the teams that reached the podium in Hack the Hill II's General, Ciena, and Ross challenges.",
+			categoryLabel: "Previous winner categories",
+			categories: [
+				{
+					id: "general",
+					label: "General Challenge",
+					entries: [
+						{
+							place: "1st place",
+							project: "Pawgress",
+							team: "Aditya Kandel, Chenhao Wei, Selin Kararmaz, Jun Ye",
+						},
+						{
+							place: "2nd place",
+							project: "Duo Move",
+							team: "Carcidev Carciente, Vinisha Manek, Keshan Kathiripilay, Mahutt",
+						},
+						{
+							place: "3rd place",
+							project: "Timetable Sweetie",
+							team: "Jason Shao, Kaushik Tumu, Jeff Lu, Anas Abushaikha",
+						},
+					],
+				},
+				{
+					id: "ciena",
+					label: "Ciena Challenge",
+					entries: [
+						{
+							place: "1st place",
+							project: "Mound",
+							team: "Robert Zuchniak, Raef Sarofiem, Matthew Polak, Vasil Topalovik",
+						},
+						{
+							place: "2nd place",
+							project: "PeerPressure",
+							team: "James Liang, Callum Curtis, Krins Vaghasia, David Pietrocola",
+						},
+						{
+							place: "3rd place",
+							project: "Distributed Encrypted Peer-to-Peer File Management Platform",
+							team: "Miller Ding, Antoine Lavigne, Aditya, Matias S",
+						},
+					],
+				},
+				{
+					id: "ross",
+					label: "Ross Challenge",
+					entries: [
+						{
+							place: "1st place",
+							project: "Frame Out",
+							team: "Neel Patel, Nathaniel Lays, Darrell Nyakaana, Samuel Marchetti, Lana Othman, Integer-Conversion-Error Kaya",
+						},
+						{
+							place: "2nd place",
+							project: "Bouncing ROSS",
+							team: "Kyle Mendes, Ines Mansouri, Mike Katsnelson, Vilmos Feher, Paul Chukwu",
+						},
+						{ place: "3rd place", project: "Ping Pong", team: "Sami Tahi, Anas Bourfia" },
+					],
+				},
+			],
+		},
+		sponsors: {
+			title: "Sponsors",
+			introduction:
+				"The 2026 sponsor lineup will be announced here. These temporary spaces will be replaced when partnerships are confirmed.",
+			logoPlaceholders: [
+				"Sponsor logo placeholder 1",
+				"Sponsor logo placeholder 2",
+				"Sponsor logo placeholder 3",
+				"Sponsor logo placeholder 4",
+				"Sponsor logo placeholder 5",
+				"Sponsor logo placeholder 6",
+			],
+		},
+		faq: {
+			title: "Frequently Asked Questions",
+			items: [
+				{
+					question: "When will full event details be available?",
+					answer: "Confirmed 2026 event information will be added here as planning progresses.",
+				},
+				{
+					question: "When will participant information be published?",
+					answer: "Application and eligibility details will be shared here once they are ready.",
+				},
+				{
+					question: "Where will the schedule be posted?",
+					answer: "The complete schedule will be linked from this page when it is confirmed.",
+				},
+				{
+					question: "How can I receive future updates?",
+					answer: "Use the update form in the hero and follow Hack the Hill for future announcements.",
+				},
+			],
+		},
+	},
 	about: {
 		title: "Welcome to Hack the Hill III",
 		p1: "Join students from across disciplines for a weekend of building impactful, innovative solutions to real-world civic challenges.",

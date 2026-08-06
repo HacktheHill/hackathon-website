@@ -1,8 +1,7 @@
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import type { Dispatch, SetStateAction } from "react";
-import React, { useEffect } from "react";
-import { Link } from "react-scroll";
+import { useEffect, useRef } from "react";
 import { t } from "@/i18n";
 import styles from "./Sidebar.module.css";
 
@@ -12,36 +11,25 @@ type SidebarProps = {
 };
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+	const firstLinkRef = useRef<HTMLAnchorElement>(null);
+	const archiveLabel = t("landing2026.navigation.editionArchive");
+
 	const links = [
 		{
 			to: "about",
-			offset: -120,
-			text: t("navbar.links.about"),
+			text: t("landing2026.navigation.links.about"),
 		},
 		{
 			to: "winners",
-			offset: -120,
-			text: t("navbar.links.winners"),
-		},
-		{
-			to: "testimonials",
-			offset: -120,
-			text: t("navbar.links.testimonials"),
+			text: t("landing2026.navigation.links.winners"),
 		},
 		{
 			to: "sponsors",
-			offset: -120,
-			text: t("navbar.links.sponsors"),
-		},
-		{
-			to: "collaborators",
-			offset: -120,
-			text: t("navbar.links.collaborators"),
+			text: t("landing2026.navigation.links.sponsors"),
 		},
 		{
 			to: "faq",
-			offset: -120,
-			text: t("navbar.links.faq"),
+			text: t("landing2026.navigation.links.faq"),
 		},
 	];
 
@@ -88,39 +76,83 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 	}, [setSidebarOpen]);
 
 	useEffect(() => {
-		document.documentElement.style.overflow = sidebarOpen ? "hidden" : "auto";
+		document.documentElement.style.overflowY = sidebarOpen ? "hidden" : "";
+
+		return () => {
+			document.documentElement.style.overflowY = "";
+		};
 	}, [sidebarOpen]);
 
+	useEffect(() => {
+		if (!sidebarOpen) return;
+		const focusFrame = window.requestAnimationFrame(() => firstLinkRef.current?.focus());
+
+		const closeOnEscape = (event: KeyboardEvent) => {
+			if (event.key !== "Escape") return;
+
+			setSidebarOpen(false);
+			window.requestAnimationFrame(() => document.getElementById("mobile-menu-toggle")?.focus());
+		};
+
+		window.addEventListener("keydown", closeOnEscape);
+		return () => {
+			window.cancelAnimationFrame(focusFrame);
+			window.removeEventListener("keydown", closeOnEscape);
+		};
+	}, [setSidebarOpen, sidebarOpen]);
+
 	return (
-		<nav className={`${styles.sidebar} ${sidebarOpen ? styles["sidebar-open"] : ""}`}>
-			{/* TODO: Revert comment after website is done. */}
-				{/* <ul className={styles.links}>
-					{links.map(link => (
-						<li key={link.text}>
-							<Link
-								to={link.to}
-								spy={true}
-								smooth={true}
-								offset={link.offset}
-								duration={500}
-								href={`#${link.to}`}
-								onClick={() => setSidebarOpen(!sidebarOpen)}
-							>
-								{link.text}
-							</Link>
-						</li>
-					))}
-				</ul> */}
-				<ul className={styles.media}>
-					{media.map(link => (
-						<li key={link.link}>
-							<a href={link.link} target="_blank" rel="noreferrer" aria-label={link.label}>
-								<Icon icon={link.icon} size="2x" />
-							</a>
-						</li>
-					))}
-				</ul>
-			</nav>
+		<nav
+			id="mobile-navigation"
+			className={`${styles.sidebar} ${sidebarOpen ? styles["sidebar-open"] : ""}`}
+			aria-label={t("landing2026.navigation.mobileAriaLabel")}
+			aria-hidden={!sidebarOpen}
+		>
+			{sidebarOpen && (
+				<div className={styles["menu-content"]}>
+					<ul className={styles.links}>
+						{links.map((link, index) => (
+							<li key={link.text}>
+								<a
+									ref={index === 0 ? firstLinkRef : undefined}
+									href={`#${link.to}`}
+									onClick={() => setSidebarOpen(false)}
+								>
+									{link.text}
+								</a>
+							</li>
+						))}
+					</ul>
+					<div className={styles["menu-footer"]}>
+						<a
+							className={styles["archive-link"]}
+							href="https://2024.hackthehill.com"
+							target="_blank"
+							rel="noreferrer"
+							aria-label={archiveLabel}
+							onClick={() => setSidebarOpen(false)}
+						>
+							HtH II <span aria-hidden="true">↗</span>
+						</a>
+						<ul className={styles.media}>
+							{media.map(link => (
+								<li key={link.link}>
+									<a
+										href={link.link}
+										target="_blank"
+										rel="noreferrer"
+										aria-label={link.label}
+										onClick={() => setSidebarOpen(false)}
+									>
+										<Icon icon={link.icon} />
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				</div>
+			)}
+		</nav>
 	);
 };
 
