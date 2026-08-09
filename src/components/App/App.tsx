@@ -5,7 +5,6 @@ import Navigation from "../Navigation/Navigation";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Stats from "../Stats/Stats";
-import Winners from "../Winners/Winners";
 import Testimonials from "../Testimonials/Testimonials";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
@@ -19,16 +18,14 @@ function App() {
 		<>
 			<Navigation />
 			<Hero />
-			{/* TODO: Uncomment when website is done. */}
-			{/* <div className={styles.wrapper}>
+			<div className={styles.wrapper}>
 				<About />
 				<Stats />
-				<Winners />
 				<Testimonials />
 				<Sponsors />
 				<FAQ />
 				<Footer />
-			</div> */}
+			</div>
 			{/* <Notification /> */}
 		</>
 	);
