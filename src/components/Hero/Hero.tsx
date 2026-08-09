@@ -250,7 +250,7 @@ function Hero() {
 				/>
 			</div>
 
-			{/* Date · wordmark · tagline — right-side column over the open sky */}
+			{/* Date · wordmark · tagline · application — right-side column over the open sky */}
 			<div className={styles["hero-heading"]}>
 				<p className={styles["hero-eyebrow"]} data-aos="fade-up" data-aos-duration="800">
 					{t("hero.date")} {t("hero.at")} uOttawa
@@ -273,6 +273,15 @@ function Hero() {
 				<h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{t("hero.h2")}
 				</h2>
+				<span
+					data-aos="fade-up"
+					data-aos-duration="1000"
+					data-aos-delay="300"
+				>
+					<a className={styles["hero-apply"]} href="https://apply.hackthehill.com/">
+						{t("hero.apply")}
+					</a>
+				</span>
 			</div>
 
 			{/* Popup for countdown when opening the clock-tower hotspot */}
