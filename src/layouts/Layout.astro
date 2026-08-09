@@ -52,8 +52,8 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<title>{title}</title>
 
 		<!-- Google Analytics tags -->
-		<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-7SJDSSNG3P"></script>
-		<script type="text/partytown">
+		<script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-7SJDSSNG3P"></script>
+		<script is:inline type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
@@ -121,7 +121,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="msapplication-wide310x150logo" content={`${url}/icons/mstile-310x150.png`} />
 		<meta name="msapplication-square310x310logo" content={`${url}/icons/mstile-310x310.png`} />
 
-		<script type="application/ld+json" set:html={structuredDataString}></script>
+		<script is:inline type="application/ld+json" set:html={structuredDataString}></script>
 	</head>
 	<body>
 		<slot />

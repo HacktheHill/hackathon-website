@@ -9,7 +9,6 @@ import Testimonials from "../Testimonials/Testimonials";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
-import Notification from "../Notification/Notification";
 import "@/global.css";
 import styles from "./App.module.css";
 

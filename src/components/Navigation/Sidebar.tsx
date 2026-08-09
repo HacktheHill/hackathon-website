@@ -1,7 +1,7 @@
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import type { Dispatch, SetStateAction } from "react";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-scroll";
 import { t } from "@/i18n";
 import styles from "./Sidebar.module.css";

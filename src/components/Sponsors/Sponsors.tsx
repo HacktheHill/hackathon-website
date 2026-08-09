@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { t } from "@/i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
