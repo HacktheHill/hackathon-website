@@ -240,13 +240,13 @@ export default {
 		a5: "Non. Tous les projets doivent commencer après la cérémonie d'ouverture, le premier jour de l'événement. Vous pouvez réfléchir à des idées à l'avance, mais aucun code, design, document ou autre travail de projet ne doit être créé avant le début du hackathon.",
 
 		q6: "Le hackathon est-il en ligne ou en personne?",
-		a6: "Hack the Hill III aura lieu en personne à l'Université d'Ottawa. La cérémonie d'ouverture sera également diffusée en direct sur YouTube.",
+		a6: "Hack the Hill III aura lieu en personne à l'Université d'Ottawa.",
 
 		q7: "Qu'est-ce que je devrais apporter?",
 		a7: "Apportez votre ordinateur portable, votre chargeur, une carte étudiante ou une pièce d'identité gouvernementale, des articles d'hygiène personnelle, un sac de couchage ou une couverture, ainsi que tout ce dont vous aurez besoin pour la fin de semaine. Nous fournirons les repas et les collations pendant tout le hackathon.",
 
-		q8: "Qui peut participer et comment postuler?",
-		a8: "Les étudiants universitaires et les récents diplômés sont encouragés à postuler. Les élèves du secondaire en 11e année ou plus sont également les bienvenus. Ajoutez votre adresse courriel dans le pied de page et suivez-nous sur les réseaux sociaux pour être averti de l'ouverture des candidatures.",
+		q8: "Qui peut participer?",
+		a8: "Les étudiants universitaires et les récents diplômés sont encouragés à postuler. Les élèves du secondaire en 11e année ou plus sont également les bienvenus.",
 
 		q9: "Puis-je travailler en équipe?",
 		a9: "Oui. Les équipes peuvent compter jusqu'à 4 participants.",
