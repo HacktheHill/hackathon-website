@@ -3,8 +3,8 @@ export default {
 		links: {
 			about: "About",
 			winners: "Winners",
-			sponsors: "Sponsors",
-			collaborators: "Collaborators",
+			sponsors: "Past Sponsors",
+			collaborators: "Past Collaborators",
 			faq: "FAQ",
 			testimonials: "Testimonials",
 		},
@@ -170,12 +170,12 @@ export default {
 		},
 	},
 	sponsors: {
-		title: "Sponsors",
-		p: "Hack the Hill is made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
+		title: "Past Sponsors",
+		p: "Hack the Hill II was made possible thanks to these generous sponsors. Interested in supporting the capital's hackathon?",
 		button: "Become a Sponsor",
 	},
 	collaborators: {
-		title: "Collaborators",
+		title: "Past Collaborators",
 	},
 	testimonials: {
 		title: "Making Moments Matter",

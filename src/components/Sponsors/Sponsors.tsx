@@ -28,6 +28,20 @@ import maple2 from "@/assets/SVGs/Sponsors/mapleleaf-2.svg?url";
 import uOEngiqueers from "@/assets/Logos/uOEngiqueers.webp?url";
 import AITinkerers from "@/assets/Logos/AITinkerers.avif?url";
 import DEsocCarleton from "@/assets/Logos/desocCarleton.webp?url";
+import MakerJam from "@/assets/Logos/MakerJam.svg?url";
+
+const Blackberry = "/Logos/Blackberry.svg";
+const CanadianTire = "/Logos/CanadianTire.svg";
+const Google = "/Logos/Google.svg";
+const Vercel = "/Logos/Vercel.svg";
+const DigitalOcean = "/Logos/DigitalOcean.svg";
+const Echo3d = "/Logos/echo3d.webp";
+const Balsamiq = "/Logos/balsamiq.svg";
+const Voiceflow = "/Logos/voiceflow.svg";
+const Ceed = "/Logos/ceed.svg";
+const Law = "/Logos/Law.svg";
+const CSClub = "/Logos/CSClub.svg";
+const uOttawaEsports = "/Logos/uOttawaEsports.svg";
 
 //animations
 import AOS from "aos";
@@ -35,22 +49,49 @@ import "aos/dist/aos.css";
 
 function Sponsors() {
 	const data = {
-		sponsors: {
-			large: [
-				{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
-				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
-				{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
-			],
-			medium: [
-				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
-				{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
-			],
-			small: [
-				{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
-				{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
-				{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
-			],
-		},
+		sponsors: [
+			{
+				size: "largest",
+				organizations: [
+					{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
+					{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
+				],
+			},
+			{
+				size: "large",
+				organizations: [
+					{ href: "https://blackberry.com/", src: Blackberry, alt: "BlackBerry" },
+					{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
+				],
+			},
+			{
+				size: "medium",
+				organizations: [
+					{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
+					{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
+				],
+			},
+			{
+				size: "small",
+				organizations: [
+					{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
+					{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
+					{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
+					{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
+					{ href: "https://about.google", src: Google, alt: "Google" },
+				],
+			},
+			{
+				size: "small",
+				organizations: [
+					{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
+					{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
+					{ href: "https://www.echo3d.com/", src: Echo3d, alt: "echo3D" },
+					{ href: "https://balsamiq.com/", src: Balsamiq, alt: "Balsamiq" },
+					{ href: "https://www.voiceflow.com/", src: Voiceflow, alt: "Voiceflow" },
+				],
+			},
+		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa, alt: "University of Ottawa" },
 			{ href: "https://carleton.ca/", src: Carleton, alt: "Carleton University" },
@@ -67,6 +108,23 @@ function Sponsors() {
 			{ href: "https://linktr.ee/uoengiqueers", src: uOEngiqueers, alt: "uOttawa EngiQueers" },
 			{ href: "https://aitinkerers.org/p/welcome", src: AITinkerers, alt: "AI Tinkerers Ottawa" },
 			{ href: "https://linktr.ee/desoc", src: DEsocCarleton, alt: "Carleton Department of Electronics Society" },
+			{
+				href: "https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design",
+				src: Ceed,
+				alt: "uOttawa CEED",
+			},
+			{
+				href: "https://www.uottawa.ca/faculty-law/common-law/centre-environmental-law-global-sustainability",
+				src: Law,
+				alt: "uOttawa Centre for Environmental Law and Global Sustainability",
+			},
+			{
+				href: "https://www.uottawa.ca/faculty-engineering/events/maker-jam",
+				src: MakerJam,
+				alt: "Maker Jam",
+			},
+			{ href: "https://uocsclub.net/", src: CSClub, alt: "uOttawa Computer Science Club" },
+			{ href: "https://linktr.ee/uottawaesports", src: uOttawaEsports, alt: "uOttawa Esports" },
 		],
 	};
 
@@ -106,9 +164,9 @@ function Sponsors() {
 				</div>
 
 				<div className={styles["icons"]}>
-					{Object.values(data.sponsors).map((tier, i) => (
+					{data.sponsors.map((row, i) => (
 						<div key={i} className={styles["icons-row"]}>
-							{tier.map((sponsor, j) => (
+							{row.organizations.map((sponsor, j) => (
 								<a
 									key={j}
 									href={sponsor.href}
@@ -119,9 +177,7 @@ function Sponsors() {
 									data-aos-duration="800"
 								>
 									<img
-										className={`${styles["icon"]} ${
-											styles[`icon-${Object.keys(data.sponsors)[i]}`]
-										}`}
+										className={`${styles["icon"]} ${styles[`icon-${row.size}`]}`}
 										alt={`${sponsor.alt} logo`}
 										src={sponsor.src}
 									></img>

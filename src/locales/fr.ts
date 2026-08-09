@@ -3,8 +3,8 @@ export default {
 		links: {
 			about: "À Propos",
 			winners: "Gagnants",
-			sponsors: "Commanditaires",
-			collaborators: "Collaborateurs",
+			sponsors: "Anciens commanditaires",
+			collaborators: "Anciens collaborateurs",
 			faq: "FaQ",
 			testimonials: "Témoignages",
 		},
@@ -179,12 +179,12 @@ export default {
 		},
 	},
 	sponsors: {
-		title: "Commanditaires",
-		p: "Hack the Hill est possible grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
+		title: "Anciens commanditaires",
+		p: "Hack the Hill II a été rendu possible grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
 		button: "Devenir un Commanditaire",
 	},
 	collaborators: {
-		title: "Collaborateurs",
+		title: "Anciens collaborateurs",
 	},
 	testimonials: {
 		title: "Créons des Moments Marquants",

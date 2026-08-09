@@ -90,10 +90,16 @@
 	object-fit: contain;
 }
 
-.icon-large {
+.icon-largest {
 	max-height: 12.5rem;
 	min-height: 10rem;
 	width: 18rem;
+}
+
+.icon-large {
+	max-height: 8rem;
+	min-height: 6rem;
+	width: 16rem;
 }
 
 .icon-medium {
@@ -131,8 +137,18 @@
 }
 
 @media screen and (max-width: 400px) {
+	.icon-largest,
 	.icon-large,
 	.icon-medium {
 		width: 7rem;
+		min-height: 0;
+	}
+
+	.icon-largest {
+		max-height: 6rem;
+	}
+
+	.icon-large {
+		max-height: 5rem;
 	}
 }
