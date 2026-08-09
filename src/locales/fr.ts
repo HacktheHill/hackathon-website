@@ -13,16 +13,8 @@ export default {
 	hero: {
 		at: "à",
 		h2: "Le Hackathon de la Capitale Canadienne",
-		more: "Recevoir les nouvelles",
-		email_placeholder: "Courriel",
-		email_label: "Adresse courriel",
-		sending: "Envoi…",
 		apply: "Appliquez Maintenant",
 		date: "25-27 Sept. 2026",
-		thanks: "Vérifiez vos courriels pour confirmer.",
-		invalid_email: "Saisissez un courriel valide.",
-		rate_limited: "Réessayez dans un instant.",
-		send_error: "Inscription impossible. Réessayez.",
 	},
 	about: {
 		title: "Bienvenue à Hack the Hill III",
@@ -254,7 +246,7 @@ export default {
 		a7: "Apportez votre ordinateur portable, votre chargeur, une carte étudiante ou une pièce d'identité gouvernementale, des articles d'hygiène personnelle, un sac de couchage ou une couverture, ainsi que tout ce dont vous aurez besoin pour la fin de semaine. Nous fournirons les repas et les collations pendant tout le hackathon.",
 
 		q8: "Qui peut participer et comment postuler?",
-		a8: "Les étudiants universitaires et les récents diplômés sont encouragés à postuler. Les élèves du secondaire en 11e année ou plus sont également les bienvenus. Ajoutez votre adresse courriel ci-dessus et suivez-nous sur les réseaux sociaux pour être averti de l'ouverture des candidatures.",
+		a8: "Les étudiants universitaires et les récents diplômés sont encouragés à postuler. Les élèves du secondaire en 11e année ou plus sont également les bienvenus. Ajoutez votre adresse courriel dans le pied de page et suivez-nous sur les réseaux sociaux pour être averti de l'ouverture des candidatures.",
 
 		q9: "Puis-je travailler en équipe?",
 		a9: "Oui. Les équipes peuvent compter jusqu'à 4 participants.",
@@ -317,8 +309,15 @@ export default {
 		},
 	},
 	footer: {
+		subscribe: "Recevoir les nouvelles",
+		email_placeholder: "Courriel",
+		email_label: "Adresse courriel",
+		sending: "Envoi…",
+		thanks: "Vérifiez vos courriels pour confirmer.",
+		invalid_email: "Saisissez un courriel valide.",
+		rate_limited: "Réessayez dans un instant.",
+		send_error: "Inscription impossible. Réessayez.",
 		privacy: "Politique de Confidentialité",
-		constitution: "Constitution",
 		copyright: "Copyright © 2026 Hack the Hill. Tous droits réservés.",
 	},
 	notification: {

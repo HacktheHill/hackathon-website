@@ -1,6 +1,5 @@
 .hero {
 	--hero-heading: var(--dark-primary-color);
-	--hero-btn-background-color: var(--dark-primary-color);
 	/* Brand bright red, used for the date eyebrow and the "III" edition mark. */
 	--hero-bright-red: #c11f25;
 
@@ -257,7 +256,7 @@
 	top: 0;
 	/* Raise the centred column ~6vh: the foreground building grew taller, so the
 	   open sky band is no longer symmetric — lifting the bottom edge re-centres
-	   the text in the visible sky and keeps the form clear of the rooftops. */
+	   the text in the visible sky and keeps it clear of the rooftops. */
 	bottom: 12vh;
 	/* Anchor just to the right of the tower so the column stays beside it on
 	   every width instead of hugging the far edge on ultra-wide screens. */
@@ -272,7 +271,7 @@
 	will-change: transform, opacity;
 	/* The column is a tall, mostly-empty box that overlaps the parliament. Keep
 	   it transparent to clicks/hover so it doesn't sit "in front of" the tower
-	   (blocking the clock-tower hotspot); only the form below re-enables hits. */
+	   and block the clock-tower hotspot. */
 	pointer-events: none;
 	/* Drives both the wordmark and the "III" edition mark so they stay in
 	   proportion; the bars are derived from this (see .edition). */
@@ -329,126 +328,6 @@
 	font-weight: 500;
 	font-size: clamp(1rem, 3.2vmin, 1.6rem);
 	text-shadow: 0 1px 8px rgba(251, 236, 183, 0.7);
-}
-
-/* ---------- Form ---------- */
-
-.hero-input {
-	padding: 1rem;
-	border: none;
-	border-radius: 1rem;
-	font-family: Rubik;
-	color: var(--dark-primary-color);
-	background-color: var(--light-tertiary-color);
-	box-shadow: 0 6px 18px rgba(132, 1, 11, 0.12);
-}
-
-.hero-input:hover,
-.hero-input:focus {
-	outline: none;
-	box-shadow: 0 0 0 3px var(--dark-primary-color);
-	background-color: var(--light-secondary-color);
-	transition: 0.1s ease;
-}
-
-.hero-input::placeholder {
-	color: var(--dark-primary-color);
-}
-
-.hero-form {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 0.4rem;
-	justify-content: flex-start;
-	width: 100%;
-	max-width: 100%;
-	min-width: 0;
-	box-sizing: border-box;
-	margin-top: clamp(0.4rem, 1.2vh, 1rem);
-	/* Re-enable hits for the interactive controls (parent is pointer-events:none). */
-	pointer-events: auto;
-}
-
-.hero-form-controls {
-	display: flex;
-	gap: 0.75rem;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	width: 100%;
-	min-width: 0;
-	box-sizing: border-box;
-	max-width: 100%;
-}
-
-.hero-form-error {
-	max-width: 34rem;
-	margin: 0;
-	font-family: Rubik, sans-serif;
-	font-size: clamp(0.7rem, 1.7vmin, 0.85rem);
-	line-height: 1.3;
-	text-shadow: 0 1px 6px rgba(251, 236, 183, 0.7);
-	color: var(--dark-secondary-color);
-	font-weight: 500;
-}
-
-.hero-visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
-
-/* Confirmation shown in place of the form after the request is accepted. */
-.hero-form-thanks {
-	margin: clamp(0.4rem, 1.2vh, 1rem) 0 0;
-	color: var(--dark-primary-color);
-	font-family: Coolvetica;
-	font-weight: 500;
-	font-size: clamp(1rem, 2.6vmin, 1.4rem);
-	line-height: 1.25;
-	text-shadow: 0 1px 8px rgba(251, 236, 183, 0.7);
-}
-
-.hero-btn {
-	background-color: var(--hero-btn-background-color);
-	color: var(--light-color);
-	cursor: pointer;
-	white-space: nowrap;
-	border: none;
-	font-family: Coolvetica;
-	border-radius: 1rem;
-	font-size: 1.125rem;
-	padding: 0.75rem;
-	box-shadow: 0 6px 18px rgba(132, 1, 11, 0.2);
-	transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.hero-btn:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 10px 24px rgba(132, 1, 11, 0.28);
-}
-
-.hero-btn:disabled,
-.hero-input:disabled {
-	cursor: wait;
-	opacity: 0.7;
-}
-
-.hero-btn:disabled:hover {
-	transform: none;
-	box-shadow: 0 6px 18px rgba(132, 1, 11, 0.2);
-}
-
-.hero-btn-icon {
-	height: 1rem;
-	width: 1rem;
-	vertical-align: middle;
 }
 
 /* ---------- Countdown popup ---------- */
@@ -555,24 +434,6 @@
 		--logo-w: clamp(180px, 56vw, 300px);
 	}
 
-	.hero-form-controls {
-		flex-wrap: nowrap;
-		gap: 0.5rem;
-		width: 100%;
-		min-width: 0;
-	}
-
-	.hero-input {
-		box-sizing: border-box;
-		min-width: 0;
-		width: auto;
-		flex: 1 1 auto;
-	}
-
-	.hero-btn {
-		flex: 0 0 auto;
-	}
-
 	.countdown-dialog {
 		display: none;
 	}
@@ -613,9 +474,8 @@
 	}
 }
 
-/* Short landscape phones need the wide composition, but with a denser type/form
-   scale. This keeps the tower on the left and all primary content on the right
-   without pushing the form into the foreground buildings. */
+/* Short landscape phones need the wide composition, but with a denser type
+   scale. This keeps the tower on the left and all primary content on the right. */
 @media only screen and (orientation: landscape) and (max-height: 500px) {
 	.hero-foreground {
 		/* Keep the tower just below the standard 72px navbar. */
@@ -639,52 +499,13 @@
 		font-size: clamp(0.72rem, 2.8vh, 1rem);
 	}
 
-	.hero-form {
-		margin-top: 0.2rem;
-		width: 100%;
-		min-width: 0;
-		max-width: 100%;
-		box-sizing: border-box;
-	}
-
-	.hero-form-controls {
-		flex-wrap: nowrap;
-		gap: 0.4rem;
-		width: 100%;
-		min-width: 0;
-		box-sizing: border-box;
-	}
-
-	.hero-input {
-		box-sizing: border-box;
-		min-width: 0;
-		width: auto;
-		max-width: 190px;
-		flex: 1 1 clamp(80px, 25vw, 190px);
-		padding: 0.6rem 0.7rem;
-		border-radius: 0.75rem;
-		font-size: 0.78rem;
-	}
-
-	.hero-btn {
-		flex: 0 0 auto;
-		padding: 0.55rem 0.65rem;
-		border-radius: 0.75rem;
-		font-size: clamp(0.78rem, 2.8vh, 0.95rem);
-	}
-
-	.hero-btn-icon {
-		width: 0.8rem;
-		height: 0.8rem;
-	}
-
 	.countdown-dialog {
 		top: 20vh;
 	}
 }
 
 /* Very short portrait previews (for example legacy 320×480) need the same
-   content, but with a smaller vertical footprint so the form clears the tower. */
+   content, but with a smaller vertical footprint so it clears the tower. */
 @media only screen and (orientation: portrait) and (max-height: 540px) {
 	.hero-heading {
 		top: 4rem;
@@ -698,36 +519,5 @@
 
 	.hero-heading h2 {
 		font-size: 0.9rem;
-	}
-
-	.hero-form {
-		gap: 0.4rem;
-		margin-top: 0.2rem;
-	}
-
-	.hero-form-controls {
-		flex-wrap: nowrap;
-		gap: 0.4rem;
-		width: 100%;
-		min-width: 0;
-	}
-
-	.hero-input {
-		box-sizing: border-box;
-		min-width: 0;
-		width: auto;
-		flex: 1 1 auto;
-		padding: 0.65rem;
-		font-size: 0.82rem;
-	}
-
-	.hero-btn {
-		flex: 0 0 auto;
-		padding: 0.55rem 0.65rem;
-		font-size: 0.88rem;
-	}
-
-	.hero-form-error {
-		font-size: 0.68rem;
 	}
 }
