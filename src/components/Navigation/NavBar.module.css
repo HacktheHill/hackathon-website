@@ -6,6 +6,7 @@
 
 	box-sizing: border-box;
 	position: fixed;
+	z-index: 1;
 	display: flex;
 	justify-content: space-between;
 	height: 4.5rem;
@@ -110,12 +111,13 @@
 	cursor: pointer;
 }
 
-.sidebar-icon div {
+.sidebar-icon span {
+	display: block;
 	width: 1.75rem;
 	height: 0.25rem;
 	background-color: var(--link-color);
 	margin: 0.3rem 0;
-	transition: 0.5s;
+	transition: opacity 0.5s ease, transform 0.5s ease;
 	border-radius: 0.25rem;
 }
 

@@ -146,7 +146,11 @@ const canonicalUrl = new URL(Astro.url.pathname, `${url}/`).toString();
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
 				width: 100%;
-				overflow-x: hidden;
+				overflow-x: clip;
+			}
+
+			html[data-mobile-navigation-open] {
+				overflow-y: hidden;
 			}
 
 			h1,

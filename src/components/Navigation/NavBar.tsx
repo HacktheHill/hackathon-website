@@ -1,23 +1,23 @@
 import { Link } from "react-scroll";
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, RefObject, SetStateAction } from "react";
 import { locale, t } from "@/i18n";
-import { useState, useEffect } from "react";
+import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
 import style from "./NavBar.module.css";
-
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 type NavbarProps = {
 	pageScroll: number;
 	sidebarOpen: boolean;
 	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+	menuButtonRef: RefObject<HTMLButtonElement>;
+	scrollDuration: number;
 };
 
 const logo = "/Logos/hackthehill-logo.svg";
 
-function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProps>) {
-	const [language, setLanguage] = useState(true);
+function Navbar({ pageScroll, sidebarOpen, setSidebarOpen, menuButtonRef, scrollDuration }: Readonly<NavbarProps>) {
+	const currentLocale = useStore(locale);
+	const languageCode = currentLocale === "en" ? "FR" : "EN";
 
 	const links = [
 		{
@@ -48,8 +48,8 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 	];
 
 	useEffect(() => {
-		AOS.init({});
-	}, []);
+		document.documentElement.lang = currentLocale;
+	}, [currentLocale]);
 
 	return (
 		<nav className={style["navbar"]} data-scrolled={pageScroll > 50} aria-label={t("navbar.aria_label")}>
@@ -60,30 +60,34 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 				spy={true}
 				smooth={true}
 				offset={0}
-				duration={500}
+				duration={scrollDuration}
 				href="#hero"
+				aria-label={t("navbar.home_label")}
+				data-navigation-home
 			>
-				<img alt="Logo" src={logo}></img>
+				<img alt="" src={logo}></img>
 			</Link>
 
 			<div className={style["left-side-buttons"]}>
 				<button
 					className={style["square-button"]}
-					type="submit"
+					type="button"
+					aria-label={`${languageCode}: ${t("navbar.language_switch")}`}
 					onClick={() => {
-						setLanguage(!language);
-						locale.set(language ? "fr" : "en");
+						locale.set(currentLocale === "en" ? "fr" : "en");
 					}}
 				>
-					{language ? "FR" : "EN"}
+					{languageCode}
 				</button>
-				<button
+				<a
 					className={style["square-button"]}
-					type="submit"
-					onClick={() => window.open("https://2024.hackthehill.com", "_blank", "noopener,noreferrer")}
+					href="https://2024.hackthehill.com"
+					target="_blank"
+					rel="noreferrer"
+					aria-label={`HtH II: ${t("navbar.past_site_label")}`}
 				>
 					HtH II
-				</button>
+				</a>
 			</div>
 
 			<ul>
@@ -96,7 +100,7 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 							spy={true}
 							smooth={true}
 							offset={link.offset}
-							duration={500}
+							duration={scrollDuration}
 							href={`#${link.to}`}
 						>
 							{link.text}
@@ -105,13 +109,17 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen }: Readonly<NavbarProp
 				))}
 			</ul>
 			<button
+				ref={menuButtonRef}
+				type="button"
 				className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
-				onClick={() => setSidebarOpen(!sidebarOpen)}
-				aria-label="Sidebar Icon"
+				onClick={() => setSidebarOpen(open => !open)}
+				aria-label={t(sidebarOpen ? "navbar.menu_close" : "navbar.menu_open")}
+				aria-controls="mobile-navigation"
+				aria-expanded={sidebarOpen}
 			>
-				<div></div>
-				<div></div>
-				<div></div>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
 			</button>
 		</nav>
 	);
