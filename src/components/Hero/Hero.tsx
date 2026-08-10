@@ -1,34 +1,14 @@
 import { useEffect, useState, useRef } from "react";
-import { t } from "@/i18n";
+import { useStore } from "@nanostores/react";
+import { locale, t } from "@/i18n";
 import styles from "./Hero.module.css";
 import "./animations.css";
-
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const BannerLogo = "/Logos/hackthehill-banner.svg";
 
 const EVENT_START_DATE = new Date("2026-09-25T17:00:00-04:00").getTime();
 const HACKING_START_DATE = new Date("2026-09-25T23:00:00-04:00").getTime();
 const HACKING_END_DATE = new Date("2026-09-27T11:00:00-04:00").getTime();
-
-// If the current time is before the event start date, the countdown will show the time until the event starts
-// If the current time is between the event start date and the hacking start date, the countdown will show the time until hacking starts
-// If the current time is between the hacking start date and the hacking end date, the countdown will show the time until hacking ends
-// If the current time is after the hacking end date, the countdown will not show
-let date: number | null = null;
-switch (true) {
-	case Date.now() < EVENT_START_DATE:
-		date = EVENT_START_DATE;
-		break;
-	case Date.now() < HACKING_START_DATE:
-		date = HACKING_START_DATE;
-		break;
-	case Date.now() < HACKING_END_DATE:
-		date = HACKING_END_DATE;
-		break;
-}
 
 // foreground.webp is 1920×1070. The Peace Tower clock sits at this centre (in the
 // asset's own pixels) and spans roughly this box. We replicate the exact transform
@@ -60,20 +40,36 @@ const clouds = [
 
 function Hero() {
 	const [popupOpen, setPopupOpen] = useState(false);
-	const [time, setTime] = useState(0);
+	const [time, setTime] = useState<number | null>(null);
+	const currentLocale = useStore(locale);
+	const closeButtonRef = useRef<HTMLButtonElement>(null);
 
 	useEffect(() => {
-		AOS.init();
+		const initialTime = Date.now();
+		setTime(initialTime);
+		if (initialTime >= HACKING_END_DATE) return;
+
+		const interval = window.setInterval(() => {
+			const now = Date.now();
+			setTime(now);
+			if (now >= HACKING_END_DATE) window.clearInterval(interval);
+		}, 1000);
+
+		return () => window.clearInterval(interval);
 	}, []);
 
-	useEffect(() => {
-		setTime(Date.now());
-		const interval = setInterval(() => setTime(Date.now()), 1000);
-
-		return () => clearInterval(interval);
-	}, []);
-
-	const remainingTime = date === null ? 0 : date - time;
+	const targetDate =
+		time === null
+			? null
+			: time < EVENT_START_DATE
+				? EVENT_START_DATE
+				: time < HACKING_START_DATE
+					? HACKING_START_DATE
+					: time < HACKING_END_DATE
+						? HACKING_END_DATE
+						: null;
+	const countdownAvailable = targetDate !== null;
+	const remainingTime = targetDate === null || time === null ? 0 : Math.max(0, targetDate - time);
 	const days = Math.floor(remainingTime / 1000 / 60 / 60 / 24);
 	const hours = Math.floor(remainingTime / 1000 / 60 / 60) % 24;
 	const minutes = Math.floor(remainingTime / 1000 / 60) % 60;
@@ -82,6 +78,40 @@ function Hero() {
 	const formattedHours = hours.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedMinutes = minutes.toLocaleString("en-US", { minimumIntegerDigits: 2 });
 	const formattedSeconds = seconds.toLocaleString("en-US", { minimumIntegerDigits: 2 });
+	const eventStartLabel = t("hero.countdown.event_start");
+	const hackingStartLabel = t("hero.countdown.hacking_start");
+	const hackingEndLabel = t("hero.countdown.hacking_end");
+	const countdownOpenLabel = t("hero.countdown.open");
+	const countdownCloseLabel = t("hero.countdown.close");
+	const countdownHeading =
+		targetDate === HACKING_START_DATE
+			? hackingStartLabel
+			: targetDate === HACKING_END_DATE
+				? hackingEndLabel
+				: eventStartLabel;
+	const pluralRules = new Intl.PluralRules(currentLocale);
+	const countdownItems = [
+		{
+			key: "days",
+			display: String(days),
+			label: t(pluralRules.select(days) === "one" ? "hero.countdown.day" : "hero.countdown.days"),
+		},
+		{
+			key: "hours",
+			display: formattedHours,
+			label: t(pluralRules.select(hours) === "one" ? "hero.countdown.hour" : "hero.countdown.hours"),
+		},
+		{
+			key: "minutes",
+			display: formattedMinutes,
+			label: t(pluralRules.select(minutes) === "one" ? "hero.countdown.minute" : "hero.countdown.minutes"),
+		},
+		{
+			key: "seconds",
+			display: formattedSeconds,
+			label: t(pluralRules.select(seconds) === "one" ? "hero.countdown.second" : "hero.countdown.seconds"),
+		},
+	];
 
 	// For parallax scrolling effect
 	const heroRef = useRef<HTMLDivElement>(null);
@@ -92,6 +122,22 @@ function Hero() {
 	// whenever the foreground box resizes (vh changes, mobile URL bar, rotation).
 	const foregroundRef = useRef<HTMLDivElement>(null);
 	const hotspotRef = useRef<HTMLButtonElement>(null);
+
+	useEffect(() => {
+		if (!popupOpen) return;
+
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key !== "Escape") return;
+
+			event.preventDefault();
+			const restoreFocus = document.activeElement === closeButtonRef.current;
+			setPopupOpen(false);
+			if (restoreFocus) hotspotRef.current?.focus();
+		};
+
+		document.addEventListener("keydown", handleKeyDown);
+		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, [popupOpen]);
 
 	useEffect(() => {
 		const fg = foregroundRef.current;
@@ -136,20 +182,23 @@ function Hero() {
 		const observer = new ResizeObserver(place);
 		observer.observe(fg);
 		return () => observer.disconnect();
-	}, []);
+	}, [countdownAvailable]);
 
 	// Detect if the user is scrolling and apply layered parallax transforms.
 	// Each layer moves at a different rate to create a sense of depth.
 	useEffect(() => {
 		const heroEl = heroRef.current;
 		if (!heroEl) return;
+		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+		let reducedMotion = motionQuery.matches;
 
-		const layers: { selector: string; speed: number; fade?: boolean }[] = [
+		const layers = [
 			{ selector: `.${styles["hero-sky"]}`, speed: 0.15 },
 			{ selector: `.${styles["hero-hill-far"]}`, speed: 0.3 },
 			{ selector: `.${styles["hero-hill-near"]}`, speed: 0.45 },
 			{ selector: `.${styles["hero-heading"]}`, speed: 0.5, fade: true },
-		];
+		].map(({ selector, ...layer }) => ({ ...layer, element: heroEl.querySelector<HTMLElement>(selector) }));
+		const cloudEls = heroEl.querySelectorAll<HTMLElement>(".hero-cloud");
 
 		// Skip all parallax work + pause the cloud drift while the hero is off-screen
 		// so scrolling the rest of the page stays cheap.
@@ -166,12 +215,11 @@ function Hero() {
 		let frame = 0;
 		const update = () => {
 			frame = 0;
-			if (!visible) return;
+			if (!visible || reducedMotion) return;
 			const scrollY = window.scrollY;
 			if (!heroRef.current) return;
 
-			layers.forEach(({ selector, speed, fade }) => {
-				const element = heroRef.current?.querySelector<HTMLElement>(selector);
+			layers.forEach(({ element, speed, fade }) => {
 				if (!element) return;
 				element.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
 				if (fade) {
@@ -180,7 +228,6 @@ function Hero() {
 			});
 
 			// Each cloud gets its own depth so the nearer ones move noticeably faster.
-			const cloudEls = heroRef.current.querySelectorAll<HTMLElement>(".hero-cloud");
 			cloudEls.forEach((el, i) => {
 				el.style.transform = `translate3d(0, ${scrollY * (clouds[i]?.parallax ?? 0)}px, 0)`;
 			});
@@ -191,17 +238,38 @@ function Hero() {
 			frame = window.requestAnimationFrame(update);
 		};
 
+		const handleMotionChange = (event: MediaQueryListEvent) => {
+			reducedMotion = event.matches;
+			if (!reducedMotion) return;
+
+			layers.forEach(({ element, fade }) => {
+				element?.style.removeProperty("transform");
+				if (fade) element?.style.removeProperty("opacity");
+			});
+			cloudEls.forEach(element => {
+				element.style.removeProperty("transform");
+			});
+		};
+
 		window.addEventListener("scroll", handleScroll, { passive: true });
+		motionQuery.addEventListener("change", handleMotionChange);
 
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
+			motionQuery.removeEventListener("change", handleMotionChange);
 			observer.disconnect();
 			if (frame) window.cancelAnimationFrame(frame);
 		};
 	}, []);
 
 	return (
-		<div id="hero" ref={heroRef} className={styles["hero"]} onPointerDown={() => setPopupOpen(false)}>
+		<section
+			id="hero"
+			ref={heroRef}
+			className={styles["hero"]}
+			aria-labelledby="hero-title"
+			onPointerDown={() => setPopupOpen(false)}
+		>
 			{/* Sky */}
 			<div className={styles["hero-sky"]}></div>
 
@@ -224,30 +292,26 @@ function Hero() {
 			    lives inside it so its position is relative to the painted image box. */}
 			<div className={styles["hero-foreground"]} ref={foregroundRef}>
 				{/* Invisible hotspot over the clock; positioned via JS (see useEffect) */}
-				<button
-					type="button"
-					id="clock-tower"
-					className={styles["clock-tower-hotspot"]}
-					ref={hotspotRef}
-					aria-label="Show Hack the Hill countdown"
-					aria-haspopup="dialog"
-					aria-expanded={popupOpen}
-					aria-controls="countdown-dialog countdown-dialog-small"
-					onPointerEnter={(event) => {
-						if (event.pointerType !== "touch") setPopupOpen(true);
-					}}
-					onPointerLeave={(event) => {
-						if (event.pointerType !== "touch") setPopupOpen(false);
-					}}
-					onPointerDown={(event) => {
-						event.stopPropagation();
-						setPopupOpen(true);
-					}}
-					onClick={(event) => {
-						event.stopPropagation();
-						setPopupOpen(true);
-					}}
-				/>
+				{countdownAvailable && (
+					<button
+						type="button"
+						className={styles["clock-tower-hotspot"]}
+						ref={hotspotRef}
+						aria-label={countdownOpenLabel}
+						aria-haspopup="dialog"
+						aria-expanded={popupOpen}
+						aria-controls="countdown-dialog"
+						onPointerEnter={(event) => {
+							if (event.pointerType !== "touch") setPopupOpen(true);
+						}}
+						onPointerDown={(event) => event.stopPropagation()}
+						onClick={(event) => {
+							event.stopPropagation();
+							setPopupOpen(true);
+							window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+						}}
+					/>
+				)}
 			</div>
 
 			{/* Date · wordmark · tagline · application — right-side column over the open sky */}
@@ -256,7 +320,7 @@ function Hero() {
 					{t("hero.date")} {t("hero.at")} uOttawa
 				</p>
 				<h1
-					id="Hero"
+					id="hero-title"
 					className={styles["hero-wordmark"]}
 					data-aos="fade-up"
 					data-aos-duration="800"
@@ -285,68 +349,41 @@ function Hero() {
 			</div>
 
 			{/* Popup for countdown when opening the clock-tower hotspot */}
-			{date && (
+			{countdownAvailable && (
 				<dialog
 					id="countdown-dialog"
 					className={styles["countdown-dialog"]}
 					open={popupOpen}
+					aria-labelledby="countdown-heading"
 					onPointerDown={(event) => event.stopPropagation()}
 				>
-					<p className={styles["countdown-header"]}>
-						{" "}
-						<strong>psst... Mark your calendar, Hackathon is in</strong>
+					<button
+						ref={closeButtonRef}
+						type="button"
+						className={styles["countdown-close"]}
+						aria-label={countdownCloseLabel}
+						onClick={() => {
+							setPopupOpen(false);
+							hotspotRef.current?.focus();
+						}}
+					>
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<p id="countdown-heading" className={styles["countdown-header"]}>
+						<strong>{countdownHeading}</strong>
 					</p>
 
 					<div className={styles["countdown-items-container"]}>
-						<div className={styles["countdown-item"]}>
-							<h3>{days}</h3>
-							<h4>day{days === 1 ? "" : "s"}</h4>
-						</div>
-						<div className={styles["countdown-item"]}>
-							<h3>{hours}</h3>
-							<h4>hour{hours === 1 ? "" : "s"}</h4>
-						</div>
-						<div className={styles["countdown-item"]}>
-							<h3>{minutes}</h3>
-							<h4>minute{minutes === 1 ? "" : "s"}</h4>
-						</div>
-						<div className={styles["countdown-item"]}>
-							<h3>{seconds}</h3>
-							<h4>second{seconds === 1 ? "" : "s"}</h4>
-						</div>
+						{countdownItems.map(item => (
+							<div key={item.key} className={styles["countdown-item"]}>
+								<span className={styles["countdown-value"]}>{item.display}</span>
+								<span className={styles["countdown-unit"]}>{item.label}</span>
+							</div>
+						))}
 					</div>
 				</dialog>
 			)}
-
-			{date && (
-				<dialog
-					id="countdown-dialog-small"
-					className={styles["countdown-dialog-small"]}
-					open={popupOpen}
-					onPointerDown={(event) => event.stopPropagation()}
-				>
-					<p className={styles["countdown-header-small"]}>
-						{" "}
-						<strong>psst... Hackathon is in</strong>
-					</p>
-
-					<div className={styles["countdown-items-container-small"]}>
-						<div className={styles["countdown-item"]}>
-							<h3>{days}:</h3>
-						</div>
-						<div className={styles["countdown-item"]}>
-							<h3>{formattedHours}:</h3>
-						</div>
-						<div className={styles["countdown-item"]}>
-							<h3>{formattedMinutes}:</h3>
-						</div>
-						<div className={styles["countdown-item"]}>
-							<h3>{formattedSeconds}</h3>
-						</div>
-					</div>
-				</dialog>
-			)}
-		</div>
+		</section>
 	);
 }
 

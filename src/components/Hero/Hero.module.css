@@ -1,13 +1,12 @@
 .hero {
 	--hero-heading: var(--dark-primary-color);
-	/* Brand bright red, used for the date eyebrow and the "III" edition mark. */
+	/* Keep the decorative edition mark bright while body-sized text uses the darker brand red. */
 	--hero-bright-red: #c11f25;
+	--hero-eyebrow: var(--dark-primary-color);
 
 	/* countdown colours */
-	--dark-red: var(--dark-primary-color);
-	--count-down-border: var(--medium-secondary-color);
+	--dark-red: #700009;
 	--count-down-background-color: var(--medium-primary-color);
-	--countdown-item-color: var(--medium-secondary-color);
 
 	position: relative;
 	width: 100%;
@@ -55,7 +54,6 @@
 	background-position: var(--hill-x, center) calc(100% + var(--hill-drop));
 	pointer-events: none;
 	user-select: none;
-	will-change: transform;
 }
 
 .hero-hill-far {
@@ -99,8 +97,6 @@
 	left: var(--cloud-left);
 	width: var(--cloud-w);
 	opacity: var(--cloud-opacity, 0.85);
-	filter: blur(var(--cloud-blur, 0px));
-	will-change: transform, translate;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -167,8 +163,8 @@
 	--cloud-left: 82%;
 	--cloud-w: clamp(220px, 24vw, 440px);
 	--cloud-opacity: 0.8;
-	--cloud-blur: 0.8px;
 	--drift-x: 7vw;
+	filter: blur(0.8px);
 	aspect-ratio: 1.77;
 	background-image: url("../../assets/Hero/cloud6.webp");
 }
@@ -248,6 +244,13 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
+.clock-tower-hotspot:focus-visible {
+	outline: 4px solid var(--light-primary-color);
+	outline-offset: 4px;
+	border-radius: 50%;
+	background: rgba(132, 1, 11, 0.2);
+}
+
 /* ---------- Heading (right-side column, beside the tower) ---------- */
 
 .hero-heading {
@@ -268,7 +271,6 @@
 	justify-items: start;
 	text-align: left;
 	gap: clamp(0.5rem, 1.5vh, 1.1rem);
-	will-change: transform, opacity;
 	/* The column is a tall, mostly-empty box that overlaps the parliament. Keep
 	   it transparent to clicks/hover so it doesn't sit "in front of" the tower
 	   and block the clock-tower hotspot. */
@@ -280,7 +282,7 @@
 
 .hero-eyebrow {
 	margin: 0;
-	color: var(--hero-bright-red);
+	color: var(--hero-eyebrow);
 	font-family: Coolvetica, Rubik, sans-serif;
 	font-weight: 700;
 	font-size: clamp(0.95rem, 2.1vmin, 1.45rem);
@@ -358,14 +360,13 @@
 
 /* ---------- Countdown popup ---------- */
 
-.countdown-dialog,
-.countdown-dialog-small {
+.countdown-dialog {
 	box-sizing: border-box;
 	position: absolute;
-	top: 28vh;
+	top: 75%;
 	left: 50%;
 	z-index: 7;
-	transform: translateX(-50%);
+	transform: translate(-50%, -50%);
 	margin: 0;
 	padding: max(1rem, 2vmin) max(2rem, 4vmin);
 	text-align: center;
@@ -373,39 +374,40 @@
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
 	border: 5px solid var(--dark-red);
 	background-color: var(--count-down-background-color);
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity 1s ease-in-out;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	gap: max(0.5rem, 2vmin);
 }
 
-.countdown-dialog-small {
-	display: none;
+.countdown-dialog[open] {
+	display: flex;
 }
 
-.countdown-dialog[open],
-.countdown-dialog-small[open] {
-	opacity: 1;
-	pointer-events: all;
-}
-
-.countdown-dialog:hover,
-.countdown-dialog-small:hover {
-	opacity: 1;
-	pointer-events: all;
-}
-
-.countdown-header,
-.countdown-header-small {
+.countdown-header {
 	color: var(--dark-red);
 	margin: 0;
 	font-family: Rubik;
 }
 
-.countdown-items-container,
-.countdown-items-container-small {
+.countdown-close {
+	position: absolute;
+	top: 0.65rem;
+	right: 1rem;
+	padding: 0.1rem 0.4rem;
+	border: 0;
+	border-radius: 50%;
+	color: var(--dark-red);
+	background: transparent;
+	font: 700 1.5rem/1 Rubik, sans-serif;
+	cursor: pointer;
+}
+
+.countdown-close:focus-visible {
+	outline: 3px solid var(--dark-red);
+	outline-offset: 2px;
+}
+
+.countdown-items-container {
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
@@ -418,14 +420,17 @@
 	align-items: center;
 }
 
-.countdown-item h3 {
+.countdown-value {
+	color: var(--dark-red);
 	font-family: Rubik;
 	font-weight: normal;
+	font-size: 1.17em;
 }
 
-.countdown-item h4 {
+.countdown-unit {
 	color: var(--dark-red);
 	font-weight: normal;
+	font-size: 1em;
 }
 
 /* ---------- Responsive ---------- */
@@ -461,12 +466,23 @@
 	}
 
 	.countdown-dialog {
-		display: none;
+		padding-inline: 2rem;
 	}
 
-	.countdown-dialog-small {
-		display: flex;
-		top: 24vh;
+	.countdown-unit {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.countdown-item:not(:last-child) .countdown-value::after {
+		content: ":";
 	}
 
 	/* Same idea on mobile: a big top bank (1,4,3,5) spanning the width, plus two
@@ -531,9 +547,6 @@
 		font-size: clamp(0.78rem, 2.8vh, 0.95rem);
 	}
 
-	.countdown-dialog {
-		top: 20vh;
-	}
 }
 
 /* Very short portrait previews (for example legacy 320×480) need the same
