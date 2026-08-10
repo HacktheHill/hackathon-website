@@ -1,58 +1,105 @@
 .four-o-four {
+	--four-o-four-text: #300008;
+
+	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-height: 100vh;
+	min-height: 100svh;
+	width: 100%;
+	padding: clamp(2rem, 8vw, 6rem);
 	background: linear-gradient(
 		var(--medium-secondary-color),
 		var(--medium-primary-color),
 		var(--light-secondary-color)
 	);
-	height: 100vh;
-	width: 100vw;
-	margin: auto;
+	color: var(--four-o-four-text);
 }
 
 .content-404 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
-	flex-wrap: wrap;
-	color: white;
+	gap: clamp(2rem, 6vw, 5rem);
+	flex-wrap: nowrap;
+	width: min(100%, 70rem);
 }
 
 .text-404 {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	max-width: 30rem;
 }
 
 .text-404 h1 {
-	font-size: 800%;
-	opacity: 0.3;
+	font-size: clamp(5rem, 20vw, 10rem);
+	line-height: 0.8;
+	color: var(--four-o-four-text);
+}
+
+.text-404 h2,
+.text-404 p {
+	color: var(--four-o-four-text);
 }
 
 .text-404 a {
 	text-decoration: none;
-	background: white;
-	border: 3px solid white;
+	background: var(--four-o-four-text);
+	border: 3px solid var(--four-o-four-text);
 	border-radius: 5px;
-	color: var(--medium-primary-color);
+	color: var(--light-primary-color);
 	padding: 0.5rem 1rem;
 	cursor: pointer;
-	transition: all 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .text-404 a:hover {
-	background: var(--medium-primary-color);
-	color: white;
+	background: #000;
+}
+
+.text-404 a:focus-visible {
+	outline: 3px solid var(--four-o-four-text);
+	outline-offset: 3px;
 }
 
 .image-404 {
+	flex: 0 1 26rem;
 	transition: transform 8s ease-in-out;
+}
+
+.image-404 img {
+	display: block;
+	width: min(100%, 26rem);
+	height: auto;
 }
 
 .image-404:hover {
 	transform: rotate(720deg);
+}
+
+@media (max-width: 700px) {
+	.four-o-four {
+		align-items: flex-start;
+	}
+
+	.content-404 {
+		flex-direction: column;
+	}
+
+	.text-404 {
+		align-items: center;
+		text-align: center;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.image-404 {
+		transition: none;
+	}
+
+	.image-404:hover {
+		transform: none;
+	}
 }

@@ -5,19 +5,19 @@ import "@/global.css";
 
 function FourOFour() {
 	return (
-		<div id="four-o-four" className={styles["four-o-four"]}>
+		<main id="four-o-four" className={styles["four-o-four"]}>
 			<div className={styles["content-404"]}>
 				<div className={styles["text-404"]}>
 					<h1>404</h1>
 					<h2>{t("four-o-four.title")}</h2>
 					<p>{t("four-o-four.description")}</p>
-					<a href="https://www.hackthehill.com">{t("four-o-four.button")}</a>
+					<a href="/">{t("four-o-four.button")}</a>
 				</div>
 				<div className={styles["image-404"]}>
-					<img src={beaver} alt="Logo" width="350" />
+					<img src={beaver} alt={t("four-o-four.image_alt")} width="540" height="350" />
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 }
 
