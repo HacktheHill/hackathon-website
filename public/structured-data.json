@@ -1,26 +1,13 @@
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "Event",
-	"about": "48-hour hackathon in Canada's capital",
+	"about": "Student hackathon in Canada's capital",
 	"audience": {
-		"audienceType": "University Students",
-		"geographicArea": "Ottawa"
+		"audienceType": "Students and recent graduates"
 	},
-	"doorTime": "2026-09-25T17:00",
-	"duration": "PT48H",
-	"endDate": "2026-09-27",
-	"eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-	"eventSchedule": {
-		"@type": "Schedule",
-		"endDate": "2026-09-27",
-		"endTime": "2026-09-27T18:30",
-		"repeatCount": 1,
-		"scheduleTimezone": "America/Toronto",
-		"startDate": "2026-09-25",
-		"startTime": "2026-09-25T17:00"
-	},
+	"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
 	"eventStatus": "https://schema.org/EventScheduled",
-	"funder": [],
+	"endDate": "2026-09-27",
 	"inLanguage": "English",
 	"availableLanguage": [
 		{
@@ -47,18 +34,12 @@
 			"name": "Learning Crossroads building, University of Ottawa"
 		}
 	],
-	"maximumPhysicalAttendeeCapacity": 750,
-	"name": "Hack the Hill",
+	"name": "Hack the Hill III",
 	"offers": {
 		"@type": "Offer",
-		"availability": "https://schema.org/LimitedAvailability",
-		"availabilityEnds": "2026-09-25",
-		"availabilityStarts": "2026-07-29",
 		"price": "0",
 		"priceCurrency": "CAD",
-		"validFrom": "2026-07-29",
-		"validThrough": "2026-09-25",
-		"url": "https://tracker.hackthehill.com/"
+		"url": "https://hackthehill.com/"
 	},
 	"organizer": {
 		"@type": "Organization",
@@ -85,19 +66,13 @@
 		"name": "Capital Technology Network",
 		"sameAs": [
 			"https://www.facebook.com/canadascapitalhackathon",
-			"https://twitter.com/hackthehill",
+			"https://twitter.com/hackthehill_",
 			"https://www.instagram.com/hackthehill",
 			"https://www.tiktok.com/@hackthehill",
 			"https://www.linkedin.com/company/hackthehill",
 			"https://www.youtube.com/@hackthehill"
 		],
-		"url": "https://hackthehill.com/"
+		"url": "https://ctn-rtc.org/"
 	},
-	"performer": {
-		"@type": "PerformingGroup",
-		"genre": "Hackathon",
-		"name": "Hack the Hill"
-	},
-	"startDate": "2026-09-25",
-	"typicalAgeRange": "16-30"
+	"startDate": "2026-09-25"
 }

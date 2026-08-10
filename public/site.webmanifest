@@ -15,8 +15,8 @@
 			"purpose": "any maskable"
 		}
 	],
-	"start_url": "https://2026.hackthehill.com",
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
+	"start_url": "/",
+	"theme_color": "#ea885f",
+	"background_color": "#ea885f",
 	"display": "standalone"
 }

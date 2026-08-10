@@ -5,32 +5,37 @@ import path from 'path';
 
 export interface Props {
 	title?: string;
+	description?: string;
+	includeEventData?: boolean;
+	noindex?: boolean;
 }
 
-const { title } = (Astro.props as Props) || {};
-
-const description =
-	"Join us for Hack the Hill III, a hackathon in heart of Canada's capital from September 25th to 27th, 2026! Joignez nous pour Hack the Hill III, un hackathon au cœur de la capitale du Canada du 25 au 27 septembre 2026!";
-
-const keywords =
-	"Ottawa Hackathon, Hackathon, Hack the Hill, Hackathon Ottawa, Hackathon Ontario, Hackathon Canada, Hackathon 2026, University of Ottawa, uOttawa, Capital Hackathon, Canada's Capital Hackathon, International Hackathon, Carleton, Carleton University, Université d'Ottawa, Université Carleton, Capital Technology Network, CTN, Réseau technologique de la capitale, RTC";
+const {
+	title,
+	description = "Join students from every discipline for Hack the Hill III, a free in-person hackathon at the University of Ottawa from September 25 to 27, 2026.",
+	includeEventData = false,
+	noindex = false,
+} = (Astro.props as Props) || {};
 
 const color = "#ea885f";
 
-
-let structuredData = {} as any;
-try {
-	structuredData = JSON.parse(fs.readFileSync(path.resolve("./public/structured-data.json"), "utf-8"));
-	structuredData.description = description;
-	structuredData.keywords = keywords;
-	structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
-	structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
-} catch (error) {
-	console.error(error);
+let structuredDataString: string | undefined;
+if (includeEventData) {
+	try {
+		const structuredData = JSON.parse(
+			fs.readFileSync(path.resolve("./public/structured-data.json"), "utf-8"),
+		) as Record<string, unknown>;
+		structuredData.description = description;
+		structuredData.url = import.meta.env.SITE.replace(/\/$/, "");
+		structuredData.image = `${import.meta.env.SITE.replace(/\/$/, "")}/Logos/hackthehill-logo.svg`;
+		structuredDataString = JSON.stringify(structuredData);
+	} catch (error) {
+		console.error(error);
+	}
 }
-const structuredDataString = JSON.stringify(structuredData);
 
 const url = import.meta.env.SITE.replace(/\/$/, "");
+const canonicalUrl = new URL(Astro.url.pathname, `${url}/`).toString();
 
 ---
 
@@ -41,14 +46,8 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content={color} />
 		<meta name="msapplication-TileColor" content={color} />
-		<link rel="mask-icon" href={`${url}/safari-pinned-tab.svg`} color={color} />
+		<link rel="mask-icon" href={`${url}/icons/safari-pinned-tab.svg`} color={color} />
 		<link rel="manifest" href={`${url}/site.webmanifest`} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
 		<title>{title}</title>
 
 		<!-- Google Analytics tags -->
@@ -66,10 +65,10 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta property="og:description" name="description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
-		<meta property="og:url" content={url} />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:image" content={`${url}/Logos/hackthehill-banner.svg`} />
 		<meta property="og:site_name" content="Hack the Hill" />
-		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale" content="en_CA" />
 
 		<!-- Twitter SEO -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -80,14 +79,12 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="twitter:image" content={`${url}/Logos/hackthehill-banner.svg`} />
 		<meta name="twitter:image:alt" content="Hack the Hill logo" />
 
-		<!-- Keywords -->
-		<meta name="keywords" content={keywords} />
-
 		<!-- humans.txt -->
 		<link type="text/plain" rel="author" href={`${url}/humans.md`} />
 
 		<!-- Canonical -->
-		<link rel="canonical" href={url} />
+		<link rel="canonical" href={canonicalUrl} />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 		<!-- Sitemap -->
 		<link rel="sitemap" type="application/xml" title="Sitemap" href={`${url}/sitemap-index.xml`} />
@@ -121,39 +118,15 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 		<meta name="msapplication-wide310x150logo" content={`${url}/icons/mstile-310x150.png`} />
 		<meta name="msapplication-square310x310logo" content={`${url}/icons/mstile-310x310.png`} />
 
-		<script is:inline type="application/ld+json" set:html={structuredDataString}></script>
+		{structuredDataString && <script is:inline type="application/ld+json" set:html={structuredDataString}></script>}
 	</head>
 	<body>
 		<slot />
 		<style is:global>
 			@font-face {
 				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-Medium.ttf) format("truetype");
-				font-weight: 500;
-				font-weight: medium;
-				font-display: swap;
-			}
-
-			@font-face {
-				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-Regular.ttf) format("truetype");
-				font-weight: 400;
-				font-weight: normal;
-				font-display: swap;
-			}
-
-			@font-face {
-				font-family: Rubik;
-				src: url(/fonts/rubik/Rubik-SemiBold.ttf) format("truetype");
-				font-weight: 600;
-				font-weight: semi-bold;
-				font-display: swap;
-			}
-
-			@font-face {
-				font-family: Rubik;
 				src: url(/fonts/rubik/Rubik-VariableFont_wght.ttf) format("truetype-variations");
-				font-weight: 300 400 500 600 700 800 900;
+				font-weight: 300 900;
 				font-display: swap;
 			}
 
@@ -173,13 +146,7 @@ const url = import.meta.env.SITE.replace(/\/$/, "");
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
 				width: 100%;
-				/* TODO: Remove this once the website is built */
-				/* Landing is a single, non-scrolling hero (100svh, self-clipping).
-				   Locking the viewport stops a transient scrollbar from flashing
-				   during load (e.g. the Partytown iframe briefly defaulting to 150px
-				   or web-font reflow), which otherwise causes a horizontal jitter.
-				   TODO: restore to `overflow-x: hidden` when the full page returns. */
-				overflow: hidden;
+				overflow-x: hidden;
 			}
 
 			h1,
