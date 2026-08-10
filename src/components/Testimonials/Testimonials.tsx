@@ -1,12 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { t } from "@/i18n";
 import styles from "./Testimonials.module.css";
 import leftLeaves from "@/assets/SVGs/Testimonials/left-leaves.svg?url";
 import rightLeaves from "@/assets/SVGs/Testimonials/right-leaves.svg?url";
-
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function Testimonials() {
 	const testimonialData = [
@@ -55,7 +51,12 @@ function Testimonials() {
 	];
 
 	const [activeIndex, setActiveIndex] = useState(0);
-	const ref = useRef<HTMLDivElement>(null);
+	const pointerStartRef = useRef<{ id: number; x: number; y: number } | null>(null);
+	const previousLabel = t("testimonials.aria_label_prev");
+	const nextLabel = t("testimonials.aria_label_next");
+	const dotLabel = t("testimonials.aria_label_dot");
+	const previousIndex = (activeIndex - 1 + testimonialData.length) % testimonialData.length;
+	const nextIndex = (activeIndex + 1) % testimonialData.length;
 
 	const nextSlide = () => {
 		setActiveIndex(prevIndex => (prevIndex + 1) % testimonialData.length);
@@ -65,57 +66,52 @@ function Testimonials() {
 		setActiveIndex(prevIndex => (prevIndex - 1 + testimonialData.length) % testimonialData.length);
 	};
 
-	// Enable swiping on mobile devices
-	useEffect(() => {
-		const carousel = ref.current;
-		if (!carousel) {
-			return;
-		}
-
-		let touchstartX = 0;
-		let touchendX = 0;
-
-		const handleGesture = () => {
-			if (touchendX < touchstartX) nextSlide();
-			if (touchendX > touchstartX) prevSlide();
-		};
-
-		const handleTouchStart = (event: TouchEvent) => {
-			touchstartX = event.changedTouches[0].screenX;
-		};
-
-		const handleTouchEnd = (event: TouchEvent) => {
-			touchendX = event.changedTouches[0].screenX;
-			handleGesture();
-		};
-
-		carousel.addEventListener("touchstart", handleTouchStart, false);
-		carousel.addEventListener("touchend", handleTouchEnd, false);
-
-		return () => {
-			carousel.removeEventListener("touchstart", handleTouchStart, false);
-			carousel.removeEventListener("touchend", handleTouchEnd, false);
-		};
-	}, []);
-
-	useEffect(() => {
-		AOS.init({});
-	}, []);
-
 	return (
-		<div id="testimonials" className={styles["testimonials"]}>
-			<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
-			<h1 data-aos="fade-up" data-aos-duration="800">
+		<section id="testimonials" className={styles["testimonials"]} aria-labelledby="testimonials-title">
+			<img className={styles["left-leaves"]} src={leftLeaves} alt="" />
+			<h2 id="testimonials-title" className="section-heading" data-aos="fade-up" data-aos-duration="800">
 				{t("testimonials.title")}
-			</h1>
-			<h2 data-aos="fade-up" data-aos-duration="800">
-				{t("testimonials.sub_heading")}
 			</h2>
-			<div className={styles["testimonial-body"]} ref={ref}>
-				{testimonialData.map((_, index) => (
+			<p className={styles["sub-heading"]} data-aos="fade-up" data-aos-duration="800">
+				{t("testimonials.sub_heading")}
+			</p>
+			<div
+				className={styles["testimonial-body"]}
+				aria-live="polite"
+				data-aos="fade-up"
+				data-aos-duration="800"
+				onPointerDown={event => {
+					if (!event.isPrimary) return;
+					pointerStartRef.current = { id: event.pointerId, x: event.clientX, y: event.clientY };
+					event.currentTarget.setPointerCapture(event.pointerId);
+				}}
+				onPointerUp={event => {
+					const start = pointerStartRef.current;
+					if (!start || start.id !== event.pointerId) return;
+
+					const deltaX = event.clientX - start.x;
+					const deltaY = event.clientY - start.y;
+					pointerStartRef.current = null;
+					if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+						event.currentTarget.releasePointerCapture(event.pointerId);
+					}
+
+					if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+					if (deltaX < 0) nextSlide();
+					else prevSlide();
+				}}
+				onPointerCancel={() => {
+					pointerStartRef.current = null;
+				}}
+			>
+				{testimonialData.map((testimonial, index) => (
 					<div
-						key={index}
+						key={testimonial.id}
 						className={styles["testimonial-container"]}
+						aria-hidden={index !== activeIndex}
+						aria-label={`${index + 1}/${testimonialData.length}: ${testimonial.name}`}
+						role="group"
+						aria-roledescription="slide"
 						style={{
 							transform: `translateX(calc(${-activeIndex * 100}% - ${activeIndex * 4}rem))`,
 						}}
@@ -124,10 +120,8 @@ function Testimonials() {
 							className={styles["testimonial-img"]}
 							src={testimonialData[index].img}
 							alt={testimonialData[index].name}
-							data-aos="fade-up"
-							data-aos-duration="800"
 						/>
-						<div className={styles["testimonial-text"]} data-aos="fade-up" data-aos-duration="800">
+						<div className={styles["testimonial-text"]}>
 							<p className={styles["testimonial-content"]}>{testimonialData[index].content}</p>
 							<p className={styles["testimonial-provider"]}>
 								{testimonialData[index].name}, {testimonialData[index].role}
@@ -143,29 +137,32 @@ function Testimonials() {
 				data-aos-offset="-100"
 			>
 				<button
+					type="button"
 					onClick={prevSlide}
 					className={styles["prev-button"]}
-					aria-label={t("testimonials.aria_label_prev")}
+					aria-label={`${previousLabel}: ${testimonialData[previousIndex].name}`}
 				></button>
 				<div className={styles["carousel-dots"]}>
 					{testimonialData.map((_, index) => (
 						<button
-							key={index}
+							type="button"
+							key={testimonialData[index].id}
 							className={index === activeIndex ? styles.active : ""}
 							onClick={() => setActiveIndex(index)}
-							onKeyDown={() => setActiveIndex(index)}
-							aria-label={t("testimonials.aria_label_dot")}
+							aria-label={`${dotLabel} ${index + 1}: ${testimonialData[index].name}`}
+							aria-pressed={index === activeIndex}
 						></button>
 					))}
 				</div>
 				<button
+					type="button"
 					onClick={nextSlide}
 					className={styles["next-button"]}
-					aria-label={t("testimonials.aria_label_next")}
+					aria-label={`${nextLabel}: ${testimonialData[nextIndex].name}`}
 				></button>
 			</div>
-			<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
-		</div>
+			<img className={styles["right-leaves"]} src={rightLeaves} alt="" />
+		</section>
 	);
 }
 

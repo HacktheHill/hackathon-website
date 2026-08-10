@@ -23,12 +23,13 @@
 	right: 0;
 }
 
-.testimonials h1 {
+.testimonials :global(.section-heading) {
 	text-align: center;
 	margin: 2rem 0;
 }
 
-.testimonials h2 {
+.sub-heading {
+	margin: 0;
 	font-family: Rubik;
 	font-weight: 400;
 	text-align: center;
@@ -46,6 +47,7 @@
 	gap: 4rem;
 	font-family: Rubik;
 	overflow: hidden;
+	touch-action: pan-y;
 }
 
 .testimonial-img {
@@ -99,6 +101,7 @@
 .testimonial-container {
 	display: flex;
 	gap: 2rem;
+	transition: transform 450ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .carousel-dots {
@@ -178,7 +181,7 @@
 }
 
 @media screen and (max-width: 510px) {
-	.testimonials h2 {
+	.sub-heading {
 		font-size: 1.25rem;
 	}
 
