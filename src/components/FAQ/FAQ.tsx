@@ -1,22 +1,14 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import faq from "@/assets/faq-leaves.svg?raw";
 import { t } from "@/i18n";
 import styles from "./FAQ.module.css";
 
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState<string[]>([]);
 
-	const handleKeyList = (e: { key: string }) => {
-		if (expandedList.includes(e.key)) {
-			setExpandedList(prev => prev.filter(keys => keys !== e.key));
-		} else {
-			setExpandedList(arr => [...arr, `${e.key}`]);
-		}
+	const handleKeyList = (key: string, expanded: boolean) => {
+		setExpandedList(prev => (expanded ? [...prev, key] : prev.filter(itemKey => itemKey !== key)));
 	};
 
 	const quesAns = [
@@ -76,19 +68,83 @@ export default function FAQ() {
 			key: "10",
 		},
 	];
+	const renderAccordions = (items: typeof quesAns) =>
+		items.map(item => {
+			const expanded = expandedList.includes(item.key);
 
-	useEffect(() => {
-		AOS.init({});
-	}, []);
+			return (
+				<Accordion
+					key={item.key}
+					className={styles["question-container"]}
+					expanded={expanded}
+					onChange={(_, isExpanded) => handleKeyList(item.key, isExpanded)}
+					sx={{
+						justifyContent: "left",
+						backgroundColor: "transparent",
+						backgroundImage: "none",
+						mb: "10px",
+						mt: "10px",
+						boxShadow: "none",
+						"&:before": {
+							display: "none",
+						},
+					}}
+				>
+					<AccordionSummary
+						className={styles.question}
+						sx={{
+							color: "var(--text-color)",
+							"&:hover": {
+								color: "var(--question-container-hover-color)",
+							},
+						}}
+					>
+						<svg
+							aria-hidden="true"
+							focusable="false"
+							style={{ marginRight: "0.5rem" }}
+							stroke="currentColor"
+							fill="var(--text-color)"
+							strokeWidth="0"
+							viewBox="0 0 1024 1024"
+							height="1em"
+							width="1em"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							{expanded ? (
+								<path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
+							) : (
+								<>
+									<path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
+									<path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
+								</>
+							)}
+						</svg>
+						{item.q}
+					</AccordionSummary>
+
+					<AccordionDetails
+						className={styles.answer}
+						sx={{
+							marginLeft: "1.5rem",
+							pt: 0,
+						}}
+					>
+						<Typography align="left">{item.a}</Typography>
+					</AccordionDetails>
+				</Accordion>
+			);
+		});
 
 	return (
-		<div id="faq" className={styles.container}>
+		<section id="faq" className={styles.container} aria-labelledby="faq-title">
 			<div className={styles.header}>
-				<h1 data-aos="fade-right" data-aos-duration="800">
+				<h2 id="faq-title" className="section-heading" data-aos="fade-right" data-aos-duration="800">
 					{t("faq.title")}
-				</h1>
+				</h2>
 				<div
 					className={styles["faq-img"]}
+					aria-hidden="true"
 					dangerouslySetInnerHTML={{
 						__html: faq,
 					}}
@@ -96,148 +152,12 @@ export default function FAQ() {
 			</div>
 			<div className={styles["faq-columns"]}>
 				<div className={styles.column} data-aos="fade-right" data-aos-duration="800">
-					{quesAns.slice(0, Math.ceil(quesAns.length / 2)).map((item, i) => (
-						<Accordion
-							key={i}
-							className={styles["question-container"]}
-							sx={{
-								backgroundColor: expandedList.includes(item.key) ? "transparent" : "transparent",
-								justifyContent: "left",
-								mb: "10px",
-								mt: "10px",
-								boxShadow: "none",
-								"&:before": {
-									display: "none",
-								},
-							}}
-						>
-							<AccordionSummary
-								className={styles.question}
-								onClick={() => handleKeyList(item)}
-								sx={{
-									color: "var(--text-color)",
-									"&:hover": {
-										color: "var(--question-container-hover-color)",
-									},
-								}}
-							>
-								{expandedList.includes(item.key) ? (
-									<svg
-										style={{ marginRight: "0.5rem" }}
-										stroke="currentColor"
-										fill="var(--text-color)"
-										strokeWidth="0"
-										viewBox="0 0 1024 1024"
-										height="1em"
-										width="1em"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
-									</svg>
-								) : (
-									<svg
-										style={{ marginRight: "0.5rem" }}
-										stroke="currentColor"
-										fill="var(--text-color)"
-										strokeWidth="0"
-										viewBox="0 0 1024 1024"
-										version="1.1"
-										height="1em"
-										width="1em"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<defs></defs>
-										<path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
-										<path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
-									</svg>
-								)}
-								{item.q}
-							</AccordionSummary>
-
-							<AccordionDetails
-								className={styles.answer}
-								sx={{
-									marginLeft: "1.5rem",
-									pt: 0,
-								}}
-							>
-								<Typography align={"left"}>{item.a}</Typography>
-							</AccordionDetails>
-						</Accordion>
-					))}
+					{renderAccordions(quesAns.slice(0, Math.ceil(quesAns.length / 2)))}
 				</div>
 				<div className={styles.column} data-aos="fade-right" data-aos-duration="800">
-					{quesAns.slice(Math.ceil(quesAns.length / 2)).map((item, i) => (
-						<Accordion
-							key={i}
-							className={styles["question-container"]}
-							sx={{
-								backgroundColor: expandedList.includes(item.key) ? "transparent" : "transparent",
-								justifyContent: "left",
-								mb: "10px",
-								mt: "10px",
-								boxShadow: "none",
-								"&:before": {
-									display: "none",
-								},
-							}}
-						>
-							<AccordionSummary
-								className={styles.question}
-								onClick={() => handleKeyList(item)}
-								sx={{
-									color: "var(--text-color)",
-									"&:hover": {
-										color: "var(--question-container-hover-color)",
-									},
-								}}
-							>
-								{expandedList.includes(item.key) ? (
-									<svg
-										style={{ marginRight: "0.5rem" }}
-										stroke="currentColor"
-										fill="var(--text-color)"
-										strokeWidth="0"
-										viewBox="0 0 1024 1024"
-										height="1em"
-										width="1em"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
-									</svg>
-								) : (
-									<svg
-										style={{ marginRight: "0.5rem" }}
-										stroke="currentColor"
-										fill="var(--text-color)"
-										strokeWidth="0"
-										viewBox="0 0 1024 1024"
-										version="1.1"
-										height="1em"
-										width="1em"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<defs></defs>
-										<path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
-										<path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
-									</svg>
-								)}
-								{item.q}
-							</AccordionSummary>
-
-							<AccordionDetails
-								className={styles.answer}
-								sx={{
-									marginLeft: "1.5rem",
-									pt: 0,
-								}}
-							>
-								<Typography align={"left"}>{item.a}</Typography>
-							</AccordionDetails>
-						</Accordion>
-					))}
+					{renderAccordions(quesAns.slice(Math.ceil(quesAns.length / 2)))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

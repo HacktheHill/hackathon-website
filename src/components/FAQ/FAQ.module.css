@@ -6,7 +6,6 @@
 	display: flex;
 	flex-direction: column;
 	color: var(--text-color);
-	transition: 0.5s;
 	font-weight: bold;
 	font-family: Rubik;
 	gap: 1rem;
@@ -25,8 +24,15 @@
 }
 
 .faq-columns {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: start;
+	gap: clamp(1rem, 3vw, 3rem);
+	min-width: 0;
+}
+
+.column {
+	min-width: 0;
 }
 
 .question,
@@ -43,7 +49,8 @@
 	}
 
 	.faq-columns {
-		flex-direction: column;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0;
 	}
 
 	.question,
