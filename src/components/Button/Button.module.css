@@ -1,42 +1,56 @@
-:is(.button button, button.button) {
+.button {
 	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	background: linear-gradient(180deg, var(--light-tertiary-color) 0%, var(--light-primary-color) 100%);
 	border: none;
 	border-radius: 2rem;
 	width: fit-content;
-	transition: all 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
 	color: var(--dark-primary-color);
 	font-size: 1.5rem;
 	white-space: nowrap;
 	padding: 1rem 2rem;
 	cursor: pointer;
 	font-family: Coolvetica;
+	text-decoration: none;
 }
 
-:is(.button button, button.button):disabled {
+.button:disabled,
+.button[aria-disabled="true"] {
 	opacity: 0.5;
 	cursor: not-allowed;
 }
 
-:is(.button button, button.button):hover {
+.button:hover {
 	transform: scale(1.05);
 }
 
-:is(.button button, button.button):disabled:hover {
+.button:disabled:hover,
+.button[aria-disabled="true"]:hover {
 	transform: none;
 }
 
-:is(.button button, button.button):active {
+.button:active {
 	transform: scale(0.95);
 }
 
-:is(.button button, button.button):disabled:active {
+.button:disabled:active,
+.button[aria-disabled="true"]:active {
 	transform: none;
 }
 
 @media screen and (max-width: 768px) {
-	:is(.button button, button.button) {
+	.button {
 		font-size: 1rem;
 		padding: 0.5rem 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button:hover,
+	.button:active {
+		transform: none;
 	}
 }

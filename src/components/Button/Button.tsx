@@ -1,39 +1,43 @@
-import type { ButtonHTMLAttributes, HTMLAttributeAnchorTarget, ReactNode } from "react";
-import { Link } from "react-scroll";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import styles from "./Button.module.css";
 
-type InnerButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type LinkButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 	children: ReactNode;
+	href: string;
 };
 
-type ButtonProps = InnerButtonProps & {
-	href?: string;
-	target?: HTMLAttributeAnchorTarget;
-	offset?: number;
+type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+	children: ReactNode;
+	href?: never;
 };
 
-function InnerButton({ children, ...rest }: InnerButtonProps) {
-	return <button {...rest}>{children}</button>;
-}
+type ButtonProps = LinkButtonProps | NativeButtonProps;
 
-export default function Button({ children, href, target, offset = 0, ...rest }: ButtonProps) {
-	if (href?.startsWith("#")) {
+const getClassName = (className?: string) => (className ? `${styles.button} ${className}` : styles.button);
+const isLinkButton = (props: ButtonProps): props is LinkButtonProps => typeof props.href === "string";
+
+export default function Button(props: ButtonProps) {
+	if (isLinkButton(props)) {
+		const { children, className, href, target, ...rest } = props;
+		const buttonClassName = getClassName(className);
+
 		return (
-			<Link className={styles.button} to={href.slice(1)} smooth={true} offset={offset} duration={500} href={href}>
-				<InnerButton {...rest}>{children}</InnerButton>
-			</Link>
-		);
-	} else if (href) {
-		return (
-			<a href={href} target={target} rel={target === "_blank" ? "noreferrer" : ""} className={styles.button}>
-				<InnerButton {...rest}>{children}</InnerButton>
+			<a
+				{...rest}
+				href={href}
+				target={target}
+				rel={target === "_blank" ? "noreferrer" : rest.rel}
+				className={buttonClassName}
+			>
+				{children}
 			</a>
 		);
-	} else {
-		return (
-			<InnerButton className={styles.button} {...rest}>
-				{children}
-			</InnerButton>
-		);
 	}
+
+	const { children, className, type = "button", ...rest } = props;
+	return (
+		<button {...rest} type={type} className={getClassName(className)}>
+			{children}
+		</button>
+	);
 }
