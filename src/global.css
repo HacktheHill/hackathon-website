@@ -20,7 +20,8 @@
 	background-color: var(--dark-primary-color);
 }
 
-h1 {
+h1,
+.section-heading {
 	font-family: Rubik;
 	font-size: min(3rem, 12vw);
 	font-weight: 500;
@@ -53,7 +54,8 @@ p {
 }
 
 @media screen and (max-width: 510px) {
-	h1 {
+	h1,
+	.section-heading {
 		font-size: 2rem;
 	}
 	h2 {
@@ -73,5 +75,21 @@ p {
 	}
 	p {
 		font-size: 0.8rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	[data-aos] {
+		opacity: 1 !important;
+		transform: none !important;
 	}
 }

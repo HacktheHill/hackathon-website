@@ -49,7 +49,7 @@
 	box-shadow: 0 0 0.5rem var(--light-secondary-color);
 	border-radius: 50%;
 	overflow: hidden;
-	transition: 0.2s ease;
+	transition: transform 0.2s ease;
 }
 
 .team-member:hover {
@@ -68,5 +68,15 @@
 @media (max-width: 768px) {
 	.marquee-group {
 		animation: marquee 90s linear infinite;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.marquee-group {
+		animation: none;
+	}
+
+	.team-member:hover {
+		transform: none;
 	}
 }

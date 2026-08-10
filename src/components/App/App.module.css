@@ -1,3 +1,20 @@
+.skip-link {
+	position: fixed;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 1000;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	color: var(--light-primary-color);
+	background: var(--dark-primary-color);
+	font-family: Rubik, sans-serif;
+	transform: translateY(calc(-100% - 1rem));
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
 .wrapper {
 	position: relative;
 	display: flex;

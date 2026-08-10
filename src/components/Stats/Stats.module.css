@@ -29,7 +29,8 @@
 	padding: 1rem;
 }
 
-.stats-item h2 {
+.stats-value {
+	display: block;
 	font-family: Rubik;
 	font-weight: 500;
 	font-size: 3rem;

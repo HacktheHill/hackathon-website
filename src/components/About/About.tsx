@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { t } from "@/i18n";
 import styles from "./About.module.css";
 
@@ -6,24 +5,16 @@ import leftLeaves from "@/assets/SVGs/About/left-leaves.svg?url";
 import rightLeaves from "@/assets/SVGs/About/right-leaves.svg?url";
 import "@/global.css";
 
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 function About() {
 	const videoLink = "https://www.youtube.com/embed/yDNJC2-lUWE?si=VAD1Na8xGVwE9i5W";
 	const thumbnailLink = "https://i.ytimg.com/vi/yDNJC2-lUWE/hqdefault.jpg";
 
-	useEffect(() => {
-		AOS.init({});
-	}, []);
-
 	return (
-		<div className={styles.about} id="about">
+		<section className={styles.about} id="about" aria-labelledby="about-title">
 			<div className={styles["about-text"]}>
-				<h1 data-aos="fade-right" data-aos-duration="800">
+				<h2 id="about-title" className="section-heading" data-aos="fade-right" data-aos-duration="800">
 					{t("about.title")}
-				</h1>
+				</h2>
 				<p data-aos="fade-right" data-aos-duration="800">
 					{t("about.p1")}
 				</p>
@@ -35,10 +26,10 @@ function About() {
 				</p>
 			</div>
 			<div className={styles.frame} data-aos="fade-left" data-aos-duration="800">
-				<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
+				<img className={styles["left-leaves"]} src={leftLeaves} alt="" />
 				<iframe
 					src={videoLink}
-					title={t("about.title")}
+					title={t("about.frame_alt")}
 					srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:3.5rem/1.5 sans-serif;color:#fff3b6;text-shadow:0 0 0.5em black}</style><a href=${videoLink}><img src=${thumbnailLink} alt="${t(
 						"about.frame_alt",
 					)}"><span>▶</span></a>`}
@@ -46,9 +37,9 @@ function About() {
 					allowFullScreen
 					loading="lazy"
 				></iframe>
-				<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
+				<img className={styles["right-leaves"]} src={rightLeaves} alt="" />
 			</div>
-		</div>
+		</section>
 	);
 }
 
