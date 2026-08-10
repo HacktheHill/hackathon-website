@@ -1,13 +1,12 @@
 .sponsors-collaborators {
 	color: var(--light-primary-color);
-	transition: 0.5s;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 	margin-top: 4rem;
 }
 
-.sponsors-collaborators h1 {
+.sponsors-collaborators :global(.section-heading) {
 	text-align: center;
 }
 

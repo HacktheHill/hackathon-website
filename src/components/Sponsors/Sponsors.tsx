@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { t } from "@/i18n";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
@@ -6,9 +5,9 @@ import Ross from "@/assets/Logos/Ross.svg?url";
 import Ciena from "@/assets/Logos/Ciena.svg?url";
 import CSE from "@/assets/Logos/CSE.svg?url";
 import PG from "@/assets/Logos/P&G.svg?url";
-import LiquidIV from "@/assets/Logos/LiquidIV.png?url";
+import LiquidIV from "@/assets/Logos/LiquidIV.webp?url";
 import Redbull from "@/assets/Logos/Redbull.svg?url";
-import Fantuan from "@/assets/Logos/Fantuan.png?url";
+import Fantuan from "@/assets/Logos/Fantuan.webp?url";
 
 import CCSS from "@/assets/Logos/ccss.png?url";
 import Carleton from "@/assets/Logos/Carleton.svg?url";
@@ -18,7 +17,7 @@ import CSSA from "@/assets/Logos/CSSA.svg?url";
 import uOttawaIEEE from "@/assets/Logos/uOttawaIEEE.svg?url";
 import WIE from "@/assets/Logos/WIE.svg?url";
 import EEF from "@/assets/Logos/EEF.svg?url";
-import lonehaven from "@/assets/Logos/Lonehaven.svg?url";
+import lonehaven from "@/assets/Logos/Lonehaven.webp?url";
 import telferBTA from "@/assets/Logos/bta-logo.svg?url";
 import SCESoc from "@/assets/Logos/SCESoc.svg?url";
 import uOttawa from "@/assets/Logos/uOttawa.svg?url";
@@ -42,10 +41,6 @@ const Ceed = "/Logos/ceed.svg";
 const Law = "/Logos/Law.svg";
 const CSClub = "/Logos/CSClub.svg";
 const uOttawaEsports = "/Logos/uOttawaEsports.svg";
-
-//animations
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function Sponsors() {
 	const data = {
@@ -128,21 +123,21 @@ function Sponsors() {
 		],
 	};
 
-	useEffect(() => {
-		AOS.init({});
-	}, []);
-
 	return (
 		<>
-			<div id="sponsors" className={`${styles["sponsors-collaborators"]} ${styles["sponsors"]}`}>
-				<h1 data-aos="fade-up" data-aos-duration="800">
+			<section
+				id="sponsors"
+				className={`${styles["sponsors-collaborators"]} ${styles["sponsors"]}`}
+				aria-labelledby="sponsors-title"
+			>
+				<h2 id="sponsors-title" className="section-heading" data-aos="fade-up" data-aos-duration="800">
 					{t("sponsors.title")}
-				</h1>
+				</h2>
 				<div className={styles.header}>
 					<img
 						className={styles["maple-leaf"]}
 						src={maple1}
-						alt="maple leaf"
+						alt=""
 						data-aos="fade-right"
 						data-aos-duration="800"
 					></img>
@@ -150,14 +145,14 @@ function Sponsors() {
 						<p className={styles.text} data-aos="fade-up" data-aos-duration="800">
 							{t("sponsors.p")}
 						</p>
-						<Button href="mailto:sponsorship@hackthehill.com" data-aos="fade-up" data-aos-duration="800">
-							{t("sponsors.button")}
-						</Button>
+						<div data-aos="fade-up" data-aos-duration="800">
+							<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
+						</div>
 					</div>
 					<img
 						className={styles["maple-leaf"]}
 						src={maple2}
-						alt="maple leaf"
+						alt=""
 						data-aos="fade-left"
 						data-aos-duration="800"
 					></img>
@@ -186,11 +181,20 @@ function Sponsors() {
 						</div>
 					))}
 				</div>
-			</div>
-			<div id="collaborators" className={`${styles["sponsors-collaborators"]} ${styles["collaborators"]}`}>
-				<h1 data-aos="fade-up" data-aos-duration="800">
+			</section>
+			<section
+				id="collaborators"
+				className={`${styles["sponsors-collaborators"]} ${styles["collaborators"]}`}
+				aria-labelledby="collaborators-title"
+			>
+				<h2
+					id="collaborators-title"
+					className="section-heading"
+					data-aos="fade-up"
+					data-aos-duration="800"
+				>
 					{t("collaborators.title")}
-				</h1>
+				</h2>
 				<div className={styles["icons-row"]}>
 					{data.collaborators.map((sponsor, i) => (
 						<a
@@ -210,7 +214,7 @@ function Sponsors() {
 						</a>
 					))}
 				</div>
-			</div>
+			</section>
 		</>
 	);
 }
