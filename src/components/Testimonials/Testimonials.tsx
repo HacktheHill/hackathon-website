@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import { t } from "@/i18n";
 import styles from "./Testimonials.module.css";
-import leftLeaves from "@/assets/SVGs/Testimonials/left-leaves.svg?url";
-import rightLeaves from "@/assets/SVGs/Testimonials/right-leaves.svg?url";
 
 function Testimonials() {
 	const testimonialData = [
@@ -68,7 +66,6 @@ function Testimonials() {
 
 	return (
 		<section id="testimonials" className={styles["testimonials"]} aria-labelledby="testimonials-title">
-			<img className={styles["left-leaves"]} src={leftLeaves} alt="" />
 			<h2 id="testimonials-title" className="section-heading" data-aos="fade-up" data-aos-duration="800">
 				{t("testimonials.title")}
 			</h2>
@@ -161,7 +158,6 @@ function Testimonials() {
 					aria-label={`${nextLabel}: ${testimonialData[nextIndex].name}`}
 				></button>
 			</div>
-			<img className={styles["right-leaves"]} src={rightLeaves} alt="" />
 		</section>
 	);
 }

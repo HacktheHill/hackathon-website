@@ -22,8 +22,6 @@ import telferBTA from "@/assets/Logos/bta-logo.svg?url";
 import SCESoc from "@/assets/Logos/SCESoc.svg?url";
 import uOttawa from "@/assets/Logos/uOttawa.svg?url";
 import uOGDC from "@/assets/Logos/uOttawaGDC.svg?url";
-import maple1 from "@/assets/SVGs/Sponsors/mapleleaf-1.svg?url";
-import maple2 from "@/assets/SVGs/Sponsors/mapleleaf-2.svg?url";
 import uOEngiqueers from "@/assets/Logos/uOEngiqueers.webp?url";
 import AITinkerers from "@/assets/Logos/AITinkerers.avif?url";
 import DEsocCarleton from "@/assets/Logos/desocCarleton.webp?url";
@@ -41,6 +39,18 @@ const Ceed = "/Logos/ceed.svg";
 const Law = "/Logos/Law.svg";
 const CSClub = "/Logos/CSClub.svg";
 const uOttawaEsports = "/Logos/uOttawaEsports.svg";
+const SNOWBANKS = Array.from(
+	{ length: 7 },
+	(_, index) => `/art/sponsors/snowbank-${index + 1}.webp`,
+);
+const LOGO_BOOSTS: Record<string, "medium" | "strong"> = {
+	"Canadian Tire": "strong",
+	Lonehaven: "medium",
+	"CSE / CST": "medium",
+	Redbull: "strong",
+	"P&G": "strong",
+	Fantuan: "strong",
+};
 
 function Sponsors() {
 	const data = {
@@ -122,6 +132,9 @@ function Sponsors() {
 			{ href: "https://linktr.ee/uottawaesports", src: uOttawaEsports, alt: "uOttawa Esports" },
 		],
 	};
+	const sponsors = data.sponsors.flatMap(row =>
+		row.organizations.map(organization => ({ ...organization, size: row.size })),
+	);
 
 	return (
 		<>
@@ -134,13 +147,6 @@ function Sponsors() {
 					{t("sponsors.title")}
 				</h2>
 				<div className={styles.header}>
-					<img
-						className={styles["maple-leaf"]}
-						src={maple1}
-						alt=""
-						data-aos="fade-right"
-						data-aos-duration="800"
-					></img>
 					<div className={styles["header-column"]}>
 						<p className={styles.text} data-aos="fade-up" data-aos-duration="800">
 							{t("sponsors.p")}
@@ -149,36 +155,37 @@ function Sponsors() {
 							<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
 						</div>
 					</div>
-					<img
-						className={styles["maple-leaf"]}
-						src={maple2}
-						alt=""
-						data-aos="fade-left"
-						data-aos-duration="800"
-					></img>
 				</div>
 
 				<div className={styles["icons"]}>
-					{data.sponsors.map((row, i) => (
-						<div key={i} className={styles["icons-row"]}>
-							{row.organizations.map((sponsor, j) => (
-								<a
-									key={j}
-									href={sponsor.href}
-									target="_blank"
-									rel="noreferrer"
-									className={styles["icon-box"]}
-									data-aos="fade-up"
-									data-aos-duration="800"
-								>
-									<img
-										className={`${styles["icon"]} ${styles[`icon-${row.size}`]}`}
-										alt={`${sponsor.alt} logo`}
-										src={sponsor.src}
-									></img>
-								</a>
-							))}
-						</div>
+					{sponsors.map((sponsor, index) => (
+						<a
+							key={sponsor.href}
+							href={sponsor.href}
+							target="_blank"
+							rel="noreferrer"
+							className={`${styles["sponsor-card"]} ${
+								index < 4 ? styles["sponsor-card-featured"] : ""
+							}`}
+							data-aos="fade-up"
+							data-aos-duration="800"
+						>
+							<img
+								className={styles.snowbank}
+								src={SNOWBANKS[index < 4 ? index : 4 + ((index - 4) % 3)]}
+								alt=""
+								aria-hidden="true"
+							/>
+							<img
+								className={`${styles.icon} ${styles[`icon-${sponsor.size}`]} ${
+									LOGO_BOOSTS[sponsor.alt]
+										? styles[`icon-boost-${LOGO_BOOSTS[sponsor.alt]}`]
+										: ""
+								}`}
+								alt={`${sponsor.alt} logo`}
+								src={sponsor.src}
+							/>
+						</a>
 					))}
 				</div>
 			</section>
@@ -195,14 +202,14 @@ function Sponsors() {
 				>
 					{t("collaborators.title")}
 				</h2>
-				<div className={styles["icons-row"]}>
+				<div className={`${styles["icons-row"]} ${styles["collaborator-icons"]}`}>
 					{data.collaborators.map((sponsor, i) => (
 						<a
 							key={i}
 							href={sponsor.href}
 							target="_blank"
 							rel="noreferrer"
-							className={styles["icon-box"]}
+							className={styles["collaborator-card"]}
 							data-aos="fade-up"
 							data-aos-duration="800"
 						>

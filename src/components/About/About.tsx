@@ -1,8 +1,6 @@
 import { t } from "@/i18n";
 import styles from "./About.module.css";
 
-import leftLeaves from "@/assets/SVGs/About/left-leaves.svg?url";
-import rightLeaves from "@/assets/SVGs/About/right-leaves.svg?url";
 import "@/global.css";
 
 const videoLink = "https://www.youtube.com/embed/yDNJC2-lUWE?si=VAD1Na8xGVwE9i5W";
@@ -41,10 +39,7 @@ function About() {
 					{t("about.p3")}
 				</p>
 			</div>
-			<div className={styles.frame} data-aos="fade-left" data-aos-duration="800">
-				<img className={styles["left-leaves"]} src={leftLeaves} alt="" />
-				<img className={styles["right-leaves"]} src={rightLeaves} alt="" />
-			</div>
+			<div className={styles.frame} aria-hidden="true" />
 		</section>
 	);
 }

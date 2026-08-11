@@ -264,6 +264,7 @@
 	position: absolute;
 	inset: 0;
 	z-index: 1000;
+	pointer-events: none;
 }
 
 /* AOS calculates offsets from normal document flow. These sections are placed
@@ -278,9 +279,13 @@
 	box-sizing: border-box;
 }
 
+[data-section-parallax] {
+	will-change: translate;
+}
+
 .stats-layer {
 	position: absolute;
-	top: 31.7%;
+	top: 30.5%;
 	left: 7%;
 	z-index: 155;
 	width: 86%;
@@ -294,6 +299,7 @@
 	z-index: 205;
 	width: 34.73%;
 	aspect-ratio: 1059 / 571;
+	pointer-events: auto;
 }
 
 .hero-slot {
@@ -301,6 +307,7 @@
 	left: 0;
 	width: 100%;
 	height: 16.3%;
+	pointer-events: auto;
 }
 
 .hero-slot :global(section#hero) {
@@ -330,31 +337,33 @@
 
 .about-slot {
 	top: 16.6%;
+	pointer-events: none;
 }
 
 .testimonials-slot {
-	top: 40%;
+	top: 36.4%;
+	pointer-events: auto;
 }
 
 .sponsors-slot {
-	top: 59.5%;
-	padding: 2.5cqw;
-	border-radius: 1.5cqw;
-	background: rgba(7, 41, 105, 0.72);
-	transform: scale(0.38);
+	top: 54.2%;
+	transform: scale(0.68);
 	transform-origin: top center;
+	pointer-events: auto;
 }
 
 .faq-slot {
 	left: 12%;
-	top: 81.5%;
+	top: 77.9%;
 	width: 76%;
+	pointer-events: auto;
 }
 
 .footer-slot {
 	left: 0;
-	bottom: 0.5%;
+	bottom: 4.1%;
 	width: 100%;
+	pointer-events: auto;
 }
 
 @media (max-width: 1200px) {
@@ -365,53 +374,94 @@
 	}
 
 	.testimonials-slot {
-		top: 40%;
+		top: 36.4%;
 		transform: scale(0.76);
 		transform-origin: top center;
 	}
 
 	.sponsors-slot {
-		top: 58.5%;
-		transform: scale(0.34);
+		top: 54.2%;
+		transform: scale(0.61);
 	}
 
 	.faq-slot {
 		left: 10%;
-		top: 81%;
+		top: 77.4%;
 		width: 80%;
 		transform: scale(0.85);
 		transform-origin: top center;
 	}
 }
 
-@media (max-width: 600px) {
+@media (min-width: 601px) and (max-width: 900px) {
 	.about-slot,
 	.testimonials-slot,
-	.sponsors-slot,
-	.faq-slot {
-		left: 4%;
-		width: 92%;
-	}
-
-	.about-slot {
-		top: 16%;
-		transform: scale(0.42);
+	.sponsors-slot {
+		left: -5%;
+		width: 110%;
 	}
 
 	.testimonials-slot {
-		top: 40%;
-		transform: scale(0.38);
+		transform: scale(0.74);
 	}
 
 	.sponsors-slot {
-		top: 58.5%;
-		transform: scale(0.28);
+		transform: scale(0.64);
 	}
 
 	.faq-slot {
-		left: 8%;
-		top: 80.5%;
-		transform: scale(0.42);
-		width: 84%;
+		left: 0;
+		top: 81%;
+		width: 100%;
+		transform: scale(0.82);
+	}
+}
+
+@media (max-width: 600px) {
+	.about-slot,
+	.testimonials-slot,
+	.sponsors-slot {
+		left: -25%;
+		width: 150%;
+	}
+
+	.about-slot {
+		top: 15.9%;
+		transform: scale(0.62);
+	}
+
+	.testimonials-slot {
+		top: 36.2%;
+		transform: scale(0.58);
+	}
+
+	.sponsors-slot {
+		top: 54.8%;
+		transform: scale(0.56);
+	}
+
+	.faq-slot {
+		left: -20%;
+		top: 77.2%;
+		transform: scale(0.68);
+		width: 140%;
+	}
+}
+
+@media (max-width: 380px) {
+	.about-slot {
+		transform: scale(0.58);
+	}
+
+	.testimonials-slot {
+		transform: scale(0.54);
+	}
+
+	.sponsors-slot {
+		transform: scale(0.52);
+	}
+
+	.faq-slot {
+		transform: scale(0.62);
 	}
 }

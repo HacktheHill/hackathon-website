@@ -192,13 +192,7 @@ function Hero() {
 		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 		let reducedMotion = motionQuery.matches;
 
-		const layers = [
-			{ selector: `.${styles["hero-sky"]}`, speed: 0.15 },
-			{ selector: `.${styles["hero-hill-far"]}`, speed: 0.3 },
-			{ selector: `.${styles["hero-hill-near"]}`, speed: 0.45 },
-			{ selector: `.${styles["hero-heading"]}`, speed: 0.5, fade: true },
-		].map(({ selector, ...layer }) => ({ ...layer, element: heroEl.querySelector<HTMLElement>(selector) }));
-		const cloudEls = heroEl.querySelectorAll<HTMLElement>(".hero-cloud");
+		const heading = heroEl.querySelector<HTMLElement>(`.${styles["hero-heading"]}`);
 
 		// Skip all parallax work + pause the cloud drift while the hero is off-screen
 		// so scrolling the rest of the page stays cheap.
@@ -219,18 +213,9 @@ function Hero() {
 			const scrollY = window.scrollY;
 			if (!heroRef.current) return;
 
-			layers.forEach(({ element, speed, fade }) => {
-				if (!element) return;
-				element.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
-				if (fade) {
-					element.style.opacity = `${Math.max(0, 1 - scrollY / 500)}`;
-				}
-			});
-
-			// Each cloud gets its own depth so the nearer ones move noticeably faster.
-			cloudEls.forEach((el, i) => {
-				el.style.transform = `translate3d(0, ${scrollY * (clouds[i]?.parallax ?? 0)}px, 0)`;
-			});
+			if (heading) {
+				heading.style.transform = `translate3d(0, ${Math.min(scrollY, window.innerHeight) * 0.05}px, 0)`;
+			}
 		};
 
 		const handleScroll = () => {
@@ -242,13 +227,7 @@ function Hero() {
 			reducedMotion = event.matches;
 			if (!reducedMotion) return;
 
-			layers.forEach(({ element, fade }) => {
-				element?.style.removeProperty("transform");
-				if (fade) element?.style.removeProperty("opacity");
-			});
-			cloudEls.forEach(element => {
-				element.style.removeProperty("transform");
-			});
+			heading?.style.removeProperty("transform");
 		};
 
 		window.addEventListener("scroll", handleScroll, { passive: true });

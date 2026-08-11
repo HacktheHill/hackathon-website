@@ -30,6 +30,33 @@
 	transform-origin: center center;
 }
 
+.intro-ready .sign {
+	opacity: 0;
+	transition:
+		translate 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+		opacity 0.65s ease-out;
+}
+
+.intro-ready .blue {
+	translate: -18cqw 3cqw;
+	transition-delay: 80ms;
+}
+
+.intro-ready .organizers {
+	translate: 0 9cqw;
+	transition-delay: 260ms;
+}
+
+.intro-ready .green {
+	translate: 18cqw 3cqw;
+	transition-delay: 440ms;
+}
+
+.intro-ready.signs-visible .sign {
+	translate: 0 0;
+	opacity: 1;
+}
+
 .sign img {
 	display: block;
 	width: 100%;
@@ -156,4 +183,12 @@
 	margin-top: 0.35cqw;
 	font-size: 1.9cqw;
 	text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.intro-ready .sign {
+		translate: none;
+		opacity: 1;
+		transition: none;
+	}
 }

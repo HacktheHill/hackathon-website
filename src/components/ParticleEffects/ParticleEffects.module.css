@@ -1,0 +1,163 @@
+.effects {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	z-index: 0;
+	width: min(100vw, 3049px);
+	height: 100vh;
+	overflow: hidden;
+	pointer-events: none;
+	transform: translateX(-50%);
+	contain: layout paint style;
+}
+
+.field {
+	position: absolute;
+	inset: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		opacity 650ms ease,
+		visibility 0s linear 650ms;
+}
+
+.effects[data-mode="leaves"] .leaves,
+.effects[data-mode="snow"] .snow,
+.effects[data-mode="bubbles"] .bubbles {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+.particle {
+	position: absolute;
+	top: 0;
+	display: block;
+	height: auto;
+	max-width: none;
+	will-change: transform;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+}
+
+.effects[data-mode="leaves"] .leaves .particle,
+.effects[data-mode="snow"] .snow .particle,
+.effects[data-mode="bubbles"] .bubbles .particle {
+	animation-play-state: running;
+}
+
+.leaves .particle {
+	filter: drop-shadow(0 0.1rem 0.08rem rgb(54 5 6 / 12%));
+	transform-origin: 50% 18%;
+	animation-name: leaf-fall;
+}
+
+.snow .particle {
+	filter: drop-shadow(0 0 0.16rem rgb(255 255 255 / 35%));
+	animation-name: snow-fall;
+}
+
+.bubbles .particle {
+	filter: drop-shadow(0 0 0.14rem rgb(225 248 255 / 18%));
+	animation-name: bubble-rise;
+}
+
+@keyframes leaf-fall {
+	0% {
+		transform: translate3d(0, -18vh, 0) rotate(var(--particle-rotation-1));
+	}
+
+	22% {
+		transform: translate3d(var(--particle-x-1), 12vh, 0)
+			rotate(var(--particle-rotation-2));
+	}
+
+	48% {
+		transform: translate3d(var(--particle-x-2), 47vh, 0)
+			rotate(var(--particle-rotation-3));
+	}
+
+	74% {
+		transform: translate3d(var(--particle-x-3), 81vh, 0)
+			rotate(var(--particle-rotation-4));
+	}
+
+	100% {
+		transform: translate3d(var(--particle-x-4), 118vh, 0)
+			rotate(var(--particle-rotation-1));
+	}
+}
+
+@keyframes snow-fall {
+	0% {
+		transform: translate3d(0, -14vh, 0) rotate(0deg);
+	}
+
+	26% {
+		transform: translate3d(var(--particle-x-1), 19vh, 0)
+			rotate(var(--particle-rotation-1));
+	}
+
+	52% {
+		transform: translate3d(var(--particle-x-2), 51vh, 0)
+			rotate(var(--particle-rotation-2));
+	}
+
+	78% {
+		transform: translate3d(var(--particle-x-3), 84vh, 0)
+			rotate(var(--particle-rotation-3));
+	}
+
+	100% {
+		transform: translate3d(var(--particle-x-4), 116vh, 0)
+			rotate(var(--particle-rotation-4));
+	}
+}
+
+@keyframes bubble-rise {
+	0% {
+		transform: translate3d(0, 116vh, 0) scale(0.76) rotate(-5deg);
+		opacity: 0;
+	}
+
+	8% {
+		opacity: 1;
+	}
+
+	28% {
+		transform: translate3d(var(--particle-x-1), 82vh, 0) scale(0.86)
+			rotate(var(--particle-rotation-1));
+	}
+
+	54% {
+		transform: translate3d(var(--particle-x-2), 48vh, 0) scale(0.94)
+			rotate(var(--particle-rotation-2));
+	}
+
+	80% {
+		transform: translate3d(var(--particle-x-3), 13vh, 0) scale(1.02)
+			rotate(var(--particle-rotation-3));
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate3d(var(--particle-x-4), -18vh, 0) scale(1.08)
+			rotate(var(--particle-rotation-4));
+		opacity: 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.leaves .particle:nth-child(n + 10),
+	.snow .particle:nth-child(n + 21),
+	.bubbles .particle:nth-child(n + 14) {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.effects {
+		display: none;
+	}
+}

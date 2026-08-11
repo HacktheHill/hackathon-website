@@ -1,0 +1,114 @@
+{
+  "source": "Hack the Hill - Website Hero.psd",
+  "canvas": {
+    "width": 3049,
+    "height": 12301
+  },
+  "snowbanks": [
+    {
+      "file": "/art/sponsors/snowbank-1.webp",
+      "sourceLayerName": "Layer 18",
+      "size": "large",
+      "bbox": {
+        "x": 433,
+        "y": 7033,
+        "width": 850,
+        "height": 507
+      },
+      "exported": {
+        "width": 850,
+        "height": 507
+      }
+    },
+    {
+      "file": "/art/sponsors/snowbank-2.webp",
+      "sourceLayerName": "Layer 19",
+      "size": "large",
+      "bbox": {
+        "x": 1586,
+        "y": 7014,
+        "width": 916,
+        "height": 571
+      },
+      "exported": {
+        "width": 916,
+        "height": 571
+      }
+    },
+    {
+      "file": "/art/sponsors/snowbank-3.webp",
+      "sourceLayerName": "Layer 20",
+      "size": "large",
+      "bbox": {
+        "x": 375,
+        "y": 7620,
+        "width": 913,
+        "height": 560
+      },
+      "exported": {
+        "width": 913,
+        "height": 560
+      }
+    },
+    {
+      "file": "/art/sponsors/snowbank-4.webp",
+      "sourceLayerName": "Layer 21",
+      "size": "large",
+      "bbox": {
+        "x": 1489,
+        "y": 7653,
+        "width": 890,
+        "height": 501
+      },
+      "exported": {
+        "width": 890,
+        "height": 501
+      }
+    },
+    {
+      "file": "/art/sponsors/snowbank-5.webp",
+      "sourceLayerName": "Layer 22",
+      "size": "small",
+      "bbox": {
+        "x": 375,
+        "y": 8346,
+        "width": 465,
+        "height": 286
+      },
+      "exported": {
+        "width": 465,
+        "height": 286
+      }
+    },
+    {
+      "file": "/art/sponsors/snowbank-6.webp",
+      "sourceLayerName": "Layer 23",
+      "size": "small",
+      "bbox": {
+        "x": 1059,
+        "y": 8295,
+        "width": 567,
+        "height": 357
+      },
+      "exported": {
+        "width": 567,
+        "height": 357
+      }
+    },
+    {
+      "file": "/art/sponsors/snowbank-7.webp",
+      "sourceLayerName": "Layer 24",
+      "size": "small",
+      "bbox": {
+        "x": 1848,
+        "y": 8357,
+        "width": 483,
+        "height": 296
+      },
+      "exported": {
+        "width": 483,
+        "height": 296
+      }
+    }
+  ]
+}

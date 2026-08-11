@@ -1,5 +1,6 @@
 // Must run before any FontAwesome icon renders — disables runtime CSS injection.
 import "@/fontawesome";
+import { useEffect, useRef } from "react";
 import { t } from "@/i18n";
 import Navigation from "../Navigation/Navigation";
 import Hero from "../Hero/Hero";
@@ -9,6 +10,7 @@ import Testimonials from "../Testimonials/Testimonials";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
+import ParticleEffects from "../ParticleEffects/ParticleEffects";
 import "@/global.css";
 import styles from "./App.module.css";
 
@@ -31,19 +33,106 @@ const SCENE_LAYERS = [
 	{ name: "bush-1", x: 0, y: 1316, width: 3049 },
 	{ name: "bush-2", x: 0, y: 1443, width: 3049 },
 	{ name: "bush-3", x: 0, y: 3129, width: 3049 },
-	{ name: "bush-4", x: 0, y: 4868, width: 3049 },
-	{ name: "road", x: 0, y: 6289, width: 3049 },
-	{ name: "water", x: 0, y: 8704, width: 3049 },
-	{ name: "ice-1", x: 0, y: 6693, width: 3049 },
-	{ name: "ice-2", x: 0, y: 7919, width: 3049 },
+	{ name: "bush-4", x: 0, y: 4568, width: 3049 },
+	{ name: "road", x: 0, y: 5989, width: 3049 },
+	{ name: "water", x: 0, y: 8404, width: 3049 },
+	{ name: "ice-1", x: 0, y: 6393, width: 3049 },
+	{ name: "ice-2", x: 0, y: 7619, width: 3049 },
 	{ name: "logs", x: 1436, y: 2080, width: 1377 },
-	{ name: "footer-water", x: 374, y: 11610, width: 2675 },
-	{ name: "footer-water-2", x: 0, y: 11853, width: 3049 },
+	{ name: "footer-water", x: 374, y: 11310, width: 2675 },
+	{ name: "footer-water-2", x: 0, y: 11553, width: 3049 },
 ] as const;
 
 const percent = (value: number, total: number) => `${(value / total) * 100}%`;
 
+const HERO_PARALLAX_SPEEDS: Record<string, number> = {
+	sky: 0.008,
+	"cloud-1": 0.02,
+	"cloud-2": 0.024,
+	"cloud-3": 0.018,
+	"cloud-4": 0.016,
+	"cloud-5": 0.022,
+	"cloud-6": 0.026,
+	"hill-far": 0.06,
+	"hill-near": 0.075,
+	"parliament-tower": 0.045,
+	"parliament-roof": 0.04,
+	"parliament-towers": 0.035,
+	"bush-1": 0.025,
+	"bush-2": 0.018,
+};
+
 function App() {
+	const artworkRef = useRef<HTMLDivElement>(null);
+	const canvasRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const artwork = artworkRef.current;
+		const canvas = canvasRef.current;
+		if (!artwork || !canvas) return;
+
+		const layers = Array.from(
+			artwork.querySelectorAll<HTMLElement>("[data-parallax-speed]"),
+		).map(element => ({
+			element,
+			speed: Number(element.dataset.parallaxSpeed),
+		}));
+		const sections = Array.from(
+			canvas.querySelectorAll<HTMLElement>("[data-section-parallax]"),
+		).map(element => ({
+			element,
+			max: Number(element.dataset.parallaxMax),
+			speed: Number(element.dataset.sectionParallax),
+		}));
+		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+		let frame = 0;
+
+		const update = () => {
+			frame = 0;
+			if (motionQuery.matches) return;
+
+			const travel = Math.min(window.scrollY, window.innerHeight * 1.25);
+			layers.forEach(({ element, speed }) => {
+				element.style.translate = `0 ${travel * speed}px`;
+			});
+
+			sections.forEach(({ element, max, speed }) => {
+				const previousOffset = Number(element.dataset.parallaxOffset ?? 0);
+				const bounds = element.getBoundingClientRect();
+				const baseCenter = bounds.top - previousOffset + bounds.height / 2;
+				const distanceFromCenter = window.innerHeight / 2 - baseCenter;
+				const offset = Math.max(-max, Math.min(max, distanceFromCenter * speed));
+				element.dataset.parallaxOffset = String(offset);
+				element.style.translate = `0 ${offset}px`;
+			});
+		};
+
+		const resetMotion = () => {
+			if (motionQuery.matches) {
+				layers.forEach(({ element }) => element.style.removeProperty("translate"));
+				sections.forEach(({ element }) => {
+					element.style.removeProperty("translate");
+					element.dataset.parallaxOffset = "0";
+				});
+			} else {
+				update();
+			}
+		};
+		const handleScroll = () => {
+			if (!frame) frame = window.requestAnimationFrame(update);
+		};
+
+		update();
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		motionQuery.addEventListener("change", resetMotion);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			motionQuery.removeEventListener("change", resetMotion);
+			if (frame) window.cancelAnimationFrame(frame);
+		};
+	}, []);
+
 	return (
 		<>
 			<a className={styles["skip-link"]} href="#main-content">
@@ -52,10 +141,11 @@ function App() {
 			<Navigation />
 			<main id="main-content" tabIndex={-1}>
 				<div
+					ref={canvasRef}
 					className={styles.canvas}
 					style={{ aspectRatio: `${CANVAS_WIDTH} / ${CANVAS_HEIGHT}` }}
 				>
-					<div className={styles.artwork} aria-hidden="true">
+					<div ref={artworkRef} className={styles.artwork} aria-hidden="true">
 						{SCENE_LAYERS.map((layer, index) => (
 							<img
 								key={layer.name}
@@ -65,6 +155,7 @@ function App() {
 										: ""
 								}`}
 								data-scene-layer={layer.name}
+								data-parallax-speed={HERO_PARALLAX_SPEEDS[layer.name]}
 								src={`/art/scene/${layer.name}.webp`}
 								alt=""
 								decoding="async"
@@ -77,30 +168,59 @@ function App() {
 							/>
 						))}
 					</div>
-					<div className={styles["video-layer"]}>
+					<div
+						className={styles["video-layer"]}
+						data-section-parallax="0.024"
+						data-parallax-max="32"
+					>
 						<AboutVideo />
 					</div>
-					<div className={styles["stats-layer"]}>
+					<div
+						className={styles["stats-layer"]}
+						data-section-parallax="0.035"
+						data-parallax-max="42"
+					>
 						<Stats />
 					</div>
 
 					<div className={styles.content}>
+						<ParticleEffects />
 						<div className={`${styles.slot} ${styles["hero-slot"]}`}>
 							<Hero />
 						</div>
-						<div className={`${styles.slot} ${styles["about-slot"]}`}>
+						<div
+							className={`${styles.slot} ${styles["about-slot"]}`}
+							data-section-parallax="0.024"
+							data-parallax-max="32"
+						>
 							<About />
 						</div>
-						<div className={`${styles.slot} ${styles["testimonials-slot"]}`}>
+						<div
+							className={`${styles.slot} ${styles["testimonials-slot"]}`}
+							data-section-parallax="0.028"
+							data-parallax-max="36"
+						>
 							<Testimonials />
 						</div>
-						<div className={`${styles.slot} ${styles["sponsors-slot"]}`}>
+						<div
+							className={`${styles.slot} ${styles["sponsors-slot"]}`}
+							data-section-parallax="0.02"
+							data-parallax-max="30"
+						>
 							<Sponsors />
 						</div>
-						<div className={`${styles.slot} ${styles["faq-slot"]}`}>
+						<div
+							className={`${styles.slot} ${styles["faq-slot"]}`}
+							data-section-parallax="0.024"
+							data-parallax-max="34"
+						>
 							<FAQ />
 						</div>
-						<div className={`${styles.slot} ${styles["footer-slot"]}`}>
+						<div
+							className={`${styles.slot} ${styles["footer-slot"]}`}
+							data-section-parallax="0.016"
+							data-parallax-max="24"
+						>
 							<Footer />
 						</div>
 					</div>

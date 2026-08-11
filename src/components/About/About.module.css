@@ -28,7 +28,6 @@
 .frame {
 	flex: 1;
 	aspect-ratio: 16/9;
-	position: relative;
 	margin: auto 4rem;
 	pointer-events: none;
 }
@@ -40,57 +39,29 @@
 	border: 0;
 }
 
-.frame img {
-	position: absolute;
-}
-
-.frame img.left-leaves {
-	bottom: -5rem;
-	left: -4rem;
-}
-
-.frame img.right-leaves {
-	top: -5rem;
-	right: -4rem;
-}
-
 @media screen and (max-width: 1200px) {
 	.about {
-		flex-direction: column;
+		gap: 0.5rem;
 	}
 
 	.frame {
-		margin: 5rem;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.frame {
-		margin: 4rem 1rem;
-	}
-
-	.frame img.left-leaves,
-	.frame img.right-leaves {
-		display: none;
+		margin: auto 2rem;
 	}
 }
 
 @media screen and (max-width: 510px) {
 	.frame {
-		margin: 2rem 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		margin: auto 1rem;
 	}
 
 	.about-text p {
-		font-size: 1rem;
+		font-size: 1.15rem;
 	}
 }
 
 @media screen and (max-width: 400px) {
 	.frame {
-		margin: 1rem 0;
 		width: 100%;
+		margin: auto 0.5rem;
 	}
 }
