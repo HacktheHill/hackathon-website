@@ -1,3 +1,11 @@
+@font-face {
+	font-family: "Highway Gothic";
+	src: url("/fonts/highway-gothic/HWYGOTH.TTF") format("truetype");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
 :root {
 	--light-color: white;
 	--light-primary-color: #fff3b6;

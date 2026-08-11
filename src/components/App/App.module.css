@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0.75rem;
 	left: 0.75rem;
-	z-index: 1000;
+	z-index: 2000;
 	padding: 0.75rem 1rem;
 	border-radius: 0.5rem;
 	color: var(--light-primary-color);
@@ -15,33 +15,403 @@
 	transform: translateY(0);
 }
 
-.wrapper {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	gap: 3rem;
-	padding: 5rem 1rem 0;
-	background: linear-gradient(
-		180deg,
-		#640718 0%,
-		#800a1f 2.76%,
-		#8e0b23 5.53%,
-		#84010b 19.33%,
-		#8e0b23 24.35%,
-		#9c0e1f 29.97%,
-		#a91723 90.5%,
-		#5e0911 100%
-	);
+:global(#main-content) {
+	width: min(100%, 3049px);
+	margin-inline: auto;
+	background: #061238;
 }
 
-@media screen and (min-width: 768px) {
-	.wrapper {
-		padding: 5rem 5% 0;
+.canvas {
+	container-type: inline-size;
+	position: relative;
+	isolation: isolate;
+	width: 100%;
+	max-width: 3049px;
+	overflow: hidden;
+}
+
+.artwork {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	user-select: none;
+}
+
+.layer {
+	position: absolute;
+	display: block;
+	height: auto;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* The clouds are the first six layers above the sky, so every hill, tower and
+	foreground layer always paints over them. Clouds 1, 4 and 2 begin at their
+	Photoshop positions. All six then travel left-to-right in separate, slow
+	windows of one ten-minute cycle, keeping the sky populated without showing the
+	full cloud set together. */
+.scene-cloud {
+	opacity: 0;
+	will-change: transform, opacity;
+	animation-duration: 600s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.cloud-1 {
+	--cloud-end-x: 95%;
+	animation-name: scene-cloud-1;
+}
+
+.cloud-2 {
+	--cloud-end-x: 739.3%;
+	animation-name: scene-cloud-2;
+}
+
+.cloud-3 {
+	--cloud-start-x: -130%;
+	--cloud-end-x: 349.7%;
+	animation-name: scene-cloud-3;
+}
+
+.cloud-4 {
+	--cloud-end-x: 179.4%;
+	animation-name: scene-cloud-4;
+}
+
+.cloud-5 {
+	--cloud-start-x: -322.3%;
+	--cloud-end-x: 35.7%;
+	animation-name: scene-cloud-5;
+}
+
+.cloud-6 {
+	--cloud-start-x: -175.8%;
+	--cloud-end-x: 129%;
+	animation-name: scene-cloud-6;
+}
+
+@keyframes scene-cloud-1 {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+
+	30% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	32% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+
+	98% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
 	}
 }
 
-@media screen and (min-width: 2000px) {
-	.wrapper {
-		padding: 5rem 20% 0;
+@keyframes scene-cloud-2 {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+
+	23% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	25% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+
+	98% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+}
+
+@keyframes scene-cloud-4 {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+
+	43% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	45% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+
+	98% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+}
+
+@keyframes scene-cloud-3 {
+	0%,
+	20% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0;
+	}
+
+	22% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	70% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	72%,
+	100% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+}
+
+@keyframes scene-cloud-5 {
+	0%,
+	34% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0;
+	}
+
+	36% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	84% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	86%,
+	100% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+}
+
+@keyframes scene-cloud-6 {
+	0%,
+	53% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0;
+	}
+
+	55% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	96% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	98%,
+	100% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scene-cloud {
+		animation: none;
+		opacity: 0;
+	}
+
+	.cloud-1,
+	.cloud-2,
+	.cloud-4 {
+		transform: none;
+		opacity: 0.85;
+	}
+}
+
+.content {
+	position: absolute;
+	inset: 0;
+	z-index: 1000;
+}
+
+/* AOS calculates offsets from normal document flow. These sections are placed
+	inside the fixed-ratio artwork canvas, so keep their upstream content visible. */
+.content :global([data-aos]) {
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+.slot {
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.stats-layer {
+	position: absolute;
+	top: 31.7%;
+	left: 7%;
+	z-index: 155;
+	width: 86%;
+	pointer-events: none;
+}
+
+.video-layer {
+	position: absolute;
+	top: 18.088%;
+	left: 52.05%;
+	z-index: 205;
+	width: 34.73%;
+	aspect-ratio: 1059 / 571;
+}
+
+.hero-slot {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 16.3%;
+}
+
+.hero-slot :global(section#hero) {
+	height: 100%;
+	min-height: 0;
+	background: transparent;
+}
+
+.hero-slot :global([class*="hero-sky"]),
+.hero-slot :global([class*="hero-clouds"]),
+.hero-slot :global([class*="hero-hill-far"]),
+.hero-slot :global([class*="hero-hill-near"]) {
+	display: none;
+}
+
+.hero-slot :global([class*="hero-foreground"]) {
+	background-image: none !important;
+}
+
+.about-slot,
+.testimonials-slot,
+.sponsors-slot,
+.faq-slot {
+	left: 7%;
+	width: 86%;
+}
+
+.about-slot {
+	top: 16.6%;
+}
+
+.testimonials-slot {
+	top: 40%;
+}
+
+.sponsors-slot {
+	top: 59.5%;
+	padding: 2.5cqw;
+	border-radius: 1.5cqw;
+	background: rgba(7, 41, 105, 0.72);
+	transform: scale(0.38);
+	transform-origin: top center;
+}
+
+.faq-slot {
+	left: 12%;
+	top: 81.5%;
+	width: 76%;
+}
+
+.footer-slot {
+	left: 0;
+	bottom: 0.5%;
+	width: 100%;
+}
+
+@media (max-width: 1200px) {
+	.about-slot {
+		top: 16.3%;
+		transform: scale(0.82);
+		transform-origin: top center;
+	}
+
+	.testimonials-slot {
+		top: 40%;
+		transform: scale(0.76);
+		transform-origin: top center;
+	}
+
+	.sponsors-slot {
+		top: 58.5%;
+		transform: scale(0.34);
+	}
+
+	.faq-slot {
+		left: 10%;
+		top: 81%;
+		width: 80%;
+		transform: scale(0.85);
+		transform-origin: top center;
+	}
+}
+
+@media (max-width: 600px) {
+	.about-slot,
+	.testimonials-slot,
+	.sponsors-slot,
+	.faq-slot {
+		left: 4%;
+		width: 92%;
+	}
+
+	.about-slot {
+		top: 16%;
+		transform: scale(0.42);
+	}
+
+	.testimonials-slot {
+		top: 40%;
+		transform: scale(0.38);
+	}
+
+	.sponsors-slot {
+		top: 58.5%;
+		transform: scale(0.28);
+	}
+
+	.faq-slot {
+		left: 8%;
+		top: 80.5%;
+		transform: scale(0.42);
+		width: 84%;
 	}
 }

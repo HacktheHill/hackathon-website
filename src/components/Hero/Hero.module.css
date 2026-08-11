@@ -257,27 +257,25 @@
 	position: absolute;
 	z-index: 6;
 	top: 0;
-	/* Raise the centred column ~6vh: the foreground building grew taller, so the
-	   open sky band is no longer symmetric — lifting the bottom edge re-centres
-	   the text in the visible sky and keeps it clear of the rooftops. */
-	bottom: 12vh;
+	/* Lift the compact column into the open sky while keeping it beside the tower. */
+	bottom: 22vh;
 	/* Anchor just to the right of the tower so the column stays beside it on
 	   every width instead of hugging the far edge on ultra-wide screens. */
 	left: 47%;
 	right: auto;
-	width: min(50vw, 600px);
+	width: min(46vw, 540px);
 	display: grid;
 	align-content: center;
 	justify-items: start;
 	text-align: left;
-	gap: clamp(0.5rem, 1.5vh, 1.1rem);
+	gap: clamp(0.3rem, 0.7vh, 0.6rem);
 	/* The column is a tall, mostly-empty box that overlaps the parliament. Keep
 	   it transparent to clicks/hover so it doesn't sit "in front of" the tower
 	   and block the clock-tower hotspot. */
 	pointer-events: none;
 	/* Drives both the wordmark and the "III" edition mark so they stay in
 	   proportion; the bars are derived from this (see .edition). */
-	--logo-w: clamp(200px, 30vw, 430px);
+	--logo-w: clamp(180px, 27vw, 380px);
 }
 
 .hero-eyebrow {
@@ -285,7 +283,7 @@
 	color: var(--hero-eyebrow);
 	font-family: Coolvetica, Rubik, sans-serif;
 	font-weight: 700;
-	font-size: clamp(0.95rem, 2.1vmin, 1.45rem);
+	font-size: clamp(0.85rem, 1.8vmin, 1.2rem);
 	letter-spacing: 0.01em;
 	text-shadow: 0 1px 6px rgba(251, 236, 183, 0.7);
 }
@@ -293,7 +291,7 @@
 .hero-wordmark {
 	display: flex;
 	align-items: flex-end;
-	gap: clamp(0.5rem, 1.4vw, 1rem);
+	gap: clamp(0.35rem, 1vw, 0.7rem);
 	margin: 0;
 }
 
@@ -328,7 +326,7 @@
 	color: var(--hero-heading);
 	font-family: Coolvetica;
 	font-weight: 500;
-	font-size: clamp(1rem, 3.2vmin, 1.6rem);
+	font-size: clamp(0.9rem, 2.6vmin, 1.35rem);
 	text-shadow: 0 1px 8px rgba(251, 236, 183, 0.7);
 }
 
@@ -336,10 +334,10 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.75rem 1.25rem;
-	border-radius: 1rem;
+	padding: 0.6rem 1rem;
+	border-radius: 0.8rem;
 	font-family: Coolvetica, Rubik, sans-serif;
-	font-size: 1.125rem;
+	font-size: 1rem;
 	text-decoration: none;
 	color: var(--light-color);
 	background-color: var(--dark-primary-color);
@@ -455,14 +453,14 @@
 	/* Stack the text in the upper sky band; the tower sits below-left. The
 	   edition bars track --logo-w, so retuning it here resizes them too. */
 	.hero-heading {
-		top: clamp(4.5rem, 13vh, 7rem);
+		top: clamp(4rem, 11vh, 6.25rem);
 		bottom: auto;
 		right: auto;
 		left: clamp(1.25rem, 6vw, 2rem);
 		width: min(84vw, 460px);
 		align-content: start;
-		gap: clamp(0.45rem, 1.2vh, 0.9rem);
-		--logo-w: clamp(180px, 56vw, 300px);
+		gap: clamp(0.3rem, 0.8vh, 0.6rem);
+		--logo-w: clamp(165px, 52vw, 270px);
 	}
 
 	.countdown-dialog {
@@ -526,7 +524,7 @@
 
 	.hero-heading {
 		top: 0;
-		bottom: 4vh;
+		bottom: 8vh;
 		left: 46%;
 		width: 52%;
 		gap: clamp(0.2rem, 1vh, 0.45rem);

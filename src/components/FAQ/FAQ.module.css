@@ -17,6 +17,10 @@
 	position: relative;
 }
 
+.header :global(.section-heading) {
+	font-size: 2.6rem;
+}
+
 .faq-img {
 	position: absolute;
 	right: 0;
@@ -27,7 +31,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	align-items: start;
-	gap: clamp(1rem, 3vw, 3rem);
+	gap: clamp(1rem, 2vw, 2rem);
 	min-width: 0;
 }
 
@@ -39,7 +43,7 @@
 .answer {
 	color: var(--text-color);
 	font-family: Rubik;
-	font-size: 1.2rem;
+	font-size: 1.05rem;
 	font-weight: 600;
 }
 

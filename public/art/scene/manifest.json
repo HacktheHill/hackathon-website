@@ -1,0 +1,616 @@
+{
+  "source": "Hack the Hill - Website Hero.psd",
+  "sourceSha256": "463b09eaabaef7326a6d2c719468b1781dac4e579a5494e7c0f0c91d92ec4558",
+  "exportedAt": "2026-08-11T04:58:07.631591+00:00",
+  "canvas": {
+    "width": 3049,
+    "height": 12301
+  },
+  "format": "WebP lossless RGBA",
+  "exportScale": 1,
+  "layerCount": 23,
+  "stackOrderBottomToTop": [
+    "sky",
+    "hill-near",
+    "hill-far",
+    "cloud-5",
+    "cloud-2",
+    "cloud-3",
+    "cloud-6",
+    "cloud-1",
+    "cloud-4",
+    "parliament-tower",
+    "parliament-roof",
+    "parliament-towers",
+    "bush-1",
+    "bush-2",
+    "bush-3",
+    "bush-4",
+    "road",
+    "water",
+    "ice-1",
+    "ice-2",
+    "logs",
+    "footer-water",
+    "footer-water-2"
+  ],
+  "stackOrder": [
+    "sky",
+    "hill-near",
+    "hill-far",
+    "cloud-5",
+    "cloud-2",
+    "cloud-3",
+    "cloud-6",
+    "cloud-1",
+    "cloud-4",
+    "parliament-tower",
+    "parliament-roof",
+    "parliament-towers",
+    "bush-1",
+    "bush-2",
+    "bush-3",
+    "bush-4",
+    "road",
+    "water",
+    "ice-1",
+    "ice-2",
+    "logs",
+    "footer-water",
+    "footer-water-2"
+  ],
+  "layers": {
+    "sky": {
+      "file": "/art/scene/sky.webp",
+      "sourceLayerName": "background",
+      "sourceLayerPath": [
+        "Hero",
+        "background"
+      ],
+      "photoshopIndexPath": [
+        0,
+        0
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 3049,
+        "height": 2005
+      },
+      "exported": {
+        "width": 3049,
+        "height": 2005
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "hill-near": {
+      "file": "/art/scene/hill-near.webp",
+      "sourceLayerName": "bhill",
+      "sourceLayerPath": [
+        "Hero",
+        "bhill"
+      ],
+      "photoshopIndexPath": [
+        0,
+        1
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 680,
+        "width": 3049,
+        "height": 1143
+      },
+      "exported": {
+        "width": 3049,
+        "height": 1143
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "hill-far": {
+      "file": "/art/scene/hill-far.webp",
+      "sourceLayerName": "bhiill2",
+      "sourceLayerPath": [
+        "Hero",
+        "bhiill2"
+      ],
+      "photoshopIndexPath": [
+        0,
+        2
+      ],
+      "bbox": {
+        "x": 1483,
+        "y": 821,
+        "width": 1566,
+        "height": 670
+      },
+      "exported": {
+        "width": 1566,
+        "height": 670
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "cloud-5": {
+      "file": "/art/scene/cloud-5.webp",
+      "sourceLayerName": "cloud5",
+      "sourceLayerPath": [
+        "Hero",
+        "cloud5"
+      ],
+      "photoshopIndexPath": [
+        0,
+        3
+      ],
+      "bbox": {
+        "x": 2627,
+        "y": 434,
+        "width": 1182,
+        "height": 640
+      },
+      "exported": {
+        "width": 1182,
+        "height": 640
+      },
+      "visible": true,
+      "opacity": 224
+    },
+    "cloud-2": {
+      "file": "/art/scene/cloud-2.webp",
+      "sourceLayerName": "cloud2",
+      "sourceLayerPath": [
+        "Hero",
+        "cloud2"
+      ],
+      "photoshopIndexPath": [
+        0,
+        4
+      ],
+      "bbox": {
+        "x": -167,
+        "y": 544,
+        "width": 435,
+        "height": 290
+      },
+      "exported": {
+        "width": 435,
+        "height": 290
+      },
+      "visible": true,
+      "opacity": 209
+    },
+    "cloud-3": {
+      "file": "/art/scene/cloud-3.webp",
+      "sourceLayerName": "cloud3",
+      "sourceLayerPath": [
+        "Hero",
+        "cloud3"
+      ],
+      "photoshopIndexPath": [
+        0,
+        5
+      ],
+      "bbox": {
+        "x": 241,
+        "y": 274,
+        "width": 803,
+        "height": 403
+      },
+      "exported": {
+        "width": 803,
+        "height": 403
+      },
+      "visible": true,
+      "opacity": 224
+    },
+    "cloud-6": {
+      "file": "/art/scene/cloud-6.webp",
+      "sourceLayerName": "cloud6",
+      "sourceLayerPath": [
+        "Hero",
+        "cloud6"
+      ],
+      "photoshopIndexPath": [
+        0,
+        6
+      ],
+      "bbox": {
+        "x": 1128,
+        "y": 430,
+        "width": 1489,
+        "height": 829
+      },
+      "exported": {
+        "width": 1489,
+        "height": 829
+      },
+      "visible": true,
+      "opacity": 199
+    },
+    "cloud-1": {
+      "file": "/art/scene/cloud-1.webp",
+      "sourceLayerName": "cloud1",
+      "sourceLayerPath": [
+        "Hero",
+        "cloud1"
+      ],
+      "photoshopIndexPath": [
+        0,
+        7
+      ],
+      "bbox": {
+        "x": 976,
+        "y": -315,
+        "width": 2182,
+        "height": 1069
+      },
+      "exported": {
+        "width": 2182,
+        "height": 1069
+      },
+      "visible": true,
+      "opacity": 224
+    },
+    "cloud-4": {
+      "file": "/art/scene/cloud-4.webp",
+      "sourceLayerName": "cloud4",
+      "sourceLayerPath": [
+        "Hero",
+        "cloud4"
+      ],
+      "photoshopIndexPath": [
+        0,
+        8
+      ],
+      "bbox": {
+        "x": -331,
+        "y": -142,
+        "width": 1884,
+        "height": 632
+      },
+      "exported": {
+        "width": 1884,
+        "height": 632
+      },
+      "visible": true,
+      "opacity": 224
+    },
+    "parliament-tower": {
+      "file": "/art/scene/parliament-tower.webp",
+      "sourceLayerName": "Parl-Tower",
+      "sourceLayerPath": [
+        "Hero",
+        "Parl-Tower"
+      ],
+      "photoshopIndexPath": [
+        0,
+        9
+      ],
+      "bbox": {
+        "x": 907,
+        "y": 253,
+        "width": 394,
+        "height": 1392
+      },
+      "exported": {
+        "width": 394,
+        "height": 1392
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "parliament-roof": {
+      "file": "/art/scene/parliament-roof.webp",
+      "sourceLayerName": "Parl-Roof-markers",
+      "sourceLayerPath": [
+        "Hero",
+        "Parl-Roof-markers"
+      ],
+      "photoshopIndexPath": [
+        0,
+        10
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 980,
+        "width": 3049,
+        "height": 846
+      },
+      "exported": {
+        "width": 3049,
+        "height": 846
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "parliament-towers": {
+      "file": "/art/scene/parliament-towers.webp",
+      "sourceLayerName": "texture",
+      "sourceLayerPath": [
+        "Hero",
+        "texture"
+      ],
+      "photoshopIndexPath": [
+        0,
+        11
+      ],
+      "bbox": {
+        "x": 364,
+        "y": 834,
+        "width": 2431,
+        "height": 1270
+      },
+      "exported": {
+        "width": 2431,
+        "height": 1270
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "bush-1": {
+      "file": "/art/scene/bush-1.webp",
+      "sourceLayerName": "bush1",
+      "sourceLayerPath": [
+        "Hero",
+        "bush1"
+      ],
+      "photoshopIndexPath": [
+        0,
+        12
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 1316,
+        "width": 3049,
+        "height": 1581
+      },
+      "exported": {
+        "width": 3049,
+        "height": 1581
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "bush-2": {
+      "file": "/art/scene/bush-2.webp",
+      "sourceLayerName": "bush2",
+      "sourceLayerPath": [
+        "Hero",
+        "bush2"
+      ],
+      "photoshopIndexPath": [
+        0,
+        13
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 1443,
+        "width": 3049,
+        "height": 3216
+      },
+      "exported": {
+        "width": 3049,
+        "height": 3216
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "bush-3": {
+      "file": "/art/scene/bush-3.webp",
+      "sourceLayerName": "bush3",
+      "sourceLayerPath": [
+        "Hero",
+        "bush3"
+      ],
+      "photoshopIndexPath": [
+        0,
+        14
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 3129,
+        "width": 3049,
+        "height": 2870
+      },
+      "exported": {
+        "width": 3049,
+        "height": 2870
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "bush-4": {
+      "file": "/art/scene/bush-4.webp",
+      "sourceLayerName": "bush4",
+      "sourceLayerPath": [
+        "Hero",
+        "bush4"
+      ],
+      "photoshopIndexPath": [
+        0,
+        15
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 4868,
+        "width": 3049,
+        "height": 2018
+      },
+      "exported": {
+        "width": 3049,
+        "height": 2018
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "road": {
+      "file": "/art/scene/road.webp",
+      "sourceLayerName": "road",
+      "sourceLayerPath": [
+        "Hero",
+        "road"
+      ],
+      "photoshopIndexPath": [
+        0,
+        16
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 6289,
+        "width": 3049,
+        "height": 814
+      },
+      "exported": {
+        "width": 3049,
+        "height": 814
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "water": {
+      "file": "/art/scene/water.webp",
+      "sourceLayerName": "water",
+      "sourceLayerPath": [
+        "Hero",
+        "water"
+      ],
+      "photoshopIndexPath": [
+        0,
+        17
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 8704,
+        "width": 3049,
+        "height": 3597
+      },
+      "exported": {
+        "width": 3049,
+        "height": 3597
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "ice-1": {
+      "file": "/art/scene/ice-1.webp",
+      "sourceLayerName": "ice2",
+      "sourceLayerPath": [
+        "Hero",
+        "ice2"
+      ],
+      "photoshopIndexPath": [
+        0,
+        18
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 6693,
+        "width": 3049,
+        "height": 3153
+      },
+      "exported": {
+        "width": 3049,
+        "height": 3153
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "ice-2": {
+      "file": "/art/scene/ice-2.webp",
+      "sourceLayerName": "ice",
+      "sourceLayerPath": [
+        "Hero",
+        "ice"
+      ],
+      "photoshopIndexPath": [
+        0,
+        19
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 7919,
+        "width": 3049,
+        "height": 1926
+      },
+      "exported": {
+        "width": 3049,
+        "height": 1926
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "logs": {
+      "file": "/art/scene/logs.webp",
+      "sourceLayerName": "logs",
+      "sourceLayerPath": [
+        "Hero",
+        "logs"
+      ],
+      "photoshopIndexPath": [
+        0,
+        20
+      ],
+      "bbox": {
+        "x": 1436,
+        "y": 2080,
+        "width": 1377,
+        "height": 900
+      },
+      "exported": {
+        "width": 1377,
+        "height": 900
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "footer-water": {
+      "file": "/art/scene/footer-water.webp",
+      "sourceLayerName": "footerwater",
+      "sourceLayerPath": [
+        "Hero",
+        "footerwater"
+      ],
+      "photoshopIndexPath": [
+        0,
+        21
+      ],
+      "bbox": {
+        "x": 374,
+        "y": 11310,
+        "width": 2675,
+        "height": 991
+      },
+      "exported": {
+        "width": 2675,
+        "height": 991
+      },
+      "visible": true,
+      "opacity": 255
+    },
+    "footer-water-2": {
+      "file": "/art/scene/footer-water-2.webp",
+      "sourceLayerName": "footerwater",
+      "sourceLayerPath": [
+        "Hero",
+        "footerwater"
+      ],
+      "photoshopIndexPath": [
+        0,
+        22
+      ],
+      "bbox": {
+        "x": 0,
+        "y": 11553,
+        "width": 3049,
+        "height": 748
+      },
+      "exported": {
+        "width": 3049,
+        "height": 748
+      },
+      "visible": true,
+      "opacity": 255
+    }
+  }
+}

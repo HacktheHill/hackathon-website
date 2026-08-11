@@ -74,7 +74,6 @@ function Footer() {
 
 	return (
 		<footer className={styles.footer}>
-			<hr className={styles["divider"]} />
 			<div className={styles["media-links"]}>
 				<a
 					href="https://www.facebook.com/canadascapitalhackathon"
