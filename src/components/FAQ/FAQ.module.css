@@ -47,6 +47,10 @@
 	font-weight: 600;
 }
 
+.answer a {
+	color: inherit;
+}
+
 @media screen and (max-width: 600px) {
 	.header {
 		text-align: center;

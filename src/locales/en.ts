@@ -269,6 +269,10 @@ export default {
 
 		q11: "Will transportation or travel reimbursements be provided?",
 		a11: "We are not able to offer buses or travel reimbursements this year. We encourage participants to coordinate carpools or make their own travel arrangements to get to the event.",
+
+		q12: "Is there a code of conduct?",
+		a12: "Yes there is. We as organizers care deeply about everyone's experience and safety. Find the code of conduct",
+		a12_link: "here",
 	},
 	team: {
 		title: "Meet the Team!",

@@ -80,13 +80,28 @@ function Navbar({ pageScroll, sidebarOpen, setSidebarOpen, menuButtonRef, scroll
 					{languageCode}
 				</button>
 				<a
+					id="mlh-trust-badge"
+					className={style["mlh-trust-badge"]}
+					href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=gray"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<img
+						src="https://logged-assets.s3.amazonaws.com/trust-badge/2027/mlh-trust-badge-2027-red.svg"
+						alt="Major League Hacking 2026 Hackathon Season"
+					/>
+				</a>
+				<a
 					className={style["square-button"]}
 					href="https://2024.hackthehill.com"
 					target="_blank"
 					rel="noreferrer"
 					aria-label={`HtH II: ${t("navbar.past_site_label")}`}
 				>
-					HtH II
+					<span className={style["past-site-label"]}>HtH II</span>
+					<span className={style["past-site-label-short"]} aria-hidden="true">
+						II
+					</span>
 				</a>
 			</div>
 

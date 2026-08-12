@@ -81,6 +81,20 @@
 	gap: 1rem;
 }
 
+.mlh-trust-badge {
+	align-self: flex-start;
+	display: block;
+	flex: 0 0 clamp(60px, 10vw, 100px);
+	width: clamp(60px, 10vw, 100px);
+	z-index: 10000;
+}
+
+.mlh-trust-badge img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .square-button {
 	display: flex;
 	align-items: center;
@@ -101,6 +115,10 @@
 
 .square-button:hover {
 	border: 3px solid var(--link-color);
+}
+
+.past-site-label-short {
+	display: none;
 }
 
 .sidebar-icon {
@@ -144,17 +162,29 @@
 }
 
 @media (max-width: 375px) {
-	.navbar ul.left-side-buttons {
-		margin: 0;
-		margin-right: auto;
-		gap: 0;
+	.navbar {
+		gap: 0.3rem;
 	}
 
-	.left-side-buttons {
+	.navbar .left-side-buttons {
 		gap: 0.3rem;
 	}
 
 	.square-button {
 		padding: 0.3rem;
+	}
+}
+
+@media (max-width: 340px) {
+	.navbar {
+		padding-right: 0.3rem;
+	}
+
+	.past-site-label {
+		display: none;
+	}
+
+	.past-site-label-short {
+		display: inline;
 	}
 }

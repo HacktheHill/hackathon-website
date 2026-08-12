@@ -4,6 +4,9 @@ import faq from "@/assets/faq-leaves.svg?raw";
 import { t } from "@/i18n";
 import styles from "./FAQ.module.css";
 
+const CODE_OF_CONDUCT_URL =
+	"https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md";
+
 export default function FAQ() {
 	const [expandedList, setExpandedList] = useState<string[]>([]);
 
@@ -66,6 +69,19 @@ export default function FAQ() {
 			q: t("faq.q11"),
 			a: t("faq.a11"),
 			key: "10",
+		},
+		{
+			q: t("faq.q12"),
+			a: (
+				<>
+					{t("faq.a12")}{" "}
+					<a href={CODE_OF_CONDUCT_URL} target="_blank" rel="noreferrer">
+						{t("faq.a12_link")}
+					</a>
+					.
+				</>
+			),
+			key: "11",
 		},
 	];
 	const renderAccordions = (items: typeof quesAns) =>
