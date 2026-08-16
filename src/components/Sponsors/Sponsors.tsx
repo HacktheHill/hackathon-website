@@ -175,6 +175,8 @@ function Sponsors() {
 								src={SNOWBANKS[index < 4 ? index : 4 + ((index - 4) % 3)]}
 								alt=""
 								aria-hidden="true"
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
 								className={`${styles.icon} ${styles[`icon-${sponsor.size}`]} ${
@@ -184,6 +186,8 @@ function Sponsors() {
 								}`}
 								alt={`${sponsor.alt} logo`}
 								src={sponsor.src}
+								loading="lazy"
+								decoding="async"
 							/>
 						</a>
 					))}
@@ -217,6 +221,8 @@ function Sponsors() {
 								className={`${styles["icon"]} ${styles["icon-medium"]}`}
 								alt={`${sponsor.alt} logo`}
 								src={sponsor.src}
+								loading="lazy"
+								decoding="async"
 							></img>
 						</a>
 					))}

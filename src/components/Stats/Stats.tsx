@@ -46,7 +46,15 @@ function Stats() {
 
 			<div className={styles.signs}>
 				<div className={`${styles.sign} ${styles.blue}`}>
-					<img src="/art/scene/stats-sign-blue.webp" alt="" aria-hidden="true" />
+					<img
+						src="/art/scene/stats-sign-blue.webp"
+						alt=""
+						aria-hidden="true"
+						width="1031"
+						height="1077"
+						loading="lazy"
+						decoding="async"
+					/>
 					<div className={`${styles.copy} ${styles["blue-copy"]}`}>
 						<div className={styles["blue-row"]}>
 							<strong>{t("stats.p1")}</strong>
@@ -60,7 +68,15 @@ function Stats() {
 				</div>
 
 				<div className={`${styles.sign} ${styles.organizers}`}>
-					<img src="/art/scene/stats-sign-organizers.webp" alt="" aria-hidden="true" />
+					<img
+						src="/art/scene/stats-sign-organizers.webp"
+						alt=""
+						aria-hidden="true"
+						width="372"
+						height="835"
+						loading="lazy"
+						decoding="async"
+					/>
 					<div className={`${styles.copy} ${styles["organizers-copy"]}`}>
 						<strong>{t("stats.p5")}</strong>
 						<span>{t("stats.p5tag")}</span>
@@ -68,7 +84,15 @@ function Stats() {
 				</div>
 
 				<div className={`${styles.sign} ${styles.green}`}>
-					<img src="/art/scene/stats-sign-green.webp" alt="" aria-hidden="true" />
+					<img
+						src="/art/scene/stats-sign-green.webp"
+						alt=""
+						aria-hidden="true"
+						width="918"
+						height="961"
+						loading="lazy"
+						decoding="async"
+					/>
 					<div className={`${styles.copy} ${styles["green-copy"]}`}>
 						<div className={styles["green-top"]}>
 							<strong>{t("stats.p3")}</strong>

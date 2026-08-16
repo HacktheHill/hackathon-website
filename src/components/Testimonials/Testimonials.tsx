@@ -117,6 +117,8 @@ function Testimonials() {
 							className={styles["testimonial-img"]}
 							src={testimonialData[index].img}
 							alt={testimonialData[index].name}
+							loading="lazy"
+							decoding="async"
 						/>
 						<div className={styles["testimonial-text"]}>
 							<p className={styles["testimonial-content"]}>{testimonialData[index].content}</p>
