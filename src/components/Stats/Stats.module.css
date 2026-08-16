@@ -192,3 +192,92 @@
 		transition: none;
 	}
 }
+
+@media (max-width: 900px) {
+	.signs {
+		position: relative;
+	}
+
+	.signs::after {
+		position: absolute;
+		right: -1.25rem;
+		left: -1.25rem;
+		z-index: 2;
+		background: url("/art/scene/bush-4.webp") center top / 100% auto no-repeat;
+		content: "";
+		pointer-events: none;
+	}
+
+	.sign {
+		z-index: 1;
+	}
+}
+
+@media (max-width: 600px) {
+	.title {
+		width: 100%;
+		margin: 0 0 2rem;
+		font-family: Rubik, sans-serif;
+		font-size: clamp(2rem, 9vw, 2.75rem);
+		font-weight: 500;
+	}
+
+	.signs {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.38fr) minmax(0, 0.9fr);
+		align-items: end;
+		gap: 0.25rem;
+	}
+
+	.signs::after {
+		bottom: -2.25rem;
+		height: clamp(5rem, 26vw, 7rem);
+	}
+
+	.blue,
+	.organizers,
+	.green {
+		width: 100%;
+	}
+
+	.blue-row strong {
+		font-size: clamp(0.7rem, 3vw, 1rem);
+	}
+
+	.blue-row span {
+		font-size: clamp(0.58rem, 2.55vw, 0.875rem);
+	}
+
+	.organizers-copy strong {
+		font-size: clamp(1.35rem, 6.5vw, 2rem);
+	}
+
+	.organizers-copy span {
+		margin-top: 0.1rem;
+		font-size: clamp(0.35rem, 1.55vw, 0.5rem);
+	}
+
+	.green-top strong {
+		font-size: clamp(0.78rem, 3.4vw, 1.1rem);
+	}
+
+	.green-top span {
+		font-size: clamp(0.65rem, 2.8vw, 0.95rem);
+	}
+
+	.green-bottom strong {
+		font-size: clamp(0.68rem, 2.9vw, 1rem);
+	}
+
+	.green-bottom span {
+		margin-top: 0.1rem;
+		font-size: clamp(0.48rem, 2.05vw, 0.7rem);
+	}
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+	.signs::after {
+		bottom: -3rem;
+		height: clamp(8rem, 23vw, 11rem);
+	}
+}
