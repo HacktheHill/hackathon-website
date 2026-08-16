@@ -1,20 +1,8 @@
 export default {
 	navbar: {
-		links: {
-			about: "À propos",
-			winners: "Gagnants",
-			sponsors: "Anciens commanditaires",
-			collaborators: "Anciens collaborateurs",
-			faq: "FAQ",
-			testimonials: "Témoignages",
-		},
 		aria_label: "Navigation principale",
-		mobile_aria_label: "Navigation mobile",
 		home_label: "Accueil de Hack the Hill",
 		language_switch: "Afficher ce site en anglais",
-		past_site_label: "Ouvrir le site Web de Hack the Hill II",
-		menu_open: "Ouvrir le menu de navigation",
-		menu_close: "Fermer le menu de navigation",
 		skip_to_content: "Passer au contenu principal",
 	},
 	hero: {
