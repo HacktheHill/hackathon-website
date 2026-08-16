@@ -168,6 +168,12 @@
 
 }
 
+@media screen and (max-width: 900px) {
+	.testimonials {
+		transform: none;
+	}
+}
+
 @media screen and (max-width: 510px) {
 	.testimonials {
 		transform: translateY(5rem);

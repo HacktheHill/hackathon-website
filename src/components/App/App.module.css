@@ -393,75 +393,100 @@
 	}
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-	.about-slot,
-	.testimonials-slot,
-	.sponsors-slot {
-		left: -5%;
-		width: 110%;
+@media (max-width: 900px) {
+	.canvas {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		aspect-ratio: auto !important;
+		overflow: clip;
+		background: #061238;
 	}
 
-	.testimonials-slot {
-		transform: scale(0.74);
+	.artwork {
+		display: none;
 	}
 
-	.sponsors-slot {
-		transform: scale(0.64);
+	.content {
+		display: contents;
 	}
 
-	.faq-slot {
-		left: 0;
-		top: 81%;
+	.slot,
+	.stats-layer,
+	.video-layer {
+		position: relative;
+		inset: auto;
+		box-sizing: border-box;
 		width: 100%;
-		transform: scale(0.82);
+		transform: none;
+		translate: none !important;
 	}
-}
 
-@media (max-width: 600px) {
-	.about-slot,
-	.testimonials-slot,
-	.sponsors-slot {
-		left: -25%;
-		width: 150%;
+	.hero-slot {
+		grid-row: 1;
+		height: auto;
+	}
+
+	.hero-slot :global(section#hero) {
+		height: auto;
+		min-height: 100svh;
+	}
+
+	.hero-slot :global([class*="hero-sky"]),
+	.hero-slot :global([class*="hero-clouds"]),
+	.hero-slot :global([class*="hero-hill-far"]),
+	.hero-slot :global([class*="hero-hill-near"]) {
+		display: block;
+	}
+
+	.hero-slot :global([class*="hero-foreground"]) {
+		background-image: url("../../assets/Hero/foreground.webp") !important;
 	}
 
 	.about-slot {
-		top: 15.9%;
-		transform: scale(0.62);
+		grid-row: 2;
+		padding: 5rem 1.25rem 2.5rem;
+		background: linear-gradient(180deg, #2a0709, #4b0d10);
+		pointer-events: auto;
+	}
+
+	.video-layer {
+		grid-row: 3;
+		width: calc(100% - 2.5rem);
+		margin: 0 1.25rem;
+		padding: 8% 9% 10%;
+		aspect-ratio: 1377 / 900;
+		background: url("/art/scene/logs.webp") center / contain no-repeat #4b0d10;
+		box-shadow: 0 0 0 1.25rem #4b0d10;
+	}
+
+	.stats-layer {
+		grid-row: 4;
+		padding: 4rem 1.25rem 1.5rem;
+		background: linear-gradient(180deg, #741416, #d64922 70%, #e66b2e);
+		pointer-events: auto;
 	}
 
 	.testimonials-slot {
-		top: 36.2%;
-		transform: scale(0.58);
+		grid-row: 5;
+		padding: 2.5rem 1rem 5rem;
+		background: linear-gradient(180deg, #e66b2e, #d95025 75%, #111724);
 	}
 
 	.sponsors-slot {
-		top: 54.8%;
-		transform: scale(0.56);
+		grid-row: 6;
+		padding: 5rem 1rem;
+		background: linear-gradient(180deg, #c9f2ef, #72d2ca 82%, #173789);
 	}
 
 	.faq-slot {
-		left: -20%;
-		top: 77.2%;
-		transform: scale(0.68);
-		width: 140%;
-	}
-}
-
-@media (max-width: 380px) {
-	.about-slot {
-		transform: scale(0.58);
+		grid-row: 7;
+		padding: 5rem 1.25rem 10rem;
+		background: linear-gradient(180deg, #173789, #0d225f 70%, #07153e);
 	}
 
-	.testimonials-slot {
-		transform: scale(0.54);
-	}
-
-	.sponsors-slot {
-		transform: scale(0.52);
-	}
-
-	.faq-slot {
-		transform: scale(0.62);
+	.footer-slot {
+		grid-row: 8;
+		padding: 4rem 0 5rem;
+		background: #061238;
 	}
 }

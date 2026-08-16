@@ -198,6 +198,13 @@
 		border-color: var(--light-primary-color);
 		box-shadow: 0 0 0 3px rgba(255, 243, 182, 0.22);
 	}
+
+	.media-links a {
+		align-items: center;
+		justify-content: center;
+		width: 2.75rem;
+		height: 2.75rem;
+	}
 }
 
 @media (forced-colors: active) {
