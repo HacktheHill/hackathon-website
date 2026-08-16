@@ -283,6 +283,9 @@ function Hero() {
 						onPointerEnter={(event) => {
 							if (event.pointerType !== "touch") setPopupOpen(true);
 						}}
+						onPointerLeave={(event) => {
+							if (event.pointerType !== "touch") setPopupOpen(false);
+						}}
 						onPointerDown={(event) => event.stopPropagation()}
 						onClick={(event) => {
 							event.stopPropagation();
