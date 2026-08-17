@@ -469,13 +469,13 @@
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
-		background: linear-gradient(180deg, #e66b2e 3rem, #d95025 75%, #111724);
+		background: linear-gradient(180deg, #e66b2e 3rem, #d95025 75%);
 	}
 
 	.sponsors-slot {
 		grid-row: 6;
 		padding: 5rem 1rem;
-		background: linear-gradient(180deg, #111724, #c9f2ef 4.5rem, #72d2ca 82%, #173789);
+		background: linear-gradient(180deg, #d95025, #c9f2ef 4.5rem, #72d2ca 82%, #173789);
 	}
 
 	.faq-slot {
