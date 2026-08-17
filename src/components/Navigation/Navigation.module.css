@@ -1,8 +1,9 @@
 .navigation {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 100;
 	width: 100%;
+	pointer-events: none;
 	overflow-x: clip;
 }

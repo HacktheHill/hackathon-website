@@ -1,8 +1,18 @@
 export default {
 	navbar: {
+		links: {
+			about: "About",
+			testimonials: "Testimonials",
+			sponsors: "Past Sponsors",
+			collaborators: "Past Collaborators",
+			faq: "FAQ",
+		},
 		aria_label: "Primary navigation",
+		mobile_aria_label: "Mobile navigation",
 		home_label: "Hack the Hill home",
 		language_switch: "View this site in French",
+		menu_open: "Open navigation menu",
+		menu_close: "Close navigation menu",
 		skip_to_content: "Skip to main content",
 	},
 	hero: {

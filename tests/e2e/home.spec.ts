@@ -66,16 +66,25 @@ test("mobile hero copy clears navigation and stays in view", async ({ page }) =>
 	expect(apply!.x + apply!.width).toBeLessThanOrEqual(390);
 });
 
-test("navbar scrolls with the document", async ({ page }) => {
+test("navbar hides while scrolling down and returns on scroll up without the MLH badge", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
 	const navbar = page.locator("nav").first();
-	const initialBox = await navbar.boundingBox();
-	expect(initialBox).not.toBeNull();
-	await page.evaluate(() => scrollTo(0, 200));
-	const scrolledBox = await navbar.boundingBox();
-	expect(scrolledBox).not.toBeNull();
-	expect(scrolledBox!.y).toBeLessThan(initialBox!.y - 150);
+	const badge = page.locator("#mlh-trust-badge");
+	await expect(navbar).toBeInViewport();
+	await expect(badge).toBeVisible();
+
+	// The sidebar's inert attribute is set on hydration; the scroll listener exists after it.
+	await expect(page.locator("#mobile-navigation")).toHaveAttribute("inert", "");
+	await page.evaluate(() => scrollTo({ top: 1600, behavior: "instant" }));
+	await expect(navbar).not.toBeInViewport();
+
+	await page.evaluate(() => scrollTo({ top: 1400, behavior: "instant" }));
+	await expect(navbar).toBeInViewport();
+	await expect(badge).toBeHidden();
+
+	await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+	await expect(badge).toBeVisible();
 });
 
 test("navbar controls keep the same order and alignment across breakpoints", async ({ page }) => {
@@ -86,17 +95,20 @@ test("navbar controls keep the same order and alignment across breakpoints", asy
 		await page.setViewportSize(viewport);
 		await page.goto("/");
 		const controls = await page
-			.locator('[data-navigation-home], nav button[aria-label], #mlh-trust-badge')
+			.locator("[data-navigation-home], nav button[aria-label], #mlh-trust-badge")
 			.evaluateAll(elements =>
-				elements.map(element => {
-					const box = element.getBoundingClientRect();
-					return { x: box.x, top: box.y };
-				}),
+				elements
+					.filter(element => element.getClientRects().length > 0)
+					.map(element => {
+						const box = element.getBoundingClientRect();
+						return { x: box.x, top: box.y };
+					}),
 			);
 		expect(controls.map(control => control.x)).toEqual(
 			[...controls.map(control => control.x)].sort((a, b) => a - b),
 		);
-		expect(controls).toHaveLength(3);
+		// The hamburger menu button only shows at mobile widths.
+		expect(controls).toHaveLength(viewport.width <= 940 ? 4 : 3);
 		expect(Math.abs(controls[0].top - controls[2].top)).toBeLessThanOrEqual(1);
 		expect(controls[1].top).toBeGreaterThanOrEqual(controls[0].top);
 		expect(controls[1].top).toBeLessThanOrEqual(controls[0].top + 24);
@@ -104,10 +116,52 @@ test("navbar controls keep the same order and alignment across breakpoints", asy
 	}
 });
 
+test("hamburger menu opens the mobile navigation and closes on link click and Escape", async ({ page }) => {
+	await page.setViewportSize({ width: 390, height: 844 });
+	await page.goto("/");
+	const menuButton = page.getByRole("button", { name: "Open navigation menu" });
+	const sidebar = page.locator("#mobile-navigation");
+	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
+
+	await menuButton.click();
+	await expect(sidebar).toHaveAttribute("aria-hidden", "false");
+	await expect(page.getByRole("button", { name: "Close navigation menu" })).toHaveAttribute("aria-expanded", "true");
+	await expect(page.locator("html")).toHaveAttribute("data-mobile-navigation-open", "");
+
+	await sidebar.getByRole("link", { name: "FAQ" }).click();
+	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
+	await expect(page.locator("#faq")).toBeInViewport();
+
+	// Wait for the smooth scroll to settle, then scroll up to reveal the navbar again.
+	await expect
+		.poll(async () => {
+			const before = await page.evaluate(() => scrollY);
+			await page.waitForTimeout(150);
+			const after = await page.evaluate(() => scrollY);
+			return Math.abs(after - before);
+		})
+		.toBeLessThan(1);
+	await page.evaluate(() => scrollBy({ top: -200, behavior: "instant" }));
+	await expect(page.locator("nav").first()).toBeInViewport();
+
+	await menuButton.click();
+	await expect(sidebar).toHaveAttribute("aria-hidden", "false");
+	await page.keyboard.press("Escape");
+	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
+	await expect(menuButton).toBeFocused();
+});
+
 test("mobile interactive controls meet touch target guidance", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
-	for (const selector of ["#testimonials button", "footer a[aria-label]", "#sponsors a", "#collaborators a"]) {
+	for (const selector of [
+		"#testimonials button",
+		"footer a[aria-label]",
+		"#sponsors a",
+		"#collaborators a",
+		"nav button[aria-label]",
+		"#mobile-navigation a",
+	]) {
 		const sizes = await page.locator(selector).evaluateAll(elements =>
 			elements.map(element => {
 				const box = element.getBoundingClientRect();
