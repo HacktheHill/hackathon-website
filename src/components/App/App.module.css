@@ -462,20 +462,20 @@
 	.stats-layer {
 		grid-row: 4;
 		padding: 4rem 1.25rem 1.5rem;
-		background: linear-gradient(180deg, #741416, #d64922 70%, #e66b2e);
+		background: linear-gradient(180deg, #4b0d10, #741416 5rem, #d64922 70%, #e66b2e);
 		pointer-events: auto;
 	}
 
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
-		background: linear-gradient(180deg, #e66b2e, #d95025 75%, #111724);
+		background: linear-gradient(180deg, #e66b2e 3rem, #d95025 75%, #111724);
 	}
 
 	.sponsors-slot {
 		grid-row: 6;
 		padding: 5rem 1rem;
-		background: linear-gradient(180deg, #c9f2ef, #72d2ca 82%, #173789);
+		background: linear-gradient(180deg, #111724, #c9f2ef 4.5rem, #72d2ca 82%, #173789);
 	}
 
 	.faq-slot {

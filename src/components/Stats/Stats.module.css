@@ -206,6 +206,8 @@
 		background: url("/art/scene/bush-4.webp") center top / 100% auto no-repeat;
 		content: "";
 		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 62%, transparent);
+		mask-image: linear-gradient(180deg, #000 62%, transparent);
 	}
 
 	.sign {
