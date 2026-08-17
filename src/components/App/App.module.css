@@ -468,7 +468,12 @@
 
 	/* Testimonials-to-sponsors seam: both slots paint their shared animated
 		background-color through transparent gradient ramps, so the whole seam
-		cross-fades from red to ice once Sponsors scrolls into view. */
+		cross-fades from red to ice once Sponsors scrolls into view.
+
+		The transparent tail is the only part that shows the ice colour, so it
+		is held back to the last 5rem — the slot's own bottom padding — keeping
+		the quote, attribution and carousel controls on solid red while the
+		seam washes out beneath them. */
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
@@ -477,6 +482,7 @@
 			180deg,
 			#e66b2e 3rem,
 			#d95025 75%,
+			#d95025 calc(100% - 5rem),
 			rgba(217, 80, 37, 0)
 		);
 		transition: background-color 1s ease;
