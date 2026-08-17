@@ -518,4 +518,20 @@
 		padding: 4rem 0 5rem;
 		background: #061238;
 	}
+
+	/* Section heights are fractional, so on a fractional device pixel ratio
+		(browser zoom, or 125% Windows scaling) a row boundary can land mid
+		device-pixel and leave a hairline of the dark backdrop showing between
+		two sections. Overlapping every row onto the one above by 1px means the
+		seam is always covered by an opaque background. Must stay last so it
+		wins over .video-layer's own margin. */
+	.about-slot,
+	.video-layer,
+	.stats-layer,
+	.testimonials-slot,
+	.sponsors-slot,
+	.faq-slot,
+	.footer-slot {
+		margin-top: -1px;
+	}
 }
