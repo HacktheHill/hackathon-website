@@ -49,5 +49,13 @@
 	},
 	"overrides": {
 		"esbuild": "0.28.1"
+	},
+	"allowScripts": {
+		"esbuild@0.28.1": true,
+		"@fortawesome/fontawesome-common-types": false,
+		"@fortawesome/fontawesome-svg-core": false,
+		"@fortawesome/free-brands-svg-icons": false,
+		"@fortawesome/free-solid-svg-icons": false,
+		"unrs-resolver": false
 	}
 }
