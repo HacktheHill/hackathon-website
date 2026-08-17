@@ -466,16 +466,39 @@
 		pointer-events: auto;
 	}
 
+	/* Testimonials-to-sponsors seam: both slots paint their shared animated
+		background-color through transparent gradient ramps, so the whole seam
+		cross-fades from red to ice once Sponsors scrolls into view. */
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
-		background: linear-gradient(180deg, #e66b2e 3rem, #d95025 75%, #111724);
+		background-color: #d95025;
+		background-image: linear-gradient(
+			180deg,
+			#e66b2e 3rem,
+			#d95025 75%,
+			rgba(217, 80, 37, 0)
+		);
+		transition: background-color 1s ease;
 	}
 
 	.sponsors-slot {
 		grid-row: 6;
 		padding: 5rem 1rem;
-		background: linear-gradient(180deg, #111724, #c9f2ef 4.5rem, #72d2ca 82%, #173789);
+		background-color: #d95025;
+		background-image: linear-gradient(
+			180deg,
+			rgba(201, 242, 239, 0),
+			#c9f2ef 7rem,
+			#72d2ca 82%,
+			#173789
+		);
+		transition: background-color 1s ease;
+	}
+
+	.seam-ice .testimonials-slot,
+	.seam-ice .sponsors-slot {
+		background-color: #c9f2ef;
 	}
 
 	.faq-slot {

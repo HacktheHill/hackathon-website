@@ -152,7 +152,13 @@
 	height: 39%;
 }
 
+/* The cloud cut-out and panel centres sit lower than the text row's own
+	centre in the sign artwork, so each cell nudges down (and the 8 right)
+	to land inside its opening. */
 .green-top strong {
+	position: relative;
+	top: 13.5%;
+	left: 7%;
 	color: #111;
 	font-size: 3.25cqw;
 	font-weight: 400;
@@ -161,6 +167,8 @@
 }
 
 .green-top span {
+	position: relative;
+	top: 6.5%;
 	font-size: 2.65cqw;
 	text-align: center;
 }
@@ -174,14 +182,14 @@
 }
 
 .green-bottom strong {
-	font-size: 2.75cqw;
+	font-size: 2.65cqw;
 	font-weight: 400;
 	line-height: 0.9;
 }
 
 .green-bottom span {
 	margin-top: 0.35cqw;
-	font-size: 1.9cqw;
+	font-size: 2.65cqw;
 	text-align: center;
 }
 
@@ -268,12 +276,12 @@
 	}
 
 	.green-bottom strong {
-		font-size: clamp(0.68rem, 2.9vw, 1rem);
+		font-size: clamp(0.65rem, 2.8vw, 0.95rem);
 	}
 
 	.green-bottom span {
 		margin-top: 0.1rem;
-		font-size: clamp(0.48rem, 2.05vw, 0.7rem);
+		font-size: clamp(0.65rem, 2.8vw, 0.95rem);
 	}
 }
 
