@@ -461,9 +461,35 @@
 
 	.stats-layer {
 		grid-row: 4;
+		/* Above .video-layer's 205 so the bush below can bleed over the seam. */
+		z-index: 210;
 		padding: 4rem 1.25rem 1.5rem;
-		background: linear-gradient(180deg, #4b0d10, #741416 5rem, #d64922 70%, #e66b2e);
+		background: linear-gradient(180deg, #741416, #d64922 70%, #e66b2e);
 		pointer-events: auto;
+	}
+
+	/* The desktop canvas plants bush-3 where the recap video gives way to the
+		stats signs. Mobile restores it as a foreground band straddling that
+		seam: the artwork rises past the boundary so its scalloped top edge
+		becomes the horizon instead of a straight line, then dissolves into the
+		gradient below. z-index -1 keeps it above this slot's own background but
+		behind the heading. */
+	.stats-layer::before {
+		position: absolute;
+		/* The artwork's scalloped edge is ~7.4vw deep at the 150% size below, so
+			the bleed has to scale with the viewport too: a fixed offset lets the
+			scallop valleys dip past the boundary at wider widths, exposing a hard
+			step between this section's red and the darker one above. */
+		top: -9vw;
+		right: 0;
+		left: 0;
+		z-index: -1;
+		height: clamp(7rem, 30vw, 12rem);
+		background: url("/art/scene/bush-3.webp") center top / 150% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 35%, transparent 85%);
+		mask-image: linear-gradient(180deg, #000 35%, transparent 85%);
 	}
 
 	/* Testimonials-to-sponsors seam: both slots paint their shared animated
