@@ -30,6 +30,12 @@
 	display: none;
 }
 
+/* The badge carries the auto margin that pushes the right-hand controls over,
+	so the menu button takes that job over whenever the badge is hidden. */
+.navbar[data-floating="true"] .sidebar-icon {
+	margin-left: auto;
+}
+
 .logo {
 	cursor: pointer;
 }
@@ -46,6 +52,7 @@
 	display: block;
 	flex: 0 0 clamp(60px, 10vw, 100px);
 	width: clamp(60px, 10vw, 100px);
+	margin-left: auto;
 	z-index: 10000;
 }
 
@@ -79,7 +86,6 @@
 
 .sidebar-icon {
 	display: none;
-	margin-left: auto;
 	height: 100%;
 	min-width: 2.75rem;
 	padding: 0 0.75rem;
