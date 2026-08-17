@@ -108,7 +108,7 @@ test("navbar controls keep the same order and alignment across breakpoints", asy
 			[...controls.map(control => control.x)].sort((a, b) => a - b),
 		);
 		// The hamburger menu button only shows at mobile widths.
-		expect(controls).toHaveLength(viewport.width <= 940 ? 4 : 3);
+		expect(controls).toHaveLength(viewport.width <= 1024 ? 4 : 3);
 		expect(Math.abs(controls[0].top - controls[2].top)).toBeLessThanOrEqual(1);
 		expect(controls[1].top).toBeGreaterThanOrEqual(controls[0].top);
 		expect(controls[1].top).toBeLessThanOrEqual(controls[0].top + 24);

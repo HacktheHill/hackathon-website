@@ -201,7 +201,7 @@
 	}
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 	.signs {
 		position: relative;
 	}
@@ -285,7 +285,7 @@
 	}
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 1024px) {
 	.signs::after {
 		bottom: -3rem;
 		height: clamp(8rem, 23vw, 11rem);

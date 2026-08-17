@@ -73,7 +73,7 @@
 	font-size: inherit;
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1024px) {
 	.sidebar-open {
 		z-index: 0;
 		visibility: visible;

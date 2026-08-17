@@ -44,7 +44,7 @@ These percentages are more reliable than document pixel offsets because the canv
 
 ## Responsive Layout
 
-At widths of 900px and below, the page intentionally stops scaling the desktop canvas. `App.module.css` hides the canvas artwork and changes the page to a single-column grid of normal-flow sections.
+At widths of 1024px and below, the page intentionally stops scaling the desktop canvas. `App.module.css` hides the canvas artwork and changes the page to a single-column grid of normal-flow sections.
 
 The mobile order is:
 
