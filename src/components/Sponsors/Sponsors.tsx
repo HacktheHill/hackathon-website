@@ -17,7 +17,6 @@ import CSSA from "@/assets/Logos/CSSA.svg?url";
 import uOttawaIEEE from "@/assets/Logos/uOttawaIEEE.svg?url";
 import WIE from "@/assets/Logos/WIE.svg?url";
 import EEF from "@/assets/Logos/EEF.svg?url";
-import lonehaven from "@/assets/Logos/Lonehaven.webp?url";
 import telferBTA from "@/assets/Logos/bta-logo.svg?url";
 import SCESoc from "@/assets/Logos/SCESoc.svg?url";
 import uOttawa from "@/assets/Logos/uOttawa.svg?url";
@@ -35,6 +34,7 @@ const DigitalOcean = "/Logos/DigitalOcean.svg";
 const Echo3d = "/Logos/echo3d.webp";
 const Balsamiq = "/Logos/balsamiq.svg";
 const Voiceflow = "/Logos/voiceflow.svg";
+const Lonehaven = "/Logos/Lonehaven.svg";
 const Ceed = "/Logos/ceed.svg";
 const Law = "/Logos/Law.svg";
 const CSClub = "/Logos/CSClub.svg";
@@ -43,60 +43,45 @@ const SNOWBANKS = Array.from(
 	{ length: 7 },
 	(_, index) => `/art/sponsors/snowbank-${index + 1}.webp`,
 );
-const LOGO_BOOSTS: Record<string, "medium" | "strong"> = {
-	"Canadian Tire": "strong",
-	Lonehaven: "medium",
-	"CSE / CST": "medium",
-	Redbull: "strong",
-	"P&G": "strong",
-	Fantuan: "strong",
+
+type Organization = { href: string; src: string; alt: string };
+type SponsorTier = "backbencher" | "councillor" | "mayor" | "premier" | "prime-minister";
+type SponsorData = {
+	sponsors: Record<SponsorTier, Organization[]>;
+	collaborators: Organization[];
 };
+const VISIBLE_SPONSOR_ROWS: SponsorTier[][] = [["prime-minister"], ["premier"], ["mayor", "councillor"]];
 
 function Sponsors() {
-	const data = {
-		sponsors: [
-			{
-				size: "largest",
-				organizations: [
-					{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
-					{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
-				],
-			},
-			{
-				size: "large",
-				organizations: [
-					{ href: "https://blackberry.com/", src: Blackberry, alt: "BlackBerry" },
-					{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
-				],
-			},
-			{
-				size: "medium",
-				organizations: [
-					{ href: "https://lonehaven.com/", src: lonehaven, alt: "Lonehaven" },
-					{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
-				],
-			},
-			{
-				size: "small",
-				organizations: [
-					{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
-					{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
-					{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
-					{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
-					{ href: "https://about.google", src: Google, alt: "Google" },
-				],
-			},
-			{
-				size: "small",
-				organizations: [
-					{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
-					{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
-					{ href: "https://www.echo3d.com/", src: Echo3d, alt: "echo3D" },
-					{ href: "https://balsamiq.com/", src: Balsamiq, alt: "Balsamiq" },
-					{ href: "https://www.voiceflow.com/", src: Voiceflow, alt: "Voiceflow" },
-				],
-			},
-		],
+	const data: SponsorData = {
+		sponsors: {
+			"prime-minister": [
+				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
+				{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
+			],
+			premier: [
+				{ href: "https://blackberry.com/", src: Blackberry, alt: "BlackBerry" },
+				{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
+			],
+			mayor: [
+				{ href: "https://lonehaven.com/", src: Lonehaven, alt: "Lonehaven" },
+				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
+			],
+			councillor: [
+				{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
+				{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
+				{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
+			],
+			backbencher: [
+				{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
+				{ href: "https://about.google", src: Google, alt: "Google" },
+				{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
+				{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
+				{ href: "https://www.echo3d.com/", src: Echo3d, alt: "echo3D" },
+				{ href: "https://balsamiq.com/", src: Balsamiq, alt: "Balsamiq" },
+				{ href: "https://www.voiceflow.com/", src: Voiceflow, alt: "Voiceflow" },
+			],
+		},
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa, alt: "University of Ottawa" },
 			{ href: "https://carleton.ca/", src: Carleton, alt: "Carleton University" },
@@ -132,10 +117,6 @@ function Sponsors() {
 			{ href: "https://linktr.ee/uottawaesports", src: uOttawaEsports, alt: "uOttawa Esports" },
 		],
 	};
-	const sponsors = data.sponsors.flatMap(row =>
-		row.organizations.map(organization => ({ ...organization, size: row.size })),
-	);
-
 	return (
 		<>
 			<section
@@ -151,45 +132,53 @@ function Sponsors() {
 						<p className={styles.text} data-aos="fade-up" data-aos-duration="800">
 							{t("sponsors.p")}
 						</p>
-						<div data-aos="fade-up" data-aos-duration="800">
-							<Button href="mailto:sponsorship@hackthehill.com">{t("sponsors.button")}</Button>
+						<div className={styles["sponsor-cta-container"]} data-aos="fade-up" data-aos-duration="800">
+							<Button className={styles["sponsor-cta"]} href="mailto:sponsorship@hackthehill.com">
+								{t("sponsors.button")}
+							</Button>
 						</div>
 					</div>
 				</div>
 
 				<div className={styles["icons"]}>
-					{sponsors.map((sponsor, index) => (
-						<a
-							key={sponsor.href}
-							href={sponsor.href}
-							target="_blank"
-							rel="noreferrer"
-							className={`${styles["sponsor-card"]} ${
-								index < 4 ? styles["sponsor-card-featured"] : ""
-							}`}
-							data-aos="fade-up"
-							data-aos-duration="800"
+					{VISIBLE_SPONSOR_ROWS.map((tiers, rowIndex) => (
+						<div
+							key={tiers.join("-")}
+							className={styles["sponsor-tier-row"]}
+							data-sponsor-tier-row={tiers.join(" ")}
 						>
-							<img
-								className={styles.snowbank}
-								src={SNOWBANKS[index < 4 ? index : 4 + ((index - 4) % 3)]}
-								alt=""
-								aria-hidden="true"
-								loading="lazy"
-								decoding="async"
-							/>
-							<img
-								className={`${styles.icon} ${styles[`icon-${sponsor.size}`]} ${
-									LOGO_BOOSTS[sponsor.alt]
-										? styles[`icon-boost-${LOGO_BOOSTS[sponsor.alt]}`]
-										: ""
-								}`}
-								alt={`${sponsor.alt} logo`}
-								src={sponsor.src}
-								loading="lazy"
-								decoding="async"
-							/>
-						</a>
+							{tiers
+								.flatMap(tier => data.sponsors[tier].map(sponsor => ({ sponsor, tier })))
+								.map(({ sponsor, tier }, index) => (
+								<a
+									key={sponsor.href}
+									href={sponsor.href}
+									target="_blank"
+									rel="noreferrer"
+									data-sponsor-card
+									data-sponsor-tier={tier}
+									className={styles["sponsor-card"]}
+									data-aos="fade-up"
+									data-aos-duration="800"
+								>
+									<img
+										className={styles.snowbank}
+										src={SNOWBANKS[(rowIndex + index) % SNOWBANKS.length]}
+										alt=""
+										aria-hidden="true"
+										loading="lazy"
+										decoding="async"
+									/>
+									<img
+										className={styles.icon}
+										alt={`${sponsor.alt} logo`}
+										src={sponsor.src}
+										loading="lazy"
+										decoding="async"
+									/>
+								</a>
+								))}
+						</div>
 					))}
 				</div>
 			</section>

@@ -6,6 +6,10 @@
 	color: #102963;
 }
 
+.sponsors {
+	gap: 3rem;
+}
+
 .sponsors-collaborators :global(.section-heading) {
 	margin-block: 0;
 	color: #102963;
@@ -15,8 +19,9 @@
 }
 
 .collaborators {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	gap: 2.5rem;
+	margin-top: 4rem;
+	margin-bottom: 3rem;
 }
 
 .header {
@@ -43,12 +48,47 @@
 	text-shadow: 0 0.06em 0.1em rgb(255 255 255 / 55%);
 }
 
+.sponsor-cta-container {
+	padding-block: 1.5rem;
+}
+
+.sponsor-cta {
+	min-width: min(100%, 20rem);
+	padding: 1.15rem 2.75rem;
+	border-radius: 0.8rem;
+	background: var(--dark-primary-color);
+	color: var(--light-color);
+	font-size: 1.75rem;
+	box-shadow: 0 6px 18px rgb(132 1 11 / 20%);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sponsor-cta:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgb(132 1 11 / 28%);
+}
+
+.sponsor-cta:focus-visible {
+	outline: 3px solid var(--dark-primary-color);
+	outline-offset: 3px;
+}
+
 .icons {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 0.8rem 1.1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
 	width: 100%;
-	margin: 1rem 0 1.5rem;
+	margin: 1.5rem 0 2.5rem;
+}
+
+.sponsor-tier-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	column-gap: clamp(0.25rem, 0.6vw, 0.65rem);
+	row-gap: 0.25rem;
+	width: 100%;
 }
 
 .sponsor-card {
@@ -56,28 +96,33 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex: 0 0 var(--sponsor-card-width);
 	min-width: 0;
 	aspect-ratio: 1.7 / 1;
-	padding: 12% 14% 17%;
+	padding: 0;
 	box-sizing: border-box;
 	isolation: isolate;
 	transition: transform 180ms ease;
 }
 
-.sponsor-card:nth-child(-n + 4) {
-	translate: -1.35rem 0;
+.sponsor-card[data-sponsor-tier="backbencher"] {
+	--sponsor-card-width: 13%;
 }
 
-.sponsor-card:nth-child(n + 5):nth-child(-n + 8) {
-	translate: 1.6rem 0;
+.sponsor-card[data-sponsor-tier="councillor"] {
+	--sponsor-card-width: 15%;
 }
 
-.sponsor-card:nth-child(n + 9):nth-child(-n + 12) {
-	translate: -0.55rem 0;
+.sponsor-card[data-sponsor-tier="mayor"] {
+	--sponsor-card-width: 17%;
 }
 
-.sponsor-card:nth-child(n + 13) {
-	translate: 1.1rem 0;
+.sponsor-card[data-sponsor-tier="premier"] {
+	--sponsor-card-width: 32%;
+}
+
+.sponsor-card[data-sponsor-tier="prime-minister"] {
+	--sponsor-card-width: 48%;
 }
 
 .sponsor-card:hover,
@@ -102,30 +147,19 @@
 }
 
 .icon {
-	width: 96%;
 	max-width: 100%;
-	max-height: 72%;
 	object-fit: contain;
 }
 
-.sponsor-card-featured .icon {
-	width: 100%;
-	max-height: 78%;
-}
-
-.icon-boost-medium {
-	transform: scale(1.38);
-}
-
-.icon-boost-strong {
-	transform: scale(1.65);
-}
-
-.icon-largest,
-.icon-large,
-.icon-medium,
-.icon-small {
-	min-height: 0;
+.sponsor-card .icon {
+	position: absolute;
+	top: 46%;
+	left: 50%;
+	width: 70%;
+	height: 48%;
+	max-width: none;
+	max-height: none;
+	transform: translate(-50%, -50%);
 }
 
 .icons-row {
@@ -183,20 +217,16 @@
 	}
 
 	.icons {
-		gap: 0.6rem 0.8rem;
+		gap: 1.25rem;
 	}
 
 	.collaborators {
-		margin-top: 1.5rem;
-		margin-bottom: 1rem;
+		margin-top: 3.5rem;
+		margin-bottom: 2rem;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.icons {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-	}
-
 	.collaborator-icons {
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 	}
@@ -211,21 +241,56 @@
 		font-size: 1.1rem;
 	}
 
+	.sponsor-cta {
+		min-height: 3.5rem;
+		padding: 0.85rem 1.5rem;
+		font-size: 1.25rem;
+	}
+
+	.sponsor-cta-container {
+		padding-block: 1rem;
+	}
+
 	.sponsors-collaborators {
 		gap: 0.8rem;
 	}
 
-	.icons {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.35rem 0.5rem;
+	.sponsors {
+		gap: 2rem;
 	}
 
-	.sponsor-card:nth-child(n) {
-		translate: 0 0;
+	.icons {
+		gap: 1rem;
+		margin-block: 1rem 2rem;
+	}
+
+	.collaborators {
+		gap: 1.5rem;
+		margin-top: 3rem;
 	}
 
 	.sponsor-card {
 		min-height: 5rem;
+	}
+
+	.sponsor-card[data-sponsor-tier="backbencher"] {
+		--sponsor-card-width: 22%;
+	}
+
+	.sponsor-card[data-sponsor-tier="councillor"] {
+		--sponsor-card-width: 28%;
+	}
+
+	.sponsor-card[data-sponsor-tier="mayor"] {
+		--sponsor-card-width: 32%;
+	}
+
+	.sponsor-card[data-sponsor-tier="premier"] {
+		--sponsor-card-width: 40%;
+	}
+
+	.sponsor-card[data-sponsor-tier="prime-minister"] {
+		--sponsor-card-width: 48%;
 	}
 
 	.collaborator-icons {
@@ -236,5 +301,12 @@
 	.collaborator-card {
 		min-height: 5rem;
 		padding: 0.5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sponsor-cta:hover,
+	.sponsor-cta:active {
+		transform: none;
 	}
 }
