@@ -66,25 +66,40 @@ test("mobile hero copy clears navigation and stays in view", async ({ page }) =>
 	expect(apply!.x + apply!.width).toBeLessThanOrEqual(390);
 });
 
-test("navbar hides while scrolling down and returns on scroll up without the MLH badge", async ({ page }) => {
+test("header remains in document flow and scrolls with the page", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
 	const navbar = page.locator("nav").first();
 	const badge = page.locator("#mlh-trust-badge");
 	await expect(navbar).toBeInViewport();
 	await expect(badge).toBeVisible();
-
-	// The sidebar's inert attribute is set on hydration; the scroll listener exists after it.
-	await expect(page.locator("#mobile-navigation")).toHaveAttribute("inert", "");
+	await expect(navbar).toHaveCSS("position", "static");
+	await expect(navbar).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+	await navbar.locator('[href="#hero"]').click();
+	await expect.poll(() => page.evaluate(() => scrollY)).toBeLessThanOrEqual(1);
 	await page.evaluate(() => scrollTo({ top: 1600, behavior: "instant" }));
 	await expect(navbar).not.toBeInViewport();
+	await expect(badge).not.toBeInViewport();
+	await expect(navbar).not.toHaveAttribute("data-hidden");
+	await expect(navbar).not.toHaveAttribute("data-floating");
+});
 
-	await page.evaluate(() => scrollTo({ top: 1400, behavior: "instant" }));
-	await expect(navbar).toBeInViewport();
-	await expect(badge).toBeHidden();
-
-	await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+test("header only exposes persistent controls", async ({ page }) => {
+	await page.setViewportSize({ width: 1440, height: 900 });
+	await page.goto("/");
+	const navbar = page.locator("nav").first();
+	const badge = page.locator("#mlh-trust-badge");
+	await expect(navbar.locator("ul")).toHaveCount(0);
+	await expect(navbar.locator('[href="#hero"]')).toBeVisible();
+	await expect(navbar.locator("button")).toHaveText("FR");
+	await expect(navbar.locator('[href="https://2024.hackthehill.com"]')).toBeVisible();
 	await expect(badge).toBeVisible();
+	await expect(badge).toHaveAttribute("href", /utm_campaign=2027-season/);
+	await expect(badge.locator("img")).toHaveAttribute("alt", /2027 Hackathon Season/);
+
+	await page.evaluate(() => scrollTo({ top: 1600, behavior: "instant" }));
+	await expect(navbar).not.toBeInViewport();
+	await expect(badge).not.toBeInViewport();
 });
 
 test("navbar controls keep the same order and alignment across breakpoints", async ({ page }) => {
@@ -107,48 +122,11 @@ test("navbar controls keep the same order and alignment across breakpoints", asy
 		expect(controls.map(control => control.x)).toEqual(
 			[...controls.map(control => control.x)].sort((a, b) => a - b),
 		);
-		// The hamburger menu button only shows at mobile widths.
-		expect(controls).toHaveLength(viewport.width <= 1024 ? 4 : 3);
+		expect(controls).toHaveLength(3);
 		expect(Math.abs(controls[0].top - controls[2].top)).toBeLessThanOrEqual(1);
 		expect(controls[1].top).toBeGreaterThanOrEqual(controls[0].top);
 		expect(controls[1].top).toBeLessThanOrEqual(controls[0].top + 24);
-		await expect(page.locator("nav").first().locator('a[href^="#"]')).toHaveCount(1);
 	}
-});
-
-test("hamburger menu opens the mobile navigation and closes on link click and Escape", async ({ page }) => {
-	await page.setViewportSize({ width: 390, height: 844 });
-	await page.goto("/");
-	const menuButton = page.getByRole("button", { name: "Open navigation menu" });
-	const sidebar = page.locator("#mobile-navigation");
-	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
-
-	await menuButton.click();
-	await expect(sidebar).toHaveAttribute("aria-hidden", "false");
-	await expect(page.getByRole("button", { name: "Close navigation menu" })).toHaveAttribute("aria-expanded", "true");
-	await expect(page.locator("html")).toHaveAttribute("data-mobile-navigation-open", "");
-
-	await sidebar.getByRole("link", { name: "FAQ" }).click();
-	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
-	await expect(page.locator("#faq")).toBeInViewport();
-
-	// Wait for the smooth scroll to settle, then scroll up to reveal the navbar again.
-	await expect
-		.poll(async () => {
-			const before = await page.evaluate(() => scrollY);
-			await page.waitForTimeout(150);
-			const after = await page.evaluate(() => scrollY);
-			return Math.abs(after - before);
-		})
-		.toBeLessThan(1);
-	await page.evaluate(() => scrollBy({ top: -200, behavior: "instant" }));
-	await expect(page.locator("nav").first()).toBeInViewport();
-
-	await menuButton.click();
-	await expect(sidebar).toHaveAttribute("aria-hidden", "false");
-	await page.keyboard.press("Escape");
-	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
-	await expect(menuButton).toBeFocused();
 });
 
 test("mobile interactive controls meet touch target guidance", async ({ page }) => {
@@ -160,7 +138,6 @@ test("mobile interactive controls meet touch target guidance", async ({ page }) 
 		"#sponsors a",
 		"#collaborators a",
 		"nav button[aria-label]",
-		"#mobile-navigation a",
 	]) {
 		const sizes = await page.locator(selector).evaluateAll(elements =>
 			elements.map(element => {
@@ -240,7 +217,7 @@ test("carousel supports keyboard arrows and swipe", async ({ page }) => {
 	await expect(pressed).toHaveAttribute("aria-label", /3:/);
 });
 
-test("keyboard order includes the reduced primary navigation", async ({ page }) => {
+test("desktop keyboard order includes persistent header controls", async ({ page }) => {
 	await page.goto("/");
 	const focused: string[] = [];
 	for (let index = 0; index < 5; index += 1) {
@@ -256,7 +233,8 @@ test("keyboard order includes the reduced primary navigation", async ({ page }) 
 	}
 	expect(focused[0]).toBe("#main-content");
 	expect(focused[1]).toBe("#hero");
-	expect(focused).not.toContain("#about");
+	expect(focused[3]).toBe("https://2024.hackthehill.com");
+	expect(focused[4]).toContain("mlh.io");
 });
 
 test("countdown opens on hover and restores focus after keyboard dismissal", async ({ page }) => {

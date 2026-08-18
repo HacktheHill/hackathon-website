@@ -1,39 +1,14 @@
 .navbar {
 	--link-color: var(--dark-primary-color);
-	--background-on-scroll: var(--light-tertiary-color);
-	--box-shadow-color: rgba(0, 0, 0, 0.1);
 
 	box-sizing: border-box;
-	position: relative;
-	z-index: 1;
 	display: flex;
 	align-items: flex-start;
 	height: 4.5rem;
 	width: 100%;
+	padding-right: 1rem;
 	gap: 1rem;
-	pointer-events: auto;
-	transition: transform 0.3s ease, background-color 0.5s ease;
-}
-
-.navbar[data-hidden="true"] {
-	transform: translateY(-100%);
-	visibility: hidden;
-	transition: transform 0.3s ease, background-color 0.5s ease, visibility 0s 0.3s;
-}
-
-.navbar[data-floating="true"] {
-	background-color: var(--background-on-scroll);
-	box-shadow: 0 0 10px var(--box-shadow-color);
-}
-
-.navbar[data-floating="true"] .mlh-trust-badge {
-	display: none;
-}
-
-/* The badge carries the auto margin that pushes the right-hand controls over,
-	so the menu button takes that job over whenever the badge is hidden. */
-.navbar[data-floating="true"] .sidebar-icon {
-	margin-left: auto;
+	background: transparent;
 }
 
 .logo {
@@ -84,47 +59,10 @@
 	border: 3px solid var(--link-color);
 }
 
-.sidebar-icon {
-	display: none;
-	height: 100%;
-	min-width: 2.75rem;
-	padding: 0 0.75rem;
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-}
-
-.sidebar-icon span {
-	display: block;
-	width: 1.75rem;
-	height: 0.25rem;
-	background-color: var(--link-color);
-	margin: 0.3rem 0;
-	transition: opacity 0.5s ease, transform 0.5s ease;
-	border-radius: 0.25rem;
-}
-
-.sidebar-open :nth-child(1) {
-	transform: translate(0, 1.2ch) rotate(-45deg);
-}
-
-.sidebar-open :nth-child(2) {
-	opacity: 0;
-}
-
-.sidebar-open :nth-child(3) {
-	transform: translate(0, -1.2ch) rotate(45deg);
-}
-
-@media (max-width: 1024px) {
-	.sidebar-icon {
-		display: block;
-	}
-}
-
 @media (max-width: 600px) {
 	.navbar {
 		height: 4rem;
+		padding-right: 0.25rem;
 		gap: 0.25rem;
 	}
 

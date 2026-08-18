@@ -1,20 +1,11 @@
-import type { Dispatch, RefObject, SetStateAction } from "react";
 import { locale, t } from "@/i18n";
 import { useStore } from "@nanostores/react";
 import { useEffect } from "react";
 import style from "./NavBar.module.css";
 
-type NavbarProps = {
-	sidebarOpen: boolean;
-	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
-	menuButtonRef: RefObject<HTMLButtonElement>;
-	hidden: boolean;
-	floating: boolean;
-};
-
 const logo = "/Logos/hackthehill-logo.svg";
 
-function Navbar({ sidebarOpen, setSidebarOpen, menuButtonRef, hidden, floating }: Readonly<NavbarProps>) {
+function Navbar() {
 	const currentLocale = useStore(locale);
 	const languageCode = currentLocale === "en" ? "FR" : "EN";
 
@@ -23,7 +14,7 @@ function Navbar({ sidebarOpen, setSidebarOpen, menuButtonRef, hidden, floating }
 	}, [currentLocale]);
 
 	return (
-		<nav className={style.navbar} data-hidden={hidden} data-floating={floating} aria-label={t("navbar.aria_label")}>
+		<nav className={style.navbar} aria-label={t("navbar.aria_label")}>
 			<a className="link logo" href="#hero" aria-label={t("navbar.home_label")} data-navigation-home>
 				<img alt="" src={logo} width="114" height="70"></img>
 			</a>
@@ -53,31 +44,18 @@ function Navbar({ sidebarOpen, setSidebarOpen, menuButtonRef, hidden, floating }
 			<a
 				id="mlh-trust-badge"
 				className={style["mlh-trust-badge"]}
-				href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=gray"
+				href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=gray"
 				target="_blank"
 				rel="noreferrer"
 			>
 				<img
 					src="https://logged-assets.s3.amazonaws.com/trust-badge/2027/mlh-trust-badge-2027-red.svg"
-					alt="Major League Hacking 2026 Hackathon Season"
+					alt="Major League Hacking 2027 Hackathon Season"
 					width="100"
 					height="180"
 				/>
 			</a>
 
-			<button
-				ref={menuButtonRef}
-				type="button"
-				className={`${style["sidebar-icon"]} ${sidebarOpen ? style["sidebar-open"] : ""}`}
-				onClick={() => setSidebarOpen(open => !open)}
-				aria-label={t(sidebarOpen ? "navbar.menu_close" : "navbar.menu_open")}
-				aria-controls="mobile-navigation"
-				aria-expanded={sidebarOpen}
-			>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-			</button>
 		</nav>
 	);
 }

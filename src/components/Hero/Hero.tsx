@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useStore } from "@nanostores/react";
 import { locale, t } from "@/i18n";
+import Navigation from "../Navigation/Navigation";
 import styles from "./Hero.module.css";
 import "./animations.css";
 
@@ -249,6 +250,7 @@ function Hero() {
 			aria-labelledby="hero-title"
 			onPointerDown={() => setPopupOpen(false)}
 		>
+			<Navigation />
 			{/* Sky */}
 			<div className={styles["hero-sky"]}></div>
 

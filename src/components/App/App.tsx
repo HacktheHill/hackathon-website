@@ -2,7 +2,6 @@
 import "@/fontawesome";
 import { useEffect, useRef } from "react";
 import { t } from "@/i18n";
-import Navigation from "../Navigation/Navigation";
 import Hero from "../Hero/Hero";
 import About, { AboutVideo } from "../About/About";
 import Stats from "../Stats/Stats";
@@ -139,7 +138,6 @@ function App() {
 			<a className={styles["skip-link"]} href="#main-content">
 				{t("navbar.skip_to_content")}
 			</a>
-			<Navigation />
 			<main id="main-content" tabIndex={-1}>
 				<div
 					ref={canvasRef}
@@ -169,6 +167,9 @@ function App() {
 							/>
 						))}
 					</div>
+					<div className={`${styles.slot} ${styles["hero-slot"]}`}>
+						<Hero />
+					</div>
 					<div
 						className={styles["video-layer"]}
 						data-section-parallax="0.024"
@@ -186,9 +187,6 @@ function App() {
 
 					<div className={styles.content}>
 						<ParticleEffects />
-						<div className={`${styles.slot} ${styles["hero-slot"]}`}>
-							<Hero />
-						</div>
 						<div
 							className={`${styles.slot} ${styles["about-slot"]}`}
 							data-section-parallax="0.024"
