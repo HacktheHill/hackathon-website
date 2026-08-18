@@ -43,13 +43,13 @@ const SNOWBANKS = Array.from(
 	{ length: 7 },
 	(_, index) => `/art/sponsors/snowbank-${index + 1}.webp`,
 );
-const LOGO_BOOSTS: Record<string, "medium" | "strong"> = {
+const LOGO_BOOSTS: Record<string, "medium" | "strong" | "extra"> = {
 	"Canadian Tire": "strong",
 	Lonehaven: "medium",
 	"CSE / CST": "medium",
 	Redbull: "strong",
 	"P&G": "strong",
-	Fantuan: "strong",
+	Fantuan: "extra",
 };
 
 function Sponsors() {

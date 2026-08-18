@@ -175,6 +175,36 @@ test("mobile interactive controls meet touch target guidance", async ({ page }) 
 	}
 });
 
+test("sponsor logos keep a visible inset inside their snowbanks", async ({ page }) => {
+	for (const viewport of [
+		{ width: 390, height: 844 },
+		{ width: 1332, height: 837 },
+		{ width: 1440, height: 900 },
+	]) {
+		await page.setViewportSize(viewport);
+		await page.goto("/");
+		const overflowingLogos = await page.locator("#sponsors a").evaluateAll(cards =>
+			cards.flatMap(card => {
+				const logo = card.querySelector<HTMLImageElement>('img[alt$=" logo"]');
+				const snowbank = card.querySelector<HTMLImageElement>('img[aria-hidden="true"]');
+				if (!logo || !snowbank) return [];
+
+				const logoBox = logo.getBoundingClientRect();
+				const snowbankBox = snowbank.getBoundingClientRect();
+				const minimumInset = 4;
+				const contained =
+					logoBox.left >= snowbankBox.left + minimumInset &&
+					logoBox.right <= snowbankBox.right - minimumInset &&
+					logoBox.top >= snowbankBox.top + minimumInset &&
+					logoBox.bottom <= snowbankBox.bottom - minimumInset;
+
+				return contained ? [] : [logo.alt];
+			}),
+		);
+		expect(overflowingLogos).toEqual([]);
+	}
+});
+
 test("carousel controls change the selected testimonial", async ({ page }) => {
 	await page.goto("/");
 	const pressed = page.locator('#testimonials button[aria-pressed="true"]');
