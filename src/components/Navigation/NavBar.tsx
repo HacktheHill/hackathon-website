@@ -17,6 +17,14 @@ const logo = "/Logos/hackthehill-logo.svg";
 function Navbar({ sidebarOpen, setSidebarOpen, menuButtonRef, hidden, floating }: Readonly<NavbarProps>) {
 	const currentLocale = useStore(locale);
 	const languageCode = currentLocale === "en" ? "FR" : "EN";
+	const links = [
+		{ href: "https://apply.hackthehill.com/", text: t("navbar.links.apply") },
+		{ href: "#about", text: t("navbar.links.about") },
+		{ href: "#testimonials", text: t("navbar.links.testimonials") },
+		{ href: "#sponsors", text: t("navbar.links.sponsors") },
+		{ href: "#collaborators", text: t("navbar.links.collaborators") },
+		{ href: "#faq", text: t("navbar.links.faq") },
+	];
 
 	useEffect(() => {
 		document.documentElement.lang = currentLocale;
@@ -50,6 +58,16 @@ function Navbar({ sidebarOpen, setSidebarOpen, menuButtonRef, hidden, floating }
 				</a>
 			</div>
 
+			<ul className={style["navigation-links"]}>
+				{links.map(link => (
+					<li key={link.href}>
+						<a className={style["navigation-link"]} href={link.href}>
+							{link.text}
+						</a>
+					</li>
+				))}
+			</ul>
+
 			<a
 				id="mlh-trust-badge"
 				className={style["mlh-trust-badge"]}
@@ -59,7 +77,7 @@ function Navbar({ sidebarOpen, setSidebarOpen, menuButtonRef, hidden, floating }
 			>
 				<img
 					src="https://logged-assets.s3.amazonaws.com/trust-badge/2027/mlh-trust-badge-2027-red.svg"
-					alt="Major League Hacking 2026 Hackathon Season"
+					alt="Major League Hacking 2027 Hackathon Season"
 					width="100"
 					height="180"
 				/>

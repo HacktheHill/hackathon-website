@@ -1,6 +1,7 @@
 export default {
 	navbar: {
 		links: {
+			apply: "Apply",
 			about: "About",
 			testimonials: "Testimonials",
 			sponsors: "Past Sponsors",

@@ -15,23 +15,27 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, menuButtonRef }: SidebarProps) =
 	const sidebarRef = useRef<HTMLElement>(null);
 	const links = [
 		{
-			to: "about",
+			href: "https://apply.hackthehill.com/",
+			text: t("navbar.links.apply"),
+		},
+		{
+			href: "#about",
 			text: t("navbar.links.about"),
 		},
 		{
-			to: "testimonials",
+			href: "#testimonials",
 			text: t("navbar.links.testimonials"),
 		},
 		{
-			to: "sponsors",
+			href: "#sponsors",
 			text: t("navbar.links.sponsors"),
 		},
 		{
-			to: "collaborators",
+			href: "#collaborators",
 			text: t("navbar.links.collaborators"),
 		},
 		{
-			to: "faq",
+			href: "#faq",
 			text: t("navbar.links.faq"),
 		},
 	];
@@ -161,8 +165,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, menuButtonRef }: SidebarProps) =
 		>
 			<ul className={styles.links}>
 				{links.map(link => (
-					<li key={link.text}>
-						<a href={`#${link.to}`} onClick={closeSidebar}>
+					<li key={link.href}>
+						<a href={link.href} onClick={closeSidebar}>
 							{link.text}
 						</a>
 					</li>

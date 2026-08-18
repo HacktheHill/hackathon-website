@@ -73,9 +73,22 @@ test("navbar hides while scrolling down and returns on scroll up without the MLH
 	const badge = page.locator("#mlh-trust-badge");
 	await expect(navbar).toBeInViewport();
 	await expect(badge).toBeVisible();
+	await expect(badge).toHaveCSS("transition-property", "transform, opacity, visibility");
 
 	// The sidebar's inert attribute is set on hydration; the scroll listener exists after it.
 	await expect(page.locator("#mobile-navigation")).toHaveAttribute("inert", "");
+	const initialBadgeTop = await badge.evaluate(element => element.getBoundingClientRect().top);
+	await page.evaluate(() => scrollTo({ top: 100, behavior: "instant" }));
+	await expect(navbar).toHaveAttribute("data-hidden", "true");
+	await page.waitForTimeout(100);
+	const animatedBadge = await badge.evaluate(element => ({
+		top: element.getBoundingClientRect().top,
+		visibility: getComputedStyle(element).visibility,
+	}));
+	expect(animatedBadge.top).toBeLessThan(initialBadgeTop);
+	expect(animatedBadge.visibility).toBe("visible");
+	await expect(badge).toBeHidden();
+
 	await page.evaluate(() => scrollTo({ top: 1600, behavior: "instant" }));
 	await expect(navbar).not.toBeInViewport();
 
@@ -85,6 +98,41 @@ test("navbar hides while scrolling down and returns on scroll up without the MLH
 
 	await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
 	await expect(badge).toBeVisible();
+});
+
+test("desktop section links only appear in the floating navbar", async ({ page }) => {
+	await page.setViewportSize({ width: 1440, height: 900 });
+	await page.goto("/");
+	const navbar = page.locator("nav").first();
+	const badge = page.locator("#mlh-trust-badge");
+	const heroApply = page.locator('#hero a[href="https://apply.hackthehill.com/"]');
+	const navbarApply = navbar.locator('a[href="https://apply.hackthehill.com/"]');
+	const sectionLinks = [
+		navbarApply,
+		...["about", "testimonials", "sponsors", "collaborators", "faq"].map(id =>
+			navbar.locator(`a[href="#${id}"]`),
+		),
+	];
+
+	for (const link of sectionLinks) await expect(link).toBeHidden();
+	await expect(badge).toBeVisible();
+	await expect(heroApply).toHaveAttribute("href", "https://apply.hackthehill.com/");
+	await expect(navbarApply).toHaveAttribute("href", "https://apply.hackthehill.com/");
+	expect(await navbar.locator("ul a").evaluateAll(links => links.map(link => link.getAttribute("href")))).toEqual([
+		"https://apply.hackthehill.com/",
+		"#about",
+		"#testimonials",
+		"#sponsors",
+		"#collaborators",
+		"#faq",
+	]);
+
+	await page.evaluate(() => scrollTo({ top: 1600, behavior: "instant" }));
+	await expect(navbar).not.toBeInViewport();
+	await page.evaluate(() => scrollTo({ top: 1400, behavior: "instant" }));
+	await expect(navbar).toBeInViewport();
+	await expect(badge).toBeHidden();
+	for (const link of sectionLinks) await expect(link).toBeVisible();
 });
 
 test("navbar controls keep the same order and alignment across breakpoints", async ({ page }) => {
@@ -112,7 +160,12 @@ test("navbar controls keep the same order and alignment across breakpoints", asy
 		expect(Math.abs(controls[0].top - controls[2].top)).toBeLessThanOrEqual(1);
 		expect(controls[1].top).toBeGreaterThanOrEqual(controls[0].top);
 		expect(controls[1].top).toBeLessThanOrEqual(controls[0].top + 24);
-		await expect(page.locator("nav").first().locator('a[href^="#"]')).toHaveCount(1);
+		const visibleHashLinks = await page
+			.locator("nav")
+			.first()
+			.locator('a[href^="#"]')
+			.evaluateAll(links => links.filter(link => link.getClientRects().length > 0).length);
+		expect(visibleHashLinks).toBe(1);
 	}
 });
 
@@ -127,6 +180,14 @@ test("hamburger menu opens the mobile navigation and closes on link click and Es
 	await expect(sidebar).toHaveAttribute("aria-hidden", "false");
 	await expect(page.getByRole("button", { name: "Close navigation menu" })).toHaveAttribute("aria-expanded", "true");
 	await expect(page.locator("html")).toHaveAttribute("data-mobile-navigation-open", "");
+	await expect(page.locator('#hero a[href="https://apply.hackthehill.com/"]')).toHaveAttribute(
+		"href",
+		"https://apply.hackthehill.com/",
+	);
+	await expect(sidebar.getByRole("link", { name: "Apply" })).toHaveAttribute(
+		"href",
+		"https://apply.hackthehill.com/",
+	);
 
 	await sidebar.getByRole("link", { name: "FAQ" }).click();
 	await expect(sidebar).toHaveAttribute("aria-hidden", "true");
@@ -270,7 +331,7 @@ test("carousel supports keyboard arrows and swipe", async ({ page }) => {
 	await expect(pressed).toHaveAttribute("aria-label", /3:/);
 });
 
-test("keyboard order includes the reduced primary navigation", async ({ page }) => {
+test("keyboard order excludes hidden hero navigation links", async ({ page }) => {
 	await page.goto("/");
 	const focused: string[] = [];
 	for (let index = 0; index < 5; index += 1) {

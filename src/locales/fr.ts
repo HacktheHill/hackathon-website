@@ -1,6 +1,7 @@
 export default {
 	navbar: {
 		links: {
+			apply: "Postuler",
 			about: "À propos",
 			testimonials: "Témoignages",
 			sponsors: "Anciens commanditaires",
