@@ -354,7 +354,7 @@
 
 .faq-slot {
 	left: 12%;
-	top: 77.9%;
+	top: calc(86.75% - 17.5rem);
 	width: 76%;
 	pointer-events: auto;
 }
@@ -386,7 +386,7 @@
 
 	.faq-slot {
 		left: 10%;
-		top: 77.4%;
+		top: calc(86.75% - 15.75rem);
 		width: 80%;
 		transform: scale(0.85);
 		transform-origin: top center;
