@@ -14,17 +14,10 @@
 .header {
 	font-family: Coolvetica;
 	font-weight: normal;
-	position: relative;
 }
 
 .header :global(.section-heading) {
 	font-size: 2.6rem;
-}
-
-.faq-img {
-	position: absolute;
-	right: 0;
-	bottom: -2rem;
 }
 
 .faq-columns {
@@ -64,11 +57,5 @@
 	.question,
 	.answer {
 		font-size: 1.1rem;
-	}
-}
-
-@media screen and (max-width: 1024px) {
-	.faq-img {
-		display: none;
 	}
 }

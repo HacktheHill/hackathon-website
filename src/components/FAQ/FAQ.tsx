@@ -1,6 +1,5 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { useState } from "react";
-import faq from "@/assets/faq-leaves.svg?raw";
 import { t } from "@/i18n";
 import styles from "./FAQ.module.css";
 
@@ -158,13 +157,6 @@ export default function FAQ() {
 				<h2 id="faq-title" className="section-heading" data-aos="fade-right" data-aos-duration="800">
 					{t("faq.title")}
 				</h2>
-				<div
-					className={styles["faq-img"]}
-					aria-hidden="true"
-					dangerouslySetInnerHTML={{
-						__html: faq,
-					}}
-				></div>
 			</div>
 			<div className={styles["faq-columns"]}>
 				<div className={styles.column} data-aos="fade-right" data-aos-duration="800">
