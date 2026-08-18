@@ -89,6 +89,7 @@ function App() {
 
 		const update = () => {
 			frame = 0;
+
 			if (motionQuery.matches) return;
 
 			const travel = Math.min(window.scrollY, window.innerHeight * 1.25);

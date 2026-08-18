@@ -2,11 +2,10 @@ export default {
 	navbar: {
 		links: {
 			about: "About",
-			winners: "Winners",
+			testimonials: "Testimonials",
 			sponsors: "Past Sponsors",
 			collaborators: "Past Collaborators",
 			faq: "FAQ",
-			testimonials: "Testimonials",
 		},
 		aria_label: "Primary navigation",
 		mobile_aria_label: "Mobile navigation",

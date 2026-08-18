@@ -393,75 +393,188 @@
 	}
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-	.about-slot,
-	.testimonials-slot,
-	.sponsors-slot {
-		left: -5%;
-		width: 110%;
+@media (max-width: 1024px) {
+	.canvas {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		aspect-ratio: auto !important;
+		overflow: clip;
+		background: #061238;
 	}
 
-	.testimonials-slot {
-		transform: scale(0.74);
+	.artwork {
+		display: none;
 	}
 
-	.sponsors-slot {
-		transform: scale(0.64);
+	.content {
+		display: contents;
 	}
 
-	.faq-slot {
-		left: 0;
-		top: 81%;
+	.slot,
+	.stats-layer,
+	.video-layer {
+		position: relative;
+		inset: auto;
+		box-sizing: border-box;
 		width: 100%;
-		transform: scale(0.82);
+		transform: none;
+		translate: none !important;
 	}
-}
 
-@media (max-width: 600px) {
+	.hero-slot {
+		grid-row: 1;
+		height: auto;
+	}
+
+	.hero-slot :global(section#hero) {
+		height: auto;
+		min-height: 100svh;
+	}
+
+	.hero-slot :global([class*="hero-sky"]),
+	.hero-slot :global([class*="hero-clouds"]),
+	.hero-slot :global([class*="hero-hill-far"]),
+	.hero-slot :global([class*="hero-hill-near"]) {
+		display: block;
+	}
+
+	.hero-slot :global([class*="hero-foreground"]) {
+		background-image: url("../../assets/Hero/foreground.webp") !important;
+	}
+
+	.about-slot {
+		grid-row: 2;
+		padding: 5rem 1.25rem 2.5rem;
+		background: linear-gradient(180deg, #2a0709, #4b0d10);
+		pointer-events: auto;
+	}
+
+	.video-layer {
+		grid-row: 3;
+		width: calc(100% - 2.5rem);
+		margin: 0 1.25rem 4rem;
+		padding: 8% 9% 10%;
+		aspect-ratio: 1377 / 900;
+		background: url("/art/scene/logs.webp") center / contain no-repeat #4b0d10;
+		box-shadow: 0 0 0 1.25rem #4b0d10;
+	}
+
+	.stats-layer {
+		grid-row: 4;
+		/* Above .video-layer's 205 so the bush below can bleed over the seam. */
+		z-index: 210;
+		padding: 0 1.25rem 1.5rem;
+		background: linear-gradient(180deg, #741416, #d64922 70%, #e66b2e);
+		pointer-events: auto;
+	}
+
+	/* The desktop canvas plants bush-3 where the recap video gives way to the
+		stats signs. Mobile restores it as a foreground band straddling that
+		seam: the artwork rises past the boundary so its scalloped top edge
+		becomes the horizon instead of a straight line, then dissolves into the
+		gradient below. z-index -1 keeps it above this slot's own background but
+		behind the heading. */
+	.stats-layer::before {
+		position: absolute;
+		/* The artwork's scalloped edge is ~7.4vw deep at the 150% size below, so
+			the bleed has to scale with the viewport too: a fixed offset lets the
+			scallop valleys dip past the boundary at wider widths, exposing a hard
+			step between this section's red and the darker one above. */
+		top: -5vw;
+		right: 0;
+		left: 0;
+		z-index: -1;
+		height: clamp(7rem, 30vw, 12rem);
+		background: url("/art/scene/bush-3.webp") center top / 150% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
+		mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
+	}
+
+	/* Keep Testimonials solid red at the bottom so there is no washed-out fade
+		beneath the carousel. */
+	.testimonials-slot {
+		grid-row: 5;
+		padding: 2.5rem 1rem 5rem;
+		background-color: #d95025;
+		background-image: linear-gradient(180deg, #e66b2e 3rem, #d95025 75%);
+	}
+
+	.sponsors-slot {
+		grid-row: 6;
+		padding: 5rem 1rem;
+		background: #72d2ca;
+	}
+
+	.faq-slot {
+		grid-row: 7;
+		/* Stacking context so the seam art below sits above this background
+			while staying behind the FAQ content. */
+		z-index: 0;
+		padding: clamp(13rem, 64vw, 20rem) 1.25rem 10rem;
+		background: linear-gradient(
+			180deg,
+			#72d2ca,
+			#16357f clamp(11rem, 55vw, 17rem),
+			#0d225f 70%,
+			#07153e
+		);
+	}
+
+	/* Sponsors-to-FAQ seam, rebuilt from the desktop scene: the ice shelf
+		(ice-1) fades in over the sponsors teal, its cracks (ice-2, registered
+		to the same bottom edge as on the canvas) sit just above the torn edge,
+		and the open water below deepens into the FAQ blue. */
+	.faq-slot::before {
+		position: absolute;
+		top: clamp(7rem, 36vw, 12rem);
+		right: 0;
+		left: 0;
+		z-index: -1;
+		height: clamp(20rem, 100vw, 32rem);
+		background: url("/art/scene/water.webp") center top / 130% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
+		mask-image: linear-gradient(180deg, #000 72%, transparent);
+	}
+
+	.faq-slot::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: -1;
+		height: clamp(9rem, 46vw, 15rem);
+		background:
+			url("/art/scene/ice-2.webp") center bottom / 130% auto no-repeat,
+			url("/art/scene/ice-1.webp") center bottom / 130% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, transparent, #000 2.5rem);
+		mask-image: linear-gradient(180deg, transparent, #000 2.5rem);
+	}
+
+	.footer-slot {
+		grid-row: 8;
+		padding: 4rem 0 5rem;
+		background: #061238;
+	}
+
+	/* Section heights are fractional, so on a fractional device pixel ratio
+		(browser zoom, or 125% Windows scaling) a row boundary can land mid
+		device-pixel and leave a hairline of the dark backdrop showing between
+		two sections. Overlapping every row onto the one above by 1px means the
+		seam is always covered by an opaque background. Must stay last so it
+		wins over .video-layer's own margin. */
 	.about-slot,
+	.video-layer,
+	.stats-layer,
 	.testimonials-slot,
-	.sponsors-slot {
-		left: -25%;
-		width: 150%;
-	}
-
-	.about-slot {
-		top: 15.9%;
-		transform: scale(0.62);
-	}
-
-	.testimonials-slot {
-		top: 36.2%;
-		transform: scale(0.58);
-	}
-
-	.sponsors-slot {
-		top: 54.8%;
-		transform: scale(0.56);
-	}
-
-	.faq-slot {
-		left: -20%;
-		top: 77.2%;
-		transform: scale(0.68);
-		width: 140%;
-	}
-}
-
-@media (max-width: 380px) {
-	.about-slot {
-		transform: scale(0.58);
-	}
-
-	.testimonials-slot {
-		transform: scale(0.54);
-	}
-
-	.sponsors-slot {
-		transform: scale(0.52);
-	}
-
-	.faq-slot {
-		transform: scale(0.62);
+	.sponsors-slot,
+	.faq-slot,
+	.footer-slot {
+		margin-top: -1px;
 	}
 }

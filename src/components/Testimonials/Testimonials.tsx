@@ -75,8 +75,13 @@ function Testimonials() {
 			<div
 				className={styles["testimonial-body"]}
 				aria-live="polite"
+				tabIndex={0}
 				data-aos="fade-up"
 				data-aos-duration="800"
+				onKeyDown={event => {
+					if (event.key === "ArrowLeft") prevSlide();
+					if (event.key === "ArrowRight") nextSlide();
+				}}
 				onPointerDown={event => {
 					if (!event.isPrimary) return;
 					pointerStartRef.current = { id: event.pointerId, x: event.clientX, y: event.clientY };
@@ -101,31 +106,37 @@ function Testimonials() {
 					pointerStartRef.current = null;
 				}}
 			>
-				{testimonialData.map((testimonial, index) => (
-					<div
-						key={testimonial.id}
-						className={styles["testimonial-container"]}
-						aria-hidden={index !== activeIndex}
-						aria-label={`${index + 1}/${testimonialData.length}: ${testimonial.name}`}
-						role="group"
-						aria-roledescription="slide"
-						style={{
-							transform: `translateX(calc(${-activeIndex * 100}% - ${activeIndex * 4}rem))`,
-						}}
-					>
-						<img
-							className={styles["testimonial-img"]}
-							src={testimonialData[index].img}
-							alt={testimonialData[index].name}
-						/>
-						<div className={styles["testimonial-text"]}>
-							<p className={styles["testimonial-content"]}>{testimonialData[index].content}</p>
-							<p className={styles["testimonial-provider"]}>
-								{testimonialData[index].name}, {testimonialData[index].role}
-							</p>
+				<div
+					className={styles["testimonial-track"]}
+					style={{ transform: `translateX(${-activeIndex * 100}%)` }}
+				>
+					{testimonialData.map((testimonial, index) => (
+						<div
+							key={testimonial.id}
+							className={styles["testimonial-container"]}
+							aria-hidden={index !== activeIndex}
+							aria-label={`${index + 1}/${testimonialData.length}: ${testimonial.name}`}
+							role="group"
+							aria-roledescription="slide"
+						>
+							<img
+								className={styles["testimonial-img"]}
+								src={testimonial.img}
+								alt={testimonial.name}
+								width="256"
+								height="256"
+								loading="lazy"
+								decoding="async"
+							/>
+							<div className={styles["testimonial-text"]}>
+								<p className={styles["testimonial-content"]}>{testimonial.content}</p>
+								<p className={styles["testimonial-provider"]}>
+									{testimonial.name}, {testimonial.role}
+								</p>
+							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
 			<div
 				className={styles["carousel-control"]}

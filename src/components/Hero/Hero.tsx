@@ -283,6 +283,9 @@ function Hero() {
 						onPointerEnter={(event) => {
 							if (event.pointerType !== "touch") setPopupOpen(true);
 						}}
+						onPointerLeave={(event) => {
+							if (event.pointerType !== "touch") setPopupOpen(false);
+						}}
 						onPointerDown={(event) => event.stopPropagation()}
 						onClick={(event) => {
 							event.stopPropagation();
@@ -305,7 +308,13 @@ function Hero() {
 					data-aos-duration="800"
 					data-aos-delay="100"
 				>
-					<img className={styles["banner-logo"]} src={BannerLogo} alt="Hack the Hill III" />
+					<img
+						className={styles["banner-logo"]}
+						src={BannerLogo}
+						alt="Hack the Hill III"
+						width="635"
+						height="96"
+					/>
 					{/* Edition mark — three bright-red bars reading "III" */}
 					<span className={styles["edition"]} aria-hidden="true">
 						<i></i>

@@ -6,6 +6,10 @@
 	font-display: swap;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root {
 	--light-color: white;
 	--light-primary-color: #fff3b6;
