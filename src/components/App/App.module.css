@@ -350,9 +350,9 @@
 	pointer-events: auto;
 }
 
-.faq-slot {
-	left: 12%;
-	top: 77.9%;
+	.faq-slot {
+		left: 12%;
+		top: 81.25%;
 	width: 76%;
 	pointer-events: auto;
 }
@@ -384,7 +384,7 @@
 
 	.faq-slot {
 		left: 10%;
-		top: 77.4%;
+		top: 81.25%;
 		width: 80%;
 		transform: scale(0.85);
 		transform-origin: top center;
@@ -507,11 +507,11 @@
 		/* Stacking context so the seam art below sits above this background
 			while staying behind the FAQ content. */
 		z-index: 0;
-		padding: clamp(13rem, 64vw, 20rem) 1.25rem 10rem;
+		padding: 0 1.25rem 10rem;
 		background: linear-gradient(
 			180deg,
 			#72d2ca,
-			#16357f clamp(11rem, 55vw, 17rem),
+			#16357f clamp(9rem, calc(55vw - 2rem), 15rem),
 			#0d225f 70%,
 			#07153e
 		);
@@ -523,7 +523,7 @@
 		and the open water below deepens into the FAQ blue. */
 	.faq-slot::before {
 		position: absolute;
-		top: clamp(7rem, 36vw, 12rem);
+		top: clamp(5rem, calc(36vw - 2rem), 10rem);
 		right: 0;
 		left: 0;
 		z-index: -1;

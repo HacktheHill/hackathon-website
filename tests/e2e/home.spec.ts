@@ -192,6 +192,43 @@ test("mobile sections do not overlap", async ({ page }) => {
 	}
 });
 
+test("mobile FAQ follows sponsors without extra spacing", async ({ page }) => {
+	for (const viewport of [
+		{ width: 390, height: 844 },
+		{ width: 768, height: 1024 },
+	]) {
+		await page.setViewportSize(viewport);
+		await page.goto("/");
+		const { sectionGap, titleGap } = await page.locator("#faq").evaluate(section => {
+			const sectionBox = section.getBoundingClientRect();
+			const slot = section.parentElement!;
+			const slotBox = slot.getBoundingClientRect();
+			const sponsorsBox = slot.previousElementSibling!.getBoundingClientRect();
+			return {
+				sectionGap: slotBox.top - sponsorsBox.bottom,
+				titleGap: sectionBox.top - slotBox.top,
+			};
+		});
+		expect(sectionGap).toBeGreaterThanOrEqual(-1);
+		expect(sectionGap).toBeLessThanOrEqual(0);
+		expect(titleGap).toBe(0);
+	}
+});
+
+test("desktop FAQ keeps a modest stable offset across canvas breakpoints", async ({ page }) => {
+	await page.emulateMedia({ reducedMotion: "reduce" });
+	for (const width of [1025, 1199, 1200, 1201, 1440]) {
+		await page.setViewportSize({ width, height: 900 });
+		await page.goto("/");
+		const topRatio = await page.locator("#faq").evaluate(section => {
+			const slot = section.parentElement!;
+			const canvas = section.closest<HTMLElement>("[data-page-canvas]")!;
+			return Number.parseFloat(getComputedStyle(slot).top) / canvas.clientHeight;
+		});
+		expect(topRatio).toBeCloseTo(0.8125, 3);
+	}
+});
+
 test("mobile hero copy clears navigation and stays in view", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
