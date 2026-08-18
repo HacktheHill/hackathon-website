@@ -1,12 +1,6 @@
-.about {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-}
-
 .about-text {
 	box-sizing: border-box;
-	flex: 1;
+	width: calc(50% - 1.125rem);
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -25,13 +19,6 @@
 	font-size: 1.1rem;
 }
 
-.frame {
-	flex: 1;
-	aspect-ratio: 16/9;
-	margin: auto 4rem;
-	pointer-events: none;
-}
-
 .video {
 	display: block;
 	width: 100%;
@@ -40,28 +27,24 @@
 }
 
 @media screen and (max-width: 1200px) {
-	.about {
-		gap: 0.5rem;
+	.about-text {
+		width: 50%;
 	}
+}
 
-	.frame {
-		margin: auto 2rem;
+@media screen and (max-width: 1024px) {
+	.about-text {
+		width: 100%;
 	}
 }
 
 @media screen and (max-width: 510px) {
-	.frame {
-		margin: auto 1rem;
+	.about-text h2 {
+		font-size: clamp(2.5rem, 11vw, 3.5rem);
 	}
 
 	.about-text p {
-		font-size: 1.15rem;
-	}
-}
-
-@media screen and (max-width: 400px) {
-	.frame {
-		width: 100%;
-		margin: auto 0.5rem;
+		font-size: 1rem;
+		line-height: 1.5;
 	}
 }

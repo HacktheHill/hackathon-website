@@ -11,7 +11,8 @@
 		"astro": "astro",
 		"lint": "eslint .",
 		"format": "prettier --write .",
-		"typecheck": "astro check"
+		"typecheck": "astro check",
+		"test:e2e": "playwright test"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.9",
@@ -30,12 +31,11 @@
 		"nanostores": "^0.7.3",
 		"package.json": "^0.0.0",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-scroll": "^1.8.9"
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.62.1",
 		"@types/aos": "^3.0.8",
-		"@types/react-scroll": "^1.8.10",
 		"@types/node": "^25.9.3",
 		"@types/react": "^18.0.26",
 		"@types/react-dom": "^18.0.10",
@@ -49,5 +49,13 @@
 	},
 	"overrides": {
 		"esbuild": "0.28.1"
+	},
+	"allowScripts": {
+		"esbuild@0.28.1": true,
+		"@fortawesome/fontawesome-common-types": false,
+		"@fortawesome/fontawesome-svg-core": false,
+		"@fortawesome/free-brands-svg-icons": false,
+		"@fortawesome/free-solid-svg-icons": false,
+		"unrs-resolver": false
 	}
 }

@@ -84,11 +84,24 @@ function App() {
 			max: Number(element.dataset.parallaxMax),
 			speed: Number(element.dataset.sectionParallax),
 		}));
+		const sponsorsSlot = canvas.querySelector<HTMLElement>(
+			`.${styles["sponsors-slot"]}`,
+		);
 		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 		let frame = 0;
 
 		const update = () => {
 			frame = 0;
+
+			// Runs before the reduced-motion bail-out: the colour must still
+			// switch there, it just snaps instead of fading.
+			if (sponsorsSlot) {
+				canvas.classList.toggle(
+					styles["seam-ice"],
+					sponsorsSlot.getBoundingClientRect().top <= window.innerHeight * 0.6,
+				);
+			}
+
 			if (motionQuery.matches) return;
 
 			const travel = Math.min(window.scrollY, window.innerHeight * 1.25);

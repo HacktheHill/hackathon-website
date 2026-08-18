@@ -2,7 +2,6 @@ import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@forta
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import type { Dispatch, RefObject, SetStateAction } from "react";
 import { useEffect, useRef } from "react";
-import { Link } from "react-scroll";
 import { t } from "@/i18n";
 import styles from "./Sidebar.module.css";
 
@@ -10,35 +9,29 @@ type SidebarProps = {
 	sidebarOpen: boolean;
 	setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 	menuButtonRef: RefObject<HTMLButtonElement>;
-	scrollDuration: number;
 };
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen, menuButtonRef, scrollDuration }: SidebarProps) => {
+const Sidebar = ({ sidebarOpen, setSidebarOpen, menuButtonRef }: SidebarProps) => {
 	const sidebarRef = useRef<HTMLElement>(null);
 	const links = [
 		{
 			to: "about",
-			offset: -120,
 			text: t("navbar.links.about"),
 		},
 		{
 			to: "testimonials",
-			offset: -120,
 			text: t("navbar.links.testimonials"),
 		},
 		{
 			to: "sponsors",
-			offset: -120,
 			text: t("navbar.links.sponsors"),
 		},
 		{
 			to: "collaborators",
-			offset: -120,
 			text: t("navbar.links.collaborators"),
 		},
 		{
 			to: "faq",
-			offset: -120,
 			text: t("navbar.links.faq"),
 		},
 	];
@@ -151,9 +144,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, menuButtonRef, scrollDuration }:
 		};
 	}, [menuButtonRef, setSidebarOpen, sidebarOpen]);
 
+	// Unlike the fixed navbar on the desktop site, this navbar scrolls away with
+	// the page, so refocusing the menu button after a link click would scroll
+	// back to the top and cancel the navigation. Focus is only restored on Escape.
 	const closeSidebar = () => {
 		setSidebarOpen(false);
-		menuButtonRef.current?.focus();
 	};
 
 	return (
@@ -167,17 +162,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, menuButtonRef, scrollDuration }:
 			<ul className={styles.links}>
 				{links.map(link => (
 					<li key={link.text}>
-						<Link
-							to={link.to}
-							spy={true}
-							smooth={true}
-							offset={link.offset}
-							duration={scrollDuration}
-							href={`#${link.to}`}
-							onClick={closeSidebar}
-						>
+						<a href={`#${link.to}`} onClick={closeSidebar}>
 							{link.text}
-						</Link>
+						</a>
 					</li>
 				))}
 			</ul>

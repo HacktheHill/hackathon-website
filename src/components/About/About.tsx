@@ -24,7 +24,7 @@ export function AboutVideo() {
 
 function About() {
 	return (
-		<section className={styles.about} id="about" aria-labelledby="about-title">
+		<section id="about" aria-labelledby="about-title">
 			<div className={styles["about-text"]}>
 				<h2 id="about-title" className="section-heading" data-aos="fade-right" data-aos-duration="800">
 					{t("about.title")}
@@ -39,7 +39,6 @@ function About() {
 					{t("about.p3")}
 				</p>
 			</div>
-			<div className={styles.frame} aria-hidden="true" />
 		</section>
 	);
 }

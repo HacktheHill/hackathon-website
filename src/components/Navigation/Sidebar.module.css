@@ -62,12 +62,18 @@
 }
 
 .sidebar a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 2.75rem;
+	min-height: 2.75rem;
+	padding: 0.25rem 0.75rem;
 	text-decoration: none;
 	color: inherit;
 	font-size: inherit;
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1024px) {
 	.sidebar-open {
 		z-index: 0;
 		visibility: visible;

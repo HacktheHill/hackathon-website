@@ -21,3 +21,7 @@ pnpm-debug.log*
 .DS_Store
 
 .astro/
+
+# browser test output
+test-results/
+playwright-report/
