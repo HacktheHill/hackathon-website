@@ -1,5 +1,4 @@
 .container {
-	/* Note there are colors embed in the MUI in FAQ.jsx which are not referenced here*/
 	--text-color: var(--light-primary-color);
 	--question-container-hover-color: var(--light-secondary-color);
 
@@ -32,12 +31,59 @@
 	min-width: 0;
 }
 
+.question-container {
+	margin-block: 10px;
+}
+
 .question,
 .answer {
 	color: var(--text-color);
 	font-family: Rubik;
 	font-size: 1.05rem;
+}
+
+.question {
+	display: flex;
+	align-items: center;
+	min-height: 48px;
+	padding-inline: 1rem;
 	font-weight: 600;
+	cursor: pointer;
+	list-style: none;
+}
+
+.question::-webkit-details-marker {
+	display: none;
+}
+
+.question::before {
+	content: "+";
+	flex: 0 0 1rem;
+	margin-right: 0.5rem;
+	font-size: 1.25em;
+	line-height: 1;
+	text-align: center;
+}
+
+.question-container[open] > .question::before {
+	content: "−";
+}
+
+.question:hover,
+.question:focus-visible {
+	color: var(--question-container-hover-color);
+}
+
+.question:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+.answer {
+	margin-left: 1.5rem;
+	padding: 0 1rem 1rem;
+	font-weight: 400;
+	text-align: left;
 }
 
 .answer a {

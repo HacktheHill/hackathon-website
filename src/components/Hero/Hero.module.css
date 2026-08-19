@@ -27,14 +27,35 @@
 	position: absolute;
 	inset: -2% 0 0 0;
 	z-index: 0;
-	background-image: url("../../assets/Hero/sky.webp");
-	background-size: cover;
-	background-position: center top;
-	background-repeat: no-repeat;
+	overflow: hidden;
 	/* Decorative backdrop — must not intercept pointers. The foreground parliament
 	   is pointer-events:none, so without this the sky (a full-bleed layer) would
 	   receive every hit over the tower instead of letting it pass through. */
 	pointer-events: none;
+}
+
+.hero-layer-picture {
+	display: contents;
+}
+
+.hero-layer-image {
+	display: none;
+	max-width: none;
+	pointer-events: none;
+	user-select: none;
+}
+
+@media (max-width: 1024px) {
+	.hero-layer-image {
+		display: block;
+	}
+}
+
+.hero-sky .hero-layer-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
 }
 
 /* Distant + mid hills, layered behind the red foreground (far/yellow behind
@@ -50,11 +71,16 @@
 .hero-hill-near {
 	position: absolute;
 	inset: 0;
-	background-repeat: no-repeat;
-	background-size: auto var(--hill-h);
-	background-position: var(--hill-x, center) calc(100% + var(--hill-drop));
 	pointer-events: none;
 	user-select: none;
+}
+
+.hero-hill-far .hero-layer-image,
+.hero-hill-near .hero-layer-image {
+	position: absolute;
+	top: calc(100% - var(--hill-h) + var(--hill-drop));
+	height: var(--hill-h);
+	width: auto;
 }
 
 .hero-hill-far {
@@ -66,7 +92,11 @@
 	--hill-h: max(72vh, 31vw);
 	--hill-drop: calc(var(--hill-h) - 28vh); /* ridge ≈ 72vh */
 	--hill-x: 78%;
-	background-image: url("../../assets/Hero/hill2.webp");
+}
+
+.hero-hill-far .hero-layer-image {
+	left: 78%;
+	transform: translateX(-78%);
 }
 
 .hero-hill-near {
@@ -74,7 +104,11 @@
 	--hill-h: max(72vh, 31vw);
 	--hill-drop: calc(var(--hill-h) - 34vh); /* ridge ≈ 66vh */
 	--hill-x: 42%;
-	background-image: url("../../assets/Hero/hill1.webp");
+}
+
+.hero-hill-near .hero-layer-image {
+	left: 42%;
+	transform: translateX(-42%);
 }
 
 .hero-clouds {
@@ -98,9 +132,13 @@
 	left: var(--cloud-left);
 	width: var(--cloud-w);
 	opacity: var(--cloud-opacity, 0.85);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+}
+
+.cloud .hero-layer-image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
 }
 
 /* --- Top cloud bank ---------------------------------------------------------
@@ -115,7 +153,6 @@
 	--cloud-opacity: 0.95;
 	--drift-x: 5vw;
 	aspect-ratio: 2.04;
-	background-image: url("../../assets/Hero/cloud1.webp");
 }
 
 .cloud-4 {
@@ -125,7 +162,6 @@
 	--cloud-opacity: 0.9;
 	--drift-x: 4vw;
 	aspect-ratio: 2.98;
-	background-image: url("../../assets/Hero/cloud4.webp");
 }
 
 .cloud-3 {
@@ -135,7 +171,6 @@
 	--cloud-opacity: 0.88;
 	--drift-x: 5vw;
 	aspect-ratio: 1.99;
-	background-image: url("../../assets/Hero/cloud3.webp");
 }
 
 .cloud-5 {
@@ -145,7 +180,6 @@
 	--cloud-opacity: 0.9;
 	--drift-x: 5vw;
 	aspect-ratio: 1.78;
-	background-image: url("../../assets/Hero/cloud5.webp");
 }
 
 /* --- Right-hand cluster, drifting in lower down ----------------------------- */
@@ -156,7 +190,6 @@
 	--cloud-opacity: 0.93;
 	--drift-x: 9vw;
 	aspect-ratio: 1.5;
-	background-image: url("../../assets/Hero/cloud2.webp");
 }
 
 .cloud-6 {
@@ -167,7 +200,6 @@
 	--drift-x: 7vw;
 	filter: blur(0.8px);
 	aspect-ratio: 1.77;
-	background-image: url("../../assets/Hero/cloud6.webp");
 }
 
 /* Cloud count scales with the canvas: big screens (desktop, iPad) get the full
@@ -199,13 +231,12 @@
 	left: 0;
 	right: 0;
 	/* Span from the very top of the viewport down past the fold (top:0 + the
-	   negative bottom), instead of a fixed 100% height. The background's vertical
+	   negative bottom), instead of a fixed 100% height. The image's vertical
 	   position is measured from this box's top edge, so keeping it at top:0 makes
 	   that origin the viewport top — which is what lets the spire clamp below
 	   (`max(var(--foreground-min-top), …)`) read as an absolute clearance from
 	   the navbar. */
 	top: 0;
-	background-image: url("../../assets/Hero/foreground.webp");
 	/* Always span the full viewport width so the rampart wall reaches both edges on
 	   every aspect ratio. (A width cap used to kick in past ~1.97:1, leaving the
 	   wall short of the edges and exposing bare gradient in the bottom corners on
@@ -217,12 +248,17 @@
 	   the box height (top:0 → bottom:-10vh). So `110vh - 55.73vw` is the
 	   bottom-pinned top, and max() floors it at the navbar clearance.
 	   Keep this math in sync with the hotspot placement in Hero.tsx. */
-	background-size: 100% auto;
-	background-position: center max(var(--foreground-min-top), calc(110vh - 55.73vw));
-	background-repeat: no-repeat;
 	z-index: 4;
 	pointer-events: none;
 	user-select: none;
+}
+
+.hero-foreground .hero-layer-image {
+	position: absolute;
+	top: max(var(--foreground-min-top), calc(110vh - 55.73vw));
+	left: 0;
+	width: 100%;
+	height: auto;
 }
 
 /* Invisible button over the clock tower to reveal the countdown. Its
@@ -447,8 +483,14 @@
 		top: auto;
 		bottom: 0;
 		height: 52vh;
-		background-size: cover;
-		background-position: center bottom;
+	}
+
+	.hero-foreground .hero-layer-image {
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center bottom;
 	}
 
 	/* Stack the text in the upper sky band; the tower sits below-left. The

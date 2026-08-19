@@ -14,19 +14,6 @@
 .field {
 	position: absolute;
 	inset: 0;
-	visibility: hidden;
-	opacity: 0;
-	transition:
-		opacity 650ms ease,
-		visibility 0s linear 650ms;
-}
-
-.effects[data-mode="leaves"] .leaves,
-.effects[data-mode="snow"] .snow,
-.effects[data-mode="bubbles"] .bubbles {
-	visibility: visible;
-	opacity: 1;
-	transition-delay: 0s;
 }
 
 .particle {
@@ -38,13 +25,6 @@
 	will-change: transform;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	animation-play-state: paused;
-}
-
-.effects[data-mode="leaves"] .leaves .particle,
-.effects[data-mode="snow"] .snow .particle,
-.effects[data-mode="bubbles"] .bubbles .particle {
-	animation-play-state: running;
 }
 
 .leaves .particle {

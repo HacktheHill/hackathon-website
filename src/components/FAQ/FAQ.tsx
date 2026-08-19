@@ -1,5 +1,3 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import { useState } from "react";
 import { t } from "@/i18n";
 import styles from "./FAQ.module.css";
 
@@ -7,12 +5,6 @@ const CODE_OF_CONDUCT_URL =
 	"https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md";
 
 export default function FAQ() {
-	const [expandedList, setExpandedList] = useState<string[]>([]);
-
-	const handleKeyList = (key: string, expanded: boolean) => {
-		setExpandedList(prev => (expanded ? [...prev, key] : prev.filter(itemKey => itemKey !== key)));
-	};
-
 	const quesAns = [
 		{
 			q: t("faq.q1"),
@@ -84,72 +76,12 @@ export default function FAQ() {
 		},
 	];
 	const renderAccordions = (items: typeof quesAns) =>
-		items.map(item => {
-			const expanded = expandedList.includes(item.key);
-
-			return (
-				<Accordion
-					key={item.key}
-					className={styles["question-container"]}
-					expanded={expanded}
-					onChange={(_, isExpanded) => handleKeyList(item.key, isExpanded)}
-					sx={{
-						justifyContent: "left",
-						backgroundColor: "transparent",
-						backgroundImage: "none",
-						mb: "10px",
-						mt: "10px",
-						boxShadow: "none",
-						"&:before": {
-							display: "none",
-						},
-					}}
-				>
-					<AccordionSummary
-						className={styles.question}
-						sx={{
-							color: "var(--text-color)",
-							"&:hover": {
-								color: "var(--question-container-hover-color)",
-							},
-						}}
-					>
-						<svg
-							aria-hidden="true"
-							focusable="false"
-							style={{ marginRight: "0.5rem" }}
-							stroke="currentColor"
-							fill="var(--text-color)"
-							strokeWidth="0"
-							viewBox="0 0 1024 1024"
-							height="1em"
-							width="1em"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							{expanded ? (
-								<path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
-							) : (
-								<>
-									<path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
-									<path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
-								</>
-							)}
-						</svg>
-						{item.q}
-					</AccordionSummary>
-
-					<AccordionDetails
-						className={styles.answer}
-						sx={{
-							marginLeft: "1.5rem",
-							pt: 0,
-						}}
-					>
-						<Typography align="left">{item.a}</Typography>
-					</AccordionDetails>
-				</Accordion>
-			);
-		});
+		items.map(item => (
+			<details key={item.key} className={styles["question-container"]}>
+				<summary className={styles.question}>{item.q}</summary>
+				<div className={styles.answer}>{item.a}</div>
+			</details>
+		));
 
 	return (
 		<section id="faq" className={styles.container} aria-labelledby="faq-title">

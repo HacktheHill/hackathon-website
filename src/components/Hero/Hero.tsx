@@ -4,8 +4,129 @@ import { locale, t } from "@/i18n";
 import Navigation from "../Navigation/Navigation";
 import styles from "./Hero.module.css";
 import "./animations.css";
+import skySrc from "@/assets/Hero/sky.webp?url";
+import cloud1Src from "@/assets/Hero/cloud1.webp?url";
+import cloud2Src from "@/assets/Hero/cloud2.webp?url";
+import cloud3Src from "@/assets/Hero/cloud3.webp?url";
+import cloud4Src from "@/assets/Hero/cloud4.webp?url";
+import cloud5Src from "@/assets/Hero/cloud5.webp?url";
+import cloud6Src from "@/assets/Hero/cloud6.webp?url";
+import hill1Src from "@/assets/Hero/hill1.webp?url";
+import hill2Src from "@/assets/Hero/hill2.webp?url";
+import foregroundSrc from "@/assets/Hero/foreground.webp?url";
 
 const BannerLogo = "/Logos/hackthehill-banner.svg";
+
+const HERO_DESIGN_WIDTH = 1920;
+const HERO_RESPONSIVE_CANVAS_WIDTHS = [480, 768, 1024, 1280] as const;
+const MOBILE_HERO_MEDIA = ["(max-width: 1024px)"] as const;
+const MID_MOBILE_HERO_MEDIA = ["(min-width: 601px) and (max-width: 1024px)"] as const;
+const WIDE_OR_LANDSCAPE_MOBILE_HERO_MEDIA = [
+	"(min-width: 601px) and (max-width: 1024px)",
+	"(max-width: 600px) and (orientation: landscape)",
+] as const;
+const NARROW_TABLET_HERO_MEDIA = ["(min-width: 1001px) and (max-width: 1024px)"] as const;
+
+type HeroLayerAsset = {
+	name: string;
+	src: string;
+	width: number;
+	height: number;
+	sizes: string;
+};
+
+const HERO_ASSETS = {
+	sky: { name: "sky", src: skySrc, width: 1920, height: 1179, sizes: "max(100vw, 166.11svh)" },
+	cloud1: {
+		name: "cloud1",
+		src: cloud1Src,
+		width: 1100,
+		height: 539,
+		sizes: "clamp(460px, 54vw, 960px)",
+	},
+	cloud2: {
+		name: "cloud2",
+		src: cloud2Src,
+		width: 435,
+		height: 290,
+		sizes: "clamp(340px, 36vw, 620px)",
+	},
+	cloud3: {
+		name: "cloud3",
+		src: cloud3Src,
+		width: 803,
+		height: 403,
+		sizes: "clamp(380px, 44vw, 820px)",
+	},
+	cloud4: {
+		name: "cloud4",
+		src: cloud4Src,
+		width: 950,
+		height: 319,
+		sizes: "clamp(420px, 50vw, 880px)",
+	},
+	cloud5: {
+		name: "cloud5",
+		src: cloud5Src,
+		width: 800,
+		height: 450,
+		sizes: "clamp(360px, 42vw, 760px)",
+	},
+	cloud6: {
+		name: "cloud6",
+		src: cloud6Src,
+		width: 800,
+		height: 452,
+		sizes: "clamp(210px, 58vw, 440px)",
+	},
+	hill1: { name: "hill1", src: hill1Src, width: 1920, height: 571, sizes: "max(242.10vh, 104.24vw)" },
+	hill2: { name: "hill2", src: hill2Src, width: 1920, height: 588, sizes: "max(235.10vh, 101.22vw)" },
+	foreground: {
+		name: "foreground",
+		src: foregroundSrc,
+		width: 1920,
+		height: 1070,
+		sizes: "(orientation: portrait) 200vw, 100vw",
+	},
+} satisfies Record<string, HeroLayerAsset>;
+
+const heroLayerSrcSet = (asset: HeroLayerAsset) =>
+	[
+		...HERO_RESPONSIVE_CANVAS_WIDTHS.map(canvasWidth => {
+			const candidateWidth = Math.round((asset.width * canvasWidth) / HERO_DESIGN_WIDTH);
+			return `/art/hero/responsive/${canvasWidth}/${asset.name}.webp ${candidateWidth}w`;
+		}),
+		`${asset.src} ${asset.width}w`,
+	].join(", ");
+
+function HeroLayerPicture({
+	asset,
+	media = MOBILE_HERO_MEDIA,
+	highPriority = false,
+}: {
+	asset: HeroLayerAsset;
+	media?: readonly string[];
+	highPriority?: boolean;
+}) {
+	const srcSet = heroLayerSrcSet(asset);
+	return (
+		<picture className={styles["hero-layer-picture"]}>
+			{media.map(query => (
+				<source key={query} media={query} srcSet={srcSet} sizes={asset.sizes} />
+			))}
+			<img
+				className={styles["hero-layer-image"]}
+				data-hero-layer={asset.name}
+				alt=""
+				width={asset.width}
+				height={asset.height}
+				loading="eager"
+				decoding="auto"
+				{...(highPriority ? { fetchpriority: "high" } : {})}
+			/>
+		</picture>
+	);
+}
 
 const EVENT_START_DATE = new Date("2026-09-25T17:00:00-04:00").getTime();
 const HACKING_START_DATE = new Date("2026-09-25T23:00:00-04:00").getTime();
@@ -13,12 +134,12 @@ const HACKING_END_DATE = new Date("2026-09-27T11:00:00-04:00").getTime();
 
 // foreground.webp is 1920×1070. The Peace Tower clock sits at this centre (in the
 // asset's own pixels) and spans roughly this box. We replicate the exact transform
-// the browser paints the background with so the hotspot tracks the clock on every
+// the browser paints the foreground image with so the hotspot tracks the clock on every
 // viewport — a fixed left/top can't, because the image scales/shifts per shape.
 // There are two paint modes (see Hero.module.css):
-//   • desktop: background-size: 100% auto; bottom-pinned, but the top is clamped
+//   • desktop: width: 100%; bottom-pinned, but the top is clamped
 //     by --foreground-min-top so the spire clears the navbar
-//   • portrait: background-size: cover; position: center bottom
+//   • portrait: object-fit: cover; object-position: center bottom
 const FOREGROUND_W = 1920;
 const FOREGROUND_H = 1070;
 const CLOCK_HOTSPOT = { cx: 690, cy: 290, w: 170, h: 170 };
@@ -31,12 +152,22 @@ const FOREGROUND_COVER_MEDIA = "(orientation: portrait)";
 // than the scroll), positive = farther (lags behind it). Roughly ordered by the
 // cloud's apparent size/closeness.
 const clouds = [
-	{ cls: styles["cloud-1"], parallax: -0.45 },
-	{ cls: styles["cloud-2"], parallax: 0.3 },
-	{ cls: styles["cloud-3"], parallax: 0.2 },
-	{ cls: styles["cloud-4"], parallax: -0.05 },
-	{ cls: styles["cloud-5"], parallax: 0.08 },
-	{ cls: styles["cloud-6"], parallax: -0.25 },
+	{
+		cls: styles["cloud-1"],
+		parallax: -0.45,
+		asset: HERO_ASSETS.cloud1,
+		media: WIDE_OR_LANDSCAPE_MOBILE_HERO_MEDIA,
+	},
+	{ cls: styles["cloud-2"], parallax: 0.3, asset: HERO_ASSETS.cloud2, media: MID_MOBILE_HERO_MEDIA },
+	{ cls: styles["cloud-3"], parallax: 0.2, asset: HERO_ASSETS.cloud3, media: MID_MOBILE_HERO_MEDIA },
+	{ cls: styles["cloud-4"], parallax: -0.05, asset: HERO_ASSETS.cloud4, media: NARROW_TABLET_HERO_MEDIA },
+	{
+		cls: styles["cloud-5"],
+		parallax: 0.08,
+		asset: HERO_ASSETS.cloud5,
+		media: WIDE_OR_LANDSCAPE_MOBILE_HERO_MEDIA,
+	},
+	{ cls: styles["cloud-6"], parallax: -0.25, asset: HERO_ASSETS.cloud6, media: MOBILE_HERO_MEDIA },
 ];
 
 function Hero() {
@@ -150,7 +281,7 @@ function Hero() {
 			const ch = fg.clientHeight;
 			if (!cw || !ch) return;
 
-			// Replicate the painted background's geometry inside this box (the box's
+			// Replicate the painted image's geometry inside this box (the box's
 			// own offset/drop is inherited by the hotspot as a child).
 			let renderedW: number;
 			let offsetY: number;
@@ -252,7 +383,9 @@ function Hero() {
 		>
 			<Navigation />
 			{/* Sky */}
-			<div className={styles["hero-sky"]}></div>
+			<div className={styles["hero-sky"]} aria-hidden="true">
+				<HeroLayerPicture asset={HERO_ASSETS.sky} highPriority />
+			</div>
 
 			{/* Drifting watercolour clouds */}
 			<div className={styles["hero-clouds"]}>
@@ -261,17 +394,24 @@ function Hero() {
 						key={cloud.cls}
 						className={`${styles["cloud"]} ${cloud.cls} hero-cloud hero-cloud-${i + 1}`}
 						aria-hidden="true"
-					></div>
+					>
+						<HeroLayerPicture asset={cloud.asset} media={cloud.media} />
+					</div>
 				))}
 			</div>
 
 			{/* Layered hills behind the red foreground: far (yellow) then near (orange) */}
-			<div className={styles["hero-hill-far"]} aria-hidden="true"></div>
-			<div className={styles["hero-hill-near"]} aria-hidden="true"></div>
+			<div className={styles["hero-hill-far"]} aria-hidden="true">
+				<HeroLayerPicture asset={HERO_ASSETS.hill2} highPriority />
+			</div>
+			<div className={styles["hero-hill-near"]} aria-hidden="true">
+				<HeroLayerPicture asset={HERO_ASSETS.hill1} highPriority />
+			</div>
 
 			{/* Foreground: Parliament clock-tower silhouette. The countdown hotspot
 			    lives inside it so its position is relative to the painted image box. */}
 			<div className={styles["hero-foreground"]} ref={foregroundRef}>
+				<HeroLayerPicture asset={HERO_ASSETS.foreground} highPriority />
 				{/* Invisible hotspot over the clock; positioned via JS (see useEffect) */}
 				{countdownAvailable && (
 					<button
