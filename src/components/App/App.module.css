@@ -28,6 +28,7 @@
 	width: 100%;
 	max-width: 3049px;
 	overflow: hidden;
+	background: linear-gradient(180deg, #f2ba83 0%, #fbecb7 16.3%, #061238 16.3%);
 }
 
 .artwork {
@@ -323,10 +324,6 @@
 	display: none;
 }
 
-.hero-slot :global([class*="hero-foreground"]) {
-	background-image: none !important;
-}
-
 .about-slot,
 .testimonials-slot,
 .sponsors-slot,
@@ -429,6 +426,7 @@
 	.hero-slot :global(section#hero) {
 		height: auto;
 		min-height: 100svh;
+		background: linear-gradient(180deg, #f2ba83 0%, #f8cb93 24%, #fbe6ac 58%, #fbecb7 100%);
 	}
 
 	.hero-slot :global([class*="hero-sky"]),
@@ -436,10 +434,6 @@
 	.hero-slot :global([class*="hero-hill-far"]),
 	.hero-slot :global([class*="hero-hill-near"]) {
 		display: block;
-	}
-
-	.hero-slot :global([class*="hero-foreground"]) {
-		background-image: url("../../assets/Hero/foreground.webp") !important;
 	}
 
 	.about-slot {

@@ -151,11 +151,11 @@ function ParticleEffects() {
 
 	return (
 		<div className={styles.effects} data-mode={mode} aria-hidden="true">
-			{(["leaves", "snow", "bubbles"] as const).map(field => (
-				<div key={field} className={`${styles.field} ${styles[field]}`}>
-					{PARTICLES[field].map((particle, index) => (
+			{mode !== "none" && (
+				<div className={`${styles.field} ${styles[mode]}`}>
+					{PARTICLES[mode].map((particle, index) => (
 						<img
-							key={`${field}-${index}`}
+							key={`${mode}-${index}`}
 							className={styles.particle}
 							src={particle.asset}
 							alt=""
@@ -164,7 +164,7 @@ function ParticleEffects() {
 						/>
 					))}
 				</div>
-			))}
+			)}
 		</div>
 	);
 }
