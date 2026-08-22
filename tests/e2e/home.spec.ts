@@ -483,7 +483,7 @@ test("desktop keyboard order includes persistent header controls", async ({ page
 	expect(focused[4]).toContain("mlh.io");
 });
 
-test("countdown opens on hover and restores focus after keyboard dismissal", async ({ page }) => {
+test("countdown restores focus after pointer and keyboard dismissal", async ({ page }) => {
 	await page.addInitScript(() => {
 		Date.now = () => new Date("2026-08-15T12:00:00-04:00").getTime();
 	});
@@ -496,6 +496,13 @@ test("countdown opens on hover and restores focus after keyboard dismissal", asy
 	await page.mouse.move(1, 1);
 	await expect(dialog).toHaveJSProperty("open", false);
 	await hotspot.focus();
+	await hotspot.press("Enter");
+	await expect(dialog).toHaveJSProperty("open", true);
+	await expect(page.getByRole("button", { name: "Close the countdown" })).toBeFocused();
+	await hotspot.hover({ force: true });
+	await page.mouse.move(1, 1);
+	await expect(dialog).toHaveJSProperty("open", false);
+	await expect(hotspot).toBeFocused();
 	await hotspot.press("Enter");
 	await expect(dialog).toHaveJSProperty("open", true);
 	await page.keyboard.press("Escape");

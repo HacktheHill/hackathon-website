@@ -426,7 +426,10 @@ function Hero() {
 							if (event.pointerType !== "touch") setPopupOpen(true);
 						}}
 						onPointerLeave={(event) => {
-							if (event.pointerType !== "touch") setPopupOpen(false);
+							if (event.pointerType === "touch") return;
+							const restoreFocus = document.activeElement === closeButtonRef.current;
+							setPopupOpen(false);
+							if (restoreFocus) window.requestAnimationFrame(() => hotspotRef.current?.focus());
 						}}
 						onPointerDown={(event) => event.stopPropagation()}
 						onClick={(event) => {
