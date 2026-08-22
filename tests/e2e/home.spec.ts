@@ -5,6 +5,12 @@ const viewports = [
 	{ name: "tablet", width: 768, height: 1024 },
 	{ name: "desktop", width: 1440, height: 900 },
 	{ name: "short-landscape", width: 844, height: 390 },
+	{ name: "below-carousel-breakpoint", width: 510, height: 844 },
+	{ name: "above-carousel-breakpoint", width: 511, height: 844 },
+	{ name: "below-phone-breakpoint", width: 600, height: 900 },
+	{ name: "above-phone-breakpoint", width: 601, height: 900 },
+	{ name: "responsive-canvas-limit", width: 1024, height: 900 },
+	{ name: "desktop-canvas-start", width: 1025, height: 900 },
 ];
 
 test("scene artwork has a themed fallback and uses viewport-aware loading", async ({ page }) => {
@@ -163,15 +169,21 @@ for (const viewport of viewports) {
 }
 
 test("French content reflows without overflow", async ({ page }) => {
-	await page.setViewportSize({ width: 390, height: 844 });
-	await page.goto("/");
-	await page.getByRole("button", { name: /FR:/ }).click();
-	await expect(page.locator("html")).toHaveAttribute("lang", "fr");
-	await expect(page.getByRole("heading", { name: "Foire aux questions" })).toBeVisible();
-	const overflow = await page.evaluate(
-		() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
-	);
-	expect(overflow).toBeLessThanOrEqual(1);
+	for (const viewport of [
+		{ width: 390, height: 844 },
+		{ width: 768, height: 1024 },
+		{ width: 1025, height: 900 },
+	]) {
+		await page.setViewportSize(viewport);
+		await page.goto("/");
+		await page.getByRole("button", { name: /FR:/ }).click();
+		await expect(page.locator("html")).toHaveAttribute("lang", "fr");
+		await expect(page.getByRole("heading", { name: "Foire aux questions" })).toBeVisible();
+		const overflow = await page.evaluate(
+			() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+		);
+		expect(overflow).toBeLessThanOrEqual(1);
+	}
 });
 
 test("mobile sections do not overlap", async ({ page }) => {
