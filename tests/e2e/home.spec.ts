@@ -192,6 +192,22 @@ test("mobile sections do not overlap", async ({ page }) => {
 	}
 });
 
+test("mobile scrolling skips desktop parallax transforms", async ({ page }) => {
+	await page.setViewportSize({ width: 768, height: 1024 });
+	await page.goto("/");
+	await page.evaluate(() => scrollTo({ top: 1600, behavior: "instant" }));
+	await expect
+		.poll(() =>
+			page.locator("[data-section-parallax]").evaluateAll(elements =>
+				elements.every(element => {
+					const htmlElement = element as HTMLElement;
+					return !htmlElement.style.translate && htmlElement.dataset.parallaxOffset === "0";
+				}),
+			),
+		)
+		.toBe(true);
+});
+
 test("mobile FAQ follows sponsors without extra spacing", async ({ page }) => {
 	for (const viewport of [
 		{ width: 390, height: 844 },

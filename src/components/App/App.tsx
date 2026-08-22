@@ -118,12 +118,13 @@ function App() {
 			speed: Number(element.dataset.sectionParallax),
 		}));
 		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+		const desktopQuery = window.matchMedia("(min-width: 1025px)");
 		let frame = 0;
 
 		const update = () => {
 			frame = 0;
 
-			if (motionQuery.matches) return;
+			if (motionQuery.matches || !desktopQuery.matches) return;
 
 			const travel = Math.min(window.scrollY, window.innerHeight * 1.25);
 			layers.forEach(({ element, speed }) => {
@@ -142,7 +143,7 @@ function App() {
 		};
 
 		const resetMotion = () => {
-			if (motionQuery.matches) {
+			if (motionQuery.matches || !desktopQuery.matches) {
 				layers.forEach(({ element }) => element.style.removeProperty("translate"));
 				sections.forEach(({ element }) => {
 					element.style.removeProperty("translate");
@@ -156,13 +157,15 @@ function App() {
 			if (!frame) frame = window.requestAnimationFrame(update);
 		};
 
-		update();
+		resetMotion();
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		motionQuery.addEventListener("change", resetMotion);
+		desktopQuery.addEventListener("change", resetMotion);
 
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 			motionQuery.removeEventListener("change", resetMotion);
+			desktopQuery.removeEventListener("change", resetMotion);
 			if (frame) window.cancelAnimationFrame(frame);
 		};
 	}, []);
