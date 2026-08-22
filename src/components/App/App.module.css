@@ -492,8 +492,8 @@
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
-		background-color: #d95025;
-		background-image: linear-gradient(180deg, #e66b2e 3rem, #d95025 75%);
+		background-color: #b83a20;
+		background-image: linear-gradient(180deg, #c64f1f 3rem, #b83a20 75%);
 	}
 
 	.sponsors-slot {
