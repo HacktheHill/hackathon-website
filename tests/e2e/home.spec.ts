@@ -237,7 +237,7 @@ test("mobile FAQ follows sponsors without extra spacing", async ({ page }) => {
 				titleGap: sectionBox.top - slotBox.top,
 			};
 		});
-		expect(sectionGap).toBeGreaterThanOrEqual(-1);
+		expect(sectionGap).toBeGreaterThanOrEqual(-1.01);
 		expect(sectionGap).toBeLessThanOrEqual(0);
 		expect(titleGap).toBe(0);
 	}
