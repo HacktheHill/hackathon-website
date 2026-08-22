@@ -1,13 +1,12 @@
 .effects {
 	position: fixed;
 	top: 0;
-	left: 50%;
+	left: 0;
 	z-index: 0;
-	width: min(100vw, 3049px);
+	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
 	pointer-events: none;
-	transform: translateX(-50%);
 	contain: layout paint style;
 }
 
@@ -97,7 +96,7 @@
 
 @keyframes bubble-rise {
 	0% {
-		transform: translate3d(0, 116vh, 0) scale(0.76) rotate(-5deg);
+		transform: translate3d(0, 116vh, 0) scale(0.76);
 		opacity: 0;
 	}
 
@@ -106,33 +105,21 @@
 	}
 
 	28% {
-		transform: translate3d(var(--particle-x-1), 82vh, 0) scale(0.86)
-			rotate(var(--particle-rotation-1));
+		transform: translate3d(var(--particle-x-1), 82vh, 0) scale(0.86);
 	}
 
 	54% {
-		transform: translate3d(var(--particle-x-2), 48vh, 0) scale(0.94)
-			rotate(var(--particle-rotation-2));
+		transform: translate3d(var(--particle-x-2), 48vh, 0) scale(0.94);
 	}
 
 	80% {
-		transform: translate3d(var(--particle-x-3), 13vh, 0) scale(1.02)
-			rotate(var(--particle-rotation-3));
+		transform: translate3d(var(--particle-x-3), 13vh, 0) scale(1.02);
 		opacity: 1;
 	}
 
 	100% {
-		transform: translate3d(var(--particle-x-4), -18vh, 0) scale(1.08)
-			rotate(var(--particle-rotation-4));
+		transform: translate3d(var(--particle-x-4), -18vh, 0) scale(1.08);
 		opacity: 0;
-	}
-}
-
-@media (max-width: 600px) {
-	.leaves .particle:nth-child(n + 10),
-	.snow .particle:nth-child(n + 21),
-	.bubbles .particle:nth-child(n + 14) {
-		display: none;
 	}
 }
 

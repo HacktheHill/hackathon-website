@@ -70,13 +70,15 @@ const createParticles = (
 			asset: assets[index % assets.length],
 			delay: -random() * duration,
 			duration,
-			left: -2 + random() * 104,
+			left: ((index + random()) / count) * 100,
 			opacity:
 				ranges.opacity[0] + random() * (ranges.opacity[1] - ranges.opacity[0]),
 			rotations:
 				mode === "leaves"
 					? [leafTilt, -leafTilt * 0.8, leafTilt * 0.7, -leafTilt * 0.45]
-					: [turn * 0.18, turn * 0.45, turn * 0.72, turn],
+					: mode === "bubbles"
+						? [0, 0, 0, 0]
+						: [turn * 0.18, turn * 0.45, turn * 0.72, turn],
 			size: ranges.size[0] + random() * (ranges.size[1] - ranges.size[0]),
 			x: [drift * 0.2 + sway, drift * 0.5 - sway, drift * 0.75 + sway, drift],
 		};
