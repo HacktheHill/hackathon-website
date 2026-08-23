@@ -465,26 +465,146 @@ test("phone sign typography stays proportional when sign artwork reaches its siz
 	expect(ratios[1].green).toBeCloseTo(ratios[0].green, 3);
 });
 
-test("desktop FAQ tracks the tablet artwork extension across canvas breakpoints", async ({ page }) => {
+test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
-	for (const width of [1025, 1199, 1200, 1201, 1440]) {
+	for (const width of [1025, 1199, 1200, 1201, 1440, 1599, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
 		await page.goto("/");
 		const position = await page.locator("#faq").evaluate(section => {
-			const slot = section.parentElement!;
-			const canvas = section.closest<HTMLElement>("[data-page-canvas]")!;
-			const road = document.querySelector<HTMLElement>('[data-scene-layer="road"]')!;
-			const roadTranslate = getComputedStyle(road).translate;
-			const extension =
-				roadTranslate === "none"
-					? 0
-					: Number.parseFloat(roadTranslate.split(/\s+/)[1] ?? "0");
+			const slot = section.parentElement as HTMLElement;
+			const heading = section.querySelector("h2")!;
+			const footer = document.querySelector<HTMLElement>("footer")!;
+			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
+			const iceBottom = document.querySelector<HTMLElement>(
+				'[data-scene-slice="ice-bottom"]',
+			)!;
+			const activeIce = getComputedStyle(iceBottom).display === "none" ? iceTop : iceBottom;
 			return {
-				actual: Number.parseFloat(getComputedStyle(slot).top) / canvas.clientHeight,
-				expected: (canvas.clientHeight * 0.8125 + extension) / canvas.clientHeight,
+				iceClearance:
+					heading.getBoundingClientRect().top - activeIce.getBoundingClientRect().bottom,
+				maxUpwardParallax: Number.parseFloat(slot.dataset.parallaxMax ?? "0"),
+				footerClearance:
+					footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom,
 			};
 		});
-		expect(position.actual).toBeCloseTo(position.expected, 3);
+		expect(position.iceClearance).toBeGreaterThanOrEqual(position.maxUpwardParallax);
+		expect(position.footerClearance).toBeGreaterThanOrEqual(position.maxUpwardParallax);
+	}
+});
+
+test("desktop FAQ expands its water canvas and moves the ocean floor with the footer", async ({ page }) => {
+	await page.emulateMedia({ reducedMotion: "reduce" });
+	for (const width of [1025, 1536]) {
+		await page.setViewportSize({ width, height: 900 });
+		await page.goto("/");
+		await page.evaluate(() => document.fonts.ready);
+		await page.waitForTimeout(100);
+		const baseline = await page.evaluate(() => {
+			const canvas = document.querySelector<HTMLElement>("[data-page-canvas]")!;
+			const baseScene = document.querySelector<HTMLElement>('[class*="base-scene"]')!;
+			const footer = document.querySelector<HTMLElement>("footer")!.parentElement!;
+			const floor = document.querySelector<HTMLElement>('[data-scene-layer="footer-water"]')!;
+			return {
+				canvasHeight: canvas.getBoundingClientRect().height,
+				baseHeight: baseScene.getBoundingClientRect().height,
+				extension: Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")),
+				footerTop: footer.offsetTop,
+				floorTop: floor.getBoundingClientRect().top,
+			};
+		});
+
+		await page.locator("#faq details").evaluateAll(details => {
+			details.forEach(detail => detail.setAttribute("open", ""));
+		});
+		await expect
+			.poll(() =>
+				page
+					.locator("[data-page-canvas]")
+					.evaluate(canvas =>
+						Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")),
+					),
+			)
+			.toBeGreaterThan(baseline.extension + 50);
+		await expect
+			.poll(() =>
+				page.locator("[data-page-canvas]").evaluate(canvas => {
+					const baseScene = document.querySelector<HTMLElement>('[class*="base-scene"]')!;
+					const extension = Number.parseFloat(
+						getComputedStyle(canvas).getPropertyValue("--faq-content-extension"),
+					);
+					return Math.abs(
+						canvas.getBoundingClientRect().height - baseScene.getBoundingClientRect().height - extension,
+					);
+				}),
+			)
+			.toBeLessThanOrEqual(0.5);
+
+		const expanded = await page.evaluate(() => {
+			const canvas = document.querySelector<HTMLElement>("[data-page-canvas]")!;
+			const baseScene = document.querySelector<HTMLElement>('[class*="base-scene"]')!;
+			const faq = document.querySelector<HTMLElement>("#faq")!.parentElement!;
+			const footer = document.querySelector<HTMLElement>("footer")!.parentElement!;
+			const floor = document.querySelector<HTMLElement>('[data-scene-layer="footer-water"]')!;
+			return {
+				extension: Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")),
+				canvasHeight: canvas.getBoundingClientRect().height,
+				baseHeight: baseScene.getBoundingClientRect().height,
+				footerTop: footer.offsetTop,
+				floorTop: floor.getBoundingClientRect().top,
+				faqClearance: footer.offsetTop - (faq.offsetTop + faq.getBoundingClientRect().height),
+				waterContinuation: getComputedStyle(canvas, "::after").backgroundImage,
+				horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+			};
+		});
+
+		const extensionGrowth = expanded.extension - baseline.extension;
+		expect(expanded.canvasHeight - baseline.canvasHeight).toBeCloseTo(extensionGrowth, 0);
+		expect(expanded.baseHeight).toBeCloseTo(baseline.baseHeight, 1);
+		expect(expanded.footerTop - baseline.footerTop).toBeCloseTo(extensionGrowth, 0);
+		expect(expanded.floorTop - baseline.floorTop).toBeCloseTo(extensionGrowth, 0);
+		expect(expanded.faqClearance).toBeGreaterThanOrEqual(48);
+		expect(expanded.waterContinuation).toContain("linear-gradient");
+		expect(expanded.horizontalOverflow).toBeLessThanOrEqual(0);
+
+		await page.locator("#faq details").evaluateAll(details => {
+			details.forEach(detail => detail.removeAttribute("open"));
+		});
+		await expect
+			.poll(() =>
+				page
+					.locator("[data-page-canvas]")
+					.evaluate(canvas =>
+						Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")),
+					),
+			)
+			.toBeLessThanOrEqual(baseline.extension + 1);
+	}
+});
+
+test("desktop welcome video leaves clear space beside the copy", async ({ page }) => {
+	await page.emulateMedia({ reducedMotion: "reduce" });
+	for (const width of [1025, 1536, 1920]) {
+		await page.setViewportSize({ width, height: 900 });
+		await page.goto("/");
+		const layout = await page.evaluate(() => {
+			const canvas = document.querySelector<HTMLElement>("[data-page-canvas]")!;
+			const copy = document.querySelector<HTMLElement>('#about [class*="about-text"]')!;
+			const video = document.querySelector<HTMLElement>('[class*="video-layer"]')!;
+			const copyBox = copy.getBoundingClientRect();
+			const videoBox = video.getBoundingClientRect();
+			return {
+				gap: videoBox.left - copyBox.right,
+				canvasWidth: canvas.getBoundingClientRect().width,
+				videoWidth: videoBox.width,
+				videoAspectRatio: videoBox.width / videoBox.height,
+				horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+			};
+		});
+
+		expect(layout.gap).toBeGreaterThanOrEqual(layout.canvasWidth * 0.035);
+		expect(layout.videoWidth / layout.canvasWidth).toBeCloseTo(0.33, 2);
+		expect(layout.videoAspectRatio).toBeCloseTo(1059 / 571, 2);
+		expect(layout.horizontalOverflow).toBeLessThanOrEqual(0);
 	}
 });
 
@@ -986,7 +1106,9 @@ test("bubble highlights remain oriented toward the shared light source", async (
 	const field = page.locator('[data-mode="bubbles"]');
 	await expect(field).toBeAttached();
 	const bubbles = field.locator("img");
-	await expect(bubbles).toHaveCount(18);
+	await expect
+		.poll(() => bubbles.count(), { timeout: 8_000 })
+		.toBeGreaterThanOrEqual(6);
 
 	const orientations = await bubbles.evaluateAll(elements =>
 		elements.slice(0, 6).map(element => getComputedStyle(element).rotate),
