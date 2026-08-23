@@ -826,7 +826,8 @@
 
 @media (max-width: 600px) {
 	.footer-slot {
-		padding-top: 2.5rem;
+		padding-top: 1rem;
+		padding-bottom: 6.5rem;
 	}
 
 	/* Pull the complete recap-stats composition over the transparent signposts.
