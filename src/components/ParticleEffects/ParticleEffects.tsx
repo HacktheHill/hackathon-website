@@ -6,15 +6,18 @@ type ParticleType = Exclude<ParticleMode, "none">;
 
 type Particle = {
 	asset: string;
+	delay: number;
 	duration: number;
 	left: number;
 	opacity: number;
 	rotations: number[];
 	size: number;
+	top: number;
 	x: number[];
 };
 
 type ActiveParticle = Particle & {
+	expiresAt: number;
 	id: number;
 	mode: ParticleType;
 	exiting?: boolean;
@@ -52,6 +55,13 @@ const SPAWN_INTERVALS: Record<ParticleType, number> = {
 	snow: 550,
 	bubbles: 1100,
 };
+const MAX_ACTIVE_PARTICLES: Record<ParticleType, number> = {
+	leaves: 10,
+	snow: 37,
+	bubbles: 24,
+};
+const PARTICLE_EXPIRY_GRACE_PERIOD = 1000;
+const INITIAL_PARTICLE_PROGRESS = 0.15;
 const STALE_PARTICLE_GRACE_PERIOD = 2500;
 const STALE_PARTICLE_FADE_STAGGER = 90;
 const MIN_STALE_PARTICLE_FADE_STAGGER = 20;
@@ -70,7 +80,7 @@ const createRandom = (seed: number) => () => {
 const createParticle = (mode: ParticleType, sequence: number, random: () => number): Particle => {
 	const assets = PARTICLE_ASSETS[mode];
 	const ranges = {
-		leaves: { duration: [17, 28], opacity: [1, 1], size: [30, 64] },
+		leaves: { duration: [17, 28], opacity: [0.28, 0.58], size: [30, 64] },
 		snow: { duration: [11, 19], opacity: [0.38, 0.78], size: [7, 18] },
 		bubbles: { duration: [14, 24], opacity: [0.38, 0.72], size: [18, 54] },
 	}[mode];
@@ -84,6 +94,7 @@ const createParticle = (mode: ParticleType, sequence: number, random: () => numb
 
 	return {
 		asset: assets[sequence % assets.length],
+		delay: 0,
 		duration,
 		left: distributedPosition * 100,
 		opacity: ranges.opacity[0] + random() * (ranges.opacity[1] - ranges.opacity[0]),
@@ -94,6 +105,7 @@ const createParticle = (mode: ParticleType, sequence: number, random: () => numb
 					? [0, 0, 0, 0]
 					: [turn * 0.18, turn * 0.45, turn * 0.72, turn],
 		size: ranges.size[0] + random() * (ranges.size[1] - ranges.size[0]),
+		top: 0,
 		x: [drift * 0.2 + sway, drift * 0.5 - sway, drift * 0.75 + sway, drift],
 	};
 };
@@ -107,16 +119,20 @@ const particleStyle = (particle: Particle): ParticleStyle => ({
 	"--particle-x-2": `${particle.x[1]}px`,
 	"--particle-x-3": `${particle.x[2]}px`,
 	"--particle-x-4": `${particle.x[3]}px`,
+	animationDelay: `${particle.delay}s`,
 	animationDuration: `${particle.duration}s`,
 	left: `${particle.left}%`,
 	opacity: particle.opacity,
+	top: `${particle.top}px`,
 	width: `${particle.size}px`,
 });
 
 function ParticleEffects() {
 	const [mode, setMode] = useState<ParticleMode>("none");
 	const [fadeUrgency, setFadeUrgency] = useState(0);
+	const [isPageVisible, setIsPageVisible] = useState(true);
 	const [particles, setParticles] = useState<ActiveParticle[]>([]);
+	const effectsRef = useRef<HTMLDivElement>(null);
 	const nextParticleId = useRef(0);
 	const random = useRef(createRandom(1729));
 	const modeRef = useRef<ParticleMode>("none");
@@ -125,16 +141,35 @@ function ParticleEffects() {
 		element: HTMLElement;
 	} | null>(null);
 
-	const spawnParticle = useCallback((particleMode: ParticleType) => {
+	const spawnParticle = useCallback((particleMode: ParticleType, startsInViewport = false) => {
 		const id = nextParticleId.current++;
-		setParticles(current => [
-			...current,
-			{
-				...createParticle(particleMode, id, random.current),
-				id,
-				mode: particleMode,
-			},
-		]);
+		const createdAt = Date.now();
+		const particle = createParticle(particleMode, id, random.current);
+		const effectsTop = effectsRef.current?.getBoundingClientRect().top ?? 0;
+		const activeParticle: ActiveParticle = {
+			...particle,
+			delay: startsInViewport ? -particle.duration * INITIAL_PARTICLE_PROGRESS : 0,
+			expiresAt: createdAt + particle.duration * 1000 + PARTICLE_EXPIRY_GRACE_PERIOD,
+			id,
+			mode: particleMode,
+			top: Math.max(-effectsTop, 0),
+		};
+
+		setParticles(current => {
+			const unexpired = current.filter(existing => existing.expiresAt > createdAt);
+			let overflow = Math.max(
+				unexpired.filter(existing => existing.mode === particleMode).length + 1 -
+					MAX_ACTIVE_PARTICLES[particleMode],
+				0,
+			);
+			const withinLimit = unexpired.filter(existing => {
+				if (existing.mode !== particleMode || overflow === 0) return true;
+				overflow -= 1;
+				return false;
+			});
+
+			return [...withinLimit, activeParticle];
+		});
 	}, []);
 
 	const removeParticle = useCallback((id: number) => {
@@ -271,12 +306,24 @@ function ParticleEffects() {
 	}, []);
 
 	useEffect(() => {
-		if (mode === "none") return;
+		const updateVisibility = () => {
+			const isVisible = !document.hidden;
+			setIsPageVisible(isVisible);
+			if (!isVisible) setParticles([]);
+		};
 
-		spawnParticle(mode);
+		updateVisibility();
+		document.addEventListener("visibilitychange", updateVisibility);
+		return () => document.removeEventListener("visibilitychange", updateVisibility);
+	}, []);
+
+	useEffect(() => {
+		if (mode === "none" || !isPageVisible) return;
+
+		spawnParticle(mode, true);
 		const interval = window.setInterval(() => spawnParticle(mode), SPAWN_INTERVALS[mode]);
 		return () => window.clearInterval(interval);
-	}, [mode, spawnParticle]);
+	}, [isPageVisible, mode, spawnParticle]);
 
 	useEffect(() => {
 		const gracePeriod = Math.round(STALE_PARTICLE_GRACE_PERIOD * (1 - fadeUrgency));
@@ -288,7 +335,7 @@ function ParticleEffects() {
 	}, [fadeStaleParticles, fadeUrgency, mode]);
 
 	return (
-		<div className={styles.effects} data-mode={mode} aria-hidden="true">
+		<div ref={effectsRef} className={styles.effects} data-mode={mode} aria-hidden="true">
 			{PARTICLE_TYPES.map(particleMode => {
 				const visibleParticles = particles.filter(particle => particle.mode === particleMode);
 				if (visibleParticles.length === 0) return null;
