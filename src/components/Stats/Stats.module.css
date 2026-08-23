@@ -3,6 +3,7 @@
 	position: relative;
 	width: 100%;
 	margin: 0;
+	scroll-margin-top: clamp(1rem, 3vw, 2.5rem);
 	font-family: "Highway Gothic", sans-serif;
 }
 
@@ -93,7 +94,17 @@
 	grid-template-rows: repeat(2, 1fr);
 	width: 89%;
 	height: 29%;
+	translate: -4px 4px;
 	color: var(--sign-text);
+}
+
+.sign-stage {
+	display: contents;
+}
+
+.mobile-video-sign,
+.mobile-green-copy {
+	display: none;
 }
 
 .blue-row {
@@ -133,6 +144,7 @@
 
 .organizers-copy span {
 	margin-top: 0.45cqw;
+	font-family: "Highway Gothic Narrow", sans-serif;
 	font-size: 1.2cqw;
 	text-transform: uppercase;
 }
@@ -160,36 +172,41 @@
 	top: 13.5%;
 	left: 7%;
 	color: #111;
-	font-size: 3.25cqw;
+	font-family: "Highway Gothic Wide", sans-serif;
+	font-size: 3.55cqw;
 	font-weight: 400;
 	line-height: 0.9;
+	translate: 4px 4px;
 	text-align: center;
 }
 
 .green-top span {
 	position: relative;
 	top: 6.5%;
-	font-size: 2.65cqw;
+	font-family: "Highway Gothic Wide", sans-serif;
+	font-size: 2.85cqw;
 	text-align: center;
 }
 
 .green-bottom {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 36% 64%;
 	align-items: center;
-	justify-content: center;
 	height: 61%;
 }
 
 .green-bottom strong {
-	font-size: 2.65cqw;
+	font-family: "Highway Gothic Wide", sans-serif;
+	font-size: 3cqw;
 	font-weight: 400;
 	line-height: 0.9;
+	text-align: center;
 }
 
 .green-bottom span {
-	margin-top: 0.35cqw;
-	font-size: 2.65cqw;
+	font-family: "Highway Gothic Wide", sans-serif;
+	font-size: 2.85cqw;
+	translate: -0.6cqw 0;
 	text-align: center;
 }
 
@@ -202,6 +219,12 @@
 }
 
 @media (max-width: 1024px) {
+	.title {
+		width: 100%;
+		margin: 0 0 1.5rem;
+		font-size: clamp(2rem, 5vw, 3rem);
+	}
+
 	.signs {
 		position: relative;
 	}
@@ -224,6 +247,10 @@
 }
 
 @media (max-width: 600px) {
+	.stats {
+		padding-top: clamp(1rem, 4vw, 1.5rem);
+	}
+
 	.title {
 		width: 100%;
 		margin: 0 0 2rem;
@@ -233,55 +260,128 @@
 	}
 
 	.signs {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 0.38fr) minmax(0, 0.9fr);
-		align-items: end;
-		gap: 0.25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.signs::after {
-		bottom: -3.25rem;
-		height: clamp(5rem, 26vw, 7rem);
+		content: none;
 	}
 
-	.blue,
-	.organizers,
-	.green {
+	.sign-stage {
+		position: relative;
+		display: flex;
+		isolation: isolate;
+		justify-content: center;
 		width: 100%;
 	}
 
+	.sign-stage:nth-child(1),
+	.sign-stage:nth-child(2) {
+		display: none;
+	}
+
+	.sign {
+		container-type: inline-size;
+	}
+
+	.mobile-video-sign {
+		--sign-text: #fff;
+
+		display: block;
+		margin: clamp(1.5rem, 6vw, 3rem) auto 0;
+		font-family: "Highway Gothic", sans-serif;
+	}
+
+	.mobile-video-sign .blue-row strong,
+	.mobile-video-sign .blue-row span {
+		font-family: "Highway Gothic", sans-serif;
+		font-weight: 400;
+	}
+
+	.desktop-green-copy {
+		display: none;
+	}
+
+	.mobile-green-copy {
+		display: block;
+	}
+
+	.mobile-green-details {
+		display: grid;
+		grid-template-columns: none;
+		grid-template-rows: repeat(2, auto);
+		align-content: center;
+		row-gap: 0;
+	}
+
+	.mobile-green-row {
+		display: grid;
+		grid-template-columns: 36% 64%;
+		align-items: baseline;
+		line-height: 0.9;
+	}
+
+	.sign-stage::after {
+		position: absolute;
+		right: -1.25rem;
+		bottom: -3.25rem;
+		left: -1.25rem;
+		z-index: 2;
+		height: clamp(5.5rem, 30vw, 8rem);
+		background: url("/art/scene/bush-4.webp") center top / 100% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 96%);
+		mask-image: linear-gradient(180deg, #000 70%, transparent 96%);
+	}
+
+	.blue,
+	.green {
+		width: min(88%, 22rem);
+	}
+
+	.organizers {
+		width: min(42%, 10rem);
+	}
+
 	.blue-row strong {
-		font-size: clamp(0.7rem, 3vw, 1rem);
+		font-size: 8.1cqw;
 	}
 
 	.blue-row span {
-		font-size: clamp(0.58rem, 2.55vw, 0.875rem);
+		font-size: 7.1cqw;
 	}
 
 	.organizers-copy strong {
-		font-size: clamp(1.35rem, 6.5vw, 2rem);
+		font-size: 48.8cqw;
 	}
 
 	.organizers-copy span {
-		margin-top: 0.1rem;
-		font-size: clamp(0.35rem, 1.55vw, 0.5rem);
+		margin-top: 0.2rem;
+		font-size: 9.45cqw;
 	}
 
 	.green-top strong {
-		font-size: clamp(0.78rem, 3.4vw, 1.1rem);
+		font-size: 11.3cqw;
 	}
 
 	.green-top span {
-		font-size: clamp(0.65rem, 2.8vw, 0.95rem);
+		font-size: 9.08cqw;
 	}
 
 	.green-bottom strong {
-		font-size: clamp(0.65rem, 2.8vw, 0.95rem);
+		font-size: 9.55cqw;
 	}
 
 	.green-bottom span {
-		margin-top: 0.1rem;
-		font-size: clamp(0.65rem, 2.8vw, 0.95rem);
+		font-size: 9.08cqw;
+	}
+
+	:global(html[lang="fr"]) .green-top span,
+	:global(html[lang="fr"]) .green-bottom span {
+		font-size: 7.2cqw;
 	}
 }
 

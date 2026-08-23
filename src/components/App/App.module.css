@@ -22,6 +22,8 @@
 }
 
 .canvas {
+	--tablet-partner-extension: 0px;
+
 	container-type: inline-size;
 	position: relative;
 	isolation: isolate;
@@ -46,6 +48,67 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+
+.tablet-ice-bottom,
+.tablet-ice-middle {
+	display: none;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+	.canvas {
+		--tablet-partner-extension: clamp(0rem, calc(72rem - 100vw), 8rem);
+	}
+}
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+	.canvas {
+		--tablet-partner-extension: clamp(0rem, calc(88rem - 100vw), 12rem);
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+	/* Move the original road as one image, preserving its aspect ratio. The
+		newly exposed area is the existing orange artwork underneath it. */
+	.tablet-road-shift {
+		translate: 0 var(--tablet-partner-extension);
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+	.artwork {
+		--tablet-ice-extension: clamp(2rem, calc(42rem - 40vw), 14rem);
+	}
+
+	/* Keep both detailed ends of the ice artwork untouched. Only the quiet
+		centre is allowed to grow when the collaborator grid needs more room. */
+	.tablet-ice-top {
+		clip-path: inset(0 0 20% 0);
+		translate: 0 var(--tablet-partner-extension);
+	}
+
+	.tablet-ice-bottom {
+		display: block;
+		clip-path: inset(80% 0 0);
+		translate: 0 calc(var(--tablet-partner-extension) + var(--tablet-ice-extension));
+	}
+
+	.tablet-ice-cracks {
+		translate: 0 calc(var(--tablet-partner-extension) + var(--tablet-ice-extension));
+	}
+
+	.tablet-ice-middle {
+		position: absolute;
+		top: calc(72.477% - 1px + var(--tablet-partner-extension));
+		left: 0;
+		z-index: 185;
+		display: block;
+		width: 100%;
+		height: calc(var(--tablet-ice-extension) + 2px);
+		background: linear-gradient(180deg, #75c8ba 0%, #72cbc0 50%, #75c8ba 100%);
+		content: "";
+		pointer-events: none;
+	}
 }
 
 /* The clouds are the first six layers above the sky, so every hill, tower and
@@ -303,6 +366,11 @@
 	pointer-events: auto;
 }
 
+.video-frame {
+	width: 100%;
+	height: 100%;
+}
+
 .hero-slot {
 	top: 0;
 	left: 0;
@@ -344,22 +412,22 @@
 }
 
 .sponsors-slot {
-	top: 54.2%;
+	top: calc(54.2% + var(--tablet-partner-extension));
 	transform: scale(0.68);
 	transform-origin: top center;
 	pointer-events: auto;
 }
 
-	.faq-slot {
-		left: 12%;
-		top: 81.25%;
+.faq-slot {
+	left: 12%;
+	top: calc(81.25% + var(--tablet-partner-extension));
 	width: 76%;
 	pointer-events: auto;
 }
 
 .footer-slot {
 	left: 0;
-	bottom: 4.1%;
+	bottom: calc(4.1% - var(--tablet-partner-extension));
 	width: 100%;
 	pointer-events: auto;
 }
@@ -378,13 +446,13 @@
 	}
 
 	.sponsors-slot {
-		top: 54.2%;
+		top: calc(54.2% + var(--tablet-partner-extension));
 		transform: scale(0.61);
 	}
 
 	.faq-slot {
 		left: 10%;
-		top: 81.25%;
+		top: calc(81.25% + var(--tablet-partner-extension));
 		width: 80%;
 		transform: scale(0.85);
 		transform-origin: top center;
@@ -438,20 +506,108 @@
 	}
 
 	.about-slot {
+		--about-transition-height: clamp(5rem, 24vw, 10rem);
+		--about-slice-height: clamp(20rem, 105vw, 36rem);
+		--about-bottom-slice-height: clamp(5rem, 26vw, 10rem);
+		--about-panel-fade: clamp(4rem, 14vw, 7rem);
+
 		grid-row: 2;
-		padding: 5rem 1.25rem 2.5rem;
-		background: linear-gradient(180deg, #2a0709, #4b0d10);
+		z-index: 1001;
+		isolation: isolate;
+		margin-top: calc(-1px - var(--about-transition-height));
+		padding: calc(5rem + var(--about-transition-height)) 1.25rem 2.5rem;
+		background: linear-gradient(
+			180deg,
+			transparent 0 var(--about-transition-height),
+			#2a0709 calc(var(--about-transition-height) + 4rem),
+			#36080b 42%,
+			#3e0a0d 62%,
+			#4b0d10 100%
+		);
 		pointer-events: auto;
+	}
+
+	.about-slot::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 0;
+		height: var(--about-slice-height);
+		background: url("/art/scene/bush-2.webp") center top / 150% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 0 74%, transparent 100%);
+		mask-image: linear-gradient(180deg, #000 0 74%, transparent 100%);
+	}
+
+	.about-slot::after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		height: var(--about-bottom-slice-height);
+		background:
+			linear-gradient(
+				180deg,
+				#4b0d10 0 55%,
+				transparent 100%
+			),
+			url("/art/scene/bush-2.webp") center bottom / 150% auto no-repeat;
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, transparent 0, #000 55% 100%);
+		mask-image: linear-gradient(180deg, transparent 0, #000 55% 100%);
+	}
+
+	.about-slot > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.about-slot :global(section#about) {
+		isolation: isolate;
+	}
+
+	/* The artwork slices are intentionally short on narrow screens. Keep an
+		opaque centre panel behind the complete copy block and extend it through
+		the slot's bottom padding so no texture edge can open above the video. */
+	.about-slot :global(section#about)::before {
+		position: absolute;
+		inset: calc(-1 * var(--about-panel-fade)) -1.25rem -2.5rem;
+		z-index: -1;
+		background: linear-gradient(
+			180deg,
+			transparent 0,
+			#2d0709 var(--about-panel-fade),
+			#3e0a0d 68%,
+			#4b0d10 100%
+		);
+		content: "";
+		pointer-events: none;
 	}
 
 	.video-layer {
 		grid-row: 3;
-		width: calc(100% - 2.5rem);
-		margin: 0 1.25rem 4rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin: 0;
+		padding: 0 1.25rem clamp(3rem, 15vw, 5rem);
+		aspect-ratio: auto;
+		background: #4b0d10;
+		box-shadow: none;
+	}
+
+	.video-frame {
+		box-sizing: border-box;
+		width: 100%;
+		height: auto;
 		padding: 8% 9% 10%;
 		aspect-ratio: 1377 / 900;
 		background: url("/art/scene/logs.webp") center / contain no-repeat #4b0d10;
-		box-shadow: 0 0 0 1.25rem #4b0d10;
 	}
 
 	.stats-layer {
@@ -478,7 +634,7 @@
 		top: -5vw;
 		right: 0;
 		left: 0;
-		z-index: -1;
+		z-index: 0;
 		height: clamp(7rem, 30vw, 12rem);
 		background: url("/art/scene/bush-3.webp") center top / 150% auto no-repeat;
 		content: "";
@@ -487,74 +643,122 @@
 		mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
 	}
 
+	.stats-layer > * {
+		position: relative;
+		z-index: 1;
+	}
+
 	/* Keep Testimonials solid red at the bottom so there is no washed-out fade
 		beneath the carousel. */
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
 		background-color: #b83a20;
-		background-image: linear-gradient(180deg, #c64f1f 3rem, #b83a20 75%);
-	}
-
-	.sponsors-slot {
-		grid-row: 6;
-		padding: 5rem 1rem;
-		background: #72d2ca;
-	}
-
-	.faq-slot {
-		grid-row: 7;
-		/* Stacking context so the seam art below sits above this background
-			while staying behind the FAQ content. */
-		z-index: 0;
-		padding: 0 1.25rem 10rem;
-		background: linear-gradient(
+		background-image: linear-gradient(
 			180deg,
-			#72d2ca,
-			#16357f clamp(9rem, calc(55vw - 2rem), 15rem),
-			#0d225f 70%,
-			#07153e
+			#e66b2e 0,
+			#d95525 clamp(5rem, 18vw, 9rem),
+			#c64f1f 42%,
+			#b83a20 78%
 		);
 	}
 
-	/* Sponsors-to-FAQ seam, rebuilt from the desktop scene: the ice shelf
-		(ice-1) fades in over the sponsors teal, its cracks (ice-2, registered
-		to the same bottom edge as on the canvas) sit just above the torn edge,
-		and the open water below deepens into the FAQ blue. */
-	.faq-slot::before {
-		position: absolute;
-		top: clamp(5rem, calc(36vw - 2rem), 10rem);
-		right: 0;
-		left: 0;
-		z-index: -1;
-		height: clamp(20rem, 100vw, 32rem);
-		background: url("/art/scene/water.webp") center top / 130% auto no-repeat;
-		content: "";
-		pointer-events: none;
-		-webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
-		mask-image: linear-gradient(180deg, #000 72%, transparent);
+	.sponsors-slot {
+		--road-transition-height: clamp(7rem, 26.7vw, 13rem);
+		--ice-top-position: calc(
+			var(--road-transition-height) - clamp(3.375rem, 7.5vw, 4.5rem)
+		);
+		--ice-top-height: clamp(13.5rem, 67vw, 32rem);
+		--ice-bottom-height: clamp(9rem, 46vw, 15rem);
+
+		grid-row: 6;
+		isolation: isolate;
+		padding:
+			calc(5rem + var(--road-transition-height)) 1rem
+			calc(5rem + var(--ice-bottom-height));
+		background: linear-gradient(
+			180deg,
+			#72d2ca 0 calc(100% - var(--ice-bottom-height)),
+			#16357f 100%
+		);
 	}
 
-	.faq-slot::after {
+	.sponsors-slot::before {
 		position: absolute;
 		top: 0;
 		right: 0;
 		left: 0;
-		z-index: -1;
-		height: clamp(9rem, 46vw, 15rem);
+		z-index: 0;
+		height: calc(var(--road-transition-height) + var(--ice-top-height));
+		background:
+			url("/art/scene/ice-1.webp") center var(--ice-top-position) / 130% auto no-repeat,
+			url("/art/scene/road.webp") center top / 100% auto no-repeat,
+			linear-gradient(180deg, #b83a20 0 14%, #72d2ca 38% 100%);
+		content: "";
+		pointer-events: none;
+		-webkit-mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+		mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+	}
+
+	.sponsors-slot::after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		height: var(--ice-bottom-height);
 		background:
 			url("/art/scene/ice-2.webp") center bottom / 130% auto no-repeat,
+			linear-gradient(
+				180deg,
+				#72d2ca 0 48%,
+				rgba(114, 210, 202, 0.86) 62%,
+				transparent 82%
+			),
 			url("/art/scene/ice-1.webp") center bottom / 130% auto no-repeat;
 		content: "";
 		pointer-events: none;
-		-webkit-mask-image: linear-gradient(180deg, transparent, #000 2.5rem);
-		mask-image: linear-gradient(180deg, transparent, #000 2.5rem);
+		-webkit-mask-image: linear-gradient(180deg, transparent 0, #000 34% 100%);
+		mask-image: linear-gradient(180deg, transparent 0, #000 34% 100%);
+	}
+
+	.sponsors-slot > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.faq-slot {
+		--water-image-lift: clamp(4.5rem, 14vw, 5.5rem);
+
+		grid-row: 7;
+		z-index: 0;
+		padding: clamp(2rem, 6vw, 4rem) 1.25rem 10rem;
+		background:
+			linear-gradient(
+				180deg,
+				transparent 0 22%,
+				rgba(16, 35, 111, 0.55) 34%,
+				#10236f 47% 64%,
+				#0d225f 82%,
+				#07153e 100%
+			),
+			url("/art/scene/water.webp") center calc(-1 * var(--water-image-lift)) / 130% auto
+				no-repeat,
+			linear-gradient(
+				180deg,
+				#10236f 0 64%,
+				#0d225f 82%,
+				#07153e
+			);
 	}
 
 	.footer-slot {
 		grid-row: 8;
 		padding: 4rem 0 5rem;
-		background: #061238;
+		background:
+			url("/art/scene/footer-water-2.webp") center bottom / 120% auto no-repeat,
+			url("/art/scene/footer-water.webp") center bottom / 135% auto no-repeat,
+		linear-gradient(180deg, #07153e 0 18%, #061238 100%);
 	}
 
 	/* Section heights are fractional, so on a fractional device pixel ratio
@@ -563,7 +767,6 @@
 		two sections. Overlapping every row onto the one above by 1px means the
 		seam is always covered by an opaque background. Must stay last so it
 		wins over .video-layer's own margin. */
-	.about-slot,
 	.video-layer,
 	.stats-layer,
 	.testimonials-slot,
@@ -571,5 +774,17 @@
 	.faq-slot,
 	.footer-slot {
 		margin-top: -1px;
+	}
+
+}
+
+@media (max-width: 600px) {
+	/* Pull the complete recap-stats composition over the transparent signposts.
+		The clamp tracks the sign's fluid width and stops growing once the mobile
+		sign artwork reaches its own size cap. */
+	.stats-layer {
+		--stats-sign-overlap: clamp(10rem, 50vw, 16.5rem);
+
+		margin-top: calc(-1px - var(--stats-sign-overlap));
 	}
 }

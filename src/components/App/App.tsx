@@ -1,10 +1,10 @@
 // Must run before any FontAwesome icon renders — disables runtime CSS injection.
 import "@/fontawesome";
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { t } from "@/i18n";
 import Hero from "../Hero/Hero";
 import About, { AboutVideo } from "../About/About";
-import Stats from "../Stats/Stats";
+import Stats, { MobileVideoSign } from "../Stats/Stats";
 import Testimonials from "../Testimonials/Testimonials";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
@@ -184,35 +184,66 @@ function App() {
 				>
 					<div ref={artworkRef} className={styles.artwork} data-scene-artwork aria-hidden="true">
 						{SCENE_LAYERS.map((layer, index) => (
-							<picture key={layer.name}>
-								<source
-									media="(min-width: 1025px)"
-									srcSet={sceneLayerSrcSet(layer)}
-									sizes={sceneLayerSizes(layer)}
-								/>
-								<img
-									className={`${styles.layer}${
-										layer.name.startsWith("cloud-")
-											? ` ${styles["scene-cloud"]} ${styles[layer.name]}`
-											: ""
-									}`}
-									data-scene-layer={layer.name}
-									data-parallax-speed={HERO_PARALLAX_SPEEDS[layer.name]}
-									alt=""
-									width={layer.width}
-									height={layer.height}
-									loading={HERO_SCENE_LAYERS.has(layer.name) ? "eager" : "lazy"}
-									{...(layer.name === "sky" ? { fetchpriority: "high" } : {})}
-									decoding={HERO_SCENE_LAYERS.has(layer.name) ? "sync" : "async"}
-									style={{
-										left: percent(layer.x, CANVAS_WIDTH),
-										top: percent(layer.y, CANVAS_HEIGHT),
-										width: percent(layer.width, CANVAS_WIDTH),
-										zIndex: (index + 1) * 10,
-									}}
-								/>
-							</picture>
+							<Fragment key={layer.name}>
+								<picture>
+									<source
+										media="(min-width: 1025px)"
+										srcSet={sceneLayerSrcSet(layer)}
+										sizes={sceneLayerSizes(layer)}
+									/>
+									<img
+										className={`${styles.layer}${
+											layer.name.startsWith("cloud-")
+												? ` ${styles["scene-cloud"]} ${styles[layer.name]}`
+												: ""
+										}${layer.name === "road" ? ` ${styles["tablet-road-shift"]}` : ""}${
+											layer.name === "ice-1" ? ` ${styles["tablet-ice-top"]}` : ""
+										}${
+											layer.name === "ice-2" ? ` ${styles["tablet-ice-cracks"]}` : ""
+										}`}
+										data-scene-layer={layer.name}
+										data-parallax-speed={HERO_PARALLAX_SPEEDS[layer.name]}
+										alt=""
+										width={layer.width}
+										height={layer.height}
+										loading={HERO_SCENE_LAYERS.has(layer.name) ? "eager" : "lazy"}
+										{...(layer.name === "sky" ? { fetchpriority: "high" } : {})}
+										decoding={HERO_SCENE_LAYERS.has(layer.name) ? "sync" : "async"}
+										style={{
+											left: percent(layer.x, CANVAS_WIDTH),
+											top: percent(layer.y, CANVAS_HEIGHT),
+											width: percent(layer.width, CANVAS_WIDTH),
+											zIndex: (index + 1) * 10,
+										}}
+									/>
+								</picture>
+								{layer.name === "ice-1" && (
+									<picture>
+										<source
+											media="(min-width: 1025px)"
+											srcSet={sceneLayerSrcSet(layer)}
+											sizes={sceneLayerSizes(layer)}
+										/>
+										<img
+											className={`${styles.layer} ${styles["tablet-ice-bottom"]}`}
+											data-scene-slice="ice-bottom"
+											alt=""
+											width={layer.width}
+											height={layer.height}
+											loading="lazy"
+											decoding="async"
+											style={{
+												left: percent(layer.x, CANVAS_WIDTH),
+												top: percent(layer.y, CANVAS_HEIGHT),
+												width: percent(layer.width, CANVAS_WIDTH),
+												zIndex: (index + 1) * 10,
+											}}
+										/>
+									</picture>
+								)}
+							</Fragment>
 						))}
+						<div className={styles["tablet-ice-middle"]}></div>
 					</div>
 					<div className={`${styles.slot} ${styles["hero-slot"]}`}>
 						<Hero />
@@ -222,7 +253,10 @@ function App() {
 						data-section-parallax="0.024"
 						data-parallax-max="32"
 					>
-						<AboutVideo />
+						<div className={styles["video-frame"]}>
+							<AboutVideo />
+						</div>
+						<MobileVideoSign />
 					</div>
 					<div
 						className={styles["stats-layer"]}

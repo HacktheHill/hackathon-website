@@ -6,6 +6,22 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "Highway Gothic Wide";
+	src: url("/fonts/highway-gothic/HWYGWDE.TTF") format("truetype");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Highway Gothic Narrow";
+	src: url("/fonts/highway-gothic/HWYGNRRW.TTF") format("truetype");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -34,6 +50,7 @@ html {
 
 h1,
 .section-heading {
+	color: var(--light-primary-color);
 	font-family: Rubik;
 	font-size: min(3rem, 12vw);
 	font-weight: 500;
