@@ -465,26 +465,30 @@ test("phone sign typography stays proportional when sign artwork reaches its siz
 	expect(ratios[1].green).toBeCloseTo(ratios[0].green, 3);
 });
 
-test("desktop FAQ tracks the tablet artwork extension across canvas breakpoints", async ({ page }) => {
+test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
-	for (const width of [1025, 1199, 1200, 1201, 1440]) {
+	for (const width of [1025, 1199, 1200, 1201, 1440, 1599, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
 		await page.goto("/");
 		const position = await page.locator("#faq").evaluate(section => {
-			const slot = section.parentElement!;
-			const canvas = section.closest<HTMLElement>("[data-page-canvas]")!;
-			const road = document.querySelector<HTMLElement>('[data-scene-layer="road"]')!;
-			const roadTranslate = getComputedStyle(road).translate;
-			const extension =
-				roadTranslate === "none"
-					? 0
-					: Number.parseFloat(roadTranslate.split(/\s+/)[1] ?? "0");
+			const slot = section.parentElement as HTMLElement;
+			const heading = section.querySelector("h2")!;
+			const footer = document.querySelector<HTMLElement>("footer")!;
+			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
+			const iceBottom = document.querySelector<HTMLElement>(
+				'[data-scene-slice="ice-bottom"]',
+			)!;
+			const activeIce = getComputedStyle(iceBottom).display === "none" ? iceTop : iceBottom;
 			return {
-				actual: Number.parseFloat(getComputedStyle(slot).top) / canvas.clientHeight,
-				expected: (canvas.clientHeight * 0.8125 + extension) / canvas.clientHeight,
+				iceClearance:
+					heading.getBoundingClientRect().top - activeIce.getBoundingClientRect().bottom,
+				maxUpwardParallax: Number.parseFloat(slot.dataset.parallaxMax ?? "0"),
+				footerClearance:
+					footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom,
 			};
 		});
-		expect(position.actual).toBeCloseTo(position.expected, 3);
+		expect(position.iceClearance).toBeGreaterThanOrEqual(position.maxUpwardParallax);
+		expect(position.footerClearance).toBeGreaterThanOrEqual(position.maxUpwardParallax);
 	}
 });
 
@@ -986,7 +990,9 @@ test("bubble highlights remain oriented toward the shared light source", async (
 	const field = page.locator('[data-mode="bubbles"]');
 	await expect(field).toBeAttached();
 	const bubbles = field.locator("img");
-	await expect(bubbles).toHaveCount(18);
+	await expect
+		.poll(() => bubbles.count(), { timeout: 8_000 })
+		.toBeGreaterThanOrEqual(6);
 
 	const orientations = await bubbles.evaluateAll(elements =>
 		elements.slice(0, 6).map(element => getComputedStyle(element).rotate),

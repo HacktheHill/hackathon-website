@@ -90,6 +90,30 @@
 	color: inherit;
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+	.container {
+		gap: 0.5rem;
+	}
+
+	.question-container {
+		margin-block: 5px;
+	}
+
+	.question {
+		min-height: 42px;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.question-container {
+		margin-block: 2px;
+	}
+
+	.question {
+		min-height: 36px;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.header {
 		text-align: center;

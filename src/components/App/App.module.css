@@ -23,6 +23,7 @@
 
 .canvas {
 	--tablet-partner-extension: 0px;
+	--tablet-ice-extension: 0px;
 
 	container-type: inline-size;
 	position: relative;
@@ -76,7 +77,7 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1599px) {
-	.artwork {
+	.canvas {
 		--tablet-ice-extension: clamp(2rem, calc(42rem - 40vw), 14rem);
 	}
 
@@ -420,7 +421,12 @@
 
 .faq-slot {
 	left: 12%;
-	top: calc(81.25% + var(--tablet-partner-extension));
+	/* The lower ice slice can move independently at tablet widths. Keep the FAQ
+		below its lowest pixel, including its maximum 34px upward parallax. */
+	top: max(
+		calc(81.25% + var(--tablet-partner-extension)),
+		calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
+	);
 	width: 76%;
 	pointer-events: auto;
 }
@@ -452,7 +458,10 @@
 
 	.faq-slot {
 		left: 10%;
-		top: calc(81.25% + var(--tablet-partner-extension));
+		top: max(
+			calc(81.25% + var(--tablet-partner-extension)),
+			calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
+		);
 		width: 80%;
 		transform: scale(0.85);
 		transform-origin: top center;
