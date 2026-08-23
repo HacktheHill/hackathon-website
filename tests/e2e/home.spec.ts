@@ -590,13 +590,27 @@ test("desktop welcome video leaves clear space beside the copy", async ({ page }
 			const canvas = document.querySelector<HTMLElement>("[data-page-canvas]")!;
 			const copy = document.querySelector<HTMLElement>('#about [class*="about-text"]')!;
 			const video = document.querySelector<HTMLElement>('[class*="video-layer"]')!;
+			const frame = document.querySelector<HTMLElement>('[data-scene-layer="logs"]')!;
 			const copyBox = copy.getBoundingClientRect();
 			const videoBox = video.getBoundingClientRect();
+			const frameBox = frame.getBoundingClientRect();
+			const frameOpening = {
+				left: frameBox.left + frameBox.width * (151 / 1377),
+				top: frameBox.top + frameBox.height * (145 / 900),
+				width: frameBox.width * (1059 / 1377),
+				height: frameBox.height * (571 / 900),
+			};
 			return {
 				gap: videoBox.left - copyBox.right,
 				canvasWidth: canvas.getBoundingClientRect().width,
 				videoWidth: videoBox.width,
 				videoAspectRatio: videoBox.width / videoBox.height,
+				frameAlignment: {
+					left: videoBox.left - frameOpening.left,
+					top: videoBox.top - frameOpening.top,
+					width: videoBox.width - frameOpening.width,
+					height: videoBox.height - frameOpening.height,
+				},
 				horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
 			};
 		});
@@ -604,6 +618,9 @@ test("desktop welcome video leaves clear space beside the copy", async ({ page }
 		expect(layout.gap).toBeGreaterThanOrEqual(layout.canvasWidth * 0.035);
 		expect(layout.videoWidth / layout.canvasWidth).toBeCloseTo(0.33, 2);
 		expect(layout.videoAspectRatio).toBeCloseTo(1059 / 571, 2);
+		for (const offset of Object.values(layout.frameAlignment)) {
+			expect(Math.abs(offset)).toBeLessThanOrEqual(1);
+		}
 		expect(layout.horizontalOverflow).toBeLessThanOrEqual(0);
 	}
 });
