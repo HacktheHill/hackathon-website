@@ -42,6 +42,27 @@ const SCENE_LAYERS = [
 	{ name: "footer-water-2", x: 0, y: 11553, width: 3049, height: 748 },
 ] as const;
 
+type SceneLayer = (typeof SCENE_LAYERS)[number];
+type SceneLayerPlacement = {
+	x: number;
+	y: number;
+	width: number;
+	height: number;
+};
+
+const SCENE_LAYER_PLACEMENTS: Partial<Record<SceneLayer["name"], SceneLayerPlacement>> = {
+	/* Scale the frame with its video while keeping the artwork's right edge and
+		the top edge of its transparent 1059 x 571 opening in place. */
+	logs: {
+		x: 1504.693966,
+		y: 2087.238449,
+		width: 1308.306034,
+		height: 855.101983,
+	},
+};
+
+const sceneLayerPlacement = (layer: SceneLayer) => SCENE_LAYER_PLACEMENTS[layer.name] ?? layer;
+
 const HERO_SCENE_LAYERS: ReadonlySet<string> = new Set([
 	"sky",
 	"cloud-1",
@@ -251,9 +272,9 @@ function App() {
 										{...(layer.name === "sky" ? { fetchpriority: "high" } : {})}
 										decoding={HERO_SCENE_LAYERS.has(layer.name) ? "sync" : "async"}
 										style={{
-											left: percent(layer.x, CANVAS_WIDTH),
-											top: percent(layer.y, CANVAS_HEIGHT),
-											width: percent(layer.width, CANVAS_WIDTH),
+											left: percent(sceneLayerPlacement(layer).x, CANVAS_WIDTH),
+											top: percent(sceneLayerPlacement(layer).y, CANVAS_HEIGHT),
+											width: percent(sceneLayerPlacement(layer).width, CANVAS_WIDTH),
 											zIndex: (index + 1) * 10,
 										}}
 									/>
@@ -289,11 +310,7 @@ function App() {
 					<div className={`${styles.slot} ${styles["hero-slot"]}`}>
 						<Hero />
 					</div>
-					<div
-						className={styles["video-layer"]}
-						data-section-parallax="0.024"
-						data-parallax-max="32"
-					>
+					<div className={styles["video-layer"]}>
 						<div className={styles["video-frame"]}>
 							<AboutVideo />
 						</div>
