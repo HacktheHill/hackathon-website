@@ -211,7 +211,19 @@
 }
 
 @media (min-width: 1025px) {
+	.blue-row strong {
+		font-size: 3cqw;
+	}
+
+	.blue-row span {
+		font-size: 2.65cqw;
+	}
+
 	.desktop-green-copy .green-top span {
+		translate: -0.55cqw 0;
+	}
+
+	.desktop-green-copy .green-bottom {
 		translate: -0.55cqw 0;
 	}
 
