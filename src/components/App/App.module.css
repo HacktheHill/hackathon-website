@@ -24,6 +24,7 @@
 .canvas {
 	--tablet-partner-extension: 0px;
 	--tablet-ice-extension: 0px;
+	--faq-content-extension: 0px;
 
 	container-type: inline-size;
 	position: relative;
@@ -32,6 +33,36 @@
 	max-width: 3049px;
 	overflow: hidden;
 	background: linear-gradient(180deg, #f2ba83 0%, #fbecb7 16.3%, #061238 16.3%);
+}
+
+.base-scene {
+	position: relative;
+	width: 100%;
+}
+
+@media (min-width: 1025px) {
+	.canvas {
+		padding-bottom: var(--faq-content-extension);
+	}
+
+	/* The original water artwork remains undistorted. This continuation only
+		appears in the extra space created by expanded FAQ answers. */
+	.canvas::after {
+		position: absolute;
+		top: 77.603%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 175;
+		background: linear-gradient(180deg, #16357f 0%, #10236f 48%, #07153e 78%, #061238 100%);
+		content: "";
+		pointer-events: none;
+	}
+
+	.layer[data-scene-layer="footer-water"],
+	.layer[data-scene-layer="footer-water-2"] {
+		transform: translateY(var(--faq-content-extension));
+	}
 }
 
 .artwork {
@@ -360,9 +391,9 @@
 .video-layer {
 	position: absolute;
 	top: 18.088%;
-	left: 52.05%;
+	left: 53.75%;
 	z-index: 205;
-	width: 34.73%;
+	width: 33%;
 	aspect-ratio: 1059 / 571;
 	pointer-events: auto;
 }
@@ -433,7 +464,7 @@
 
 .footer-slot {
 	left: 0;
-	bottom: calc(4.1% - min(var(--tablet-partner-extension), 12rem));
+	bottom: calc(4.1% - min(var(--tablet-partner-extension), 12rem) - var(--faq-content-extension));
 	width: 100%;
 	pointer-events: auto;
 }
@@ -469,6 +500,10 @@
 }
 
 @media (max-width: 1024px) {
+	.base-scene {
+		display: contents;
+	}
+
 	.canvas {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
