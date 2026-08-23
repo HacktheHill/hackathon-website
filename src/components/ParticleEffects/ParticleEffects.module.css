@@ -22,8 +22,16 @@
 	height: auto;
 	max-width: none;
 	will-change: transform;
+	animation-fill-mode: both;
 	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+	animation-iteration-count: 1;
+}
+
+.particle[data-exiting] {
+	opacity: 0 !important;
+	transition-property: opacity;
+	transition-duration: 700ms;
+	transition-timing-function: ease-out;
 }
 
 .leaves .particle {
