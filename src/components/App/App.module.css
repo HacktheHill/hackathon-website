@@ -57,13 +57,13 @@
 
 @media (min-width: 1025px) and (max-width: 1200px) {
 	.canvas {
-		--tablet-partner-extension: clamp(0rem, calc(72rem - 100vw), 8rem);
+		--tablet-partner-extension: clamp(0rem, calc(74.5rem - 100vw), 10.5rem);
 	}
 }
 
 @media (min-width: 1201px) and (max-width: 1440px) {
 	.canvas {
-		--tablet-partner-extension: clamp(0rem, calc(88rem - 100vw), 12rem);
+		--tablet-partner-extension: clamp(0rem, calc(89rem - 100vw), 14rem);
 	}
 }
 
@@ -427,7 +427,7 @@
 
 .footer-slot {
 	left: 0;
-	bottom: calc(4.1% - var(--tablet-partner-extension));
+	bottom: calc(4.1% - min(var(--tablet-partner-extension), 12rem));
 	width: 100%;
 	pointer-events: auto;
 }
@@ -728,7 +728,7 @@
 	}
 
 	.faq-slot {
-		--water-image-lift: clamp(4.5rem, 14vw, 5.5rem);
+		--water-image-lift: clamp(6.5rem, 20vw, 8rem);
 
 		grid-row: 7;
 		z-index: 0;
@@ -736,7 +736,9 @@
 		background:
 			linear-gradient(
 				180deg,
-				transparent 0 22%,
+				#16357f 0,
+				rgb(22 53 127 / 65%) 1.5rem,
+				transparent clamp(3rem, 12vw, 5rem) 22%,
 				rgba(16, 35, 111, 0.55) 34%,
 				#10236f 47% 64%,
 				#0d225f 82%,
@@ -756,8 +758,8 @@
 		grid-row: 8;
 		padding: 4rem 0 5rem;
 		background:
-			url("/art/scene/footer-water-2.webp") center bottom / 120% auto no-repeat,
-			url("/art/scene/footer-water.webp") center bottom / 135% auto no-repeat,
+			url("/art/scene/footer-water-2.webp") center bottom / 100% auto no-repeat,
+			url("/art/scene/footer-water.webp") right bottom / 87.73% auto no-repeat,
 		linear-gradient(180deg, #07153e 0 18%, #061238 100%);
 	}
 

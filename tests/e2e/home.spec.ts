@@ -273,7 +273,7 @@ test("mobile artwork transitions reserve space without covering content", async 
 		expect(transition.iceTransition).toContain("ice-2.webp");
 		expect(transition.waterBackground).toContain("water.webp");
 		expect(transition.waterBackgroundSize).toContain("130%");
-		expect(transition.waterImageTop).toBeLessThanOrEqual(-72);
+		expect(transition.waterImageTop).toBeLessThanOrEqual(-104);
 		expect(transition.testimonialsBackground).toContain("rgb(230, 107, 46)");
 	}
 });
@@ -318,6 +318,8 @@ test("mobile restores the road, ice shelf, and ocean floor artwork", async ({ pa
 				iceTop: getComputedStyle(sponsors, "::before").backgroundImage,
 				iceBottom: getComputedStyle(sponsors, "::after").backgroundImage,
 				floor: getComputedStyle(footer).backgroundImage,
+				floorSize: getComputedStyle(footer).backgroundSize,
+				floorPosition: getComputedStyle(footer).backgroundPosition,
 			};
 		});
 		expect(artwork.aboutTop).toContain("bush-2.webp");
@@ -344,6 +346,9 @@ test("mobile restores the road, ice shelf, and ocean floor artwork", async ({ pa
 		expect(artwork.iceBottom).toContain("ice-2.webp");
 		expect(artwork.floor).toContain("footer-water.webp");
 		expect(artwork.floor).toContain("footer-water-2.webp");
+		expect(artwork.floorSize).toContain("100%");
+		expect(artwork.floorSize).toContain("87.73%");
+		expect(artwork.floorPosition).toContain("100% 100%");
 	}
 });
 
@@ -460,21 +465,30 @@ test("phone sign typography stays proportional when sign artwork reaches its siz
 	expect(ratios[1].green).toBeCloseTo(ratios[0].green, 3);
 });
 
-test("desktop FAQ keeps a modest stable offset across canvas breakpoints", async ({ page }) => {
+test("desktop FAQ tracks the tablet artwork extension across canvas breakpoints", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	for (const width of [1025, 1199, 1200, 1201, 1440]) {
 		await page.setViewportSize({ width, height: 900 });
 		await page.goto("/");
-		const topRatio = await page.locator("#faq").evaluate(section => {
+		const position = await page.locator("#faq").evaluate(section => {
 			const slot = section.parentElement!;
 			const canvas = section.closest<HTMLElement>("[data-page-canvas]")!;
-			return Number.parseFloat(getComputedStyle(slot).top) / canvas.clientHeight;
+			const road = document.querySelector<HTMLElement>('[data-scene-layer="road"]')!;
+			const roadTranslate = getComputedStyle(road).translate;
+			const extension =
+				roadTranslate === "none"
+					? 0
+					: Number.parseFloat(roadTranslate.split(/\s+/)[1] ?? "0");
+			return {
+				actual: Number.parseFloat(getComputedStyle(slot).top) / canvas.clientHeight,
+				expected: (canvas.clientHeight * 0.8125 + extension) / canvas.clientHeight,
+			};
 		});
-		expect(topRatio).toBeCloseTo(0.8125, 3);
+		expect(position.actual).toBeCloseTo(position.expected, 3);
 	}
 });
 
-test("tablet canvas expands only the partner middle and the split ice middle", async ({ page }) => {
+test("tablet preserves the road and ice artwork while expanding crowded sections", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	for (const width of [1024, 1025, 1201, 1440, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
@@ -482,33 +496,46 @@ test("tablet canvas expands only the partner middle and the split ice middle", a
 		const layout = await page.evaluate(() => {
 			const partner = document.querySelector<HTMLElement>("#testimonials")!;
 			const partnerSlot = partner.parentElement!;
+			const sponsors = document.querySelector<HTMLElement>("#sponsors")!;
 			const collaborator = document.querySelector<HTMLElement>("#collaborators")!;
 			const partnerInsert = getComputedStyle(partnerSlot, "::before");
 			const collaboratorInsert = getComputedStyle(collaborator, "::before");
+			const road = document.querySelector<HTMLElement>('[data-scene-layer="road"]')!;
 			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
 			const iceBottom = document.querySelector<HTMLElement>(
 				'[data-scene-slice="ice-bottom"]',
 			)!;
 			const iceCracks = document.querySelector<HTMLElement>('[data-scene-layer="ice-2"]')!;
 			const iceMiddle = document.querySelector<HTMLElement>('[class*="tablet-ice-middle"]')!;
+			const roadStyle = getComputedStyle(road);
 			const iceTopStyle = getComputedStyle(iceTop);
 			const iceBottomStyle = getComputedStyle(iceBottom);
 			const iceCracksStyle = getComputedStyle(iceCracks);
 			const iceMiddleStyle = getComputedStyle(iceMiddle);
-			const partnerSlotBox = partnerSlot.getBoundingClientRect();
 			const partnerBox = partner.getBoundingClientRect();
-			const partnerScale = partnerSlotBox.width / partnerSlot.offsetWidth;
-			const rootFontSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+			const roadBox = road.getBoundingClientRect();
+			const iceTopBox = iceTop.getBoundingClientRect();
+			const sponsorsBox = sponsors.getBoundingClientRect();
+			const sponsorHeadingBox = sponsors.querySelector("h2")!.getBoundingClientRect();
 			const aboutParagraphs = Array.from(document.querySelectorAll<HTMLElement>("#about p"));
-			const partnerInsertActive = partnerInsert.content !== "none";
+			const translateY = (value: string) => {
+				if (value === "none") return 0;
+				const parts = value.split(/\s+/);
+				return Number.parseFloat(parts[1] ?? "0");
+			};
 			return {
-				partnerInsertActive,
+				partnerOverlayActive: partnerInsert.content !== "none",
 				partnerInsertBackground: partnerInsert.backgroundImage,
-				partnerRoadClearance: partnerInsertActive
-					? partnerSlotBox.top +
-						(Number.parseFloat(partnerInsert.height) - rootFontSize * 8) * partnerScale -
-						partnerBox.bottom
-					: null,
+				testimonialRoadClearance: roadBox.top - partnerBox.bottom,
+				roadAspectRatio: roadBox.width / roadBox.height,
+				roadTranslateY: translateY(roadStyle.translate),
+				roadZIndex: Number.parseFloat(roadStyle.zIndex),
+				iceRoadOverlap: roadBox.bottom - iceTopBox.top,
+				sponsorHeadingFromIce: sponsorHeadingBox.top - iceTopBox.top,
+				sponsorHeadingCenterOffset: Math.abs(
+					sponsorHeadingBox.left + sponsorHeadingBox.width / 2 -
+						(sponsorsBox.left + sponsorsBox.width / 2),
+				),
 				collaboratorOverlayActive: collaboratorInsert.content !== "none",
 				iceMiddleActive: iceMiddleStyle.display !== "none",
 				iceMiddleBackground: iceMiddleStyle.backgroundImage,
@@ -517,6 +544,7 @@ test("tablet canvas expands only the partner middle and the split ice middle", a
 				iceMiddleHeight: iceMiddle.getBoundingClientRect().height,
 				iceMiddleZIndex: Number.parseFloat(iceMiddleStyle.zIndex),
 				iceTopClip: iceTopStyle.clipPath,
+				iceTopTranslateY: translateY(iceTopStyle.translate),
 				iceTopZIndex: Number.parseFloat(iceTopStyle.zIndex),
 				iceBottomDisplay: iceBottomStyle.display,
 				iceBottomClip: iceBottomStyle.clipPath,
@@ -532,14 +560,24 @@ test("tablet canvas expands only the partner middle and the split ice middle", a
 			};
 		});
 
-		const partnerInsertExpected = width >= 1025 && width <= 1440;
 		const splitIceExpected = width >= 1025 && width <= 1599;
-		expect(layout.partnerInsertActive).toBe(partnerInsertExpected);
+		expect(layout.partnerOverlayActive).toBe(false);
+		expect(layout.partnerInsertBackground).not.toContain("road.webp");
 		expect(layout.collaboratorOverlayActive).toBe(false);
 		expect(layout.iceMiddleActive).toBe(splitIceExpected);
-		if (partnerInsertExpected) {
-			expect(layout.partnerInsertBackground).toContain("road.webp");
-			expect(layout.partnerRoadClearance).toBeGreaterThanOrEqual(-2);
+		if (width >= 1025) {
+			expect(layout.roadAspectRatio).toBeCloseTo(3049 / 814, 2);
+			expect(layout.testimonialRoadClearance).toBeGreaterThanOrEqual(-8);
+			expect(layout.iceRoadOverlap).toBeGreaterThan(0);
+			expect(layout.iceTopZIndex).toBeGreaterThan(layout.roadZIndex);
+			expect(layout.sponsorHeadingFromIce).toBeGreaterThan(0);
+			expect(layout.sponsorHeadingCenterOffset).toBeLessThanOrEqual(1);
+		}
+		if (width === 1025 || width === 1201) {
+			expect(layout.roadTranslateY).toBeGreaterThan(0);
+			expect(layout.iceTopTranslateY).toBe(layout.roadTranslateY);
+		} else {
+			expect(layout.roadTranslateY).toBe(0);
 		}
 		if (splitIceExpected) {
 			expect(layout.iceMiddleBackground).toContain("rgb(117, 200, 186)");
