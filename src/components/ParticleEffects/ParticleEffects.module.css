@@ -39,7 +39,21 @@
 
 .bubbles .particle {
 	filter: drop-shadow(0 0 0.14rem rgb(225 248 255 / 18%));
+	rotate: 0deg;
 	animation-name: bubble-rise;
+}
+
+.bubbles .particle[src$="bubble-2.webp"],
+.bubbles .particle[src$="bubble-3.webp"] {
+	rotate: -45deg;
+}
+
+.bubbles .particle[src$="bubble-4.webp"] {
+	rotate: 15deg;
+}
+
+.bubbles .particle[src$="bubble-5.webp"] {
+	rotate: 20deg;
 }
 
 @keyframes leaf-fall {

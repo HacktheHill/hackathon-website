@@ -592,3 +592,17 @@ test("reduced motion disables animated particles", async ({ page }) => {
 	await page.locator("#about").scrollIntoViewIfNeeded();
 	await expect(page.locator('[aria-hidden="true"][data-mode="none"]')).toBeAttached();
 });
+
+test("bubble highlights remain oriented toward the shared light source", async ({ page }) => {
+	await page.goto("/");
+	await page.locator("#faq").scrollIntoViewIfNeeded();
+	const field = page.locator('[data-mode="bubbles"]');
+	await expect(field).toBeAttached();
+	const bubbles = field.locator("img");
+	await expect(bubbles).toHaveCount(18);
+
+	const orientations = await bubbles.evaluateAll(elements =>
+		elements.slice(0, 6).map(element => getComputedStyle(element).rotate),
+	);
+	expect(orientations).toEqual(["0deg", "-45deg", "-45deg", "15deg", "20deg", "0deg"]);
+});
