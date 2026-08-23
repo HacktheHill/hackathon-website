@@ -210,6 +210,16 @@
 	text-align: center;
 }
 
+@media (min-width: 1025px) {
+	.desktop-green-copy .green-top span {
+		translate: -0.55cqw 0;
+	}
+
+	.desktop-green-copy .green-bottom span {
+		translate: -1.15cqw 0;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.intro-ready .sign {
 		translate: none;
