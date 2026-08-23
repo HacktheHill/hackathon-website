@@ -464,7 +464,7 @@
 
 .footer-slot {
 	left: 0;
-	bottom: calc(4.1% - min(var(--tablet-partner-extension), 12rem) - var(--faq-content-extension));
+	bottom: calc(3% - min(var(--tablet-partner-extension), 12rem) - var(--faq-content-extension));
 	width: 100%;
 	pointer-events: auto;
 }
