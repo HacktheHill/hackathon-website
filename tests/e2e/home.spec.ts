@@ -320,6 +320,8 @@ test("mobile restores the road, ice shelf, and ocean floor artwork", async ({ pa
 				floor: getComputedStyle(footer).backgroundImage,
 				floorSize: getComputedStyle(footer).backgroundSize,
 				floorPosition: getComputedStyle(footer).backgroundPosition,
+				footerPaddingTop: Number.parseFloat(getComputedStyle(footer).paddingTop),
+				footerPaddingBottom: Number.parseFloat(getComputedStyle(footer).paddingBottom),
 			};
 		});
 		expect(artwork.aboutTop).toContain("bush-2.webp");
@@ -349,6 +351,8 @@ test("mobile restores the road, ice shelf, and ocean floor artwork", async ({ pa
 		expect(artwork.floorSize).toContain("100%");
 		expect(artwork.floorSize).toContain("87.73%");
 		expect(artwork.floorPosition).toContain("100% 100%");
+		expect(artwork.footerPaddingTop).toBe(viewport.width <= 600 ? 16 : 64);
+		expect(artwork.footerPaddingBottom).toBe(viewport.width <= 600 ? 104 : 80);
 	}
 });
 
