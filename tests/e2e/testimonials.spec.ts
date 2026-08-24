@@ -3,20 +3,18 @@ import { expect, test } from "@playwright/test";
 test("carousel wraps forward without reversing the track", async ({ page }) => {
 	await page.goto("/");
 	const track = page.locator("#testimonials [aria-live] > div");
-	const dots = page.locator('#testimonials button[aria-pressed]');
+	const dots = page.locator("#testimonials button[aria-pressed]");
 	const translateX = () => track.evaluate(element => new DOMMatrix(getComputedStyle(element).transform).m41);
+	const slideWidth = await track.evaluate(element => element.getBoundingClientRect().width);
+	const slideCount = await dots.count();
 
 	await dots.last().click();
-	await expect(track).toHaveAttribute("data-moving", "");
-	await expect(track).not.toHaveAttribute("data-moving", "");
+	await expect.poll(translateX).toBeCloseTo(-slideWidth * slideCount, 0);
 	await expect(page.locator('[data-carousel-clone="clone-first"]')).toHaveCSS("visibility", "hidden");
 	await page.locator("#testimonials button").last().click();
 	await expect(track).toHaveAttribute("style", /-700%/);
-	await expect(track).toHaveAttribute("data-moving", "");
-	await expect(track).not.toHaveAttribute("data-moving", "");
 
-	const slideWidth = await track.evaluate(element => element.getBoundingClientRect().width);
-	expect(await translateX()).toBeCloseTo(-slideWidth, 0);
+	await expect.poll(translateX).toBeCloseTo(-slideWidth, 0);
 	await expect(dots.first()).toHaveAttribute("aria-pressed", "true");
 });
 
@@ -55,7 +53,9 @@ test("carousel snaps without animation when reduced motion is requested", async 
 	const track = page.locator("#testimonials [aria-live] > div");
 	await page.locator("#testimonials button").last().click();
 	await expect(page.locator('#testimonials button[aria-pressed="true"]')).toHaveAttribute("aria-label", /2:/);
-	const transitionDuration = await track.evaluate(element => Number.parseFloat(getComputedStyle(element).transitionDuration));
+	const transitionDuration = await track.evaluate(element =>
+		Number.parseFloat(getComputedStyle(element).transitionDuration),
+	);
 	expect(transitionDuration).toBeLessThanOrEqual(0.00001);
 	await expect(track).not.toHaveAttribute("data-moving", "");
 });

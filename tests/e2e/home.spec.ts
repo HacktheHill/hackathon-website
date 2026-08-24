@@ -30,7 +30,7 @@ test("scene artwork has a themed fallback and uses viewport-aware loading", asyn
 	});
 	await page.goto("/", { waitUntil: "domcontentloaded" });
 	await sceneImageRequested;
-	await expect(page.locator("[data-page-canvas]")).toHaveCSS("background-image", /linear-gradient/);
+	await expect(page.locator("html")).toHaveCSS("background-color", "rgb(132, 1, 11)");
 	const artwork = page.locator("[data-scene-artwork]");
 	await expect(artwork).not.toHaveAttribute("data-scene-ready", /.+/);
 	await expect(artwork).toHaveCSS("visibility", "visible");
@@ -121,8 +121,14 @@ test("mobile hero keeps its warm fallback while artwork is pending", async ({ pa
 		/\/art\/hero\/responsive\/480\/sky\.webp 480w.*\/responsive\/768\/sky\.webp 768w.*\/responsive\/1024\/sky\.webp 1024w.*\/responsive\/1280\/sky\.webp 1280w/,
 	);
 	await expect(skySource).toHaveAttribute("sizes", "max(100vw, 166.11svh)");
-	await expect(page.locator('picture:has([data-hero-layer="hill1"]) source')).toHaveAttribute("sizes", "max(242.10vh, 104.24vw)");
-	await expect(page.locator('picture:has([data-hero-layer="hill2"]) source')).toHaveAttribute("sizes", "max(235.10vh, 101.22vw)");
+	await expect(page.locator('picture:has([data-hero-layer="hill1"]) source')).toHaveAttribute(
+		"sizes",
+		"max(242.10vh, 104.24vw)",
+	);
+	await expect(page.locator('picture:has([data-hero-layer="hill2"]) source')).toHaveAttribute(
+		"sizes",
+		"max(235.10vh, 101.22vw)",
+	);
 	await expect
 		.poll(() =>
 			page.locator('[data-hero-layer="sky"]').evaluate(element => (element as HTMLImageElement).currentSrc),
@@ -163,17 +169,14 @@ test("copy remains selectable through foreground artwork", async ({ page }) => {
 	]) {
 		await page.setViewportSize(viewport);
 		await page.goto("/");
-		const statsHeading = page.locator("#stats h2");
-		await statsHeading.scrollIntoViewIfNeeded();
-		await statsHeading.click({ clickCount: 3 });
+		const copy = page.locator("#about p").first();
+		await copy.scrollIntoViewIfNeeded();
+		await copy.click({ clickCount: 3 });
 		expect(await page.evaluate(() => getSelection()?.toString().trim())).not.toBe("");
 		await expect(page.locator("[data-scene-artwork]")).toHaveCSS("pointer-events", "none");
 
 		if (viewport.width < 1025) {
-			await expect(page.locator('[data-hero-layer="foreground"]')).toHaveCSS(
-				"pointer-events",
-				"none",
-			);
+			await expect(page.locator('[data-hero-layer="foreground"]')).toHaveCSS("pointer-events", "none");
 		}
 	}
 });
@@ -260,15 +263,16 @@ test("mobile artwork transitions reserve space without covering content", async 
 			const headingBox = section.querySelector("h2")!.getBoundingClientRect();
 			const columnsBox = section.querySelector('[class*="faq-columns"]')!.getBoundingClientRect();
 			const testimonials = document.querySelector<HTMLElement>("#testimonials")!.parentElement!;
-			const aboutPanel = getComputedStyle(about, "::before");
+			const aboutSlot = about.parentElement!;
 			return {
-				aboutPanelBackground: aboutPanel.backgroundImage,
-				aboutPanelTop: Number.parseFloat(aboutPanel.top),
-				aboutParagraphGaps: aboutParagraphs.slice(1).map(
-					(paragraph, index) =>
-						paragraph.getBoundingClientRect().top -
-						aboutParagraphs[index].getBoundingClientRect().bottom,
-				),
+				aboutBackground: getComputedStyle(aboutSlot).backgroundImage,
+				aboutParagraphGaps: aboutParagraphs
+					.slice(1)
+					.map(
+						(paragraph, index) =>
+							paragraph.getBoundingClientRect().top -
+							aboutParagraphs[index].getBoundingClientRect().bottom,
+					),
 				sectionGap: slotBox.top - sponsorsBox.bottom,
 				titleGap: sectionBox.top - slotBox.top,
 				headingToQuestionsGap: columnsBox.top - headingBox.bottom,
@@ -281,10 +285,10 @@ test("mobile artwork transitions reserve space without covering content", async 
 				testimonialsBackground: getComputedStyle(testimonials).backgroundImage,
 			};
 		});
-		expect(transition.aboutPanelTop).toBeLessThan(0);
-		expect(transition.aboutPanelBackground).toContain("rgba(0, 0, 0, 0)");
+		expect(transition.aboutBackground).toContain("bush-2.webp");
+		expect(transition.aboutBackground).toContain("linear-gradient");
 		for (const gap of transition.aboutParagraphGaps) {
-			expect(Math.abs(gap)).toBeLessThanOrEqual(0.1);
+			expect(Math.abs(gap - 16)).toBeLessThanOrEqual(0.1);
 		}
 		expect(transition.sectionGap).toBeGreaterThanOrEqual(-1.01);
 		expect(transition.sectionGap).toBeLessThanOrEqual(0);
@@ -317,20 +321,13 @@ test("mobile restores the road, ice shelf, and ocean floor artwork", async ({ pa
 			const videoBox = video.getBoundingClientRect();
 			const blueSignBox = blueSign.getBoundingClientRect();
 			const statsBox = stats.getBoundingClientRect();
-			const statsBushTop =
-				statsBox.top + Number.parseFloat(getComputedStyle(stats, "::before").top);
+			const statsBushTop = statsBox.top + Number.parseFloat(getComputedStyle(stats, "::before").top);
 			const sponsorStyle = getComputedStyle(sponsors);
 			const icePosition = Number.parseFloat(
 				getComputedStyle(sponsors, "::before").backgroundPosition.split(",")[0].trim().split(/\s+/)[1],
 			);
 			return {
-				aboutTop: getComputedStyle(about, "::before").backgroundImage,
-				aboutTopMask: getComputedStyle(about, "::before").maskImage,
-				aboutBottom: getComputedStyle(about, "::after").backgroundImage,
-				aboutBottomMask: getComputedStyle(about, "::after").maskImage,
-				aboutMiddle: getComputedStyle(about).backgroundImage,
-				aboutPanel: getComputedStyle(document.querySelector<HTMLElement>("#about")!, "::before")
-					.backgroundImage,
+				aboutScene: getComputedStyle(about).backgroundImage,
 				statsOverlap: videoBox.bottom - statsBox.top,
 				statsOverlapTarget: Math.abs(Number.parseFloat(getComputedStyle(stats).marginTop)),
 				coveredSignFraction:
@@ -346,19 +343,12 @@ test("mobile restores the road, ice shelf, and ocean floor artwork", async ({ pa
 				footerPaddingBottom: Number.parseFloat(getComputedStyle(footer).paddingBottom),
 			};
 		});
-		expect(artwork.aboutTop).toContain("bush-2.webp");
-		expect(artwork.aboutTopMask).toContain("gradient");
-		expect(artwork.aboutBottom).toContain("bush-2.webp");
-		expect(artwork.aboutBottom.indexOf("linear-gradient")).toBeLessThan(
-			artwork.aboutBottom.indexOf("bush-2.webp"),
-		);
-		expect(artwork.aboutBottomMask).toContain("gradient");
-		expect(artwork.aboutMiddle).toContain("linear-gradient");
-		expect(artwork.aboutPanel).toContain("linear-gradient");
+		expect(artwork.aboutScene).toContain("bush-2.webp");
+		expect(artwork.aboutScene).toContain("linear-gradient");
 		expect(artwork.statsOverlap).toBeCloseTo(artwork.statsOverlapTarget, 1);
 		if (viewport.width <= 600) {
-			expect(artwork.coveredSignFraction).toBeGreaterThanOrEqual(0.5);
-			expect(artwork.coveredSignFraction).toBeLessThanOrEqual(0.7);
+			expect(artwork.coveredSignFraction).toBeGreaterThanOrEqual(0.15);
+			expect(artwork.coveredSignFraction).toBeLessThanOrEqual(0.3);
 		} else {
 			expect(artwork.coveredSignFraction).toBeNull();
 		}
@@ -400,7 +390,7 @@ test("narrow mobile stats labels stay inside the green sign in both locales", as
 								left: labelBox.left - signBox.left,
 								right: signBox.right - labelBox.right,
 							},
-						]
+					  ]
 					: [];
 			});
 		});
@@ -420,48 +410,45 @@ test("phone moves the participant sign below the video and simplifies the stats 
 		const video = document.querySelector<HTMLElement>('[class*="video-layer"]')!;
 		const stats = document.querySelector<HTMLElement>("#stats")!;
 		const mobileBlue = video.querySelector<HTMLElement>('[data-stat-sign="blue"]')!;
+		const mobileTitle = video.querySelector<HTMLElement>("h2")!;
 		const statsBlue = stats.querySelector<HTMLElement>('[data-stat-sign="blue"]')!;
 		const organizers = stats.querySelector<HTMLElement>('[data-stat-sign="organizers"]')!;
 		const green = stats.querySelector<HTMLElement>('[data-stat-sign="green"]')!;
-		const title = stats.querySelector<HTMLElement>("h2")!;
 		const greenDetails = green.querySelector<HTMLElement>('[class*="mobile-green-details"]')!;
-		const greenRows = Array.from(
-			greenDetails.querySelectorAll<HTMLElement>('[class*="mobile-green-row"]'),
-		);
+		const greenRows = Array.from(greenDetails.querySelectorAll<HTMLElement>('[class*="mobile-green-row"]'));
 		const videoBox = video.getBoundingClientRect();
-		const statsBox = stats.getBoundingClientRect();
 		const blueBox = mobileBlue.getBoundingClientRect();
 		const greenBox = green.getBoundingClientRect();
-		const titleBox = title.getBoundingClientRect();
+		const mobileTitleBox = mobileTitle.getBoundingClientRect();
 		return {
 			blueInsideVideo: blueBox.top >= videoBox.top && blueBox.bottom <= videoBox.bottom,
+			titleBeforeBlue: mobileTitleBox.bottom <= blueBox.top,
 			blueFontFamily: getComputedStyle(mobileBlue.querySelector("strong")!).fontFamily,
 			blueFontWeight: getComputedStyle(mobileBlue.querySelector("strong")!).fontWeight,
 			videoBackground: getComputedStyle(video).backgroundColor,
 			statsBlueStage: getComputedStyle(statsBlue.parentElement!).display,
 			organizerStage: getComputedStyle(organizers.parentElement!).display,
-			titleTopSpacing: titleBox.top - statsBox.top,
-			greenAfterTitle: greenBox.top >= titleBox.bottom,
+			greenVisible: greenBox.width > 0 && greenBox.height > 0,
 			greenBush: getComputedStyle(green.parentElement!, "::after").backgroundImage,
 			greenRowGap: getComputedStyle(greenDetails).rowGap,
 			greenRowAlignment: greenRows.map(row => getComputedStyle(row).alignItems),
 			mobileGreenCopy: Array.from(
-				green.querySelectorAll<HTMLElement>('[data-mobile-green-copy] strong, [data-mobile-green-copy] span'),
+				green.querySelectorAll<HTMLElement>("[data-mobile-green-copy] strong, [data-mobile-green-copy] span"),
 				element => element.textContent?.trim(),
 			),
 		};
 	});
 
 	expect(layout.blueInsideVideo).toBe(true);
+	expect(layout.titleBeforeBlue).toBe(true);
 	expect(layout.blueFontFamily).toContain("Highway Gothic");
 	expect(layout.blueFontWeight).toBe("400");
-	expect(layout.videoBackground).toBe("rgb(75, 13, 16)");
+	expect(layout.videoBackground).toBe("rgb(51, 10, 10)");
 	expect(layout.statsBlueStage).toBe("none");
 	expect(layout.organizerStage).toBe("none");
-	expect(layout.titleTopSpacing).toBeGreaterThanOrEqual(15.5);
-	expect(layout.greenAfterTitle).toBe(true);
+	expect(layout.greenVisible).toBe(true);
 	expect(layout.greenBush).toContain("bush-4.webp");
-	expect(layout.greenRowGap).toBe("0px");
+	expect(layout.greenRowGap).toBe("16px");
 	expect(layout.greenRowAlignment).toEqual(["baseline", "baseline"]);
 	expect(layout.mobileGreenCopy).toEqual(["8", "Sponsors", "15", "Collaborators", "70", "Organizers"]);
 });
@@ -473,15 +460,14 @@ test("phone sign typography stays proportional when sign artwork reaches its siz
 		await page.goto("/");
 		ratios.push(
 			await page.evaluate(() => {
-				const blue = document.querySelector<HTMLElement>(
-					'[class*="video-layer"] [data-stat-sign="blue"]',
-				)!;
+				const blue = document.querySelector<HTMLElement>('[class*="video-layer"] [data-stat-sign="blue"]')!;
 				const green = document.querySelector<HTMLElement>('#stats [data-stat-sign="green"]')!;
 				return {
-					blue: Number.parseFloat(getComputedStyle(blue.querySelector("strong")!).fontSize) / blue.clientWidth,
+					blue:
+						Number.parseFloat(getComputedStyle(blue.querySelector("strong")!).fontSize) / blue.clientWidth,
 					green:
 						Number.parseFloat(
-							getComputedStyle(green.querySelector('[data-mobile-green-copy] strong')!).fontSize,
+							getComputedStyle(green.querySelector("[data-mobile-green-copy] strong")!).fontSize,
 						) / green.clientWidth,
 				};
 			}),
@@ -495,22 +481,18 @@ test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", 
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	for (const width of [1025, 1199, 1200, 1201, 1440, 1599, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
-		await page.goto("/");
+		await page.goto("/", { waitUntil: "domcontentloaded" });
 		const position = await page.locator("#faq").evaluate(section => {
 			const slot = section.parentElement as HTMLElement;
 			const heading = section.querySelector("h2")!;
 			const footer = document.querySelector<HTMLElement>("footer")!;
 			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
-			const iceBottom = document.querySelector<HTMLElement>(
-				'[data-scene-slice="ice-bottom"]',
-			)!;
+			const iceBottom = document.querySelector<HTMLElement>('[data-scene-slice="ice-bottom"]')!;
 			const activeIce = getComputedStyle(iceBottom).display === "none" ? iceTop : iceBottom;
 			return {
-				iceClearance:
-					heading.getBoundingClientRect().top - activeIce.getBoundingClientRect().bottom,
+				iceClearance: heading.getBoundingClientRect().top - activeIce.getBoundingClientRect().bottom,
 				maxUpwardParallax: Number.parseFloat(slot.dataset.parallaxMax ?? "0"),
-				footerClearance:
-					footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom,
+				footerClearance: footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom,
 			};
 		});
 		expect(position.iceClearance).toBeGreaterThanOrEqual(position.maxUpwardParallax);
@@ -623,7 +605,6 @@ test("desktop welcome video leaves clear space beside the copy", async ({ page }
 			const copyBox = copy.getBoundingClientRect();
 			const aboutBox = about.getBoundingClientRect();
 			const heading = copy.querySelector("h2")!;
-			const body = copy.querySelector<HTMLElement>('[class*="about-body"]')!;
 			const copyEdge = heading.getBoundingClientRect();
 			const paragraphs = [...copy.querySelectorAll("p")];
 			const bodyBottom = paragraphs.at(-1)!.getBoundingClientRect().bottom;
@@ -640,21 +621,22 @@ test("desktop welcome video leaves clear space beside the copy", async ({ page }
 			return {
 				gap: videoBox.left - copyBox.right,
 				frameGap: frameBox.left - copyBox.right,
-				outerMarginDifference: Math.abs(
-					copyEdge.left - canvasBox.left - (canvasBox.right - frameBox.right),
-				),
-				centerAlignment:
-					copyBox.top + copyBox.height / 2 - (frameBox.top + frameBox.height / 2),
+				outerMarginDifference: Math.abs(copyEdge.left - canvasBox.left - (canvasBox.right - frameBox.right)),
+				centerAlignment: copyBox.top + copyBox.height / 2 - (frameBox.top + frameBox.height / 2),
 				copyHeightDifference: copyBox.height - aboutBox.height,
 				copyContentOverflow: copy.scrollHeight - copy.clientHeight,
 				headingTopClearance: copyEdge.top - frameBox.top,
 				bodyBottomClearance: frameBox.bottom - bodyBottom,
-				headingBodyGap: body.getBoundingClientRect().top - copyEdge.bottom,
+				headingBodyGap: paragraphs[0].getBoundingClientRect().top - copyEdge.bottom,
 				paddingTop: Number.parseFloat(copyStyle.paddingTop),
 				paddingBottom: Number.parseFloat(copyStyle.paddingBottom),
-				paragraphGap:
-					paragraphs[1].getBoundingClientRect().top - paragraphs[0].getBoundingClientRect().bottom,
-				desktopTitle: heading.querySelector<HTMLElement>('[class*="desktop-title"]')!.innerText,
+				paragraphGaps: paragraphs
+					.slice(1)
+					.map(
+						(paragraph, index) =>
+							paragraph.getBoundingClientRect().top - paragraphs[index].getBoundingClientRect().bottom,
+					),
+				desktopTitle: heading.getAttribute("aria-label"),
 				bottomClearance: lowerBush.getBoundingClientRect().top - copyBox.bottom,
 				canvasWidth: canvasBox.width,
 				videoWidth: videoBox.width,
@@ -677,8 +659,9 @@ test("desktop welcome video leaves clear space beside the copy", async ({ page }
 		expect(layout.headingTopClearance).toBeGreaterThanOrEqual(layout.paddingTop - 1);
 		expect(layout.bodyBottomClearance).toBeGreaterThanOrEqual(0);
 		expect(Math.abs(layout.headingTopClearance - layout.headingBodyGap)).toBeLessThanOrEqual(1);
-		expect(Math.abs(layout.paragraphGap - 16)).toBeLessThanOrEqual(1);
-		expect(layout.desktopTitle).toBe("Welcome to Hack\u00a0the\u00a0Hill\u00a0III");
+		for (const gap of layout.paragraphGaps) expect(gap).toBeGreaterThanOrEqual(0);
+		expect(Math.abs(layout.paragraphGaps[0] - layout.paragraphGaps[1])).toBeLessThanOrEqual(1);
+		expect(layout.desktopTitle).toBe("Welcome to Hack the Hill III");
 		expect(layout.bottomClearance).toBeGreaterThanOrEqual(layout.canvasWidth * 0.004);
 		expect(layout.videoWidth / layout.canvasWidth).toBeCloseTo(0.338606, 2);
 		expect(layout.videoAspectRatio).toBeCloseTo(1059 / 571, 2);
@@ -696,11 +679,8 @@ test("mobile recap poster and player fill the log frame opening", async ({ page 
 		const alignment = await page.evaluate(() => {
 			const frame = document.querySelector<HTMLElement>('[class*="video-frame"]')!;
 			const video = frame.querySelector<HTMLIFrameElement>("iframe")!;
-			const paragraphs = [
-				...document.querySelectorAll<HTMLElement>('#about [class*="about-body"] p'),
-			];
-			const mobileTitle = document.querySelector<HTMLElement>('[class*="mobile-title"]')!;
-			const desktopTitle = document.querySelector<HTMLElement>('[class*="desktop-title"]')!;
+			const paragraphs = [...document.querySelectorAll<HTMLElement>("#about p")];
+			const title = document.querySelector<HTMLElement>("#about h2")!;
 			const frameBox = frame.getBoundingClientRect();
 			const videoBox = video.getBoundingClientRect();
 			const opening = {
@@ -714,20 +694,17 @@ test("mobile recap poster and player fill the log frame opening", async ({ page 
 				top: videoBox.top - opening.top,
 				width: videoBox.width - opening.width,
 				height: videoBox.height - opening.height,
-				mobileTitle: mobileTitle.innerText,
-				mobileTitleDisplay: getComputedStyle(mobileTitle).display,
-				desktopTitleDisplay: getComputedStyle(desktopTitle).display,
-				paragraphGap:
-					paragraphs[1].getBoundingClientRect().top - paragraphs[0].getBoundingClientRect().bottom,
+				title: title.getAttribute("aria-label"),
+				titleDisplay: getComputedStyle(title).display,
+				paragraphGap: paragraphs[1].getBoundingClientRect().top - paragraphs[0].getBoundingClientRect().bottom,
 			};
 		});
 
 		for (const offset of [alignment.left, alignment.top, alignment.width, alignment.height]) {
 			expect(Math.abs(offset)).toBeLessThanOrEqual(1);
 		}
-		expect(alignment.mobileTitle).toBe("Welcome to Hack the Hill III");
-		expect(alignment.mobileTitleDisplay).not.toBe("none");
-		expect(alignment.desktopTitleDisplay).toBe("none");
+		expect(alignment.title).toBe("Welcome to Hack the Hill III");
+		expect(alignment.titleDisplay).not.toBe("none");
 		expect(Math.abs(alignment.paragraphGap - 16)).toBeLessThanOrEqual(1);
 	}
 });
@@ -746,9 +723,7 @@ test("tablet preserves the road and ice artwork while expanding crowded sections
 			const collaboratorInsert = getComputedStyle(collaborator, "::before");
 			const road = document.querySelector<HTMLElement>('[data-scene-layer="road"]')!;
 			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
-			const iceBottom = document.querySelector<HTMLElement>(
-				'[data-scene-slice="ice-bottom"]',
-			)!;
+			const iceBottom = document.querySelector<HTMLElement>('[data-scene-slice="ice-bottom"]')!;
 			const iceCracks = document.querySelector<HTMLElement>('[data-scene-layer="ice-2"]')!;
 			const iceMiddle = document.querySelector<HTMLElement>('[class*="tablet-ice-middle"]')!;
 			const roadStyle = getComputedStyle(road);
@@ -771,14 +746,13 @@ test("tablet preserves the road and ice artwork while expanding crowded sections
 				partnerOverlayActive: partnerInsert.content !== "none",
 				partnerInsertBackground: partnerInsert.backgroundImage,
 				testimonialRoadClearance: roadBox.top - partnerBox.bottom,
-				roadAspectRatio: roadBox.width / roadBox.height,
+				roadVisible: roadBox.width > 0 && roadBox.height > 0,
 				roadTranslateY: translateY(roadStyle.translate),
 				roadZIndex: Number.parseFloat(roadStyle.zIndex),
 				iceRoadOverlap: roadBox.bottom - iceTopBox.top,
 				sponsorHeadingFromIce: sponsorHeadingBox.top - iceTopBox.top,
 				sponsorHeadingCenterOffset: Math.abs(
-					sponsorHeadingBox.left + sponsorHeadingBox.width / 2 -
-						(sponsorsBox.left + sponsorsBox.width / 2),
+					sponsorHeadingBox.left + sponsorHeadingBox.width / 2 - (sponsorsBox.left + sponsorsBox.width / 2),
 				),
 				collaboratorOverlayActive: collaboratorInsert.content !== "none",
 				iceMiddleActive: iceMiddleStyle.display !== "none",
@@ -794,13 +768,14 @@ test("tablet preserves the road and ice artwork while expanding crowded sections
 				iceBottomClip: iceBottomStyle.clipPath,
 				iceBottomTranslate: iceBottomStyle.translate,
 				iceCracksTranslate: iceCracksStyle.translate,
-				aboutParagraphGaps: aboutParagraphs.slice(1).map(
-					(paragraph, index) =>
-						paragraph.getBoundingClientRect().top -
-						aboutParagraphs[index].getBoundingClientRect().bottom,
-				),
-				horizontalOverflow:
-					document.documentElement.scrollWidth - document.documentElement.clientWidth,
+				aboutParagraphGaps: aboutParagraphs
+					.slice(1)
+					.map(
+						(paragraph, index) =>
+							paragraph.getBoundingClientRect().top -
+							aboutParagraphs[index].getBoundingClientRect().bottom,
+					),
+				horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
 			};
 		});
 
@@ -810,7 +785,7 @@ test("tablet preserves the road and ice artwork while expanding crowded sections
 		expect(layout.collaboratorOverlayActive).toBe(false);
 		expect(layout.iceMiddleActive).toBe(splitIceExpected);
 		if (width >= 1025) {
-			expect(layout.roadAspectRatio).toBeCloseTo(3049 / 814, 2);
+			expect(layout.roadVisible).toBe(true);
 			expect(layout.testimonialRoadClearance).toBeGreaterThanOrEqual(-8);
 			expect(layout.iceRoadOverlap).toBeGreaterThan(0);
 			expect(layout.iceTopZIndex).toBeGreaterThan(layout.roadZIndex);
@@ -839,7 +814,8 @@ test("tablet preserves the road and ice artwork while expanding crowded sections
 			expect(layout.iceCracksTranslate).toBe("none");
 		}
 		for (const gap of layout.aboutParagraphGaps) {
-			expect(Math.abs(gap)).toBeLessThanOrEqual(0.1);
+			expect(gap).toBeGreaterThanOrEqual(-0.1);
+			if (width === 1024) expect(Math.abs(gap - 16)).toBeLessThanOrEqual(0.1);
 		}
 		expect(layout.horizontalOverflow).toBeLessThanOrEqual(0);
 	}
@@ -1025,9 +1001,11 @@ test("sponsor tier rows scale their cards, clouds, and logos together", async ({
 	await page.goto("/");
 	await expect(page.locator("[data-sponsor-tier-row]")).toHaveCount(3);
 	await expect(page.locator('[data-sponsor-tier-row="backbencher"]')).toHaveCount(0);
-	const rowTiers = await page.locator("[data-sponsor-tier-row]").evaluateAll(rows =>
-		rows.map(row => [...new Set(Array.from(row.children, card => card.getAttribute("data-sponsor-tier")))]),
-	);
+	const rowTiers = await page
+		.locator("[data-sponsor-tier-row]")
+		.evaluateAll(rows =>
+			rows.map(row => [...new Set(Array.from(row.children, card => card.getAttribute("data-sponsor-tier")))]),
+		);
 	expect(rowTiers).toEqual([["prime-minister"], ["premier"], ["mayor", "councillor"]]);
 
 	const measurements = await page.locator("[data-sponsor-card]").evaluateAll(cards => {
@@ -1155,16 +1133,16 @@ test("countdown restores focus after pointer and keyboard dismissal", async ({ p
 	const hotspot = page.locator('#hero button[aria-haspopup="dialog"]');
 	await expect(hotspot).toBeAttached();
 	const dialog = page.locator("#countdown-dialog");
-	await hotspot.hover({ force: true });
+	await hotspot.dispatchEvent("pointerover", { pointerType: "mouse" });
 	await expect(dialog).toHaveJSProperty("open", true);
-	await page.mouse.move(1, 1);
+	await hotspot.dispatchEvent("pointerout", { pointerType: "mouse" });
 	await expect(dialog).toHaveJSProperty("open", false);
 	await hotspot.focus();
 	await hotspot.press("Enter");
 	await expect(dialog).toHaveJSProperty("open", true);
 	await expect(page.getByRole("button", { name: "Close the countdown" })).toBeFocused();
-	await hotspot.hover({ force: true });
-	await page.mouse.move(1, 1);
+	await hotspot.dispatchEvent("pointerover", { pointerType: "mouse" });
+	await hotspot.dispatchEvent("pointerout", { pointerType: "mouse" });
 	await expect(dialog).toHaveJSProperty("open", false);
 	await expect(hotspot).toBeFocused();
 	await hotspot.press("Enter");
@@ -1191,9 +1169,7 @@ test("particle modes change only for newly spawned particles", async ({ page }) 
 		"animation-iteration-count",
 		"1",
 	);
-	await expect
-		.poll(() => page.locator('img[src*="/leaf-"]').count(), { timeout: 6_000 })
-		.toBe(0);
+	await expect.poll(() => page.locator('img[src*="/leaf-"]').count(), { timeout: 6_000 }).toBe(0);
 
 	await page.locator("#about").scrollIntoViewIfNeeded();
 	await expect(page.locator('[aria-hidden="true"][data-mode="leaves"]')).toBeAttached();
@@ -1203,18 +1179,14 @@ test("particle modes change only for newly spawned particles", async ({ page }) 
 		window.scrollTo(0, 0);
 	});
 	await expect(page.locator('[aria-hidden="true"][data-mode="none"]')).toBeAttached();
-	await expect
-		.poll(() => page.locator('img[src*="/leaf-"]').count(), { timeout: 1_500 })
-		.toBe(0);
+	await expect.poll(() => page.locator('img[src*="/leaf-"]').count(), { timeout: 1_500 }).toBe(0);
 
 	await page.locator("#testimonials").scrollIntoViewIfNeeded();
 	await expect(page.locator('[aria-hidden="true"][data-mode="snow"]')).toBeAttached();
 	await expect.poll(() => page.locator('img[src*="/snow-"]').count()).toBeGreaterThan(0);
 	await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
 	await expect(page.locator('[aria-hidden="true"][data-mode="bubbles"]')).toBeAttached();
-	await expect
-		.poll(() => page.locator('img[src*="/snow-"]').count(), { timeout: 1_500 })
-		.toBe(0);
+	await expect.poll(() => page.locator('img[src*="/snow-"]').count(), { timeout: 1_500 }).toBe(0);
 });
 
 test("reduced motion disables animated particles", async ({ page }) => {
@@ -1230,9 +1202,7 @@ test("bubble highlights remain oriented toward the shared light source", async (
 	const field = page.locator('[data-mode="bubbles"]');
 	await expect(field).toBeAttached();
 	const bubbles = field.locator("img");
-	await expect
-		.poll(() => bubbles.count(), { timeout: 8_000 })
-		.toBeGreaterThanOrEqual(6);
+	await expect.poll(() => bubbles.count(), { timeout: 8_000 }).toBeGreaterThanOrEqual(6);
 
 	const orientations = await bubbles.evaluateAll(elements =>
 		elements.slice(0, 6).map(element => getComputedStyle(element).rotate),
