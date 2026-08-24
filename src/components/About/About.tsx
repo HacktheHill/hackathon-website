@@ -26,9 +26,14 @@ function About() {
 	return (
 		<section id="about" aria-labelledby="about-title">
 			<div className={styles["about-text"]}>
-				<h2 id="about-title" className="section-heading" data-aos="fade-right" data-aos-duration="800">
-					{t("about.title")}
-				</h2>
+				<h2
+					id="about-title"
+					className="section-heading"
+					aria-label={t("about.title").replaceAll(/&nbsp;/g, " ")}
+					data-aos="fade-right"
+					data-aos-duration="800"
+					dangerouslySetInnerHTML={{ __html: t("about.title") }}
+				></h2>
 				<p data-aos="fade-right" data-aos-duration="800">
 					{t("about.p1")}
 				</p>

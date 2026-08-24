@@ -28,7 +28,7 @@ export default {
 		},
 	},
 	about: {
-		title: "Bienvenue à Hack the Hill III",
+		title: "Bienvenue à Hack&nbsp;the&nbsp;Hill&nbsp;III",
 		p1: "Joignez-vous à des étudiants de différentes disciplines pour une fin de semaine consacrée à la création de solutions innovantes et porteuses d'impact à des enjeux civiques concrets.",
 		p2: "Organisé par le Réseau technologique de la capitale, le hackathon crée un espace stimulant pour apprendre, collaborer, réseauter avec ses pairs et mettre en valeur ses talents et ses idées.",
 		p3: "Que vous participiez à votre premier hackathon ou que vous arriviez avec plusieurs années d'expérience, vous y trouverez une communauté accueillante nourrie par une diversité de compétences et de perspectives.",

@@ -8,14 +8,13 @@
 }
 
 .title {
-	width: 50%;
-	margin: 0 4% 1.5cqw auto;
+	margin: 7cqw 0 7cqw;
 	color: #fff;
 	font-family: "Highway Gothic", sans-serif;
 	font-size: 3.8cqw;
 	font-weight: 400;
 	line-height: 1;
-	text-align: center;
+	text-align: right;
 }
 
 .signs {
@@ -29,33 +28,6 @@
 	position: relative;
 	flex: 0 0 auto;
 	transform-origin: center center;
-}
-
-.intro-ready .sign {
-	opacity: 0;
-	transition:
-		translate 1.05s cubic-bezier(0.16, 1, 0.3, 1),
-		opacity 0.65s ease-out;
-}
-
-.intro-ready .blue {
-	translate: -18cqw 3cqw;
-	transition-delay: 80ms;
-}
-
-.intro-ready .organizers {
-	translate: 0 9cqw;
-	transition-delay: 260ms;
-}
-
-.intro-ready .green {
-	translate: 18cqw 3cqw;
-	transition-delay: 440ms;
-}
-
-.intro-ready.signs-visible .sign {
-	translate: 0 0;
-	opacity: 1;
 }
 
 .sign img {
@@ -103,6 +75,7 @@
 }
 
 .mobile-video-sign,
+.mobile-stats-intro,
 .mobile-green-copy {
 	display: none;
 }
@@ -169,8 +142,8 @@
 	to land inside its opening. */
 .green-top strong {
 	position: relative;
-	top: 13.5%;
-	left: 7%;
+	top: 9.5%;
+	left: 3%;
 	color: #111;
 	font-family: "Highway Gothic Wide", sans-serif;
 	font-size: 3.55cqw;
@@ -192,7 +165,7 @@
 	display: grid;
 	grid-template-columns: 36% 64%;
 	align-items: center;
-	height: 61%;
+	height: 70%;
 }
 
 .green-bottom strong {
@@ -232,19 +205,12 @@
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.intro-ready .sign {
-		translate: none;
-		opacity: 1;
-		transition: none;
-	}
-}
-
 @media (max-width: 1024px) {
 	.title {
 		width: 100%;
-		margin: 0 0 1.5rem;
+		margin: 5rem 0 2rem;
 		font-size: clamp(2rem, 5vw, 3rem);
+		text-align: right;
 	}
 
 	.signs {
@@ -258,7 +224,6 @@
 		z-index: 2;
 		background: url("/art/scene/bush-4.webp") center top / 100% auto no-repeat;
 		content: "";
-		pointer-events: none;
 		-webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 95%);
 		mask-image: linear-gradient(180deg, #000 72%, transparent 95%);
 	}
@@ -270,15 +235,32 @@
 
 @media (max-width: 600px) {
 	.stats {
-		padding-top: clamp(1rem, 4vw, 1.5rem);
+		/* Reserve the bush-3 transition before the green sign without stretching
+			the bush artwork through the full Stats section. */
+		padding-top: 10rem;
+		scroll-margin-top: 2rem;
 	}
 
 	.title {
+		display: none;
+	}
+
+	.mobile-stats-intro {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		width: 100%;
-		margin: 0 0 2rem;
+	}
+
+	.mobile-stats-title {
+		width: 100%;
+		margin: clamp(1rem, 8vw, 3rem) 0 0;
+		color: #fff;
 		font-family: Rubik, sans-serif;
 		font-size: clamp(2rem, 9vw, 2.75rem);
 		font-weight: 500;
+		line-height: 1;
+		text-align: center;
 	}
 
 	.signs {
@@ -333,9 +315,8 @@
 	.mobile-green-details {
 		display: grid;
 		grid-template-columns: none;
-		grid-template-rows: repeat(2, auto);
 		align-content: center;
-		row-gap: 0;
+		row-gap: 1rem;
 	}
 
 	.mobile-green-row {
@@ -354,9 +335,14 @@
 		height: clamp(5.5rem, 30vw, 8rem);
 		background: url("/art/scene/bush-4.webp") center top / 100% auto no-repeat;
 		content: "";
-		pointer-events: none;
-		-webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 96%);
-		mask-image: linear-gradient(180deg, #000 70%, transparent 96%);
+		/* Keep the scalloped crown solid, then use most of the remaining artwork
+			for a long dissolve instead of exposing a horizontal lower edge. */
+		-webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+		mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-size: 100% 100%;
+		mask-size: 100% 100%;
 	}
 
 	.blue,
@@ -409,7 +395,7 @@
 
 @media (min-width: 601px) and (max-width: 1024px) {
 	.signs::after {
-		bottom: -4rem;
+		bottom: -6rem;
 		height: clamp(8rem, 23vw, 11rem);
 	}
 }

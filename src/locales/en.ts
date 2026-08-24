@@ -28,7 +28,7 @@ export default {
 		},
 	},
 	about: {
-		title: "Welcome to Hack the Hill III",
+		title: "Welcome to Hack&nbsp;the&nbsp;Hill&nbsp;III",
 		p1: "Join students from across disciplines for a weekend of building impactful, innovative solutions to real-world civic challenges.",
 		p2: "Organized by the Capital Technology Network, the hackathon creates an exciting space to learn, collaborate, network with peers, and showcase your talents and ideas.",
 		p3: "Whether you are exploring your first hackathon or bringing years of experience, you will find a welcoming community shaped by different skills and perspectives.",

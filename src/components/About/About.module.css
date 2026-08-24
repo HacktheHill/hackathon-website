@@ -1,16 +1,14 @@
 .about-text {
 	box-sizing: border-box;
-	width: calc(50% - 1.125rem);
+	width: calc(50% - 5vw);
 	display: flex;
 	flex-direction: column;
-	gap: 0;
-	padding-right: 2cqw;
-	padding-left: 5cqw;
+	justify-content: space-evenly;
 }
 
 .about-text h2 {
-	margin-bottom: clamp(1.75rem, 2.5vw, 2.5rem);
-	font-size: 2.6rem;
+	margin: 0;
+	font-size: clamp(2rem, 3vw, 4rem);
 }
 
 .about-text p {
@@ -18,7 +16,8 @@
 	color: var(--light-primary-color);
 	font-family: Rubik;
 	font-weight: 400;
-	font-size: 1.1rem;
+	font-size: clamp(0.85rem, 1.15vw, 1.3rem);
+	line-height: 1.25;
 }
 
 .video {
@@ -28,25 +27,9 @@
 	border: 0;
 }
 
-@media screen and (max-width: 1200px) {
-	.about-text {
-		width: 50%;
-	}
-}
-
 @media screen and (max-width: 1024px) {
 	.about-text {
 		width: 100%;
-	}
-}
-
-@media screen and (max-width: 510px) {
-	.about-text h2 {
-		font-size: clamp(2.5rem, 11vw, 3.5rem);
-	}
-
-	.about-text p {
-		font-size: 1rem;
-		line-height: 1.5;
+		gap: 1rem;
 	}
 }

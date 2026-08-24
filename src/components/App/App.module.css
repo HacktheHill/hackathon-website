@@ -18,7 +18,6 @@
 :global(#main-content) {
 	width: min(100%, 3049px);
 	margin-inline: auto;
-	background: #061238;
 }
 
 .canvas {
@@ -32,7 +31,6 @@
 	width: 100%;
 	max-width: 3049px;
 	overflow: hidden;
-	background: linear-gradient(180deg, #f2ba83 0%, #fbecb7 16.3%, #061238 16.3%);
 }
 
 .base-scene {
@@ -56,7 +54,6 @@
 		z-index: 175;
 		background: linear-gradient(180deg, #16357f 0%, #10236f 48%, #07153e 78%, #061238 100%);
 		content: "";
-		pointer-events: none;
 	}
 
 	.layer[data-scene-layer="footer-water"],
@@ -69,7 +66,6 @@
 	position: absolute;
 	inset: 0;
 	pointer-events: none;
-	user-select: none;
 }
 
 .layer {
@@ -139,7 +135,6 @@
 		height: calc(var(--tablet-ice-extension) + 2px);
 		background: linear-gradient(180deg, #75c8ba 0%, #72cbc0 50%, #75c8ba 100%);
 		content: "";
-		pointer-events: none;
 	}
 }
 
@@ -363,6 +358,10 @@
 	pointer-events: none;
 }
 
+.content > .slot {
+	pointer-events: auto;
+}
+
 /* AOS calculates offsets from normal document flow. These sections are placed
 	inside the fixed-ratio artwork canvas, so keep their upstream content visible. */
 .content :global([data-aos]) {
@@ -381,21 +380,19 @@
 
 .stats-layer {
 	position: absolute;
-	top: 30.5%;
+	top: 27%;
 	left: 7%;
 	z-index: 155;
 	width: 86%;
-	pointer-events: none;
 }
 
 .video-layer {
 	position: absolute;
-	top: 18.088%;
-	left: 54.0558%;
+	top: 18.117209%;
+	left: 54.17851%;
 	z-index: 205;
-	width: 33%;
+	width: 33.860656%;
 	aspect-ratio: 1059 / 571;
-	pointer-events: auto;
 }
 
 .video-frame {
@@ -409,7 +406,6 @@
 	z-index: 1000;
 	width: 100%;
 	height: 16.3%;
-	pointer-events: auto;
 }
 
 .hero-slot :global(section#hero) {
@@ -435,19 +431,22 @@
 
 .about-slot {
 	top: 16.6%;
-	pointer-events: none;
 }
 
 .testimonials-slot {
-	top: 36.4%;
-	pointer-events: auto;
+	top: 36%;
+}
+
+@media (min-width: 1800px) {
+	.testimonials-slot {
+		top: 38%;
+	}
 }
 
 .sponsors-slot {
 	top: calc(54.2% + var(--tablet-partner-extension));
 	transform: scale(0.68);
 	transform-origin: top center;
-	pointer-events: auto;
 }
 
 .faq-slot {
@@ -459,25 +458,31 @@
 		calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
 	);
 	width: 76%;
-	pointer-events: auto;
 }
 
 .footer-slot {
 	left: 0;
 	bottom: calc(3% - min(var(--tablet-partner-extension), 12rem) - var(--faq-content-extension));
 	width: 100%;
-	pointer-events: auto;
+}
+
+@media (min-width: 1025px) {
+	.about-slot {
+		top: 16.9682%;
+		height: 7.1329%;
+		transform: none;
+	}
+
+	.about-slot :global(section#about) {
+		display: flex;
+		align-items: stretch;
+		height: 100%;
+	}
 }
 
 @media (max-width: 1200px) {
-	.about-slot {
-		top: 16.3%;
-		transform: scale(0.82);
-		transform-origin: top center;
-	}
-
 	.testimonials-slot {
-		top: 36.4%;
+		top: 36%;
 		transform: scale(0.76);
 		transform-origin: top center;
 	}
@@ -509,7 +514,6 @@
 		grid-template-columns: minmax(0, 1fr);
 		aspect-ratio: auto !important;
 		overflow: clip;
-		background: #061238;
 	}
 
 	.artwork {
@@ -550,7 +554,7 @@
 	}
 
 	.about-slot {
-		--about-transition-height: clamp(5rem, 24vw, 10rem);
+		--about-transition-height: clamp(5rem, 24vw, 12rem);
 		--about-slice-height: clamp(20rem, 105vw, 36rem);
 		--about-bottom-slice-height: clamp(5rem, 26vw, 10rem);
 		--about-panel-fade: clamp(4rem, 14vw, 7rem);
@@ -560,29 +564,18 @@
 		isolation: isolate;
 		margin-top: calc(-1px - var(--about-transition-height));
 		padding: calc(5rem + var(--about-transition-height)) 1.25rem 2.5rem;
-		background: linear-gradient(
-			180deg,
-			transparent 0 var(--about-transition-height),
-			#2a0709 calc(var(--about-transition-height) + 4rem),
-			#36080b 42%,
-			#3e0a0d 62%,
-			#4b0d10 100%
-		);
-		pointer-events: auto;
+		background: url("/art/scene/bush-2.webp") center top / 150% auto no-repeat,
+			linear-gradient(0deg, #330a0a 50%, transparent 0%);
 	}
 
 	.about-slot::before {
 		position: absolute;
-		top: 0;
+		top: -2.5rem;
 		right: 0;
 		left: 0;
 		z-index: 0;
 		height: var(--about-slice-height);
-		background: url("/art/scene/bush-2.webp") center top / 150% auto no-repeat;
 		content: "";
-		pointer-events: none;
-		-webkit-mask-image: linear-gradient(180deg, #000 0 74%, transparent 100%);
-		mask-image: linear-gradient(180deg, #000 0 74%, transparent 100%);
 	}
 
 	.about-slot::after {
@@ -592,17 +585,7 @@
 		left: 0;
 		z-index: 0;
 		height: var(--about-bottom-slice-height);
-		background:
-			linear-gradient(
-				180deg,
-				#4b0d10 0 55%,
-				transparent 100%
-			),
-			url("/art/scene/bush-2.webp") center bottom / 150% auto no-repeat;
 		content: "";
-		pointer-events: none;
-		-webkit-mask-image: linear-gradient(180deg, transparent 0, #000 55% 100%);
-		mask-image: linear-gradient(180deg, transparent 0, #000 55% 100%);
 	}
 
 	.about-slot > * {
@@ -614,22 +597,11 @@
 		isolation: isolate;
 	}
 
-	/* The artwork slices are intentionally short on narrow screens. Keep an
-		opaque centre panel behind the complete copy block and extend it through
-		the slot's bottom padding so no texture edge can open above the video. */
 	.about-slot :global(section#about)::before {
 		position: absolute;
 		inset: calc(-1 * var(--about-panel-fade)) -1.25rem -2.5rem;
 		z-index: -1;
-		background: linear-gradient(
-			180deg,
-			transparent 0,
-			#2d0709 var(--about-panel-fade),
-			#3e0a0d 68%,
-			#4b0d10 100%
-		);
 		content: "";
-		pointer-events: none;
 	}
 
 	.video-layer {
@@ -641,17 +613,34 @@
 		margin: 0;
 		padding: 0 1.25rem clamp(3rem, 15vw, 5rem);
 		aspect-ratio: auto;
-		background: #4b0d10;
 		box-shadow: none;
+		background: #330a0a;
 	}
 
 	.video-frame {
+		--log-frame-width: 1342;
+		--log-frame-height: 900;
+		--log-opening-left: 151;
+		--log-opening-top: 145;
+		--log-opening-width: 1059;
+		--log-opening-height: 571;
+
+		position: relative;
 		box-sizing: border-box;
 		width: 100%;
 		height: auto;
-		padding: 8% 9% 10%;
-		aspect-ratio: 1377 / 900;
-		background: url("/art/scene/logs.webp") center / contain no-repeat #4b0d10;
+		padding: 0;
+		aspect-ratio: var(--log-frame-width) / var(--log-frame-height);
+		background: url("/art/scene/logs.webp") center / contain no-repeat;
+		margin-block: 3rem;
+	}
+
+	.video-frame > :global(iframe) {
+		position: absolute;
+		top: calc(var(--log-opening-top) / var(--log-frame-height) * 100%);
+		left: calc(var(--log-opening-left) / var(--log-frame-width) * 100%);
+		width: calc(var(--log-opening-width) / var(--log-frame-width) * 100%);
+		height: calc(var(--log-opening-height) / var(--log-frame-height) * 100%);
 	}
 
 	.stats-layer {
@@ -660,7 +649,6 @@
 		z-index: 210;
 		padding: 0 1.25rem 1.5rem;
 		background: linear-gradient(180deg, #741416, #d64922 70%, #e66b2e);
-		pointer-events: auto;
 	}
 
 	/* The desktop canvas plants bush-3 where the recap video gives way to the
@@ -682,7 +670,6 @@
 		height: clamp(7rem, 30vw, 12rem);
 		background: url("/art/scene/bush-3.webp") center top / 150% auto no-repeat;
 		content: "";
-		pointer-events: none;
 		-webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
 		mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
 	}
@@ -692,39 +679,43 @@
 		z-index: 1;
 	}
 
+	@media (max-width: 600px) {
+		.stats-layer {
+			/* Meet Testimonials at its exact opening orange so the section boundary
+				cannot show through the fading bush-4 foreground. */
+			background: linear-gradient(
+				180deg,
+				transparent 20%,
+				#741416 21% 84%,
+				#b8371f 93%,
+				#e66b2e 100%
+			);
+		}
+
+		.stats-layer::before {
+			top: 4rem;
+		}
+	}
+
 	/* Keep Testimonials solid red at the bottom so there is no washed-out fade
 		beneath the carousel. */
 	.testimonials-slot {
 		grid-row: 5;
 		padding: 2.5rem 1rem 5rem;
 		background-color: #b83a20;
-		background-image: linear-gradient(
-			180deg,
-			#e66b2e 0,
-			#d95525 clamp(5rem, 18vw, 9rem),
-			#c64f1f 42%,
-			#b83a20 78%
-		);
+		background-image: linear-gradient(180deg, #e66b2e 0, #d95525 clamp(5rem, 18vw, 9rem), #c64f1f 42%, #b83a20 78%);
 	}
 
 	.sponsors-slot {
-		--road-transition-height: clamp(7rem, 26.7vw, 13rem);
-		--ice-top-position: calc(
-			var(--road-transition-height) - clamp(3.375rem, 7.5vw, 4.5rem)
-		);
+		--road-transition-height: clamp(5rem, 20vw, 13rem);
+		--ice-top-position: calc(var(--road-transition-height) - clamp(3.375rem, 8.5vw, 7.5rem));
 		--ice-top-height: clamp(13.5rem, 67vw, 32rem);
 		--ice-bottom-height: clamp(9rem, 46vw, 15rem);
 
 		grid-row: 6;
 		isolation: isolate;
-		padding:
-			calc(5rem + var(--road-transition-height)) 1rem
-			calc(5rem + var(--ice-bottom-height));
-		background: linear-gradient(
-			180deg,
-			#72d2ca 0 calc(100% - var(--ice-bottom-height)),
-			#16357f 100%
-		);
+		padding: calc(5rem + var(--road-transition-height)) 1rem calc(5rem + var(--ice-bottom-height));
+		background: linear-gradient(180deg, #72d2ca 0 calc(100% - var(--ice-bottom-height)), #16357f 100%);
 	}
 
 	.sponsors-slot::before {
@@ -734,12 +725,10 @@
 		left: 0;
 		z-index: 0;
 		height: calc(var(--road-transition-height) + var(--ice-top-height));
-		background:
-			url("/art/scene/ice-1.webp") center var(--ice-top-position) / 130% auto no-repeat,
+		background: url("/art/scene/ice-1.webp") center var(--ice-top-position) / 130% auto no-repeat,
 			url("/art/scene/road.webp") center top / 100% auto no-repeat,
 			linear-gradient(180deg, #b83a20 0 14%, #72d2ca 38% 100%);
 		content: "";
-		pointer-events: none;
 		-webkit-mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
 		mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
 	}
@@ -751,17 +740,10 @@
 		left: 0;
 		z-index: 0;
 		height: var(--ice-bottom-height);
-		background:
-			url("/art/scene/ice-2.webp") center bottom / 130% auto no-repeat,
-			linear-gradient(
-				180deg,
-				#72d2ca 0 48%,
-				rgba(114, 210, 202, 0.86) 62%,
-				transparent 82%
-			),
+		background: url("/art/scene/ice-2.webp") center bottom / 130% auto no-repeat,
+			linear-gradient(180deg, #72d2ca 0 48%, rgba(114, 210, 202, 0.86) 62%, transparent 82%),
 			url("/art/scene/ice-1.webp") center bottom / 130% auto no-repeat;
 		content: "";
-		pointer-events: none;
 		-webkit-mask-image: linear-gradient(180deg, transparent 0, #000 34% 100%);
 		mask-image: linear-gradient(180deg, transparent 0, #000 34% 100%);
 	}
@@ -777,8 +759,7 @@
 		grid-row: 7;
 		z-index: 0;
 		padding: clamp(2rem, 6vw, 4rem) 1.25rem 10rem;
-		background:
-			linear-gradient(
+		background: linear-gradient(
 				180deg,
 				#16357f 0,
 				rgb(22 53 127 / 65%) 1.5rem,
@@ -788,21 +769,14 @@
 				#0d225f 82%,
 				#07153e 100%
 			),
-			url("/art/scene/water.webp") center calc(-1 * var(--water-image-lift)) / 130% auto
-				no-repeat,
-			linear-gradient(
-				180deg,
-				#10236f 0 64%,
-				#0d225f 82%,
-				#07153e
-			);
+			url("/art/scene/water.webp") center calc(-1 * var(--water-image-lift)) / 130% auto no-repeat,
+			linear-gradient(180deg, #10236f 0 64%, #0d225f 82%, #07153e);
 	}
 
 	.footer-slot {
 		grid-row: 8;
 		padding: 4rem 0 5rem;
-		background:
-			url("/art/scene/footer-water-2.webp") center bottom / 100% auto no-repeat,
+		background: url("/art/scene/footer-water-2.webp") center bottom / 100% auto no-repeat,
 			url("/art/scene/footer-water.webp") right bottom / 87.73% auto no-repeat,
 		linear-gradient(180deg, #07153e 0 18%, #061238 100%);
 	}
@@ -821,7 +795,6 @@
 	.footer-slot {
 		margin-top: -1px;
 	}
-
 }
 
 @media (max-width: 600px) {

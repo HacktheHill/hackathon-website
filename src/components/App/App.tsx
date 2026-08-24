@@ -4,7 +4,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { t } from "@/i18n";
 import Hero from "../Hero/Hero";
 import About, { AboutVideo } from "../About/About";
-import Stats, { MobileVideoSign } from "../Stats/Stats";
+import Stats, { MobileStatsIntro } from "../Stats/Stats";
 import Testimonials from "../Testimonials/Testimonials";
 import Sponsors from "../Sponsors/Sponsors";
 import FAQ from "../FAQ/FAQ";
@@ -37,7 +37,7 @@ const SCENE_LAYERS = [
 	{ name: "water", x: 0, y: 8404, width: 3049, height: 3597 },
 	{ name: "ice-1", x: 0, y: 6393, width: 3049, height: 3153 },
 	{ name: "ice-2", x: 0, y: 7619, width: 3049, height: 1926 },
-	{ name: "logs", x: 1436, y: 2080, width: 1377, height: 900 },
+	{ name: "logs", x: 1436, y: 2080, width: 1342, height: 900 },
 	{ name: "footer-water", x: 374, y: 11310, width: 2675, height: 991 },
 	{ name: "footer-water-2", x: 0, y: 11553, width: 3049, height: 748 },
 ] as const;
@@ -51,8 +51,8 @@ type SceneLayerPlacement = {
 };
 
 const SCENE_LAYER_PLACEMENTS: Partial<Record<SceneLayer["name"], SceneLayerPlacement>> = {
-	/* Scale the frame with its video while keeping the artwork's right edge and
-		the top edge of its transparent 1059 x 571 opening in place. */
+	/* Scale the frame with its video while keeping the artwork's right edge in
+		the intended scene position. */
 	logs: {
 		x: 1504.693966,
 		y: 2087.238449,
@@ -314,7 +314,7 @@ function App() {
 						<div className={styles["video-frame"]}>
 							<AboutVideo />
 						</div>
-						<MobileVideoSign />
+						<MobileStatsIntro />
 					</div>
 					<div
 						className={styles["stats-layer"]}
@@ -328,8 +328,6 @@ function App() {
 						<ParticleEffects />
 						<div
 							className={`${styles.slot} ${styles["about-slot"]}`}
-							data-section-parallax="0.024"
-							data-parallax-max="32"
 						>
 							<About />
 						</div>

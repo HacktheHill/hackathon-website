@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { t } from "@/i18n";
 import styles from "./Stats.module.css";
 
@@ -35,43 +34,21 @@ export function MobileVideoSign() {
 	return <BlueSign mobileVideo />;
 }
 
+export function MobileStatsIntro() {
+	return (
+		<div className={styles["mobile-stats-intro"]}>
+			<h2 className={styles["mobile-stats-title"]}>{t("stats.title")}</h2>
+			<MobileVideoSign />
+		</div>
+	);
+}
+
 function Stats() {
-	const sectionRef = useRef<HTMLElement>(null);
-	const [introReady, setIntroReady] = useState(false);
-	const [signsVisible, setSignsVisible] = useState(false);
-
-	useEffect(() => {
-		const section = sectionRef.current;
-		if (!section) return;
-
-		const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-		if (motionQuery.matches) {
-			setSignsVisible(true);
-			return;
-		}
-
-		setIntroReady(true);
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (!entry.isIntersecting) return;
-				setSignsVisible(true);
-				observer.disconnect();
-			},
-			{ rootMargin: "0px 0px -12%", threshold: 0.18 },
-		);
-		observer.observe(section);
-
-		return () => observer.disconnect();
-	}, []);
-
 	return (
 		<section
-			ref={sectionRef}
-			className={`${styles.stats}${introReady ? ` ${styles["intro-ready"]}` : ""}${
-				signsVisible ? ` ${styles["signs-visible"]}` : ""
-			}`}
+			className={styles.stats}
 			id="stats"
-			aria-labelledby="stats-title"
+			aria-label={t("stats.title")}
 		>
 			<h2 id="stats-title" className={styles.title}>
 				{t("stats.title")}

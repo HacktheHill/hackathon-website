@@ -221,33 +221,9 @@
 	--foreground-min-top: 80px;
 
 	position: absolute;
-	/* Pin the foreground at full viewport width (so the rampart wall spans edge to
-	   edge and hides the foot of the clock tower — the wall is painted in front of
-	   the tower base in the asset), then drop it ~10vh below the fold so the tower
-	   doesn't reach the top on wide 16:9 screens. The wall is far taller than the
-	   drop, so the base stays hidden; the bottom scallops just run off the bottom
-	   edge, exactly as in the reference art. */
-	bottom: -10vh;
 	left: 0;
 	right: 0;
-	/* Span from the very top of the viewport down past the fold (top:0 + the
-	   negative bottom), instead of a fixed 100% height. The image's vertical
-	   position is measured from this box's top edge, so keeping it at top:0 makes
-	   that origin the viewport top — which is what lets the spire clamp below
-	   (`max(var(--foreground-min-top), …)`) read as an absolute clearance from
-	   the navbar. */
 	top: 0;
-	/* Always span the full viewport width so the rampart wall reaches both edges on
-	   every aspect ratio. (A width cap used to kick in past ~1.97:1, leaving the
-	   wall short of the edges and exposing bare gradient in the bottom corners on
-	   ultra-wide screens — the bug this patch fixes.)
-	   Bottom-pin the image as before, but never let its top rise above 80px (the
-	   72px navbar + a small margin): at full width the image grows taller than the box on
-	   wide screens, so without this clamp the spire would slide up behind the
-	   navbar. 55.73vw = the image's own height at full width (1070/1920); 110vh =
-	   the box height (top:0 → bottom:-10vh). So `110vh - 55.73vw` is the
-	   bottom-pinned top, and max() floors it at the navbar clearance.
-	   Keep this math in sync with the hotspot placement in Hero.tsx. */
 	z-index: 4;
 	pointer-events: none;
 	user-select: none;
@@ -255,7 +231,7 @@
 
 .hero-foreground .hero-layer-image {
 	position: absolute;
-	top: max(var(--foreground-min-top), calc(110vh - 55.73vw));
+	top: max(var(--foreground-min-top), calc(100vh - 55.73vw));
 	left: 0;
 	width: 100%;
 	height: auto;
@@ -470,11 +446,11 @@
 
 /* ---------- Responsive ---------- */
 
-/* Portrait viewports: stack the text and show a zoomed tower at the bottom,
-   instead of the wide scene. Width alone must not select this layout: landscape
-   phones are short but wide enough for the tower/text split, and stacking both
-   into 320–430px of height makes every element collide. Keep this condition in
-   sync with the matchMedia check in Hero.tsx (hotspot). */
+/* Portrait viewports: place the copy in the clear centre-right sky and show a
+   zoomed tower at the bottom. Width alone must not select this layout:
+   landscape phones are short but wide enough for the tower/text split, and
+   stacking both into 320–430px of height makes every element collide. Keep
+   this condition in sync with the matchMedia check in Hero.tsx (hotspot). */
 @media only screen and (orientation: portrait) {
 	.hero-foreground {
 		/* Cancel the desktop top:0 / -10vh drop and sit a zoomed tower flush at the
@@ -493,15 +469,19 @@
 		object-position: center bottom;
 	}
 
-	/* Stack the text in the upper sky band; the tower sits below-left. The
-	   edition bars track --logo-w, so retuning it here resizes them too. */
+	/* Anchor the copy in a protected centre-right lane. The clouds below are
+	   routed above or below this vertical band, so their horizontal drift can
+	   never pass behind the text. The edition bars track --logo-w, so retuning
+	   it here resizes them too. */
 	.hero-heading {
-		top: clamp(4rem, 11vh, 6.25rem);
+		top: 46%;
 		bottom: auto;
-		right: auto;
-		left: clamp(1.25rem, 6vw, 2rem);
-		width: min(84vw, 460px);
-		align-content: start;
+		right: clamp(0.75rem, 2vw, 2.5rem);
+		left: 40%;
+		width: auto;
+		align-content: end;
+		justify-items: center;
+		text-align: center;
 		gap: clamp(0.3rem, 0.8vh, 0.6rem);
 		--logo-w: clamp(165px, 52vw, 270px);
 	}
@@ -526,9 +506,10 @@
 		content: ":";
 	}
 
-	/* Same idea on mobile: a big top bank (1,4,3,5) spanning the width, plus two
-	   clouds (2,6) lower in the sky band above the tower. Only placement changes;
-	   the base sizes (clamp mins) are already large enough to overlap into a mass. */
+	/* The top bank stays entirely above the protected text lane. Cloud 2 takes
+	   the same upper route, while cloud 6 travels below the copy. Since the drift
+	   animation is horizontal (apart from a tiny bob), the lane remains clear for
+	   the whole animation rather than only at its starting frame. */
 	.cloud-1 {
 		--cloud-top: 4%;
 		--cloud-left: -20%;
@@ -545,14 +526,13 @@
 		--cloud-top: 2%;
 		--cloud-left: 66%;
 	}
-	/* dips lower so the tower's flag/spire rises into the underside of the bank */
 	.cloud-6 {
-		--cloud-top: 34%;
+		--cloud-top: 70%;
 		--cloud-left: -2%;
 		--cloud-w: clamp(240px, 64vw, 360px);
 	}
 	.cloud-2 {
-		--cloud-top: 24%;
+		--cloud-top: 11%;
 		--cloud-left: 54%;
 	}
 }
@@ -560,6 +540,7 @@
 @media only screen and (orientation: portrait) and (max-width: 600px) {
 	.hero-heading {
 		top: clamp(6rem, 14vh, 16rem);
+		right: auto;
 		left: 1rem;
 		width: calc(100% - 2rem);
 		gap: clamp(0.2rem, 2vh, 1rem);
@@ -586,10 +567,26 @@
 	}
 
 	.cloud-6 {
-		--cloud-top: 27%;
+		--cloud-top: 62%;
 		--cloud-left: -18%;
 		--cloud-w: clamp(210px, 58vw, 280px);
 		--cloud-opacity: 0.7;
+	}
+}
+
+/* Mid-width portrait screens have enough room for the tower and copy to sit
+   beside one another, but not for the desktop-sized 460px copy column. Anchor
+   a narrower column at the right edge so its centre stays in the open region
+   between the tower and the viewport edge as the screen width changes. */
+@media only screen and (orientation: portrait) and (min-width: 481px) and (max-width: 768px) {
+	.hero-heading {
+		top: 46%;
+		right: clamp(0.75rem, 2vw, 1rem);
+		left: 40%;
+		width: auto;
+		justify-items: center;
+		text-align: center;
+		--logo-w: clamp(180px, 38vw, 230px);
 	}
 }
 
