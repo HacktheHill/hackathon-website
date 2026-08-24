@@ -50,7 +50,7 @@ function Navbar() {
 			>
 				<img
 					src="https://logged-assets.s3.amazonaws.com/trust-badge/2027/mlh-trust-badge-2027-red.svg"
-					alt="Major League Hacking 2027 Hackathon Season"
+					alt={t("navbar.mlh_trust_badge")}
 					width="100"
 					height="180"
 				/>

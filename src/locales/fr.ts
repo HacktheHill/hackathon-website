@@ -2,21 +2,22 @@ export default {
 	navbar: {
 		aria_label: "Navigation principale",
 		home_label: "Accueil de Hack the Hill",
-		language_switch: "Afficher ce site en anglais",
-		past_site_label: "Ouvrir le site Web de Hack the Hill II",
+		language_switch: "Voir ce site en anglais",
+		past_site_label: "Visiter le site de Hack the Hill II",
 		skip_to_content: "Passer au contenu principal",
+		mlh_trust_badge: "Saison de hackathons 2027 de Major League Hacking",
 	},
 	hero: {
 		at: "à",
-		h2: "Le hackathon de la capitale du Canada",
-		apply: "Présentez votre candidature dès maintenant",
+		h2: "Le hackathon de la capitale canadienne",
+		apply: "Postulez maintenant",
 		date: "Du 25 au 27 septembre 2026",
 		countdown: {
 			open: "Afficher le compte à rebours de Hack the Hill",
 			close: "Fermer le compte à rebours",
 			event_start: "Hack the Hill commence dans",
-			hacking_start: "La période de programmation commence dans",
-			hacking_end: "La période de programmation se termine dans",
+			hacking_start: "La phase de développement commence dans",
+			hacking_end: "La phase de développement se termine dans",
 			day: "jour",
 			days: "jours",
 			hour: "heure",
@@ -29,9 +30,9 @@ export default {
 	},
 	about: {
 		title: "Bienvenue à Hack&nbsp;the&nbsp;Hill&nbsp;III",
-		p1: "Joignez-vous à des étudiants de différentes disciplines pour une fin de semaine consacrée à la création de solutions innovantes et porteuses d'impact à des enjeux civiques concrets.",
+		p1: "Joignez-vous à des étudiants de différentes disciplines pour une fin de semaine consacrée à la création de solutions innovantes ayant un impact concret sur des enjeux civiques.",
 		p2: "Organisé par le Réseau technologique de la capitale, le hackathon crée un espace stimulant pour apprendre, collaborer, réseauter avec ses pairs et mettre en valeur ses talents et ses idées.",
-		p3: "Que vous participiez à votre premier hackathon ou que vous arriviez avec plusieurs années d'expérience, vous y trouverez une communauté accueillante nourrie par une diversité de compétences et de perspectives.",
+		p3: "Que vous participiez à votre premier hackathon ou que vous arriviez avec plusieurs années d'expérience, vous y trouverez une communauté accueillante fondée sur une diversité de compétences et de perspectives.",
 		frame_alt: "Vidéo récapitulative de Hack the Hill II",
 	},
 	stats: {
@@ -39,7 +40,7 @@ export default {
 		p1: "800",
 		p1tag: "Participants",
 		p2: "1190",
-		p2tag: "Candidats",
+		p2tag: "Candidatures",
 		p3: "8",
 		p3tag: "Commanditaires",
 		p4: "15",
@@ -48,22 +49,28 @@ export default {
 		p5tag: "Organisateurs",
 	},
 	winners: {
-		title: "Gagnants",
+		title: "Lauréats",
 		subtitle:
-			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II un voyage inoubliable!",
+			"Célébrons les esprits brillants et les projets qui ont fait de Hack the Hill II une expérience inoubliable!",
 		categories: {
-			general_challenge: "Défi Général",
+			general_challenge: "Défi général",
 			ciena: "Défi Ciena",
 			ross: "Défi Ross",
-			best_ui_ux: "Meilleure implémentation UI/UX",
+			best_ui_ux: "Meilleure réalisation UI/UX",
 			best_ai: "Meilleure utilisation de l'IA",
 			best_uottawa_carleton: "Meilleure collaboration uOttawa x Carleton",
 			best_cloud: "Meilleure utilisation de la technologie infonuagique",
-			best_hardware: "Meilleur projet matériel",
+			best_hardware: "Meilleur hack matériel",
 			geoguessr: "Défi Geoguessr",
-			scavenger_hunt: "Défi chasse au trésor",
+			scavenger_hunt: "Défi de chasse au trésor",
 		},
-		no_data: "Aucune donnée sur les gagnants disponible pour cette catégorie.",
+		no_data: "Aucune donnée sur les lauréats disponible pour cette catégorie.",
+		error_loading: "Erreur lors du chargement des lauréats :",
+		team_1_photo: "Photo de l'équipe 1",
+		team_2_photo: "Photo de l'équipe 2",
+		team_3_photo: "Photo de l'équipe 3",
+		scavenger_hunt_photo: "Photo de l'équipe de la chasse au trésor",
+		team_alt: "équipe",
 		general_challenge: [
 			{ place: "1re", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{
@@ -177,7 +184,7 @@ export default {
 			scavenger_hunt: [
 				{
 					place: "1re",
-					project: "Chasse au Trésor",
+					project: "Chasse au trésor",
 					team: ["Robin Blake", "Cameron Lane", "Drew Rivera", "Skyler Reed", "Jordan Ellis"],
 				},
 			],
@@ -185,7 +192,7 @@ export default {
 	},
 	sponsors: {
 		title: "Anciens commanditaires",
-		p: "Les éditions précédentes de Hack the Hill ont été rendues possibles grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale?",
+		p: "Les éditions précédentes de Hack the Hill ont été rendues possibles grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale canadienne?",
 		button: "Devenir commanditaire",
 	},
 	collaborators: {
@@ -197,7 +204,7 @@ export default {
 			"Découvrez l'expérience des organisations qui ont soutenu les éditions précédentes de Hack the Hill.",
 		t1: {
 			name: "Maddie Whibbs",
-			content: "Événement spectaculaire et bien organisé - j'ai adoré la foire des carrières!",
+			content: "Super événement, bien organisé - j'ai adoré la foire des carrières!",
 			role: "BlackBerry",
 		},
 		t2: {
@@ -208,26 +215,26 @@ export default {
 		t3: {
 			name: "Britt Hayman",
 			content:
-				"Hack the Hill était un événement rempli de plaisir et d'innovation! En tant que partenaire de l'industrie, nous avons apprécié l'opportunité d'interagir avec des étudiants qui savent résoudre des problèmes de manière proactive et concrète et qui demeurent adaptables en termes de compétences. C'était une excellente introduction aux meilleurs talents de demain!",
+				"Hack the Hill a offert une fin de semaine de plaisir et d'innovation! En tant que partenaire de l'industrie, nous avons adoré l'occasion d'interagir avec des étudiants autonomes, proactifs dans la résolution de problèmes et capables de s'adapter en équipe — autant de compétences développées lors du hackathon. Une excellente occasion de découvrir les talents de demain!",
 			role: "Ciena",
 		},
 		t4: {
 			name: "Nyah Wagner",
 			content:
-				"À Lonehaven, nous avons eu l'honneur de collaborer avec Hack the Hill, un événement exceptionnel rassemblant de jeunes esprits brillants. Notre expérience en tant qu'entreprise a été incroyablement positive, et nous avons été témoins des solutions innovantes ainsi que des capacités créatives de résolution de problèmes de ces étudiants talentueux.",
+				"Lonehaven a eu l'honneur de collaborer avec Hack the Hill, un événement exceptionnel qui a mis en valeur les compétences créatives en résolution de problèmes d'étudiants talentueux. Cette expérience a souligné le dynamisme de l'écosystème technologique au Canada et son potentiel de collaboration et de croissance.",
 			role: "Lonehaven",
 		},
 
 		t6: {
 			name: "Greg Suignard",
 			content:
-				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs! J'aimerais remercier tous ceux qui ont mis de l'effort vers l'évenement et particulièrement ceux qui se sont attaqués à notre défi!",
+				"Un événement incroyable et un travail exceptionnel de la part de tous les organisateurs! J'aimerais remercier tous ceux qui ont consacré des efforts à l'événement, et particulièrement ceux qui se sont attaqués à notre défi!",
 			role: "Canadian Tire",
 		},
 		t7: {
 			name: "Elmira Khani",
 			content:
-				"Travailler avec Hack the Hill a été une expérience fantastique. L'équipe est tellement organisée, dédiée et professionnelle - ils nous ont aidé à organiser un évenement incroyable, et nous avons été époustouflés par le montant de support reçu. Au plaisir de futures collaborations!",
+				"Travailler avec Hack the Hill a été une expérience fantastique. L'équipe a été tellement organisée, travaillante et professionnelle - ils nous ont aidés à organiser un événement incroyable, et nous avons été époustouflés par le niveau de soutien que nous avons reçu. Au plaisir de futures collaborations!",
 			role: "Kinaxis",
 		},
 		aria_label_next: "Témoignage suivant",
@@ -275,22 +282,22 @@ export default {
 		a12_link: "ici",
 	},
 	team: {
-		title: "Notre équipe!",
+		title: "Notre équipe",
 		roles: {
 			president: "Président",
 			exec_vp: "Vice-présidence exécutive",
-			at_large: "Directeur général",
+			at_large: "Directeur sans portefeuille",
 			community: {
 				vp: "Vice-présidence aux affaires communautaires",
 				manager: "Gestionnaire de communauté",
 				coordinator: "Coordonnateur de communauté",
-				advisor: "Conseiller en communauté",
+				advisor: "Conseiller communautaire",
 			},
 			design: {
-				vp: "Vice-présidence à la conception",
-				manager: "Gestion de la conception",
-				coordinator: "Coordination de la conception",
-				advisor: "Fonction-conseil en conception",
+				vp: "Vice-présidence du design",
+				manager: "Gestionnaire du design",
+				coordinator: "Coordonnateur du design",
+				advisor: "Conseiller en design",
 			},
 			development: {
 				vp: "Vice-présidence au développement",
@@ -302,25 +309,25 @@ export default {
 				vp: "Vice-présidence aux finances",
 				manager: "Gestionnaire des finances",
 				coordinator: "Coordonnateur des finances",
-				advisor: "Conseiller des finances",
+				advisor: "Conseiller financier",
 			},
 			logistics: {
 				vp: "Vice-présidence à la logistique",
 				manager: "Gestionnaire de la logistique",
 				coordinator: "Coordonnateur de la logistique",
-				advisor: "Conseiller de la logistique",
+				advisor: "Conseiller en logistique",
 			},
 			marketing: {
 				vp: "Vice-présidence au marketing",
 				manager: "Gestionnaire du marketing",
 				coordinator: "Coordonnateur du marketing",
-				advisor: "Conseiller du marketing",
+				advisor: "Conseiller en marketing",
 			},
 			partnerships: {
 				vp: "Vice-présidence aux partenariats",
 				manager: "Gestionnaire des partenariats",
 				coordinator: "Coordonnateur des partenariats",
-				advisor: "Conseiller des partenariats",
+				advisor: "Conseiller en partenariats",
 			},
 			mascot: "Mascotte officielle",
 		},
@@ -338,8 +345,8 @@ export default {
 		copyright: "© 2026 Hack the Hill. Tous droits réservés.",
 	},
 	notification: {
-		message: "Hack the Hill III aura lieu du 25 au 27 septembre 2026! Les candidatures sont maintenant ouvertes!",
-		button_text: "Présentez votre candidature dès maintenant",
+		message: "Hack the Hill III aura lieu du 25 au 27 septembre 2026! Les candidatures sont ouvertes!",
+		button_text: "Postulez maintenant",
 		close: "Fermer la notification",
 	},
 	"four-o-four": {

@@ -5,6 +5,7 @@ export default {
 		language_switch: "View this site in French",
 		past_site_label: "Open the Hack the Hill II website",
 		skip_to_content: "Skip to main content",
+		mlh_trust_badge: "Major League Hacking 2027 Hackathon Season",
 	},
 	hero: {
 		at: "@",
@@ -63,6 +64,12 @@ export default {
 			scavenger_hunt: "Scavenger Hunt Challenge",
 		},
 		no_data: "No winners data available for this category.",
+		error_loading: "Error loading winners:",
+		team_1_photo: "Team 1 photo",
+		team_2_photo: "Team 2 photo",
+		team_3_photo: "Team 3 photo",
+		scavenger_hunt_photo: "Scavenger Hunt team photo",
+		team_alt: "team",
 		general_challenge: [
 			{ place: "1st", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
 			{

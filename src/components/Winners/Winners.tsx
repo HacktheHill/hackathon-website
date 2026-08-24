@@ -26,7 +26,7 @@ const teamPhotos = {
 	"Équipe 1": "/teams_photos/Geoguessr_1st.webp",
 	"Équipe 2": "/teams_photos/Geoguessr_2nd.webp",
 	"Équipe 3": "/teams_photos/Geoguessr_3rd.webp",
-	"Chasse au Trésor": "/teams_photos/Scavenger_Hunt_Winners.webp",
+	"Chasse au trésor": "/teams_photos/Scavenger_Hunt_Winners.webp",
 	CapyCare: "/teams_photos/CapyCare_1st.webp",
 	Stumble: "/teams_photos/Stumble_2nd.webp",
 	BrainUp: "/teams_photos/BrainUp_1st.webp",
@@ -121,22 +121,16 @@ function Winners() {
 			<div className={styles.winners}>
 				<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 				<div className={styles.titleContainer} data-aos="fade-up" data-aos-duration="800">
-					<img
-						className={styles["laurel-left"]}
-						src={laurelLeft}
-						alt="gold laurel left"
-					/>
+					<img className={styles["laurel-left"]} src={laurelLeft} alt="gold laurel left" />
 					<h1>{title}</h1>
-					<img
-						className={styles["laurel-right"]}
-						src={laurelRight}
-						alt="gold laurel right"
-					/>
+					<img className={styles["laurel-right"]} src={laurelRight} alt="gold laurel right" />
 				</div>
 				<p className={styles.subtitle} data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
 					{subtitle}
 				</p>
-				<div className={styles.error}>Error loading winners: {error}</div>
+				<div className={styles.error}>
+					{t("winners.error_loading")} {error}
+				</div>
 				<img className={styles["right-leaves"]} src={rightLeaves} alt="right-leaves" />
 			</div>
 		);
@@ -170,7 +164,7 @@ function Winners() {
 						winner.project === "Équipe 2" ||
 						winner.project === "Équipe 3" ||
 						winner.project === "Scavenger Hunt" ||
-						winner.project === "Chasse au Trésor";
+						winner.project === "Chasse au trésor";
 
 					// For Geoguessr and Scavenger Hunt cards, don't create a link
 					const cardContent = (
@@ -184,11 +178,11 @@ function Winners() {
 							<h3 className={styles.projectName}>{winner.project}</h3>
 							<div className={styles.teamMembers}>
 								{winner.team?.map((member, i) => (
-										<span key={i}>
-											{member}
-											{i < winner.team.length - 1 ? ", " : ""}
-										</span>
-									))}
+									<span key={i}>
+										{member}
+										{i < winner.team.length - 1 ? ", " : ""}
+									</span>
+								))}
 							</div>
 							{teamPhoto && (
 								<div
@@ -200,15 +194,15 @@ function Winners() {
 										src={teamPhoto}
 										alt={
 											winner.project === "Team 1" || winner.project === "Équipe 1"
-												? "Team 1 photo"
+												? t("winners.team_1_photo")
 												: winner.project === "Team 2" || winner.project === "Équipe 2"
-												? "Team 2 photo"
+												? t("winners.team_2_photo")
 												: winner.project === "Team 3" || winner.project === "Équipe 3"
-												? "Team 3 photo"
+												? t("winners.team_3_photo")
 												: winner.project === "Scavenger Hunt" ||
-												  winner.project === "Chasse au Trésor"
-												? "Scavenger Hunt team photo"
-												: `${winner.project} team`
+												  winner.project === "Chasse au trésor"
+												? t("winners.scavenger_hunt_photo")
+												: `${winner.project} ${t("winners.team_alt")}`
 										}
 										className={styles.teamPhoto}
 										loading="lazy"
@@ -234,7 +228,7 @@ function Winners() {
 							{cardContent}
 						</a>
 					);
-					})}
+				})}
 			</div>
 		);
 	};
@@ -246,17 +240,9 @@ function Winners() {
 			<img className={styles["left-leaves"]} src={leftLeaves} alt="left-leaves" />
 
 			<div className={styles.titleContainer} data-aos="fade-up" data-aos-duration="800">
-				<img
-					className={styles["laurel-left"]}
-					src={laurelLeft}
-					alt="gold laurel left"
-				/>
+				<img className={styles["laurel-left"]} src={laurelLeft} alt="gold laurel left" />
 				<h1>{title}</h1>
-				<img
-					className={styles["laurel-right"]}
-					src={laurelRight}
-					alt="gold laurel right"
-				/>
+				<img className={styles["laurel-right"]} src={laurelRight} alt="gold laurel right" />
 			</div>
 
 			<p className={styles.subtitle} data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">

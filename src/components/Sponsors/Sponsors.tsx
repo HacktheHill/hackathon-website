@@ -1,4 +1,5 @@
-import { t } from "@/i18n";
+import { locale, t } from "@/i18n";
+import { useStore } from "@nanostores/react";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
 import Ross from "@/assets/Logos/Ross.svg?url";
@@ -53,6 +54,7 @@ type SponsorData = {
 const VISIBLE_SPONSOR_ROWS: SponsorTier[][] = [["prime-minister"], ["premier"], ["mayor", "councillor"]];
 
 function Sponsors() {
+	const currentLocale = useStore(locale);
 	const data: SponsorData = {
 		sponsors: {
 			"prime-minister": [
@@ -167,7 +169,7 @@ function Sponsors() {
 										/>
 										<img
 											className={styles.icon}
-											alt={`${sponsor.alt} logo`}
+											alt={currentLocale === "fr" ? `Logo de ${sponsor.alt}` : `${sponsor.alt} logo`}
 											src={sponsor.src}
 											loading="lazy"
 											decoding="async"
@@ -204,7 +206,7 @@ function Sponsors() {
 						>
 							<img
 								className={`${styles["icon"]} ${styles["icon-medium"]}`}
-								alt={`${sponsor.alt} logo`}
+								alt={currentLocale === "fr" ? `Logo de ${sponsor.alt}` : `${sponsor.alt} logo`}
 								src={sponsor.src}
 								loading="lazy"
 								decoding="async"
