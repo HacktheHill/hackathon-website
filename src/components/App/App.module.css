@@ -43,16 +43,17 @@
 		padding-bottom: var(--faq-content-extension);
 	}
 
-	/* The original water artwork remains undistorted. This continuation only
-		appears in the extra space created by expanded FAQ answers. */
-	.canvas::after {
+	/* Continue from the water artwork's solid bottom edge. The small overlap sits
+		behind its transparent final pixels; matching #0a1f6a prevents the asset's
+		bottom edge from becoming a horizontal seam when the footer moves down. */
+	.base-scene::after {
 		position: absolute;
-		top: 77.603%;
+		top: calc(97.561174% - 2px);
 		right: 0;
-		bottom: 0;
 		left: 0;
 		z-index: 175;
-		background: linear-gradient(180deg, #16357f 0%, #10236f 48%, #07153e 78%, #061238 100%);
+		height: calc(2.438826% + var(--faq-content-extension) + 2px);
+		background: linear-gradient(180deg, #0a1f6a 0%, #07153e 55%, #061238 100%);
 		content: "";
 	}
 

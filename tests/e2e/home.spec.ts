@@ -512,12 +512,16 @@ test("desktop FAQ expands its water canvas and moves the ocean floor with the fo
 			const baseScene = document.querySelector<HTMLElement>('[class*="base-scene"]')!;
 			const footer = document.querySelector<HTMLElement>("footer")!.parentElement!;
 			const floor = document.querySelector<HTMLElement>('[data-scene-layer="footer-water"]')!;
+			const water = document.querySelector<HTMLElement>('[data-scene-layer="water"]')!;
+			const baseBox = baseScene.getBoundingClientRect();
 			return {
 				canvasHeight: canvas.getBoundingClientRect().height,
-				baseHeight: baseScene.getBoundingClientRect().height,
+				baseHeight: baseBox.height,
 				extension: Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")),
 				footerTop: footer.offsetTop,
 				floorTop: floor.getBoundingClientRect().top,
+				waterBottom: water.getBoundingClientRect().bottom - baseBox.top,
+				waterContinuationTop: Number.parseFloat(getComputedStyle(baseScene, "::after").top),
 			};
 		});
 
@@ -553,14 +557,18 @@ test("desktop FAQ expands its water canvas and moves the ocean floor with the fo
 			const faq = document.querySelector<HTMLElement>("#faq")!.parentElement!;
 			const footer = document.querySelector<HTMLElement>("footer")!.parentElement!;
 			const floor = document.querySelector<HTMLElement>('[data-scene-layer="footer-water"]')!;
+			const water = document.querySelector<HTMLElement>('[data-scene-layer="water"]')!;
+			const baseBox = baseScene.getBoundingClientRect();
 			return {
 				extension: Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")),
 				canvasHeight: canvas.getBoundingClientRect().height,
-				baseHeight: baseScene.getBoundingClientRect().height,
+				baseHeight: baseBox.height,
 				footerTop: footer.offsetTop,
 				floorTop: floor.getBoundingClientRect().top,
 				faqClearance: footer.offsetTop - (faq.offsetTop + faq.getBoundingClientRect().height),
-				waterContinuation: getComputedStyle(canvas, "::after").backgroundImage,
+				waterContinuation: getComputedStyle(baseScene, "::after").backgroundImage,
+				waterBottom: water.getBoundingClientRect().bottom - baseBox.top,
+				waterContinuationTop: Number.parseFloat(getComputedStyle(baseScene, "::after").top),
 				horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
 			};
 		});
@@ -570,8 +578,11 @@ test("desktop FAQ expands its water canvas and moves the ocean floor with the fo
 		expect(expanded.baseHeight).toBeCloseTo(baseline.baseHeight, 1);
 		expect(expanded.footerTop - baseline.footerTop).toBeCloseTo(extensionGrowth, 0);
 		expect(expanded.floorTop - baseline.floorTop).toBeCloseTo(extensionGrowth, 0);
+		expect(expanded.waterContinuationTop).toBeCloseTo(baseline.waterContinuationTop, 1);
+		expect(Math.abs(expanded.waterContinuationTop - expanded.waterBottom)).toBeLessThanOrEqual(2.1);
 		expect(expanded.faqClearance).toBeGreaterThanOrEqual(48);
 		expect(expanded.waterContinuation).toContain("linear-gradient");
+		expect(expanded.waterContinuation).toContain("rgb(10, 31, 106)");
 		expect(expanded.horizontalOverflow).toBeLessThanOrEqual(0);
 
 		await page.locator("#faq details").evaluateAll(details => {
