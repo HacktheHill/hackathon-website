@@ -74,6 +74,19 @@ export default function FAQ() {
 			),
 			key: "11",
 		},
+		{
+			q: t("faq.q13"),
+			a: (
+				<>
+					{t("faq.a13")}{" "}
+					<a href={t("faq.a13_url")} target="_blank" rel="noreferrer">
+						{t("faq.a13_link")}
+					</a>
+					.
+				</>
+			),
+			key: "12",
+		},
 	];
 	const renderAccordions = (items: typeof quesAns) =>
 		items.map(item => (

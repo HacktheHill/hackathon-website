@@ -280,6 +280,11 @@ export default {
 		q12: "Y a-t-il un code de conduite?",
 		a12: "Oui. En tant qu'organisateurs, nous accordons une grande importance à l'expérience et à la sécurité de toutes les personnes participantes. Consultez le code de conduite",
 		a12_link: "ici",
+
+		q13: "Comment les participants sont-ils sélectionnés?",
+		a13: "Voir nos",
+		a13_link: "Critères d’admission des participants",
+		a13_url: "https://docs.google.com/document/d/1Pl9Hy90uE-gACaZmU4EsFSf6r-zUQjjJHkUiGyspWpU/edit?tab=t.60aujav4edjk",
 	},
 	team: {
 		title: "Notre équipe",

@@ -269,6 +269,11 @@ export default {
 		q12: "Is there a code of conduct?",
 		a12: "Yes there is. We as organizers care deeply about everyone's experience and safety. Find the code of conduct",
 		a12_link: "here",
+
+		q13: "How are participants selected?",
+		a13: "See our",
+		a13_link: "Participant Admission Criteria",
+		a13_url: "https://docs.google.com/document/d/1Pl9Hy90uE-gACaZmU4EsFSf6r-zUQjjJHkUiGyspWpU/edit",
 	},
 	team: {
 		title: "Meet the Team!",
