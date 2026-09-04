@@ -22,7 +22,7 @@ import WIE from "@/assets/Logos/WIE.svg?url";
 import EEF from "@/assets/Logos/EEF.svg?url";
 import telferBTA from "@/assets/Logos/bta-logo.svg?url";
 import SCESoc from "@/assets/Logos/SCESoc.svg?url";
-import uOttawa from "@/assets/Logos/uOttawa.svg?url";
+import uOttawa from "@/assets/Logos/uOttawa.png?url";
 import uOGDC from "@/assets/Logos/uOttawaGDC.svg?url";
 import uOEngiqueers from "@/assets/Logos/uOEngiqueers.svg?url";
 import DEsocCarleton from "@/assets/Logos/desocCarleton.webp?url";
