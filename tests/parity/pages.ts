@@ -1,11 +1,9 @@
-import { writeFile } from "node:fs/promises";
-import { expect, type Browser, type Page, type TestInfo } from "@playwright/test";
-import { fixCountdownTime } from "../helpers/time";
+import { expect, type Page } from "@playwright/test";
 
 export type Locale = "en" | "fr";
 export type Viewport = { width: number; height: number };
-export const referenceUrl = "http://127.0.0.1:4337";
-export const candidateUrl = "http://127.0.0.1:4338";
+export const referenceUrl = process.env.REFERENCE_URL ?? "http://127.0.0.1:4337";
+export const candidateUrl = process.env.CANDIDATE_URL ?? "http://127.0.0.1:4338";
 
 /** Wait for local artwork, fonts, and the video's initial poster in its srcdoc frame. */
 export async function settlePage(page: Page) {
@@ -62,79 +60,35 @@ export async function settlePage(page: Page) {
 	});
 }
 
-export async function openPair(browser: Browser, viewport: Viewport, locale: Locale, path = "/") {
-	const contexts = await Promise.all(
-		[referenceUrl, candidateUrl].map(() =>
-			browser.newContext({
-				viewport,
-				deviceScaleFactor: 1,
-				colorScheme: "light",
-				reducedMotion: "reduce",
-				locale: "en-CA",
-				timezoneId: "America/Toronto",
-			}),
-		),
-	);
-	const pages = await Promise.all(contexts.map(context => context.newPage()));
-	const statuses: number[] = [];
-	const errors: string[][] = [[], []];
-	try {
-		for (const [index, page] of pages.entries()) {
-			page.on("pageerror", error => errors[index].push(error.message));
-			await page.bringToFront();
-			await fixCountdownTime(page);
-			const response = await page.goto(`${index === 0 ? referenceUrl : candidateUrl}${path}`);
-			statuses.push(response!.status());
-			await expect(page.locator("main")).toBeVisible();
-			await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
-			if (locale === "fr") {
-				await page.getByRole("button", { name: /FR:/ }).click();
-				await expect(page.locator("html")).toHaveAttribute("lang", "fr");
-			}
-			await settlePage(page);
-		}
-		expect(statuses[1], "HTTP response status changed").toBe(statuses[0]);
-		return {
-			reference: pages[0],
-			candidate: pages[1],
-			pages,
-			async close(info: TestInfo) {
-				await writeFile(info.outputPath("page-errors.json"), JSON.stringify(errors, null, 2));
-				await Promise.all(contexts.map(context => context.close()));
-				expect(errors[1], "Candidate browser errors differ from the reference").toEqual(errors[0]);
-			},
-		};
-	} catch (error) {
-		await Promise.all(contexts.map(context => context.close()));
-		throw error;
+export async function loadPage(page: Page, url: string, locale: Locale) {
+	await page.bringToFront();
+	const response = await page.goto(url);
+	await expect(page.locator("main")).toBeVisible();
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
+	if (locale === "fr") {
+		await page.getByRole("button", { name: /FR:/ }).click();
 	}
+	await expect(page.locator("html")).toHaveAttribute("lang", locale);
+	await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+	await settlePage(page);
+	return response!.status();
 }
 
-/** Record user-facing content and controls independently of generated CSS class names. */
-export async function compareContent(reference: Page, candidate: Page, info: TestInfo, name: string) {
-	const readContent = (page: Page) =>
-		page.evaluate(() => ({
-			lang: document.documentElement.lang,
-			title: document.title,
-			text: document.body.innerText,
-			controls: Array.from(document.querySelectorAll("a, button, input, summary, iframe"), element => ({
-				tag: element.tagName,
-				text: element.textContent,
-				href: element.getAttribute("href"),
-				label: element.getAttribute("aria-label"),
-				title: element.getAttribute("title"),
-				pressed: element.getAttribute("aria-pressed"),
-				expanded: element.getAttribute("aria-expanded"),
-				disabled: element.hasAttribute("disabled"),
-			})),
-			openQuestions: Array.from(document.querySelectorAll("#faq details"), element =>
-				element.hasAttribute("open"),
-			),
-		}));
-	const [before, after] = await Promise.all([readContent(reference), readContent(candidate)]);
-	await writeFile(
-		info.outputPath(`${name}-content.json`),
-		JSON.stringify({ reference: before, candidate: after }, null, 2),
-	);
-	expect.soft(after, `${name}: rendered content or controls changed`).toEqual(before);
-}
+/** Read content and controls independently of generated CSS class names. */
+export const readContent = (page: Page) =>
+	page.evaluate(() => ({
+		lang: document.documentElement.lang,
+		title: document.title,
+		text: document.body.innerText,
+		controls: Array.from(document.querySelectorAll("a, button, input, summary, iframe"), element => ({
+			tag: element.tagName,
+			text: element.textContent,
+			href: element.getAttribute("href"),
+			label: element.getAttribute("aria-label"),
+			title: element.getAttribute("title"),
+			pressed: element.getAttribute("aria-pressed"),
+			expanded: element.getAttribute("aria-expanded"),
+			disabled: element.hasAttribute("disabled"),
+		})),
+		openQuestions: Array.from(document.querySelectorAll("#faq details"), element => element.hasAttribute("open")),
+	}));
