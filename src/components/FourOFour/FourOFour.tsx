@@ -1,6 +1,6 @@
 import { useTranslations } from "@/i18n";
 import styles from "./FourOFour.module.css";
-import beaver from "@/assets/assets/beaver404.png?url";
+import beaver from "@/assets/beaver404.png?url";
 import "@/global.css";
 
 function FourOFour() {
