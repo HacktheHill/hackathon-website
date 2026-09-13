@@ -1,0 +1,308 @@
+@media (max-width: 1024px) {
+	.base-scene {
+		display: contents;
+	}
+
+	.canvas {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		aspect-ratio: auto !important;
+		overflow: clip;
+	}
+
+	.artwork {
+		display: none;
+	}
+
+	.content {
+		display: contents;
+	}
+
+	.slot,
+	.stats-layer,
+	.video-layer {
+		position: relative;
+		inset: auto;
+		box-sizing: border-box;
+		width: 100%;
+		transform: none;
+		translate: none !important;
+	}
+
+	.hero-slot {
+		grid-row: 1;
+		height: auto;
+	}
+
+	.hero-slot :global(section#hero) {
+		height: auto;
+		min-height: 100svh;
+		background: linear-gradient(180deg, #f2ba83 0%, #f8cb93 24%, #fbe6ac 58%, #fbecb7 100%);
+	}
+
+	.hero-slot :global([class*="hero-sky"]),
+	.hero-slot :global([class*="hero-clouds"]),
+	.hero-slot :global([class*="hero-hill-far"]),
+	.hero-slot :global([class*="hero-hill-near"]) {
+		display: block;
+	}
+
+	.about-slot {
+		--about-transition-height: clamp(5rem, 24vw, 12rem);
+		--about-slice-height: clamp(20rem, 105vw, 36rem);
+		--about-bottom-slice-height: clamp(5rem, 26vw, 10rem);
+		--about-panel-fade: clamp(4rem, 14vw, 7rem);
+
+		grid-row: 2;
+		z-index: 1001;
+		isolation: isolate;
+		margin-top: calc(-1px - var(--about-transition-height));
+		padding: calc(5rem + var(--about-transition-height)) 1.25rem 2.5rem;
+		background: url("/art/scene/bush-2.webp") center top / 150% auto no-repeat,
+			linear-gradient(0deg, #330a0a 50%, transparent 0%);
+	}
+
+	.about-slot::before {
+		position: absolute;
+		top: -2.5rem;
+		right: 0;
+		left: 0;
+		z-index: 0;
+		height: var(--about-slice-height);
+		content: "";
+	}
+
+	.about-slot::after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		height: var(--about-bottom-slice-height);
+		content: "";
+	}
+
+	.about-slot > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.about-slot :global(section#about) {
+		isolation: isolate;
+	}
+
+	.about-slot :global(section#about)::before {
+		position: absolute;
+		inset: calc(-1 * var(--about-panel-fade)) -1.25rem -2.5rem;
+		z-index: -1;
+		content: "";
+	}
+
+	.video-layer {
+		grid-row: 3;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin: 0;
+		padding: 0 1.25rem clamp(3rem, 15vw, 5rem);
+		aspect-ratio: auto;
+		box-shadow: none;
+		background: #330a0a;
+	}
+
+	.video-frame {
+		--log-frame-width: 1342;
+		--log-frame-height: 900;
+		--log-opening-left: 151;
+		--log-opening-top: 145;
+		--log-opening-width: 1059;
+		--log-opening-height: 571;
+
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		height: auto;
+		padding: 0;
+		aspect-ratio: var(--log-frame-width) / var(--log-frame-height);
+		background: url("/art/scene/logs.webp") center / contain no-repeat;
+		margin-block: 3rem;
+	}
+
+	.video-frame > :global(iframe) {
+		position: absolute;
+		top: calc(var(--log-opening-top) / var(--log-frame-height) * 100%);
+		left: calc(var(--log-opening-left) / var(--log-frame-width) * 100%);
+		width: calc(var(--log-opening-width) / var(--log-frame-width) * 100%);
+		height: calc(var(--log-opening-height) / var(--log-frame-height) * 100%);
+	}
+
+	.stats-layer {
+		grid-row: 4;
+		/* Above .video-layer's 205 so the bush below can bleed over the seam. */
+		z-index: 210;
+		padding: 0 1.25rem 1.5rem;
+		background: linear-gradient(180deg, #741416, #d64922 70%, #e66b2e);
+	}
+
+	/* The desktop canvas plants bush-3 where the recap video gives way to the
+		stats signs. Mobile restores it as a foreground band straddling that
+		seam: the artwork rises past the boundary so its scalloped top edge
+		becomes the horizon instead of a straight line, then dissolves into the
+		gradient below. z-index -1 keeps it above this slot's own background but
+		behind the heading. */
+	.stats-layer::before {
+		position: absolute;
+		/* The artwork's scalloped edge is ~7.4vw deep at the 150% size below, so
+			the bleed has to scale with the viewport too: a fixed offset lets the
+			scallop valleys dip past the boundary at wider widths, exposing a hard
+			step between this section's red and the darker one above. */
+		top: -5vw;
+		right: 0;
+		left: 0;
+		z-index: 0;
+		height: clamp(7rem, 30vw, 12rem);
+		background: url("/art/scene/bush-3.webp") center top / 150% auto no-repeat;
+		content: "";
+		-webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
+		mask-image: linear-gradient(180deg, #000 50%, transparent 95%);
+	}
+
+	.stats-layer > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (max-width: 600px) {
+		.stats-layer {
+			/* Meet Testimonials at its exact opening orange so the section boundary
+				cannot show through the fading bush-4 foreground. */
+			background: linear-gradient(
+				180deg,
+				transparent 20%,
+				#741416 21% 84%,
+				#b8371f 93%,
+				#e66b2e 100%
+			);
+		}
+
+		.stats-layer::before {
+			top: 4rem;
+		}
+	}
+
+	/* Keep Testimonials solid red at the bottom so there is no washed-out fade
+		beneath the carousel. */
+	.testimonials-slot {
+		grid-row: 5;
+		padding: 2.5rem 1rem 5rem;
+		background-color: #b83a20;
+		background-image: linear-gradient(180deg, #e66b2e 0, #d95525 clamp(5rem, 18vw, 9rem), #c64f1f 42%, #b83a20 78%);
+	}
+
+	.sponsors-slot {
+		--road-transition-height: clamp(5rem, 20vw, 13rem);
+		--ice-top-position: calc(var(--road-transition-height) - clamp(3.375rem, 8.5vw, 7.5rem));
+		--ice-top-height: clamp(13.5rem, 67vw, 32rem);
+		--ice-bottom-height: clamp(9rem, 46vw, 15rem);
+
+		grid-row: 6;
+		isolation: isolate;
+		padding: calc(5rem + var(--road-transition-height)) 1rem calc(5rem + var(--ice-bottom-height));
+		background: linear-gradient(180deg, #72d2ca 0 calc(100% - var(--ice-bottom-height)), #16357f 100%);
+	}
+
+	.sponsors-slot::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 0;
+		height: calc(var(--road-transition-height) + var(--ice-top-height));
+		background: url("/art/scene/ice-1.webp") center var(--ice-top-position) / 130% auto no-repeat,
+			url("/art/scene/road.webp") center top / 100% auto no-repeat,
+			linear-gradient(180deg, #b83a20 0 14%, #72d2ca 38% 100%);
+		content: "";
+		-webkit-mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+		mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+	}
+
+	.sponsors-slot::after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		height: var(--ice-bottom-height);
+		background: url("/art/scene/ice-2.webp") center bottom / 130% auto no-repeat,
+			linear-gradient(180deg, #72d2ca 0 48%, rgba(114, 210, 202, 0.86) 62%, transparent 82%),
+			url("/art/scene/ice-1.webp") center bottom / 130% auto no-repeat;
+		content: "";
+		-webkit-mask-image: linear-gradient(180deg, transparent 0, #000 34% 100%);
+		mask-image: linear-gradient(180deg, transparent 0, #000 34% 100%);
+	}
+
+	.sponsors-slot > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.faq-slot {
+		--water-image-lift: clamp(6.5rem, 20vw, 8rem);
+
+		grid-row: 7;
+		z-index: 0;
+		padding: clamp(2rem, 6vw, 4rem) 1.25rem 10rem;
+		background: linear-gradient(
+				180deg,
+				#16357f 0,
+				rgb(22 53 127 / 65%) 1.5rem,
+				transparent clamp(3rem, 12vw, 5rem) 22%,
+				rgba(16, 35, 111, 0.55) 34%,
+				#10236f 47% 64%,
+				#0d225f 82%,
+				#07153e 100%
+			),
+			url("/art/scene/water.webp") center calc(-1 * var(--water-image-lift)) / 130% auto no-repeat,
+			linear-gradient(180deg, #10236f 0 64%, #0d225f 82%, #07153e);
+	}
+
+	.footer-slot {
+		grid-row: 8;
+		padding: 4rem 0 5rem;
+		background: url("/art/scene/footer-water-2.webp") center bottom / 100% auto no-repeat,
+			url("/art/scene/footer-water.webp") right bottom / 87.73% auto no-repeat,
+		linear-gradient(180deg, #07153e 0 18%, #061238 100%);
+	}
+
+	/* Section heights are fractional, so on a fractional device pixel ratio
+		(browser zoom, or 125% Windows scaling) a row boundary can land mid
+		device-pixel and leave a hairline of the dark backdrop showing between
+		two sections. Overlapping every row onto the one above by 1px means the
+		seam is always covered by an opaque background. Must stay last so it
+		wins over .video-layer's own margin. */
+	.video-layer,
+	.stats-layer,
+	.testimonials-slot,
+	.sponsors-slot,
+	.faq-slot,
+	.footer-slot {
+		margin-top: -1px;
+	}
+}
+
+@media (max-width: 600px) {
+	.footer-slot {
+		padding-top: 1rem;
+		padding-bottom: 6.5rem;
+	}
+
+	/* Pull the complete recap-stats composition over the transparent signposts.
+		The clamp tracks the sign's fluid width and stops growing once the mobile
+		sign artwork reaches its own size cap. */
+	.stats-layer {
+		--stats-sign-overlap: clamp(10rem, 50vw, 16.5rem);
+
+		margin-top: calc(-1px - var(--stats-sign-overlap));
+	}
+}
