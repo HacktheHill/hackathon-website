@@ -1,13 +1,21 @@
 {
 	"extends": "astro/tsconfigs/strict",
-	"exclude": ["build"],
+	"exclude": [
+		"build"
+	],
 	"baseUrl": ".",
 	"compilerOptions": {
-		"types": ["node"],
+		"types": [
+			"node"
+		],
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
 		"paths": {
-			"@/*": ["./src/*"]
-		}
+			"@/*": [
+				"./src/*"
+			]
+		},
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
 	}
 }
