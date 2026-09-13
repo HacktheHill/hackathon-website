@@ -1,9 +1,10 @@
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import styles from "./FourOFour.module.css";
 import beaver from "@/assets/assets/beaver404.png?url";
 import "@/global.css";
 
 function FourOFour() {
+	const t = useTranslations();
 	return (
 		<main id="four-o-four" className={styles["four-o-four"]}>
 			<div className={styles["content-404"]}>

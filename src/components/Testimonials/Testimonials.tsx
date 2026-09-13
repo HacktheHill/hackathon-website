@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import styles from "./Testimonials.module.css";
 
 type Direction = -1 | 1;
@@ -15,6 +15,7 @@ type PointerStart = {
 };
 
 function Testimonials() {
+	const t = useTranslations();
 	const testimonialData = [
 		{
 			id: 3,

@@ -1,7 +1,8 @@
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import styles from "./Stats.module.css";
 
 function BlueSign({ mobileVideo = false }: { mobileVideo?: boolean }) {
+	const t = useTranslations();
 	return (
 		<div
 			className={`${styles.sign} ${styles.blue}${mobileVideo ? ` ${styles["mobile-video-sign"]}` : ""}`}
@@ -35,6 +36,7 @@ export function MobileVideoSign() {
 }
 
 export function MobileStatsIntro() {
+	const t = useTranslations();
 	return (
 		<div className={styles["mobile-stats-intro"]}>
 			<h2 className={styles["mobile-stats-title"]}>{t("stats.title")}</h2>
@@ -44,6 +46,7 @@ export function MobileStatsIntro() {
 }
 
 function Stats() {
+	const t = useTranslations();
 	return (
 		<section
 			className={styles.stats}

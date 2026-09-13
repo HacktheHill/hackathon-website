@@ -2,7 +2,7 @@ import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@forta
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { type FormEvent, useRef, useState } from "react";
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import styles from "./Footer.module.css";
 
 const SUBSCRIBE_ENDPOINT = "https://emails.hackthehill.com/subscribe";
@@ -10,6 +10,7 @@ const SUBSCRIBE_ENDPOINT = "https://emails.hackthehill.com/subscribe";
 type SubscriptionState = "idle" | "submitting" | "accepted" | "invalid" | "rate-limited" | "failed";
 
 function Footer() {
+	const t = useTranslations();
 	const [email, setEmail] = useState("");
 	const [subscriptionState, setSubscriptionState] = useState<SubscriptionState>("idle");
 	const submittingRef = useRef(false);
