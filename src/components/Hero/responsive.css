@@ -1,0 +1,200 @@
+/* ---------- Responsive ---------- */
+
+/* Portrait viewports: place the copy in the clear centre-right sky and show a
+   zoomed tower at the bottom. Width alone must not select this layout:
+   landscape phones are short but wide enough for the tower/text split, and
+   stacking both into 320–430px of height makes every element collide. Keep
+   this condition in sync with the matchMedia check in useClockHotspot. */
+@media only screen and (orientation: portrait) {
+	.hero-foreground {
+		/* Cancel the desktop top:0 / -10vh drop and sit a zoomed tower flush at the
+		   bottom. `cover` fills this box (height-driven on portrait), so the wall
+		   stays at the base and hides the tower foot — no detached/floating gap. */
+		top: auto;
+		bottom: 0;
+		height: 52vh;
+	}
+
+	.hero-foreground .hero-layer-image {
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center bottom;
+	}
+
+	/* Anchor the copy in a protected centre-right lane. The clouds below are
+	   routed above or below this vertical band, so their horizontal drift can
+	   never pass behind the text. The edition bars track --logo-w, so retuning
+	   it here resizes them too. */
+	.hero-heading {
+		top: 46%;
+		bottom: auto;
+		right: clamp(0.75rem, 2vw, 2.5rem);
+		left: 40%;
+		width: auto;
+		align-content: end;
+		justify-items: center;
+		text-align: center;
+		gap: clamp(0.3rem, 0.8vh, 0.6rem);
+		--logo-w: clamp(165px, 52vw, 270px);
+	}
+
+	.countdown-dialog {
+		padding-inline: 2rem;
+	}
+
+	.countdown-unit {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.countdown-item:not(:last-child) .countdown-value::after {
+		content: ":";
+	}
+
+	/* The top bank stays entirely above the protected text lane. Cloud 2 takes
+	   the same upper route, while cloud 6 travels below the copy. Since the drift
+	   animation is horizontal (apart from a tiny bob), the lane remains clear for
+	   the whole animation rather than only at its starting frame. */
+	.cloud-1 {
+		--cloud-top: 4%;
+		--cloud-left: -20%;
+	}
+	.cloud-4 {
+		--cloud-top: -2%;
+		--cloud-left: 14%;
+	}
+	.cloud-3 {
+		--cloud-top: -4%;
+		--cloud-left: 44%;
+	}
+	.cloud-5 {
+		--cloud-top: 2%;
+		--cloud-left: 66%;
+	}
+	.cloud-6 {
+		--cloud-top: 70%;
+		--cloud-left: -2%;
+		--cloud-w: clamp(240px, 64vw, 360px);
+	}
+	.cloud-2 {
+		--cloud-top: 11%;
+		--cloud-left: 54%;
+	}
+}
+
+@media only screen and (orientation: portrait) and (max-width: 600px) {
+	.hero-heading {
+		top: clamp(6rem, 14vh, 16rem);
+		right: auto;
+		left: 1rem;
+		width: calc(100% - 2rem);
+		gap: clamp(0.2rem, 2vh, 1rem);
+		justify-items: center;
+		text-align: center;
+		--logo-w: clamp(180px, 58vw, 260px);
+	}
+
+	.hero-eyebrow {
+		font-size: clamp(0.8rem, 3.5vw, 1rem);
+	}
+
+	.hero-heading h2 {
+		font-size: clamp(0.9rem, 4vw, 1.1rem);
+	}
+
+	.hero-foreground {
+		height: 60svh;
+	}
+
+	.cloud-1,
+	.cloud-5 {
+		display: none;
+	}
+
+	.cloud-6 {
+		--cloud-top: 62%;
+		--cloud-left: -18%;
+		--cloud-w: clamp(210px, 58vw, 280px);
+		--cloud-opacity: 0.7;
+	}
+}
+
+/* Mid-width portrait screens have enough room for the tower and copy to sit
+   beside one another, but not for the desktop-sized 460px copy column. Anchor
+   a narrower column at the right edge so its centre stays in the open region
+   between the tower and the viewport edge as the screen width changes. */
+@media only screen and (orientation: portrait) and (min-width: 481px) and (max-width: 768px) {
+	.hero-heading {
+		top: 46%;
+		right: clamp(0.75rem, 2vw, 1rem);
+		left: 40%;
+		width: auto;
+		justify-items: center;
+		text-align: center;
+		--logo-w: clamp(180px, 38vw, 230px);
+	}
+}
+
+/* Short landscape phones need the wide composition, but with a denser type
+   scale. This keeps the tower on the left and all primary content on the right. */
+@media only screen and (orientation: landscape) and (max-height: 500px) {
+	.hero-foreground {
+		/* Keep the tower just below the standard 72px navbar. */
+		--foreground-min-top: 80px;
+	}
+
+	.hero-heading {
+		top: 0;
+		bottom: 8vh;
+		left: 46%;
+		width: 52%;
+		gap: clamp(0.2rem, 1vh, 0.45rem);
+		--logo-w: clamp(145px, 26vw, 245px);
+	}
+
+	.hero-eyebrow {
+		font-size: clamp(0.68rem, 2.7vh, 0.95rem);
+	}
+
+	.hero-heading h2 {
+		font-size: clamp(0.72rem, 2.8vh, 1rem);
+	}
+
+	.hero-apply {
+		padding: 0.55rem 0.65rem;
+		border-radius: 0.75rem;
+		font-size: clamp(0.78rem, 2.8vh, 0.95rem);
+	}
+}
+
+/* Very short portrait previews (for example legacy 320×480) need the same
+   content, but with a smaller vertical footprint so it clears the tower. */
+@media only screen and (orientation: portrait) and (max-height: 540px) {
+	.hero-heading {
+		top: 4rem;
+		gap: 0.3rem;
+		--logo-w: clamp(165px, 52vw, 240px);
+	}
+
+	.hero-eyebrow {
+		font-size: 0.8rem;
+	}
+
+	.hero-heading h2 {
+		font-size: 0.9rem;
+	}
+
+	.hero-apply {
+		padding: 0.55rem 0.65rem;
+		font-size: 0.88rem;
+	}
+}

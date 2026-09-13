@@ -1,0 +1,265 @@
+.hero {
+	--hero-heading: var(--dark-primary-color);
+	/* Keep the decorative edition mark bright while body-sized text uses the darker brand red. */
+	--hero-bright-red: #c11f25;
+	--hero-eyebrow: var(--dark-primary-color);
+
+	/* countdown colours */
+	--dark-red: #700009;
+	--count-down-background-color: var(--medium-primary-color);
+
+	position: relative;
+	display: grid;
+	width: 100%;
+	height: 100vh;
+	height: 100svh;
+	overflow: hidden;
+	isolation: isolate;
+
+	/* Warm sunrise sky that matches the painted background asset, so any
+	   transparent edges blend seamlessly on tall/narrow viewports. */
+	background: linear-gradient(180deg, #f2ba83 0%, #f8cb93 24%, #fbe6ac 58%, #fbecb7 100%);
+}
+
+/* ---------- Layers ---------- */
+
+.hero-sky {
+	position: absolute;
+	inset: -2% 0 0 0;
+	z-index: 0;
+	overflow: hidden;
+	/* Decorative backdrop — must not intercept pointers. The foreground parliament
+	   is pointer-events:none, so without this the sky (a full-bleed layer) would
+	   receive every hit over the tower instead of letting it pass through. */
+	pointer-events: none;
+}
+
+.hero-layer-picture {
+	display: contents;
+}
+
+.hero-layer-image {
+	display: none;
+	max-width: none;
+	pointer-events: none;
+	user-select: none;
+}
+
+@media (max-width: 1024px) {
+	.hero-layer-image {
+		display: block;
+	}
+}
+
+.hero-sky .hero-layer-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+}
+
+/* Distant + mid hills, layered behind the red foreground (far/yellow behind
+   near/orange). Sized by HEIGHT (vh) and dropped below the fold by a vh amount,
+   so each hill's ridge lands at the SAME share of the viewport on every form
+   factor — portrait, landscape, desktop, ultrawide — with nothing to recalibrate
+   per device:  ridge ≈ 100 + drop − height  (all in vh).
+   --hill-h is 72vh normally; on ultra-wide it grows with the width (see each hill)
+   so the hill always spans edge to edge, while the coupled drop keeps the ridge
+   fixed. --hill-x picks which slice shows when it's cropped (near behind the
+   tower, far to the right). */
+.hero-hill-far,
+.hero-hill-near {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	user-select: none;
+}
+
+.hero-hill-far .hero-layer-image,
+.hero-hill-near .hero-layer-image {
+	position: absolute;
+	top: calc(100% - var(--hill-h) + var(--hill-drop));
+	height: var(--hill-h);
+	width: auto;
+}
+
+.hero-hill-far {
+	z-index: 2;
+	/* 72vh on normal screens; on ultra-wide (past ~2.3:1) grow with the width so the
+	   hill keeps spanning edge to edge — 31vw ≈ 100vw / image-aspect(3.27). The drop
+	   tracks the height (drop = height − 28vh) so the ridge holds at ≈72vh regardless
+	   of how wide the hill gets. */
+	--hill-h: max(72vh, 31vw);
+	--hill-drop: calc(var(--hill-h) - 28vh); /* ridge ≈ 72vh */
+	--hill-x: 78%;
+}
+
+.hero-hill-far .hero-layer-image {
+	left: 78%;
+	transform: translateX(-78%);
+}
+
+.hero-hill-near {
+	z-index: 3;
+	--hill-h: max(72vh, 31vw);
+	--hill-drop: calc(var(--hill-h) - 34vh); /* ridge ≈ 66vh */
+	--hill-x: 42%;
+}
+
+.hero-hill-near .hero-layer-image {
+	left: 42%;
+	transform: translateX(-42%);
+}
+
+.hero-clouds {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.cloud {
+	position: absolute;
+	pointer-events: none;
+	user-select: none;
+	/* Placement / size / depth are data-driven so they're easy to tweak and to
+	   override per breakpoint (see the mobile block). Depth tiers: FAR clouds are
+	   smaller, fainter, softly blurred and drift the least; NEAR clouds are larger,
+	   sharper, more opaque and drift the most — giving the sky parallax-like depth.
+	   The drift animation itself lives in animations.css (reads --drift-x). */
+	top: var(--cloud-top);
+	left: var(--cloud-left);
+	width: var(--cloud-w);
+	opacity: var(--cloud-opacity, 0.85);
+}
+
+.cloud .hero-layer-image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+/* --- Top cloud bank ---------------------------------------------------------
+   Four big, overlapping clouds merge into one soft mass spanning the top of the
+   sky; the tower's spire/flag rises into it (the tower is z-index 4, in front).
+   They drift only a little (small --drift-x, slow durations) so the bank stays
+   cohesive while still breathing. */
+.cloud-1 {
+	--cloud-top: -10%;
+	--cloud-left: -12%;
+	--cloud-w: clamp(460px, 54vw, 960px);
+	--cloud-opacity: 0.95;
+	--drift-x: 5vw;
+	aspect-ratio: 2.04;
+}
+
+.cloud-4 {
+	--cloud-top: -2%;
+	--cloud-left: 20%;
+	--cloud-w: clamp(420px, 50vw, 880px);
+	--cloud-opacity: 0.9;
+	--drift-x: 4vw;
+	aspect-ratio: 2.98;
+}
+
+.cloud-3 {
+	--cloud-top: -12%;
+	--cloud-left: 44%;
+	--cloud-w: clamp(380px, 44vw, 820px);
+	--cloud-opacity: 0.88;
+	--drift-x: 5vw;
+	aspect-ratio: 1.99;
+}
+
+.cloud-5 {
+	--cloud-top: -4%;
+	--cloud-left: 66%;
+	--cloud-w: clamp(360px, 42vw, 760px);
+	--cloud-opacity: 0.9;
+	--drift-x: 5vw;
+	aspect-ratio: 1.78;
+}
+
+/* --- Right-hand cluster, drifting in lower down ----------------------------- */
+.cloud-2 {
+	--cloud-top: 30%;
+	--cloud-left: 74%;
+	--cloud-w: clamp(340px, 36vw, 620px);
+	--cloud-opacity: 0.93;
+	--drift-x: 9vw;
+	aspect-ratio: 1.5;
+}
+
+.cloud-6 {
+	--cloud-top: 50%;
+	--cloud-left: 82%;
+	--cloud-w: clamp(220px, 24vw, 440px);
+	--cloud-opacity: 0.8;
+	--drift-x: 7vw;
+	filter: blur(0.8px);
+	aspect-ratio: 1.77;
+}
+
+/* Cloud count scales with the canvas: big screens (desktop, iPad) get the full
+   bank; mid screens drop one; phones thin to three so the sky isn't cramped. */
+@media (max-width: 1000px) {
+	.cloud-4 {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.cloud-2,
+	.cloud-3 {
+		display: none;
+	}
+}
+
+.hero-foreground {
+	--foreground-min-top: 80px;
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 4;
+	pointer-events: none;
+	user-select: none;
+}
+
+.hero-foreground .hero-layer-image {
+	position: absolute;
+	top: max(var(--foreground-min-top), calc(100vh - 55.73vw));
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+
+/* Invisible button over the clock tower to reveal the countdown. Its
+   left/top/width/height are set by useClockHotspot so it tracks the painted clock
+   through the foreground's `cover` scaling; transform centres it on that point.
+   The foreground is pointer-events:none, so re-enable hits on the hotspot. */
+.clock-tower-hotspot {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	appearance: none;
+	-webkit-appearance: none;
+	pointer-events: auto;
+	cursor: pointer;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.clock-tower-hotspot:focus-visible {
+	outline: 4px solid var(--light-primary-color);
+	outline-offset: 4px;
+	border-radius: 50%;
+	background: rgba(132, 1, 11, 0.2);
+}
