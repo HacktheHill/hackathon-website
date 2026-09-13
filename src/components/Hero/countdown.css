@@ -1,0 +1,74 @@
+/* ---------- Countdown popup ---------- */
+
+.countdown-dialog {
+	box-sizing: border-box;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	z-index: 7;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: max(1rem, 2vmin) max(2rem, 4vmin);
+	text-align: center;
+	border-radius: 50px;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+	border: 5px solid var(--dark-red);
+	background-color: var(--count-down-background-color);
+	display: none;
+	flex-direction: column;
+	gap: max(0.5rem, 2vmin);
+}
+
+.countdown-dialog[open] {
+	display: flex;
+}
+
+.countdown-header {
+	color: var(--dark-red);
+	margin: 0;
+	font-family: Rubik;
+}
+
+.countdown-close {
+	position: absolute;
+	top: 0.65rem;
+	right: 1rem;
+	padding: 0.1rem 0.4rem;
+	border: 0;
+	border-radius: 50%;
+	color: var(--dark-red);
+	background: transparent;
+	font: 700 1.5rem/1 Rubik, sans-serif;
+	cursor: pointer;
+}
+
+.countdown-close:focus-visible {
+	outline: 3px solid var(--dark-red);
+	outline-offset: 2px;
+}
+
+.countdown-items-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.countdown-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.countdown-value {
+	color: var(--dark-red);
+	font-family: Rubik;
+	font-weight: normal;
+	font-size: 1.17em;
+}
+
+.countdown-unit {
+	color: var(--dark-red);
+	font-weight: normal;
+	font-size: 1em;
+}
