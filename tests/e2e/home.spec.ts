@@ -33,6 +33,7 @@ test("French content reflows without overflow", async ({ page }) => {
 	]) {
 		await page.setViewportSize(viewport);
 		await page.goto("/");
+		await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 		await page.getByRole("button", { name: /FR:/ }).click();
 		await expect(page.locator("html")).toHaveAttribute("lang", "fr");
 		await expect(page.getByRole("heading", { name: "Foire aux questions" })).toBeVisible();
