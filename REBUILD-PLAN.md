@@ -1,3 +1,5 @@
+> Historical proposal from August 2026. The current refactor preserves the existing website exactly. Its architecture and validation workflow are in [README.md](README.md) and [tests/README.md](tests/README.md). The proposed layout changes and visual tolerances below are not requirements for this branch.
+
 # Rebuild the responsive illustrated scene
 
 ## Problem
