@@ -59,3 +59,88 @@ test("carousel snaps without animation when reduced motion is requested", async 
 	expect(transitionDuration).toBeLessThanOrEqual(0.00001);
 	await expect(track).not.toHaveAttribute("data-moving", "");
 });
+
+test("carousel controls stay aligned and usable across responsive widths", async ({ page }) => {
+	for (const width of [390, 511, 768]) {
+		await page.setViewportSize({ width, height: 844 });
+		await page.goto("/");
+		const controls = page.locator("#testimonials button");
+		const boxes = await controls.evaluateAll(elements =>
+			elements.map(element => {
+				const box = element.getBoundingClientRect();
+				return { centerY: box.y + box.height / 2, width: box.width, height: box.height };
+			}),
+		);
+		const center = boxes[0].centerY;
+		for (const box of boxes) {
+			expect(Math.abs(box.centerY - center)).toBeLessThanOrEqual(1);
+			expect(box.width).toBeGreaterThanOrEqual(44);
+			expect(box.height).toBeGreaterThanOrEqual(44);
+		}
+	}
+});
+
+test("carousel controls change the selected testimonial", async ({ page }) => {
+	await page.goto("/");
+	const pressed = page.locator('#testimonials button[aria-pressed="true"]');
+	await expect(pressed).toHaveAttribute("aria-label", /1:/);
+	const carousel = page.locator("#testimonials [aria-live]");
+	await carousel.focus();
+	await carousel.press("ArrowRight");
+	await expect(pressed).toHaveAttribute("aria-label", /2:/);
+	await page.locator("#testimonials button").last().click();
+	await expect(pressed).toHaveAttribute("aria-label", /3:/);
+});
+
+test("mobile carousel clips adjacent slides", async ({ page }) => {
+	await page.setViewportSize({ width: 390, height: 844 });
+	await page.goto("/");
+	const carousel = page.locator("#testimonials [aria-live]");
+	await carousel.scrollIntoViewIfNeeded();
+	const portrait = page.locator('#testimonials [role="group"]').first().locator("img");
+	const portraitBox = await portrait.boundingBox();
+	expect(portraitBox).not.toBeNull();
+	expect(Math.abs((portraitBox?.width ?? 0) - (portraitBox?.height ?? 0))).toBeLessThan(1);
+
+	const assertSingleVisibleSlide = async () => {
+		const visibleSlides = await page.locator('#testimonials [role="group"]').evaluateAll(slides => {
+			const viewport = slides[0]?.parentElement?.parentElement?.getBoundingClientRect();
+			if (!viewport) return 0;
+			return slides.filter(slide => {
+				const box = slide.getBoundingClientRect();
+				return box.right > viewport.left && box.left < viewport.right;
+			}).length;
+		});
+		expect(visibleSlides).toBe(1);
+	};
+
+	await assertSingleVisibleSlide();
+	await page.locator("#testimonials button").last().click();
+	await expect(page.locator('#testimonials [role="group"]').first()).toHaveCSS("visibility", "visible");
+	await page.waitForTimeout(500);
+	await expect(page.locator('#testimonials [role="group"]').first()).toHaveCSS("visibility", "hidden");
+	await assertSingleVisibleSlide();
+});
+
+test("carousel supports keyboard arrows and swipe", async ({ page }) => {
+	await page.goto("/");
+	const carousel = page.locator("#testimonials [aria-live]");
+	const pressed = page.locator('#testimonials button[aria-pressed="true"]');
+	await carousel.focus();
+	await carousel.press("ArrowRight");
+	await expect(pressed).toHaveAttribute("aria-label", /2:/);
+
+	await carousel.dispatchEvent("pointerdown", {
+		pointerId: 1,
+		isPrimary: true,
+		clientX: 300,
+		clientY: 200,
+	});
+	await carousel.dispatchEvent("pointerup", {
+		pointerId: 1,
+		isPrimary: true,
+		clientX: 100,
+		clientY: 200,
+	});
+	await expect(pressed).toHaveAttribute("aria-label", /3:/);
+});
