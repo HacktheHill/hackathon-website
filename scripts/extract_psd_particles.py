@@ -8,23 +8,17 @@ from pathlib import Path
 
 from psd_tools import PSDImage
 
+if __package__:
+    from .psd_helpers import find_group
+else:
+    from psd_helpers import find_group
+
 
 PARTICLE_GROUPS = {
     "leaves": "leaf",
     "snow": "snow",
     "bubbles": "bubble",
 }
-
-
-def find_group(group, target_name: str):
-    for layer in group:
-        if layer.is_group() and (layer.name or "").strip().lower() == target_name:
-            return layer
-        if layer.is_group():
-            match = find_group(layer, target_name)
-            if match is not None:
-                return match
-    return None
 
 
 def export_particles(source_path: Path, output_dir: Path) -> None:
