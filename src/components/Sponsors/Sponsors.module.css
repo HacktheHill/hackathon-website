@@ -185,9 +185,7 @@
 	padding: 0.8rem;
 	border-radius: 1.25rem;
 	background: rgb(255 255 255 / 82%);
-	box-shadow:
-		-0.45rem 0.45rem 0 rgb(215 247 250 / 82%),
-		0 0.35rem 0.9rem rgb(25 86 122 / 14%);
+	box-shadow: -0.45rem 0.45rem 0 rgb(215 247 250 / 82%), 0 0.35rem 0.9rem rgb(25 86 122 / 14%);
 	box-sizing: border-box;
 	transition: transform 180ms ease;
 }
