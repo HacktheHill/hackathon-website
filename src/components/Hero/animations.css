@@ -5,12 +5,7 @@
    The .hero-cloud / .hero-cloud-N hooks are added alongside the module classes
    in Hero.tsx. */
 
-/* Drift animates the dedicated `translate` property (not `transform`) so it
-   composes with the per-cloud parallax transform set in Hero.tsx instead of
-   overwriting it. */
-/* Horizontal sweep is scaled by each cloud's --drift-x (set per cloud in
-   Hero.module.css) so near clouds travel further than far ones — parallax-like
-   depth from a single shared keyframe. The slight vertical bob adds life. */
+/* Each cloud's --drift-x controls its horizontal travel distance. */
 @keyframes drift {
 	0% {
 		translate: calc(var(--drift-x, 12vw) * -1) 0;
@@ -59,7 +54,7 @@
 }
 
 /* Stop the drift (and free the compositor) once the hero is scrolled out of
-   view — toggled from Hero.tsx via an IntersectionObserver. */
+   view — toggled by useHeroParallax via an IntersectionObserver. */
 .hero-offscreen .hero-cloud {
 	animation-play-state: paused;
 }
