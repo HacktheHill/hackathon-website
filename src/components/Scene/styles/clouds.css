@@ -1,0 +1,212 @@
+/* The clouds are the first six layers above the sky, so every hill, tower and
+	foreground layer always paints over them. Clouds 1, 4 and 2 begin at their
+	Photoshop positions. All six then travel left-to-right in separate, slow
+	windows of one ten-minute cycle, keeping the sky populated without showing the
+	full cloud set together. */
+.scene-cloud {
+	opacity: 0;
+	will-change: transform, opacity;
+	animation-duration: 600s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.cloud-1 {
+	--cloud-end-x: 95%;
+	animation-name: scene-cloud-1;
+}
+
+.cloud-2 {
+	--cloud-end-x: 739.3%;
+	animation-name: scene-cloud-2;
+}
+
+.cloud-3 {
+	--cloud-start-x: -130%;
+	--cloud-end-x: 349.7%;
+	animation-name: scene-cloud-3;
+}
+
+.cloud-4 {
+	--cloud-end-x: 179.4%;
+	animation-name: scene-cloud-4;
+}
+
+.cloud-5 {
+	--cloud-start-x: -322.3%;
+	--cloud-end-x: 35.7%;
+	animation-name: scene-cloud-5;
+}
+
+.cloud-6 {
+	--cloud-start-x: -175.8%;
+	--cloud-end-x: 129%;
+	animation-name: scene-cloud-6;
+}
+
+@keyframes scene-cloud-1 {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+
+	30% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	32% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+
+	98% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+}
+
+@keyframes scene-cloud-2 {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+
+	23% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	25% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+
+	98% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+}
+
+@keyframes scene-cloud-4 {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+
+	43% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	45% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+
+	98% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.85;
+	}
+}
+
+@keyframes scene-cloud-3 {
+	0%,
+	20% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0;
+	}
+
+	22% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	70% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	72%,
+	100% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+}
+
+@keyframes scene-cloud-5 {
+	0%,
+	34% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0;
+	}
+
+	36% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	84% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	86%,
+	100% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+}
+
+@keyframes scene-cloud-6 {
+	0%,
+	53% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0;
+	}
+
+	55% {
+		transform: translate3d(var(--cloud-start-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	96% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0.85;
+	}
+
+	98%,
+	100% {
+		transform: translate3d(var(--cloud-end-x), 0, 0);
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scene-cloud {
+		animation: none;
+		opacity: 0;
+	}
+
+	.cloud-1,
+	.cloud-2,
+	.cloud-4 {
+		transform: none;
+		opacity: 0.85;
+	}
+}
