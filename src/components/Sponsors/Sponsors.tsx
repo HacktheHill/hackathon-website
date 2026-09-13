@@ -1,4 +1,4 @@
-import { locale, t } from "@/i18n";
+import { locale, useTranslations } from "@/i18n";
 import { useStore } from "@nanostores/react";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
@@ -54,6 +54,7 @@ type SponsorData = {
 const VISIBLE_SPONSOR_ROWS: SponsorTier[][] = [["prime-minister"], ["premier"], ["mayor", "councillor"]];
 
 function Sponsors() {
+	const t = useTranslations();
 	const currentLocale = useStore(locale);
 	const data: SponsorData = {
 		sponsors: {

@@ -1,10 +1,11 @@
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import styles from "./FAQ.module.css";
 
 const CODE_OF_CONDUCT_URL =
 	"https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md";
 
 export default function FAQ() {
+	const t = useTranslations();
 	const quesAns = [
 		{
 			q: t("faq.q1"),

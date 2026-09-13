@@ -1,4 +1,4 @@
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import styles from "./About.module.css";
 
 import "@/global.css";
@@ -7,6 +7,7 @@ const videoLink = "https://www.youtube.com/embed/yDNJC2-lUWE?si=VAD1Na8xGVwE9i5W
 const thumbnailLink = "https://i.ytimg.com/vi/yDNJC2-lUWE/hqdefault.jpg";
 
 export function AboutVideo() {
+	const t = useTranslations();
 	return (
 		<iframe
 			className={styles.video}
@@ -23,6 +24,7 @@ export function AboutVideo() {
 }
 
 function About() {
+	const t = useTranslations();
 	return (
 		<section id="about" aria-labelledby="about-title">
 			<div className={styles["about-text"]}>
