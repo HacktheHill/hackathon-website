@@ -1,19 +1,13 @@
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { type FormEvent, useRef, useState } from "react";
+import { useSubscription } from "./useSubscription";
 import { useTranslations } from "@/i18n";
 import styles from "./Footer.module.css";
 
-const SUBSCRIBE_ENDPOINT = "https://emails.hackthehill.com/subscribe";
-
-type SubscriptionState = "idle" | "submitting" | "accepted" | "invalid" | "rate-limited" | "failed";
-
 function Footer() {
 	const t = useTranslations();
-	const [email, setEmail] = useState("");
-	const [subscriptionState, setSubscriptionState] = useState<SubscriptionState>("idle");
-	const submittingRef = useRef(false);
+	const { email, updateEmail, subscriptionState, handleSubscribe } = useSubscription();
 
 	const emailPlaceholder = t("footer.email_placeholder");
 	const emailLabel = t("footer.email_label");
@@ -33,45 +27,6 @@ function Footer() {
 			: subscriptionState === "failed"
 			? sendErrorLabel
 			: null;
-
-	const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		if (submittingRef.current) return;
-
-		submittingRef.current = true;
-		setSubscriptionState("submitting");
-		try {
-			const response = await fetch(SUBSCRIBE_ENDPOINT, {
-				method: "POST",
-				headers: {
-					Accept: "application/json",
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ email: email.trim(), consent: true }),
-			});
-
-			if (response.status === 202) {
-				setSubscriptionState("accepted");
-				return;
-			}
-
-			if (response.status === 400) {
-				setSubscriptionState("invalid");
-				return;
-			}
-
-			if (response.status === 429) {
-				setSubscriptionState("rate-limited");
-				return;
-			}
-
-			setSubscriptionState("failed");
-		} catch {
-			setSubscriptionState("failed");
-		} finally {
-			submittingRef.current = false;
-		}
-	};
 
 	return (
 		<footer className={styles.footer}>
@@ -133,10 +88,7 @@ function Footer() {
 							inputMode="email"
 							spellCheck={false}
 							value={email}
-							onChange={event => {
-								setEmail(event.target.value);
-								if (subscriptionState !== "idle") setSubscriptionState("idle");
-							}}
+							onChange={event => updateEmail(event.target.value)}
 							placeholder={emailPlaceholder}
 							disabled={isSubmitting}
 							aria-invalid={subscriptionState === "invalid"}
