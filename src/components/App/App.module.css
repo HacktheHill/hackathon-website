@@ -1,8 +1,3 @@
-@import "../Scene/styles/canvas.css";
-@import "../Scene/styles/clouds.css";
-@import "../Scene/styles/sections.css";
-@import "../Scene/styles/mobile.css";
-
 .skip-link {
 	position: fixed;
 	top: 0.75rem;
