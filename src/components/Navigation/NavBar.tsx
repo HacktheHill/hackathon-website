@@ -1,4 +1,4 @@
-import { locale, t } from "@/i18n";
+import { locale, useTranslations } from "@/i18n";
 import { useStore } from "@nanostores/react";
 import { useEffect } from "react";
 import style from "./NavBar.module.css";
@@ -6,6 +6,7 @@ import style from "./NavBar.module.css";
 const logo = "/Logos/hackthehill-logo.svg";
 
 function Navbar() {
+	const t = useTranslations();
 	const currentLocale = useStore(locale);
 	const languageCode = currentLocale === "en" ? "FR" : "EN";
 

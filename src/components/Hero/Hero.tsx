@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useStore } from "@nanostores/react";
-import { locale, t } from "@/i18n";
+import { locale, useTranslations } from "@/i18n";
 import Navigation from "../Navigation/Navigation";
 import styles from "./Hero.module.css";
 import "./animations.css";
@@ -171,6 +171,7 @@ const clouds = [
 ];
 
 function Hero() {
+	const t = useTranslations();
 	const [popupOpen, setPopupOpen] = useState(false);
 	const [time, setTime] = useState<number | null>(null);
 	const currentLocale = useStore(locale);

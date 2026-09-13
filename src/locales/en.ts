@@ -48,139 +48,6 @@ export default {
 		p5: "70",
 		p5tag: "Organizers",
 	},
-	winners: {
-		title: "Winners",
-		subtitle: "Celebrating the brilliant minds and projects that made Hack the Hill II an unforgettable journey!",
-		categories: {
-			general_challenge: "General Challenge",
-			ciena: "Ciena Challenge",
-			ross: "Ross Challenge",
-			best_ui_ux: "Best UI/UX Implementation",
-			best_ai: "Best Use of AI",
-			best_uottawa_carleton: "Best uOttawa x Carleton Collaboration",
-			best_cloud: "Best Use of Cloud Technology",
-			best_hardware: "Best Hardware Hack",
-			geoguessr: "Geoguessr Challenge",
-			scavenger_hunt: "Scavenger Hunt Challenge",
-		},
-		no_data: "No winners data available for this category.",
-		error_loading: "Error loading winners:",
-		team_1_photo: "Team 1 photo",
-		team_2_photo: "Team 2 photo",
-		team_3_photo: "Team 3 photo",
-		scavenger_hunt_photo: "Scavenger Hunt team photo",
-		team_alt: "team",
-		general_challenge: [
-			{ place: "1st", project: "Pawgress", team: ["Aditya Kandel", "Chenhao Wei", "Selin Kararmaz", "Jun Ye"] },
-			{
-				place: "2nd",
-				project: "Duo Move",
-				team: ["Carcidev Carciente", "Vinisha Manek", "Keshan Kathiripilay", "Mahutt"],
-			},
-			{
-				place: "3rd",
-				project: "Timetable Sweetie",
-				team: ["Jason Shao", "Kaushik Tumu", "Jeff Lu", "Anas Abushaikha"],
-			},
-		],
-		sponsor_challenges: {
-			ciena: [
-				{
-					place: "1st",
-					project: "Mound",
-					team: ["Robert Zuchniak", "Raef Sarofiem", "Matthew Polak", "Vasil Topalovik"],
-				},
-				{
-					place: "2nd",
-					project: "PeerPressure",
-					team: ["James Liang", "Callum Curtis", "Krins Vaghasia", "David Pietrocola"],
-				},
-				{
-					place: "3rd",
-					project: "Distributed Encrypted Peer-to-Peer File Management Platform",
-					team: ["Miller Ding", "Antoine Lavigne", "Aditya", "Matias S"],
-				},
-			],
-			ross: [
-				{
-					place: "1st",
-					project: "Frame Out",
-					team: [
-						"Neel Patel",
-						"Nathaniel Lays",
-						"Darrell Nyakaana",
-						"Samuel Marchetti",
-						"Lana Othman",
-						"Integer-Conversion-Error Kaya",
-					],
-				},
-				{
-					place: "2nd",
-					project: "Bouncing ROSS",
-					team: ["Kyle Mendes", "Ines Mansouri", "Mike Katsnelson", "Vilmos Feher", "Paul Chukwu"],
-				},
-				{ place: "3rd", project: "Ping Pong", team: ["Sami Tahi", "Anas Bourfia"] },
-			],
-		},
-		mini_challenges: {
-			best_ui_ux: [
-				{ place: "1st", project: "CapyCare", team: ["Chi McIsaac", "Karam"] },
-				{ place: "2nd", project: "Stumble", team: ["Joseph Liao", "Evan Ferreira", "Gavin Yan"] },
-			],
-			best_ai: [
-				{
-					place: "1st",
-					project: "BrainUp",
-					team: ["Edmund Ye", "Karanveer Panesar", "Hasin Zaman", "Jawad Mohammed"],
-				},
-				{
-					place: "2nd",
-					project: "Grype",
-					team: ["Joey Issa", "Twoadave Gayowsky", "Batleram Scaffindi", "Jacob T"],
-				},
-			],
-			best_uottawa_carleton: [
-				{
-					place: "1st",
-					project: "The Heart Stopper",
-					team: ["Bradley Nguyen", "Sabateesh Sivakumar", "Daniel B. Solomon", "Shane S"],
-				},
-				{
-					place: "2nd",
-					project: "InsuWell",
-					team: ["Imane A.", "Aisha Jama", "Maryam Belkebir", "Saja Elkurtehi"],
-				},
-			],
-			best_cloud: [
-				{ place: "1st", project: "snhack-rover", team: ["Mumtahin Farabi", "Rohan Sreelesh", "Hiba Tantawi"] },
-				{
-					place: "2nd",
-					project: "JustVent",
-					team: ["Noah do Rego", "Nodshley Marcelin", "Colby Todd", "Andrew Pham"],
-				},
-			],
-			best_hardware: [
-				{ place: "1st", project: "AnyPen", team: ["Emilee Chen", "Ethan Sue", "Fahmi O", "Ivana Du"] },
-				{
-					place: "2nd",
-					project: "RelaxED AI",
-					team: ["Aneesh Ereddy", "Shawn How", "Marc Vidal", "Benjamin Gavieres"],
-				},
-			],
-			geoguessr: [
-				{ place: "1st", project: "Team 1", team: ["Alex Smith", "Jamie Wong", "Chris Johnson", "Taylor Park"] },
-				{ place: "2nd", project: "Team 2", team: ["Jordan Lee", "Casey Zhang", "Morgan Taylor", "Riley Chen"] },
-				{ place: "3rd", project: "Team 3", team: ["Sam Patel", "Jesse Kim", "Avery Garcia", "Quinn Murphy"] },
-			],
-			scavenger_hunt: [
-				{
-					place: "1st",
-					project: "Scavenger Hunt",
-					team: ["Robin Blake", "Cameron Lane", "Drew Rivera", "Skyler Reed", "Jordan Ellis"],
-				},
-			],
-		},
-	},
 	sponsors: {
 		title: "Past Sponsors",
 		p: "Hack the Hill's past editions were made possible by these generous sponsors. Interested in supporting the capital's hackathon?",
@@ -275,57 +142,6 @@ export default {
 		a13_link: "Participant Admission Criteria",
 		a13_url: "https://docs.google.com/document/d/1Pl9Hy90uE-gACaZmU4EsFSf6r-zUQjjJHkUiGyspWpU/edit",
 	},
-	team: {
-		title: "Meet the Team!",
-		roles: {
-			president: "President",
-			exec_vp: "Executive VP",
-			at_large: "Director At-Large",
-			community: {
-				vp: "VP Community",
-				manager: "Community Manager",
-				coordinator: "Community Coordinator",
-				advisor: "Community Advisor",
-			},
-			design: {
-				vp: "VP Design",
-				manager: "Design Manager",
-				coordinator: "Design Coordinator",
-				advisor: "Design Advisor",
-			},
-			development: {
-				vp: "VP Development",
-				manager: "Development Manager",
-				coordinator: "Development Coordinator",
-				advisor: "Development Advisor",
-			},
-			finance: {
-				vp: "VP Finance",
-				manager: "Finance Manager",
-				coordinator: "Finance Coordinator",
-				advisor: "Finance Advisor",
-			},
-			logistics: {
-				vp: "VP Logistics",
-				manager: "Logistics Manager",
-				coordinator: "Logistics Coordinator",
-				advisor: "Logistics Advisor",
-			},
-			marketing: {
-				vp: "VP Marketing",
-				manager: "Marketing Manager",
-				coordinator: "Marketing Coordinator",
-				advisor: "Marketing Advisor",
-			},
-			partnerships: {
-				vp: "VP Partnerships",
-				manager: "Partnerships Manager",
-				coordinator: "Partnerships Coordinator",
-				advisor: "Partnerships Advisor",
-			},
-			mascot: "Official Mascot",
-		},
-	},
 	footer: {
 		subscribe: "Get updates",
 		email_placeholder: "E-mail",
@@ -337,11 +153,6 @@ export default {
 		send_error: "Couldn’t subscribe. Try again.",
 		privacy: "Privacy Policy",
 		copyright: "© 2026 Hack the Hill. All rights reserved.",
-	},
-	notification: {
-		message: "Hack the Hill III is happening September 25-27, 2026! Applications are open now!",
-		button_text: "Apply Now",
-		close: "Close Notification",
 	},
 	"four-o-four": {
 		title: "Page not found",

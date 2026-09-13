@@ -1,7 +1,7 @@
 // Must run before any FontAwesome icon renders — disables runtime CSS injection.
 import "@/fontawesome";
 import { Fragment, useEffect, useRef } from "react";
-import { t } from "@/i18n";
+import { useTranslations } from "@/i18n";
 import Hero from "../Hero/Hero";
 import About, { AboutVideo } from "../About/About";
 import Stats, { MobileStatsIntro } from "../Stats/Stats";
@@ -117,6 +117,7 @@ const HERO_PARALLAX_SPEEDS: Record<string, number> = {
 };
 
 function App() {
+	const t = useTranslations();
 	const artworkRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLDivElement>(null);
 
