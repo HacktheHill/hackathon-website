@@ -1,0 +1,118 @@
+.canvas {
+	--tablet-partner-extension: 0px;
+	--tablet-ice-extension: 0px;
+	--faq-content-extension: 0px;
+
+	container-type: inline-size;
+	position: relative;
+	isolation: isolate;
+	width: 100%;
+	max-width: 3049px;
+	overflow: hidden;
+}
+
+.base-scene {
+	position: relative;
+	width: 100%;
+}
+
+@media (min-width: 1025px) {
+	.canvas {
+		padding-bottom: var(--faq-content-extension);
+	}
+
+	/* Continue from the water artwork's solid bottom edge. The small overlap sits
+		behind its transparent final pixels; matching #0a1f6a prevents the asset's
+		bottom edge from becoming a horizontal seam when the footer moves down. */
+	.base-scene::after {
+		position: absolute;
+		top: calc(97.561174% - 2px);
+		right: 0;
+		left: 0;
+		z-index: 175;
+		height: calc(2.438826% + var(--faq-content-extension) + 2px);
+		background: linear-gradient(180deg, #0a1f6a 0%, #07153e 55%, #061238 100%);
+		content: "";
+	}
+
+	.layer[data-scene-layer="footer-water"],
+	.layer[data-scene-layer="footer-water-2"] {
+		transform: translateY(var(--faq-content-extension));
+	}
+}
+
+.artwork {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+.layer {
+	position: absolute;
+	display: block;
+	height: auto;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.tablet-ice-bottom,
+.tablet-ice-middle {
+	display: none;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+	.canvas {
+		--tablet-partner-extension: clamp(0rem, calc(74.5rem - 100vw), 10.5rem);
+	}
+}
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+	.canvas {
+		--tablet-partner-extension: clamp(0rem, calc(89rem - 100vw), 14rem);
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+	/* Move the original road as one image, preserving its aspect ratio. The
+		newly exposed area is the existing orange artwork underneath it. */
+	.tablet-road-shift {
+		translate: 0 var(--tablet-partner-extension);
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+	.canvas {
+		--tablet-ice-extension: clamp(2rem, calc(42rem - 40vw), 14rem);
+	}
+
+	/* Keep both detailed ends of the ice artwork untouched. Only the quiet
+		centre is allowed to grow when the collaborator grid needs more room. */
+	.tablet-ice-top {
+		clip-path: inset(0 0 20% 0);
+		translate: 0 var(--tablet-partner-extension);
+	}
+
+	.tablet-ice-bottom {
+		display: block;
+		clip-path: inset(80% 0 0);
+		translate: 0 calc(var(--tablet-partner-extension) + var(--tablet-ice-extension));
+	}
+
+	.tablet-ice-cracks {
+		translate: 0 calc(var(--tablet-partner-extension) + var(--tablet-ice-extension));
+	}
+
+	.tablet-ice-middle {
+		position: absolute;
+		top: calc(72.477% - 1px + var(--tablet-partner-extension));
+		left: 0;
+		z-index: 185;
+		display: block;
+		width: 100%;
+		height: calc(var(--tablet-ice-extension) + 2px);
+		background: linear-gradient(180deg, #75c8ba 0%, #72cbc0 50%, #75c8ba 100%);
+		content: "";
+	}
+}
