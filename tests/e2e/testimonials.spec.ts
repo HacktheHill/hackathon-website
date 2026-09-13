@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("carousel wraps forward without reversing the track", async ({ page }) => {
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const track = page.locator("#testimonials [aria-live] > div");
 	const dots = page.locator("#testimonials button[aria-pressed]");
 	const translateX = () => track.evaluate(element => new DOMMatrix(getComputedStyle(element).transform).m41);
@@ -21,6 +22,7 @@ test("carousel wraps forward without reversing the track", async ({ page }) => {
 test("mobile carousel edge-fades adjacent slides", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const carousel = page.locator("#testimonials [aria-live]");
 	await expect(carousel).toHaveCSS("mask-image", /linear-gradient/);
 	await expect(page.locator("#testimonials [aria-live] > div")).toHaveCSS("transition-duration", "0.45s");
@@ -28,6 +30,7 @@ test("mobile carousel edge-fades adjacent slides", async ({ page }) => {
 
 test("carousel queues input and follows horizontal drags", async ({ page }) => {
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const carousel = page.locator("#testimonials [aria-live]");
 	const track = page.locator("#testimonials [aria-live] > div");
 	const pressed = page.locator('#testimonials button[aria-pressed="true"]');
@@ -50,6 +53,7 @@ test("carousel queues input and follows horizontal drags", async ({ page }) => {
 test("carousel snaps without animation when reduced motion is requested", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const track = page.locator("#testimonials [aria-live] > div");
 	await page.locator("#testimonials button").last().click();
 	await expect(page.locator('#testimonials button[aria-pressed="true"]')).toHaveAttribute("aria-label", /2:/);
@@ -64,6 +68,7 @@ test("carousel controls stay aligned and usable across responsive widths", async
 	for (const width of [390, 511, 768]) {
 		await page.setViewportSize({ width, height: 844 });
 		await page.goto("/");
+		await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 		const controls = page.locator("#testimonials button");
 		const boxes = await controls.evaluateAll(elements =>
 			elements.map(element => {
@@ -82,6 +87,7 @@ test("carousel controls stay aligned and usable across responsive widths", async
 
 test("carousel controls change the selected testimonial", async ({ page }) => {
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const pressed = page.locator('#testimonials button[aria-pressed="true"]');
 	await expect(pressed).toHaveAttribute("aria-label", /1:/);
 	const carousel = page.locator("#testimonials [aria-live]");
@@ -95,6 +101,7 @@ test("carousel controls change the selected testimonial", async ({ page }) => {
 test("mobile carousel clips adjacent slides", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const carousel = page.locator("#testimonials [aria-live]");
 	await carousel.scrollIntoViewIfNeeded();
 	const portrait = page.locator('#testimonials [role="group"]').first().locator("img");
@@ -124,6 +131,7 @@ test("mobile carousel clips adjacent slides", async ({ page }) => {
 
 test("carousel supports keyboard arrows and swipe", async ({ page }) => {
 	await page.goto("/");
+	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const carousel = page.locator("#testimonials [aria-live]");
 	const pressed = page.locator('#testimonials button[aria-pressed="true"]');
 	await carousel.focus();
