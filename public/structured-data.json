@@ -37,9 +37,10 @@
 	"name": "Hack the Hill III",
 	"offers": {
 		"@type": "Offer",
+		"availability": "https://schema.org/InStock",
 		"price": "0",
 		"priceCurrency": "CAD",
-		"url": "https://hackthehill.com/"
+		"url": "https://apply.hackthehill.com/"
 	},
 	"organizer": {
 		"@type": "Organization",
