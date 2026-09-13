@@ -110,19 +110,6 @@
 	gap: 2rem;
 }
 
-.carousel-navigation {
-	box-sizing: border-box;
-	width: 2rem;
-	height: 2rem;
-	cursor: pointer;
-	opacity: 0.8;
-	transition: opacity 0.3s ease;
-}
-
-.carousel-navigation:hover {
-	opacity: 1;
-}
-
 .testimonial-container {
 	box-sizing: border-box;
 	display: flex;
