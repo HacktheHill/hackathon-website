@@ -18,7 +18,8 @@ function Hero() {
 		useCountdown();
 	const heroRef = useHeroParallax();
 	const { foregroundRef, hotspotRef } = useClockHotspot(countdownAvailable);
-	const closeButtonRef = useRef<HTMLButtonElement>(null);
+		const applyBtnRef = useRef<HTMLAnchorElement>(null);
+	const dialogRef = useRef<HTMLDialogElement>(null);
 
 	useEffect(() => {
 		if (!popupOpen) return;
@@ -27,13 +28,26 @@ function Hero() {
 			if (event.key !== "Escape") return;
 
 			event.preventDefault();
-			const restoreFocus = document.activeElement === closeButtonRef.current;
 			setPopupOpen(false);
-			if (restoreFocus) hotspotRef.current?.focus();
+			hotspotRef.current?.focus();
 		};
 
 		document.addEventListener("keydown", handleKeyDown);
 		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, [popupOpen]);
+
+	useEffect(() => {
+		if (popupOpen && applyBtnRef.current && dialogRef.current && heroRef.current) {
+			if (window.matchMedia("(min-width: 1025px)").matches) {
+				const heroRect = heroRef.current.getBoundingClientRect();
+				const btnRect = applyBtnRef.current.getBoundingClientRect();
+				const centerYScreen = (btnRect.bottom + window.innerHeight) / 2;
+				const centerYLocal = centerYScreen - heroRect.top;
+				dialogRef.current.style.top = `${centerYLocal}px`;
+			} else {
+				dialogRef.current.style.top = '';
+			}
+		}
 	}, [popupOpen]);
 
 	return (
@@ -90,15 +104,13 @@ function Hero() {
 						}}
 						onPointerLeave={event => {
 							if (event.pointerType === "touch") return;
-							const restoreFocus = document.activeElement === closeButtonRef.current;
 							setPopupOpen(false);
-							if (restoreFocus) window.requestAnimationFrame(() => hotspotRef.current?.focus());
 						}}
 						onPointerDown={event => event.stopPropagation()}
 						onClick={event => {
 							event.stopPropagation();
 							setPopupOpen(true);
-							window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+							
 						}}
 					/>
 				)}
@@ -134,7 +146,7 @@ function Hero() {
 					{t("hero.h2")}
 				</h2>
 				<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-					<a className={styles["hero-apply"]} href="https://apply.hackthehill.com/">
+					<a ref={applyBtnRef} className={styles["hero-apply"]} href="https://apply.hackthehill.com/">
 						{t("hero.apply")}
 					</a>
 				</span>
@@ -143,26 +155,15 @@ function Hero() {
 			{/* Popup for countdown when opening the clock-tower hotspot */}
 			{countdownAvailable && (
 				<dialog
+					ref={dialogRef}
 					id="countdown-dialog"
 					className={styles["countdown-dialog"]}
 					open={popupOpen}
 					aria-labelledby="countdown-heading"
 					onPointerDown={event => event.stopPropagation()}
 				>
-					<button
-						ref={closeButtonRef}
-						type="button"
-						className={styles["countdown-close"]}
-						aria-label={countdownCloseLabel}
-						onClick={() => {
-							setPopupOpen(false);
-							hotspotRef.current?.focus();
-						}}
-					>
-						<span aria-hidden="true">&times;</span>
-					</button>
 					<p id="countdown-heading" className={styles["countdown-header"]}>
-						<strong>{countdownHeading}</strong>
+						{countdownHeading}
 					</p>
 
 					<div className={styles["countdown-items-container"]}>
