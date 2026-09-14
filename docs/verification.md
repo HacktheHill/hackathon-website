@@ -1,8 +1,10 @@
 # Refactor verification
 
-The reference is untouched `main` at `86c6552697c019a4262c0c8b1388c2ea4971aa55`. The local `2026-rebuild` branch merges that main into the existing rebuild branch, then records the refactor in separate conventional commits. No commits have been pushed. The sibling `hackathon-website` checkout was not used as the reference or edited.
+The reference is untouched `main` at `86c6552697c019a4262c0c8b1388c2ea4971aa55`. The local `2026-rebuild` branch merges that main into the existing rebuild branch, then records the refactor in separate conventional commits. At verification time, no commits had been pushed. The sibling `hackathon-website` checkout was not used as the reference or edited.
 
 The checked application source tree is `90f0eb920b6e6016f8f9b92e98ad91cf874fc2e3`. Checks finished on September 13, 2026, on macOS with Node 24.15.0 and npm 11.12.1. Remote main and rebuild tips were unchanged at the final check.
+
+The final review before PR preparation checked the extracted hooks, content modules, image helpers, dependency changes, and deployment boundaries. It removed one extra blank line in the Python helper. The application source tree remains the one tested below, and `git diff --check` passes.
 
 ## Completed checks
 
