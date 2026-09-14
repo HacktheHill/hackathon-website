@@ -31,7 +31,7 @@ export default {
 	about: {
 		title: "Welcome to Hack&nbsp;the&nbsp;Hill&nbsp;III",
 		p1: "Join students from across disciplines for a weekend of building impactful, innovative solutions to real-world civic challenges.",
-		p2: "Organized by the Capital Technology Network, the hackathon creates an exciting space to learn, collaborate, network with peers, and showcase your talents and ideas.",
+		p2: "Organised by the Capital Technology Network, the hackathon creates an exciting space to learn, collaborate, network with peers, and showcase your talents and ideas.",
 		p3: "Whether you are exploring your first hackathon or bringing years of experience, you will find a welcoming community shaped by different skills and perspectives.",
 		frame_alt: "Hack the Hill II recap video",
 	},
@@ -46,7 +46,7 @@ export default {
 		p4: "15",
 		p4tag: "Collaborators",
 		p5: "70",
-		p5tag: "Organizers",
+		p5tag: "Organisers",
 	},
 	sponsors: {
 		title: "Past Sponsors",
@@ -58,15 +58,15 @@ export default {
 	},
 	testimonials: {
 		title: "What Past Partners Say",
-		sub_heading: "Hear from organizations that supported previous editions of Hack the Hill.",
+		sub_heading: "Hear from organisations that supported previous editions of Hack the Hill.",
 		t1: {
 			name: "Maddie Whibbs",
-			content: "Great and well organized event - career fair was my favorite part!",
+			content: "Great and well organised event - career fair was my favourite part!",
 			role: "BlackBerry",
 		},
 		t2: {
 			name: "Adam Laderoute",
-			content: "We enjoyed the event, well run, great organizers.",
+			content: "We enjoyed the event, well run, great organisers.",
 			role: "CSE-CST",
 		},
 		t3: {
@@ -78,19 +78,19 @@ export default {
 		t4: {
 			name: "Nyah Wagner",
 			content:
-				"Lonehaven was honored to collaborate with Hack the Hill, an exceptional event that showcased the creative problem-solving skills of talented students. This experience highlighted the vibrant tech ecosystem in Canada and its potential for collaboration and growth.",
+				"Lonehaven was honoured to collaborate with Hack the Hill, an exceptional event that showcased the creative problem-solving skills of talented students. This experience highlighted the vibrant tech ecosystem in Canada and its potential for collaboration and growth.",
 			role: "Lonehaven",
 		},
 		t6: {
 			name: "Greg Suignard",
 			content:
-				"Amazing event and incredible work by all of the organizers! Just want to thank everyone that put in effort towards the event, and especially those that tried to take on our challenge!",
+				"Amazing event and incredible work by all of the organisers! Just want to thank everyone that put in effort towards the event, and especially those that tried to take on our challenge!",
 			role: "Canadian Tire",
 		},
 		t7: {
 			name: "Elmira Khani",
 			content:
-				"Working with the Hack the Hill has been a fantastic experience. The team has been so organized, hard-working, and professional - they helped us host a wonderful event and we were blown away by the amount of support we received. Looking forward to future collaborations!",
+				"Working with the Hack the Hill has been a fantastic experience. The team has been so organised, hard-working, and professional - they helped us host a wonderful event and we were blown away by the amount of support we received. Looking forward to future collaborations!",
 			role: "Kinaxis",
 		},
 		aria_label_next: "Next testimonial",
@@ -134,7 +134,7 @@ export default {
 		a11: "We are not able to offer buses or travel reimbursements this year. We encourage participants to coordinate carpools or make their own travel arrangements to get to the event.",
 
 		q12: "Is there a code of conduct?",
-		a12: "Yes there is. We as organizers care deeply about everyone's experience and safety. Find the code of conduct",
+		a12: "Yes there is. We as organisers care deeply about everyone's experience and safety. Find the code of conduct",
 		a12_link: "here",
 
 		q13: "How are participants selected?",
