@@ -10,4 +10,3 @@ def find_group(group, target_name: str):
             if match is not None:
                 return match
     return None
-
