@@ -134,7 +134,8 @@ export default {
 		a11: "We are not able to offer buses or travel reimbursements this year. We encourage participants to coordinate carpools or make their own travel arrangements to get to the event.",
 
 		q12: "Is there a code of conduct?",
-		a12: "Yes there is. We as organisers care deeply about everyone's experience and safety. Find the code of conduct",
+		a12: "Yes, all attendees must follow our code of conduct to ensure a safe and welcoming environment for everyone. You can read it",
+>>>>>>> 85c5628 (fix(faq): simplify code of conduct copy)
 		a12_link: "here",
 
 		q13: "How are participants selected?",

@@ -136,7 +136,7 @@ export default {
 		a11: "Nous ne sommes pas en mesure d'offrir des autobus ni de rembourser les frais de déplacement cette année. Nous encourageons les participants à faire du covoiturage ou à prévoir leur propre transport pour se rendre à l'événement.",
 
 		q12: "Y a-t-il un code de conduite?",
-		a12: "Oui. En tant qu'organisateurs, nous accordons une grande importance à l'expérience et à la sécurité de toutes les personnes participantes. Consultez le code de conduite",
+		a12: "Oui, toutes les personnes participantes doivent respecter notre code de conduite pour garantir un environnement sûr et accueillant. Vous pouvez le lire",
 		a12_link: "ici",
 
 		q13: "Comment les participants sont-ils sélectionnés?",
