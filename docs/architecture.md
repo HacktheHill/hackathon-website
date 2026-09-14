@@ -19,7 +19,7 @@ The desktop illustration uses a 3049 by 12301 design canvas. Its measurements ar
 
 These imports share one CSS module scope. Keep their order when editing an override. Section wrappers are positioning and measurement elements; removing one can change the scene even if its own component still looks correct.
 
-`useSceneParallax` handles scroll transforms. `useFaqCanvasExtension` observes the FAQ's height and extends the water and footer when answers need more space. These effects retain the original breakpoints and calculations.
+`useSceneParallax` handles scroll transforms. `useFaqCanvasExtension` observes the FAQ's height and extends the water and footer when answers need more space.
 
 The mobile hero has its own artwork. `Hero/assets.ts` describes its files, media queries, and responsive widths. `useClockHotspot` places the countdown button over the painted clock. `useHeroParallax` handles heading motion and offscreen clouds. `Hero.module.css` imports scene, heading, countdown, and responsive rules in order.
 
@@ -37,6 +37,6 @@ The carousel hook owns pointer tracking, queued movement, and cloned-slide reset
 
 ## Build boundaries
 
-`astro.config.mjs` retains the existing `build/` output directory, production site URL, React integration, sitemap generation, and Partytown integration. `Layout.astro` reads event data during the build and only includes it on the home route. `public/` is copied without rewriting its paths.
+`astro.config.mjs` sets the `build/` output directory, production site URL, React integration, sitemap generation, and Partytown integration. `Layout.astro` reads event data during the build and only includes it on the home route. `public/` is copied without rewriting its paths.
 
 Python artwork tools are optional authoring tools. The site builds from checked-in images and never runs Python during `npm ci` or `npm run build`.

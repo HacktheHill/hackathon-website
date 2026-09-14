@@ -28,4 +28,4 @@ This command writes under `public/art/scene/responsive/` and `public/art/hero/re
 
 Runtime placement lives in `Scene/sceneLayers.ts`; the export manifest records source geometry. The logs have an intentional runtime placement adjustment to fit the video frame. Regenerating a manifest does not change that adjustment.
 
-Responsive dimensions round to whole pixels. Tests account for the small resulting aspect-ratio difference when checking the FAQ water overlap. Review image changes in both languages, with expanded FAQs, at mobile, tablet, desktop, and ultrawide sizes using the [comparison suite](../tests/README.md).
+Responsive dimensions round to whole pixels. Tests account for the small resulting aspect-ratio difference when checking the FAQ water overlap. Review image changes in both languages, with expanded FAQs, at mobile, tablet, desktop, and ultrawide sizes, and run the [browser checks](../tests/README.md).
