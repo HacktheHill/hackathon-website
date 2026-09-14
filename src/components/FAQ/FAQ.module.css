@@ -50,6 +50,7 @@
 	font-weight: 600;
 	cursor: pointer;
 	list-style: none;
+	border-radius: 0.5rem;
 	transition: color 0.2s ease;
 }
 
@@ -112,7 +113,7 @@
 
 .answer {
 	margin-left: 1.5rem;
-	padding: 0 1rem 1rem;
+	padding: 0.5rem 1rem 1rem;
 	font-weight: 400;
 	text-align: left;
 }
