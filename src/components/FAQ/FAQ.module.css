@@ -45,7 +45,7 @@
 .question {
 	display: flex;
 	align-items: center;
-	min-height: 48px;
+	padding-block: 0.5rem;
 	padding-inline: 1rem;
 	font-weight: 600;
 	cursor: pointer;
@@ -113,7 +113,7 @@
 
 .answer {
 	margin-left: 1.5rem;
-	padding: 0.5rem 1rem 1rem;
+	padding: 0.875rem 1rem 1rem;
 	font-weight: 400;
 	text-align: left;
 }
@@ -130,19 +130,11 @@
 	.question-container {
 		margin-block: 5px;
 	}
-
-	.question {
-		min-height: 42px;
-	}
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
 	.question-container {
 		margin-block: 2px;
-	}
-
-	.question {
-		min-height: 36px;
 	}
 }
 
