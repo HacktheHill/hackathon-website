@@ -1,8 +1,8 @@
 # Refactor verification
 
-The reference is untouched `main` at `86c6552697c019a4262c0c8b1388c2ea4971aa55`. The local `2026-rebuild` branch merges that main into the existing rebuild branch, then records the refactor in separate conventional commits. At verification time, no commits had been pushed. The sibling `hackathon-website` checkout was not used as the reference or edited.
+The reference for the full comparison is untouched `main` at `86c6552697c019a4262c0c8b1388c2ea4971aa55`. The local `2026-rebuild` branch merges main into the existing rebuild branch, then records the refactor in separate conventional commits. A later main commit, `6fb5355b62f68e6c1e117119dc34bbbc3002540b`, fixes the npm 10 lockfile and is also merged. At verification time, no commits had been pushed. The sibling `hackathon-website` checkout was not used as the reference or edited.
 
-The checked application source tree is `90f0eb920b6e6016f8f9b92e98ad91cf874fc2e3`. Checks finished on September 13, 2026, on macOS with Node 24.15.0 and npm 11.12.1. Remote main and rebuild tips were unchanged at the final check.
+The checked application source tree is `90f0eb920b6e6016f8f9b92e98ad91cf874fc2e3`. Checks finished on September 13, 2026, on macOS with Node 24.15.0. Final clean installs passed with npm 10.9.9 and 11.12.1.
 
 The final review before PR preparation checked the extracted hooks, content modules, image helpers, dependency changes, and deployment boundaries. It removed one extra blank line in the Python helper. The application source tree remains the one tested below, and `git diff --check` passes.
 
@@ -20,7 +20,7 @@ The final review before PR preparation checked the extracted hooks, content modu
 | Home and 404 metadata, including structured data                | Identical to main                                                             |
 | Generated sitemaps                                              | Byte-identical to main                                                        |
 | Remaining translations                                          | All 110 English and 110 French keys used; values identical to main            |
-| Retained dependency versions, resolutions, and integrity hashes | Unchanged; 54 unused lockfile entries removed                                 |
+| Retained dependency versions, resolutions, and integrity hashes | Unchanged against current main; 52 unused lockfile entries removed            |
 | Python shared PSD traversal                                     | Compiled and checked against the original helper with synthetic nested groups |
 
 The behavior suite covers responsive artwork selection and positioning, FAQ expansion, language switching, countdown phases and focus, carousel controls and swipes, particles, the video frame, and the newsletter form. Newsletter tests mock the endpoint and verify the request body and response handling. They send no real subscriptions.
@@ -43,6 +43,14 @@ Local evidence is in `test-results/parity/`, `test-results/parity-recheck/`, and
 The FAQ interaction case waits for the existing 48px footer clearance after opening each answer. Opening another answer while the previous resize update was still pending produced different extension heights on unchanged main. The comparison waits for that visible layout update before sending the next keypress. Production calculations are unchanged.
 
 Chrome was also inspected through Computer Use at desktop and mobile sizes. The local Chrome profile blocks JavaScript on the preview origin. Live interaction review in that profile is pending permission to allow JavaScript; automated browser interaction tests passed independently.
+
+## Final main sync
+
+Main's npm 10 fix restores valid optional peer entries for nested Prettier and YAML packages. The merge keeps those entries, resolving conflicts with the earlier dependency cleanup. Separate clean checkouts passed `npm ci`, lint, type checking, and production builds after installation with npm 10.9.9 and npm 11.12.1. Neither install changed the lockfile.
+
+Both candidate builds match the previously tested build except for Astro's internal island UID in `index.html`. All other 333 files are byte-identical. A fresh npm 10 build of current main likewise matches the original reference except for that UID, with 334 other files byte-identical. The comparison record is `test-results/verification/main-sync-builds.json`.
+
+After this merge, 24 fresh Chromium and Firefox comparisons passed against `6fb5355`, covering both languages, phone and desktop home pages, expanded FAQs, carousel movement, and countdown interaction. Captures are in `test-results/parity-main-sync/`.
 
 ## Scope and deployment limits
 
