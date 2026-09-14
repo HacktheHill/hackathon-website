@@ -1,9 +1,9 @@
 # Browser checks
 
-`npm run test:e2e` builds the site, serves it on port 4338, and runs the behavioral checks in Chromium and Firefox. The suites are grouped by the page area they exercise. `helpers/time.ts` supplies the fixed date used by countdown checks.
+`npm run test:e2e` builds the site, serves it on port 4338, and runs the Playwright suites in Chromium and Firefox. Each file under `e2e/` covers one area of the page. The countdown suite pins the clock to the date in `helpers/time.ts` so its results do not depend on when it runs.
 
-The footer tests intercept the subscription endpoint. They check the POST body, disabled pending state, duplicate submission guard, accepted response, error responses, network failure, and editing after an error in both languages. They do not contact the subscription service.
+The footer suite intercepts the subscription endpoint and never contacts the real service. It checks the POST body, the disabled input while a request is pending, the guard against double submission, the accepted response, each error response, a network failure, and editing the address after an error, in both languages.
 
-## Water continuation assertion
+## Water overlap in the FAQ test
 
-The FAQ expansion test waits for the selected water image to decode. Responsive WebP dimensions round to whole pixels, so their aspect ratio can differ slightly from the source image's declared dimensions. The test subtracts that measured height difference before checking the intended 2px overlap to 0.05px precision, and separately rejects a gap. This fixes an assertion that failed on unchanged main when the 1920px image finished loading.
+The FAQ expansion test waits for the selected water image to decode before measuring. Responsive WebP variants have whole-pixel dimensions, so their aspect ratio can differ slightly from the source image. The test subtracts that measured height difference, then checks for the intended 2px overlap to 0.05px and separately fails on any gap. Without that adjustment the assertion failed whenever the 1920px variant was the one that loaded.

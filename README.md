@@ -1,17 +1,17 @@
 # Hack the Hill website
 
-The 2026 event website at [hackthehill.com](https://hackthehill.com). Astro builds two static pages. React handles the home page's language switch, countdown, carousel, particles, and subscription form.
+Source for [hackthehill.com](https://hackthehill.com), the 2026 event site. Astro builds two static pages, the home page and a 404. React runs on the home page for the language switch, countdown, testimonial carousel, particles, and newsletter form. Nothing else is dynamic.
 
 ## Run locally
 
-Use Node 22.12 or newer and npm 9.6.5 or newer. The refactor was checked with Node 24.15 and npm 11.12.
+You need Node 22.12 or newer and npm 9.6.5 or newer.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open `http://localhost:4321`. There are no environment variables or backend services to configure for local rendering. The newsletter form uses a live external endpoint; browser tests mock it.
+The site is served at `http://localhost:4321`. No environment variables or backend services are needed to render it. The newsletter form posts to the live subscription service, so avoid submitting real addresses while testing by hand. The browser tests mock that endpoint.
 
 ## Find the code
 
@@ -37,10 +37,10 @@ src/
   assets/            Imported images, processed by Astro
 public/              Files served at stable URLs, including scene artwork
 scripts/             Optional artwork export tools
-tests/               Browser behavior and original-versus-refactor comparisons
+tests/               Browser behavior checks
 ```
 
-Each component keeps its own styles. Stateful browser behavior lives in a named hook next to the component. Content lists live next to their renderer.
+Each component owns its styles. Browser behavior with state lives in a hook next to the component that uses it, and content lists sit next to whatever renders them.
 
 ## Common edits
 
@@ -56,7 +56,7 @@ Each component keeps its own styles. Stateful browser behavior lives in a named 
 | Social metadata and canonical URLs       | `src/layouts/Layout.astro`                       |
 | Event structured data                    | `public/structured-data.json`                    |
 
-For an event date change, update the countdown, both locales, layout description, and structured data together. These files serve different output formats; changing one does not update the others.
+An event date change touches four places: the countdown dates, both locale files, the layout description, and the structured data. They are separate output formats, so updating one does not update the others.
 
 ## Check a change
 
@@ -67,14 +67,14 @@ npm run build
 npm run test:e2e
 ```
 
-Install the test browsers once with `npx playwright install chromium firefox`. The production build goes to `build/`. `npm run preview` serves that build locally.
+Run `npx playwright install chromium firefox` once to get the test browsers. `npm run build` writes to `build/`, and `npm run preview` serves that folder.
 
-[Architecture](docs/architecture.md) explains the scene and component boundaries. [Browser checks](tests/README.md) explains the test suites. [Artwork](docs/assets.md) covers optional Python tools.
+For more detail, [architecture](docs/architecture.md) explains how the scene and components fit together, [browser checks](tests/README.md) describes the test suites, and [artwork](docs/assets.md) covers the optional Python export tools.
 
-The repository's GitHub Actions workflow reviews dependency changes. It does not run these local build and browser checks. Deployment configuration and public files remain unchanged by this refactor.
+The only GitHub Actions workflow reviews dependency changes. Lint, type checks, the build, and the browser tests run locally.
 
 ## Contributing
 
-External contributions are not currently accepted. Team members should read the [contribution guidelines](https://github.com/HacktheHill/.github/blob/main/CONTRIBUTING.md). Contact [development@hackthehill.com](mailto:development@hackthehill.com).
+External contributions are not accepted at the moment. Team members should read the [contribution guidelines](https://github.com/HacktheHill/.github/blob/main/CONTRIBUTING.md). Questions go to [development@hackthehill.com](mailto:development@hackthehill.com).
 
 Copyright © 2023 Hack the Hill. All Rights Reserved.
