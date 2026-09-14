@@ -38,8 +38,15 @@ export default function SceneArtwork({ artworkRef }: SceneArtworkProps) {
 				<Fragment key={layer.name}>
 					<picture>
 						<source
+							type="image/avif"
 							media="(min-width: 1025px)"
-							srcSet={sceneLayerSrcSet(layer)}
+							srcSet={sceneLayerSrcSet(layer, "avif")}
+							sizes={sceneLayerSizes(layer)}
+						/>
+						<source
+							type="image/webp"
+							media="(min-width: 1025px)"
+							srcSet={sceneLayerSrcSet(layer, "webp")}
 							sizes={sceneLayerSizes(layer)}
 						/>
 						<img
@@ -63,8 +70,15 @@ export default function SceneArtwork({ artworkRef }: SceneArtworkProps) {
 					{layer.name === "ice-1" && (
 						<picture>
 							<source
+								type="image/avif"
 								media="(min-width: 1025px)"
-								srcSet={sceneLayerSrcSet(layer)}
+								srcSet={sceneLayerSrcSet(layer, "avif")}
+								sizes={sceneLayerSizes(layer)}
+							/>
+							<source
+								type="image/webp"
+								media="(min-width: 1025px)"
+								srcSet={sceneLayerSrcSet(layer, "webp")}
 								sizes={sceneLayerSizes(layer)}
 							/>
 							<img

@@ -10,12 +10,12 @@ export default function HeroLayerPicture({
 	media?: readonly string[];
 	highPriority?: boolean;
 }) {
-	const srcSet = heroLayerSrcSet(asset);
 	return (
 		<picture className={styles["hero-layer-picture"]}>
-			{media.map(query => (
-				<source key={query} media={query} srcSet={srcSet} sizes={asset.sizes} />
-			))}
+			{media.flatMap(query => [
+				<source key={`${query}-avif`} type="image/avif" media={query} srcSet={heroLayerSrcSet(asset, "avif")} sizes={asset.sizes} />,
+				<source key={`${query}-webp`} type="image/webp" media={query} srcSet={heroLayerSrcSet(asset, "webp")} sizes={asset.sizes} />
+			])}
 			<img
 				className={styles["hero-layer-image"]}
 				data-hero-layer={asset.name}
