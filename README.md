@@ -1,10 +1,10 @@
-# Hack the Hill website
+# Hack the Hill Website
 
 The 2026 event website at [hackthehill.com](https://hackthehill.com). Astro builds two static pages. React handles the home page's language switch, countdown, carousel, particles, and subscription form.
 
 ## Run locally
 
-Use Node 22.12 or newer and npm 9.6.5 or newer. The refactor was checked with Node 24.15 and npm 11.12.
+Use Node 22.12 or newer and npm 9.6.5 or newer.
 
 ```sh
 npm ci
@@ -28,6 +28,7 @@ src/
     Testimonials/    Carousel markup, behavior, and content
     Sponsors/        Organization list and logo rendering
     FAQ/             Native details/summary accordions
+    ParticleEffects/ Falling leaves, snow, and bubbles
     Footer/          Social links and newsletter subscription
     Navigation/      Header and language switch
     Button/          Shared link/button styling
@@ -37,7 +38,7 @@ src/
   assets/            Imported images, processed by Astro
 public/              Files served at stable URLs, including scene artwork
 scripts/             Optional artwork export tools
-tests/               Browser behavior and original-versus-refactor comparisons
+tests/               Browser behavior checks
 ```
 
 Each component keeps its own styles. Stateful browser behavior lives in a named hook next to the component. Content lists live next to their renderer.
@@ -71,10 +72,16 @@ Install the test browsers once with `npx playwright install chromium firefox`. T
 
 [Architecture](docs/architecture.md) explains the scene and component boundaries. [Browser checks](tests/README.md) explains the test suites. [Artwork](docs/assets.md) covers optional Python tools.
 
-The repository's GitHub Actions workflow reviews dependency changes. It does not run these local build and browser checks. Deployment configuration and public files remain unchanged by this refactor.
+The repository's GitHub Actions workflow reviews dependency changes. It does not run these local build and browser checks.
 
 ## Contributing
 
-External contributions are not currently accepted. Team members should read the [contribution guidelines](https://github.com/HacktheHill/.github/blob/main/CONTRIBUTING.md). Contact [development@hackthehill.com](mailto:development@hackthehill.com).
+We appreciate your interest, but please note that we currently do not accept external contributions.
+
+If you're part of the Hack the Hill team, refer to our [Contribution guidelines](https://github.com/HacktheHill/.github/blob/main/CONTRIBUTING.md).
+
+## Contact
+
+For questions or inquiries, please reach out to [development@hackthehill.com](mailto:development@hackthehill.com).
 
 Copyright © 2023 Hack the Hill. All Rights Reserved.
