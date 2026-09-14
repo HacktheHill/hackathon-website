@@ -1,10 +1,13 @@
 import { type FormEvent, useRef, useState } from "react";
+import { locale } from "@/i18n";
+import { useStore } from "@nanostores/react";
 
 const SUBSCRIBE_ENDPOINT = "https://emails.hackthehill.com/subscribe";
 
 type SubscriptionState = "idle" | "submitting" | "accepted" | "invalid" | "rate-limited" | "failed";
 
 export function useSubscription() {
+	const currentLocale = useStore(locale);
 	const [email, setEmail] = useState("");
 	const [subscriptionState, setSubscriptionState] = useState<SubscriptionState>("idle");
 	const submittingRef = useRef(false);
@@ -22,7 +25,7 @@ export function useSubscription() {
 					Accept: "application/json",
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ email: email.trim(), consent: true }),
+				body: JSON.stringify({ email: email.trim(), consent: true, lang: currentLocale }),
 			});
 
 			if (response.status === 202) {
