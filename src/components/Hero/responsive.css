@@ -40,10 +40,6 @@
 		--logo-w: clamp(165px, 52vw, 270px);
 	}
 
-	.countdown-dialog {
-		padding-inline: 2rem;
-	}
-
 	.countdown-unit {
 		position: absolute;
 		width: 1px;
@@ -56,8 +52,19 @@
 		border: 0;
 	}
 
-	.countdown-item:not(:last-child) .countdown-value::after {
+		.countdown-item {
+		position: relative;
+	}
+
+	.countdown-item:not(:last-child)::after {
 		content: ":";
+		position: absolute;
+		right: -0.5rem;
+		top: 50%;
+		transform: translate(50%, -50%);
+		color: var(--dark-red);
+		font-family: Rubik;
+		font-size: 1.17em;
 	}
 
 	/* The top bank stays entirely above the protected text lane. Cloud 2 takes

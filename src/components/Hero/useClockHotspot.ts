@@ -19,6 +19,25 @@ export function useClockHotspot(countdownAvailable: boolean) {
 		if (!foreground || !hotspot) return;
 
 		const place = () => {
+			if (window.matchMedia("(min-width: 1025px)").matches) {
+				const towerEl = document.querySelector('[data-scene-layer="parliament-tower"]');
+				if (towerEl) {
+					const towerRect = towerEl.getBoundingClientRect();
+					const fgRect = foreground.getBoundingClientRect();
+					
+					const clockWidth = towerRect.width * 0.50;
+					const clockHeight = clockWidth; // Make it a square
+					const clockX = towerRect.left - fgRect.left + towerRect.width * 0.485;
+					const clockY = towerRect.top - fgRect.top + towerRect.height * 0.385;
+					
+					hotspot.style.left = `${clockX}px`;
+					hotspot.style.top = `${clockY}px`;
+					hotspot.style.width = `${clockWidth}px`;
+					hotspot.style.height = `${clockHeight}px`;
+				}
+				return;
+			}
+
 			const containerWidth = foreground.clientWidth;
 			const containerHeight = foreground.clientHeight;
 			if (!containerWidth || !containerHeight) return;
@@ -53,7 +72,11 @@ export function useClockHotspot(countdownAvailable: boolean) {
 		place();
 		const observer = new ResizeObserver(place);
 		observer.observe(foreground);
-		return () => observer.disconnect();
+		window.addEventListener("scroll", place, { passive: true });
+		return () => {
+			observer.disconnect();
+			window.removeEventListener("scroll", place);
+		};
 	}, [countdownAvailable]);
 
 	return { foregroundRef, hotspotRef };
