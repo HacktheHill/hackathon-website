@@ -69,7 +69,7 @@ npm run test:e2e
 
 Install the test browsers once with `npx playwright install chromium firefox`. The production build goes to `build/`. `npm run preview` serves that build locally.
 
-[Architecture](docs/architecture.md) explains the scene and component boundaries. [Browser checks](tests/README.md) explains the full comparison against main. [Artwork](docs/assets.md) covers optional Python tools. [Refactor verification](docs/verification.md) records the baseline, results, and remaining limits.
+[Architecture](docs/architecture.md) explains the scene and component boundaries. [Browser checks](tests/README.md) explains the test suites. [Artwork](docs/assets.md) covers optional Python tools.
 
 The repository's GitHub Actions workflow reviews dependency changes. It does not run these local build and browser checks. Deployment configuration and public files remain unchanged by this refactor.
 
