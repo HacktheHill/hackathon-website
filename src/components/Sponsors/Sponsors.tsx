@@ -31,7 +31,7 @@ function Sponsors() {
 					</div>
 				</div>
 
-				<div className={styles["icons"]}>
+				<div className={styles.icons}>
 					{VISIBLE_SPONSOR_ROWS.map((tiers, rowIndex) => (
 						<div
 							key={tiers.join("-")}
@@ -86,23 +86,26 @@ function Sponsors() {
 					{t("collaborators.title")}
 				</h2>
 				<div className={`${styles["icons-row"]} ${styles["collaborator-icons"]}`}>
-					{data.collaborators.map((sponsor, i) => (
+					{data.collaborators.map(collaborator => (
 						<a
-							key={i}
-							href={sponsor.href}
+							key={collaborator.href}
+							href={collaborator.href}
 							target="_blank"
 							rel="noreferrer"
 							className={styles["collaborator-card"]}
+							data-collaborator-card
 							data-aos="fade-up"
 							data-aos-duration="800"
 						>
 							<img
-								className={`${styles["icon"]} ${styles["icon-medium"]}`}
-								alt={currentLocale === "fr" ? `Logo de ${sponsor.alt}` : `${sponsor.alt} logo`}
-								src={sponsor.src}
+								className={`${styles.icon} ${styles["icon-medium"]}`}
+								alt={
+									currentLocale === "fr" ? `Logo de ${collaborator.alt}` : `${collaborator.alt} logo`
+								}
+								src={collaborator.src}
 								loading="lazy"
 								decoding="async"
-							></img>
+							/>
 						</a>
 					))}
 				</div>

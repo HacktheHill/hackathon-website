@@ -49,12 +49,12 @@ export default {
 		p5tag: "Organisers",
 	},
 	sponsors: {
-		title: "Past Sponsors",
-		p: "Hack the Hill's past editions were made possible by these generous sponsors. Interested in supporting the capital's hackathon?",
+		title: "Sponsors",
+		p: "Hack the Hill is made possible by these generous sponsors. Interested in supporting the capital's hackathon?",
 		button: "Become a Sponsor",
 	},
 	collaborators: {
-		title: "Past Collaborators",
+		title: "Collaborators",
 	},
 	testimonials: {
 		title: "What Past Partners Say",
