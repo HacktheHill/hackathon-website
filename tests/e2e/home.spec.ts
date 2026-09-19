@@ -990,7 +990,8 @@ test("sponsor logos keep a visible inset inside their snowbanks", async ({ page 
 				const logoBox = logo.getBoundingClientRect();
 				const snowbankBox = snowbank.getBoundingClientRect();
 				const cardBox = card.getBoundingClientRect();
-				const horizontalSafeInset = cardBox.width * 0.14;
+				const horizontalSafeInset =
+					card.getAttribute("data-sponsor-tier") === "small" ? cardBox.width * 0.07 : cardBox.width * 0.14;
 				const verticalSafeInset = cardBox.height * 0.18;
 				const contained =
 					logoBox.left >= cardBox.left + horizontalSafeInset &&
@@ -1045,11 +1046,11 @@ test("current sponsor rows preserve their order and descending card scale", asyn
 
 	expect(measurements.largest.card).toBeCloseTo(0.48, 2);
 	expect(measurements.large.card).toBeCloseTo(0.32, 2);
-	expect(measurements.small.card).toBeCloseTo(0.18, 2);
+	expect(measurements.small.card).toBeCloseTo(0.24, 2);
 	expect(measurements.largest.card).toBeGreaterThan(measurements.large.card);
 	expect(measurements.large.card).toBeGreaterThan(measurements.small.card);
-	for (const measurement of Object.values(measurements)) {
-		expect(measurement.logo).toBeCloseTo(0.7, 2);
+	for (const [tier, measurement] of Object.entries(measurements)) {
+		expect(measurement.logo).toBeCloseTo(tier === "small" ? 0.84 : 0.7, 2);
 		expect(measurement.snowbank).toBeCloseTo(1.08, 2);
 	}
 });

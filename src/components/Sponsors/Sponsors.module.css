@@ -110,7 +110,11 @@
 }
 
 .sponsor-card[data-sponsor-tier="small"] {
-	--sponsor-card-width: 18%;
+	--sponsor-card-width: 24%;
+}
+
+.sponsor-card[data-sponsor-tier="small"] .icon {
+	width: 84%;
 }
 
 .sponsor-card[data-sponsor-tier="large"] {
@@ -271,7 +275,7 @@
 	}
 
 	.sponsor-card[data-sponsor-tier="small"] {
-		--sponsor-card-width: 32%;
+		--sponsor-card-width: 36%;
 	}
 
 	.sponsor-card[data-sponsor-tier="large"] {
