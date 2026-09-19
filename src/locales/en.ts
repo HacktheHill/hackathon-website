@@ -187,7 +187,7 @@ export default {
 		button: "Become a Sponsor",
 	},
 	collaborators: {
-		title: "Past Collaborators",
+		title: "Collaborators",
 	},
 	testimonials: {
 		title: "What Past Partners Say",

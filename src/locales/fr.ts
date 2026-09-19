@@ -196,7 +196,7 @@ export default {
 		button: "Devenir commanditaire",
 	},
 	collaborators: {
-		title: "Anciens collaborateurs",
+		title: "Collaborateurs",
 	},
 	testimonials: {
 		title: "Ce que disent nos anciens partenaires",
