@@ -49,12 +49,12 @@ export default {
 		p5tag: "Organisateurs",
 	},
 	sponsors: {
-		title: "Anciens commanditaires",
-		p: "Les éditions précédentes de Hack the Hill ont été rendues possibles grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale canadienne?",
+		title: "Commanditaires",
+		p: "Hack the Hill est rendu possible grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale canadienne?",
 		button: "Devenir commanditaire",
 	},
 	collaborators: {
-		title: "Anciens collaborateurs",
+		title: "Collaborateurs",
 	},
 	testimonials: {
 		title: "Ce que disent nos anciens partenaires",
@@ -142,7 +142,8 @@ export default {
 		q13: "Comment les participants sont-ils sélectionnés?",
 		a13: "Voir nos",
 		a13_link: "Critères d’admission des participants",
-		a13_url: "https://docs.google.com/document/d/1Pl9Hy90uE-gACaZmU4EsFSf6r-zUQjjJHkUiGyspWpU/edit?tab=t.60aujav4edjk",
+		a13_url:
+			"https://docs.google.com/document/d/1Pl9Hy90uE-gACaZmU4EsFSf6r-zUQjjJHkUiGyspWpU/edit?tab=t.60aujav4edjk",
 	},
 	footer: {
 		subscribe: "Recevoir des nouvelles",

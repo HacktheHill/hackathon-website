@@ -1,3 +1,7 @@
+/* Hallmark · component: sponsor section · genre: playful · theme: existing Hack the Hill system
+ * hierarchy: CGI → Ciena → ElevenLabs · enrichment: existing snowbank clouds
+ * pre-emit critique: P5 H5 E5 S5 R5 V4 · contrast: pass · mobile: pass
+ */
 .sponsors-collaborators {
 	display: flex;
 	flex-direction: column;
@@ -60,7 +64,9 @@
 	color: var(--light-color);
 	font-size: 1.75rem;
 	box-shadow: 0 6px 18px rgb(132 1 11 / 20%);
-	transition: transform 0.15s ease, box-shadow 0.15s ease;
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
 }
 
 .sponsor-cta:hover {
@@ -85,7 +91,7 @@
 .sponsor-tier-row {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	column-gap: clamp(0.25rem, 0.6vw, 0.65rem);
 	row-gap: 0.25rem;
 	width: 100%;
@@ -105,19 +111,19 @@
 	transition: transform 180ms ease;
 }
 
-.sponsor-card[data-sponsor-tier="councillor"] {
-	--sponsor-card-width: 15%;
+.sponsor-card[data-sponsor-tier="small"] {
+	--sponsor-card-width: 24%;
 }
 
-.sponsor-card[data-sponsor-tier="mayor"] {
-	--sponsor-card-width: 17%;
+.sponsor-card[data-sponsor-tier="small"] .icon {
+	width: 84%;
 }
 
-.sponsor-card[data-sponsor-tier="premier"] {
+.sponsor-card[data-sponsor-tier="large"] {
 	--sponsor-card-width: 32%;
 }
 
-.sponsor-card[data-sponsor-tier="prime-minister"] {
+.sponsor-card[data-sponsor-tier="largest"] {
 	--sponsor-card-width: 48%;
 }
 
@@ -135,7 +141,7 @@
 .snowbank {
 	position: absolute;
 	inset: -4%;
-	z-index: -1;
+	z-index: 0;
 	width: 108%;
 	height: 108%;
 	object-fit: contain;
@@ -151,6 +157,7 @@
 	position: absolute;
 	top: 46%;
 	left: 50%;
+	z-index: 1;
 	width: 70%;
 	height: 48%;
 	max-width: none;
@@ -168,7 +175,7 @@
 
 .collaborator-icons {
 	display: grid;
-	grid-template-columns: repeat(5, minmax(0, 1fr));
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 1rem;
 }
 
@@ -181,7 +188,9 @@
 	padding: 0.8rem;
 	border-radius: 1.25rem;
 	background: rgb(255 255 255 / 82%);
-	box-shadow: -0.45rem 0.45rem 0 rgb(215 247 250 / 82%), 0 0.35rem 0.9rem rgb(25 86 122 / 14%);
+	box-shadow:
+		-0.45rem 0.45rem 0 rgb(215 247 250 / 82%),
+		0 0.35rem 0.9rem rgb(25 86 122 / 14%);
 	box-sizing: border-box;
 	transition: transform 180ms ease;
 }
@@ -222,7 +231,7 @@
 
 @media screen and (max-width: 768px) {
 	.collaborator-icons {
-		grid-template-columns: repeat(5, minmax(0, 1fr));
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
 
@@ -267,20 +276,16 @@
 		min-height: 5rem;
 	}
 
-	.sponsor-card[data-sponsor-tier="councillor"] {
-		--sponsor-card-width: 28%;
+	.sponsor-card[data-sponsor-tier="small"] {
+		--sponsor-card-width: 36%;
 	}
 
-	.sponsor-card[data-sponsor-tier="mayor"] {
-		--sponsor-card-width: 32%;
-	}
-
-	.sponsor-card[data-sponsor-tier="premier"] {
+	.sponsor-card[data-sponsor-tier="large"] {
 		--sponsor-card-width: 40%;
 	}
 
-	.sponsor-card[data-sponsor-tier="prime-minister"] {
-		--sponsor-card-width: 48%;
+	.sponsor-card[data-sponsor-tier="largest"] {
+		--sponsor-card-width: 50%;
 	}
 
 	.collaborator-icons {

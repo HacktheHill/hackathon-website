@@ -61,3 +61,45 @@ test("mobile sections do not overlap", async ({ page }) => {
 		expect(boxes[index].top).toBeGreaterThanOrEqual(boxes[index - 1].bottom - 1);
 	}
 });
+
+test("current sponsors and collaborators render in the approved order", async ({ page }) => {
+	await page.setViewportSize({ width: 1440, height: 900 });
+	await page.goto("/");
+
+	await expect(page.getByRole("heading", { name: "Sponsors", exact: true })).toBeVisible();
+	await expect(page.getByRole("heading", { name: "Collaborators", exact: true })).toBeVisible();
+
+	const sponsorCards = page.locator("[data-sponsor-card]");
+	await expect(sponsorCards).toHaveCount(3);
+	expect(await sponsorCards.first().getAttribute("data-sponsor-tier")).toBe("largest");
+	expect(await sponsorCards.nth(1).getAttribute("data-sponsor-tier")).toBe("large");
+	expect(await sponsorCards.nth(2).getAttribute("data-sponsor-tier")).toBe("small");
+	expect(
+		await sponsorCards
+			.locator('img:not([aria-hidden="true"])')
+			.evaluateAll(images => images.map(image => image.getAttribute("alt"))),
+	).toEqual(["CGI logo", "Ciena logo", "ElevenLabs logo"]);
+	await expect(sponsorCards.locator('img[aria-hidden="true"]')).toHaveCount(3);
+
+	const sponsorWidths = await sponsorCards.evaluateAll(cards =>
+		cards.map(card => card.getBoundingClientRect().width),
+	);
+	expect(sponsorWidths[0]).toBeGreaterThan(sponsorWidths[1]);
+	expect(sponsorWidths[1]).toBeGreaterThan(sponsorWidths[2]);
+
+	await expect(page.locator("[data-collaborator-card]")).toHaveCount(8);
+	expect(
+		await page
+			.locator("[data-collaborator-card] img")
+			.evaluateAll(images => images.map(image => image.getAttribute("alt"))),
+	).toEqual([
+		"uOttawa logo",
+		"Engineering Students' Society logo",
+		"Engineering Endowment Fund logo",
+		"IEEE uOttawa logo",
+		"Software Engineering Students' Association logo",
+		"UOSU logo",
+		"uODPA APNuO logo",
+		"Carleton AI Society logo",
+	]);
+});
