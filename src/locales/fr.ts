@@ -191,8 +191,8 @@ export default {
 		},
 	},
 	sponsors: {
-		title: "Anciens commanditaires",
-		p: "Les éditions précédentes de Hack the Hill ont été rendues possibles grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale canadienne?",
+		title: "Commanditaires",
+		p: "Hack the Hill est rendu possible grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale canadienne?",
 		button: "Devenir commanditaire",
 	},
 	collaborators: {

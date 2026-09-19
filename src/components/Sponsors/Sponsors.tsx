@@ -2,15 +2,11 @@ import { locale, t } from "@/i18n";
 import { useStore } from "@nanostores/react";
 import Button from "../Button/Button.jsx";
 import styles from "./Sponsors.module.css";
-import Ross from "@/assets/Logos/Ross.svg?url";
+import CGI from "@/assets/Logos/CGI.svg?url";
 import Ciena from "@/assets/Logos/Ciena.svg?url";
-import CSE from "@/assets/Logos/CSE.svg?url";
+import ElevenLabs from "@/assets/Logos/ElevenLabs.svg?url";
 import ESS from "@/assets/Logos/ESS.svg?url";
-import PG from "@/assets/Logos/P&G.svg?url";
-import LiquidIV from "@/assets/Logos/LiquidIV.webp?url";
-import Redbull from "@/assets/Logos/Redbull.svg?url";
 import SESA from "@/assets/Logos/SESA.svg?url";
-import Fantuan from "@/assets/Logos/Fantuan.webp?url";
 
 import CCSS from "@/assets/Logos/ccss.png?url";
 import Carleton from "@/assets/Logos/Carleton.svg?url";
@@ -27,15 +23,6 @@ import uOGDC from "@/assets/Logos/uOttawaGDC.svg?url";
 import uOEngiqueers from "@/assets/Logos/uOEngiqueers.svg?url";
 import DEsocCarleton from "@/assets/Logos/desocCarleton.webp?url";
 
-const Blackberry = "/Logos/Blackberry.svg";
-const CanadianTire = "/Logos/CanadianTire.svg";
-const Google = "/Logos/Google.svg";
-const Vercel = "/Logos/Vercel.svg";
-const DigitalOcean = "/Logos/DigitalOcean.svg";
-const Echo3d = "/Logos/echo3d.webp";
-const Balsamiq = "/Logos/balsamiq.svg";
-const Voiceflow = "/Logos/voiceflow.svg";
-const Lonehaven = "/Logos/Lonehaven.svg";
 const Ceed = "/Logos/ceed.svg";
 const Law = "/Logos/Law.svg";
 const CSClub = "/Logos/CSClub.svg";
@@ -46,44 +33,20 @@ const SNOWBANKS = Array.from(
 );
 
 type Organization = { href: string; src: string; alt: string };
-type SponsorTier = "backbencher" | "councillor" | "mayor" | "premier" | "prime-minister";
+type Sponsor = Organization & { size: "largest" | "large" | "small" };
 type SponsorData = {
-	sponsors: Record<SponsorTier, Organization[]>;
+	sponsors: Sponsor[];
 	collaborators: Organization[];
 };
-const VISIBLE_SPONSOR_ROWS: SponsorTier[][] = [["prime-minister"], ["premier"], ["mayor", "councillor"]];
 
 function Sponsors() {
 	const currentLocale = useStore(locale);
 	const data: SponsorData = {
-		sponsors: {
-			"prime-minister": [
-				{ href: "https://ciena.ca/", src: Ciena, alt: "Ciena" },
-				{ href: "https://www.rossvideo.com/", src: Ross, alt: "Ross" },
-			],
-			premier: [
-				{ href: "https://blackberry.com/", src: Blackberry, alt: "BlackBerry" },
-				{ href: "https://canadiantire.ca/", src: CanadianTire, alt: "Canadian Tire" },
-			],
-			mayor: [
-				{ href: "https://lonehaven.com/", src: Lonehaven, alt: "Lonehaven" },
-				{ href: "https://www.cse-cst.gc.ca/", src: CSE, alt: "CSE / CST" },
-			],
-			councillor: [
-				{ href: "https://redbull.com/", src: Redbull, alt: "Redbull" },
-				{ href: "https://www.liquid-iv.com/", src: LiquidIV, alt: "LiquidIV" },
-				{ href: "https://www.fantuan.ca/", src: Fantuan, alt: "Fantuan" },
-			],
-			backbencher: [
-				{ href: "https://www.pg.ca/en-ca/", src: PG, alt: "P&G" },
-				{ href: "https://about.google", src: Google, alt: "Google" },
-				{ href: "https://vercel.com/", src: Vercel, alt: "Vercel" },
-				{ href: "https://www.digitalocean.com/", src: DigitalOcean, alt: "DigitalOcean" },
-				{ href: "https://www.echo3d.com/", src: Echo3d, alt: "echo3D" },
-				{ href: "https://balsamiq.com/", src: Balsamiq, alt: "Balsamiq" },
-				{ href: "https://www.voiceflow.com/", src: Voiceflow, alt: "Voiceflow" },
-			],
-		},
+		sponsors: [
+			{ href: "https://www.cgi.com/", src: CGI, alt: "CGI", size: "largest" },
+			{ href: "https://www.ciena.ca/", src: Ciena, alt: "Ciena", size: "large" },
+			{ href: "https://elevenlabs.io/", src: ElevenLabs, alt: "ElevenLabs", size: "small" },
+		],
 		collaborators: [
 			{ href: "https://www2.uottawa.ca/en", src: uOttawa, alt: "University of Ottawa" },
 			{ href: "https://carleton.ca/", src: Carleton, alt: "Carleton University" },
@@ -139,43 +102,38 @@ function Sponsors() {
 				</div>
 
 				<div className={styles["icons"]}>
-					{VISIBLE_SPONSOR_ROWS.map((tiers, rowIndex) => (
+					{data.sponsors.map((sponsor, rowIndex) => (
 						<div
-							key={tiers.join("-")}
+							key={sponsor.href}
 							className={styles["sponsor-tier-row"]}
-							data-sponsor-tier-row={tiers.join(" ")}
+							data-sponsor-tier-row={sponsor.size}
 						>
-							{tiers
-								.flatMap(tier => data.sponsors[tier].map(sponsor => ({ sponsor, tier })))
-								.map(({ sponsor, tier }, index) => (
-									<a
-										key={sponsor.href}
-										href={sponsor.href}
-										target="_blank"
-										rel="noreferrer"
-										data-sponsor-card
-										data-sponsor-tier={tier}
-										className={styles["sponsor-card"]}
-										data-aos="fade-up"
-										data-aos-duration="800"
-									>
-										<img
-											className={styles.snowbank}
-											src={SNOWBANKS[(rowIndex + index) % SNOWBANKS.length]}
-											alt=""
-											aria-hidden="true"
-											loading="lazy"
-											decoding="async"
-										/>
-										<img
-											className={styles.icon}
-											alt={currentLocale === "fr" ? `Logo de ${sponsor.alt}` : `${sponsor.alt} logo`}
-											src={sponsor.src}
-											loading="lazy"
-											decoding="async"
-										/>
-									</a>
-								))}
+							<a
+								href={sponsor.href}
+								target="_blank"
+								rel="noreferrer"
+								data-sponsor-card
+								data-sponsor-tier={sponsor.size}
+								className={styles["sponsor-card"]}
+								data-aos="fade-up"
+								data-aos-duration="800"
+							>
+								<img
+									className={styles.snowbank}
+									src={SNOWBANKS[rowIndex % SNOWBANKS.length]}
+									alt=""
+									aria-hidden="true"
+									loading="lazy"
+									decoding="async"
+								/>
+								<img
+									className={styles.icon}
+									alt={currentLocale === "fr" ? `Logo de ${sponsor.alt}` : `${sponsor.alt} logo`}
+									src={sponsor.src}
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
 						</div>
 					))}
 				</div>

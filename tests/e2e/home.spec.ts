@@ -1007,17 +1007,21 @@ test("sponsor logos keep a visible inset inside their snowbanks", async ({ page 
 	}
 });
 
-test("sponsor tier rows scale their cards, clouds, and logos together", async ({ page }) => {
+test("current sponsor rows preserve their order and descending card scale", async ({ page }) => {
 	await page.setViewportSize({ width: 1440, height: 900 });
 	await page.goto("/");
 	await expect(page.locator("[data-sponsor-tier-row]")).toHaveCount(3);
-	await expect(page.locator('[data-sponsor-tier-row="backbencher"]')).toHaveCount(0);
 	const rowTiers = await page
 		.locator("[data-sponsor-tier-row]")
 		.evaluateAll(rows =>
 			rows.map(row => [...new Set(Array.from(row.children, card => card.getAttribute("data-sponsor-tier")))]),
 		);
-	expect(rowTiers).toEqual([["prime-minister"], ["premier"], ["mayor", "councillor"]]);
+	expect(rowTiers).toEqual([["largest"], ["large"], ["small"]]);
+	expect(
+		await page
+			.locator("[data-sponsor-card] img:not([aria-hidden])")
+			.evaluateAll(images => images.map(image => (image as HTMLImageElement).alt)),
+	).toEqual(["CGI logo", "Ciena logo", "ElevenLabs logo"]);
 
 	const measurements = await page.locator("[data-sponsor-card]").evaluateAll(cards => {
 		const sectionWidth = cards[0].parentElement!.getBoundingClientRect().width;
@@ -1039,12 +1043,11 @@ test("sponsor tier rows scale their cards, clouds, and logos together", async ({
 		);
 	});
 
-	expect(measurements.councillor.card).toBeCloseTo(0.15, 3);
-	expect(measurements.mayor.card).toBeCloseTo(0.17, 3);
-	const lowerTierMidpoint = (measurements.councillor.card + measurements.mayor.card) / 2;
-	expect(measurements.premier.card).toBeCloseTo(lowerTierMidpoint * 2, 3);
-	expect(measurements["prime-minister"].card).toBeCloseTo(lowerTierMidpoint * 3, 3);
-	expect(measurements["prime-minister"].card).toBeCloseTo(0.48, 2);
+	expect(measurements.largest.card).toBeCloseTo(0.48, 2);
+	expect(measurements.large.card).toBeCloseTo(0.32, 2);
+	expect(measurements.small.card).toBeCloseTo(0.18, 2);
+	expect(measurements.largest.card).toBeGreaterThan(measurements.large.card);
+	expect(measurements.large.card).toBeGreaterThan(measurements.small.card);
 	for (const measurement of Object.values(measurements)) {
 		expect(measurement.logo).toBeCloseTo(0.7, 2);
 		expect(measurement.snowbank).toBeCloseTo(1.08, 2);
