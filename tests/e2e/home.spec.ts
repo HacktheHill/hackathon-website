@@ -70,22 +70,24 @@ test("current sponsors and collaborators render in the approved order", async ({
 	await expect(page.getByRole("heading", { name: "Collaborators", exact: true })).toBeVisible();
 
 	const sponsorCards = page.locator("[data-sponsor-card]");
-	await expect(sponsorCards).toHaveCount(3);
+	await expect(sponsorCards).toHaveCount(4);
 	expect(await sponsorCards.first().getAttribute("data-sponsor-tier")).toBe("largest");
 	expect(await sponsorCards.nth(1).getAttribute("data-sponsor-tier")).toBe("large");
 	expect(await sponsorCards.nth(2).getAttribute("data-sponsor-tier")).toBe("small");
+	expect(await sponsorCards.nth(3).getAttribute("data-sponsor-tier")).toBe("small");
 	expect(
 		await sponsorCards
 			.locator('img:not([aria-hidden="true"])')
 			.evaluateAll(images => images.map(image => image.getAttribute("alt"))),
-	).toEqual(["CGI logo", "Ciena logo", "ElevenLabs logo"]);
-	await expect(sponsorCards.locator('img[aria-hidden="true"]')).toHaveCount(3);
+	).toEqual(["CGI logo", "Ciena logo", "ElevenLabs logo", "Backboard logo"]);
+	await expect(sponsorCards.locator('img[aria-hidden="true"]')).toHaveCount(4);
 
 	const sponsorWidths = await sponsorCards.evaluateAll(cards =>
 		cards.map(card => card.getBoundingClientRect().width),
 	);
-	expect(sponsorWidths[0]).toBeGreaterThan(sponsorWidths[1]);
+	expect(sponsorWidths[0]).toBeCloseTo(sponsorWidths[1] ?? 0, 0);
 	expect(sponsorWidths[1]).toBeGreaterThan(sponsorWidths[2]);
+	expect(sponsorWidths[2]).toBeCloseTo(sponsorWidths[3] ?? 0, 0);
 
 	await expect(page.locator("[data-collaborator-card]")).toHaveCount(8);
 	expect(

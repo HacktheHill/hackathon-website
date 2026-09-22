@@ -1,7 +1,3 @@
-/* Hallmark · component: sponsor section · genre: playful · theme: existing Hack the Hill system
- * hierarchy: CGI → Ciena → ElevenLabs · enrichment: existing snowbank clouds
- * pre-emit critique: P5 H5 E5 S5 R5 V4 · contrast: pass · mobile: pass
- */
 .sponsors-collaborators {
 	display: flex;
 	flex-direction: column;
@@ -116,11 +112,11 @@
 }
 
 .sponsor-card[data-sponsor-tier="small"] .icon {
-	width: 84%;
+	width: 68%;
 }
 
 .sponsor-card[data-sponsor-tier="large"] {
-	--sponsor-card-width: 32%;
+	--sponsor-card-width: 48%;
 }
 
 .sponsor-card[data-sponsor-tier="largest"] {
@@ -281,7 +277,7 @@
 	}
 
 	.sponsor-card[data-sponsor-tier="large"] {
-		--sponsor-card-width: 40%;
+		--sponsor-card-width: 50%;
 	}
 
 	.sponsor-card[data-sponsor-tier="largest"] {

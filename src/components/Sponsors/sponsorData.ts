@@ -1,4 +1,5 @@
 import CAIS from "@/assets/Logos/CAIS.svg?url";
+import Backboard from "@/assets/Logos/Backboard.svg?url";
 import CGI from "@/assets/Logos/CGI.svg?url";
 import Ciena from "@/assets/Logos/Ciena.svg?url";
 import EEF from "@/assets/Logos/EEF.svg?url";
@@ -25,7 +26,10 @@ export const sponsorData: SponsorData = {
 	sponsors: {
 		largest: [{ href: "https://www.cgi.com/", src: CGI, alt: "CGI" }],
 		large: [{ href: "https://www.ciena.ca/", src: Ciena, alt: "Ciena" }],
-		small: [{ href: "https://elevenlabs.io/", src: ElevenLabs, alt: "ElevenLabs" }],
+		small: [
+			{ href: "https://elevenlabs.io/", src: ElevenLabs, alt: "ElevenLabs" },
+			{ href: "https://backboard.io/", src: Backboard, alt: "Backboard" },
+		],
 	},
 	collaborators: [
 		{ href: "https://www.uottawa.ca/en", src: uOttawa, alt: "uOttawa" },
