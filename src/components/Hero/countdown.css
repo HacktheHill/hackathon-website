@@ -23,6 +23,26 @@
 	display: flex;
 }
 
+.countdown-close {
+	position: absolute;
+	top: 0.35rem;
+	right: 0.55rem;
+	width: 2rem;
+	height: 2rem;
+	border: 0;
+	background: transparent;
+	color: var(--dark-red);
+	font-size: 1.75rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.countdown-close:focus-visible {
+	border-radius: 0.25rem;
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
 .countdown-header {
 	color: var(--dark-red);
 	margin: 0;
@@ -54,4 +74,3 @@
 	font-weight: normal;
 	font-size: 1em;
 }
-

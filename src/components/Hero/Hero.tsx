@@ -18,8 +18,9 @@ function Hero() {
 		useCountdown();
 	const heroRef = useHeroParallax();
 	const { foregroundRef, hotspotRef } = useClockHotspot(countdownAvailable);
-		const applyBtnRef = useRef<HTMLAnchorElement>(null);
+	const applyBtnRef = useRef<HTMLAnchorElement>(null);
 	const dialogRef = useRef<HTMLDialogElement>(null);
+	const closeButtonRef = useRef<HTMLButtonElement>(null);
 
 	useEffect(() => {
 		if (!popupOpen) return;
@@ -45,7 +46,7 @@ function Hero() {
 				const centerYLocal = centerYScreen - heroRect.top;
 				dialogRef.current.style.top = `${centerYLocal}px`;
 			} else {
-				dialogRef.current.style.top = '';
+				dialogRef.current.style.top = "";
 			}
 		}
 	}, [popupOpen]);
@@ -104,13 +105,15 @@ function Hero() {
 						}}
 						onPointerLeave={event => {
 							if (event.pointerType === "touch") return;
+							const restoreFocus = dialogRef.current?.contains(document.activeElement);
 							setPopupOpen(false);
+							if (restoreFocus) requestAnimationFrame(() => hotspotRef.current?.focus());
 						}}
 						onPointerDown={event => event.stopPropagation()}
 						onClick={event => {
 							event.stopPropagation();
 							setPopupOpen(true);
-							
+							requestAnimationFrame(() => closeButtonRef.current?.focus());
 						}}
 					/>
 				)}
@@ -162,6 +165,18 @@ function Hero() {
 					aria-labelledby="countdown-heading"
 					onPointerDown={event => event.stopPropagation()}
 				>
+					<button
+						ref={closeButtonRef}
+						type="button"
+						className={styles["countdown-close"]}
+						aria-label={countdownCloseLabel}
+						onClick={() => {
+							setPopupOpen(false);
+							hotspotRef.current?.focus();
+						}}
+					>
+						&times;
+					</button>
 					<p id="countdown-heading" className={styles["countdown-header"]}>
 						{countdownHeading}
 					</p>
