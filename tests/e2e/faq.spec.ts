@@ -3,9 +3,9 @@ import { expect, test } from "@playwright/test";
 test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 	await page.goto("/");
 	const questions = page.locator("#faq details");
-	await questions.first().locator("summary").click();
+	await questions.first().locator("summary").press("Enter");
 	await expect(questions.first()).toHaveAttribute("open", "");
-	await questions.nth(1).locator("summary").click();
+	await questions.nth(1).locator("summary").press("Enter");
 	await expect(questions.first()).toHaveAttribute("open", "");
 	await expect(questions.nth(1)).toHaveAttribute("open", "");
 });
