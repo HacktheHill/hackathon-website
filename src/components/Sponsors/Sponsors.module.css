@@ -123,6 +123,10 @@
 	--sponsor-card-width: 48%;
 }
 
+.sponsor-card[data-sponsor-tier="largest"] .icon {
+	height: 52%;
+}
+
 .sponsor-card:hover,
 .sponsor-card:focus-visible {
 	transform: translateY(-0.35rem) scale(1.035);
