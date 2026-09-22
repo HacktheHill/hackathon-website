@@ -49,7 +49,7 @@ for (const locale of ["en", "fr"] as const) {
 				expect(requests[0].method).toBe("POST");
 				expect(requests[0].headers.accept).toBe("application/json");
 				expect(requests[0].headers["content-type"]).toBe("application/json");
-				expect(requests[0].body).toEqual({ email: "attendee@example.com", consent: true });
+				expect(requests[0].body).toEqual({ email: "attendee@example.com", consent: true, lang: locale });
 			} finally {
 				releaseResponse();
 			}

@@ -26,7 +26,7 @@ test("scene artwork has a themed fallback and uses viewport-aware loading", asyn
 	await expect(page.locator('[data-scene-layer="sky"]')).toHaveAttribute("decoding", "sync");
 	await expect(page.locator('[data-scene-layer="sky"]')).toHaveAttribute("fetchpriority", "high");
 	await expect(page.locator('[data-scene-layer="sky"]')).toHaveAttribute("width", "3049");
-	const skySource = page.locator('picture:has([data-scene-layer="sky"]) source');
+	const skySource = page.locator('picture:has([data-scene-layer="sky"]) source[type="image/webp"]');
 	await expect(skySource).toHaveAttribute(
 		"srcset",
 		/\/art\/scene\/responsive\/1280\/sky\.webp 1280w.*\/responsive\/1920\/sky\.webp 1920w.*\/art\/scene\/sky\.webp 3049w/,
@@ -36,7 +36,7 @@ test("scene artwork has a themed fallback and uses viewport-aware loading", asyn
 		.poll(() =>
 			page.locator('[data-scene-layer="sky"]').evaluate(element => (element as HTMLImageElement).currentSrc),
 		)
-		.toContain("/art/scene/responsive/1920/sky.webp");
+		.toContain("/art/scene/responsive/1920/sky.avif");
 	expect(
 		await page
 			.locator("[data-hero-layer]")
@@ -77,7 +77,7 @@ test("scene artwork has a themed fallback and uses viewport-aware loading", asyn
 
 test("mobile hero keeps its warm fallback while artwork is pending", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
-	const requestedWebps: string[] = [];
+	const requestedImages: string[] = [];
 	let releaseHeroImages!: () => void;
 	const heroImagesReleased = new Promise<void>(resolve => {
 		releaseHeroImages = resolve;
@@ -86,8 +86,8 @@ test("mobile hero keeps its warm fallback while artwork is pending", async ({ pa
 	const heroImageRequested = new Promise<void>(resolve => {
 		noteHeroImageRequest = resolve;
 	});
-	await page.route("**/*.webp", async route => {
-		requestedWebps.push(new URL(route.request().url()).pathname);
+	await page.route(/\.(?:avif|webp)$/, async route => {
+		requestedImages.push(new URL(route.request().url()).pathname);
 		noteHeroImageRequest();
 		await heroImagesReleased;
 		await route.continue();
@@ -102,17 +102,17 @@ test("mobile hero keeps its warm fallback while artwork is pending", async ({ pa
 	await page.waitForLoadState("load");
 	await expect(page.locator('[data-hero-layer="sky"]')).toHaveAttribute("loading", "eager");
 	await expect(page.locator('[data-hero-layer="sky"]')).toHaveAttribute("decoding", "auto");
-	const skySource = page.locator('picture:has([data-hero-layer="sky"]) source');
+	const skySource = page.locator('picture:has([data-hero-layer="sky"]) source[type="image/webp"]');
 	await expect(skySource).toHaveAttribute(
 		"srcset",
 		/\/art\/hero\/responsive\/480\/sky\.webp 480w.*\/responsive\/768\/sky\.webp 768w.*\/responsive\/1024\/sky\.webp 1024w.*\/responsive\/1280\/sky\.webp 1280w/,
 	);
 	await expect(skySource).toHaveAttribute("sizes", "max(100vw, 166.11svh)");
-	await expect(page.locator('picture:has([data-hero-layer="hill1"]) source')).toHaveAttribute(
+	await expect(page.locator('picture:has([data-hero-layer="hill1"]) source[type="image/webp"]')).toHaveAttribute(
 		"sizes",
 		"max(242.10vh, 104.24vw)",
 	);
-	await expect(page.locator('picture:has([data-hero-layer="hill2"]) source')).toHaveAttribute(
+	await expect(page.locator('picture:has([data-hero-layer="hill2"]) source[type="image/webp"]')).toHaveAttribute(
 		"sizes",
 		"max(235.10vh, 101.22vw)",
 	);
@@ -120,7 +120,7 @@ test("mobile hero keeps its warm fallback while artwork is pending", async ({ pa
 		.poll(() =>
 			page.locator('[data-hero-layer="sky"]').evaluate(element => (element as HTMLImageElement).currentSrc),
 		)
-		.toMatch(/^.*\/_astro\/sky\.[^/]+\.webp$/);
+		.toMatch(/^.*\/_astro\/sky\.[^/]+\.avif$/);
 	const loadedMobileLayers = await page
 		.locator("[data-hero-layer]")
 		.evaluateAll(elements =>
@@ -134,7 +134,7 @@ test("mobile hero keeps its warm fallback while artwork is pending", async ({ pa
 			.locator('[data-hero-layer="foreground"]')
 			.evaluate(element => (element as HTMLImageElement).currentSrc),
 	).pathname;
-	expect(selectedForeground).toMatch(/^\/art\/hero\/responsive\/(480|768|1024|1280)\/foreground\.webp$/);
-	expect(requestedWebps.filter(path => path.includes("foreground"))).toEqual([selectedForeground]);
-	expect(requestedWebps.some(path => path.startsWith("/art/particles/"))).toBe(false);
+	expect(selectedForeground).toMatch(/^\/art\/hero\/responsive\/(480|768|1024|1280)\/foreground\.avif$/);
+	expect(requestedImages.filter(path => path.includes("foreground"))).toEqual([selectedForeground]);
+	expect(requestedImages.some(path => path.startsWith("/art/particles/"))).toBe(false);
 });

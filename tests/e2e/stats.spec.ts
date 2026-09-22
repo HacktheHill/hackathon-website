@@ -82,7 +82,7 @@ test("phone moves the participant sign below the video and simplifies the stats 
 	expect(layout.greenBush).toContain("bush-4.webp");
 	expect(layout.greenRowGap).toBe("16px");
 	expect(layout.greenRowAlignment).toEqual(["baseline", "baseline"]);
-	expect(layout.mobileGreenCopy).toEqual(["8", "Sponsors", "15", "Collaborators", "70", "Organizers"]);
+	expect(layout.mobileGreenCopy).toEqual(["8", "Sponsors", "15", "Collaborators", "70", "Organisers"]);
 });
 
 test("phone sign typography stays proportional when sign artwork reaches its size cap", async ({ page }) => {
