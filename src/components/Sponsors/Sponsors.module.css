@@ -174,8 +174,6 @@
 }
 
 .collaborator-icons {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 1rem;
 }
 
@@ -184,6 +182,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex: 0 0 calc((100% - 3rem) / 4);
+	min-width: 0;
 	min-height: 6.5rem;
 	padding: 0.8rem;
 	border-radius: 1.25rem;
@@ -226,12 +226,6 @@
 	.collaborators {
 		margin-top: 3.5rem;
 		margin-bottom: 2rem;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.collaborator-icons {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
 
@@ -289,11 +283,11 @@
 	}
 
 	.collaborator-icons {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.5rem;
 	}
 
 	.collaborator-card {
+		flex-basis: calc((100% - 0.5rem) / 2);
 		min-height: 5rem;
 		padding: 0.5rem;
 	}
