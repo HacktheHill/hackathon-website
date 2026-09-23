@@ -34,7 +34,7 @@ export const sponsorData: SponsorData = {
 			{ href: "https://elevenlabs.io/", src: ElevenLabs, alt: "ElevenLabs" },
 			{ href: "https://backboard.io/", src: Backboard, alt: "Backboard" },
 			{ href: "https://www.facebook.com/uottawaeeffdg/", src: EEF, alt: "Engineering Endowment Fund" },
-			{ src: MathemaTech, alt: "MathemaTech" },
+			{ href: "https://mthm.tech", src: MathemaTech, alt: "MathemaTech" },
 		],
 	},
 	collaborators: [
