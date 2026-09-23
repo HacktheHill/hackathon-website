@@ -127,8 +127,8 @@
 	height: 52%;
 }
 
-.sponsor-card:hover,
-.sponsor-card:focus-visible {
+.sponsor-card[href]:hover,
+.sponsor-card[href]:focus-visible {
 	transform: translateY(-0.35rem) scale(1.035);
 }
 

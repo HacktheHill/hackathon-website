@@ -42,10 +42,10 @@ function Sponsors() {
 								.flatMap(tier => data.sponsors[tier].map(sponsor => ({ sponsor, tier })))
 								.map(({ sponsor, tier }, index) => (
 									<a
-										key={sponsor.href}
+										key={sponsor.alt}
 										href={sponsor.href}
-										target="_blank"
-										rel="noreferrer"
+										target={sponsor.href ? "_blank" : undefined}
+										rel={sponsor.href ? "noreferrer" : undefined}
 										data-sponsor-card
 										data-sponsor-tier={tier}
 										className={styles["sponsor-card"]}

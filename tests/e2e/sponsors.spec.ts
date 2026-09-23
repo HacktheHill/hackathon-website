@@ -122,11 +122,22 @@ test("sponsor tier rows scale their cards, clouds, and logos together", async ({
 		);
 	});
 
-	expect(Object.keys(measurements)).toEqual(["CGI logo", "Ciena logo", "ElevenLabs logo", "Backboard logo"]);
+	expect(Object.keys(measurements)).toEqual([
+		"CGI logo",
+		"Ciena logo",
+		"UOSU logo",
+		"ElevenLabs logo",
+		"Backboard logo",
+		"Engineering Endowment Fund logo",
+		"MathemaTech logo",
+	]);
 	expect(measurements["CGI logo"].card).toBeCloseTo(0.48, 2);
 	expect(measurements["Ciena logo"].card).toBeCloseTo(measurements["CGI logo"].card, 3);
+	expect(measurements["UOSU logo"].card).toBeCloseTo(measurements["Ciena logo"].card, 3);
 	expect(measurements["ElevenLabs logo"].card).toBeCloseTo(0.24, 2);
 	expect(measurements["Backboard logo"].card).toBeCloseTo(measurements["ElevenLabs logo"].card, 3);
+	expect(measurements["Engineering Endowment Fund logo"].card).toBeCloseTo(measurements["ElevenLabs logo"].card, 3);
+	expect(measurements["MathemaTech logo"].card).toBeCloseTo(measurements["ElevenLabs logo"].card, 3);
 	expect(measurements["CGI logo"].paintedArea).toBeGreaterThan(measurements["Ciena logo"].paintedArea);
 	expect(measurements["Ciena logo"].paintedArea).toBeGreaterThan(measurements["ElevenLabs logo"].paintedArea);
 	expect(measurements["Ciena logo"].paintedArea).toBeGreaterThan(measurements["Backboard logo"].paintedArea);
