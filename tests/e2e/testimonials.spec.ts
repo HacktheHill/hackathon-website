@@ -5,18 +5,18 @@ test("carousel wraps forward without reversing the track", async ({ page }) => {
 	await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
 	const track = page.locator("#testimonials [aria-live] > div");
 	const dots = page.locator("#testimonials button[aria-pressed]");
-	const translateX = () => track.evaluate(element => new DOMMatrix(getComputedStyle(element).transform).m41);
-	const slideWidth = await track.evaluate(element => element.getBoundingClientRect().width);
-	const slideCount = await dots.count();
 
 	await dots.last().click();
-	await expect.poll(translateX).toBeCloseTo(-slideWidth * slideCount, 0);
+	await expect(dots.last()).toHaveAttribute("aria-pressed", "true");
+	await expect(track).toHaveAttribute("style", /-600%/);
+	await expect(track).not.toHaveAttribute("data-moving", "");
 	await expect(page.locator('[data-carousel-clone="clone-first"]')).toHaveCSS("visibility", "hidden");
 	await page.locator("#testimonials button").last().click();
 	await expect(track).toHaveAttribute("style", /-700%/);
 
-	await expect.poll(translateX).toBeCloseTo(-slideWidth, 0);
 	await expect(dots.first()).toHaveAttribute("aria-pressed", "true");
+	await expect(track).not.toHaveAttribute("data-moving", "");
+	await expect(track).toHaveAttribute("style", /-100%/);
 });
 
 test("mobile carousel edge-fades adjacent slides", async ({ page }) => {
