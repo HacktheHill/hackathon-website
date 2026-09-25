@@ -1,0 +1,56 @@
+{
+  "canvas": {
+    "width": 3049,
+    "height": 5608
+  },
+  "layers": [
+    {
+      "name": "layer-15",
+      "sourceName": "Layer 15",
+      "x": 2217,
+      "y": 3630,
+      "width": 695,
+      "height": 858
+    },
+    {
+      "name": "layer-16",
+      "sourceName": "Layer 16",
+      "x": 2678,
+      "y": 3577,
+      "width": 85,
+      "height": 105
+    },
+    {
+      "name": "layer-17",
+      "sourceName": "Layer 17",
+      "x": 2721,
+      "y": 3498,
+      "width": 90,
+      "height": 114
+    },
+    {
+      "name": "layer-18",
+      "sourceName": "Layer 18",
+      "x": 2765,
+      "y": 3412,
+      "width": 115,
+      "height": 126
+    },
+    {
+      "name": "layer-19",
+      "sourceName": "Layer 19",
+      "x": 2827,
+      "y": 3365,
+      "width": 127,
+      "height": 101
+    },
+    {
+      "name": "layer-20",
+      "sourceName": "Layer 20",
+      "x": 2895,
+      "y": 3317,
+      "width": 122,
+      "height": 99
+    }
+  ]
+}

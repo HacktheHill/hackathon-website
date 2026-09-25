@@ -1,0 +1,37 @@
+[
+  {
+    "name": "layer-2",
+    "width": 469,
+    "height": 315
+  },
+  {
+    "name": "layer-3",
+    "width": 386,
+    "height": 674
+  },
+  {
+    "name": "layer-4",
+    "width": 292,
+    "height": 603
+  },
+  {
+    "name": "layer-5",
+    "width": 446,
+    "height": 465
+  },
+  {
+    "name": "layer-7",
+    "width": 626,
+    "height": 661
+  },
+  {
+    "name": "layer-8",
+    "width": 603,
+    "height": 618
+  },
+  {
+    "name": "layer-9",
+    "width": 577,
+    "height": 703
+  }
+]

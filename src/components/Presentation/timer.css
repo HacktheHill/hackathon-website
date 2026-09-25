@@ -1,0 +1,138 @@
+.countdown {
+	position: absolute;
+	top: 39%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Presentation Rubik", sans-serif;
+	width: max-content;
+	font-size: 280px;
+	font-weight: 800;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+	color: #50090b;
+}
+.timer-digits {
+	display: flex;
+}
+.timer-digit {
+	flex: none;
+	position: relative;
+	display: block;
+	width: 0.74em;
+	height: 1em;
+	overflow: hidden;
+}
+.timer-digit-reel {
+	display: flex;
+	flex-direction: column;
+}
+.timer-digit-reel > span {
+	display: block;
+	flex: 0 0 1em;
+	height: 1em;
+	text-align: center;
+}
+.timer-colon {
+	flex: none;
+	width: 0.24em;
+	text-align: center;
+}
+.timer-digit-reel > span,
+.timer-colon {
+	background: linear-gradient(180deg, #bd242b 10%, #780a1c 55%, #35040a 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+.timer-digit-roll {
+	transform: translateY(-1em);
+	animation: timer-roll 600ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes timer-roll {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-1em);
+	}
+}
+
+.timer-presentation [data-opening-layer="parl-tower"] {
+	clip-path: inset(34px 0 0);
+}
+.timer-flag {
+	position: absolute;
+	left: 120px;
+	top: 81px;
+	width: 60px;
+	height: auto;
+}
+.flag-rest {
+	display: none;
+}
+.timer-sequence {
+	position: fixed;
+	inset: 0;
+	background: #000;
+}
+.timer-slides,
+.timer-recap,
+.timer-blackout {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.timer-slides {
+	visibility: hidden;
+}
+.timer-recap {
+	visibility: hidden;
+	object-fit: contain;
+	background: #000;
+}
+.timer-blackout {
+	background: #000;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 1000ms ease;
+}
+.timer-sequence[data-phase="black"] .timer-blackout,
+.timer-sequence[data-phase="closing"] .timer-blackout {
+	opacity: 1;
+}
+.timer-sequence[data-phase="slides"] .timer-blackout {
+	transition-duration: 4000ms;
+}
+.timer-sequence[data-phase="video"] .timer-recap,
+.timer-sequence[data-phase="closing"] .timer-recap,
+.timer-sequence[data-phase="slides"] .timer-slides {
+	visibility: visible;
+}
+.timer-sequence[data-phase="slides"] .timer-scene {
+	visibility: hidden;
+}
+.timer-play {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 16px 24px;
+	font:
+		600 24px "Presentation Rubik",
+		sans-serif;
+	color: #fff3b6;
+	background: #50090b;
+	border: 0;
+	border-radius: 8px;
+	cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+	.flag-motion {
+		display: none;
+	}
+	.flag-rest {
+		display: block;
+	}
+}
