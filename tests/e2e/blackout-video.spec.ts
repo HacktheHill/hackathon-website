@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 1600, height: 900 }, contextOptions: { reducedMotion: "reduce" } });
 
-test("training video fully loads, waits three seconds, shows English captions, cuts to black, and replays on return", async ({
+test("training video fully loads, waits three seconds, captions both languages, cuts to black, and replays on return", async ({
 	page,
 }) => {
 	await page.goto("/slides#blackout");
@@ -39,6 +39,24 @@ test("training video fully loads, waits three seconds, shows English captions, c
 		expect(box!.y + box!.height / 2).toBeCloseTo(viewport.height / 2, 0);
 	}
 
+	for (const [time, caption] of [
+		[24, "Félicitations pour votre admission à Hack the Hill III."],
+		[26.5, "Before you begin your hacking journey"],
+	] as const) {
+		await video.evaluate((v: HTMLVideoElement, time) => {
+			v.currentTime = time;
+		}, time);
+		await expect
+			.poll(() =>
+				video.evaluate((v: HTMLVideoElement) =>
+					[...(v.textTracks[0]?.activeCues ?? [])]
+						.map(cue => (cue as VTTCue).getCueAsHTML().textContent)
+						.join("\n"),
+				),
+			)
+			.toBe(caption);
+	}
+
 	await video.evaluate((v: HTMLVideoElement) => {
 		v.currentTime = 30.8;
 	});
@@ -57,7 +75,8 @@ test("training video fully loads, waits three seconds, shows English captions, c
 	await expect(blackout).toHaveCSS("background-color", "rgb(0, 0, 0)");
 	await expect(page).toHaveURL(/#blackout$/);
 	await page.keyboard.press("ArrowRight");
-	await expect(page).toHaveURL(/#rules$/);
+	await expect(page).toHaveURL(/#blackout-1$/);
+	await expect(page.locator(".presentation-interlude")).toHaveText("1. SHORT, FOCUSED, AND IN SCOPE");
 	await expect(blackout).toBeHidden();
 	expect(await video.evaluate((v: HTMLVideoElement) => v.paused)).toBe(true);
 	await page.keyboard.press("ArrowLeft");

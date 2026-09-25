@@ -84,11 +84,26 @@ body {
 		transform: translate3d(calc(var(--cloud-start) + var(--cloud-distance)), 0, 0);
 	}
 }
-.presentation-blackout {
+.presentation-blackout,
+.presentation-interlude {
 	position: fixed;
 	inset: 0;
 	z-index: 100;
 	background: #000;
+}
+.presentation-interlude {
+	display: grid;
+	place-items: center;
+	color: #fff;
+	text-align: center;
+}
+.presentation-interlude h2 {
+	margin: 0;
+	max-width: 90vw;
+	white-space: pre-line;
+	font-size: min(4vw, 7.11vh);
+	line-height: 1.35;
+	font-weight: 600;
 }
 .presentation-blackout[hidden],
 .blackout-film[hidden] {
@@ -149,6 +164,39 @@ body {
 .text-clear,
 .text-cream {
 	color: #780a1c;
+}
+.presentation-slide[data-kind="imported"] {
+	padding: 0;
+	background: #fff;
+}
+.imported-slide-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.imported-slide-video {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: #000;
+}
+.imported-slide-video video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.imported-video-message {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 32px;
+	background: #fff;
+	color: #111;
+	font: 28px/1.4 system-ui, sans-serif;
+	text-align: center;
 }
 .text-red {
 	color: #fff3cb;

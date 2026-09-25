@@ -1,4 +1,6 @@
 import { sponsorData } from "../Sponsors/sponsorData";
+import cgiDeck from "../../../public/art/presentation/cgi-50/manifest.json";
+import mlhDeck from "../../../public/art/presentation/mlh-opening/manifest.json";
 
 export type Slide = {
 	id: string;
@@ -7,6 +9,7 @@ export type Slide = {
 	kind:
 		| "cover"
 		| "black"
+		| "imported"
 		| "agenda"
 		| "title"
 		| "welcome"
@@ -23,6 +26,8 @@ export type Slide = {
 	note?: string;
 	placeholder?: [string, string];
 	logos?: { src: string; alt: string; href?: string }[];
+	image?: { src: string; alt: string };
+	video?: { src: string; label: string; top: number; height: number };
 };
 
 // Ceremony order: the supplied opening ceremony PDF. Current event details and
@@ -90,6 +95,15 @@ export const slides: Slide[] = [
 		tone: "ice",
 		logos: sponsorData.sponsors.largest,
 	},
+	...cgiDeck.map<Slide>(page => ({
+		id: `cgi-deck-${page.number}`,
+		title: page.title,
+		french: "Présentation CGI",
+		kind: "imported",
+		y: 6800,
+		tone: "clear",
+		image: { src: page.src, alt: page.text },
+	})),
 	{
 		id: "ciena",
 		title: "Welcome, Ciena",
@@ -108,6 +122,16 @@ export const slides: Slide[] = [
 		tone: "ice",
 		logos: [{ src: "/art/presentation/mlh-logo-color.png", alt: "Major League Hacking" }],
 	},
+	...mlhDeck.map<Slide>(page => ({
+		id: `mlh-deck-${page.number}`,
+		title: page.title,
+		french: "Présentation MLH",
+		kind: "imported",
+		y: 7140,
+		tone: "clear",
+		image: { src: page.src, alt: page.text },
+		video: page.video ?? undefined,
+	})),
 	{
 		id: "partners",
 		title: "Our collaborators",
@@ -142,8 +166,11 @@ export const slides: Slide[] = [
 		kind: "black",
 		y: 9300,
 		tone: "water",
-		note: "Preloaded training video with English captions and a three-second black pause before playback. Tape distortion starts at 36.5 seconds and cuts to black at 39.5 seconds. Advance manually to hackathon rules.",
+		note: "Preloaded training video with captions in the spoken language and a three-second black pause before playback. Tape distortion starts at 36.5 seconds and cuts to black at 39.5 seconds. Advance manually through three numbered black slides before hackathon rules.",
 	},
+	{ id: "blackout-1", title: "1. SHORT, FOCUSED, AND IN SCOPE", french: "", kind: "black", y: 9300, tone: "water" },
+	{ id: "blackout-2", title: "2. MANAGE YOUR TIME", french: "", kind: "black", y: 9300, tone: "water" },
+	{ id: "blackout-3", title: "3. WHAT GOES IN?\nWHAT GOES OUT?", french: "", kind: "black", y: 9300, tone: "water" },
 	{
 		id: "rules",
 		title: "Hackathon rules",

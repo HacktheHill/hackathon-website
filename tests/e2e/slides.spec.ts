@@ -2,6 +2,32 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 1600, height: 900 }, contextOptions: { reducedMotion: "reduce" } });
 
+test("black reminders show uppercase copy and play a fresh ding on each entry", async ({ page }) => {
+	await page.goto("/slides#blackout");
+	await expect(page.locator('.slide-blackout[aria-hidden="false"]')).toBeVisible();
+	const audio = page.locator(".interlude-ding");
+	await audio.evaluate((element: HTMLAudioElement) => {
+		element.dataset.plays = "0";
+		element.addEventListener("play", () => {
+			element.dataset.plays = String(Number(element.dataset.plays) + 1);
+		});
+	});
+	const titles = ["1. SHORT, FOCUSED, AND IN SCOPE", "2. MANAGE YOUR TIME", "3. WHAT GOES IN?\nWHAT GOES OUT?"];
+	for (const [index, title] of titles.entries()) {
+		await page.keyboard.press("ArrowRight");
+		await expect(page.locator(".presentation-interlude h2")).toHaveText(title);
+		await expect(audio).toHaveAttribute("data-plays", String(index + 1));
+		await expect.poll(() => audio.evaluate((element: HTMLAudioElement) => element.currentTime)).toBeGreaterThan(0);
+		await expect(page.locator(".blackout-film")).toBeHidden();
+	}
+	await expect(page.locator(".presentation-interlude h2")).toHaveCSS("white-space", "pre-line");
+	await page.keyboard.press("ArrowLeft");
+	await expect(audio).toHaveAttribute("data-plays", "4");
+	await page.keyboard.press("End");
+	await expect(page.locator(".presentation-interlude")).toHaveCount(0);
+	expect(await audio.evaluate((element: HTMLAudioElement) => element.paused)).toBe(true);
+});
+
 test("venue rules switch crown signs to French shields without moving the camera", async ({ page }) => {
 	await page.goto("/slides#guidelines");
 	await expect(page.locator('.slide-guidelines[aria-hidden="false"]')).toBeVisible();
@@ -77,9 +103,22 @@ test("timeline advances and reverses within the slide before changing slides", a
 	await expect(page).toHaveURL(/#blackout$/);
 	await expect(page.locator(".presentation-blackout")).toHaveCSS("background-color", "rgb(0, 0, 0)");
 	await expect(page.locator(".slide-blackout")).toBeEmpty();
+	for (let number = 1; number <= 3; number++) {
+		await page.keyboard.press("ArrowRight");
+		await expect(page).toHaveURL(new RegExp(`#blackout-${number}$`));
+		await expect(page.locator(".presentation-interlude")).toContainText(`${number}.`);
+		await expect(page.locator(".presentation-interlude")).toHaveCSS("background-color", "rgb(0, 0, 0)");
+		await expect(page.locator(".presentation-blackout")).toBeHidden();
+	}
 	await page.keyboard.press("ArrowRight");
 	await expect(page).toHaveURL(/#rules$/);
 	await expect(page.locator(".presentation-blackout")).toBeHidden();
+	await expect(page.locator(".presentation-interlude")).toHaveCount(0);
+	for (let number = 3; number >= 1; number--) {
+		await page.keyboard.press("ArrowLeft");
+		await expect(page).toHaveURL(new RegExp(`#blackout-${number}$`));
+		await expect(page.locator(".presentation-interlude")).toContainText(`${number}.`);
+	}
 	await page.keyboard.press("ArrowLeft");
 	await expect(page).toHaveURL(/#blackout$/);
 	await page.keyboard.press("ArrowLeft");
@@ -136,7 +175,7 @@ test("keyboard navigation and deep links work with no presentation chrome", asyn
 	await page.goto("/slides#guidelines");
 	const active = page.locator('.presentation-slide[aria-hidden="false"]');
 	await expect(active).toContainText("Venue rules");
-	await expect(page.locator(".presentation-slide[inert]")).toHaveCount(17);
+	await expect(page.locator(".presentation-slide[inert]")).toHaveCount(await page.locator(".presentation-slide").count() - 1);
 	await page.keyboard.press("ArrowDown");
 	await expect(page.locator('.venue-sign-face[aria-hidden="false"]').first()).toHaveAttribute("lang", "fr");
 	await page.keyboard.press("ArrowDown");
@@ -242,7 +281,8 @@ test("English and French headings have equal prominence and image proportions ar
 	const unequal = await page.locator(".presentation-slide").evaluateAll(sections =>
 		sections
 			.filter(section => {
-				if (section.classList.contains("slide-blackout")) return false;
+				if (section.getAttribute("data-kind") === "imported") return false;
+				if ([...section.classList].some(name => name.startsWith("slide-blackout"))) return false;
 				const english = section.querySelector("h1, h2")!;
 				const french = section.querySelector(".french")!;
 				const en = getComputedStyle(english),
@@ -308,7 +348,7 @@ test("ceremony flow separates venue and competition rules and finishes with reso
 		expect(box!.y + box!.height / 2).toBeCloseTo(450, 0);
 	}
 	await expect(page.locator(".challenge-focus")).toContainText("Best Hardware Hack");
-	for (const id of ["schedule", "blackout", "rules", "judging", "next", "resources"]) {
+	for (const id of ["schedule", "blackout", "blackout-1", "blackout-2", "blackout-3", "rules", "judging", "next", "resources"]) {
 		if (id === "blackout") {
 			for (let event = 2; event <= 8; event++) {
 				await page.keyboard.press("ArrowDown");

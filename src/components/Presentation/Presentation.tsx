@@ -5,6 +5,7 @@ import { resourceLinks, scheduleEvents } from "./presentationContent";
 import VenueSigns from "./VenueSigns";
 import Challenges, { challengeCount } from "./Challenges";
 import BlackoutVideo from "./BlackoutVideo";
+import ImportedSlideVideo from "./ImportedSlideVideo";
 import PresentationParticles from "./PresentationParticles";
 import { OpeningArtwork, OpeningBranding } from "./OpeningScene";
 import icons from "../../../public/art/presentation/icons/manifest.json";
@@ -17,6 +18,8 @@ const sceneScale = WIDTH / CANVAS_WIDTH;
 const guidelinesIndex = slides.findIndex(item => item.id === "guidelines");
 const challengesIndex = slides.findIndex(item => item.id === "challenges");
 const scheduleIndex = slides.findIndex(item => item.id === "schedule");
+const collaboratorsIndex = slides.findIndex(item => item.id === "partners");
+const requiresCut = (slide: Slide) => slide.kind === "black" || slide.kind === "imported";
 const foreground = SCENE_LAYERS.find(layer => layer.name === "bush-4")!;
 // wanchor.psd starts at the same ice edge as the full website landscape.
 const anchorSceneTop = SCENE_LAYERS.find(layer => layer.name === "ice-1")!.y;
@@ -35,16 +38,23 @@ const slideIcons: Record<string, string[]> = {
 };
 function SlideContent({
 	slide,
+	active,
 	timelineIndex,
 	venueLanguage,
 	challengeStage,
 }: {
 	slide: Slide;
+	active: boolean;
 	timelineIndex: number;
 	venueLanguage: number;
 	challengeStage: number;
 }) {
 	if (slide.kind === "black") return null;
+	if (slide.kind === "imported" && slide.image)
+		return <>
+			<img className="imported-slide-image" src={slide.image.src} alt={slide.image.alt} width={2560} height={1440} draggable={false} />
+			{active && slide.video && <ImportedSlideVideo video={slide.video} />}
+		</>;
 	if (slide.kind === "cover")
 		return (
 			<div className="cover-content">
@@ -200,12 +210,25 @@ export default function Presentation() {
 	const [fullscreenError, setFullscreenError] = useState("");
 	const wheelState = useRef({ accumulated: 0, lastWheel: 0, lastStep: 0 });
 	const slide = slides[index];
+	const ding = useRef<HTMLAudioElement>(null);
+	useEffect(() => {
+		const audio = ding.current;
+		if (!audio) return;
+		audio.pause();
+		audio.currentTime = 0;
+		if (slide.kind === "black" && slide.id !== "blackout") {
+			// Direct links may be autoplay-blocked; keyboard navigation provides user activation.
+			void audio.play().catch(() => {});
+		}
+		return () => audio.pause();
+	}, [slide]);
 	const go = useCallback(
-		(next: number) =>
+		(next: number, hardCut = false) =>
 			setPosition(current => ({
 				cut:
-					slides[current.index].kind === "black" ||
-					slides[Math.max(0, Math.min(slides.length - 1, next))].kind === "black",
+					hardCut ||
+					requiresCut(slides[current.index]) ||
+					requiresCut(slides[Math.max(0, Math.min(slides.length - 1, next))]),
 				index: Math.max(0, Math.min(slides.length - 1, next)),
 				timelineIndex: 0,
 				venueLanguage: 0,
@@ -230,7 +253,7 @@ export default function Presentation() {
 			const next = Math.max(0, Math.min(slides.length - 1, current.index + direction));
 			return {
 				index: next,
-				cut: slides[current.index].kind === "black" || slides[next].kind === "black",
+				cut: requiresCut(slides[current.index]) || requiresCut(slides[next]),
 				challengeStage: next === challengesIndex && direction < 0 ? challengeCount : 0,
 				venueLanguage: next === guidelinesIndex && direction < 0 ? 1 : 0,
 				timelineIndex: next === scheduleIndex && direction < 0 ? scheduleEvents.length - 1 : 0,
@@ -283,6 +306,11 @@ export default function Presentation() {
 					event.target.closest("input, textarea, select, [contenteditable]"))
 			)
 				return;
+			if ((event.key === "0" || event.code === "Numpad0") && slide.id === "mlh") {
+				event.preventDefault();
+				if (!event.repeat) go(collaboratorsIndex, true);
+				return;
+			}
 			if (event.key.toLowerCase() === "f") {
 				event.preventDefault();
 				void fullscreen();
@@ -292,7 +320,7 @@ export default function Presentation() {
 			if (
 				(event.key === " " || event.key === "Enter") &&
 				event.target instanceof HTMLElement &&
-				event.target.closest("button, a")
+				event.target.closest("button, a, video")
 			)
 				return;
 			if (["ArrowDown", "ArrowRight", "PageDown", " ", "Enter"].includes(event.key)) {
@@ -334,7 +362,7 @@ export default function Presentation() {
 			window.removeEventListener("keydown", onKey);
 			window.removeEventListener("wheel", onWheel);
 		};
-	}, [step, go, fullscreen]);
+	}, [step, go, fullscreen, slide.id]);
 
 	return (
 		<main className="presentation" data-cut={cut} aria-label="Hack the Hill opening ceremony presentation">
@@ -399,6 +427,7 @@ export default function Presentation() {
 					{slides.map((item, i) => (
 						<section
 							className={`presentation-slide text-${item.tone} slide-${item.id}`}
+							data-kind={item.kind}
 							key={item.id}
 							aria-hidden={i !== index}
 							ref={node => {
@@ -424,6 +453,7 @@ export default function Presentation() {
 							})}
 							<SlideContent
 								slide={item}
+								active={i === index}
 								timelineIndex={timelineIndex}
 								venueLanguage={venueLanguage}
 								challengeStage={challengeStage}
@@ -460,7 +490,11 @@ export default function Presentation() {
 					</div>
 				</div>
 			</div>
-			<BlackoutVideo active={slide.kind === "black"} />
+			<BlackoutVideo active={slide.id === "blackout"} />
+			<audio ref={ding} className="interlude-ding" src="/art/presentation/ding.mp3" preload="auto" />
+			{slide.kind === "black" && slide.id !== "blackout" && (
+				<div className="presentation-interlude"><h2>{slide.title}</h2></div>
+			)}
 			<p className="sr-only" aria-live="polite" aria-atomic="true">
 				Slide {index + 1} of {slides.length}: {slide.title}
 			</p>

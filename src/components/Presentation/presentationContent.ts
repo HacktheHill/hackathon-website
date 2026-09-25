@@ -21,21 +21,23 @@ export const venueRules = [
 	},
 ];
 
+// Workshop times checked against https://tracker.hackthehill.com/schedule on 2026-09-25.
+// The tracker does not list hacking start or Devpost close; retain the supplied ceremony times.
 export const scheduleEvents = [
 	{ day: "Friday", dayFrench: "Vendredi", time: "9:30 p.m.", title: "Hacking begins", french: "Début du hackathon" },
 	{
 		day: "Friday",
 		dayFrench: "Vendredi",
-		time: "10:00 p.m.",
-		title: "Intro to Web Development",
-		french: "Introduction au développement web",
-	},
-	{
-		day: "Saturday",
-		dayFrench: "Samedi",
-		time: "12:00 a.m.",
+		time: "9:30 p.m.",
 		title: "Intro to Hardware",
 		french: "Introduction au matériel informatique",
+	},
+	{
+		day: "Friday",
+		dayFrench: "Vendredi",
+		time: "10:30 p.m.",
+		title: "Intro to Web Development – React",
+		french: "Introduction au développement web – React",
 	},
 	{
 		day: "Saturday",

@@ -84,7 +84,7 @@ export default function BlackoutVideo({ active }: { active: boolean }) {
 						kind="captions"
 						src="/art/presentation/blackout-training.vtt"
 						srcLang="en"
-						label="English"
+						label="English / Français"
 						default
 					/>
 				</video>
