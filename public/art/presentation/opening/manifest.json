@@ -1,0 +1,109 @@
+{
+  "canvasWidth": 3072,
+  "layers": [
+    {
+      "name": "background",
+      "x": -167,
+      "y": -163,
+      "width": 3240,
+      "height": 2005
+    },
+    {
+      "name": "bhiill2",
+      "x": -287,
+      "y": 882,
+      "width": 2250,
+      "height": 670
+    },
+    {
+      "name": "bhill",
+      "x": 1409,
+      "y": 895,
+      "width": 3328,
+      "height": 1239
+    },
+    {
+      "name": "cloud5",
+      "x": 2631,
+      "y": 281,
+      "width": 1182,
+      "height": 640
+    },
+    {
+      "name": "cloud2",
+      "x": -384,
+      "y": 475,
+      "width": 435,
+      "height": 290
+    },
+    {
+      "name": "cloud3",
+      "x": -287,
+      "y": 602,
+      "width": 803,
+      "height": 403
+    },
+    {
+      "name": "cloud1",
+      "x": 1005,
+      "y": -388,
+      "width": 2182,
+      "height": 1069
+    },
+    {
+      "name": "cloud4",
+      "x": -542,
+      "y": -227,
+      "width": 1884,
+      "height": 632
+    },
+    {
+      "name": "parl-tower",
+      "x": 51,
+      "y": 181,
+      "width": 411,
+      "height": 1453
+    },
+    {
+      "name": "parl-roof-markers",
+      "x": -334,
+      "y": 930,
+      "width": 3407,
+      "height": 846
+    },
+    {
+      "name": "texture",
+      "x": 310,
+      "y": 979,
+      "width": 2431,
+      "height": 1270
+    },
+    {
+      "name": "bush1",
+      "x": -168,
+      "y": 1263,
+      "width": 3240,
+      "height": 1581
+    },
+    {
+      "name": "layer-18",
+      "x": 2303,
+      "y": 25,
+      "width": 956,
+      "height": 1699
+    },
+    {
+      "name": "bush2",
+      "x": -166,
+      "y": 1261,
+      "width": 3240,
+      "height": 3216
+    }
+  ],
+  "wordmark": {
+    "x": 587,
+    "y": 451,
+    "width": 1939,
+    "height": 258
+  }
+}
