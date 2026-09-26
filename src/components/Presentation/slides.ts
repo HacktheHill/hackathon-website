@@ -1,5 +1,4 @@
 import { sponsorData } from "../Sponsors/sponsorData";
-import cgiDeck from "../../../public/art/presentation/cgi-50/manifest.json";
 import mlhDeck from "../../../public/art/presentation/mlh-opening/manifest.json";
 
 export type Slide = {
@@ -95,15 +94,6 @@ export const slides: Slide[] = [
 		tone: "ice",
 		logos: sponsorData.sponsors.largest,
 	},
-	...cgiDeck.map<Slide>(page => ({
-		id: `cgi-deck-${page.number}`,
-		title: page.title,
-		french: "Présentation CGI",
-		kind: "imported",
-		y: 6800,
-		tone: "clear",
-		image: { src: page.src, alt: page.text },
-	})),
 	{
 		id: "ciena",
 		title: "Welcome, Ciena",

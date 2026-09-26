@@ -171,7 +171,7 @@ test("judging anchor follows the background, clips at the edge, and sways with i
 	for (const link of motion) expect(link.end).not.toBe(link.start);
 });
 
-test("keyboard navigation and deep links work with no presentation chrome", async ({ page }) => {
+test("keyboard navigation and deep links work alongside slide controls", async ({ page }) => {
 	await page.goto("/slides#guidelines");
 	const active = page.locator('.presentation-slide[aria-hidden="false"]');
 	await expect(active).toContainText("Venue rules");
@@ -184,7 +184,8 @@ test("keyboard navigation and deep links work with no presentation chrome", asyn
 	await page.reload();
 	await expect(active).toContainText("Made possible by");
 	await page.mouse.move(800, 880);
-	await expect(page.locator("nav, dialog, .slide-footer, .journey-progress, .scene-veil")).toHaveCount(0);
+	await expect(page.getByRole("navigation", { name: "Slide navigation" })).toBeVisible();
+	await expect(page.locator("dialog, .slide-footer, .journey-progress, .scene-veil")).toHaveCount(0);
 	await page.keyboard.press("Home");
 	await expect(active).toContainText("Opening");
 	await page.keyboard.press("ArrowUp");

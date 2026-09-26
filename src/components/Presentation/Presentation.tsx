@@ -51,10 +51,19 @@ function SlideContent({
 }) {
 	if (slide.kind === "black") return null;
 	if (slide.kind === "imported" && slide.image)
-		return <>
-			<img className="imported-slide-image" src={slide.image.src} alt={slide.image.alt} width={2560} height={1440} draggable={false} />
-			{active && slide.video && <ImportedSlideVideo video={slide.video} />}
-		</>;
+		return (
+			<>
+				<img
+					className="imported-slide-image"
+					src={slide.image.src}
+					alt={slide.image.alt}
+					width={2560}
+					height={1440}
+					draggable={false}
+				/>
+				{active && slide.video && <ImportedSlideVideo video={slide.video} />}
+			</>
+		);
 	if (slide.kind === "cover")
 		return (
 			<div className="cover-content">
@@ -493,8 +502,34 @@ export default function Presentation() {
 			<BlackoutVideo active={slide.id === "blackout"} />
 			<audio ref={ding} className="interlude-ding" src="/art/presentation/ding.mp3" preload="auto" />
 			{slide.kind === "black" && slide.id !== "blackout" && (
-				<div className="presentation-interlude"><h2>{slide.title}</h2></div>
+				<div className="presentation-interlude">
+					<h2>{slide.title}</h2>
+				</div>
 			)}
+			<nav className="presentation-controls" aria-label="Slide navigation">
+				<button
+					type="button"
+					aria-label="Previous slide"
+					title="Previous slide (↑)"
+					disabled={index === 0}
+					onClick={() => step(-1)}
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="m6 15 6-6 6 6" />
+					</svg>
+				</button>
+				<button
+					type="button"
+					aria-label="Next slide"
+					title="Next slide (↓)"
+					disabled={index === slides.length - 1}
+					onClick={() => step(1)}
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="m6 9 6 6 6-6" />
+					</svg>
+				</button>
+			</nav>
 			<p className="sr-only" aria-live="polite" aria-atomic="true">
 				Slide {index + 1} of {slides.length}: {slide.title}
 			</p>

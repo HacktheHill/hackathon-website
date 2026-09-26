@@ -32,6 +32,52 @@ body {
 .presentation * {
 	box-sizing: border-box;
 }
+.presentation-controls {
+	position: fixed;
+	left: max(16px, env(safe-area-inset-left));
+	bottom: max(16px, env(safe-area-inset-bottom));
+	z-index: 110;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 5px;
+	border: 1px solid rgb(255 243 182 / 30%);
+	border-radius: 14px;
+	background: rgb(16 26 36 / 88%);
+	box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+}
+.presentation-controls button {
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	padding: 10px;
+	border: 0;
+	border-radius: 8px;
+	background: transparent;
+	color: #fff3b6;
+	cursor: pointer;
+}
+.presentation-controls button:hover:not(:disabled) {
+	background: rgb(255 243 182 / 18%);
+}
+.presentation-controls button:focus-visible {
+	outline: 2px solid #fff3b6;
+	outline-offset: -2px;
+}
+.presentation-controls button:disabled {
+	opacity: 0.3;
+	cursor: default;
+}
+.presentation-controls svg {
+	width: 24px;
+	height: 24px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
 .presentation-stage {
 	position: absolute;
 	left: 50%;
@@ -195,7 +241,9 @@ body {
 	padding: 20px 32px;
 	background: #fff;
 	color: #111;
-	font: 28px/1.4 system-ui, sans-serif;
+	font:
+		28px/1.4 system-ui,
+		sans-serif;
 	text-align: center;
 }
 .text-red {

@@ -15,11 +15,11 @@ Open `http://localhost:4321`. There are no environment variables or backend serv
 
 ## Opening ceremony presentation
 
-Open `http://localhost:4321/slides` after starting the dev server. The 21-slide presentation uses the website's artwork and fonts, with a camera that moves down the landscape as slides advance. The stage always stays 16:9; other screen shapes are letterboxed.
+Open `http://localhost:4321/slides` after starting the dev server. The 48-slide presentation (including 27 MLH slides) uses the website's artwork and fonts, with a camera that moves down the landscape as slides advance. The stage always stays 16:9; other screen shapes are letterboxed.
 
 - Arrow keys, Space, Enter, or Page Down advance; Page Up or Shift+Space go back.
 - `F` toggles fullscreen; Home/End jump to the first/last slide.
-- Mouse-wheel gestures advance one slide at a time. The screen contains only slides: no controls, overview, slide numbers, footer labels, or progress bar.
+- Mouse-wheel gestures advance one slide at a time. Up/down buttons in the bottom-left corner go backward/forward through the same presentation steps. The CGI welcome slide goes directly to Ciena; the imported CGI PowerPoint slides are excluded.
 - A URL fragment such as `/slides#schedule` opens a specific slide. Reduced-motion preferences disable transitions and particles. English and French headings use the same typography.
 
 Edit ceremony order, camera positions, and presenter notes in `src/components/Presentation/slides.ts`; layouts are in `Presentation.tsx`. Sponsor and collaborator logos come from the current website. The sequence ends with challenges, run of show, competition rules, judging, next steps, then Track the Hack and Discord. There is no guest-speaker slide. Run of show has eight scheduled events in `scheduleEvents` in `presentationContent.ts`: each advance moves the full-width timeline to the next event, then cuts to the training video after event eight; after playback, advances cut through three black slides with uppercase reminders (scope, time management, and inputs/outputs), each playing a ding on entry, then continue to hackathon rules. Reverse navigation retraces the events; returning from hackathon rules retraces the three numbered black slides and the video before event eight. Home/End still jump to the first/last slide.
@@ -97,7 +97,7 @@ Install the test browsers once with `npx playwright install chromium firefox`. T
 
 [Architecture](docs/architecture.md) explains the scene and component boundaries. [Browser checks](tests/README.md) explains the test suites. [Artwork](docs/assets.md) covers optional Python tools.
 
-The repository's GitHub Actions workflow reviews dependency changes. It does not run these local build and browser checks.
+The repository's GitHub Actions workflow reviews dependency changes. It does not run these local build and browser checks. Cloudflare Pages deploys the website; keep each public asset below its 25 MiB limit. The recap and training videos use H.264/AAC at 1920×1080 with fast-start metadata and are compressed below that limit.
 
 ## Contributing
 

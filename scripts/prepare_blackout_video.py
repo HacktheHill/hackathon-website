@@ -24,7 +24,7 @@ audio = ",".join([
 subprocess.run([
     "ffmpeg", "-hide_banner", "-loglevel", "warning", "-y", "-i", str(args.source),
     "-t", "39.5", "-vf", video, "-af", audio,
-    "-c:v", "libx264", "-preset", "fast", "-crf", "20", "-pix_fmt", "yuv420p",
+    "-c:v", "libx264", "-preset", "fast", "-crf", "25", "-pix_fmt", "yuv420p",
     "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", str(output),
 ], check=True)
 print(output)
