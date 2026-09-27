@@ -476,6 +476,7 @@
 	will-change: transform, opacity;
 }
 .stupid-event-details {
+	font-family: "Arial Narrow", Arial, sans-serif;
 	position: absolute;
 	left: 100px;
 	top: 135px;
@@ -483,7 +484,7 @@
 }
 .stupid-event-details h1 {
 	font:
-		100px/1 "Presentation Coolvetica",
+		100px/1 "Arial Narrow", Arial,
 		sans-serif;
 	margin: 0;
 }

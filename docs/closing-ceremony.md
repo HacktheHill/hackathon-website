@@ -17,7 +17,7 @@ The winner bar shows one project title with team member names beneath it; this p
 
 The signs rise after the landscape settles. Their foliage occlusion uses an alpha mask of the existing bush artwork, so no second red foreground moves with the slide. Reduced motion skips the rise.
 
-Edit `src/components/Presentation/closingContent.ts`. Each award accepts `winner` and `members`. Until populated, reveals explicitly say “Winner to be announced”; no old results have been reused. Main tracks run third, second, first. There are 21 award slots: nine main-track placements, five local mini-challenges, and seven further MLH awards. The ElevenLabs sponsor and MLH awards are combined into one slot, as the current rules specify.
+Edit `src/components/Presentation/closingWinners.ts`. Each award has a `winner` project title and `members` string. Leave them empty until confirmed. Until populated, reveals explicitly say “Winner to be announced”; no old results have been reused. Main tracks run third, second, first. There are 21 award slots: nine main-track placements, five local mini-challenges, and seven further MLH awards. The ElevenLabs sponsor and MLH awards are combined into one slot, as the current rules specify.
 
 The CTN QR points to the public community Linktree linked from the CTN website, not a verified recruiting application. Replace `closingLinks.ctn` and regenerate `ctn-qr.png` together when a dedicated form is supplied.
 

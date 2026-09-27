@@ -1,6 +1,7 @@
 import CGI from "@/assets/Logos/CGI.svg?url";
 import ElevenLabs from "@/assets/Logos/ElevenLabs.svg?url";
 import MathemaTech from "@/assets/Logos/MathemaTech.svg?url";
+import { closingWinners } from "./closingWinners";
 
 // Verified against the live Devpost prize list on 2026-09-27. See docs/closing-ceremony.md.
 export type ClosingSlide = {
@@ -101,7 +102,7 @@ const main: ClosingSlide[] = [
 		id: `${track.id}-${place}`,
 		place,
 		kind: "award" as const,
-		prize: `$${place === 1 ? 500 : place === 2 ? 300 : 200} CAD`,
+		prize: `$${place === 1 ? 400 : place === 2 ? 300 : 200} CAD`,
 		...(track.id === "general" && place === 1
 			? {
 					copy: "+ 3 months of ElevenLabs Pro per team member",
@@ -115,7 +116,7 @@ export const closingLinks = {
 	ctn: "https://linktr.ee/hackthehill",
 	stupid: "https://www.instagram.com/stupideas_com/",
 };
-export const closingSlides: ClosingSlide[] = [
+const slideDefinitions: ClosingSlide[] = [
 	{
 		id: "closing",
 		title: "Closing ceremony",
@@ -126,10 +127,10 @@ export const closingSlides: ClosingSlide[] = [
 	{ id: "programme", title: "One last climb", french: "Une dernière ascension", kind: "agenda" },
 	{
 		id: "hackers",
-		title: "Look what you built",
-		french: "Regardez ce que vous avez créé",
-		copy: "To every hacker, mentor, judge and volunteer: thank you.",
-		copyFrench: "À chaque personne qui a créé, accompagné, évalué ou aidé : merci.",
+		title: "Thank you to the team",
+		french: "Merci à toute l’équipe",
+		copy: "Thank you for making Hack the Hill III possible.",
+		copyFrench: "Merci d’avoir rendu Hack the Hill III possible.",
 	},
 	{ id: "mini-tracks", title: "Mini-challenge awards", french: "Prix des mini-défis" },
 	...mini.map(item => ({ ...item, kind: "award" as const })),
@@ -144,6 +145,10 @@ export const closingSlides: ClosingSlide[] = [
 	{ id: "join-ctn", title: "Join the CTN team", french: "Rejoignez l’équipe du RTC", kind: "join" },
 	{ id: "closing-logo", title: "Hack the Hill III", french: "", kind: "finale" },
 ];
+
+export const closingSlides: ClosingSlide[] = slideDefinitions.map(slide =>
+	slide.kind === "award" ? { ...slide, ...closingWinners[slide.id] } : slide,
+);
 
 // Compose each section on a quiet part of the original landscape. Cross the ice
 // edge and road during transitions, never through the body of a settled slide.
