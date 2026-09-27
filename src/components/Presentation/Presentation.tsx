@@ -9,7 +9,7 @@ import ImportedSlideVideo from "./ImportedSlideVideo";
 import PresentationParticles from "./PresentationParticles";
 import { OpeningArtwork, OpeningBranding } from "./OpeningScene";
 import icons from "../../../public/art/presentation/icons/manifest.json";
-import anchor from "../../../public/art/presentation/anchor/manifest.json";
+import PresentationAnchor from "./PresentationAnchor";
 import "./presentation.css";
 
 const WIDTH = 1600;
@@ -21,15 +21,6 @@ const scheduleIndex = slides.findIndex(item => item.id === "schedule");
 const collaboratorsIndex = slides.findIndex(item => item.id === "partners");
 const requiresCut = (slide: Slide) => slide.kind === "black" || slide.kind === "imported";
 const foreground = SCENE_LAYERS.find(layer => layer.name === "bush-4")!;
-// wanchor.psd starts at the same ice edge as the full website landscape.
-const anchorSceneTop = SCENE_LAYERS.find(layer => layer.name === "ice-1")!.y;
-const anchorScale = sceneScale * 0.82;
-const anchorBounds = {
-	x: Math.min(...anchor.layers.map(layer => layer.x)),
-	y: Math.min(...anchor.layers.map(layer => layer.y)),
-	right: Math.max(...anchor.layers.map(layer => layer.x + layer.width)),
-	bottom: Math.max(...anchor.layers.map(layer => layer.y + layer.height)),
-};
 const slideIcons: Record<string, string[]> = {
 	land: ["layer-2", "layer-3", "layer-4"],
 	tonight: ["layer-5"],
@@ -402,34 +393,7 @@ export default function Presentation() {
 							/>
 						),
 					)}
-					<div
-						className="anchor-assembly"
-						style={{
-							left: 1310,
-							top: (anchorSceneTop + anchorBounds.y) * sceneScale + 40,
-							width: (anchorBounds.right - anchorBounds.x) * anchorScale,
-							height: (anchorBounds.bottom - anchorBounds.y) * anchorScale,
-						}}
-					>
-						{anchor.layers.map((layer, index) => (
-							<img
-								key={layer.name}
-								className={`anchor-layer${layer.name === "layer-15" ? "" : " anchor-chain"}`}
-								data-anchor-layer={layer.name}
-								src={`/art/presentation/anchor/${layer.name}.webp`}
-								alt=""
-								width={layer.width}
-								height={layer.height}
-								draggable={false}
-								style={{
-									left: (layer.x - anchorBounds.x) * anchorScale,
-									top: (layer.y - anchorBounds.y) * anchorScale,
-									width: layer.width * anchorScale,
-									animationDelay: `${-index * 0.2}s`,
-								}}
-							/>
-						))}
-					</div>
+					<PresentationAnchor />
 				</div>
 				<PresentationParticles mode={slide.y < 6300 ? "none" : slide.y < 9000 ? "snow" : "bubbles"} />
 				<div className="slide-ribbon" style={{ transform: `translate3d(0, ${-index * HEIGHT}px, 0)` }}>

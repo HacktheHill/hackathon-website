@@ -4,7 +4,15 @@ const RECAP_URL = "/art/presentation/hthrecap_2.mp4";
 const FADE_MS = 1000;
 type Phase = "countdown" | "black" | "video" | "closing" | "slides";
 
-export default function TimerSequence({ complete, children }: { complete: boolean; children: ReactNode }) {
+export default function TimerSequence({
+	complete,
+	children,
+	closing = false,
+}: {
+	complete: boolean;
+	children: ReactNode;
+	closing?: boolean;
+}) {
 	const [phase, setPhase] = useState<Phase>("countdown");
 	const [source, setSource] = useState("");
 	const [ready, setReady] = useState(false);
@@ -86,7 +94,7 @@ export default function TimerSequence({ complete, children }: { complete: boolea
 		const interval = window.setInterval(() => {
 			const document = slides.current?.contentDocument;
 			if (
-				document?.querySelector(".slide-opening") &&
+				document?.querySelector(closing ? ".slide-closing" : ".slide-opening") &&
 				!document.querySelector("astro-island[ssr]") &&
 				document.fonts.status === "loaded" &&
 				[...document.images].every(image => image.complete && image.naturalWidth > 0)
@@ -96,7 +104,7 @@ export default function TimerSequence({ complete, children }: { complete: boolea
 			}
 		}, 100);
 		return () => window.clearInterval(interval);
-	}, []);
+	}, [closing]);
 
 	useEffect(() => {
 		if (phase === "slides") slides.current?.contentWindow?.focus();
@@ -110,8 +118,8 @@ export default function TimerSequence({ complete, children }: { complete: boolea
 			<iframe
 				ref={slides}
 				className="timer-slides"
-				src="/slides#opening"
-				title="Opening ceremony slides"
+				src={closing ? "/closing#closing" : "/slides#opening"}
+				title={closing ? "Closing ceremony slides" : "Opening ceremony slides"}
 				tabIndex={phase === "slides" ? 0 : -1}
 				aria-hidden={phase !== "slides"}
 				allowFullScreen

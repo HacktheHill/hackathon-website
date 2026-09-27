@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { OpeningArtwork } from "./OpeningScene";
 import TimerFlag from "./TimerFlag";
 import TimerSequence from "./TimerSequence";
+import ClosingLandscape from "./ClosingLandscape";
 import "./presentation.css";
 import "./timer.css";
+import "./closing.css";
 
 const DEFAULT_SECONDS = 10 * 60;
 
@@ -23,7 +25,7 @@ function RollingDigit({ digit }: { digit: string }) {
 	);
 }
 
-export default function CountdownTimer() {
+export default function CountdownTimer({ closing = false }: { closing?: boolean }) {
 	const [remaining, setRemaining] = useState(DEFAULT_SECONDS);
 	const [scale, setScale] = useState(1);
 	const deadline = useRef<number | null>(null);
@@ -79,13 +81,23 @@ export default function CountdownTimer() {
 	const seconds = remaining % 60;
 	const digits = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 	return (
-		<TimerSequence complete={remaining === 0}>
-			<main className="presentation timer-presentation" aria-label="Hack the Hill countdown">
+		<TimerSequence complete={remaining === 0} closing={closing}>
+			<main
+				className={`presentation timer-presentation${closing ? " closing-countdown" : ""}`}
+				aria-label="Hack the Hill countdown"
+			>
 				<div className="presentation-stage" style={{ transform: `translate(-50%, -50%) scale(${scale})` }}>
-					<div className="landscape" aria-hidden="true">
-						<OpeningArtwork />
-						<TimerFlag />
-					</div>
+					{closing ? (
+						<>
+							<ClosingLandscape y={10550} />
+							<p className="closing-timer-label">Closing ceremony / Cérémonie de clôture</p>
+						</>
+					) : (
+						<div className="landscape" aria-hidden="true">
+							<OpeningArtwork />
+							<TimerFlag />
+						</div>
+					)}
 					<div
 						className="countdown"
 						role="timer"
