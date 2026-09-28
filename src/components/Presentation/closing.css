@@ -1,0 +1,506 @@
+.closing-slide {
+	padding: 76px 130px;
+}
+.closing-content {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.closing-content header {
+	max-width: 1300px;
+}
+.closing-content h1 {
+	font-family: "Presentation Coolvetica", sans-serif;
+	font-weight: 400;
+	font-size: 100px;
+	line-height: 1.06;
+	margin: 0;
+	text-wrap: balance;
+}
+.closing-french {
+	font-family: "Presentation Coolvetica", sans-serif;
+	font-size: 56px;
+	line-height: 1.1;
+	margin: 22px 0 0;
+	text-wrap: balance;
+}
+.closing-copy {
+	margin-top: 44px;
+	max-width: 1120px;
+}
+.closing-copy p {
+	font-size: 30px;
+	line-height: 1.4;
+	margin: 10px 0;
+	text-wrap: balance;
+}
+.closing-copy p[lang="fr"] {
+	font-size: 27px;
+}
+.closing-logo {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 470px;
+	height: 250px;
+	flex-shrink: 0;
+	margin-bottom: 12px;
+}
+.closing-logo .logo-snowbank {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.closing-logo .sponsor-mark {
+	position: relative;
+	width: 65%;
+	height: 70px;
+	object-fit: contain;
+}
+.closing-place {
+	font-family: "Presentation Coolvetica", sans-serif;
+	font-size: 64px;
+	margin: 0 0 22px;
+}
+.closing-award h1 {
+	font-size: 72px;
+}
+.closing-award .closing-french {
+	font-size: 42px;
+}
+.closing-award .closing-copy {
+	margin-top: 20px;
+}
+.closing-award .closing-copy p {
+	font-size: 25px;
+}
+.closing-award-result {
+	margin-top: 42px;
+	padding-top: 26px;
+	border-top: 0;
+	width: 100%;
+}
+.closing-content .closing-award-result h2 {
+	font-family: "Presentation Coolvetica", sans-serif;
+	font-size: 60px;
+	line-height: 1.1;
+	font-weight: 400;
+	margin: 0;
+}
+.closing-award-result p {
+	margin: 12px 0;
+	font-size: 30px;
+}
+.closing-award-result .closing-prize {
+	margin-top: 30px;
+	font-size: 28px;
+}
+.closing-award-result .closing-prize-fr {
+	font-size: 23px;
+}
+.closing-reveal {
+	display: grid;
+	min-height: 220px;
+	position: relative;
+	isolation: isolate;
+}
+.closing-drumroll,
+.closing-winner-bar {
+	grid-area: 1 / 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 24px 32px;
+}
+.closing-winner-bar {
+	background: #fff3cb;
+	color: #172b58;
+	clip-path: inset(0 100% 0 0);
+	transition: clip-path 650ms cubic-bezier(0.65, 0, 0.2, 1);
+	z-index: 1;
+}
+.text-ice .closing-winner-bar {
+	background: #143e50;
+	color: #fff3cb;
+}
+.text-red .closing-winner-bar {
+	color: #780a1c;
+}
+.closing-reveal[data-revealed="true"] .closing-winner-bar {
+	clip-path: inset(0);
+}
+.closing-content .closing-award-result .closing-winner-name {
+	font-size: 112px;
+	line-height: 1;
+	text-wrap: balance;
+	overflow-wrap: anywhere;
+}
+.text-water .closing-award-result .closing-winner-name {
+	font-size: 104px;
+}
+.closing-content .closing-award-result .closing-winner-name[data-long="true"] {
+	font-size: 86px;
+}
+.closing-winner-bar p {
+	font-size: 24px;
+	margin: 12px 0 0;
+}
+/* Reserve the full reveal before it opens, so the wipe never shifts the slide. */
+.closing-award .closing-logo {
+	width: 350px;
+	height: 175px;
+	margin-bottom: 6px;
+}
+.closing-award .closing-logo .sponsor-mark {
+	height: 52px;
+}
+.closing-award .closing-place {
+	font-size: 44px;
+}
+@media (prefers-reduced-motion: reduce) {
+	.closing-winner-bar {
+		transition: none;
+	}
+}
+.closing-programme {
+	text-align: left;
+	margin: 46px 0 0;
+	padding-left: 45px;
+	font-size: 36px;
+}
+.closing-programme li {
+	padding: 9px 0 9px 16px;
+}
+.closing-programme span {
+	display: block;
+	font-size: 27px;
+	margin-top: 5px;
+}
+.closing-callout {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: 90px;
+	align-items: center;
+	text-align: left;
+	margin-top: 50px;
+	width: 100%;
+}
+.closing-callout h2 {
+	font-family: "Presentation Coolvetica", sans-serif;
+	font-size: 56px;
+	line-height: 1.08;
+	font-weight: 400;
+	margin: 0 0 16px;
+}
+.closing-callout p {
+	font-size: 29px;
+	line-height: 1.35;
+	margin: 15px 0;
+}
+.closing-callout a {
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	font-size: 23px;
+}
+.closing-callout img {
+	display: block;
+	width: 320px;
+	height: 320px;
+	margin-bottom: 22px;
+}
+.closing-join h1 {
+	font-size: 104px;
+}
+.closing-aside h1 {
+	font-size: 82px;
+}
+.closing-wordmark {
+	width: 720px;
+	max-height: 220px;
+	object-fit: contain;
+	margin: 46px 0 20px;
+}
+.closing-goodbye {
+	font-size: 34px;
+	line-height: 1.5;
+	margin: 18px 0;
+}
+@media (prefers-reduced-motion: reduce) {
+	.closing-presentation .landscape,
+	.closing-presentation .slide-ribbon {
+		transition: none;
+	}
+}
+
+/* Leave the anchor and its swing room at the right of the underwater awards. */
+.closing-slide.text-water {
+	padding-right: 380px;
+	padding-left: 90px;
+}
+.closing-slide.text-ice {
+	color: #133e50;
+}
+.closing-slide.text-cream {
+	color: #780a1c;
+}
+.closing-slide.text-red {
+	color: #fff3cb;
+}
+.closing-slide.text-clear {
+	color: #780a1c;
+}
+.closing-award h1 {
+	font-size: 64px;
+}
+.closing-award .closing-french {
+	font-size: 38px;
+}
+.closing-award-result {
+	margin-top: 24px;
+	padding-top: 0;
+}
+.closing-place {
+	margin-bottom: 12px;
+}
+.slide-team .closing-content {
+	transform: translateY(-90px);
+}
+.closing-slide.slide-closing {
+	padding-inline: 130px;
+}
+.slide-closing .closing-content {
+	justify-content: center;
+}
+.closing-cover-wordmark {
+	isolation: isolate;
+	width: 1240px;
+	aspect-ratio: 1939 / 258;
+	background: linear-gradient(180deg, #ffffff 0%, #effaff 35%, #a8dfff 100%);
+	mask: url("/art/presentation/opening/wordmark.webp") center / contain no-repeat;
+	-webkit-mask: url("/art/presentation/opening/wordmark.webp") center / contain no-repeat;
+}
+.closing-cover-wordmark img {
+	display: block;
+	width: 100%;
+	filter: grayscale(1) invert(1);
+	mix-blend-mode: multiply;
+	opacity: 0.3;
+}
+/* Keep the ending title in the sky and the goodbye on the dark foreground. */
+.closing-finale {
+	justify-content: flex-start;
+	padding-top: 35px;
+}
+.closing-finale h1 {
+	font-size: 82px;
+}
+.closing-finale .closing-french {
+	font-size: 46px;
+	margin-top: 10px;
+}
+.closing-wordmark {
+	width: 800px;
+	margin: 32px 0 0;
+}
+.closing-goodbye {
+	position: absolute;
+	bottom: 105px;
+	color: #fff3cb;
+}
+.closing-slide[data-kind="aside"] {
+	background: #fff;
+	color: #111;
+}
+.closing-slide[data-kind="reminders"],
+.closing-slide[data-kind="join"] {
+	padding: 0;
+}
+.closing-signs {
+	position: relative;
+	height: 100%;
+	padding: 55px 55px 0;
+}
+.closing-signs header {
+	text-align: left;
+	margin-left: 35px;
+}
+.closing-signs h1 {
+	font:
+		64px "Presentation Highway",
+		sans-serif;
+	margin: 0;
+	color: #fff3cb;
+}
+.closing-signs .guidelines-stage {
+	margin-top: 52px;
+}
+.closing-signs .guidelines {
+	color: #fff3cb;
+}
+.closing-signs .guideline-label h3 {
+	font-size: 31px;
+	margin: 0;
+}
+.closing-signs .guideline-details p {
+	margin: 0;
+	font-size: 27px;
+}
+.closing-signs .venue-icon-sign svg,
+.closing-join-sign .venue-icon-sign svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.winner-confetti {
+	position: absolute;
+	inset: 0;
+	width: 1600px;
+	height: 900px;
+	pointer-events: none;
+	z-index: 10;
+}
+.closing-presentation .slide-ribbon {
+	z-index: 2;
+}
+.closing-join-art {
+	position: absolute;
+	inset: 0;
+}
+.closing-slide[aria-hidden="false"] .venue-sign-card {
+	animation: closing-sign-rise 800ms cubic-bezier(0.16, 1, 0.3, 1) 1100ms both;
+}
+.closing-presentation[data-cut="true"] .closing-slide[aria-hidden="false"] .venue-sign-card {
+	animation-delay: 150ms;
+}
+@keyframes closing-sign-rise {
+	from {
+		translate: 0 900px;
+	}
+	to {
+		translate: 0 0;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.closing-slide[aria-hidden="false"] .venue-sign-card {
+		animation: none;
+	}
+}
+
+.closing-supplied-sign {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.closing-join-simple {
+	position: relative;
+	height: 100%;
+	padding: 95px 360px;
+	text-align: left;
+	color: #780a1c;
+}
+.closing-join-simple h1 {
+	margin: 0;
+	font:
+		84px "Presentation Coolvetica",
+		sans-serif;
+}
+.closing-join-simple header p {
+	font:
+		40px "Presentation Coolvetica",
+		sans-serif;
+	margin: 12px 0 36px;
+}
+.closing-join-simple a {
+	display: block;
+	width: 340px;
+	background: white;
+	padding: 18px;
+}
+.closing-join-simple img {
+	display: block;
+	width: 100%;
+}
+.closing-slide[data-kind="finale"] {
+	padding: 0;
+}
+.closing-logo-finale {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 280px;
+}
+.closing-slide[data-kind="aside"] {
+	padding: 0;
+}
+.stupid-ideas-scene {
+	position: relative;
+	width: 1600px;
+	height: 900px;
+	overflow: hidden;
+	background: #fff;
+	color: #111;
+}
+.stupid-character {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: auto;
+	max-width: none;
+	transform-origin: top left;
+	will-change: transform, opacity;
+}
+.stupid-event-details {
+	font-family: "Arial Narrow", Arial, sans-serif;
+	position: absolute;
+	left: 100px;
+	top: 135px;
+	width: 680px;
+}
+.stupid-event-details h1 {
+	font:
+		100px/1 "Arial Narrow",
+		Arial,
+		sans-serif;
+	margin: 0;
+}
+.stupid-event-details > p {
+	font-size: 40px;
+	margin: 28px 0;
+}
+.stupid-event-details a {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	color: #111;
+	text-decoration: none;
+	font-size: 28px;
+	gap: 12px;
+}
+.stupid-event-details a img {
+	width: 290px;
+	height: 290px;
+}
+.stupid-play {
+	position: absolute;
+	bottom: 35px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 2px solid #111;
+	background: white;
+	color: #111;
+	padding: 16px 26px;
+	font-size: 26px;
+	cursor: pointer;
+}
+
+.closing-final-wordmark {
+	width: 1100px;
+	height: auto;
+}
