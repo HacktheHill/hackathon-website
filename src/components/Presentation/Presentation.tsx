@@ -11,6 +11,7 @@ import { OpeningArtwork, OpeningBranding } from "./OpeningScene";
 import icons from "../../../public/art/presentation/icons/manifest.json";
 import anchor from "../../../public/art/presentation/anchor/manifest.json";
 import "./presentation.css";
+import useTapToAdvance from "./useTapToAdvance";
 
 const WIDTH = 1600;
 const HEIGHT = 900;
@@ -208,6 +209,7 @@ function SlideContent({
 }
 
 export default function Presentation() {
+	useTapToAdvance();
 	const [{ index, timelineIndex, venueLanguage, challengeStage, cut }, setPosition] = useState({
 		cut: false,
 		index: 0,

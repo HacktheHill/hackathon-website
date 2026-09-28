@@ -8,6 +8,7 @@ import PresentationParticles from "./PresentationParticles";
 import { closingSlides, closingY, closingTone, type ClosingSlide } from "./closingContent";
 import "./presentation.css";
 import "./closing.css";
+import useTapToAdvance from "./useTapToAdvance";
 
 function Content({ slide, revealed, active }: { slide: ClosingSlide; revealed: boolean; active: boolean }) {
 	if (slide.kind === "reminders") return <ClosingSigns language={revealed ? 1 : 0} />;
@@ -120,6 +121,7 @@ function Content({ slide, revealed, active }: { slide: ClosingSlide; revealed: b
 }
 
 export default function ClosingPresentation() {
+	useTapToAdvance();
 	const [{ index, revealed, cut, celebrate }, setPosition] = useState({
 		index: 0,
 		revealed: false,
