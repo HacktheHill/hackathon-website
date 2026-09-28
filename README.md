@@ -18,6 +18,7 @@ Open `http://localhost:4321`. There are no environment variables or backend serv
 Open `http://localhost:4321/slides` after starting the dev server. The 48-slide presentation (including 27 MLH slides) uses the website's artwork and fonts, with a camera that moves down the landscape as slides advance. The stage always stays 16:9; other screen shapes are letterboxed.
 
 - Arrow keys, Space, Enter, or Page Down advance; Page Up or Shift+Space go back.
+- On mobile, tap the slide or surrounding space to advance. Links, buttons, and media controls retain their normal actions. This also works in the closing deck.
 - `F` toggles fullscreen; Home/End jump to the first/last slide.
 - Mouse-wheel gestures advance one slide at a time. Up/down buttons in the bottom-left corner go backward/forward through the same presentation steps. The CGI welcome slide goes directly to Ciena; the imported CGI PowerPoint slides are excluded.
 - A URL fragment such as `/slides#schedule` opens a specific slide. Reduced-motion preferences disable transitions and particles. English and French headings use the same typography.

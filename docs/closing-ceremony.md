@@ -4,7 +4,7 @@ Open `/closing` for the 33-slide bilingual presentation. The camera starts at th
 
 ## Presenting
 
-- Up or Right advances; Down or Left goes back. Slide navigation uses arrow keys only, with no on-screen arrows or scroll navigation. F toggles fullscreen.
+- Up or Right advances; Down or Left goes back. On mobile, tap the slide or surrounding space to advance. Links, buttons, and media controls retain their normal actions. There are no on-screen arrows or scroll navigation. F toggles fullscreen.
 - Awards have two beats: drumroll, then result. Going back restores the previous result. Deep links use `/closing#foss` and `/closing#foss/winner`.
 - Revealing an award fires confetti: side cannons, streamers, stars, fountains, or rain. Podium placements use bronze, silver, and gold, with three volleys for first place. Effects finish within five seconds, clear on navigation, and respect reduced motion. Backtracking and direct winner links do not fire; hide and reveal a result again to replay.
 - Winner names appear on a contrasting bar that wipes across the drumroll, revealing the bar and name together. The two layers share their layout space so the slide stays still; reduced motion makes the reveal immediate. Names use 104–112px type, with 86px for long names.
