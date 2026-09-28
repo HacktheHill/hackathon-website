@@ -1,4 +1,5 @@
 import { venueRules } from "./presentationContent";
+import type { ReactNode } from "react";
 
 const illustrations = [
 	{ name: "burger", en: "No Food", fr: "Nourriture interdite" },
@@ -6,11 +7,19 @@ const illustrations = [
 	{ name: "power", en: "Outlet Restrictions", fr: "Restrictions sur les prises" },
 ];
 
-export default function VenueSigns({ language }: { language: number }) {
+export default function VenueSigns({
+	language,
+	rules = venueRules,
+	pictograms,
+}: {
+	language: number;
+	rules?: typeof venueRules;
+	pictograms?: ReactNode[];
+}) {
 	return (
 		<div className="guidelines-stage" data-language={language === 0 ? "en" : "fr"}>
 			<div className="guidelines">
-				{venueRules.map((rule, index) => (
+				{rules.map((rule, index) => (
 					<div className="venue-sign-card" key={rule.title}>
 						<div className="venue-sign-tilt" style={{ transform: `rotate(${[0, 6.4, 0][index]}deg)` }}>
 							<div className="venue-sign-flipper">
@@ -48,14 +57,20 @@ export default function VenueSigns({ language }: { language: number }) {
 								))}
 							</div>
 						</div>
-						<img
-							className="venue-icon-sign"
-							src={`/art/presentation/venue-icons/${illustrations[index].name}.png`}
-							alt={illustrations[index][language === 0 ? "en" : "fr"]}
-							width={372}
-							height={835}
-							draggable={false}
-						/>
+						{pictograms ? (
+							<div className="venue-icon-sign" aria-hidden="true">
+								{pictograms[index]}
+							</div>
+						) : (
+							<img
+								className="venue-icon-sign"
+								src={`/art/presentation/venue-icons/${illustrations[index].name}.png`}
+								alt={illustrations[index][language === 0 ? "en" : "fr"]}
+								width={372}
+								height={835}
+								draggable={false}
+							/>
+						)}
 					</div>
 				))}
 			</div>

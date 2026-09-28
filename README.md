@@ -34,6 +34,8 @@ The judging anchor uses only layers 15–20 from `wanchor.psd`. Re-export with `
 
 ## Countdown timer
 
+For closing ceremonies, open `/closing`. The closing deck travels from the ocean floor up to Parliament, with bilingual awards and departure reminders. See [closing ceremony notes](docs/closing-ceremony.md) for controls, sources, and the editable winner fields.
+
 Open `http://localhost:4321/timer` for the opening artwork and an automatically running 10-minute countdown. `+` (or `=`) adds one minute; `-` subtracts one minute. Numpad keys also work. At zero, the timer fades to black, plays `public/art/presentation/hthrecap_2.mp4` with sound, then fades into the opening slide of the preloaded `/slides` deck. The whole video is downloaded to a Blob before playback; if it is still loading at zero, the screen stays black until ready. If the browser blocks autoplay with sound, click **Play recap** or press Enter. Slide keyboard navigation works after playback. Timer adjustments stop once the sequence begins; reload to reset to 10 minutes. Digits slide as they change, with motion disabled for reduced-motion preferences. There are no controls during normal playback, and images/video retain their aspect ratios. The deadline tracks elapsed time even when the tab is in the background.
 
 Run its checks with `npm run test:e2e -- tests/e2e/timer.spec.ts`.
