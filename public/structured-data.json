@@ -6,7 +6,7 @@
 		"audienceType": "Students and recent graduates"
 	},
 	"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-	"eventStatus": "https://schema.org/EventScheduled",
+	"eventStatus": "https://schema.org/EventCompleted",
 	"endDate": "2026-09-27",
 	"inLanguage": "English",
 	"availableLanguage": [
@@ -35,14 +35,6 @@
 		}
 	],
 	"name": "Hack the Hill III",
-	"offers": {
-		"@type": "Offer",
-		"availability": "https://schema.org/InStock",
-		"price": "0",
-		"priceCurrency": "CAD",
-		"url": "https://apply.hackthehill.com/",
-		"validFrom": "2026-08-30T20:00:00-04:00"
-	},
 	"organizer": {
 		"@type": "Organization",
 		"areaServed": {

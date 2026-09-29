@@ -18,7 +18,7 @@ function Hero() {
 		useCountdown();
 	const heroRef = useHeroParallax();
 	const { foregroundRef, hotspotRef } = useClockHotspot(countdownAvailable);
-	const applyBtnRef = useRef<HTMLAnchorElement>(null);
+	const ctaRef = useRef<HTMLAnchorElement>(null);
 	const dialogRef = useRef<HTMLDialogElement>(null);
 	const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -38,10 +38,10 @@ function Hero() {
 	}, [popupOpen]);
 
 	useEffect(() => {
-		if (popupOpen && applyBtnRef.current && dialogRef.current && heroRef.current) {
+		if (popupOpen && ctaRef.current && dialogRef.current && heroRef.current) {
 			if (window.matchMedia("(min-width: 1025px)").matches) {
 				const heroRect = heroRef.current.getBoundingClientRect();
-				const btnRect = applyBtnRef.current.getBoundingClientRect();
+				const btnRect = ctaRef.current.getBoundingClientRect();
 				const centerYScreen = (btnRect.bottom + window.innerHeight) / 2;
 				const centerYLocal = centerYScreen - heroRect.top;
 				dialogRef.current.style.top = `${centerYLocal}px`;
@@ -149,8 +149,8 @@ function Hero() {
 					{t("hero.h2")}
 				</h2>
 				<span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-					<a ref={applyBtnRef} className={styles["hero-apply"]} href="https://apply.hackthehill.com/">
-						{t("hero.apply")}
+					<a ref={ctaRef} className={styles["hero-apply"]} href="https://tracker.hackthehill.com/winners">
+						{t("hero.winners")}
 					</a>
 				</span>
 			</div>

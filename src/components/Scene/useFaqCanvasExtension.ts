@@ -9,6 +9,9 @@ export function useFaqCanvasExtension(canvasRef: RefObject<HTMLDivElement>) {
 
 		const desktopQuery = window.matchMedia("(min-width: 1025px)");
 		let frame = 0;
+		const currentExtension = () =>
+			Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")) || 0;
+		let footerTopWithoutExtension = footerSlot.offsetTop - currentExtension();
 
 		const updateExtension = () => {
 			frame = 0;
@@ -17,10 +20,7 @@ export function useFaqCanvasExtension(canvasRef: RefObject<HTMLDivElement>) {
 				return;
 			}
 
-			const currentExtension =
-				Number.parseFloat(getComputedStyle(canvas).getPropertyValue("--faq-content-extension")) || 0;
 			const faqBottom = faqSlot.offsetTop + faqSlot.getBoundingClientRect().height;
-			const footerTopWithoutExtension = footerSlot.offsetTop - currentExtension;
 			const requiredExtension = Math.max(0, Math.ceil(faqBottom + 48 - footerTopWithoutExtension));
 
 			canvas.style.setProperty("--faq-content-extension", `${requiredExtension}px`);
@@ -29,16 +29,23 @@ export function useFaqCanvasExtension(canvasRef: RefObject<HTMLDivElement>) {
 		const requestExtensionUpdate = () => {
 			if (!frame) frame = window.requestAnimationFrame(updateExtension);
 		};
+		const refreshFooterBaseline = () => {
+			footerTopWithoutExtension = footerSlot.offsetTop - currentExtension();
+			requestExtensionUpdate();
+		};
 		const observer = new ResizeObserver(requestExtensionUpdate);
 		observer.observe(faqSlot);
-		window.addEventListener("resize", requestExtensionUpdate);
-		desktopQuery.addEventListener("change", requestExtensionUpdate);
+		const footerObserver = new ResizeObserver(refreshFooterBaseline);
+		footerObserver.observe(footerSlot);
+		window.addEventListener("resize", refreshFooterBaseline);
+		desktopQuery.addEventListener("change", refreshFooterBaseline);
 		requestExtensionUpdate();
 
 		return () => {
 			observer.disconnect();
-			window.removeEventListener("resize", requestExtensionUpdate);
-			desktopQuery.removeEventListener("change", requestExtensionUpdate);
+			footerObserver.disconnect();
+			window.removeEventListener("resize", refreshFooterBaseline);
+			desktopQuery.removeEventListener("change", refreshFooterBaseline);
 			if (frame) window.cancelAnimationFrame(frame);
 		};
 	}, [canvasRef]);

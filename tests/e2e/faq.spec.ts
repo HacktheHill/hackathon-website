@@ -10,11 +10,31 @@ test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 	await expect(questions.nth(1)).toHaveAttribute("open", "");
 });
 
+test("post-event content links to the official winners and clearly marks pending media", async ({ page }) => {
+	await page.goto("/");
+	await expect(page.getByRole("heading", { name: "Winning Projects" })).toBeVisible();
+	await expect(page.locator("#highlights").getByRole("listitem")).toHaveCount(3);
+	await expect(page.getByRole("link", { name: "Explore All Winners" })).toHaveAttribute(
+		"href",
+		"https://tracker.hackthehill.com/winners",
+	);
+	await expect(page.getByRole("heading", { name: "Event photos are coming soon" })).toBeVisible();
+});
+
 test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	for (const width of [1025, 1199, 1200, 1201, 1440, 1599, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
 		await page.goto("/", { waitUntil: "domcontentloaded" });
+		await expect
+			.poll(() =>
+				page.locator("#faq").evaluate(section => {
+					const slot = section.parentElement as HTMLElement;
+					const footer = document.querySelector<HTMLElement>("footer")!;
+					return footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom;
+				}),
+			)
+			.toBeGreaterThanOrEqual(34);
 		const position = await page.locator("#faq").evaluate(section => {
 			const slot = section.parentElement as HTMLElement;
 			const heading = section.querySelector("h2")!;
@@ -44,7 +64,16 @@ test("desktop FAQ expands its water canvas and moves the ocean floor with the fo
 			image.loading = "eager";
 			await image.decode();
 		});
-		await page.waitForTimeout(100);
+		await expect
+			.poll(() =>
+				page.locator("#faq").evaluate(section => {
+					const slot = section.parentElement as HTMLElement;
+					const footer = document.querySelector<HTMLElement>("footer")!;
+					return footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom;
+				}),
+			)
+			.toBeGreaterThanOrEqual(34);
+		await page.waitForTimeout(1500);
 		const baseline = await page.evaluate(() => {
 			const canvas = document.querySelector<HTMLElement>("[data-page-canvas]")!;
 			const baseScene = document.querySelector<HTMLElement>('[class*="base-scene"]')!;
