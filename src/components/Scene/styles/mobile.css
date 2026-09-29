@@ -208,7 +208,7 @@
 
 		grid-row: 6;
 		isolation: isolate;
-		padding: calc(5rem + var(--road-transition-height)) 1rem calc(5rem + var(--ice-bottom-height));
+		padding: calc(5rem + var(--road-transition-height)) 1rem calc(2rem + var(--ice-bottom-height));
 		background: linear-gradient(180deg, #72d2ca 0 calc(100% - var(--ice-bottom-height)), #16357f 100%);
 	}
 

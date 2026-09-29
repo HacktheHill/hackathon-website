@@ -62,16 +62,14 @@ export default {
 		general: "Défi général",
 		civic: "Technologie civique",
 		cgi: "Défi CGI",
-		first_place: "Première place",
 		view_project: "Voir sur Devpost",
 		all_winners: "Voir tous les gagnants",
 	},
 	gallery: {
-		title: "Galerie de Hack the Hill III",
+		title: "Galerie",
 		intro: "Nous préparons une sélection de moments marquants de la fin de semaine.",
 		empty_title: "Les photos de l’événement arrivent bientôt",
-		empty_body:
-			"Nous sélectionnons des photos de l’événement, y compris une photo de toute l’équipe organisatrice. Elles paraîtront ici dès qu’elles seront prêtes.",
+		empty_body: "Nous sélectionnons des photos de l’événement. Elles paraîtront ici dès qu’elles seront prêtes.",
 	},
 	testimonials: {
 		title: "Ce que disent nos anciens partenaires",
@@ -123,7 +121,7 @@ export default {
 		a1: "La vidéo est encore en préparation. Nous mettrons cette page à jour lorsqu’elle sera prête.",
 
 		q2: "Quand les photos de l’événement seront-elles disponibles?",
-		a2: "Nous préparons actuellement la galerie et ajouterons les photos approuvées à cette page dès qu’elles seront disponibles.",
+		a2: "Nous préparons actuellement la galerie et ajouterons les photos à cette page dès qu’elles seront disponibles.",
 
 		q3: "Comment puis-je recevoir des nouvelles du prochain Hack the Hill?",
 		a3: "Abonnez-vous au bas de cette page et suivez Hack the Hill sur les médias sociaux pour connaître les prochaines annonces.",

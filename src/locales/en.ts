@@ -62,16 +62,14 @@ export default {
 		general: "General Challenge",
 		civic: "Civic Technology",
 		cgi: "CGI Challenge",
-		first_place: "First place",
 		view_project: "View on Devpost",
 		all_winners: "Explore All Winners",
 	},
 	gallery: {
-		title: "Hack the Hill III Gallery",
+		title: "Gallery",
 		intro: "We are preparing a selection of moments from the weekend.",
 		empty_title: "Event photos are coming soon",
-		empty_body:
-			"We are selecting photos from the event, including a full organising-team photo. They will appear here once they are ready.",
+		empty_body: "We are selecting photos from the event. They will appear here once they are ready.",
 	},
 	testimonials: {
 		title: "What Past Partners Say",
@@ -121,7 +119,7 @@ export default {
 		a1: "The recap is still being prepared. We will update this page when it is ready.",
 
 		q2: "When will event photos be available?",
-		a2: "We are curating the event gallery now and will add approved photos to this page as they become available.",
+		a2: "We are curating the event gallery now and will add photos to this page as they become available.",
 
 		q3: "How can I hear about the next Hack the Hill?",
 		a3: "Subscribe at the bottom of this page and follow Hack the Hill on social media for future event announcements.",

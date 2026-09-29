@@ -32,20 +32,17 @@ export default function Highlights() {
 				<p className={styles.intro}>{t("highlights.intro")}</p>
 			</div>
 
-			<ol className={styles.projects}>
+			<ul className={styles.projects}>
 				{WINNERS.map(winner => (
 					<li key={winner.project} className={styles.card}>
-						<div className={styles.labels}>
-							<span className={styles.challenge}>{t(`highlights.${winner.challengeKey}`)}</span>
-							<span className={styles.placement}>{t("highlights.first_place")}</span>
-						</div>
+						<p className={styles.challenge}>{t(`highlights.${winner.challengeKey}`)}</p>
 						<h3>{winner.project}</h3>
 						<a href={winner.href} target="_blank" rel="noreferrer">
 							{t("highlights.view_project")}
 						</a>
 					</li>
 				))}
-			</ol>
+			</ul>
 
 			<Button href="https://tracker.hackthehill.com/winners" target="_blank">
 				{t("highlights.all_winners")}
