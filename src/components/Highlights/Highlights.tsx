@@ -4,19 +4,19 @@ import styles from "./Highlights.module.css";
 
 const WINNERS = [
 	{
-		placeKey: "first",
+		challengeKey: "general",
 		project: "Dx – Simulated Patient Diagnosis Platform",
 		href: "https://devpost.com/software/dx-patient-diagnosis-platform",
 	},
 	{
-		placeKey: "second",
-		project: "gymlens",
-		href: "https://devpost.com/software/gymlens-rplve4",
+		challengeKey: "civic",
+		project: "VitaSpectra",
+		href: "https://devpost.com/software/tempname-sfk4wn",
 	},
 	{
-		placeKey: "third",
-		project: "Babbli",
-		href: "https://devpost.com/software/babbli",
+		challengeKey: "cgi",
+		project: "NorthFlow",
+		href: "https://devpost.com/software/northflow",
 	},
 ] as const;
 
@@ -26,7 +26,6 @@ export default function Highlights() {
 	return (
 		<section id="highlights" className={styles.highlights} aria-labelledby="highlights-title">
 			<div className={styles.header}>
-				<p className={styles.eyebrow}>{t("highlights.eyebrow")}</p>
 				<h2 id="highlights-title" className="section-heading">
 					{t("highlights.title")}
 				</h2>
@@ -36,7 +35,10 @@ export default function Highlights() {
 			<ol className={styles.projects}>
 				{WINNERS.map(winner => (
 					<li key={winner.project} className={styles.card}>
-						<span className={styles.placement}>{t(`highlights.${winner.placeKey}`)}</span>
+						<div className={styles.labels}>
+							<span className={styles.challenge}>{t(`highlights.${winner.challengeKey}`)}</span>
+							<span className={styles.placement}>{t("highlights.first_place")}</span>
+						</div>
 						<h3>{winner.project}</h3>
 						<a href={winner.href} target="_blank" rel="noreferrer">
 							{t("highlights.view_project")}

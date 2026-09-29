@@ -13,16 +13,7 @@
 }
 
 .header :global(.section-heading) {
-	margin: 0.25rem 0 0.75rem;
-}
-
-.eyebrow {
-	margin: 0;
-	color: var(--light-secondary-color);
-	font-size: 0.9rem;
-	font-weight: 700;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
+	margin: 0 0 0.75rem;
 }
 
 .intro {
@@ -53,17 +44,33 @@
 	box-shadow: 0 1rem 2rem rgb(4 15 54 / 18%);
 }
 
+.labels {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.65rem;
+}
+
+.challenge,
 .placement {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 2.75rem;
-	min-height: 2.75rem;
-	padding-inline: 0.5rem;
-	color: var(--dark-primary-color);
+	min-height: 2.25rem;
+	padding-inline: 0.8rem;
+	font-size: 0.9rem;
 	font-weight: 700;
-	background: var(--light-secondary-color);
 	border-radius: 999px;
+}
+
+.challenge {
+	color: var(--dark-primary-color);
+	background: var(--light-secondary-color);
+}
+
+.placement {
+	color: var(--light-primary-color);
+	border: 1px solid rgb(255 243 182 / 45%);
 }
 
 .card h3 {

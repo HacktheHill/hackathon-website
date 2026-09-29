@@ -1,7 +1,7 @@
 .gallery {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: clamp(2rem, 4vw, 3rem);
 	color: var(--light-primary-color);
 	font-family: Rubik, sans-serif;
 }
@@ -23,7 +23,7 @@
 
 .placeholder {
 	display: grid;
-	grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.2fr);
+	grid-template-columns: 13rem minmax(0, 1fr);
 	align-items: center;
 	gap: clamp(1.5rem, 4vw, 3rem);
 	padding: clamp(1.5rem, 3vw, 2.5rem);
@@ -39,7 +39,9 @@
 
 .frames {
 	position: relative;
-	min-height: 11rem;
+	width: 12rem;
+	min-height: 9rem;
+	margin-inline: auto;
 }
 
 .frames span {
@@ -47,7 +49,7 @@
 	top: 50%;
 	left: 50%;
 	display: block;
-	width: 55%;
+	width: 7.25rem;
 	aspect-ratio: 4 / 3;
 	background: linear-gradient(145deg, rgb(248 204 141 / 25%), rgb(221 72 77 / 24%));
 	border: 0.4rem solid rgb(255 243 182 / 70%);
@@ -56,7 +58,7 @@
 }
 
 .frames span:nth-child(1) {
-	transform: translate(-90%, -50%) rotate(-7deg);
+	transform: translate(-76%, -48%) rotate(-7deg);
 }
 
 .frames span:nth-child(2) {
@@ -65,7 +67,7 @@
 }
 
 .frames span:nth-child(3) {
-	transform: translate(-10%, -45%) rotate(8deg);
+	transform: translate(-24%, -45%) rotate(8deg);
 }
 
 .grid {
@@ -101,7 +103,8 @@
 	}
 
 	.frames {
-		min-height: 9rem;
+		width: 11rem;
+		min-height: 8rem;
 	}
 
 	.grid {

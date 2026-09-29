@@ -32,7 +32,7 @@ export default {
 		title: "Hack&nbsp;the&nbsp;Hill&nbsp;III in Review",
 		p1: "From September 25 to 27, 2026, Hack the Hill III brought more than 350 participants together at the University of Ottawa for a weekend of building, learning, and community.",
 		p2: "Three hundred hackers submitted 100 projects and took part in nine workshops, turning ideas into practical solutions across civic technology and beyond.",
-		p3: "The event was made possible by 30 organisers and more than 20 volunteers. Our Hack the Hill III recap is on the way; until then, the video revisits Hack the Hill II.",
+		p3: "The event was made possible by 30 organisers and more than 20 volunteers. Our Hack the Hill III recap is on the way.",
 		frame_alt: "Hack the Hill II recap video from the previous edition",
 	},
 	stats: {
@@ -49,20 +49,20 @@ export default {
 		p5tag: "Event Team",
 	},
 	sponsors: {
-		title: "Thank You to Our 2026 Sponsors",
+		title: "Thank You to Our Sponsors",
 		p: "Hack the Hill III was made possible by these generous sponsors. Interested in supporting the capital's hackathon?",
 		button: "Become a Sponsor",
 	},
 	collaborators: {
-		title: "Thank You to Our 2026 Collaborators",
+		title: "Thank You to Our Collaborators",
 	},
 	highlights: {
-		eyebrow: "Official Results",
-		title: "Winning Projects",
-		intro: "Meet the teams that placed in the Hack the Hill III General Challenge, then explore every main, mini, and MLH challenge winner on Track the Hack.",
-		first: "1st",
-		second: "2nd",
-		third: "3rd",
+		title: "Main Challenge Winners",
+		intro: "Meet the first-place project from each of Hack the Hill III’s three main challenges.",
+		general: "General Challenge",
+		civic: "Civic Technology",
+		cgi: "CGI Challenge",
+		first_place: "First place",
 		view_project: "View on Devpost",
 		all_winners: "Explore All Winners",
 	},
@@ -117,22 +117,17 @@ export default {
 	faq: {
 		title: "Frequently Asked Questions",
 
-		q1: "Where can I see the winners?",
-		a1: "The official results are available on the",
-		a1_link: "winners page",
-		a1_suffix: ", with links to each winning project on Devpost.",
+		q1: "Where is the Hack the Hill III recap video?",
+		a1: "The recap is still being prepared. We will update this page when it is ready.",
 
-		q2: "Where is the Hack the Hill III recap video?",
-		a2: "The recap is still being prepared. We will update this page when it is ready; the current video revisits Hack the Hill II.",
+		q2: "When will event photos be available?",
+		a2: "We are curating the event gallery now and will add approved photos to this page as they become available.",
 
-		q3: "When will event photos be available?",
-		a3: "We are curating the event gallery now and will add approved photos to this page as they become available.",
+		q3: "How can I hear about the next Hack the Hill?",
+		a3: "Subscribe at the bottom of this page and follow Hack the Hill on social media for future event announcements.",
 
-		q4: "How can I hear about the next Hack the Hill?",
-		a4: "Subscribe at the bottom of this page and follow Hack the Hill on social media for future event announcements.",
-
-		q5: "Who made Hack the Hill III possible?",
-		a5: "Hack the Hill III was organised by the Capital Technology Network with 30 organisers and more than 20 volunteers, alongside our sponsors and collaborators.",
+		q4: "Who made Hack the Hill III possible?",
+		a4: "Hack the Hill III was organised by the Capital Technology Network with 30 organisers and more than 20 volunteers, alongside our sponsors and collaborators.",
 	},
 	footer: {
 		subscribe: "Get updates",

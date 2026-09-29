@@ -32,7 +32,7 @@ export default {
 		title: "Retour sur Hack&nbsp;the&nbsp;Hill&nbsp;III",
 		p1: "Du 25 au 27 septembre 2026, Hack the Hill III a réuni plus de 350 personnes à l’Université d’Ottawa pour une fin de semaine de création, d’apprentissage et de communauté.",
 		p2: "Trois cents hackers ont soumis 100 projets et participé à neuf ateliers, transformant leurs idées en solutions concrètes dans les technologies civiques et au-delà.",
-		p3: "L’événement a été rendu possible grâce à 30 organisateurs et plus de 20 bénévoles. Notre vidéo récapitulative de Hack the Hill III est en préparation; d’ici là, la vidéo présente Hack the Hill II.",
+		p3: "L’événement a été rendu possible grâce à 30 organisateurs et plus de 20 bénévoles. Notre vidéo récapitulative de Hack the Hill III est en préparation.",
 		frame_alt: "Vidéo récapitulative de l’édition précédente, Hack the Hill II",
 	},
 	stats: {
@@ -49,20 +49,20 @@ export default {
 		p5tag: "Équipe événementielle",
 	},
 	sponsors: {
-		title: "Merci à nos commanditaires de 2026",
+		title: "Merci à nos commanditaires",
 		p: "Hack the Hill III a été rendu possible grâce à ces généreux commanditaires. Souhaitez-vous soutenir le hackathon de la capitale canadienne?",
 		button: "Devenir commanditaire",
 	},
 	collaborators: {
-		title: "Merci à nos collaborateurs de 2026",
+		title: "Merci à nos collaborateurs",
 	},
 	highlights: {
-		eyebrow: "Résultats officiels",
-		title: "Projets gagnants",
-		intro: "Découvrez les équipes classées au défi général de Hack the Hill III, puis consultez tous les gagnants des défis principaux, des mini-défis et des défis MLH sur Track the Hack.",
-		first: "1er",
-		second: "2e",
-		third: "3e",
+		title: "Gagnants des défis principaux",
+		intro: "Découvrez le projet arrivé en première place dans chacun des trois défis principaux de Hack the Hill III.",
+		general: "Défi général",
+		civic: "Technologie civique",
+		cgi: "Défi CGI",
+		first_place: "Première place",
 		view_project: "Voir sur Devpost",
 		all_winners: "Voir tous les gagnants",
 	},
@@ -119,22 +119,17 @@ export default {
 	faq: {
 		title: "Foire aux questions",
 
-		q1: "Où puis-je voir les gagnants?",
-		a1: "Les résultats officiels sont publiés sur la",
-		a1_link: "page des gagnants",
-		a1_suffix: ", avec des liens vers chaque projet gagnant sur Devpost.",
+		q1: "Où est la vidéo récapitulative de Hack the Hill III?",
+		a1: "La vidéo est encore en préparation. Nous mettrons cette page à jour lorsqu’elle sera prête.",
 
-		q2: "Où est la vidéo récapitulative de Hack the Hill III?",
-		a2: "La vidéo est encore en préparation. Nous mettrons cette page à jour lorsqu’elle sera prête; la vidéo actuelle présente Hack the Hill II.",
+		q2: "Quand les photos de l’événement seront-elles disponibles?",
+		a2: "Nous préparons actuellement la galerie et ajouterons les photos approuvées à cette page dès qu’elles seront disponibles.",
 
-		q3: "Quand les photos de l’événement seront-elles disponibles?",
-		a3: "Nous préparons actuellement la galerie et ajouterons les photos approuvées à cette page dès qu’elles seront disponibles.",
+		q3: "Comment puis-je recevoir des nouvelles du prochain Hack the Hill?",
+		a3: "Abonnez-vous au bas de cette page et suivez Hack the Hill sur les médias sociaux pour connaître les prochaines annonces.",
 
-		q4: "Comment puis-je recevoir des nouvelles du prochain Hack the Hill?",
-		a4: "Abonnez-vous au bas de cette page et suivez Hack the Hill sur les médias sociaux pour connaître les prochaines annonces.",
-
-		q5: "Qui a rendu Hack the Hill III possible?",
-		a5: "Hack the Hill III a été organisé par le Réseau technologique de la capitale avec 30 organisateurs et plus de 20 bénévoles, ainsi qu’avec nos commanditaires et collaborateurs.",
+		q4: "Qui a rendu Hack the Hill III possible?",
+		a4: "Hack the Hill III a été organisé par le Réseau technologique de la capitale avec 30 organisateurs et plus de 20 bénévoles, ainsi qu’avec nos commanditaires et collaborateurs.",
 	},
 	footer: {
 		subscribe: "Recevoir des nouvelles",

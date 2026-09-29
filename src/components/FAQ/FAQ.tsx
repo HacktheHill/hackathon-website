@@ -6,12 +6,7 @@ export default function FAQ() {
 	const quesAns = [
 		{
 			q: t("faq.q1"),
-			a: (
-				<>
-					{t("faq.a1")} <a href="https://tracker.hackthehill.com/winners">{t("faq.a1_link")}</a>
-					{t("faq.a1_suffix")}
-				</>
-			),
+			a: t("faq.a1"),
 			key: "0",
 		},
 		{
@@ -28,11 +23,6 @@ export default function FAQ() {
 			q: t("faq.q4"),
 			a: t("faq.a4"),
 			key: "3",
-		},
-		{
-			q: t("faq.q5"),
-			a: t("faq.a5"),
-			key: "4",
 		},
 	];
 	const renderAccordions = (items: typeof quesAns) =>

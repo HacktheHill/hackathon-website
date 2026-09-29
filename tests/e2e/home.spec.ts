@@ -66,8 +66,8 @@ test("current sponsors and collaborators render in the approved order", async ({
 	await page.setViewportSize({ width: 1440, height: 900 });
 	await page.goto("/");
 
-	await expect(page.getByRole("heading", { name: "Thank You to Our 2026 Sponsors", exact: true })).toBeVisible();
-	await expect(page.getByRole("heading", { name: "Thank You to Our 2026 Collaborators", exact: true })).toBeVisible();
+	await expect(page.getByRole("heading", { name: "Thank You to Our Sponsors", exact: true })).toBeVisible();
+	await expect(page.getByRole("heading", { name: "Thank You to Our Collaborators", exact: true })).toBeVisible();
 
 	const sponsorCards = page.locator("[data-sponsor-card]");
 	await expect(sponsorCards).toHaveCount(7);
