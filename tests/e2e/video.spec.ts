@@ -72,7 +72,7 @@ test("desktop welcome video leaves clear space beside the copy", async ({ page }
 		expect(Math.abs(layout.headingTopClearance - layout.headingBodyGap)).toBeLessThanOrEqual(1);
 		for (const gap of layout.paragraphGaps) expect(gap).toBeGreaterThanOrEqual(0);
 		expect(Math.abs(layout.paragraphGaps[0] - layout.paragraphGaps[1])).toBeLessThanOrEqual(1);
-		expect(layout.desktopTitle).toBe("Welcome to Hack the Hill III");
+		expect(layout.desktopTitle).toBe("Hack the Hill III in Review");
 		expect(layout.bottomClearance).toBeGreaterThanOrEqual(layout.canvasWidth * 0.004);
 		expect(layout.videoWidth / layout.canvasWidth).toBeCloseTo(0.338606, 2);
 		expect(layout.videoAspectRatio).toBeCloseTo(1059 / 571, 2);
@@ -114,7 +114,7 @@ test("mobile recap poster and player fill the log frame opening", async ({ page 
 		for (const offset of [alignment.left, alignment.top, alignment.width, alignment.height]) {
 			expect(Math.abs(offset)).toBeLessThanOrEqual(1);
 		}
-		expect(alignment.title).toBe("Welcome to Hack the Hill III");
+		expect(alignment.title).toBe("Hack the Hill III in Review");
 		expect(alignment.titleDisplay).not.toBe("none");
 		expect(Math.abs(alignment.paragraphGap - 16)).toBeLessThanOrEqual(1);
 	}

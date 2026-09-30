@@ -26,9 +26,9 @@ test("mobile artwork transitions reserve space without covering content", async 
 		const transition = await page.locator("#faq").evaluate(section => {
 			const about = document.querySelector<HTMLElement>("#about")!;
 			const aboutParagraphs = Array.from(about.querySelectorAll("p"));
-			const sectionBox = section.getBoundingClientRect();
 			const slot = section.parentElement!;
 			const slotBox = slot.getBoundingClientRect();
+			const firstArchiveSectionBox = slot.firstElementChild!.getBoundingClientRect();
 			const sponsors = slot.previousElementSibling!;
 			const sponsorsBox = sponsors.getBoundingClientRect();
 			const headingBox = section.querySelector("h2")!.getBoundingClientRect();
@@ -45,7 +45,7 @@ test("mobile artwork transitions reserve space without covering content", async 
 							aboutParagraphs[index].getBoundingClientRect().bottom,
 					),
 				sectionGap: slotBox.top - sponsorsBox.bottom,
-				titleGap: sectionBox.top - slotBox.top,
+				titleGap: firstArchiveSectionBox.top - slotBox.top,
 				headingToQuestionsGap: columnsBox.top - headingBox.bottom,
 				iceTransition: getComputedStyle(sponsors, "::after").backgroundImage,
 				waterBackground: getComputedStyle(slot).backgroundImage,

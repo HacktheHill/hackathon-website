@@ -22,18 +22,22 @@ test("copy remains selectable through foreground artwork", async ({ page }) => {
 test("mobile hero copy clears navigation and stays in view", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
-	const [badge, heading, apply] = await Promise.all([
+	const [badge, heading, cta] = await Promise.all([
 		page.locator("#mlh-trust-badge").boundingBox(),
 		page.locator("#hero h1").boundingBox(),
-		page.getByRole("link", { name: "Apply Now" }).boundingBox(),
+		page.getByRole("link", { name: "View Winners" }).boundingBox(),
 	]);
 	expect(badge).not.toBeNull();
 	expect(heading).not.toBeNull();
-	expect(apply).not.toBeNull();
+	expect(cta).not.toBeNull();
 	expect(heading!.y).toBeGreaterThanOrEqual(badge!.y + badge!.height + 16);
 	expect(heading!.x).toBeGreaterThanOrEqual(0);
 	expect(heading!.x + heading!.width).toBeLessThanOrEqual(390);
-	expect(apply!.x + apply!.width).toBeLessThanOrEqual(390);
+	expect(cta!.x + cta!.width).toBeLessThanOrEqual(390);
+	await expect(page.getByRole("link", { name: "View Winners" })).toHaveAttribute(
+		"href",
+		"https://tracker.hackthehill.com/winners",
+	);
 });
 
 test("header remains in document flow and scrolls with the page", async ({ page }) => {

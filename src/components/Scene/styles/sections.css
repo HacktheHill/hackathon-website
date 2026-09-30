@@ -98,10 +98,13 @@
 
 .faq-slot {
 	left: 12%;
-	/* The lower ice slice can move independently at tablet widths. Keep the FAQ
+	display: flex;
+	flex-direction: column;
+	gap: clamp(4rem, 7vw, 7rem);
+	/* The lower ice slice can move independently at tablet widths. Keep Winners
 		below its lowest pixel, including its maximum 34px upward parallax. */
 	top: max(
-		calc(81.25% + var(--tablet-partner-extension)),
+		calc(81.25% + var(--tablet-partner-extension) - clamp(4rem, 6vw, 6rem)),
 		calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
 	);
 	width: 76%;
@@ -114,6 +117,10 @@
 }
 
 @media (min-width: 1025px) {
+	.faq-slot {
+		padding-bottom: clamp(4rem, 6vw, 6rem);
+	}
+
 	.about-slot {
 		top: 16.9682%;
 		height: 7.1329%;
@@ -146,7 +153,7 @@
 	.faq-slot {
 		left: 10%;
 		top: max(
-			calc(81.25% + var(--tablet-partner-extension)),
+			calc(81.25% + var(--tablet-partner-extension) - clamp(4rem, 6vw, 6rem)),
 			calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
 		);
 		width: 80%;
