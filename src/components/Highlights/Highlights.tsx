@@ -29,7 +29,6 @@ export default function Highlights() {
 				<h2 id="highlights-title" className="section-heading">
 					{t("highlights.title")}
 				</h2>
-				<p className={styles.intro}>{t("highlights.intro")}</p>
 			</div>
 
 			<ul className={styles.projects}>

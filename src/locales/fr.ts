@@ -57,8 +57,7 @@ export default {
 		title: "Merci à nos collaborateurs",
 	},
 	highlights: {
-		title: "Gagnants des défis principaux",
-		intro: "Découvrez le projet arrivé en première place dans chacun des trois défis principaux de Hack the Hill III.",
+		title: "Gagnants",
 		general: "Défi général",
 		civic: "Technologie civique",
 		cgi: "Défi CGI",

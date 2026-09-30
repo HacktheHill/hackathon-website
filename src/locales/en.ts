@@ -57,8 +57,7 @@ export default {
 		title: "Thank You to Our Collaborators",
 	},
 	highlights: {
-		title: "Main Challenge Winners",
-		intro: "Meet the first-place project from each of Hack the Hill III’s three main challenges.",
+		title: "Winners",
 		general: "General Challenge",
 		civic: "Civic Technology",
 		cgi: "CGI Challenge",

@@ -12,7 +12,7 @@ test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 
 test("post-event content links to the official winners and clearly marks pending media", async ({ page }) => {
 	await page.goto("/");
-	await expect(page.getByRole("heading", { name: "Main Challenge Winners" })).toBeVisible();
+	await expect(page.getByRole("heading", { name: "Winners", exact: true })).toBeVisible();
 	await expect(page.locator("#highlights").getByRole("listitem")).toHaveCount(3);
 	await expect(page.locator("#highlights h3")).toHaveText([
 		"Dx – Simulated Patient Diagnosis Platform",
