@@ -48,7 +48,7 @@ test("mobile sections do not overlap", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
 	const boxes = await page
-		.locator("#hero, #about, #stats, #testimonials, #sponsors, #collaborators, #faq, footer")
+		.locator("#hero, #about, #stats, #testimonials, #sponsors, #collaborators, #highlights, #gallery, #faq, footer")
 		.evaluateAll(elements =>
 			elements
 				.map(element => {
@@ -66,30 +66,44 @@ test("current sponsors and collaborators render in the approved order", async ({
 	await page.setViewportSize({ width: 1440, height: 900 });
 	await page.goto("/");
 
-	await expect(page.getByRole("heading", { name: "Sponsors", exact: true })).toBeVisible();
-	await expect(page.getByRole("heading", { name: "Collaborators", exact: true })).toBeVisible();
+	await expect(page.getByRole("heading", { name: "Thank You to Our Sponsors", exact: true })).toBeVisible();
+	await expect(page.getByRole("heading", { name: "Thank You to Our Collaborators", exact: true })).toBeVisible();
 
 	const sponsorCards = page.locator("[data-sponsor-card]");
-	await expect(sponsorCards).toHaveCount(4);
+	await expect(sponsorCards).toHaveCount(7);
 	expect(await sponsorCards.first().getAttribute("data-sponsor-tier")).toBe("largest");
 	expect(await sponsorCards.nth(1).getAttribute("data-sponsor-tier")).toBe("large");
-	expect(await sponsorCards.nth(2).getAttribute("data-sponsor-tier")).toBe("small");
+	expect(await sponsorCards.nth(2).getAttribute("data-sponsor-tier")).toBe("large");
 	expect(await sponsorCards.nth(3).getAttribute("data-sponsor-tier")).toBe("small");
+	expect(await sponsorCards.nth(4).getAttribute("data-sponsor-tier")).toBe("small");
+	expect(await sponsorCards.nth(5).getAttribute("data-sponsor-tier")).toBe("small");
+	expect(await sponsorCards.nth(6).getAttribute("data-sponsor-tier")).toBe("small");
 	expect(
 		await sponsorCards
 			.locator('img:not([aria-hidden="true"])')
 			.evaluateAll(images => images.map(image => image.getAttribute("alt"))),
-	).toEqual(["CGI logo", "Ciena logo", "ElevenLabs logo", "Backboard logo"]);
-	await expect(sponsorCards.locator('img[aria-hidden="true"]')).toHaveCount(4);
+	).toEqual([
+		"CGI logo",
+		"Ciena logo",
+		"UOSU logo",
+		"ElevenLabs logo",
+		"Backboard logo",
+		"Engineering Endowment Fund logo",
+		"MathemaTech logo",
+	]);
+	await expect(sponsorCards.locator('img[aria-hidden="true"]')).toHaveCount(7);
 
 	const sponsorWidths = await sponsorCards.evaluateAll(cards =>
 		cards.map(card => card.getBoundingClientRect().width),
 	);
 	expect(sponsorWidths[0]).toBeCloseTo(sponsorWidths[1] ?? 0, 0);
-	expect(sponsorWidths[1]).toBeGreaterThan(sponsorWidths[2]);
-	expect(sponsorWidths[2]).toBeCloseTo(sponsorWidths[3] ?? 0, 0);
+	expect(sponsorWidths[1]).toBeCloseTo(sponsorWidths[2] ?? 0, 0);
+	expect(sponsorWidths[2]).toBeGreaterThan(sponsorWidths[3]);
+	for (let index = 4; index < sponsorWidths.length; index += 1) {
+		expect(sponsorWidths[index]).toBeCloseTo(sponsorWidths[3] ?? 0, 0);
+	}
 
-	await expect(page.locator("[data-collaborator-card]")).toHaveCount(8);
+	await expect(page.locator("[data-collaborator-card]")).toHaveCount(6);
 	expect(
 		await page
 			.locator("[data-collaborator-card] img")
@@ -97,10 +111,8 @@ test("current sponsors and collaborators render in the approved order", async ({
 	).toEqual([
 		"uOttawa logo",
 		"Engineering Students' Society logo",
-		"Engineering Endowment Fund logo",
 		"IEEE uOttawa logo",
 		"Software Engineering Students' Association logo",
-		"UOSU logo",
 		"uODPA APNuO logo",
 		"Carleton AI Society logo",
 	]);

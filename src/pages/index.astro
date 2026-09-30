@@ -2,8 +2,10 @@
 import App from "../components/App/App";
 import Layout from "../layouts/Layout.astro";
 const title = "Hack the Hill III";
+const description =
+	"Hack the Hill III brought more than 350 participants together at the University of Ottawa from September 25 to 27, 2026. Explore the winning projects and event highlights.";
 ---
 
-<Layout title={title} includeEventData>
+<Layout title={title} description={description} includeEventData>
 	<App client:load />
 </Layout>

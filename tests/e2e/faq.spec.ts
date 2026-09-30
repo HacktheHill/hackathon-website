@@ -10,14 +10,71 @@ test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 	await expect(questions.nth(1)).toHaveAttribute("open", "");
 });
 
-test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
+test("post-event content links to the official winners and clearly marks pending media", async ({ page }) => {
+	await page.goto("/");
+	await expect(page.getByRole("heading", { name: "Winners", exact: true })).toBeVisible();
+	await expect(page.locator("#highlights").getByRole("listitem")).toHaveCount(3);
+	await expect(page.locator("#highlights h3")).toHaveText([
+		"Dx – Simulated Patient Diagnosis Platform",
+		"VitaSpectra",
+		"NorthFlow",
+	]);
+	await expect(page.getByRole("link", { name: "Explore All Winners" })).toHaveAttribute(
+		"href",
+		"https://tracker.hackthehill.com/winners",
+	);
+	await expect(page.getByRole("heading", { name: "Event photos are coming soon" })).toBeVisible();
+	await expect(page.locator("#faq details")).toHaveCount(4);
+});
+
+test("gallery placeholder keeps its illustration clear of the surrounding copy", async ({ page }) => {
+	for (const viewport of [
+		{ width: 390, height: 844 },
+		{ width: 1440, height: 900 },
+	]) {
+		await page.setViewportSize(viewport);
+		await page.goto("/");
+		const layout = await page.locator("#gallery").evaluate(gallery => {
+			const header = gallery.firstElementChild as HTMLElement;
+			const placeholder = gallery.querySelector<HTMLElement>('[role="status"]')!;
+			const frames = placeholder.firstElementChild as HTMLElement;
+			const copy = placeholder.lastElementChild as HTMLElement;
+			return {
+				headerBottom: header.getBoundingClientRect().bottom,
+				placeholderTop: placeholder.getBoundingClientRect().top,
+				framesRight: frames.getBoundingClientRect().right,
+				framesBottom: frames.getBoundingClientRect().bottom,
+				copyLeft: copy.getBoundingClientRect().left,
+				copyTop: copy.getBoundingClientRect().top,
+			};
+		});
+
+		expect(layout.placeholderTop).toBeGreaterThan(layout.headerBottom);
+		if (viewport.width > 760) {
+			expect(layout.copyLeft).toBeGreaterThan(layout.framesRight);
+		} else {
+			expect(layout.copyTop).toBeGreaterThan(layout.framesBottom);
+		}
+	}
+});
+
+test("desktop archive content always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	for (const width of [1025, 1199, 1200, 1201, 1440, 1599, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
 		await page.goto("/", { waitUntil: "domcontentloaded" });
+		await expect
+			.poll(() =>
+				page.locator("#faq").evaluate(section => {
+					const slot = section.parentElement as HTMLElement;
+					const footer = document.querySelector<HTMLElement>("footer")!;
+					return footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom;
+				}),
+			)
+			.toBeGreaterThanOrEqual(34);
 		const position = await page.locator("#faq").evaluate(section => {
 			const slot = section.parentElement as HTMLElement;
-			const heading = section.querySelector("h2")!;
+			const heading = document.querySelector("#highlights h2")!;
 			const footer = document.querySelector<HTMLElement>("footer")!;
 			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
 			const iceBottom = document.querySelector<HTMLElement>('[data-scene-slice="ice-bottom"]')!;
@@ -44,7 +101,16 @@ test("desktop FAQ expands its water canvas and moves the ocean floor with the fo
 			image.loading = "eager";
 			await image.decode();
 		});
-		await page.waitForTimeout(100);
+		await expect
+			.poll(() =>
+				page.locator("#faq").evaluate(section => {
+					const slot = section.parentElement as HTMLElement;
+					const footer = document.querySelector<HTMLElement>("footer")!;
+					return footer.getBoundingClientRect().top - slot.getBoundingClientRect().bottom;
+				}),
+			)
+			.toBeGreaterThanOrEqual(34);
+		await page.waitForTimeout(1500);
 		const baseline = await page.evaluate(() => {
 			const canvas = document.querySelector<HTMLElement>("[data-page-canvas]")!;
 			const baseScene = document.querySelector<HTMLElement>('[class*="base-scene"]')!;

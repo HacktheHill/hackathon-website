@@ -7,6 +7,8 @@ import About, { AboutVideo } from "../About/About";
 import Stats, { MobileStatsIntro } from "../Stats/Stats";
 import Testimonials from "../Testimonials/Testimonials";
 import Sponsors from "../Sponsors/Sponsors";
+import Highlights from "../Highlights/Highlights";
+import Gallery from "../Gallery/Gallery";
 import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
 import ParticleEffects from "../ParticleEffects/ParticleEffects";
@@ -72,6 +74,8 @@ function App() {
 								data-section-parallax="0.024"
 								data-parallax-max="34"
 							>
+								<Highlights />
+								<Gallery />
 								<FAQ />
 							</div>
 							<div

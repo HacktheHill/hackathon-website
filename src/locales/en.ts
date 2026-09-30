@@ -9,8 +9,8 @@ export default {
 	},
 	hero: {
 		at: "@",
-		h2: "Canada's Capital Hackathon",
-		apply: "Apply Now",
+		h2: "Thank you for joining us!",
+		winners: "View Winners",
 		date: "Sept. 25-27, 2026",
 		countdown: {
 			open: "Show the Hack the Hill countdown",
@@ -29,32 +29,46 @@ export default {
 		},
 	},
 	about: {
-		title: "Welcome to Hack&nbsp;the&nbsp;Hill&nbsp;III",
-		p1: "Join students from across disciplines for a weekend of building impactful, innovative solutions to real-world civic challenges.",
-		p2: "Organised by the Capital Technology Network, the hackathon creates an exciting space to learn, collaborate, network with peers, and showcase your talents and ideas.",
-		p3: "Whether you are exploring your first hackathon or bringing years of experience, you will find a welcoming community shaped by different skills and perspectives.",
-		frame_alt: "Hack the Hill II recap video",
+		title: "Hack&nbsp;the&nbsp;Hill&nbsp;III in Review",
+		p1: "From September 25 to 27, 2026, Hack the Hill III brought more than 350 participants together at the University of Ottawa for a weekend of building, learning, and community.",
+		p2: "Three hundred hackers submitted 100 projects and took part in nine workshops, turning ideas into practical solutions across civic technology and beyond.",
+		p3: "The event was made possible by 30 organisers and more than 20 volunteers. Our Hack the Hill III recap is on the way.",
+		frame_alt: "Hack the Hill II recap video from the previous edition",
 	},
 	stats: {
-		title: "Hack the Hill II had...",
-		p1: "800",
+		title: "Hack the Hill III brought together...",
+		p1: "350+",
 		p1tag: "Participants",
-		p2: "1190",
-		p2tag: "Applicants",
-		p3: "8",
-		p3tag: "Sponsors",
-		p4: "15",
-		p4tag: "Collaborators",
-		p5: "70",
-		p5tag: "Organisers",
+		p2: "300",
+		p2tag: "Hackers",
+		p3: "100",
+		p3tag: "Projects Submitted",
+		p4: "9",
+		p4tag: "Workshops",
+		p5: "50+",
+		p5tag: "Event Team",
 	},
 	sponsors: {
-		title: "Sponsors",
-		p: "Hack the Hill is made possible by these generous sponsors. Interested in supporting the capital's hackathon?",
+		title: "Thank You to Our Sponsors",
+		p: "Hack the Hill III was made possible by these generous sponsors. Interested in supporting the capital's hackathon?",
 		button: "Become a Sponsor",
 	},
 	collaborators: {
-		title: "Collaborators",
+		title: "Thank You to Our Collaborators",
+	},
+	highlights: {
+		title: "Winners",
+		general: "General Challenge",
+		civic: "Civic Technology",
+		cgi: "CGI Challenge",
+		view_project: "View on Devpost",
+		all_winners: "Explore All Winners",
+	},
+	gallery: {
+		title: "Gallery",
+		intro: "We are preparing a selection of moments from the weekend.",
+		empty_title: "Event photos are coming soon",
+		empty_body: "We are selecting photos from the event. They will appear here once they are ready.",
 	},
 	testimonials: {
 		title: "What Past Partners Say",
@@ -100,47 +114,17 @@ export default {
 	faq: {
 		title: "Frequently Asked Questions",
 
-		q1: "What is a hackathon?",
-		a1: "A hackathon is a multi-day event where participants team up to build projects, learn new skills, and turn ideas into working prototypes. At Hack the Hill, you can attend workshops, meet peers and sponsors, take part in challenges, and enjoy food, swag, and community events.",
+		q1: "Where is the Hack the Hill III recap video?",
+		a1: "The recap is still being prepared. We will update this page when it is ready.",
 
-		q2: "How much does it cost to participate?",
-		a2: "Hack the Hill is completely free to attend. We provide meals, snacks, swag, and access to event programming at no cost to participants.",
+		q2: "When will event photos be available?",
+		a2: "We are curating the event gallery now and will add photos to this page as they become available.",
 
-		q3: "Do I need any experience?",
-		a3: "No experience is needed. We welcome first-time hackers and experienced participants alike, and there will be workshops and mentors to help you get started.",
+		q3: "How can I hear about the next Hack the Hill?",
+		a3: "Subscribe at the bottom of this page and follow Hack the Hill on social media for future event announcements.",
 
-		q4: "This is my first hackathon. What should I expect?",
-		a4: "Expect a weekend of building, learning, networking, and collaborating with other participants. The event starts Friday evening and ends Sunday afternoon. You can attend workshops, meet sponsors, form a team, and work on a project that could involve software, hardware, embedded systems, policy, or a mix of different approaches.",
-
-		q5: "Can I start my project before the hackathon?",
-		a5: "No. All projects must be started after the opening ceremony on the first day of the event. You can think about ideas beforehand, but no code, designs, documentation, or other project work should be created before the hackathon begins.",
-
-		q6: "Is the hackathon online or in person?",
-		a6: "Hack the Hill III will be held in person at the University of Ottawa.",
-
-		q7: "What should I bring?",
-		a7: "Bring your laptop, charger, student ID or government-issued ID, personal hygiene items, a sleeping bag or blanket, and anything else you need for the weekend. We will provide meals and snacks throughout the hackathon.",
-
-		q8: "Who can participate?",
-		a8: "University students and recent graduates are encouraged to apply. High school students in grade 11 or higher are also welcome.",
-
-		q9: "Can I work in a team?",
-		a9: "Yes. Teams can have up to 4 participants.",
-
-		q10: "What are the themes for Hack the Hill?",
-		a10: "Hackathon themes will be announced closer to the event. Expect challenges connected to civic tech, technology for public benefit, and practical problem-solving.",
-
-		q11: "Will transportation or travel reimbursements be provided?",
-		a11: "We are not able to offer buses or travel reimbursements this year. We encourage participants to coordinate carpools or make their own travel arrangements to get to the event.",
-
-		q12: "Is there a code of conduct?",
-		a12: "Yes, all attendees must follow our code of conduct to ensure a safe and welcoming environment for everyone. You can read it",
-		a12_link: "here",
-
-		q13: "How are participants selected?",
-		a13: "See our",
-		a13_link: "Participant Admission Criteria",
-		a13_url: "https://docs.google.com/document/d/1Pl9Hy90uE-gACaZmU4EsFSf6r-zUQjjJHkUiGyspWpU/edit",
+		q4: "Who made Hack the Hill III possible?",
+		a4: "Hack the Hill III was organised by the Capital Technology Network with 30 organisers and more than 20 volunteers, alongside our sponsors and collaborators.",
 	},
 	footer: {
 		subscribe: "Get updates",

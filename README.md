@@ -1,6 +1,6 @@
 # Hack the Hill Website
 
-The 2026 event website at [hackthehill.com](https://hackthehill.com). Astro builds the website and presentation routes. React handles the home page's language switch, countdown, carousel, particles, and subscription form.
+The Hack the Hill III event archive at [hackthehill.com](https://hackthehill.com). Astro builds the website and presentation routes. React handles the home page's language switch, countdown, event highlights, gallery, carousel, particles, and subscription form.
 
 ## Run locally
 

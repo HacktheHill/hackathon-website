@@ -22,7 +22,7 @@ test("narrow mobile stats labels stay inside the green sign in both locales", as
 								left: labelBox.left - signBox.left,
 								right: signBox.right - labelBox.right,
 							},
-					  ]
+						]
 					: [];
 			});
 		});
@@ -82,7 +82,7 @@ test("phone moves the participant sign below the video and simplifies the stats 
 	expect(layout.greenBush).toContain("bush-4.webp");
 	expect(layout.greenRowGap).toBe("16px");
 	expect(layout.greenRowAlignment).toEqual(["baseline", "baseline"]);
-	expect(layout.mobileGreenCopy).toEqual(["8", "Sponsors", "15", "Collaborators", "70", "Organisers"]);
+	expect(layout.mobileGreenCopy).toEqual(["100", "Projects Submitted", "9", "Workshops", "50+", "Event Team"]);
 });
 
 test("phone sign typography stays proportional when sign artwork reaches its size cap", async ({ page }) => {
