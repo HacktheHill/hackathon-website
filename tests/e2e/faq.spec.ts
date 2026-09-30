@@ -58,7 +58,7 @@ test("gallery placeholder keeps its illustration clear of the surrounding copy",
 	}
 });
 
-test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
+test("desktop archive content always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: "reduce" });
 	for (const width of [1025, 1199, 1200, 1201, 1440, 1599, 1600]) {
 		await page.setViewportSize({ width, height: 900 });
@@ -74,7 +74,7 @@ test("desktop FAQ always clears the bottom ice seam across canvas breakpoints", 
 			.toBeGreaterThanOrEqual(34);
 		const position = await page.locator("#faq").evaluate(section => {
 			const slot = section.parentElement as HTMLElement;
-			const heading = section.querySelector("h2")!;
+			const heading = document.querySelector("#highlights h2")!;
 			const footer = document.querySelector<HTMLElement>("footer")!;
 			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
 			const iceBottom = document.querySelector<HTMLElement>('[data-scene-slice="ice-bottom"]')!;
