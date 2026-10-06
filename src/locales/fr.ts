@@ -65,10 +65,49 @@ export default {
 		all_winners: "Voir tous les gagnants",
 	},
 	gallery: {
-		title: "Galerie",
-		intro: "Nous préparons une sélection de moments marquants de la fin de semaine.",
-		empty_title: "Les photos de l’événement arrivent bientôt",
-		empty_body: "Nous sélectionnons des photos de l’événement. Elles paraîtront ici dès qu’elles seront prêtes.",
+		title: "Photos",
+		intro: "Quelques moments de Hack the Hill III.",
+		carousel: "Photos de Hack the Hill III",
+		previous: "Photo précédente",
+		next: "Photo suivante",
+		pause: "Pause",
+		play: "Reprendre",
+		view_album: "Voir l’album photo",
+		unavailable: "Les photos sont temporairement indisponibles. Vous pouvez toujours ouvrir l’album.",
+		photos: {
+			p0: {
+				alt: "Les coprésidents s’adressent au public depuis un lutrin à la cérémonie d’ouverture.",
+				caption: "Ouvrir le week-end ensemble.",
+			},
+			p1: {
+				alt: "Les participants remplissent l’auditorium lors de la cérémonie d’ouverture.",
+				caption: "La communauté qui a rendu Hack the Hill III possible.",
+			},
+			p2: {
+				alt: "Quatre hackers sourient autour d’une table avec des ordinateurs portables.",
+				caption: "Créer, collaborer et s’amuser en chemin.",
+			},
+			p3: {
+				alt: "Un juge avec une tablette échange avec une équipe de trois hackers.",
+				caption: "Présenter les projets aux juges.",
+			},
+			p4: {
+				alt: "Les participants d’un atelier travaillent sur leurs ordinateurs dans une salle animée.",
+				caption: "Apprendre ensemble lors d’un atelier.",
+			},
+			p5: {
+				alt: "Quatre hackers posent à côté de leur projet dans une salle de classe.",
+				caption: "Prêts à montrer ce qu’ils ont créé.",
+			},
+			p6: {
+				alt: "Des organisateurs en chandails rouges et leurs collègues sont réunis dans une salle de classe.",
+				caption: "L’équipe qui fait tourner le week-end.",
+			},
+			p7: {
+				alt: "L’équipe organisatrice pose devant la projection de Hack the Hill III.",
+				caption: "Une dernière photo d’équipe pour clore le week-end.",
+			},
+		},
 	},
 	testimonials: {
 		title: "Ce que disent nos anciens partenaires",
@@ -119,8 +158,8 @@ export default {
 		q1: "Où est la vidéo récapitulative de Hack the Hill III?",
 		a1: "La vidéo est encore en préparation. Nous mettrons cette page à jour lorsqu’elle sera prête.",
 
-		q2: "Quand les photos de l’événement seront-elles disponibles?",
-		a2: "Nous préparons actuellement la galerie et ajouterons les photos à cette page dès qu’elles seront disponibles.",
+		q2: "Où trouver les photos de l’événement?",
+		a2: "Découvrez une sélection ci-dessus ou ouvrez l’album photo sur photos.hackthehill.com. Connectez-vous avec votre adresse courriel utilisée pour l’événement pour voir et télécharger la collection complète.",
 
 		q3: "Comment puis-je recevoir des nouvelles du prochain Hack the Hill?",
 		a3: "Abonnez-vous au bas de cette page et suivez Hack the Hill sur les médias sociaux pour connaître les prochaines annonces.",

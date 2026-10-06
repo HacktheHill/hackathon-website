@@ -65,10 +65,49 @@ export default {
 		all_winners: "Explore All Winners",
 	},
 	gallery: {
-		title: "Gallery",
-		intro: "We are preparing a selection of moments from the weekend.",
-		empty_title: "Event photos are coming soon",
-		empty_body: "We are selecting photos from the event. They will appear here once they are ready.",
+		title: "Photos",
+		intro: "A few moments from Hack the Hill III.",
+		carousel: "Photos from Hack the Hill III",
+		previous: "Previous photo",
+		next: "Next photo",
+		pause: "Pause",
+		play: "Play",
+		view_album: "View photo album",
+		unavailable: "Photos are temporarily unavailable. You can still open the album.",
+		photos: {
+			p0: {
+				alt: "Co-presidents addressing the audience from a lectern at the opening ceremony.",
+				caption: "Opening the weekend together.",
+			},
+			p1: {
+				alt: "Participants filling the auditorium at the opening ceremony.",
+				caption: "The community that made Hack the Hill III possible.",
+			},
+			p2: {
+				alt: "Four hackers smiling around a table with laptops.",
+				caption: "Building, collaborating, and having fun along the way.",
+			},
+			p3: {
+				alt: "A judge with a tablet talking with a team of three hackers.",
+				caption: "Sharing projects with the judges.",
+			},
+			p4: {
+				alt: "Workshop participants working on laptops in a busy classroom.",
+				caption: "Learning together at a workshop.",
+			},
+			p5: {
+				alt: "Four hackers posing beside their project in a classroom.",
+				caption: "Ready to show what they built.",
+			},
+			p6: {
+				alt: "Organisers in red hoodies and teammates gathered in a classroom.",
+				caption: "The people keeping the weekend running.",
+			},
+			p7: {
+				alt: "The organising team posing in front of the Hack the Hill III projection.",
+				caption: "One last team photo to close the weekend.",
+			},
+		},
 	},
 	testimonials: {
 		title: "What Past Partners Say",
@@ -117,8 +156,8 @@ export default {
 		q1: "Where is the Hack the Hill III recap video?",
 		a1: "The recap is still being prepared. We will update this page when it is ready.",
 
-		q2: "When will event photos be available?",
-		a2: "We are curating the event gallery now and will add photos to this page as they become available.",
+		q2: "Where can I find event photos?",
+		a2: "See a selection above, or open the photo album at photos.hackthehill.com. Sign in with your event email to view and download the full collection.",
 
 		q3: "How can I hear about the next Hack the Hill?",
 		a3: "Subscribe at the bottom of this page and follow Hack the Hill on social media for future event announcements.",
