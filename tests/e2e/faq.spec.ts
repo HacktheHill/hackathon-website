@@ -10,7 +10,7 @@ test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 	await expect(questions.nth(1)).toHaveAttribute("open", "");
 });
 
-test("post-event content links to the official winners and clearly marks pending media", async ({ page }) => {
+test("post-event content links to the official winners and photo album", async ({ page }) => {
 	await page.goto("/");
 	await expect(page.getByRole("heading", { name: "Winners", exact: true })).toBeVisible();
 	await expect(page.locator("#highlights").getByRole("listitem")).toHaveCount(3);
@@ -23,39 +23,11 @@ test("post-event content links to the official winners and clearly marks pending
 		"href",
 		"https://tracker.hackthehill.com/winners",
 	);
-	await expect(page.getByRole("heading", { name: "Event photos are coming soon" })).toBeVisible();
+	await expect(page.getByRole("link", { name: "View photo album" })).toHaveAttribute(
+		"href",
+		"https://photos.hackthehill.com/",
+	);
 	await expect(page.locator("#faq details")).toHaveCount(4);
-});
-
-test("gallery placeholder keeps its illustration clear of the surrounding copy", async ({ page }) => {
-	for (const viewport of [
-		{ width: 390, height: 844 },
-		{ width: 1440, height: 900 },
-	]) {
-		await page.setViewportSize(viewport);
-		await page.goto("/");
-		const layout = await page.locator("#gallery").evaluate(gallery => {
-			const header = gallery.firstElementChild as HTMLElement;
-			const placeholder = gallery.querySelector<HTMLElement>('[role="status"]')!;
-			const frames = placeholder.firstElementChild as HTMLElement;
-			const copy = placeholder.lastElementChild as HTMLElement;
-			return {
-				headerBottom: header.getBoundingClientRect().bottom,
-				placeholderTop: placeholder.getBoundingClientRect().top,
-				framesRight: frames.getBoundingClientRect().right,
-				framesBottom: frames.getBoundingClientRect().bottom,
-				copyLeft: copy.getBoundingClientRect().left,
-				copyTop: copy.getBoundingClientRect().top,
-			};
-		});
-
-		expect(layout.placeholderTop).toBeGreaterThan(layout.headerBottom);
-		if (viewport.width > 760) {
-			expect(layout.copyLeft).toBeGreaterThan(layout.framesRight);
-		} else {
-			expect(layout.copyTop).toBeGreaterThan(layout.framesBottom);
-		}
-	}
 });
 
 test("desktop archive content always clears the bottom ice seam across canvas breakpoints", async ({ page }) => {

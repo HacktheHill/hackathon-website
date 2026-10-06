@@ -71,6 +71,12 @@ tests/               Browser behavior checks
 
 Each component keeps its own styles. Stateful browser behavior lives in a named hook next to the component. Content lists live next to their renderer.
 
+## Event photos
+
+`src/components/Gallery/galleryData.ts` selects eight edited previews from the photo album’s existing R2 collection. Captions and alt text are in both locale files. The album Worker’s `public-highlights.ts` must allowlist the same IDs; hiding a photo in the album also disables its public preview. Full-size downloads remain in the signed-in album.
+
+The carousel advances every eight seconds while visible and loaded, pauses on hover or keyboard focus, and stops automatic rotation after manual navigation. Reduced-motion preferences disable automatic rotation. Unavailable photos are skipped.
+
 ## Common edits
 
 | Change                                   | Start here                                       |
