@@ -29,15 +29,3 @@ pnpm-debug.log*
 # browser test output
 test-results/
 playwright-report/
-
-# Private gallery runtime state, eligibility and deployment secrets
-**/.wrangler/
-**/.dev.vars
-**/.dev.vars.*
-**/.env.*
-services/photo-gallery/private/
-services/photo-gallery/.eligibility-import-*.sql
-services/photo-gallery/.eligibility-revoke-*.sql
-services/photo-gallery/.wrangler-r2-upload-*.jsonc
-**/__pycache__/
-*.pyc

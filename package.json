@@ -12,11 +12,7 @@
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"typecheck": "astro check",
-		"test:e2e": "playwright test",
-		"photos:worker:dev": "npm --prefix services/photo-gallery run dev",
-		"photos:worker:check": "npm --prefix services/photo-gallery run typecheck",
-		"photos:worker:test": "npm --prefix services/photo-gallery test",
-		"photos:test": "playwright test tests/e2e/photos.spec.ts"
+		"test:e2e": "playwright test"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.9",

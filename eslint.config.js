@@ -48,7 +48,7 @@ const importResolutionConfig = {
 
 export default [
 	{
-		ignores: [".astro/**", "build/**", "dist/**", "node_modules/**", "**/worker-configuration.d.ts"],
+		ignores: [".astro/**", "build/**", "dist/**", "node_modules/**"],
 	},
 	{
 		files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
@@ -63,15 +63,6 @@ export default [
 			},
 		},
 		...importResolutionConfig,
-	},
-	{
-		files: ["services/photo-gallery/tests/**/*.ts"],
-		rules: {
-			"import/no-unresolved": [
-				"error",
-				{ commonjs: true, caseSensitive: true, ignore: ["^cloudflare:(workers|test)$"] },
-			],
-		},
 	},
 	{
 		files: ["**/*.astro"],
