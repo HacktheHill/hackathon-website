@@ -75,7 +75,7 @@ Each component keeps its own styles. Stateful browser behavior lives in a named 
 
 `src/components/Gallery/galleryData.ts` selects eight edited previews from the photo album’s existing R2 collection. Captions and alt text are in both locale files. The album Worker’s `public-highlights.ts` must allowlist the same IDs; hiding a photo in the album also disables its public preview. Full-size downloads remain in the signed-in album.
 
-The carousel advances every eight seconds while visible and loaded, pauses on hover or keyboard focus, and stops automatic rotation after manual navigation. Reduced-motion preferences disable automatic rotation. Unavailable photos are skipped.
+The photo and testimonial carousels share `src/components/Carousel/useCarousel.ts`: arrows, dots, keyboard navigation, touch swipes, and seamless wrapping. Photos retain their full framing, unavailable previews are skipped, and reduced-motion preferences disable transitions. Neither carousel rotates automatically.
 
 ## Common edits
 

@@ -1,6 +1,6 @@
 import type { TranslationKey } from "@/i18n/translate";
 
-type GalleryItem = { id: string; alt: TranslationKey; caption: TranslationKey };
+export type GalleryItem = { id: string; alt: TranslationKey; caption: TranslationKey };
 
 export const galleryItems: readonly GalleryItem[] = [
 	{ id: "821c3c1abf7c754dd95a", alt: "gallery.photos.p0.alt", caption: "gallery.photos.p0.caption" },
@@ -13,5 +13,5 @@ export const galleryItems: readonly GalleryItem[] = [
 	{ id: "5c95bd0a1137fd68b42f", alt: "gallery.photos.p7.alt", caption: "gallery.photos.p7.caption" },
 ];
 
-export const photoAlbumUrl = "https://photos.hackthehill.com/";
+const photoAlbumUrl = "https://photos.hackthehill.com/";
 export const highlightUrl = (id: string) => `${photoAlbumUrl}?action=highlight&photo=${id}`;

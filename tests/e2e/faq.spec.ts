@@ -10,7 +10,7 @@ test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 	await expect(questions.nth(1)).toHaveAttribute("open", "");
 });
 
-test("post-event content links to the official winners and photo album", async ({ page }) => {
+test("post-event content links to the official winners and shows event photos", async ({ page }) => {
 	await page.goto("/");
 	await expect(page.getByRole("heading", { name: "Winners", exact: true })).toBeVisible();
 	await expect(page.locator("#highlights").getByRole("listitem")).toHaveCount(3);
@@ -23,10 +23,7 @@ test("post-event content links to the official winners and photo album", async (
 		"href",
 		"https://tracker.hackthehill.com/winners",
 	);
-	await expect(page.getByRole("link", { name: "View photo album" })).toHaveAttribute(
-		"href",
-		"https://photos.hackthehill.com/",
-	);
+	await expect(page.locator("#gallery").getByRole("heading", { name: "Photos", exact: true })).toBeVisible();
 	await expect(page.locator("#faq details")).toHaveCount(4);
 });
 

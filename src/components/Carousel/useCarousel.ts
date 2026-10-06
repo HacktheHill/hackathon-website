@@ -12,7 +12,7 @@ type PointerStart = {
 	followTrack: boolean;
 };
 
-export function useTestimonialCarousel(testimonialCount: number) {
+export function useCarousel(slideCount: number) {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [trackIndex, setTrackIndex] = useState(1);
 	const [transitionEnabled, setTransitionEnabled] = useState(true);
@@ -25,8 +25,8 @@ export function useTestimonialCarousel(testimonialCount: number) {
 	const trackRef = useRef<HTMLDivElement>(null);
 	const isAnimatingRef = useRef(false);
 	const queuedActionRef = useRef<QueuedAction | null>(null);
-	const previousIndex = (activeIndex - 1 + testimonialCount) % testimonialCount;
-	const nextIndex = (activeIndex + 1) % testimonialCount;
+	const previousIndex = (activeIndex - 1 + slideCount) % slideCount;
+	const nextIndex = (activeIndex + 1) % slideCount;
 
 	const updateActiveIndex = (index: number) => {
 		activeIndexRef.current = index;
@@ -55,7 +55,7 @@ export function useTestimonialCarousel(testimonialCount: number) {
 		const nextActiveIndex =
 			action.type === "select"
 				? action.index
-				: (activeIndexRef.current + action.direction + testimonialCount) % testimonialCount;
+				: (activeIndexRef.current + action.direction + slideCount) % slideCount;
 
 		updateActiveIndex(nextActiveIndex);
 		updateDragOffset(0);
@@ -87,14 +87,14 @@ export function useTestimonialCarousel(testimonialCount: number) {
 
 	const finishSlide = () => {
 		const currentTrackIndex = trackIndexRef.current;
-		if (currentTrackIndex !== 0 && currentTrackIndex !== testimonialCount + 1) {
+		if (currentTrackIndex !== 0 && currentTrackIndex !== slideCount + 1) {
 			completeMovement();
 			return;
 		}
 
 		flushSync(() => {
 			setTransitionEnabled(false);
-			updateTrackIndex(currentTrackIndex === 0 ? testimonialCount : 1);
+			updateTrackIndex(currentTrackIndex === 0 ? slideCount : 1);
 		});
 		trackRef.current?.getBoundingClientRect();
 		requestAnimationFrame(() => {

@@ -10,7 +10,7 @@ test("carousel wraps forward without reversing the track", async ({ page }) => {
 	await expect(dots.last()).toHaveAttribute("aria-pressed", "true");
 	await expect(track).toHaveAttribute("style", /-600%/);
 	await expect(track).not.toHaveAttribute("data-moving", "");
-	await expect(page.locator('[data-carousel-clone="clone-first"]')).toHaveCSS("visibility", "hidden");
+	await expect(page.locator('#testimonials [data-carousel-clone="clone-first"]')).toHaveCSS("visibility", "hidden");
 	await page.locator("#testimonials button").last().click();
 	await expect(track).toHaveAttribute("style", /-700%/);
 

@@ -70,10 +70,8 @@ export default {
 		carousel: "Photos de Hack the Hill III",
 		previous: "Photo précédente",
 		next: "Photo suivante",
-		pause: "Pause",
-		play: "Reprendre",
-		view_album: "Voir l’album photo",
-		unavailable: "Les photos sont temporairement indisponibles. Vous pouvez toujours ouvrir l’album.",
+		show_photo: "Afficher la photo",
+		unavailable: "Les photos sont temporairement indisponibles.",
 		photos: {
 			p0: {
 				alt: "Les coprésidents s’adressent au public depuis un lutrin à la cérémonie d’ouverture.",
@@ -159,7 +157,7 @@ export default {
 		a1: "La vidéo est encore en préparation. Nous mettrons cette page à jour lorsqu’elle sera prête.",
 
 		q2: "Où trouver les photos de l’événement?",
-		a2: "Découvrez une sélection ci-dessus ou ouvrez l’album photo sur photos.hackthehill.com. Connectez-vous avec votre adresse courriel utilisée pour l’événement pour voir et télécharger la collection complète.",
+		a2: "Découvrez une sélection de photos retouchées de Hack the Hill III dans la section Photos ci-dessus.",
 
 		q3: "Comment puis-je recevoir des nouvelles du prochain Hack the Hill?",
 		a3: "Abonnez-vous au bas de cette page et suivez Hack the Hill sur les médias sociaux pour connaître les prochaines annonces.",

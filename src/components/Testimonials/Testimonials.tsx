@@ -1,12 +1,12 @@
 import { useTranslations } from "@/i18n";
 import { getTestimonials } from "./testimonialData";
-import { useTestimonialCarousel } from "./useTestimonialCarousel";
+import { useCarousel } from "../Carousel/useCarousel";
 import styles from "./Testimonials.module.css";
 
 function Testimonials() {
 	const t = useTranslations();
 	const testimonialData = getTestimonials(t);
-	const carousel = useTestimonialCarousel(testimonialData.length);
+	const carousel = useCarousel(testimonialData.length);
 	const previousLabel = t("testimonials.aria_label_prev");
 	const nextLabel = t("testimonials.aria_label_next");
 	const dotLabel = t("testimonials.aria_label_dot");

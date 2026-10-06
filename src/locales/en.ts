@@ -70,10 +70,8 @@ export default {
 		carousel: "Photos from Hack the Hill III",
 		previous: "Previous photo",
 		next: "Next photo",
-		pause: "Pause",
-		play: "Play",
-		view_album: "View photo album",
-		unavailable: "Photos are temporarily unavailable. You can still open the album.",
+		show_photo: "Show photo",
+		unavailable: "Photos are temporarily unavailable.",
 		photos: {
 			p0: {
 				alt: "Co-presidents addressing the audience from a lectern at the opening ceremony.",
@@ -157,7 +155,7 @@ export default {
 		a1: "The recap is still being prepared. We will update this page when it is ready.",
 
 		q2: "Where can I find event photos?",
-		a2: "See a selection above, or open the photo album at photos.hackthehill.com. Sign in with your event email to view and download the full collection.",
+		a2: "Browse a selection of edited photos from Hack the Hill III in the Photos section above.",
 
 		q3: "How can I hear about the next Hack the Hill?",
 		a3: "Subscribe at the bottom of this page and follow Hack the Hill on social media for future event announcements.",
