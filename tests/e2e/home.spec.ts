@@ -48,7 +48,7 @@ test("mobile sections do not overlap", async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await page.goto("/");
 	const boxes = await page
-		.locator("#hero, #about, #stats, #testimonials, #sponsors, #collaborators, #highlights, #gallery, #faq, footer")
+		.locator("#hero, #about, #stats, #testimonials, #sponsors, #collaborators, #winners, #gallery, #faq, footer")
 		.evaluateAll(elements =>
 			elements
 				.map(element => {

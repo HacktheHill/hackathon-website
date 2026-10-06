@@ -56,7 +56,7 @@ export default {
 	collaborators: {
 		title: "Merci à nos collaborateurs",
 	},
-	highlights: {
+	winners: {
 		title: "Gagnants",
 		general: "Défi général",
 		civic: "Technologie civique",

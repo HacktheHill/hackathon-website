@@ -56,7 +56,7 @@ export default {
 	collaborators: {
 		title: "Thank You to Our Collaborators",
 	},
-	highlights: {
+	winners: {
 		title: "Winners",
 		general: "General Challenge",
 		civic: "Civic Technology",

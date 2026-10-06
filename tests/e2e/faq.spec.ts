@@ -13,8 +13,8 @@ test("FAQ uses keyboard-accessible native accordions", async ({ page }) => {
 test("post-event content links to the official winners and shows event photos", async ({ page }) => {
 	await page.goto("/");
 	await expect(page.getByRole("heading", { name: "Winners", exact: true })).toBeVisible();
-	await expect(page.locator("#highlights").getByRole("listitem")).toHaveCount(3);
-	await expect(page.locator("#highlights h3")).toHaveText([
+	await expect(page.locator("#winners").getByRole("listitem")).toHaveCount(3);
+	await expect(page.locator("#winners h3")).toHaveText([
 		"Dx – Simulated Patient Diagnosis Platform",
 		"VitaSpectra",
 		"NorthFlow",
@@ -43,7 +43,7 @@ test("desktop archive content always clears the bottom ice seam across canvas br
 			.toBeGreaterThanOrEqual(34);
 		const position = await page.locator("#faq").evaluate(section => {
 			const slot = section.parentElement as HTMLElement;
-			const heading = document.querySelector("#highlights h2")!;
+			const heading = document.querySelector("#winners h2")!;
 			const footer = document.querySelector<HTMLElement>("footer")!;
 			const iceTop = document.querySelector<HTMLElement>('[data-scene-layer="ice-1"]')!;
 			const iceBottom = document.querySelector<HTMLElement>('[data-scene-slice="ice-bottom"]')!;
