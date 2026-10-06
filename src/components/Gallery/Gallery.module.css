@@ -62,7 +62,6 @@
 	aspect-ratio: 3 / 2;
 	overflow: hidden;
 	background: rgb(4 15 54 / 80%);
-	border: 0.2rem solid var(--light-primary-color);
 	border-radius: 0.75rem;
 }
 .frame img {
