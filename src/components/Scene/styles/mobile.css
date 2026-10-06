@@ -247,7 +247,7 @@
 		z-index: 1;
 	}
 
-	.faq-slot {
+	.archive-slot {
 		--water-image-lift: clamp(6.5rem, 20vw, 8rem);
 
 		grid-row: 7;
@@ -285,7 +285,7 @@
 	.stats-layer,
 	.testimonials-slot,
 	.sponsors-slot,
-	.faq-slot,
+	.archive-slot,
 	.footer-slot {
 		margin-top: -1px;
 	}

@@ -71,7 +71,7 @@
 .about-slot,
 .testimonials-slot,
 .sponsors-slot,
-.faq-slot {
+.archive-slot {
 	left: 7%;
 	width: 86%;
 }
@@ -96,7 +96,11 @@
 	transform-origin: top center;
 }
 
-.faq-slot {
+.archive-slot {
+	/* Space added below the FAQ on desktop. The slot starts higher by the same
+		amount so Winners keeps its position relative to the ice. */
+	--archive-bottom-space: clamp(4rem, 6vw, 6rem);
+
 	left: 12%;
 	display: flex;
 	flex-direction: column;
@@ -104,7 +108,7 @@
 	/* The lower ice slice can move independently at tablet widths. Keep Winners
 		below its lowest pixel, including its maximum 34px upward parallax. */
 	top: max(
-		calc(81.25% + var(--tablet-partner-extension) - clamp(4rem, 6vw, 6rem)),
+		calc(81.25% + var(--tablet-partner-extension) - var(--archive-bottom-space)),
 		calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
 	);
 	width: 76%;
@@ -117,8 +121,8 @@
 }
 
 @media (min-width: 1025px) {
-	.faq-slot {
-		padding-bottom: clamp(4rem, 6vw, 6rem);
+	.archive-slot {
+		padding-bottom: var(--archive-bottom-space);
 	}
 
 	.about-slot {
@@ -150,10 +154,10 @@
 		transform: scale(0.61);
 	}
 
-	.faq-slot {
+	.archive-slot {
 		left: 10%;
 		top: max(
-			calc(81.25% + var(--tablet-partner-extension) - clamp(4rem, 6vw, 6rem)),
+			calc(81.25% + var(--tablet-partner-extension) - var(--archive-bottom-space)),
 			calc(77.603% + var(--tablet-partner-extension) + var(--tablet-ice-extension) + 2.5rem)
 		);
 		width: 80%;

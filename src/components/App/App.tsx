@@ -70,7 +70,7 @@ function App() {
 								<Sponsors />
 							</div>
 							<div
-								className={`${styles.slot} ${styles["faq-slot"]}`}
+								className={`${styles.slot} ${styles["archive-slot"]}`}
 								data-section-parallax="0.024"
 								data-parallax-max="34"
 							>
