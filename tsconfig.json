@@ -1,6 +1,6 @@
 {
 	"extends": "astro/tsconfigs/strict",
-	"exclude": ["build"],
+	"exclude": ["build", "services/photo-gallery"],
 	"baseUrl": ".",
 	"compilerOptions": {
 		"types": ["node"],

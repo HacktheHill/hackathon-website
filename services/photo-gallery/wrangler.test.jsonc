@@ -1,0 +1,17 @@
+{
+  "name": "hack-the-hill-photo-gallery-tests",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "CURRENT_LICENCE_VERSION": "2026-10-06",
+    "SES_REGION": "",
+    "SES_FROM_EMAIL": "",
+    "MODERATOR_EMAILS": "",
+    "APP_ORIGIN": "https://gallery.test",
+    "ACCESS_TEAM": "https://access.test",
+    "ACCESS_AUD": "gallery-test-audience"
+  },
+  "d1_databases": [{ "binding": "DB", "database_name": "photo-gallery-tests", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }],
+  "r2_buckets": [{ "binding": "PHOTO_BUCKET", "bucket_name": "photo-gallery-tests" }]
+}

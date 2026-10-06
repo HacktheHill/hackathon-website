@@ -1,0 +1,40 @@
+---
+import Photos from "../../components/Photos/Photos";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="theme-color" content="#071a3d" />
+		<title>Hack the Hill III · Photo album</title>
+		<link rel="icon" href="/Logos/hackthehill-logo.svg" type="image/svg+xml" />
+	</head>
+	<body>
+		<Photos client:load />
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: "Gallery Rubik";
+		src: url("/fonts/rubik/Rubik-VariableFont_wght.ttf") format("truetype-variations");
+		font-weight: 300 900;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Gallery Highway";
+		src: url("/fonts/highway-gothic/HWYGWDE.TTF") format("truetype");
+		font-weight: 400;
+		font-display: swap;
+	}
+	:root { font-family: "Gallery Rubik", system-ui, sans-serif; color: #13284f; background: #f7f3ed; }
+	* { box-sizing: border-box; }
+	body { margin: 0; min-width: 320px; }
+	button, input { font: inherit; }
+	button { cursor: pointer; }
+	button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #ee9e6f; outline-offset: 3px; }
+	@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+</style>

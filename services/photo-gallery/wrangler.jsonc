@@ -1,0 +1,71 @@
+{
+  "name": "hack-the-hill-photo-gallery-staging",
+  "account_id": "9cff4e4fc6be8b966eeae47806117336",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.1 }
+  },
+  "vars": {
+    "CURRENT_LICENCE_VERSION": "2026-10-06",
+    "SES_REGION": "ca-central-1",
+    "SES_FROM_EMAIL": "info@hackthehill.com",
+    "MODERATOR_EMAILS": "privacy@ctn-rtc.org",
+    "APP_ORIGIN": "",
+    "ACCESS_TEAM": "",
+    "ACCESS_AUD": ""
+  },
+  "secrets": {
+    "required": ["OTP_HMAC_SECRET", "SESSION_HMAC_SECRET", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hack-the-hill-photo-gallery-staging",
+      "database_id": "f61bc64c-e938-4711-9b65-482d7682ffe5",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "PHOTO_BUCKET",
+      "bucket_name": "hack-the-hill-photo-gallery-staging"
+    }
+  ],
+  "triggers": { "crons": ["17 * * * *"] },
+  "env": {
+    "production": {
+      "name": "hack-the-hill-photo-gallery",
+      "workers_dev": false,
+      "preview_urls": false,
+      "vars": {
+        "CURRENT_LICENCE_VERSION": "2026-10-06",
+        "SES_REGION": "ca-central-1",
+        "SES_FROM_EMAIL": "info@hackthehill.com",
+        "MODERATOR_EMAILS": "privacy@ctn-rtc.org",
+        "APP_ORIGIN": "",
+        "ACCESS_TEAM": "",
+        "ACCESS_AUD": ""
+      },
+      "secrets": {
+        "required": ["OTP_HMAC_SECRET", "SESSION_HMAC_SECRET", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "",
+          "database_id": "",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "r2_buckets": [
+        { "binding": "PHOTO_BUCKET", "bucket_name": "" }
+      ]
+    }
+  }
+}
