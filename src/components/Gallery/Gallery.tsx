@@ -1,10 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "@/i18n";
 import { useCarousel } from "../Carousel/useCarousel";
 import { galleryItems, highlightUrl, type GalleryItem } from "./galleryData";
 import styles from "./Gallery.module.css";
 
-function PhotoCarousel({ items, unavailable }: { items: readonly GalleryItem[]; unavailable: (id: string) => void }) {
+function PhotoCarousel({
+	items,
+	onUnavailable,
+}: {
+	items: readonly GalleryItem[];
+	onUnavailable: (id: string) => void;
+}) {
 	const t = useTranslations();
 	const viewport = useRef<HTMLDivElement>(null);
 	const carousel = useCarousel(items.length);
@@ -16,9 +22,9 @@ function PhotoCarousel({ items, unavailable }: { items: readonly GalleryItem[]; 
 	useEffect(() => {
 		// Image errors can occur before React attaches its event handlers.
 		viewport.current?.querySelectorAll<HTMLImageElement>("img").forEach(image => {
-			if (image.complete && image.naturalWidth === 0) unavailable(image.dataset.photoId!);
+			if (image.complete && image.naturalWidth === 0) onUnavailable(image.dataset.photoId!);
 		});
-	}, [unavailable]);
+	}, [onUnavailable]);
 	return (
 		<div className={styles.carousel}>
 			<div
@@ -65,7 +71,7 @@ function PhotoCarousel({ items, unavailable }: { items: readonly GalleryItem[]; 
 									loading="lazy"
 									decoding="async"
 									draggable="false"
-									onError={() => unavailable(item.id)}
+									onError={() => onUnavailable(item.id)}
 								/>
 							</div>
 							<figcaption>{t(item.caption)}</figcaption>
@@ -109,6 +115,10 @@ export default function Gallery() {
 	const t = useTranslations();
 	const [unavailable, setUnavailable] = useState<Set<string>>(new Set());
 	const items = galleryItems.filter(item => !unavailable.has(item.id));
+	const markUnavailable = useCallback(
+		(id: string) => setUnavailable(current => (current.has(id) ? current : new Set([...current, id]))),
+		[],
+	);
 	return (
 		<section id="gallery" className={styles.gallery} aria-labelledby="gallery-title">
 			<div className={styles.header}>
@@ -118,13 +128,7 @@ export default function Gallery() {
 				<p>{t("gallery.intro")}</p>
 			</div>
 			{items.length ? (
-				<PhotoCarousel
-					key={items.map(item => item.id).join()}
-					items={items}
-					unavailable={id =>
-						setUnavailable(current => (current.has(id) ? current : new Set([...current, id])))
-					}
-				/>
+				<PhotoCarousel key={items.map(item => item.id).join()} items={items} onUnavailable={markUnavailable} />
 			) : (
 				<p role="status">{t("gallery.unavailable")}</p>
 			)}
