@@ -1,21 +1,19 @@
 import { useTranslations } from "@/i18n";
 import styles from "./About.module.css";
+import { recapEmbedUrl, recapThumbnailUrl } from "./recapVideo";
 
 import "@/global.css";
-
-const videoLink = "https://www.youtube.com/embed/yDNJC2-lUWE?si=VAD1Na8xGVwE9i5W";
-const thumbnailLink = "https://i.ytimg.com/vi/yDNJC2-lUWE/hqdefault.jpg";
 
 export function AboutVideo() {
 	const t = useTranslations();
 	return (
 		<iframe
 			className={styles.video}
-			src={videoLink}
+			src={recapEmbedUrl}
 			title={t("about.frame_alt")}
-			srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}span{position:absolute;inset:0;display:grid;place-items:center;font:3.5rem sans-serif;color:#fff3b6;text-shadow:0 0 0.5em black}</style><a href=${videoLink}><img src=${thumbnailLink} alt="${t(
+			srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}a{position:absolute;inset:0}a:focus-visible{outline:3px solid #fff3b6;outline-offset:-3px}img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}span{position:absolute;inset:0;display:grid;place-items:center;font:3.5rem sans-serif;color:#fff3b6;text-shadow:0 0 0.5em black}</style><a href="${recapEmbedUrl}"><img src="${recapThumbnailUrl}" alt="${t(
 				"about.frame_alt",
-			)}"><span>▶</span></a>`}
+			)}"><span aria-hidden="true">▶</span></a>`}
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			allowFullScreen
 			loading="lazy"
