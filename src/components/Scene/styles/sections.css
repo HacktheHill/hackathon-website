@@ -131,10 +131,19 @@
 		transform: none;
 	}
 
+	/* The About slot spans the video. Only its text should receive clicks. */
+	.content > .about-slot {
+		pointer-events: none;
+	}
+
 	.about-slot :global(section#about) {
 		display: flex;
 		align-items: stretch;
 		height: 100%;
+	}
+
+	.about-slot :global(section#about) > * {
+		pointer-events: auto;
 	}
 }
 

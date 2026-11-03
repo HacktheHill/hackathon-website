@@ -32,8 +32,8 @@ export default {
 		title: "Hack&nbsp;the&nbsp;Hill&nbsp;III in Review",
 		p1: "From September 25 to 27, 2026, Hack the Hill III brought more than 350 participants together at the University of Ottawa for a weekend of building, learning, and community.",
 		p2: "Three hundred hackers submitted 100 projects and took part in nine workshops, turning ideas into practical solutions across civic technology and beyond.",
-		p3: "The event was made possible by 30 organisers and more than 20 volunteers. Our Hack the Hill III recap is on the way.",
-		frame_alt: "Hack the Hill II recap video from the previous edition",
+		p3: "The event was made possible by 30 organisers and more than 20 volunteers.",
+		frame_alt: "Hack the Hill III recap video",
 	},
 	stats: {
 		title: "Hack the Hill III brought together...",
@@ -152,7 +152,7 @@ export default {
 		title: "Frequently Asked Questions",
 
 		q1: "Where is the Hack the Hill III recap video?",
-		a1: "The recap is still being prepared. We will update this page when it is ready.",
+		a1: "Watch the Hack the Hill III recap on YouTube",
 
 		q2: "Where can I find event photos?",
 		a2: "Browse a selection of edited photos from Hack the Hill III in the Photos section above.",

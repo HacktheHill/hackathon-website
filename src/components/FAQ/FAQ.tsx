@@ -1,4 +1,5 @@
 import { useTranslations } from "@/i18n";
+import { recapWatchUrl } from "../About/recapVideo";
 import styles from "./FAQ.module.css";
 
 export default function FAQ() {
@@ -6,7 +7,7 @@ export default function FAQ() {
 	const quesAns = [
 		{
 			q: t("faq.q1"),
-			a: t("faq.a1"),
+			a: <a href={recapWatchUrl}>{t("faq.a1")}</a>,
 			key: "0",
 		},
 		{
