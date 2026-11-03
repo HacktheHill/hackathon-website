@@ -173,7 +173,7 @@ export default {
 		rate_limited: "Try again shortly.",
 		send_error: "Couldn’t subscribe. Try again.",
 		privacy: "Privacy Policy",
-		copyright: "© 2026 Hack the Hill. All rights reserved.",
+		copyright: "© 2026 Capital Technology Network",
 	},
 	"four-o-four": {
 		title: "Page not found",

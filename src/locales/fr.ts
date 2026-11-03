@@ -175,7 +175,7 @@ export default {
 		rate_limited: "Réessayez dans un instant.",
 		send_error: "Inscription impossible. Réessayez.",
 		privacy: "Politique de confidentialité",
-		copyright: "© 2026 Hack the Hill. Tous droits réservés.",
+		copyright: "© 2026 Capital Technology Network",
 	},
 	"four-o-four": {
 		title: "Oh non!",
